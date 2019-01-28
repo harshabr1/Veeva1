@@ -11,7 +11,7 @@ Public class BOT_Account_Test
     {
      	//Inserting Account
      	List<account> lstAccs=new List<Account>();
-        Account objAcc = new Account(Name = 'TestAccountName',
+        Account objAcc = new Account(Name = 'TestAccountName11',
                                      BOT_PBM_ID__c='22',
                                      Account_Type__c='MCO');
         lstAccs.add(objAcc);
