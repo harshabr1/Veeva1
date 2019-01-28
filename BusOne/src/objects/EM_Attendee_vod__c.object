@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Attendees at events for Veeva Events Management</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Account acting as an Attendee.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Attendees</relationshipLabel>
+        <relationshipName>EM_Attendee_Account_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Address_Line_1_vod__c</fullName>
+        <description>Used to store the attendee&apos;s street address.</description>
+        <externalId>false</externalId>
+        <label>Address Line 1</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address_Line_2_vod__c</fullName>
+        <description>Used to store the attendee&apos;s street address.</description>
+        <externalId>false</externalId>
+        <label>Address Line 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attendee_Name_vod__c</fullName>
+        <description>Text field to store the name of an attendee. Used for entering non-system attendees. If an account, user, or contact is listed as an attendee, this field populates automatically.</description>
+        <externalId>false</externalId>
+        <label>Attendee Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attendee_Type_vod__c</fullName>
+        <description>This field defines what type of Attendee has been selected for the Event. This formula can be modified to meet the naming conventions of a Customer&apos;s organization.</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Account_vod__c)), $Label.ACCOUNT_vod, 
+                IF(NOT(ISBLANK(Contact_vod__c)), $Label.CONTACT_vod, 
+                IF(NOT(ISBLANK(User_vod__c)), $Label.USER_vod, 
+                IF(NOT(ISBLANK(TEXT(Walk_In_Status_vod__c))), $Label.WALK_IN_vod, 
+                $Label.ONLINE_REGISTRANT_vod))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Attendee Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City_vod__c</fullName>
+        <description>Used to store the attendee&apos;s city.</description>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Contact attending the event.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Attendees</relationshipLabel>
+        <relationshipName>EM_Attendee_Contact_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Credentials_vod__c</fullName>
+        <description>Attendee Credentials. If the attendee is an Account, this data is copied from the Credentials_vod field on the account.</description>
+        <externalId>false</externalId>
+        <label>Credentials</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RN</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RNP</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Email_vod__c</fullName>
+        <description>Used to store the attendee&apos;s email address.</description>
+        <externalId>false</externalId>
+        <label>Email Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Time_vod__c</fullName>
+        <description>End time of the event</description>
+        <externalId>false</externalId>
+        <label>End Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_Id_vod__c</fullName>
+        <description>ID of object associated with the attendee such as an account.</description>
+        <externalId>false</externalId>
+        <label>Entity Reference Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The event that the attendee has been invited to.</description>
+        <externalId>false</externalId>
+        <label>Event</label>
+        <referenceTo>EM_Event_vod__c</referenceTo>
+        <relationshipLabel>Attendees</relationshipLabel>
+        <relationshipName>EM_Attendee_Event_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Furigana_vod__c</fullName>
+        <description>Firigana for Japanese name. If the attendee is an Account, this data is copied from the Furigana field on the account.</description>
+        <externalId>false</externalId>
+        <label>Furigana</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Name_vod__c</fullName>
+        <description>Used to store the attendee&apos;s last name</description>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Meal_Opt_In_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to indicate if an attendee has opted in to receiving a meal.</description>
+        <externalId>false</externalId>
+        <label>Meal Opt In</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Meal_Preference_vod__c</fullName>
+        <description>Meal preference of an attendee. Custom values can be added to this picklist.</description>
+        <externalId>false</externalId>
+        <label>Meal Preference</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Vegetarian</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Field used by mobile products for synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Online_Registration_Status_vod__c</fullName>
+        <description>This field is populated automatically to &quot;Needs Reconciliation&quot; when a person is registered for an event via the Veeva Attendee API. The status can be set manually via this API, and is also set through the user interface when an online event registrant is reconciled to a CRM record.</description>
+        <externalId>false</externalId>
+        <label>Online Registration Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Needs_Reconciliation_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reconciled_To_Existing_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reconciled_To_Existing_User_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reconciled_To_New_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dismissed_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Organization__c</fullName>
+        <description>Organization name of the attendee</description>
+        <externalId>false</externalId>
+        <label>Organization</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Organization_vod__c</fullName>
+        <description>The organization an attendee is representing.</description>
+        <externalId>false</externalId>
+        <label>Organization</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Helper field for data loads.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Phone_vod__c</fullName>
+        <description>Used to store the attendee&apos;s phone number.</description>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Prescriber_vod__c</fullName>
+        <description>Indicates if an attendee is a prescriber or not.</description>
+        <externalId>false</externalId>
+        <label>Prescriber</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Signature_Datetime_vod__c</fullName>
+        <description>Stores the Datetime of when the Signature was captured</description>
+        <externalId>false</externalId>
+        <label>Signature Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Signature_vod__c</fullName>
+        <description>Used to store the Signature.</description>
+        <externalId>false</externalId>
+        <label>Signature</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Signee_vod__c</fullName>
+        <description>The name of the person signing for event attendance.</description>
+        <externalId>false</externalId>
+        <label>Signee</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Time_vod__c</fullName>
+        <description>Start time of the event</description>
+        <externalId>false</externalId>
+        <label>Start Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status of the person invited to the medical event.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Nominated_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Invited_vod</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Accepted_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Attended_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Signed_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cleared_Signature_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Stub_Mobile_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Stub Mobile Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Stub_SFDC_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Stub SFDC Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Title_vod__c</fullName>
+        <description>Attendee Title. If the attendee is an Account, this data is copied from the PersonTitle field on the account.</description>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The User attending the event.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipLabel>Attendees</relationshipLabel>
+        <relationshipName>EM_Attendee_User_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Vessel_Number_vod__c</fullName>
+        <description>Used to store travel details, such as a flight or train number.</description>
+        <externalId>false</externalId>
+        <label>Vessel Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Walk_In_Reference_ID_vod__c</fullName>
+        <description>Reference ID of the person associated with the reconciled attendee. Required for backend attendee reconciliation process.</description>
+        <externalId>false</externalId>
+        <label>Walk In Reference ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Walk_In_Status_vod__c</fullName>
+        <description>Used to track the status of walk-in attendees at an event.</description>
+        <externalId>false</externalId>
+        <label>Walk-In Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Needs_Reconciliation_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reconciled_To_Existing_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reconciled_To_Existing_User_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reconciled_To_New_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dismissed_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Webinar_Participant_URL_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Webinar Participant URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip_vod__c</fullName>
+        <description>Used to store the attendee&apos;s zip code.</description>
+        <externalId>false</externalId>
+        <label>Zip</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Attendee</label>
+    <nameField>
+        <displayFormat>EA-{0000000000}</displayFormat>
+        <label>Attendee ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Attendees</pluralLabel>
+    <recordTypes>
+        <fullName>Attendee_vod</fullName>
+        <active>true</active>
+        <description>Attendee</description>
+        <label>Attendee_vod</label>
+        <picklistValues>
+            <picklist>Meal_Preference_vod__c</picklist>
+            <values>
+                <fullName>Vegetarian</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Accepted_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attended_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cleared_Signature_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invited_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Nominated_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signed_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>Event_Team_Member_vod__c</fullName>
+        <label>Event Team Member</label>
+    </sharingReasons>
+</CustomObject>

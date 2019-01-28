@@ -1,0 +1,3 @@
+<apex:page standardController="HTML_Report_vod__c" >
+    <c:VOD_EMBED veevaModule="htmlreport" veevaPage="html-report-edit" objectType="HTML_Report_vod__c" />
+</apex:page>

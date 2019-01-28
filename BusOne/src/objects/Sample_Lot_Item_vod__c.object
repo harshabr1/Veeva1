@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Contains a list of attributes pertaining to a User&apos;s Sample Lots available for selection on Sample Transactions and Sample Calls.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates that the particular Sample Lot Item is available for selection on Sample Transactions and Sample Calls.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sample_Lot_Item_Id_vod__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>The External Id used to enforce uniqueness of the Sample Lot Item record. The format of the Id is Owner Id_Product Name_Sample Lot Name_Tag Alert.</description>
+        <externalId>true</externalId>
+        <label>Sample Lot Item Id</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_Lot_vod__c</fullName>
+        <description>The Sample Lot that the Sample Lot Item is associated to.</description>
+        <externalId>false</externalId>
+        <label>Sample Lot</label>
+        <referenceTo>Sample_Lot_vod__c</referenceTo>
+        <relationshipLabel>Sample Lot Items</relationshipLabel>
+        <relationshipName>Sample_Lot_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Tag_Alert_Number_vod__c</fullName>
+        <description>The Tag Alert Number associated with a User&apos;s Sample Lot record.</description>
+        <externalId>false</externalId>
+        <label>Tag Alert Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Sample Lot Item</label>
+    <nameField>
+        <displayFormat>SLI-{0000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Sample Lot Items</pluralLabel>
+    <recordTypes>
+        <fullName>TagAlert_vod</fullName>
+        <active>true</active>
+        <description>Stores a list of Tag Alert numbers associated with a User&apos;s Sample Lots for cold chain sample products.</description>
+        <label>TagAlert_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

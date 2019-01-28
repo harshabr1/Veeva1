@@ -1,0 +1,3 @@
+<apex:page standardController="EM_Attendee_vod__c" >
+    <c:VOD_EMBED veevaModule="em" veevaPage="attendee-view" objectType="EM_Attendee_vod__c" />
+</apex:page>

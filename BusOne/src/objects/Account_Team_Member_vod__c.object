@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object to store team members on an account plan</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Access_vod__c</fullName>
+        <description>Determines the level of access the Team Member has to Account Plan records</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines the level of access the Team Member has to Account Plan records</inlineHelpText>
+        <label>Access</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Read_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Edit_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Account_Plan_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The account plan an account team member is related to</description>
+        <externalId>false</externalId>
+        <label>Account Plan</label>
+        <referenceTo>Account_Plan_vod__c</referenceTo>
+        <relationshipName>Account_Team_Members</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Role_vod__c</fullName>
+        <description>Role of a user within an account plan</description>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Team Member</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Market_Access_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medical_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sales_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Key Account Manager</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Executive Sponsor</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Team_Member_Name_vod__c</fullName>
+        <description>Text value of the team member on an account plan. Used for users who are not in the CRM system. Stamped via trigger when the Team Member is populated.</description>
+        <externalId>false</externalId>
+        <label>Team Member Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Member_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Team member on an account plan</description>
+        <externalId>false</externalId>
+        <label>Team Member</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Account_Team_Member_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Account Team Member</label>
+    <nameField>
+        <displayFormat>ATM-{0000000000}</displayFormat>
+        <label>ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account Team Members</pluralLabel>
+    <recordTypes>
+        <fullName>Account_Team_Member_vod</fullName>
+        <active>true</active>
+        <description>Base record type for Account Team Members</description>
+        <label>Account_Team_Member_vod</label>
+        <picklistValues>
+            <picklist>Role_vod__c</picklist>
+            <values>
+                <fullName>Executive Sponsor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Key Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Team Member</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

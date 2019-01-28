@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Approved Email Receipt routing (assigns a signature page to a certain Approved Email Template)</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Additional_Email_Addresses_vod__c</fullName>
+        <description>Email address that an email will be sent to</description>
+        <externalId>false</externalId>
+        <label>Additional Email Addresses</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approved_Document_vod__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Approved Document determines which Email Template to use.</description>
+        <externalId>false</externalId>
+        <label>Approved Document</label>
+        <referenceTo>Approved_Document_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Routing</relationshipLabel>
+        <relationshipName>Multichannel_Routing</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Country_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The country for which the Multichannel Routing record is applicable.</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <referenceTo>Country_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Routing</relationshipLabel>
+        <relationshipName>Multichannel_Routing</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Default_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates that the Routing record should be considered the default if there is no Account.Language_vod or User.Language match.</description>
+        <externalId>false</externalId>
+        <label>Default</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Language_vod__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Approved_Document_vod__r.Language_vod__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Language</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Object_vod__c</fullName>
+        <description>API label of the object. Example: Call2_vod__c</description>
+        <externalId>false</externalId>
+        <label>Object</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Type_Name_vod__c</fullName>
+        <description>API label of the Record Type for the Object. Example: MSL_Meeting_Brief_vod</description>
+        <externalId>false</externalId>
+        <label>Record Type Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System populated field which aids in the prevention of duplicates routing records.</description>
+        <externalId>true</externalId>
+        <label>Veeva External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Multichannel Routing</label>
+    <nameField>
+        <displayFormat>MCR-{0000}</displayFormat>
+        <label>Routing Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Multichannel Routing</pluralLabel>
+    <recordTypes>
+        <fullName>Double_Opt_In_Confirmation_vod</fullName>
+        <active>true</active>
+        <description>Routing records for Double Opt In Confirmation emails</description>
+        <label>Double_Opt_In_Confirmation_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Email_Receipt_vod</fullName>
+        <active>true</active>
+        <description>Routing records for Approved Email receipts</description>
+        <label>Email_Receipt_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

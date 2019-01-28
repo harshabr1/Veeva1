@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores the attribution of expenses to individual entities, such as users, service providers, or institutions. Expense Attributions are automatically created in the background based on data from expense headers and expense lines.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_vod__c</fullName>
+        <description>Calculated actual value per incurred expense.</description>
+        <externalId>false</externalId>
+        <formula>Expense_Line_vod__r.Split_Amount_Per_Person_vod__c</formula>
+        <label>Actual</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concur_Response_Attendee_Timestamp_vod__c</fullName>
+        <description>Stores the time a response was received from Concur</description>
+        <externalId>false</externalId>
+        <label>Concur Response Attendee Timestamp</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Concur_Response_Time_Association_vod__c</fullName>
+        <description>Stores the time a response was received from Concur</description>
+        <externalId>false</externalId>
+        <label>Concur Response Association Timestamp</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Concur_System_Attendee_ID_vod__c</fullName>
+        <description>Stores the ID returned from Concur when an attendee is successfully created</description>
+        <externalId>false</externalId>
+        <label>Concur System Attendee ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concur_System_ID_vod__c</fullName>
+        <description>Stores the ID returned from Concur when an expense entry association is successfully created</description>
+        <externalId>false</externalId>
+        <label>Concur System ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_Line_vod__c</fullName>
+        <description>Relationship to an expense line.</description>
+        <externalId>false</externalId>
+        <label>Expense Line</label>
+        <referenceTo>Expense_Line_vod__c</referenceTo>
+        <relationshipLabel>Expense Attributions</relationshipLabel>
+        <relationshipName>Expense_Attributions_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Expense_Type_Name_vod__c</fullName>
+        <description>Stamped value of the expense type as the expense was recorded. This value will remain constant even if the expense type changes.</description>
+        <externalId>false</externalId>
+        <formula>Expense_Line_vod__r.Expense_Type_Name_vod__c</formula>
+        <label>Expense Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The account that incurred an expense.</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense (Account)</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Expense Attributions</relationshipLabel>
+        <relationshipName>Expense_Attributions_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_Attendee_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Incurred_Expense_Attendee_vod</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense (Attendee)</label>
+        <referenceTo>EM_Attendee_vod__c</referenceTo>
+        <relationshipLabel>Expense Attributions</relationshipLabel>
+        <relationshipName>Expense_Attributions_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_Speaker_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The speaker that incurred an expense.</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense (Speaker)</label>
+        <referenceTo>EM_Event_Speaker_vod__c</referenceTo>
+        <relationshipLabel>Expense Attributions</relationshipLabel>
+        <relationshipName>Expense_Attributions_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_Team_Member_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The team member that incurred an expense.</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense (Team Member)</label>
+        <referenceTo>EM_Event_Team_Member_vod__c</referenceTo>
+        <relationshipLabel>Expense Attributions</relationshipLabel>
+        <relationshipName>Expense_Attributions_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_Type_vod__c</fullName>
+        <description>Stamp the incurred expense type.</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Attendee_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Event_Speaker_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Event_Team_Member_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vendor_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Venue_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_Vendor_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The vendor that incurred an expense.</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense (Vendor)</label>
+        <referenceTo>EM_Vendor_vod__c</referenceTo>
+        <relationshipLabel>Expense Attributions</relationshipLabel>
+        <relationshipName>Expense_Attributions_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_Venue_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The venue that incurred an expense.</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense (Venue)</label>
+        <referenceTo>EM_Venue_vod__c</referenceTo>
+        <relationshipLabel>Expense Attributions</relationshipLabel>
+        <relationshipName>Expense_Attributions_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_vod__c</fullName>
+        <description>Store the incurred expense name.</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Date_vod__c</fullName>
+        <description>Stamped value of the expense payment date for reporting.</description>
+        <externalId>false</externalId>
+        <formula>Expense_Line_vod__r.Expense_Header_vod__r.Payment_Date_vod__c</formula>
+        <label>Payment Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Expense Attribution</label>
+    <nameField>
+        <displayFormat>EA-{0000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Expense Attributions</pluralLabel>
+    <recordTypes>
+        <fullName>Event_Expense_Attribution_vod</fullName>
+        <active>true</active>
+        <description>Event Expense Attribution</description>
+        <label>Event_Expense_Attribution_vod</label>
+        <picklistValues>
+            <picklist>Incurred_Expense_Type_vod__c</picklist>
+            <values>
+                <fullName>Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attendee_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_Speaker_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_Team_Member_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Venue_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

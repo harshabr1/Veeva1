@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <content>Clone_Child_Account_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>Edit_Child_Account_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>New_Child_Account_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>View_Child_Account_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Describe the hierarchy of accounts and organizations.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Alternate_Name_vod__c</fullName>
+        <description>Alternate name of one child account used in iRep to show an alpha-bar</description>
+        <externalId>false</externalId>
+        <label>Alternate Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Best_Times_vod__c</fullName>
+        <description>Used by the Office Best Times control to store the best time to visit this Account.</description>
+        <externalId>false</externalId>
+        <label>Best Times</label>
+        <length>400</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Child_Account_Identifier_vod__c</fullName>
+        <description>The Account.Account_Identifier_vod for the Child Account.</description>
+        <externalId>false</externalId>
+        <formula>Child_Account_vod__r.Account_Identifier_vod__c</formula>
+        <label>Child Account Identifier</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child_Account_Search_LastFirst_vod__c</fullName>
+        <description>Field used for searching.</description>
+        <externalId>false</externalId>
+        <formula>Child_Account_vod__r.Account_Search_LastFirst_vod__c</formula>
+        <label>Child Account Search LastFirst</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child_Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A reference to the child account in the hierarchical relationship</description>
+        <externalId>false</externalId>
+        <label>Child Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Member Of</relationshipLabel>
+        <relationshipName>Child_Account_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Child_Affiliation_Count_vod__c</fullName>
+        <description>The number of children that this Child Account has.</description>
+        <externalId>false</externalId>
+        <label>Child Affiliation Count</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child_Furigana_vod__c</fullName>
+        <description>Field used for searching Japanese names using Furigana.</description>
+        <externalId>false</externalId>
+        <formula>Child_Account_vod__r.Furigana_vod__c</formula>
+        <label>Child Furigana</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child_Name_vod__c</fullName>
+        <description>The Account.formatted_name_vod for the Child Account.</description>
+        <externalId>false</externalId>
+        <formula>Child_Account_vod__r.Formatted_Name_vod__c</formula>
+        <label>Child Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child_Record_Type_vod__c</fullName>
+        <description>The Account.Record_Type for the Child Account</description>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Child_Account_vod__r.RecordTypeId)</formula>
+        <label>Child Record Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Copy_Address_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to flag Account Hierarchy relations where the European Address Support job should copy Addresses.</description>
+        <externalId>false</externalId>
+        <label>Copy Address</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Master_Status_vod__c</fullName>
+        <description>Corresponds to the validation status of a record in the customer master. This field should not be modified.</description>
+        <externalId>false</externalId>
+        <label>Customer Master Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Staging_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inactive_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Valid_vod</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Under_Review_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Enforce the uniqueness of account hierarchy (parent, child) pair.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>External_Key_vod__c</fullName>
+        <description>Field used for integrations with external systems, such as Veeva Network</description>
+        <externalId>false</externalId>
+        <label>External Key</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Formatted_Name_Furigana_vod__c</fullName>
+        <description>Furigana for the Parent Child formatted name</description>
+        <externalId>false</externalId>
+        <formula>Parent_Account_vod__r.Furigana_vod__c &amp; &quot; &quot; &amp; Child_Account_vod__r.Furigana_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Formatted Name Furigana</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hierarchy_Type_vod__c</fullName>
+        <description>Describes the type of relationship for this (child, parent) pair</description>
+        <externalId>false</externalId>
+        <label>Hierarchy Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AMA Group Practice to Provider</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ownership</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Partner/Affiliate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Manages</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lease</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Network</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Shareholder</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Franchise</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Provider to Hospital via GLID Match</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Provider to Account with Address Match (Suite)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Provider to Account with Address Match</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kaiser Affiliation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AMA Hospital Credential Affiliation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Regional Office</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Purchasing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Joint Venture</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sub-Group</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Corp. Owned</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Corp. Leased</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ACO/MC Contract</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Corp. Managed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Corp. Shareholder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Location_Identifier_vod__c</fullName>
+        <description>Account Identifier for Child Account and Parent location</description>
+        <externalId>false</externalId>
+        <label>Location Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Field used by mobile products for synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>NET_External_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Network Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Network_Primary_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates this relationship is reported as Primary in Network. Should be mapped to primary_relationship__v.</description>
+        <externalId>false</externalId>
+        <label>Network Primary</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Account_Identifier_vod__c</fullName>
+        <description>The Account.Account_Identifier_vod for the Parent Account.</description>
+        <externalId>false</externalId>
+        <formula>Parent_Account_vod__r.Account_Identifier_vod__c</formula>
+        <label>Parent Account Identifier</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A reference to the parent account in the hierarchical relationship</description>
+        <externalId>false</externalId>
+        <label>Parent Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Affiliates</relationshipLabel>
+        <relationshipName>Parent_Account_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Affiliation_Count_vod__c</fullName>
+        <description>The number of children that this Parent Account has.</description>
+        <externalId>false</externalId>
+        <label>Parent Affiliation Count</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Child_Furigana_vod__c</fullName>
+        <externalId>false</externalId>
+        <formula>Parent_Account_vod__r.Furigana_vod__c &amp; &quot; &quot; &amp; Child_Account_vod__r.Furigana_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Child Furigana</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Child_Name_vod__c</fullName>
+        <description>Determines the format for how the Parent and Child name entity is displayed. Default is &quot;Business Location AccountName&quot;</description>
+        <externalId>false</externalId>
+        <formula>If (Child_Account_vod__r.IsPersonAccount, Parent_Account_vod__r.Name + &quot; &quot; + Child_Account_vod__r.LastName + &quot; &quot; + Child_Account_vod__r.FirstName, Parent_Account_vod__r.Name + &quot; &quot; + Child_Account_vod__r.Name)</formula>
+        <label>Parent Child Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Furigana_vod__c</fullName>
+        <externalId>false</externalId>
+        <formula>Parent_Account_vod__r.Furigana_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Furigana</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Name_vod__c</fullName>
+        <description>The Account.formatted_name_vod for the Parent Account.</description>
+        <externalId>false</externalId>
+        <formula>Parent_Account_vod__r.Formatted_Name_vod__c</formula>
+        <label>Parent Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Record_Type_vod__c</fullName>
+        <description>The Account.Record_Type for the Parent Account.</description>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Parent_Account_vod__r.RecordTypeId)</formula>
+        <label>Parent Record Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_vod__c</fullName>
+        <description>Formula field which determines if the relationship is a primary parent relationship</description>
+        <externalId>false</externalId>
+        <formula>IF(Child_Account_vod__r.Primary_Parent_vod__c =  Parent_Account_vod__c, $Label.Common_Yes_vod, $Label.Common_No_vod)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zvod_Best_Time_Page_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that displays the Child Account Best Time component</description>
+        <externalId>false</externalId>
+        <label>zvod_Best_Time_Page_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_ChildAccount_TSF_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that enables display of Territory Specific Field data on the Child Account layout</description>
+        <externalId>false</externalId>
+        <label>zvod_ChildAccount_TSF_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Child_Account_Ratings_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that displays the Child Account Product Metrics component</description>
+        <externalId>false</externalId>
+        <label>zvod_Child_Account_Ratings_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Child Account</label>
+    <nameField>
+        <displayFormat>CA{00000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Child Accounts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>ParentIsPersonAccount</fullName>
+        <active>true</active>
+        <description>Parent is a personal account.</description>
+        <errorConditionFormula>Parent_Account_vod__r.IsPersonAccount</errorConditionFormula>
+        <errorDisplayField>Parent_Account_vod__c</errorDisplayField>
+        <errorMessage>The parent account must be a business account.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SameParentAndChild</fullName>
+        <active>true</active>
+        <description>Parent and child accounts are the same.</description>
+        <errorConditionFormula>Child_Account_vod__c  =  Parent_Account_vod__c</errorConditionFormula>
+        <errorDisplayField>Child_Account_vod__c</errorDisplayField>
+        <errorMessage>Parent and child accounts must be different.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Edit_Child_Account_DCR_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Edit Child Account DCR</masterLabel>
+        <openType>sidebar</openType>
+        <page>Edit_Child_Account_DCR_vod</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Child_Account_DCR_vod</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>New Child Account</masterLabel>
+        <openType>sidebar</openType>
+        <page>New_Child_Account_DCR_vod</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Child_Account_vod</fullName>
+        <availability>online</availability>
+        <description>New Child Account button on Members related list section.</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Child</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/New_Child_Account_From_List_vod?acctid={!Account.Id}&amp;newChild=true</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Parent_Account_DCR_vod</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>New Parent Account</masterLabel>
+        <openType>sidebar</openType>
+        <page>New_Parent_Account_DCR_vod</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Parent_Account_vod</fullName>
+        <availability>online</availability>
+        <description>New Parent Account button on Members Of related list section on Account page.</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Parent</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/New_Child_Account_From_List_vod?acctid={!Account.Id}&amp;newParent=true</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Record_a_Call_vod</fullName>
+        <availability>online</availability>
+        <description>Creates a Call Report with location</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Record a Call</masterLabel>
+        <openType>sidebar</openType>
+        <page>Record_a_Call_vod</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Save_Primary_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Save &amp; Make Primary</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>&lt;!-- do nothing --&gt;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>View_Hierarchy_vod</fullName>
+        <availability>online</availability>
+        <description>Launches Hierarchy for the Child Account in the Relationship</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>View Hierarchy</masterLabel>
+        <openType>sidebar</openType>
+        <page>View_Hierarchy_vod</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

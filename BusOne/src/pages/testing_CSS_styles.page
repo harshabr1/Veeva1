@@ -1,0 +1,6 @@
+<apex:page >
+    <style type="text/css">
+        p { font-weight: Underline; }
+    </style>
+    <p>This is some strong text!</p>
+</apex:page>

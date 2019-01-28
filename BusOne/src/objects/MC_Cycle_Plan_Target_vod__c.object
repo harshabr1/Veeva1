@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Defines a Cycle Plan Target and the overall interaction values assigned to the Target.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Channel_Attainment_vod__c</fullName>
+        <description>Calculated percentage of the sum of channel activity interactions earned over the sum of channel activity interactions goal.</description>
+        <externalId>false</externalId>
+        <label>Channel Attainment</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Channel_Interactions_Actual_vod__c</fullName>
+        <description>Sum of all actual channel activity interactions.</description>
+        <externalId>false</externalId>
+        <label>Channel Interactions Actual</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel_Interactions_Earned_vod__c</fullName>
+        <description>If Channel Interactions Actual is greater than Channel Interactions Max this value will be Channel Interactions Max, otherwise Channel Interactions Actual.</description>
+        <externalId>false</externalId>
+        <label>Channel Interactions Earned</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel_Interactions_Goal_vod__c</fullName>
+        <description>Target&apos;s total interaction goal for all channel activities.</description>
+        <externalId>false</externalId>
+        <label>Channel Interactions Goal</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel_Interactions_Max_vod__c</fullName>
+        <description>Maximum number of interactions a user can earn for a Target from all channel activities. This provides the ability to cap the interactions Earned for the Target as a whole (eg. cannot exceed 100% attainment).</description>
+        <externalId>false</externalId>
+        <label>Channel Interactions Max</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel_Interactions_Remaining_vod__c</fullName>
+        <description>Channel interactions Goal minus Channel interactions Earned</description>
+        <externalId>false</externalId>
+        <label>Channel Interactions Remaining</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel_Status_vod__c</fullName>
+        <description>Comparing the Target&apos;s Channel Attainment and the % Cycle Completed.</description>
+        <externalId>false</externalId>
+        <label>Channel Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On_Schedule_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Under_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Over_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Child_Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Relationship where the goals are set for the Target.</description>
+        <externalId>false</externalId>
+        <label>Child Account</label>
+        <referenceTo>Child_Account_vod__c</referenceTo>
+        <relationshipLabel>Cycle Plan Targets</relationshipLabel>
+        <relationshipName>MC_Cycle_Plan_Targets_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cycle_Plan_vod__c</fullName>
+        <description>Cycle Plan that the Target is related to</description>
+        <externalId>false</externalId>
+        <label>Cycle Plan</label>
+        <referenceTo>MC_Cycle_Plan_vod__c</referenceTo>
+        <relationshipLabel>MC Cycle Plan Targets</relationshipLabel>
+        <relationshipName>MC_Cycle_Plan_Targets_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>External_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID for data loading.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Furigana_vod__c</fullName>
+        <description>Field for Japanese users. Furigana for the target.</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(Location_vod__c)), Location_vod__r.Furigana_vod__c &amp; &quot; &quot; &amp; Target_vod__r.Furigana_vod__c, Target_vod__r.Furigana_vod__c)</formula>
+        <label>Furigana</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Goals_Edited_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set by triggers. If true, then one of the goals for this target has been edited.</description>
+        <externalId>false</externalId>
+        <label>Goals Edited</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Last_Calculated_vod__c</fullName>
+        <description>Date and time the Cycle Plan was last calculated.</description>
+        <externalId>false</externalId>
+        <label>Last Calculated</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Location_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Location where the goals are set for the Target</description>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Cycle Plan Targets (Location)</relationshipLabel>
+        <relationshipName>MC_Cycle_Plan_Targets_Location_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Child_Name_vod__c</fullName>
+        <description>Display name for the parent child relationship</description>
+        <externalId>false</externalId>
+        <formula>If (NOT(ISBLANK(Location_vod__c)), Location_vod__r.Name + &quot; &quot; + Target_vod__r.LastName + &quot; &quot; + Target_vod__r.FirstName,&quot;&quot;)</formula>
+        <label>Parent Child Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Attainment_vod__c</fullName>
+        <description>Calculated percentage of the sum of product activity interactions earned over the sum of product activity interactions goal.</description>
+        <externalId>false</externalId>
+        <label>Product Attainment</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Product_Interactions_Earned_vod__c</fullName>
+        <description>Sum of all Product interactions Earned for all product activities</description>
+        <externalId>false</externalId>
+        <label>Product Interactions Earned</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Interactions_Goal_vod__c</fullName>
+        <description>Target&apos;s total interaction goal for all product activities.</description>
+        <externalId>false</externalId>
+        <label>Product Interactions Goal</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Status_vod__c</fullName>
+        <description>Comparing the Target&apos;s Product Attainment and the % Cycle Completed.</description>
+        <externalId>false</externalId>
+        <label>Product Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On_Schedule_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Under_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Over_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Indicates the status of the Cycle Plan Target record.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Merged_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Target_vod__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Target Account that is related to the Cycle Plan</description>
+        <externalId>false</externalId>
+        <label>Target</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Cycle Plan Targets</relationshipLabel>
+        <relationshipName>MC_Cycle_Plan_Targets_vod</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Team_Channel_Attainment_vod__c</fullName>
+        <description>Calculated percentage of the sum of team channel activity interactions earned over the sum of team channel activity interactions goal.</description>
+        <externalId>false</externalId>
+        <label>Team Channel Attainment</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Team_Channel_Interactions_Actual_vod__c</fullName>
+        <description>Sum of the team&apos;s actual channel activity interactions.</description>
+        <externalId>false</externalId>
+        <label>Team Channel Interactions Actual</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Channel_Interactions_Earned_vod__c</fullName>
+        <description>If Team Channel Interactions Actual is greater than Team Channel Interactions Max this value will be Team Channel Interactions Max, otherwise Team Channel Interactions Actual.</description>
+        <externalId>false</externalId>
+        <label>Team Channel Interactions Earned</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Channel_Interactions_Goal_vod__c</fullName>
+        <description>Target&apos;s total team interaction goal for all channel activities.</description>
+        <externalId>false</externalId>
+        <label>Team Channel Interactions Goal</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Channel_Interactions_Max_vod__c</fullName>
+        <description>Maximum number of interactions a team can earn for a Target from all channel activities. This provides the ability to cap the interactions Earned for the Target as a whole (eg. cannot exceed 100% attainment).</description>
+        <externalId>false</externalId>
+        <label>Team Channel Interactions Max</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Channel_Interactions_Remaining_vod__c</fullName>
+        <description>Team Channel Interactions Goal minus Team Channel Interactions Earned</description>
+        <externalId>false</externalId>
+        <label>Team Channel Interactions Remaining</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Channel_Status_vod__c</fullName>
+        <description>Comparing the Target&apos;s Team Channel Attainment and the % Cycle Completed.</description>
+        <externalId>false</externalId>
+        <label>Team Channel Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On_Schedule_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Under_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Over_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Team_Product_Attainment_vod__c</fullName>
+        <description>Calculated percentage of the sum of team product activity interactions earned over the sum of team product activity interactions goal.</description>
+        <externalId>false</externalId>
+        <label>Team Product Attainment</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Team_Product_Interactions_Earned_vod__c</fullName>
+        <description>Sum of all Team Product Interactions Earned for all product activities</description>
+        <externalId>false</externalId>
+        <label>Team Product Interactions Earned</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Product_Interactions_Goal_vod__c</fullName>
+        <description>Target&apos;s total team interaction goal for all product activities.</description>
+        <externalId>false</externalId>
+        <label>Team Product Interactions Goal</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Product_Status_vod__c</fullName>
+        <description>Comparing the Target&apos;s Team Product Attainment and the % Cycle Completed.</description>
+        <externalId>false</externalId>
+        <label>Team Product Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On_Schedule_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Under_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Over_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System set to prevent duplicate Targets on a Cycle Plan. Value will be Cycle Plan.Id + __ + Account.Id + __ + Status_vod__c</description>
+        <externalId>true</externalId>
+        <label>Veeva External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>MC Cycle Plan Target</label>
+    <nameField>
+        <displayFormat>CPT-{0000}</displayFormat>
+        <label>Cycle Plan Target</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>MC Cycle Plan Targets</pluralLabel>
+    <recordTypes>
+        <fullName>Cycle_Plan_Target_vod</fullName>
+        <active>true</active>
+        <description>Cycle Plan Target</description>
+        <label>Cycle_Plan_Target_vod</label>
+        <picklistValues>
+            <picklist>Channel_Status_vod__c</picklist>
+            <values>
+                <fullName>On_Schedule_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Over_Reached_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under_Reached_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Status_vod__c</picklist>
+            <values>
+                <fullName>On_Schedule_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Over_Reached_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Under_Reached_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Active_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Merged_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Cycle_Plan_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Target_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status_vod__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Goal_Validations_vod</fullName>
+        <active>true</active>
+        <description>Channel_Interactions_Goal_vod cannot be less than 0</description>
+        <errorConditionFormula>Channel_Interactions_Goal_vod__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Channel_Interactions_Goal_vod__c</errorDisplayField>
+        <errorMessage>Channel Interactions Goal cannot be less than 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LocationIsPersonAccount_vod</fullName>
+        <active>true</active>
+        <description>Location_vod must be a business account</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(Location_vod__c)), Location_vod__r.IsPersonAccount = TRUE)</errorConditionFormula>
+        <errorDisplayField>Location_vod__c</errorDisplayField>
+        <errorMessage>Cannot populate Location_vod with a person account</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Location_TargetIsBusinessAcct_vod</fullName>
+        <active>true</active>
+        <description>Target_vod must be a person account if Location_vod is populated</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(Location_vod__c)),
+Target_vod__r.IsPersonAccount = FALSE)</errorConditionFormula>
+        <errorDisplayField>Location_vod__c</errorDisplayField>
+        <errorMessage>Cannot populate Location_vod if Target_vod is a business account</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Max_Validations_vod</fullName>
+        <active>true</active>
+        <description>Channel_Interactions_Max_vod cannot be less than 0 or less than Channel_Interactions_Goal_vod</description>
+        <errorConditionFormula>OR(
+Channel_Interactions_Max_vod__c &lt; 0,
+Channel_Interactions_Max_vod__c &lt; Channel_Interactions_Goal_vod__c
+)</errorConditionFormula>
+        <errorDisplayField>Channel_Interactions_Max_vod__c</errorDisplayField>
+        <errorMessage>Channel Interactions Max cannot be less than 0 or less than Channel Interactions Goal.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Team_Goal_Validations_vod</fullName>
+        <active>true</active>
+        <description>Team_Channel_Interactions_Goal_vod cannot be less than 0</description>
+        <errorConditionFormula>Team_Channel_Interactions_Goal_vod__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Team_Channel_Interactions_Goal_vod__c</errorDisplayField>
+        <errorMessage>Team Channel Interactions Goal cannot be less than 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Team_Max_Validations_vod</fullName>
+        <active>true</active>
+        <description>Team_Channel_Interactions_Max_vod cannot be less than 0 or less than Team_Channel_Interactions_Goal_vod</description>
+        <errorConditionFormula>OR(
+Team_Channel_Interactions_Max_vod__c &lt; 0,
+Team_Channel_Interactions_Max_vod__c &lt; Team_Channel_Interactions_Goal_vod__c
+)</errorConditionFormula>
+        <errorDisplayField>Team_Channel_Interactions_Max_vod__c</errorDisplayField>
+        <errorMessage>Team Channel Interactions Max cannot be less than 0 or less than Team Channel Interactions Goal.</errorMessage>
+    </validationRules>
+</CustomObject>

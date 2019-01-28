@@ -1,0 +1,4 @@
+<apex:page controller="VODRedirectController">
+    <apex:iframe height="2000px" scrolling="false" width="100%" src="javascript:false" frameborder="false" id="vod_iframe"/>
+    <c:VEEVA_COMMON_JAVASCRIPT />
+</apex:page>

@@ -1,0 +1,106 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="BOT_FormularyLightningController">
+	<aura:attribute name="account" type="Account" />
+	<aura:attribute name="formulary" type="List" />
+    <aura:attribute name="recordError" type="String" />
+    <aura:attribute name="options" type="List" />
+    <aura:attribute name="selectedValue" type="String"/>
+    <aura:attribute name="Spinner" type="boolean" default="false"/>
+    
+    <aura:handler event="c:showSpinner" action="{!c.showSpinner}"/>
+	<aura:handler event="c:hideSpinner" action="{!c.hideSpinner}"/>	
+    <!--<aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>-->
+    <aura:handler name="init" value="{!this}" action="{!c.initialize}" />
+    
+    <!--loading spinner start... style=Brand Medium (blue dots)-->
+ 	 <lightning:spinner aura:id="spinner" class="slds-hide" variant="brand" size="large"/>
+  	<!-- Loading spinner end--> 
+    
+    <!-- Load Account data--> 
+	<force:recordData aura:id="accController" recordId="{!v.recordId}" 
+		layoutType="COMPACT" 
+		fields="Id"
+		mode="VIEW"
+		targetFields="{!v.account}" 
+		targetError="{!v.recordError}"
+	/>
+    
+	<lightning:layout class="slds-grid_align-space" multipleRows="false">
+       
+        <lightning:layoutItem padding="around-large" flexibility="auto" size="3" >
+            <div style="text-align:left;">
+
+                 <ui:inputSelect aura:id="levels" label=" " change="{!c.channelFilter}">
+                    <aura:iteration items="{!v.options}" var="level">
+                        <ui:inputSelectOption text="{!level}" label="{!level}"/>
+                    </aura:iteration>
+                </ui:inputSelect>
+            </div>
+    		
+        </lightning:layoutItem>
+    </lightning:layout>
+    
+    <header class="slds-media slds-media--center slds-has-flexi-truncate" data-aura-rendered-by="65:600;a">
+        <div class="slds-media__figure" data-aura-rendered-by="66:600;a">
+			<div class="extraSmall forceEntityIcon" style="background-color: #4dca76" data-aura-rendered-by="2071:0" data-aura-class="forceEntityIcon">
+        		<span data-aura-rendered-by="2074:0" class="uiImage" data-aura-class="uiImage">
+                    <img data-aura-rendered-by="2072:0" src="https://maestro-veeva--BusiOne.cs60.my.salesforce.com/img/icon/t4v35/custom/custom18_120.png" class="icon " alt="Plan Formulary" title="Plan Formulary"/>
+                </span>
+			</div>
+        </div>
+        <div class="slds-media__body" data-aura-rendered-by="67:600;a">
+            <h2 id="header" data-aura-rendered-by="68:600;a">
+                <a class="slds-card__header-link baseCard__header-title-container" href="javascript:void(0);" data-aura-rendered-by="69:600;a"><span class="slds-text-heading--small slds-truncate slds-m-right--xx-small" title="Plan Formulary" data-aura-rendered-by="70:600;a">Plan Formulary</span><span class="slds-text-heading--small slds-shrink-none slds-m-right--xx-small" title="(6+)" data-aura-rendered-by="73:600;a"> </span></a>
+            </h2>
+        </div>
+    </header>
+
+    <!-- Display of Formulary -->
+     <lightning:layout class="slds-grid_align-space" multipleRows="false">
+        <lightning:layoutItem padding="around-large" flexibility="auto" size="12" >
+            <div class="slds-scrollable_x">
+               <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            
+                            <th scope="col"> 
+			                    <div class="slds-truncate" title="Channel">Channel</div>
+			                </th>
+                            <th scope="col">
+			                    <div class="slds-truncate" title="Formulary Name">Formulary Name</div>
+			                </th>
+                            <th scope="col">
+			                    <div class="slds-truncate" title="Product Type">Product Type</div>
+			                </th>
+                            <th scope="col">
+			                    <div class="slds-truncate" title="Plan Product Name">Plan Product Name</div>
+			                </th>
+                            <th scope="col">
+			                    <div class="slds-truncate" title="Formulary Lives">Formulary Lives</div>
+			                </th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+						<aura:iteration items="{!v.formulary}" var="form">
+                            <tr>
+                                <td><div class="slds-truncate" title="{!form.BOT_Channel__c}"  style="height:25px;">{!form.BOT_Channel__c}</div></td>
+                                <!--<td><div class="slds-truncate" title="{!form.BOT_Formulary_Name__c}">{!form.BOT_Formulary_Name__c}</div></td>-->
+                                <td><div class="outputLookupContainer forceOutputLookupWithPreview" data-aura-rendered-by="1909:0" data-aura-class="forceOutputLookupWithPreview" style="height:25px;">
+                                    <a href="{!'/one/one.app#/sObject/'+form.Id+'/view'}"  target="_self" >
+											{!form.BOT_Formulary_Name__c}
+                                    </a>	
+									</div>
+                                </td>
+                                <td><div class="slds-truncate" title="{!form.BOT_Product_Type__c}" style="height:25px;">{!form.BOT_Product_Type__c}</div></td>
+                                <td><div class="slds-truncate" title="{!form.BOT_Account_Plan__r.Name}" style="height:25px;">{!form.BOT_Account_Plan__r.Name}</div></td>
+                                <td><div class="slds-truncate" title="{!form.BOT_Formulary_Lives__c}" style="height:25px;">{!form.BOT_Formulary_Lives__c}</div></td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table> 
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+     
+</aura:component>

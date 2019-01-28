@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Account Territory Loader object is tool to modify Account territory assignments. Inserting a row into Account Territory Loader performs two operations: 1) Removes the current territory assignment for associated Account. 2) Assigns the account to the specified list of territories.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This a lookup to the account object.  The account inserted/updated in this field will have the account sharing rules recalculated.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Territory Loaders</relationshipLabel>
+        <relationshipName>R00NT0000000lj9mMAA</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>The external ID for upserting into this object.  It is recommended to use the Account Id.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>NAW_Alignment_vod__c</fullName>
+        <description>Keeps track of alignments that occur as a result of a Network Account Search and a subsequent &apos;Add to Territory&apos; action by the rep.</description>
+        <externalId>false</externalId>
+        <label>NAW Alignment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Territory_To_Add_vod__c</fullName>
+        <description>If a value is present, a trigger will add the value to the list of territories in Territory_vod__c. The value in the field will then be removed.</description>
+        <externalId>false</externalId>
+        <label>Territory To Add</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Territory_to_Drop_vod__c</fullName>
+        <description>If a value is present, a trigger will remove the value from the list of territories in Territory_vod__c. The value in the field will then be removed.</description>
+        <externalId>false</externalId>
+        <label>Territory to Drop</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Territory_vod__c</fullName>
+        <description>Stores the territories associated with this account in a semicolon separated format. Salesforce.com territory rules later run on this field to actually assign territories. A leading and trailing semicolon must be contained within this field. Also, no spaces should be included in the text string. The following is an example of a valid value for this field: &quot;;TERR1;TERR2;TERR3;&quot;</description>
+        <externalId>false</externalId>
+        <label>Territory List</label>
+        <length>1500</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Account Territory Loader</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>ATL {00000000}</displayFormat>
+        <label>Account Territory Loader Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account Territory Loaders</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

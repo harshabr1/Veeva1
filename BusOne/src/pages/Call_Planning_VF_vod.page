@@ -1,0 +1,93 @@
+<apex:page tabStyle="MySchedule__tab">
+    <apex:composition template="{!$Page.VODRedirect_vod}"/>
+    <!--
+        -
+        -               Confidentiality Information:
+        -
+        - This module is the confidential and proprietary information of
+        - Verticals onDemand, Inc.; it is not to be copied, reproduced, or transmitted
+        - in any form, by any means, in whole or in part, nor is it to be used
+        - for any purpose other than that for which it is expressly provided
+        - without the written permission of Verticals onDemand.
+        -
+        - Copyright (c) 2009 Verticals onDemand, Inc.  All Rights Reserved.
+        -
+            -->
+    <script type="text/javascript">
+
+        function getQueryStringValue(url, name) {
+        var query = url.search.substring(1);
+        var pairs = query.split("&");
+
+        for(var i = 0; i < pairs.length; i++) {
+
+        var pos = pairs[i].indexOf('=');
+        if (pos == -1) continue;
+        var argname = pairs[i].substring(0,pos);
+        var value = pairs[i].substring(pos+1);
+
+        if (argname == name) return unescape(value);
+        }
+        return "";
+        }
+
+        <!-- Put your queryparms here.  Format is &<tag>=value -->
+
+        var myqueryparms = "&taburl=" + encodeURIComponent(parent.location.href);
+        var iframe = parent.document.getElementById("vod_iframe");
+        if (iframe) {
+        var de = top.document.documentElement;
+        var nHeight = top.innerHeight || (de && de.clientHeight) || top.document.body.clientHeight;
+        if (nHeight > 800)
+        nHeight -= 180;
+        else
+        nHeight -= 100;
+        iframe.height = nHeight + "px";
+        myqueryparms += "&calHeight=" + (nHeight - 30);
+        }
+
+        var param = getQueryStringValue(parent.location, "view");
+        if (param != '')
+        myqueryparms += "&view=" + param;
+
+        param = getQueryStringValue(parent.location, "weekend");
+        if (param != '')
+        myqueryparms += "&weekend=" + param;
+
+        param = getQueryStringValue(parent.location, "date");
+        if (param != '')
+        myqueryparms += "&date=" + param;
+
+        param = getQueryStringValue(parent.location, "userid");
+        if (param != '')
+        myqueryparms += "&userid=" + param;
+
+        param = getQueryStringValue(parent.location, "nweek");
+        if (param != '')
+        myqueryparms += "&nweek=" + param;
+
+        param = getQueryStringValue(parent.location, "highlight");
+        if (param != '')
+        myqueryparms += "&highlight=" + param;
+
+        param = getQueryStringValue(parent.location, "accs");
+        if (param != '') {
+            var accIds = param.split(',');
+            if (accIds.length > 0 && accIds.length <= 80) {
+                myqueryparms += "&thisweek=1&event=SCHED&accs=";
+                var accountlist = "";
+                for (var i = 0; i < accIds.length; i++) {
+                    if (i > 0)
+                        accountlist += ",";
+                    accountlist += accIds[i];
+                }
+                myqueryparms += accountlist;
+            } else {
+                myqueryparms += "&event=TOOMANYCALLS";
+            }
+        }
+
+        com.vod309.redirect.redirect("callplan",myqueryparms);
+
+    </script>
+</apex:page>

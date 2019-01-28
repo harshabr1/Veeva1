@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Areas that KOLs provide expertise.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A lookup to the account that this focus area belongs to.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Focus Areas (Account)</relationshipLabel>
+        <relationshipName>Focus_Areas_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Clinical_Trials_Focus_Score_vod__c</fullName>
+        <description>A focus score that indicates the degree of focus this KOL has for this area in clinical trials.</description>
+        <externalId>false</externalId>
+        <label>Clinical Trials Focus Score</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Events_Focus_Score_vod__c</fullName>
+        <description>A focus score that indicates the degree of focus this KOL has for this area in events.</description>
+        <externalId>false</externalId>
+        <label>Events Focus Score</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <description>External ID.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Focus_Area_Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup from Focus Area to Account</description>
+        <externalId>false</externalId>
+        <label>Focus Area Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Focus Areas</relationshipLabel>
+        <relationshipName>Focus_Areas2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Focus_Name_vod__c</fullName>
+        <description>Text field to store the name of the area of focus</description>
+        <externalId>false</externalId>
+        <label>Focus Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>High_Focus_Score_vod__c</fullName>
+        <description>The highest focus score received for this focus area across all KOLs.</description>
+        <externalId>false</externalId>
+        <label>High Focus Score</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Publications_Focus_Score_vod__c</fullName>
+        <description>A focus score that indicates the degree of focus this KOL has for this area in publications.</description>
+        <externalId>false</externalId>
+        <label>Publications Focus Score</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Type_Name_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Record Type Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Focus_Score_vod__c</fullName>
+        <description>= Publications_Focus_Score_vod__c + Clinical_Trials_Focus_Score_vod__c + Events_Focus_Score_vod__c</description>
+        <externalId>false</externalId>
+        <formula>Publications_Focus_Score_vod__c + Clinical_Trials_Focus_Score_vod__c +  Events_Focus_Score_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Focus Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Focus Area</label>
+    <nameField>
+        <displayFormat>FA-{00000}</displayFormat>
+        <label>Focus Area Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Focus Areas</pluralLabel>
+    <recordTypes>
+        <fullName>KOL_Focus_Area_vod</fullName>
+        <active>true</active>
+        <description>Used for KOL Focus Areas</description>
+        <label>KOL_Focus_Area_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

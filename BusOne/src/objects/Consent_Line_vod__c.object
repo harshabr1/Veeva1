@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Consent Line drives what products or sub channels can be consented for.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Consent_Type_vod__c</fullName>
+        <description>This is a Master-Detail to the Consent_Type_vod record.</description>
+        <externalId>false</externalId>
+        <label>Consent Type</label>
+        <referenceTo>Consent_Type_vod__c</referenceTo>
+        <relationshipLabel>Consent Lines</relationshipLabel>
+        <relationshipName>Consent_Type_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Content_Type_Display_Name_vod__c</fullName>
+        <description>Displays the text for Content Type on consent capture page. If NULL, Content_Type_vod.Name is displayed.</description>
+        <externalId>false</externalId>
+        <label>Content Type Display Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Content_Type_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Content_Type_vod record associated with the Approved_Document_vod record.</description>
+        <externalId>false</externalId>
+        <label>Content Type</label>
+        <referenceTo>Content_Type_vod__c</referenceTo>
+        <relationshipLabel>Consent Lines</relationshipLabel>
+        <relationshipName>Consent_Line_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_Display_Name_vod__c</fullName>
+        <description>Displays the text for detail group on consent capture page. If NULL, Product_vod__c.Name is populated.</description>
+        <externalId>false</externalId>
+        <label>Detail Group Display Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the Detail Group record for which should appear on the consent capture page.</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Consent Lines (Detail Group)</relationshipLabel>
+        <relationshipName>Consent_Lines1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Display_Order_vod__c</fullName>
+        <description>The order in which the product/ sub channel appears on the consent capture page.</description>
+        <externalId>false</externalId>
+        <label>Display Order</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date_vod__c</fullName>
+        <description>The datetime till when a sub channel can be consented for.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Group_By_vod__c</fullName>
+        <description>Optional field to group sub channels.</description>
+        <externalId>false</externalId>
+        <label>Group By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Display_Name_vod__c</fullName>
+        <description>Displays the text for product on consent capture page. If NULL, Product_vod__c.Name is populated.</description>
+        <externalId>false</externalId>
+        <label>Product Display Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the Product record for which should appear on the consent capture page.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Consent Lines</relationshipLabel>
+        <relationshipName>Consent_Lines</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date_vod__c</fullName>
+        <description>The datetime from when a sub channel can be consented for.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Channel_Description_vod__c</fullName>
+        <description>Optional field to add description for a sub channel.</description>
+        <externalId>false</externalId>
+        <label>Sub Channel Description</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sub_Channel_Display_Name_vod__c</fullName>
+        <description>Text displayed for the sub channel on the consent capture page.</description>
+        <externalId>false</externalId>
+        <label>Sub Channel Display Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Channel_Key_vod__c</fullName>
+        <description>Non product classification for which consent needs to be captured.</description>
+        <externalId>false</externalId>
+        <label>Sub Channel Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Consent Line</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CL-{00000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Consent Lines</pluralLabel>
+    <recordTypes>
+        <fullName>Content_Type_vod</fullName>
+        <active>true</active>
+        <description>Consent_Line_vod recordtype for Content Types</description>
+        <label>Content_Type_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Product_vod</fullName>
+        <active>true</active>
+        <description>Consent_Line_vod recordtype for Products.</description>
+        <label>Product_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sub_Channel_vod</fullName>
+        <active>true</active>
+        <description>Consent_Line_vod recordtype for Sub channels</description>
+        <label>Sub_Channel_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

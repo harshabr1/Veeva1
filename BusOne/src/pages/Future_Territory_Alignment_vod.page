@@ -1,0 +1,4 @@
+<apex:page controller="Future_Territory_Alignment_vod">
+    <apex:outputText rendered="{!NoFeedback}"><b>{!errorMessage}</b></apex:outputText>
+    <apex:iframe scrolling="true" width="100%" src="{!FeedbackUrl}" frameborder="false" rendered="{!NOT(NoFeedback)}"/>
+</apex:page>

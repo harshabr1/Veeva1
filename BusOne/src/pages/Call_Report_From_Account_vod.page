@@ -1,0 +1,4 @@
+<apex:page standardcontroller="Account" >
+    <apex:composition template="{!$Page.VODRedirect_vod}"/>
+    <c:New_Call_vod veevaModule="call" veevaPage="new-call" objectType="Call2_vod__c" queryParams="&id={!Account.Id}&typ=Account&person={!Account.IsPersonAccount}&mode=e"/>
+</apex:page>

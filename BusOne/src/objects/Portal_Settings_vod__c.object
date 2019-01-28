@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Settings for Veeva Portal.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Portal_Profile_Name_vod__c</fullName>
+        <description>Name used by the Portal Template Apex Controller to set the profile for self-registering users</description>
+        <externalId>false</externalId>
+        <label>Portal Profile Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Portal_Version_vod__c</fullName>
+        <description>Version of the Portal front end that is currently in use for this organization.</description>
+        <externalId>false</externalId>
+        <label>Portal Version</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Portal Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

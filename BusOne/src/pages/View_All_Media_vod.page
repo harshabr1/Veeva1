@@ -1,0 +1,3 @@
+<apex:page standardController="Clm_Presentation_vod__c" extensions="VOD_MEDIA_FILES_CONTROLLER" title="{!Title}">      
+        <c:VOD_EMBED veevaModule="clm.mediafiles" veevaPage="view-all-media" queryParams="{!ExtraParams}" />
+</apex:page>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>Medical_Insight_Edit_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>Medical_Insight_Edit_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>Medical_Insight_View_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores Key Medical Insights and relevant Insight sources</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Plan_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the Account Plan record from which the Medical Insight (aka Account Plan Note) was created.</description>
+        <externalId>false</externalId>
+        <label>Account Plan</label>
+        <referenceTo>Account_Plan_vod__c</referenceTo>
+        <relationshipLabel>Account Plan Notes</relationshipLabel>
+        <relationshipName>Medical_Insights</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If a Key Medical Insight pertains to an Account, maintains the reference to that Account</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Medical Insights</relationshipLabel>
+        <relationshipName>Medical_Insights_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Clinical_Trial_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If a Key Medical Insight pertains to a Clinical Trial, maintains the reference to that Clinical Trial</description>
+        <externalId>false</externalId>
+        <label>Clinical Trial</label>
+        <referenceTo>Clinical_Trial__c</referenceTo>
+        <relationshipLabel>Medical Insights</relationshipLabel>
+        <relationshipName>Medical_Insights_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_vod__c</fullName>
+        <description>The date the Key Medical Insight was discovered.</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Body of text describing the Key Medical Insight</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_Id_vod__c</fullName>
+        <description>Veeva internal field that ensures proper synchronization after account merges or territory realignments.</description>
+        <externalId>false</externalId>
+        <label>Entity Reference Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Interaction_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If a Key Medical Insight pertains to an Interaction, maintains the reference to that Interaction</description>
+        <externalId>false</externalId>
+        <label>Interaction</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Medical Insights</relationshipLabel>
+        <relationshipName>Medical_Insights_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If a Key Medical Insight pertains to a Medical Event, maintains the reference to that Medical Event</description>
+        <externalId>false</externalId>
+        <label>Medical Event</label>
+        <referenceTo>Medical_Event_vod__c</referenceTo>
+        <relationshipLabel>Medical Insights</relationshipLabel>
+        <relationshipName>Medical_Insights_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field to aid in synchronization and allow for the creation of Key Medical Insights on the offline platforms.</description>
+        <externalId>true</externalId>
+        <label>Mobile Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Source_vod__c</fullName>
+        <description>Stores the source of a Key Medical Insight that is external to Veeva</description>
+        <externalId>false</externalId>
+        <label>Other Source</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to modify a submitted Key Medical Insight without the need to unlock the record.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Publication_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If a Key Medical Insight pertains to a Publication, maintains the reference to that Publication</description>
+        <externalId>false</externalId>
+        <label>Publication</label>
+        <referenceTo>Publication__c</referenceTo>
+        <relationshipLabel>Medical Insights</relationshipLabel>
+        <relationshipName>Medical_Insights_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>The state of the Medical Insight record. A Medical Insight record with a status of Saved may still be modified. A Medical Insight record with a status of Submitted is locked and read-only.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Saved_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Summary_vod__c</fullName>
+        <description>Summary title of the Key Medical Insight</description>
+        <externalId>false</externalId>
+        <label>Summary</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unlock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When editable to a user, displays an Unlock button which allows the User to unlock and edit a record with a Submitted status.</description>
+        <externalId>false</externalId>
+        <label>Unlock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Medical Insight</label>
+    <nameField>
+        <displayFormat>KMI{000000000}</displayFormat>
+        <label>Medical Insight Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Medical Insights</pluralLabel>
+    <recordTypes>
+        <fullName>Key_Medical_Insight_vod</fullName>
+        <active>true</active>
+        <description>Key Medical Insight record created by Users</description>
+        <label>Key Medical Insight</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Saved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Description_Required_vod</fullName>
+        <active>true</active>
+        <description>A Description is required to save or submit a Key Medical Insight</description>
+        <errorConditionFormula>Description_vod__c == null</errorConditionFormula>
+        <errorMessage>A Description is required to save or submit a Key Medical Insight</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Summary_Required_vod</fullName>
+        <active>true</active>
+        <description>A Summary is required to save or submit a Key Medical Insight</description>
+        <errorConditionFormula>ISBLANK(Summary_vod__c)</errorConditionFormula>
+        <errorMessage>A Summary is required to save or submit a Key Medical Insight</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Submit_vod</fullName>
+        <availability>online</availability>
+        <description>Marker field used to place Submit button on Key Medical Insight layout.</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Submit</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>&lt;!-- placeholder --&gt;</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,152 @@
+<!--
+Name:BOT_Drug_View
+Created By:Harsha BR
+Created Date:02/27/2017
+Overview :Used to display the Drug data related to a Formulary.
+
+Modified By: Harsha BR
+Modified Date: 04/04/2017
+Reason: To add Pagination
+-->
+<apex:page standardController="Formulary_Products_vod__c" name="Drug View" title="Drug View" sidebar="false" showHeader="false" extensions="BOT_Drug_View_Extn">
+    <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" />
+  <apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.8/js/jquery.tablesorter.min.js" />
+  <apex:stylesheet value="//cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.17.8/css/theme.blue.css" />
+    
+    <!-- CSS styles for table alignment and styling -->
+    <style>
+        
+        .dataTable {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+        
+        .dataTable td {
+        border: 1px solid #ddd;
+        padding: 6px;
+        }
+        
+        .dataTable th, .dataTable thead {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        padding: 5px;
+        }
+        
+        .dataTable tr {background-color: #FFFFFF;}
+        
+        .dataTable tr:hover {background-color: #E6F9FA;}
+        
+        .dataTable th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: left;
+        background-color: #E6ECEB;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        }
+        
+    </style>
+    <script language="JavaScript">
+    $(document).ready(function() 
+    { 
+        $("[id$='productTable']").tablesorter(); 
+    });
+    
+    function loadTableSorter()
+    {
+        $("[id$='productTable']").tablesorter();        
+    }
+    </script> 
+    <apex:form id="theForm">
+        
+        <apex:pageBlock mode="edit" id="pb" rendered="{!IF(AND(NOT(ISBLANK(lstProducts)),lstProducts.size>0),'TRUE','FALSE')}"> 
+            <apex:pageblocksection columns="2">
+                <apex:outputPanel ID="op">
+                    <apex:outputText escape="false" value="<b>Therapeutic Class:</b>"/>
+                    <apex:selectList size="1" value="{!selected}">
+                    <apex:selectOptions value="{!dynamiclist}"></apex:selectOptions>
+                     <apex:actionSupport action="{!fetchResults}" event="onchange" reRender="drugPanel,pagerButtons" status="status"  oncomplete="loadTableSorter();"/>
+                    </apex:selectList>
+                </apex:outputPanel>
+
+            </apex:pageblocksection>
+
+            <apex:outputPanel id="drugPanel" layout="block" >
+                <!--<apex:outputPanel id="pagerButtons" style="width:100%; text-align:right; padding: 2px 0px;" layout="block"  rendered="{!blnButtons}" >  
+                    <apex:commandButton action="{!first}" disabled="{!disablePrevious}" title="First" value="<<"  reRender="drugPanel" />
+                    <apex:commandButton action="{!Previous}" disabled="{!disablePrevious}" title="Previous" value="<" reRender="drugPanel"/>        
+                    <apex:commandButton action="{!Next}"  disabled="{!disableNext}" title="Next" value=">"  reRender="drugPanel"/>
+                    <apex:commandButton action="{!last}" disabled="{!disableNext}" title="Last" value=">>"  reRender="drugPanel"/>
+                </apex:outputPanel>--> 
+                
+                <apex:actionStatus id="status" StartText="Searching..." startStyle="font-color:red;">
+                    <apex:facet name="start">
+                        <apex:image value="/img/loading.gif" />
+                    </apex:facet>
+                 </apex:actionStatus>
+               <div style="overflow: scroll; width: 100%; height: 400px;">  
+                
+                        <table class="dataTable" id="productTable" >
+                       <!--Table header Starts-->
+                        <thead>
+                            <th>
+                                Therapeutic Class
+                            </th>
+                                <th>
+                                    Drug Name
+                                </th>
+                                <th>
+                                    Strength
+                                </th>
+                                <th>
+                                    Status
+                                    <!--<apex:commandLink style="text-decoration:none" value="Status" > 
+                                    </apex:commandLink> -->
+                                </th>
+                                <th>
+                                    Restrictions
+                                </th>
+                                <th>
+                                    Copay
+                                </th>  
+                            </thead>
+                            <!--Table header Ends-->
+                            
+                            <!-- Table Body Starts-->
+                            <tbody>
+                                <apex:repeat value="{!lstProducts}" var="objProd" id="pharmacyTable">
+                                    <tr>
+                                        <td style="width:300px">{!objProd.Therapeutic_Class_vod__c}</td>
+                                        <td style="width:200px">{!objProd.Name}</td>
+                                        <td style="width:100px">{!objProd.BOT_Strength__c}</td>
+                                        <td style="width:200px">{!objProd.BOT_Status__c}</td>
+                                        <td style="width:100px">{!objProd.Restricted_States_vod__c}</td>
+                                        <td style="width:100px">{!objProd.BOT_Copay__c}</td>
+                                    </tr>
+                                </apex:repeat>
+                            </tbody>
+                            <!-- Table Body Ends -->
+                        </table>
+                    
+                   
+                <!--<apex:pageBlockTable id="pharResult" cellpadding="2" cellspacing="2" border="1" columns="6" value="{!lstProducts}" var="objProd" >
+                    <!--<apex:facet name="header">
+                        Showing Page # {!pageNumber} of {!totalPages}
+                    </apex:facet> 
+                    <apex:column id="class" value="{!objProd.Therapeutic_Class_vod__c}"/>   
+                    <apex:column id="name" value="{!objProd.Name}"/>
+                    <apex:column id="strength" value="{!objProd.BOT_Strength__c}"/>
+                    <apex:column id="status" value="{!objProd.BOT_Status__c}"/>
+                    <apex:column id="restriction" value="{!objProd.Restricted_States_vod__c}"/>
+                    <apex:column id="copay" value="{!objProd.BOT_Copay__c}"/>
+                                        
+                </apex:pageBlockTable> -->
+                </div>
+            </apex:outputPanel> 
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

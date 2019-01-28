@@ -1,0 +1,380 @@
+<!-- 
+Name : BOT_Related_PlanDemographics_OnAccount
+Created by : Sreenivasulu Adipudi
+Created Date : 02/27/2017
+Overview : To display the related Plan demography,Plan formulary and Pharmacy service records for selected account in account detail page
+
+Modified By:Harsha BR
+Modified Date:04/13/2017
+Reason:To add Pagination and Sorting functionality.
+-->
+<apex:page standardController="Account" extensions="BOT_Account_Summary_VF" >
+    
+    <!-- For sort functionality -->
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"/>
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"/>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" />
+    <apex:includeScript value="{!URLFOR($Resource.tablesorter, 'jquery.tablesorter.min.js')}"/>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+    <script type="text/javascript">
+        $j = jQuery.noConflict();    
+        $j(document).ready(function () {
+        $j("[id$=theaddrs]").tablesorter();
+        });    
+    </script>
+    <!-- /For sort functionality -->
+	
+	<!--JavaScript Code Starts-->
+    <script type="text/Javascript">
+        function capturePlanProductID(planID,accID)
+        { 
+            Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.BOT_Account_Summary_VF.changeRTToFormularyProduct}',
+            planID,accID, 
+            function(result, event){
+             if (event.status) {
+                 //do something here
+             }
+            },
+          {escape: true}
+      	);   
+        }
+        
+        function  captureFormularyID(formId,accId)
+        {  
+             Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.BOT_Account_Summary_VF.changeRTToFormularyMainScreen}',
+            formId,accId, 
+            function(result, event){
+             if (event.status) {
+                 //do something here
+             }
+            },
+          {escape: true}
+      	);   
+        }
+    </script>
+    <!--JavaScript Code Ends-->    
+    
+    <!-- CSS styles for table alignment and styling -->
+    <style>
+        
+        .tablesorter {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+        
+        .tablesorter td {
+        border: 1px solid #ddd;
+        padding: 6px;
+        }
+        
+        .tablesorter th, .tablesorter thead {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        padding: 5px;
+        }
+        
+        .tablesorter tr {background-color: #FFFFFF;}
+        
+        .tablesorter tr:hover {background-color: #E6F9FA;}
+        
+        .tablesorter th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: left;
+        background-color: #E6ECEB;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        }
+        
+    </style>
+    <!-- /CSS styles for table alignment and styling -->
+        
+    <!-- Channel dropdown section -->
+    <apex:form ID="FormID">
+        
+        <apex:pageBlock id="thePageBlock">
+            <apex:pageBlockSection >
+                <apex:outputPanel ID="op">  
+                    <apex:outputlabel value="Select Channel  "/>
+                    <apex:selectList size="1" value="{!selected}">
+                        <apex:selectOptions value="{!dynamicList}"></apex:selectOptions>
+                    </apex:selectList>
+                    <apex:actionSupport action="{!Get_Accout_Summary}" event="onchange" reRender="FormID1" status="planStatus" />
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:actionStatus id="planStatus" startText="Loading...." startStyle="font-color:red;">
+            <apex:facet name="start">
+                <apex:image value="/img/loading.gif" />
+            </apex:facet>
+        </apex:actionStatus>
+    </apex:form>
+    <!-- /Channel dropdown section -->
+    
+    <!-- Plan demographics -->
+    <apex:form ID="FormID1">
+        <apex:pageBlock Id="pb1" title="Plan Demographics ({!listOfPlans.size})" rendered="{!IF(AND(NOT(ISBLANK(listOfPlans)),listOfPlans.size>0),'TRUE','FALSE')}" >
+            
+            <!-- Plan demographics table section -->
+            <div style="overflow: scroll; width: 100%; height: 190px;">
+                <apex:pageBlockSection id="pbs1" columns="1">
+                    <apex:outputPanel >
+                        <table class="tablesorter" id="theaddrs">
+                            
+                            <!-- Plan demographics table header -->
+                            <thead style="width:100% !important;">
+                                <th>
+                                    <apex:commandLink action="{!plansSort}" style="text-decoration:none" value="Channel" reRender="pbs1" status="planStatus">
+                                		<apex:image style="margin-left:30px;" value="{!if(PlanSortDir=='asc','/img/arrowDown.gif','/img/arrowUp.gif')}" rendered="{!if(OR(ISBLANK(sortByField),(contains(sortByField,'BOT_Channel__c'))),'true','false')}" />
+                                    	<apex:param value="BOT_Channel__c" assignTo="{!sortByField}"/>
+                                	</apex:commandLink>
+                                </th>
+                                <th>
+                                    <apex:commandLink action="{!plansSort}" style="text-decoration:none" value="Plan Product Name" reRender="pbs1" status="planStatus">
+                                		<apex:image style="margin-left:365px;" value="{!if(PlanSortDir=='asc','/img/arrowDown.gif','/img/arrowUp.gif')}" rendered="{!if(sortByField=='Name','true','false')}"/>    
+                                    	<apex:param value="Name" assignTo="{!sortByField}"/>
+                                	</apex:commandLink>
+                                </th>
+								<th>
+                                    <apex:commandLink action="{!plansSort}" style="text-decoration:none" value="Product Type" reRender="pbs1" status="planStatus">
+                                		<apex:image style="margin-left:50px;" value="{!if(PlanSortDir=='asc','/img/arrowDown.gif','/img/arrowUp.gif')}" rendered="{!if(sortByField=='BOT_Product_Type__c','true','false')}"/>    
+                                    	<apex:param value="BOT_Product_Type__c" assignTo="{!sortByField}"/>
+                                	</apex:commandLink>
+                                </th>
+                                <th>
+                                    <apex:commandLink action="{!plansSort}" style="text-decoration:none" value="Formulary Used" reRender="pbs1" status="planStatus">
+                                		<apex:image style="margin-left:40px;" value="{!if(PlanSortDir=='asc','/img/arrowDown.gif','/img/arrowUp.gif')}" rendered="{!if(sortByField=='BOT_Formulary_Used__c','true','false')}" />    
+                                    	<apex:param value="BOT_Formulary_Used__c" assignTo="{!sortByField}"/>
+                               	 	</apex:commandLink>
+                                </th>
+                                <th>
+                                    <apex:commandLink action="{!plansSort}" style="text-decoration:none" value="PBM" reRender="pbs1" status="planStatus">
+                                		<apex:image style="margin-left:250px;" value="{!if(PlanSortDir=='asc','/img/arrowDown.gif','/img/arrowUp.gif')}" rendered="{!if(sortByField=='BOT_PBM__c','true','false')}" />    
+                                    	<apex:param value="BOT_PBM__c" assignTo="{!sortByField}"/>
+                                	</apex:commandLink>
+                                </th>
+                                <th style="text-align:right">
+                                    <apex:commandLink action="{!plansSort}" value="Product Lives Rx" style="text-decoration:none" reRender="pbs1" status="planStatus">
+                                		&nbsp;<apex:image value="{!if(PlanSortDir=='asc','/img/arrowDown.gif','/img/arrowUp.gif')}" rendered="{!if(sortByField=='BOT_Product_Lives_Rx__c','true','false')}" />    
+                                    	<apex:param value="BOT_Product_Lives_Rx__c" assignTo="{!sortByField}"/>
+                                	</apex:commandLink>
+                                </th>
+								<!--
+                                <th><apex:outputLink style="text-decoration:none" >Channel</apex:outputLink></th>
+                                <th><apex:outputLink style="text-decoration:none" >Plan Product Name</apex:outputLink></th>
+                                <th><apex:outputLink style="text-decoration:none" >Product Type</apex:outputLink></th>
+                                <th><apex:outputLink style="text-decoration:none" >Formulary Used</apex:outputLink></th>
+                                <th><apex:outputLink style="text-decoration:none" >PBM</apex:outputLink></th>
+                                <th><apex:outputLink style="text-decoration:none" >Product Lives Rx</apex:outputLink></th>
+								-->
+                            </thead>
+                            <!-- /Plan demographics table header -->
+                            
+                            <!-- Plan demographics table body -->
+                            <tbody>
+                                <apex:repeat value="{!listOfPlans}" var="objPlan" id="plansTable">
+                                    <tr>
+                                        <td>{!objPlan.BOT_Channel__c}</td>
+                                        <td><apex:outputLink value="/{!objPlan.id}" target="_top" style="fornt-weight" onclick="capturePlanProductID('{!objPlan.Id}','{!objPlan.BOT_Account__c}');">
+                                            {!objPlan.Name} 
+                                            </apex:outputLink>
+                                        </td> 
+                                        <td>{!objPlan.BOT_Product_Type__c}</td>
+                                        <td>{!objPlan.BOT_Formulary_Used__c}</td>
+                                        <td>{!objPlan.BOT_PBM__c}</td>
+                                        <td style="text-align:right;"><apex:outputField value="{!objPlan.BOT_Product_Lives_Rx__c}" /></td>
+                                    </tr>
+                                </apex:repeat>
+                            </tbody>
+                            <!-- /Plan demographics table body -->
+                        </table>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+            </div>
+        </apex:pageBlock>
+        <!-- /Plan demographics -->
+        
+        <apex:actionStatus id="Formularystatus" startText="Loading...." startStyle="font-color:red;">
+            <apex:facet name="start">
+                <apex:image value="/img/loading.gif" />
+            </apex:facet>
+        </apex:actionStatus>
+
+        <!-- Plan Formulary -->
+        <apex:pageBlock id="pb2" title="Plan Formulary ({!formulary.size})" rendered="{!IF(AND(NOT(ISBLANK(formulary)),formulary.size>0),'TRUE','FALSE')}">
+            
+            <!-- Plan Formulary table section -->
+            <div style="overflow: scroll; width: 100%; height: 190px;">
+                <apex:pageBlockSection id="pbs2" columns="1">
+                    <apex:outputPanel >
+                        <table class="tablesorter" >
+                            
+                            <!-- Plan Formulary table header -->
+                            <thead>
+                                <th>
+                                    <apex:commandLink action="{!formularySort}" style="text-decoration:none" value="Channel" reRender="pbs2" status="Formularystatus">
+                                		<apex:image style="margin-left:30px;" value="{!if(FormularySortDir=='asc','/img/arrowDown.gif','/img/arrowUp.gif')}" rendered="{!if(OR(ISBLANK(sortByField),(contains(sortByField,'BOT_Channel__c'))),'true','false')}" />
+                                    	<apex:param value="BOT_Channel__c" assignTo="{!sortByField}"/>
+                                	</apex:commandLink>
+                                </th>
+                                <th>
+                                    <apex:commandLink action="{!formularySort}" style="text-decoration:none" value="Formulary Name" reRender="pbs2" status="Formularystatus">
+                                		<apex:image style="margin-left:880px;" value="{!if(FormularySortDir=='asc','/img/arrowDown.gif','/img/arrowUp.gif')}" rendered="{!if(sortByField=='BOT_Formulary_Name__c','true','false')}"/>    
+                                    	<apex:param value="BOT_Formulary_Name__c" assignTo="{!sortByField}"/>
+                                	</apex:commandLink>
+                                </th>
+                                <th style="text-align:right">
+                                    <apex:commandLink action="{!formularySort}" value="Total Formulary Lives" style="text-decoration:none" reRender="pbs2" status="Formularystatus">
+                                		&nbsp;<apex:image value="{!if(FormularySortDir=='asc','/img/arrowDown.gif','/img/arrowUp.gif')}" rendered="{!if(sortByField=='BOT_Total_Formulary_Lives__c','true','false')}" />    
+                                    	<apex:param value="BOT_Total_Formulary_Lives__c" assignTo="{!sortByField}"/>
+                                	</apex:commandLink>
+                                </th>
+                            </thead>
+                            <!-- /Plan Formulary table header -->
+                            
+                            <!-- Plan Formulary table body -->
+                            <tbody>
+                                <apex:repeat value="{!formulary}" var="form" id="formularyTable">
+                                    <tr>
+                                        <td style="width:100px">{!form.BOT_Channel__c}</td>
+										<td style="width:1050px"><a id="the" href="/{!form.id}" target='_top' onclick="captureFormularyID('{!form.Id}','{!form.BOT_Account__c}');">{!form.BOT_Formulary_Name__c}</a></td>
+                                        <td style="width:150px;text-align:right"><apex:outputField value="{!form.BOT_Total_Formulary_Lives__c}" /></td>
+                                    </tr>
+                                </apex:repeat>
+                            </tbody>
+                            <!-- /Plan Formulary table body -->
+                        </table>
+                  	</apex:outputPanel>
+               	</apex:pageBlockSection>
+            </div>
+            <!-- /Plan Formulary table section -->
+        </apex:pageBlock>
+        <!-- /Plan Formulary -->
+
+        <apex:actionStatus id="pharmacyStatus" startText="Loading...." startStyle="font-color:red;">
+            <apex:facet name="start">
+                <apex:image value="/img/loading.gif" />
+            </apex:facet>
+        </apex:actionStatus>
+        
+        <!-- Pharmacy services -->
+        <apex:pageBlock id="pb3" title="Pharmacy Services ({!pharmacy.size})" rendered="{!IF(AND(NOT(ISBLANK(pharmacy)),pharmacy.size>0),'TRUE','FALSE')}">
+        	<!-- Pharmacy services table section -->
+            <div style="overflow: scroll; width: 100%; height: 200px;">
+                <apex:pageBlockSection id="pbs3" columns="1">
+                    <apex:outputPanel >
+                        <table class="tablesorter" >
+                            
+                            <!-- Pharmacy services table header -->
+                            <thead>
+                                <th>
+                                    <apex:commandLink action="{!pharmacySort}" style="text-decoration:none" value="Channel" reRender="pbs3" status="pharmacyStatus">
+                                		<apex:image style="margin-left:30px;" value="{!if(pharmacySortDir=='asc','/img/arrowDown.gif','/img/arrowUp.gif')}" rendered="{!if(OR(ISBLANK(sortByField),(contains(sortByField,'BOT_Channel__c'))),'true','false')}" />
+                                    	<apex:param value="BOT_Channel__c" assignTo="{!sortByField}"/>
+                                	</apex:commandLink>
+                                </th>
+                                <th>
+                                    <apex:commandLink action="{!pharmacySort}" style="text-decoration:none" value="Pharmacy Service Name" reRender="pbs3" status="pharmacyStatus">
+                                		<apex:image style="margin-left:175px;" value="{!if(pharmacySortDir=='asc','/img/arrowDown.gif','/img/arrowUp.gif')}" rendered="{!if(sortByField=='name','true','false')}"/>    
+                                    	<apex:param value="name" assignTo="{!sortByField}"/>
+                                	</apex:commandLink>
+                                </th>
+                                <th>
+                                    <apex:commandLink action="{!pharmacySort}" style="text-decoration:none" value="PBM Name" reRender="pbs3" status="pharmacyStatus">
+                                		<apex:image style="margin-left:245px;" value="{!if(pharmacySortDir=='asc','/img/arrowDown.gif','/img/arrowUp.gif')}" rendered="{!if(sortByField=='BOT_PBM_Name__c','true','false')}"/>    
+                                    	<apex:param value="BOT_PBM_Name__c" assignTo="{!sortByField}"/>
+                                	</apex:commandLink>
+                                </th>
+                                <th>
+                                    <apex:commandLink action="{!pharmacySort}" style="text-decoration:none" value="Corporate" reRender="pbs3" status="pharmacyStatus">
+                                		<apex:image style="margin-left:20px;" value="{!if(pharmacySortDir=='asc','/img/arrowDown.gif','/img/arrowUp.gif')}" rendered="{!if(sortByField=='BOT_Corporate__c','true','false')}"/>    
+                                    	<apex:param value="BOT_Corporate__c" assignTo="{!sortByField}"/>
+                                	</apex:commandLink>
+                                </th>
+                                <th>Other Provider Name</th>
+                            </thead>
+                            <!-- /Pharmacy services table header -->
+                            
+                            <!-- Pharmacy services table body -->
+                            <tbody>
+                                <apex:repeat value="{!pharmacy}" var="ph" id="pharmacyTable">
+                                    <tr>
+                                        <td style="width:100px">{!ph.BOT_Channel__c}</td>
+                                        <td style="width:350px">{!ph.name}</td>
+                                        <td style="width:350px">{!ph.BOT_PBM_Name__c}</td>
+                                        <td style="width:100px"><apex:outputField value="{!ph.BOT_Corporate__c}"/></td>
+                                        <td style="width:500px">{!ph.BOT_Other_Provider_Name__c}</td>
+                                    </tr>
+                                </apex:repeat>
+                            </tbody>
+                            <!-- Pharmacy services table body -->
+                        </table>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+            </div>
+            <!-- /Pharmacy services table section -->
+        </apex:pageBlock>
+        <!-- /Pharmacy services -->
+        
+        <!-- Coverage policy -->
+        <apex:pageBlock id="pb4" title="Coverage Policy ({!coveragePolicy.size})" rendered="{!IF(AND(NOT(ISBLANK(coveragePolicy)),coveragePolicy.size>0),'TRUE','FALSE')}">
+            
+            <!-- Coverage policy table section -->
+            <div style="overflow: scroll; width: 100%; height: 85px;">
+                <apex:pageBlockSection id="pbs4" columns="1">
+                    <apex:outputPanel >
+                        <table class="tablesorter" >
+                            
+                            <!-- Coverage policy table header -->
+                            <thead>
+                                <th>Channel</th>
+                                <th>Policy Name</th>
+                                <th>Score</th>
+                                <th>Indications</th>
+                                <th>PA Form</th>
+                                <th>Coverage Policy Form</th>
+                            </thead>
+                            <!-- /Coverage policy table header -->
+                            
+                            <!-- Coverage policy table body -->
+                            <tbody>
+                                <apex:repeat value="{!coveragePolicy}" var="policy" id="coveragePolicyTable">
+                                    <tr>
+                                        <td style="width:100px">{!policy.BOT_Channel__c}</td>
+                                        <td style="width:400px"><apex:outputLink value="/{!policy.id}" target="_top" style="font-weight">{!policy.Name}</apex:outputLink></td>
+                                        <td style="width:150px">{!policy.BOT_Score__c}</td>
+                                        <td style="width:450px">{!policy.BOT_Indication__c}</td>
+                                        <td style="width:150px">
+                                            <!-- Downloading PA form of this plan when user click on download button -->
+                                            <apex:repeat value="{!policy.attachments}" var="attach">
+                                                <apex:outputLink value="{!URLFOR($Action.Attachment.Download, attach.Id)}" target="_blank" rendered="{!if(contains(attach.name,'PA Form'),true,false)}">{!attach.name}</apex:outputLink>
+                                            </apex:repeat>
+                                            <!-- /Downloading PA form of this plan when user click on download button -->                                
+                                        </td>
+                                        <td style="width:150px">
+                                            <!-- Downloading Coverage Policy form of this plan when user click on download button -->
+                                            <apex:repeat value="{!policy.attachments}" var="attach">
+                                                <apex:outputLink value="{!URLFOR($Action.Attachment.Download, attach.Id)}" target="_blank" rendered="{!if(Not(contains(attach.name,'PA Form')),true,false)}">{!attach.name}</apex:outputLink>
+                                            </apex:repeat>
+                                            <!-- Downloading Coverage Policy form of this plan when user click on download button -->    
+                                        </td>
+                                    </tr>
+                                </apex:repeat>
+                            </tbody>
+                            <!-- /Coverage policy table body -->
+                        </table>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+            </div>
+            <!-- /Coverage policy table section -->
+        </apex:pageBlock>
+        <!-- /Coverage policy -->
+        
+    </apex:form>
+</apex:page>

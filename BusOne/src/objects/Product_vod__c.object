@@ -1,0 +1,2110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Product Catalog</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>BOT_Access__c</fullName>
+        <description>Used to store the access percentage</description>
+        <externalId>false</externalId>
+        <label>Access %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>BOT_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>It is a lookup relationship to account</description>
+        <externalId>false</externalId>
+        <label>Account ID</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account</relationshipLabel>
+        <relationshipName>BOT_Account_Drug</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BOT_Copay__c</fullName>
+        <description>Used to store the value of the copay</description>
+        <externalId>false</externalId>
+        <label>Copay</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Drug_ID__c</fullName>
+        <description>Used to store the drug ID</description>
+        <externalId>false</externalId>
+        <label>Drug ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Formulary_ID__c</fullName>
+        <description>Used to store the Formulary ID</description>
+        <externalId>false</externalId>
+        <label>Formulary ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Plan_Demographics__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>It is a lookup relationship to Plan demographics</description>
+        <externalId>false</externalId>
+        <label>Plan Demographics</label>
+        <referenceTo>Account_Plan_vod__c</referenceTo>
+        <relationshipLabel>Product Catalog</relationshipLabel>
+        <relationshipName>Plan_Demographics</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BOT_Status__c</fullName>
+        <description>Used to display the status.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Non-Preferred</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Preferred Brand</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Preferred Generic</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Covered</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Listed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Preferred Brand</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Preferred Generic</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Specialty</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Specialty Non-Preferred</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Specialty Preferred</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NPB</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NPG</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PB</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PG</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>T4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Preferred</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reimbursed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>S</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>S-NP</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>S-P</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>O</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BOT_Strength__c</fullName>
+        <description>Used to store the strength of the Drug</description>
+        <externalId>false</externalId>
+        <label>Strength</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bundle_Pack_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to identify Product Groups that represent a Bundle Pack in Order Management</description>
+        <externalId>false</externalId>
+        <label>Bundle Pack</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cold_Chain_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Denotes a product as a cold chain sample. Only applicable to products where Product Type is equal to Sample. Used to require a Tag Alert and Status to be associated with a Sample line item in Sample Transactions and Call Samples.</description>
+        <externalId>false</externalId>
+        <label>Cold Chain</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Company_Product_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>When checked, this field denotes a product that is distributed by the company. Only products marked as a company product will displayed in My Setup and be available for detailing on call reports. Un-check for competitor&apos;s products.</description>
+        <externalId>false</externalId>
+        <label>Company Product</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Consumer_site__c</fullName>
+        <description>Link to consumer web site for this product.</description>
+        <externalId>false</externalId>
+        <label>Consumer site</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Controlled_Substance_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checking this checkbox denotes the product as a controlled substance. Call reporting and samples management read this value.</description>
+        <externalId>false</externalId>
+        <label>Controlled Substance</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Cost_vod__c</fullName>
+        <description>Cost of the product.</description>
+        <externalId>false</externalId>
+        <label>Cost</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Create_Lot_Catalog_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to trigger automatic creation of Lot Catalog record for the following product types: BRC, Alternative Samples, High Value Promotional, Promotional, Reprint, or Custom.</description>
+        <externalId>false</externalId>
+        <label>Create Lot Catalog</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Text area used to describe the product.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Display_Order_vod__c</fullName>
+        <description>The order (top to bottom) that the product will be displayed in. The absolute number is not important, but lower numbered products are displayed above of higher numbered products.</description>
+        <externalId>false</externalId>
+        <label>Display Order</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Distributor_vod__c</fullName>
+        <description>The Distributor field is used to indicate the name of the Company that will be distributing the BRC Sample Product Types to the requesting Physicians.  The Distributor name is displayed on the Signature capture form for all BRC records.</description>
+        <externalId>false</externalId>
+        <label>Distributor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Drug_Name_Report__c</fullName>
+        <description>Used to store the name of the drug.</description>
+        <externalId>false</externalId>
+        <formula>Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Drug Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <description>External ID is used only for data loading.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fixed_UM_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used in OM to enable fixed quantity multiples only when ordering this particular product</description>
+        <externalId>false</externalId>
+        <label>Fixed U/M?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Formulary_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to store the related formulary product</description>
+        <externalId>false</externalId>
+        <label>Formulary Product</label>
+        <referenceTo>Formulary_Products_vod__c</referenceTo>
+        <relationshipLabel>Drugs</relationshipLabel>
+        <relationshipName>Drugs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Inventory_Monitoring_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Specifies whether Inventory Monitoring capture is allowed on the product.</description>
+        <externalId>false</externalId>
+        <label>Inventory Monitoring</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Inventory_Order_UOM_vod__c</fullName>
+        <description>The Unit of Measure for Sample and Promotional Item inventory order lines.</description>
+        <externalId>false</externalId>
+        <label>Inventory Order UOM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Box</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Case</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Carton</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Inventory_Quantity_Per_Case_vod__c</fullName>
+        <description>Quantity of each ordered item per case</description>
+        <externalId>false</externalId>
+        <label>Inventory Quantity Per Case</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manufacturer_vod__c</fullName>
+        <description>Picklist used to select the manufacturer of the product. To change the list, edit the picklist.</description>
+        <externalId>false</externalId>
+        <label>Manufacturer</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>3M Pharmaceuticals Division</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Abbott Laboratories</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ALTANA Pharma</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Alza Corporation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Amgen</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AstraZeneca International</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Barr Laboratories</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BASF</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bayer Corporation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bayer Pharmaceutical</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Berlex Laboratories, Inc.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Boehringer Ingelheim Pharmaceuticals, Inc.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bristol-Myers Squibb Company</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Elan Corporation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Eli Lilly and Company</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Endo Pharmaceuticals Inc.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Genentech, Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Gilead Sciences</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>GlaxoSmithKline</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hoffmann-La Roche</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Janssen-Cilag</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Janssen Pharmaceutica</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Johnson &amp; Johnson</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>King Pharmaceuticals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mead Johnson</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Merck &amp; Co.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Novartis Pharmaceuticals Corporation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Novo Nordisk</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NV Organon</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Otsuka America Pharmaceuticals, Inc.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pfizer Inc.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Purdue Pharma L.P.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Roche Laboratories</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Schein Pharmaceutical, Inc.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Schwarz Pharma AG</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Schwarz Pharma U.S.A.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sepracor</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Solvay</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Teva Pharmaceutical Industries</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>UCB</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ViroPharma Incorporated</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wyeth</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yamanouchi Pharma Technologies, Inc.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>sanofi-aventis</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Verteo Biotech, Inc.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mithal Pharma</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Delbian Pharmaceuticals, Inc.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Betral BioSciences, Inc.</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wagnum Pharma</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Master_Align_Id_vod__c</fullName>
+        <description>Globally unique identifier for this object. This Id is managed by Align</description>
+        <externalId>false</externalId>
+        <label>Master Align Id</label>
+        <length>36</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Cycle_Plans_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>For Detail-type products, checking this box prevents the product from being displayed in the Cycle Plan Target and Account Cycle Plans views. However the product will still be displayed in My Setup and child products can still be selected as samples or promotional items within a Call.</description>
+        <externalId>false</externalId>
+        <label>No Cycle Plans</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>No_Details_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>For Detail-type products, checking this box prevents the product from showing up in the &quot;Detailing Priority&quot; section of a call report. However the product will still be displayed in My Setup and child products will still be selectable as samples or promotional items.</description>
+        <externalId>false</externalId>
+        <label>No Details</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>No_Metrics_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this field is checked the product will not show up in the Ratings and Evaluations section of the Account Profile.</description>
+        <externalId>false</externalId>
+        <label>No Metrics</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>No_Promo_Items_vod__c</fullName>
+        <description>This formula field defines whether the product catalog record appears in the Samples And Promotional Items section on the Call Report. If the result of the formula is TRUE, then the product will not appear on the Samples And Promotional Items section.</description>
+        <externalId>false</externalId>
+        <formula>CASE(Product_Type_vod__c, &apos;Detail&apos;, &apos;TRUE&apos;, &apos;Order&apos;, &apos;TRUE&apos;, &apos;Kit Item&apos;, &apos;TRUE&apos;, &apos;BRC&apos;, &apos;TRUE&apos;, &apos;Market&apos;, &apos;TRUE&apos;, &apos;Submarket&apos;, &apos;TRUE&apos;, &apos;Inventory Monitoring&apos;, &apos;TRUE&apos;, &apos;Product Group&apos;, &apos;TRUE&apos;, &apos;Sample Product Group&apos;, &apos;TRUE&apos;, &apos;Detail Group&apos;,&apos;TRUE&apos;, &apos;Detail Topic&apos;, &apos;TRUE&apos;, &apos;FALSE&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>No Promo Items</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to product to associate child products (samples, promotional items...) with their parent product.</description>
+        <externalId>false</externalId>
+        <label>Parent Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Catalog</relationshipLabel>
+        <relationshipName>Child_products_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pricing_Bound_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If used for a Product Group: Flag used to drive the default Product_Group_Level_Rule. When set to TRUE, only the Product_Group_Level_Rules - associated to the flagged Product Group the user has selected-  will be applied on the Order Line. If used for a Kit Item: flag to define a kit item as pricing relevant. When set to TRUE, the kit item will be included in pricing rule scales.</description>
+        <externalId>false</externalId>
+        <label>Pricing Bound</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Pricing_Rule_Quantity_Bound_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, the quantity ordered must be in the range specified in the product&apos;s pricing rules. Otherwise, orders for this product can be placed outside the ranges in the product&apos;s pricing rules. The price used in this case will be the base list price, as specified in Product_vod.Cost_vod.</description>
+        <externalId>false</externalId>
+        <label>Pricing Rule Quantity Bound</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Product_Identifier_vod__c</fullName>
+        <description>Additional attribute to identify products. It is used for searching and adding products when creating orders.</description>
+        <externalId>false</externalId>
+        <label>Product Identifier</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Thumbnail_vod__c</fullName>
+        <description>Stores the picture thumbnail of the product as a Base64 string</description>
+        <externalId>false</externalId>
+        <label>Product Thumbnail</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_Type_vod__c</fullName>
+        <description>Picklist used to select the type of the product (Detail, Sample, Promotional Item...)</description>
+        <externalId>false</externalId>
+        <label>Product Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Alternative Sample</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Value Promotional</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Detail Group</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Detail Topic</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Market</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submarket</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Detail</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sample</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Promotional</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reprint</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BRC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Order</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kit Item</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inventory Monitoring</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Product Group</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sample Product Group</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Value_vod__c</fullName>
+        <description>Stores and shows the value associated to 1 unit of the selected Product</description>
+        <externalId>false</externalId>
+        <label>Product Value</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Product_info__c</fullName>
+        <description>Link to website containing product information.</description>
+        <externalId>false</externalId>
+        <label>Product info</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Quantity_Per_Case_vod__c</fullName>
+        <description>quantity per case</description>
+        <externalId>false</externalId>
+        <label>Quantity Per Case</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Require_Discussion_vod__c</fullName>
+        <description>Indicates whether or not a product discussion is required when this product is detailed.
+No - No discussion is required when detailing this product.
+Yes - A discussion record will always be required when detailing this product.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether or not a product discussion is required when detailing this product.
+No - No discussion required
+Yes - Discussion required</inlineHelpText>
+        <label>Require Discussion</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yes_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Require_Key_Message_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set this value to require a key message when this product is detailed.</description>
+        <externalId>false</externalId>
+        <label>Require Key Message On Detail</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Restricted_States_vod__c</fullName>
+        <description>Contains a comma separated list of state abbreviations where the product cannot be sampled. (i.e. “MA,PA”)</description>
+        <externalId>false</externalId>
+        <label>Restrictions</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Restricted_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Defines that a “Detail” product is considered Restricted.  Used for defaulting restricted products on accounts, and unassigned calls.</description>
+        <externalId>false</externalId>
+        <label>Restrictions C</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sample_Quantity_Bound_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The Sample Quantity Bound checkbox determines if the User will be restricted to only selecting the values defined in the Sample Quantity field or if the User has the ability to edit the Quantity picklist and enter in a value that is not contained in the Sample Quantity field.</description>
+        <externalId>false</externalId>
+        <label>Sample Quantity Bound</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sample_Quantity_Picklist_vod__c</fullName>
+        <description>Use this field to change the default values for sample quantity on the mobile device. Comma separated values will be populated in the sample quantity dropdown. If left blank, sample quantity will default to 1 through 20.</description>
+        <externalId>false</externalId>
+        <label>Sample Quantity</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sample_U_M_vod__c</fullName>
+        <description>The Sample U/M field defines the Units of Measurement for records with a Product Type of BRC or Order.  This field should only be populated for BRC or Order entries.</description>
+        <externalId>false</externalId>
+        <label>Sample U/M</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Box</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Case</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Carton</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Schedule_vod__c</fullName>
+        <description>This is the Schedule of the Controlled Substance, for example, IV</description>
+        <externalId>false</externalId>
+        <label>Schedule</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sort_Code_vod__c</fullName>
+        <description>This value is used to custom sort the list of product in order line entry.</description>
+        <externalId>false</externalId>
+        <label>Sort Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State_Distributor_Category_vod__c</fullName>
+        <description>Category for the Drug. e.g 01, 11</description>
+        <externalId>false</externalId>
+        <label>State Distributor Category</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Therapeutic_Area_vod__c</fullName>
+        <description>Picklist used to select the Therapeutic Area of the product such as Analgesics, Cardiology or Dermatology. Edit the picklist to change the Therapeutic Area options.</description>
+        <externalId>false</externalId>
+        <label>Therapeutic Area</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Analgesics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cardiology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dermatology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Endocrinology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Gastroenterology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Infectious Disease</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Neurology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Oncology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Opthalmology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Psychiatry</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Respiratory</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rheumatology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Transplant</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Urology</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Therapeutic_Class_vod__c</fullName>
+        <description>Picklist used to select the Therapeutic Class of the product such as Narcotics or Pain Relief. Therapeutic Class is controlled by the Therapeutic Area picklist.</description>
+        <externalId>false</externalId>
+        <label>Therapeutic Class</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Therapeutic_Area_vod__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Anti-Inflammatory Medicines (NSAIDs)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cox-2 Inhibitors</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Muscle Relaxants</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Narcotics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pain Relief</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antianginals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antiarrhythmics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Anticoagulants (Blood Thinners)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CHF Agents</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Diuretics (Combination &quot;Water&quot; Pills)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Diuretics (&quot;Water&quot; Pills)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Blood Pressure (ACE Inhibitors)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Blood Pressure (Alpha Blockers)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Blood Pressure (Angiotensin Blockers)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Blood Pressure (Beta-blockers)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Blood Pressure (Calcium Channel Blockers)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Blood Pressure (Combination ACE Inhibitors)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Blood Pressure (Combination Angiotensin Blockers)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Blood Pressure (Combination Beta-blockers)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Blood Pressure (Combination Calcium Channel Blockers)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Blood Pressure (Long-acting Calcium Channel Blockers)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Blood Pressure (Miscellaneous)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Blood Pressure (Miscellaneous Combination Products )</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Cholesterol (Others)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>High Cholesterol (Statins)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vasodilators</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Acne</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Foot Ulcers</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hair Loss</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Topical Antibiotics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Topical Antifungals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Topical Dermatologics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Topical Steroids</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Androgens</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contraceptives</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Diabetes (DPP-4 Inhibitors)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Diabetes (Injection Hypoglycemic)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Diabetes (Insulins)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Diabetes (Oral Hypoglycemics)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Estrogens</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Estrogens (Combination Products)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Growth Hormone</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Infertility</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Osteoporosis</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Progestins</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Thyroid Hormones</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antiemetics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bowel Cathartics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Gallstones</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>H2-blockers</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hepatitis</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inflammatory Bowel Disease (IBD)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Irritable Bowel (Antispasmodics)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Irritable Bowel Syndrome (IBS)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Proton Pump Inhibitors</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ulcers</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Weight Loss</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antibiotics (Miscellaneous)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antifungals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antivirals</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cephalosporins</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HIV (NNRTIs)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HIV (NRTIs)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HIV (Other)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HIV (Protease Inhibitors)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Macrolides</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Penicillins</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Quinolones</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sulfa Drugs</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tetracyclines</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Alzheimer&apos;s Agents</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Migraines</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Multiple Sclerosis</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Parkinson&apos;s Disease</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Seizures</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antineoplastics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Aromatase Inhibitors</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hematopoietic Agents</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hormonal Oncologic Agents</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Allergy (Ocular)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antibacterials (Ocular)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antifungals (Ocular)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Anti-inflammatories (Ocular)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antivirals (Ocular)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Glaucoma</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Macular Degeneration</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Alcohol and Drug Dependence</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antianxiety</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antipsychotics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Attention Deficit Disorder</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bipolar Disorder</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Depression (MAO Inhibitors)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Depression (Miscellaneous)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Depression (SSNRIs)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Depression (SSRIs)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Depression (Tricyclics)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sleep Disorders</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antibacterials (Otics)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Antihistamines</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IgE Inhibitors</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inhalers (Beta Agonists)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inhalers - Combinations and Others</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inhalers (Steroids)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Intranasal Therapies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Leukotriene Blockers</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Nicotine Addiction</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Oral Steroids</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Steroid/Antibiotic (Otics)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Arthritis</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Psoriasis</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rheumatology (Miscellaneous)</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>TNF Inhibitors</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Immunomodulators</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BPH</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Erectile Dysfunction</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Overactive Bladder</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Respiratory</controllingFieldValue>
+                <valueName>Antibacterials (Otics)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Respiratory</controllingFieldValue>
+                <valueName>Antihistamines</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Respiratory</controllingFieldValue>
+                <valueName>IgE Inhibitors</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Respiratory</controllingFieldValue>
+                <valueName>Inhalers (Beta Agonists)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Respiratory</controllingFieldValue>
+                <valueName>Inhalers - Combinations and Others</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Respiratory</controllingFieldValue>
+                <valueName>Inhalers (Steroids)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Respiratory</controllingFieldValue>
+                <valueName>Intranasal Therapies</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Respiratory</controllingFieldValue>
+                <valueName>Leukotriene Blockers</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Respiratory</controllingFieldValue>
+                <valueName>Nicotine Addiction</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Respiratory</controllingFieldValue>
+                <valueName>Oral Steroids</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Respiratory</controllingFieldValue>
+                <valueName>Steroid/Antibiotic (Otics)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rheumatology</controllingFieldValue>
+                <valueName>Arthritis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rheumatology</controllingFieldValue>
+                <valueName>Psoriasis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rheumatology</controllingFieldValue>
+                <valueName>Rheumatology (Miscellaneous)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Rheumatology</controllingFieldValue>
+                <valueName>TNF Inhibitors</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Transplant</controllingFieldValue>
+                <valueName>Immunomodulators</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Urology</controllingFieldValue>
+                <valueName>BPH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Urology</controllingFieldValue>
+                <valueName>Erectile Dysfunction</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Urology</controllingFieldValue>
+                <valueName>Overactive Bladder</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Analgesics</controllingFieldValue>
+                <valueName>Anti-Inflammatory Medicines (NSAIDs)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Analgesics</controllingFieldValue>
+                <valueName>Cox-2 Inhibitors</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Analgesics</controllingFieldValue>
+                <valueName>Muscle Relaxants</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Analgesics</controllingFieldValue>
+                <valueName>Narcotics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Analgesics</controllingFieldValue>
+                <valueName>Pain Relief</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>Antianginals</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>Antiarrhythmics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>Anticoagulants (Blood Thinners)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>CHF Agents</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>Diuretics (Combination &quot;Water&quot; Pills)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>Diuretics (&quot;Water&quot; Pills)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Blood Pressure (ACE Inhibitors)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Blood Pressure (Alpha Blockers)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Blood Pressure (Angiotensin Blockers)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Blood Pressure (Beta-blockers)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Blood Pressure (Calcium Channel Blockers)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Blood Pressure (Combination ACE Inhibitors)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Blood Pressure (Combination Angiotensin Blockers)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Blood Pressure (Combination Beta-blockers)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Blood Pressure (Combination Calcium Channel Blockers)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Blood Pressure (Long-acting Calcium Channel Blockers)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Blood Pressure (Miscellaneous)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Blood Pressure (Miscellaneous Combination Products )</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Cholesterol (Others)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>High Cholesterol (Statins)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Cardiology</controllingFieldValue>
+                <valueName>Vasodilators</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dermatology</controllingFieldValue>
+                <valueName>Acne</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dermatology</controllingFieldValue>
+                <valueName>Foot Ulcers</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dermatology</controllingFieldValue>
+                <valueName>Hair Loss</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dermatology</controllingFieldValue>
+                <valueName>Topical Antibiotics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dermatology</controllingFieldValue>
+                <valueName>Topical Antifungals</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dermatology</controllingFieldValue>
+                <valueName>Topical Dermatologics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Dermatology</controllingFieldValue>
+                <valueName>Topical Steroids</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endocrinology</controllingFieldValue>
+                <valueName>Androgens</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endocrinology</controllingFieldValue>
+                <valueName>Contraceptives</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endocrinology</controllingFieldValue>
+                <valueName>Diabetes (DPP-4 Inhibitors)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endocrinology</controllingFieldValue>
+                <valueName>Diabetes (Injection Hypoglycemic)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endocrinology</controllingFieldValue>
+                <valueName>Diabetes (Insulins)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endocrinology</controllingFieldValue>
+                <valueName>Diabetes (Oral Hypoglycemics)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endocrinology</controllingFieldValue>
+                <valueName>Estrogens</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endocrinology</controllingFieldValue>
+                <valueName>Estrogens (Combination Products)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endocrinology</controllingFieldValue>
+                <valueName>Growth Hormone</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endocrinology</controllingFieldValue>
+                <valueName>Infertility</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endocrinology</controllingFieldValue>
+                <valueName>Osteoporosis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endocrinology</controllingFieldValue>
+                <valueName>Progestins</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Endocrinology</controllingFieldValue>
+                <valueName>Thyroid Hormones</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gastroenterology</controllingFieldValue>
+                <valueName>Antiemetics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gastroenterology</controllingFieldValue>
+                <valueName>Bowel Cathartics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gastroenterology</controllingFieldValue>
+                <valueName>Gallstones</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gastroenterology</controllingFieldValue>
+                <valueName>H2-blockers</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gastroenterology</controllingFieldValue>
+                <valueName>Hepatitis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gastroenterology</controllingFieldValue>
+                <valueName>Inflammatory Bowel Disease (IBD)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gastroenterology</controllingFieldValue>
+                <valueName>Irritable Bowel (Antispasmodics)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gastroenterology</controllingFieldValue>
+                <valueName>Irritable Bowel Syndrome (IBS)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gastroenterology</controllingFieldValue>
+                <valueName>Proton Pump Inhibitors</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gastroenterology</controllingFieldValue>
+                <valueName>Ulcers</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Gastroenterology</controllingFieldValue>
+                <valueName>Weight Loss</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Infectious Disease</controllingFieldValue>
+                <valueName>Antibiotics (Miscellaneous)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Infectious Disease</controllingFieldValue>
+                <valueName>Antifungals</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Infectious Disease</controllingFieldValue>
+                <valueName>Antivirals</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Infectious Disease</controllingFieldValue>
+                <valueName>Cephalosporins</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Infectious Disease</controllingFieldValue>
+                <valueName>HIV (NNRTIs)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Infectious Disease</controllingFieldValue>
+                <valueName>HIV (NRTIs)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Infectious Disease</controllingFieldValue>
+                <valueName>HIV (Other)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Infectious Disease</controllingFieldValue>
+                <valueName>HIV (Protease Inhibitors)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Infectious Disease</controllingFieldValue>
+                <valueName>Macrolides</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Infectious Disease</controllingFieldValue>
+                <valueName>Penicillins</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Infectious Disease</controllingFieldValue>
+                <valueName>Quinolones</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Infectious Disease</controllingFieldValue>
+                <valueName>Sulfa Drugs</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Infectious Disease</controllingFieldValue>
+                <valueName>Tetracyclines</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Neurology</controllingFieldValue>
+                <valueName>Alzheimer&apos;s Agents</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Neurology</controllingFieldValue>
+                <valueName>Migraines</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Neurology</controllingFieldValue>
+                <valueName>Multiple Sclerosis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Neurology</controllingFieldValue>
+                <valueName>Parkinson&apos;s Disease</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Neurology</controllingFieldValue>
+                <valueName>Seizures</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Oncology</controllingFieldValue>
+                <valueName>Antineoplastics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Oncology</controllingFieldValue>
+                <valueName>Aromatase Inhibitors</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Oncology</controllingFieldValue>
+                <valueName>Hematopoietic Agents</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Oncology</controllingFieldValue>
+                <valueName>Hormonal Oncologic Agents</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Opthalmology</controllingFieldValue>
+                <valueName>Allergy (Ocular)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Opthalmology</controllingFieldValue>
+                <valueName>Antibacterials (Ocular)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Opthalmology</controllingFieldValue>
+                <valueName>Antifungals (Ocular)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Opthalmology</controllingFieldValue>
+                <valueName>Anti-inflammatories (Ocular)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Opthalmology</controllingFieldValue>
+                <valueName>Antivirals (Ocular)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Opthalmology</controllingFieldValue>
+                <valueName>Glaucoma</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Opthalmology</controllingFieldValue>
+                <valueName>Macular Degeneration</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Psychiatry</controllingFieldValue>
+                <valueName>Alcohol and Drug Dependence</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Psychiatry</controllingFieldValue>
+                <valueName>Antianxiety</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Psychiatry</controllingFieldValue>
+                <valueName>Antipsychotics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Psychiatry</controllingFieldValue>
+                <valueName>Attention Deficit Disorder</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Psychiatry</controllingFieldValue>
+                <valueName>Bipolar Disorder</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Psychiatry</controllingFieldValue>
+                <valueName>Depression (MAO Inhibitors)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Psychiatry</controllingFieldValue>
+                <valueName>Depression (Miscellaneous)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Psychiatry</controllingFieldValue>
+                <valueName>Depression (SSNRIs)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Psychiatry</controllingFieldValue>
+                <valueName>Depression (SSRIs)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Psychiatry</controllingFieldValue>
+                <valueName>Depression (Tricyclics)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Psychiatry</controllingFieldValue>
+                <valueName>Sleep Disorders</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>User_Aligned_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If true then an entry in the My Setup Products for the a User must exist for the product to be visible on Call Report to a user.  Only applies to BRC and Promotional Items.</description>
+        <externalId>false</externalId>
+        <label>User Aligned</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id used by Veeva CRM and Vault to reference product catalog entries.</description>
+        <externalId>true</externalId>
+        <label>Veeva External Id</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>zvod_Custom_Text_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to display a custom text field for the specified product on Sample Transactions and Call Samples.</description>
+        <externalId>false</externalId>
+        <label>Custom Text</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Product Catalog</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Parent_Product_vod__c</columns>
+        <columns>Product_Type_vod__c</columns>
+        <columns>Therapeutic_Class_vod__c</columns>
+        <columns>Manufacturer_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Drug Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product Catalog</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Parent_Product_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Product_Type_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Therapeutic_Area_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Therapeutic_Class_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Manufacturer_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Description_vod__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Parent_Product_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Type_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Therapeutic_Area_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Therapeutic_Class_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Manufacturer_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Description_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Description_vod__c</searchFilterFields>
+        <searchFilterFields>Parent_Product_vod__c</searchFilterFields>
+        <searchFilterFields>Product_Type_vod__c</searchFilterFields>
+        <searchFilterFields>Therapeutic_Area_vod__c</searchFilterFields>
+        <searchFilterFields>Therapeutic_Class_vod__c</searchFilterFields>
+        <searchFilterFields>Company_Product_vod__c</searchFilterFields>
+        <searchResultsAdditionalFields>Parent_Product_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product_Type_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Therapeutic_Area_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Therapeutic_Class_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Manufacturer_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Description_vod__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Controlled_Sub_Schedule_Confirm_vod</fullName>
+        <active>true</active>
+        <description>This validation rules is in place to confirm that a Product, which has been marked as a Controlled Substance has a Schedule.</description>
+        <errorConditionFormula>AND( Controlled_Substance_vod__c ,TRIM( Schedule_vod__c) = &quot;&quot;)</errorConditionFormula>
+        <errorMessage>The Schedule field is required when creating a Controlled Substance Product.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Product_Bundle_Check_vod</fullName>
+        <active>true</active>
+        <description>Verifies that the Product Type is a Product Group if the Bundle Pack field is enabled</description>
+        <errorConditionFormula>Bundle_Pack_vod__c &amp;&amp; !ISPICKVAL(Product_Type_vod__c, &apos;Product Group&apos;)</errorConditionFormula>
+        <errorMessage>Bundle_Pack_vod__c can be set to TRUE only if the product type= Product Group</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>State_Distributor_Category_Invalid_vod</fullName>
+        <active>true</active>
+        <description>State Distributor Category can be empty or can have a value 01, 02 or 03.</description>
+        <errorConditionFormula>NOT((State_Distributor_Category_vod__c  == &apos;01&apos;) ||  (State_Distributor_Category_vod__c  == &apos;02&apos;)|| (State_Distributor_Category_vod__c  == &apos;03&apos;) || (State_Distributor_Category_vod__c  == null))</errorConditionFormula>
+        <errorMessage>State Distributor Category can only be a 01, 02, or 03</errorMessage>
+    </validationRules>
+</CustomObject>

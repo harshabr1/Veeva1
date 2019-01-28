@@ -1,0 +1,3 @@
+<apex:page standardController="Account_Plan_vod__c" standardStylesheets="true">
+ <c:VOD_EMBED veevaModule="call" veevaPage="new-call" objectType="Call2_vod__c" queryParams="&id={!Account_Plan_vod__c.Id}&typ=AccountPlan&{!$CurrentPage.parameters.queryParams}"/>
+</apex:page>

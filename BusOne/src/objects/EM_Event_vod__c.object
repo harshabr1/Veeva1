@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>EM_Event_Edit_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>EM_Event_New_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>EM_Event_View_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Events object for Veeva Events Management</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Attendee_Fields_vod__c</fullName>
+        <description>Used to store fields that display on the Account List of the Attendee Selection interface. Format is: ;FieldName1;FieldName2;...FieldNameX;
+                     Fields can be from the Account object, or keywords that display special sections, such as Recent Events or MCCP.</description>
+        <externalId>false</externalId>
+        <label>Account Attendee Fields</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Actual_Attendance_vod__c</fullName>
+        <description>Count of all attendees with status &quot;attended&quot; or &quot;signed&quot;.</description>
+        <externalId>false</externalId>
+        <label>Actual Attendance</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Cost_vod__c</fullName>
+        <description>The actual cost of an event. This is the sum of all actual expenses that have been entered, but can be manually overridden.</description>
+        <externalId>false</externalId>
+        <label>Actual Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Meal_Cost_Per_Person_vod__c</fullName>
+        <description>Sum of expenses of type Meal_vod divided by the number of attendees with status Attended_vod or Signed_vod.</description>
+        <externalId>false</externalId>
+        <label>Actual Meal Cost Per Person</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Assigned_Host_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Host</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Webinar_Hosts_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Attendee_Reconciliation_Complete_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field becomes checked automatically when all walk-in attendees have been reconciled.</description>
+        <externalId>false</externalId>
+        <label>Attendee Reconciliation Complete</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Attendees_Requesting_Meals_vod__c</fullName>
+        <description>Count of attendees where a meal has been requested.</description>
+        <externalId>false</externalId>
+        <label>Attendees Requesting Meals</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attendees_With_Meals_vod__c</fullName>
+        <description>Count of attendees with status &quot;attended&quot; or &quot;signed&quot; that had requested a meal.</description>
+        <externalId>false</externalId>
+        <label>Attendees With Meals</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City_vod__c</fullName>
+        <description>City of an event. If using a venue list, this is filled in automatically.</description>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Committed_Cost_vod__c</fullName>
+        <description>The committed cost of an event. This is the sum of all the committed expenses that have been entered, but can be manually overridden.</description>
+        <externalId>false</externalId>
+        <label>Committed Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Attendee_Fields_vod__c</fullName>
+        <description>Copy the fields that display on the Contact List on the Attendee Selection page from EM_Event_Rule_vod. Fields can be fields that exist on the Contact object, or keywords that display special sections, such as recent events.</description>
+        <externalId>false</externalId>
+        <label>Contact Attendee Fields</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Country_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Country where an event takes place. Used to define event-level rules.</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <referenceTo>Country_vod__c</referenceTo>
+        <relationshipName>EM_Event_Country_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>This field is used to store a description of the Event.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>End_Time_vod__c</fullName>
+        <description>End time of the event.</description>
+        <externalId>false</externalId>
+        <label>End Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Engage_Webinar_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Webinar</label>
+        <referenceTo>Remote_Meeting_vod__c</referenceTo>
+        <relationshipLabel>Events</relationshipLabel>
+        <relationshipName>Events</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Attendance_vod__c</fullName>
+        <description>Estimate of the number of people who will attend an event. Used for planning purposes.</description>
+        <externalId>false</externalId>
+        <label>Estimated Attendance</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estimated_Cost_vod__c</fullName>
+        <description>Estimate of the total cost of the event. Used for planning purposes before actual expenses are available.</description>
+        <externalId>false</externalId>
+        <label>Estimated Cost</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Event_Configuration_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>System field used for performance purposes. This field should not be placed on the page layout.</description>
+        <externalId>false</externalId>
+        <label>Event Configuration</label>
+        <referenceTo>EM_Event_Configuration_vod__c</referenceTo>
+        <relationshipName>Events</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Event_Display_Name_vod__c</fullName>
+        <description>This value displays on the event sign in sheet. If it is not populated, the Name field value from the event is displayed on sign in sheet.</description>
+        <externalId>false</externalId>
+        <label>Event Display Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Failed_Expense_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>System field used for integration checks</description>
+        <externalId>false</externalId>
+        <label>Failed Expense</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HCPs_With_Meals_vod__c</fullName>
+        <description>Count of attendees of type Account with status &quot;attended&quot; or &quot;signed&quot; that had requested a meal.</description>
+        <externalId>false</externalId>
+        <label>HCPs with Meals</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invited_Attendees_vod__c</fullName>
+        <description>Count of all invited attendees. Populated automatically once attendees are added, but can be manually overridden.</description>
+        <externalId>false</externalId>
+        <label>Invited Attendees</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KOL_External_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id used for KOL data loads only.</description>
+        <externalId>true</externalId>
+        <label>KOL External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Key_Contact_Email_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Key Contact Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key_Contact_Name_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Key Contact Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key_Contact_Phone_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Key Contact Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Key_Contact_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Key Contact</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Events4</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Location_Address_Line_2_vod__c</fullName>
+        <description>Address line 2 of an event. If using a venue list, this is filled in automatically.</description>
+        <externalId>false</externalId>
+        <label>Location Address Line 2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_Address_vod__c</fullName>
+        <description>Address of an event. If using a venue list, this is filled in automatically.</description>
+        <externalId>false</externalId>
+        <label>Location Address</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_vod__c</fullName>
+        <description>Location of event. If using a stored venue, this is filled in automatically.</description>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Edit permission to this field determines if a user can see the Unlock button on events with status Closed_vod.</description>
+        <externalId>false</externalId>
+        <label>Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Field used by mobile products for synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Online_Registrant_Count_vod__c</fullName>
+        <description>Count of the number of attendees registering via a web portal.</description>
+        <externalId>false</externalId>
+        <label>Online Registrant Count</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Online_Registration_Fields_vod__c</fullName>
+        <description>Used to store fields that are required by online registrants for this particular event. If using the Veeva API to create attendees from an online portal, the API will validate that these fields are required when posting the attendee information to Salesforce. Format is: ;FieldName1;FieldName2;...FieldNameX;</description>
+        <externalId>false</externalId>
+        <label>Online Registration Fields</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by triggers. If checked, the lock is deactivated.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Links events together in a series.</description>
+        <externalId>false</externalId>
+        <label>Parent Event</label>
+        <referenceTo>EM_Event_vod__c</referenceTo>
+        <relationshipName>EM_Event_Parent_Event_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Postal_Code_vod__c</fullName>
+        <description>Postal code of an event. If using a venue list, this is filled in automatically.</description>
+        <externalId>false</externalId>
+        <label>Postal Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sponsor_vod__c</fullName>
+        <description>Sponsor of event</description>
+        <externalId>false</externalId>
+        <label>Sponsor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Time_vod__c</fullName>
+        <description>Start time of the event.</description>
+        <externalId>false</externalId>
+        <label>Start Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>State_Province_vod__c</fullName>
+        <description>State or province of an event. If using a venue list, this is filled in automatically.</description>
+        <externalId>false</externalId>
+        <label>State / Province</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status of an event. Custom values can be added.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Pending_Approval_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closed_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Requested_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Canceled_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reconciled</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Stub_Mobile_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Stub Mobile Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Stub_SFDC_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Stub SFDC Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Topic_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The topic an event is for.</description>
+        <externalId>false</externalId>
+        <label>Topic</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>EM_Catalog_vod__c.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Event_Topic_vod</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>EM_Catalog_vod__c</referenceTo>
+        <relationshipName>EM_Event_Topic_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>User_Attendee_Fields_vod__c</fullName>
+        <description>Copy the fields that display on the User List on the Attendee Selection page from EM_Event_Rule_vod. Fields can be fields that exist on the User object, or keywords that display special sections, such as recent events.</description>
+        <externalId>false</externalId>
+        <label>User Attendee Fields</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Vendor_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Main logistics vendor being used on an event. A vendor on the event will automatically be added as a team member. If the vendor is a user, that user will be given edit permission to the event.</description>
+        <externalId>false</externalId>
+        <label>Vendor</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>EM_Vendor_vod__c.Status_vod__c</field>
+                <operation>equals</operation>
+                <value>Eligible_vod</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>EM_Vendor_vod__c</referenceTo>
+        <relationshipName>EM_Event_Vendor_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Venue_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The venue where the event is taking place.</description>
+        <externalId>false</externalId>
+        <label>Venue</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>EM_Venue_vod__c.Status_vod__c</field>
+                <operation>equals</operation>
+                <value>Eligible_vod</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>EM_Venue_vod__c</referenceTo>
+        <relationshipName>EM_Event_Venue_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Walk_In_Count_vod__c</fullName>
+        <description>Count of the number of walk-in attendees for an event</description>
+        <externalId>false</externalId>
+        <label>Walk-In Count</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Walk_In_Fields_vod__c</fullName>
+        <description>Used to store fields that are entered by walk-in attendees. Format is: ;FieldName1;FieldName2;...FieldNameX;
+Fields can be marked as &quot;Required&quot; on the walk-in form by adding a &lt;R&gt; tag after a field name. For example, ;Last_Name_vod&lt;R&gt;;First_Name_vod&lt;R&gt;;Email_vod&lt;R&gt;;</description>
+        <externalId>false</externalId>
+        <label>Walk-In Fields</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Web_Source_vod__c</fullName>
+        <description>Web source of event</description>
+        <externalId>false</externalId>
+        <label>Web Source</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Webinar_Alternative_Host_1_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Alternative Host 1</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Webinar_Alternate_Hosts_1_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Alternative_Host_2_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Alternative Host 2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Webinar_Alternate_Hosts_2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Alternative_Host_3_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Alternative Host 3</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Webinar_Alternate_Hosts_3_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Error_DateTime_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Error Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Error_Message_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Error Message</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Webinar_Status_vod__c</fullName>
+        <description>Status of Engage Webinar integration</description>
+        <externalId>false</externalId>
+        <label>Webinar Enabled</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Off_vod</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>On_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Failed_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sending_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>zvod_Event_Layout_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for configuration and debugging. Place this field on every event layout to see the name of the layout being used. Only admins should have visibility to this field.</description>
+        <externalId>false</externalId>
+        <label>Event Layout</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Event1</label>
+    <listViews>
+        <fullName>Today</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Today</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Event Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Events3</pluralLabel>
+    <recordTypes>
+        <fullName>Congress_vod</fullName>
+        <active>true</active>
+        <description>Congress</description>
+        <label>Congress_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Approved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canceled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending_Approval_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reconciled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Investigator_Meeting_vod</fullName>
+        <active>true</active>
+        <description>Investigator meeting</description>
+        <label>Investigator_Meeting_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Approved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canceled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending_Approval_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reconciled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Round_Table_vod</fullName>
+        <active>true</active>
+        <description>Round table program</description>
+        <label>Round_Table_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Approved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canceled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending_Approval_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reconciled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Speaker_Program_vod</fullName>
+        <active>true</active>
+        <description>Speaker Program</description>
+        <label>Speaker_Program_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Approved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canceled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending_Approval_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reconciled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>Event_Team_Member_vod__c</fullName>
+        <label>Event Team Member</label>
+    </sharingReasons>
+    <webLinks>
+        <fullName>Approve_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Approve</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Approve!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Attendee_Reconciliation_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Attendee Reconciliation</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Attendee_Reconciliation_vod!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Cancel_Event_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Cancel Event</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Cancel_Event!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Close_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Close</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Close!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Generate_Invitations_vod</fullName>
+        <availability>online</availability>
+        <description>Clicking this button opens up a list of available invitations for the user to select. Once selected, the template is merged with data from the event. An attachment with the final invitations is added to the Event for the user to print.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Generate Invitations</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;GenerateInvitations!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Generate_Sign_In_vod</fullName>
+        <availability>online</availability>
+        <description>Clicking this button opens up a list of available Sign In Sheet for the user to select. Once selected, the template is merged with data from the event. An attachment with the final Sign In Sheet is added to the Event for the user to print.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Generate Sign In Sheet</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Generate Sign In!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Manage_Attendees_vod</fullName>
+        <availability>online</availability>
+        <description>To launch the Manage Attendee or New Attendee Hub Page.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Manage Attendees</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&quot;Managed Attendees!&quot;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Program_Completed</fullName>
+        <availability>online</availability>
+        <description>Event Completed.
+Created: 8/20 Sarav VPS</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Program Completed</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Program Completed!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Recall_Approval_Request_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Recall Approval Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Recall Approval Request!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Reconciled</fullName>
+        <availability>online</availability>
+        <description>Event Reconciled. 
+Created : 8/20 Sarav VPS</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Reconciled</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Reconciled!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Record_a_Call_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Record a Call</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Record a Call!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Reject_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Reject</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Reject!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Reschedule_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Reschedule</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Reschedule!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_Email_vod</fullName>
+        <availability>online</availability>
+        <description>Launches the email console to send emails to attendees</description>
+        <displayType>link</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Email</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&quot;Send email!);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Start_Webinar_vod</fullName>
+        <availability>online</availability>
+        <description>Launches an Engage Webinar</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Start Webinar</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Start Webinar!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_for_Approval_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit for Approval</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Submit for Approval!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Unlock_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Unlock</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Unlock!&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>View_Signatures_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>View Signatures</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;View Signatures!&apos;);</url>
+    </webLinks>
+</CustomObject>

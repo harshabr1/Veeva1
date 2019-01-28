@@ -1,0 +1,8 @@
+<apex:page controller="BOT_Get_Maestro_Page" showHeader="true" sidebar="false">
+    <apex:form >
+       
+<apex:iframe src="http://www.b1maestro.com/maestro/login.aspx" height="600px" frameborder="0" title="Content" width="100%" scrolling="auto"/>
+
+        
+    </apex:form>
+</apex:page>

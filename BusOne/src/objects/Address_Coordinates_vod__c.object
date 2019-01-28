@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores geographic coordinates for addresses</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Address_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Address to which the coordinates are associated</description>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <referenceTo>Address_vod__c</referenceTo>
+        <relationshipLabel>Address Coordinates</relationshipLabel>
+        <relationshipName>Address_Coordinates</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>GeoCode_Fail_vod__c</fullName>
+        <description>Indicates that the address could not be geocoded</description>
+        <externalId>false</externalId>
+        <label>GeoCode Fail</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_GeoCode_Date_vod__c</fullName>
+        <description>Date/Time of when the address was last geocoded</description>
+        <externalId>false</externalId>
+        <label>Last GeoCode Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Latitude_vod__c</fullName>
+        <description>Latitude value of the address</description>
+        <externalId>false</externalId>
+        <label>Latitude</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Longitude_vod__c</fullName>
+        <description>Longitude value of the address</description>
+        <externalId>false</externalId>
+        <label>Longitude</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Detail_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>User Detail to which the coordinates are associated</description>
+        <externalId>false</externalId>
+        <label>User Detail</label>
+        <referenceTo>User_Detail_vod__c</referenceTo>
+        <relationshipLabel>Address Coordinates</relationshipLabel>
+        <relationshipName>Address_Coordinates</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Address Coordinates</label>
+    <nameField>
+        <displayFormat>AC-{0000}</displayFormat>
+        <label>Address Coordinates Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Address Coordinates</pluralLabel>
+    <recordTypes>
+        <fullName>iOS_vod</fullName>
+        <active>true</active>
+        <description>Coordinates fetched by iOS</description>
+        <label>iOS</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

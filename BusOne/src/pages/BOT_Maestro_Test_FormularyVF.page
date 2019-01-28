@@ -1,0 +1,21 @@
+<!--
+Name            : BOT_Maestro_SF_IntegrationVF
+Created By      : SREENIVASULU ADIPUDI
+Created Date    : 09/JUN/2017
+Description     : It is used to display formularies from external system (It is created for testing purpose).
+-->
+<apex:page controller="BOT_Maestro_Test_Formulary" sidebar="false" >
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!formularies}" var="val" cellpadding="2" cellspacing="2" >
+                <apex:column headerValue="Formulary Name">
+                    <apex:outputText value="{!val.FORMULARY_NAME}"/>
+                </apex:column>
+                <apex:column headerValue="Formulary Lives">
+                    <apex:outputText value="{!val.FORMULARY_LIVES}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+    	</apex:pageBlock>
+    </apex:form>
+</apex:page>

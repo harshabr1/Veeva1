@@ -1,0 +1,14 @@
+<apex:page standardController="Account">
+<apex:composition template="{!$Page.VODRedirect_Scroll_4000_vod}"/>
+    <script type="text/javascript">
+        var queryParams = "&mode=e";
+        queryParams += "&id=";
+        queryParams += "{!URLENCODE(CASESAFEID(Account.Id))}";
+    	queryParams += "&recordTypeId=";
+        queryParams += "{!URLENCODE(CASESAFEID($CurrentPage.parameters.RecordType))}";
+        queryParams += "&retURL=";
+        queryParams += "{!URLENCODE($CurrentPage.parameters.retURL)}"; 
+        
+        com.vod309.redirect.redirect("networkEnabledAccount", queryParams);
+    </script>
+</apex:page>

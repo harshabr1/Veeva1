@@ -1,0 +1,21 @@
+<apex:page standardController="Order_vod__c" recordSetVar="orders" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_Scroll_1800_vod}"/>
+<script type="text/javascript">  
+    var queryparams = "&acctid=" + "{!URLENCODE($CurrentPage.parameters.acctid)}";
+    queryparams += '&mode=n';
+    var multiRecipients = "{!URLENCODE($CurrentPage.parameters.multiRecipients)}";
+    if(multiRecipients) {
+        queryparams += "&multiRecipients=" + multiRecipients;
+        queryparams += "&recipientIds=" + "{!URLENCODE($CurrentPage.parameters.recipientIds)}";
+    }
+    var useRetURL = "{!URLENCODE($CurrentPage.parameters.useRetURL)}";
+    if (useRetURL === "true") {
+        queryparams += "&useRetURL=" + useRetURL;
+    }
+    var retURL = "{!URLENCODE($CurrentPage.parameters.retURL)}";
+    if (retURL) {
+        queryparams += "&retURL=" + retURL;
+    }
+    com.vod309.redirect.redirect("order", queryparams);
+</script>
+</apex:page>

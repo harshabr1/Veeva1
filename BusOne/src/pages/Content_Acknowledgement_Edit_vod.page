@@ -1,0 +1,3 @@
+<apex:page standardController="Content_Acknowledgement_vod__c" >
+    <c:VOD_EMBED veevaModule="aoc" veevaPage="edit-aoc" objectType="Content_Acknowledgement_vod__c" />
+</apex:page>

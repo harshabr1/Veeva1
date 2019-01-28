@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Multichannel_Message_vod stores HTML which will be referenced by the Multichannel Engine to display to end users.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Event_Attendee_Status_vod__c</fullName>
+        <description>Event_Attendee_Status_vod picklist value defines what the status of the of the attendee should be updated to in EM_Attendee_vod.Status_vod.</description>
+        <externalId>false</externalId>
+        <label>Event Attendee Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Accepted_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HTML_Message_vod__c</fullName>
+        <description>HTML_Message_vod holds the HTML that will displayed when the Multichannel_Message_vod record is referenced.</description>
+        <externalId>false</externalId>
+        <label>HTML Message</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Language_vod__c</fullName>
+        <description>The language of the text that the HTML code will display to the recipient.</description>
+        <externalId>false</externalId>
+        <label>Language</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MC_Activity_RecordType_vod__c</fullName>
+        <description>The recordtype of the Multichannel_Activity_vod that needs to be created when the Multichannel Message is executed.</description>
+        <externalId>false</externalId>
+        <label>MC Activity RecordType</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Message_Identifier_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Identifier used to find which Multichannel_Message_vod is in to be used.</description>
+        <externalId>false</externalId>
+        <label>Message Identifier</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Multichannel Message</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Multichannel Message Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Multichannel Messages</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Approved_Email_Action_vod</fullName>
+        <active>true</active>
+        <description>Record type of those Multichannel_Message_vod records used as a parameter for Approved Email Actions.</description>
+        <label>Approved_Email_Action_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Double_Opt_In_vod</fullName>
+        <active>true</active>
+        <description>Record type of those Multichannel_Message_vod records used as a parameter for double opt in.</description>
+        <label>Double_Opt_In_vod</label>
+        <picklistValues>
+            <picklist>Event_Attendee_Status_vod__c</picklist>
+            <values>
+                <fullName>Accepted_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Events_Management_Action_vod</fullName>
+        <active>true</active>
+        <description>Record type of those Multichannel_Message_vod records used as a parameter for Events Management Actions</description>
+        <label>Events_Management_Action_vod</label>
+        <picklistValues>
+            <picklist>Event_Attendee_Status_vod__c</picklist>
+            <values>
+                <fullName>Accepted_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Message_Identifier_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>HTML_Message_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>MC_Activity_RecordType_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Language_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Message_Identifier_vod__c</searchFilterFields>
+        <searchFilterFields>MC_Activity_RecordType_vod__c</searchFilterFields>
+        <searchFilterFields>Language_vod__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores all Key Messages to be used in Call Reporting and on Product Strategies</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Determines whether this key message should appear in the call report as a possible message to deliver by the rep.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CDN_Path_vod__c</fullName>
+        <description>Location of the content in the CDN</description>
+        <externalId>false</externalId>
+        <label>CDN Path</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CLM_ID_vod__c</fullName>
+        <description>CLM ID for the slide corresponding to this key message.</description>
+        <externalId>false</externalId>
+        <label>CLM ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category_vod__c</fullName>
+        <description>Allows the Key Message to be categorized e.g. Efficacy or Safety.</description>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Efficacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Safety</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tolerability</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Efficiencies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Custom_Reaction_vod__c</fullName>
+        <description>Comma Separated List of available reactions for a key message. If this field is empty, the default values from the Call2_Key_Messages_vod.Reaction_vod picklist will be used. Use &quot;,a,b,c&quot; to have the default value be blank.</description>
+        <externalId>false</externalId>
+        <label>Custom Reaction</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Text area that contains the text of the message.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Product Catalog records of type Detail Group.</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Key Messages (Detail Group)</relationshipLabel>
+        <relationshipName>Key_Messages_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Disable_Actions_vod__c</fullName>
+        <description>Contains a list of user actions that are disabled when selected. Values: Swipe, Pinch To Exit
+
+Swipe: When selected, the swipe action to move forward to the next slide/back to the previous slide is disabled. Creative Agencies will need to code the transition to the next/previous slide
+
+Pinch To Exit: When selected, pinching to exit the media player is disabled. This is to allow for proper pinch and anti-pinch zoom in / out on PDF files.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains a list of user actions that are disabled.
+Swipe: When selected, the swipe action to move forward to the next slide/back to the previous slide is disabled.
+Pinch To Exit: When selected, pinching to exit the media player is disabled.</inlineHelpText>
+        <label>Disable Actions</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Navigation_Bar_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>History_Buttons_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rotation_Lock_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Zoom_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Swipe_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pinch_To_Exit_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Display_Order_vod__c</fullName>
+        <description>A way to determine the order in which the key message appears on the call report.  Lower number takes priority over a higher number.  Lower numbers display to the left of higher numbers.</description>
+        <externalId>false</externalId>
+        <label>Display Order</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Shared_Resource_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Denotes if a Key Message is a CLM Shared resource</description>
+        <externalId>false</externalId>
+        <label>Is Shared Resource</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Language_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Language</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>en_US</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>es</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>de</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>fr</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>zh_CN</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Media_File_CRC_vod__c</fullName>
+        <description>The device uses this field to determine if the local media is in the correct version. Matching is based on the file names.</description>
+        <externalId>false</externalId>
+        <label>Media File CRC</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Media_File_Name_vod__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Name of the Media File (including the file extension). A media file is linked to a key message using this field. The file name is case sensitive.</description>
+        <externalId>true</externalId>
+        <label>Media File Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Media_File_Size_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Media File Size</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Strategy_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A lookup to the product strategy assigned to this key message.  A key message can be associated with a product or a product strategy, or both, or none.</description>
+        <externalId>false</externalId>
+        <label>Product Strategy</label>
+        <referenceTo>Product_Strategy_vod__c</referenceTo>
+        <relationshipLabel>Key Messages</relationshipLabel>
+        <relationshipName>Key_Message_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the product in the product catalog. This product is the topic of the key message. A key message can be associated with a product or a product strategy, or both, or none.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Key Messages</relationshipLabel>
+        <relationshipName>Key_Message_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Segment_vod__c</fullName>
+        <description>Holds the segment for which this key message should be displayed. If blank, then this key message will be displayed for accounts that are not aligned to a segment</description>
+        <externalId>false</externalId>
+        <label>Segment</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shared_Resource_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the shared resources which the key message references</description>
+        <externalId>false</externalId>
+        <label>Shared Resource</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Selected Key Message must have Is_Shared_Resource_vod enabled.</errorMessage>
+            <filterItems>
+                <field>Key_Message_vod__c.Is_Shared_Resource_vod__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Key_Message_vod__c</referenceTo>
+        <relationshipLabel>Shared Key Messages</relationshipLabel>
+        <relationshipName>Shared_Key_Messages_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Slide_Version_vod__c</fullName>
+        <description>Version of the CLM slide.</description>
+        <externalId>false</externalId>
+        <label>Slide Version</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status of the slide on the CDN. A piece of content will either be &apos;Approved&apos;, &apos;Staged&apos;, or &apos;Expired&apos;</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Staged_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Expired_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id used by Veeva CRM for integration with Vault. Can be populated to aid in data loading.</description>
+        <externalId>true</externalId>
+        <label>Veeva External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_DNS_vod__c</fullName>
+        <description>Vault DNS of the document.</description>
+        <externalId>false</externalId>
+        <label>Vault DNS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_Doc_Id_vod__c</fullName>
+        <description>Vault Id of the document</description>
+        <externalId>false</externalId>
+        <label>Vault Document ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_External_Id_vod__c</fullName>
+        <description>External ID from Vault</description>
+        <externalId>false</externalId>
+        <label>Vault External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_GUID_vod__c</fullName>
+        <description>Global Unique Identifier for Vault instance where this document resides.</description>
+        <externalId>false</externalId>
+        <label>Vault GUID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_Last_Modified_Date_Time_vod__c</fullName>
+        <description>Last modified date time of the content as reported by Vault.</description>
+        <externalId>false</externalId>
+        <label>Vault Last Modified Date Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_vod__c</fullName>
+        <description>Used to record what collateral is used to deliver the Key Message. Comma separated list of message vehicles. The master list of message vehicles is kept in Call_Key_Messages_vod.Vehicle_vod.</description>
+        <externalId>false</externalId>
+        <label>Vehicle</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>iOS_Viewer_vod__c</fullName>
+        <description>Use WKWebView for improved view of HTML CLM on iOS 10 or later. Leave blank to use legacy view of HTML CLM.</description>
+        <externalId>false</externalId>
+        <label>iOS Viewer</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>WKWebView_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Key Message</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Product_vod__c</columns>
+        <columns>Description_vod__c</columns>
+        <columns>Active_vod__c</columns>
+        <columns>Language_vod__c</columns>
+        <columns>Category_vod__c</columns>
+        <columns>Display_Order_vod__c</columns>
+        <columns>Product_Strategy_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Message</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Key Messages</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Description_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Product_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Product_Strategy_vod__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Description_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Strategy_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Description_vod__c</searchFilterFields>
+        <searchFilterFields>Product_vod__c</searchFilterFields>
+        <searchFilterFields>Product_Strategy_vod__c</searchFilterFields>
+        <searchResultsAdditionalFields>Description_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product_Strategy_vod__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,4 @@
+<apex:page standardController="EM_Event_Layout_vod__c" recordSetVar="EM_Event_Layout_vod__c">
+    <c:VOD_EMBED veevaModule="em" veevaPage="page-layout-organizer" objectType="EM_Event_Layout_vod__c" />
+
+</apex:page>

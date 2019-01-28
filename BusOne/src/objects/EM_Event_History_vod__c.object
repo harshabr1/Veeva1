@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores Event History details for events. Used by Veeva Event Management.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Action_Datetime_vod__c</fullName>
+        <description>The time the action took place</description>
+        <externalId>false</externalId>
+        <label>Action Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Action_Type_vod__c</fullName>
+        <description>The type of action being logged.</description>
+        <externalId>false</externalId>
+        <label>Action Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Submit_for_Approval_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approve_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reject_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cancel_Event_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reschedule_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Close_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unlock_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Created_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Approver_IDs_vod__c</fullName>
+        <description>Stores the IDs of all approvers returned by a Salesforce Approval Flow.</description>
+        <externalId>false</externalId>
+        <label>Approver IDs</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Comment_vod__c</fullName>
+        <description>Comments to include when submitting an event for approval, approving an event, or rejecting an event.</description>
+        <externalId>false</externalId>
+        <label>Comment</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Ending_Status_vod__c</fullName>
+        <description>The status that was set after the action occurred.</description>
+        <externalId>false</externalId>
+        <label>Ending Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The event an Event History record is associated to.</description>
+        <externalId>false</externalId>
+        <label>Event</label>
+        <referenceTo>EM_Event_vod__c</referenceTo>
+        <relationshipLabel>Event History</relationshipLabel>
+        <relationshipName>EM_Event_History_Event_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Next_Approver_Group_vod__c</fullName>
+        <description>Stores the name of the queue that is the next approver.</description>
+        <externalId>false</externalId>
+        <label>Next Approver Group</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Next_Approver_Role_vod__c</fullName>
+        <description>Stores the role given to the next approver</description>
+        <externalId>false</externalId>
+        <label>Next Approver Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approver_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Next_Approver_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The user selected for approval</description>
+        <externalId>false</externalId>
+        <label>Next Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipLabel>Event History</relationshipLabel>
+        <relationshipName>EM_Event_History_Next_Approver_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Helper field for data loads.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Starting_Status_vod__c</fullName>
+        <description>The initial status when the action occurred.</description>
+        <externalId>false</externalId>
+        <label>Starting Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The user initiating the action - either submitting an event for approval, approving an event, or rejecting an event.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipLabel>Event History</relationshipLabel>
+        <relationshipName>EM_Event_History_User_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Event History</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>EH-{0000000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Event History</pluralLabel>
+    <recordTypes>
+        <fullName>Event_History_vod</fullName>
+        <active>true</active>
+        <description>Event History</description>
+        <label>Event_History_vod</label>
+        <picklistValues>
+            <picklist>Action_Type_vod__c</picklist>
+            <values>
+                <fullName>Approve_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancel_Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Close_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reject_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reschedule_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submit_for_Approval_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlock_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>Event_Team_Member_vod__c</fullName>
+        <label>Event Team Member</label>
+    </sharingReasons>
+</CustomObject>

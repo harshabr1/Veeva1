@@ -1,0 +1,97 @@
+<apex:page standardController="Account" extensions="BOT_Account_Summary_VF">
+
+<!-- Jquery -->
+<apex:includeScript value="//code.jquery.com/jquery-1.11.3.min.js"/>
+<apex:stylesheet value="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"/>
+ 
+<!-- DataTable -->
+<apex:includeScript value="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"/>
+<apex:stylesheet value="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"/>
+ 
+<!-- Search Highlight -->
+<apex:includeScript value="//bartaz.github.io/sandbox.js/jquery.highlight.js"/>
+<apex:includeScript value="//cdn.datatables.net/plug-ins/1.10.9/features/searchHighlight/dataTables.searchHighlight.min.js"/>
+<apex:stylesheet value="//cdn.datatables.net/plug-ins/1.10.9/features/searchHighlight/dataTables.searchHighlight.css"/>
+ 
+<!-- DataTable buttons-->
+<apex:includeScript value="https://cdn.datatables.net/buttons/1.0.3/js/dataTables.buttons.min.js"/>
+<apex:includeScript value="//cdn.datatables.net/buttons/1.0.3/js/buttons.flash.min.js"/>
+<apex:includeScript value="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"/>
+<apex:includeScript value="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"/>
+<apex:includeScript value="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"/>
+<apex:includeScript value="//cdn.datatables.net/buttons/1.0.3/js/buttons.html5.min.js"/>
+<apex:includeScript value="//cdn.datatables.net/buttons/1.0.3/js/buttons.print.min.js"/>
+<apex:stylesheet value="https://cdn.datatables.net/buttons/1.0.3/css/buttons.dataTables.min.css"/> 
+
+<style>
+.filterMatches{
+  background-color: #BFFF00;
+}
+.tertiaryPalette{
+  color: #000 !important;
+}
+.dt-buttons{
+  margin-left: 10px;
+}
+</style>
+    
+<script type="text/javascript">
+$(document).ready(function(){
+  
+ var accountsTable = $('[cid$="accountsTable"]').parent('table').eq(0).DataTable({
+   //enables results highlight
+   searchHighlight: true,
+   //sets record lengths to show in picklist
+   aLengthMenu: [
+     [10, 25, 50, 100, 200, -1],
+     [10, 25, 50, 100, 200, "All"]
+   ],
+   "iDisplayLength": 10,
+   //adds copy, print buttons...
+   dom: 'lBfrtip', //l=length, B=buttons, f=filter(search), r=processing, t=the table, I=table summary, p=page controls
+   buttons: [
+     'copy', 'csv', 'excel', 'pdf',
+     {
+       extend: 'print',
+       customize: function(win) {
+         $(win.document.body)
+         .css( 'font-size', '10pt' )
+         .prepend('<img src="http://datatables.net/media/images/logo-fade.png" style="position:absolute; top:0; left:0;" />');
+ 
+         $(win.document.body).find( 'table' )
+         .addClass( 'compact' )
+         .css( 'font-size', 'inherit' );
+       }
+     }
+   ],
+ });
+ 
+});
+</script>
+     <apex:form ID="FormID1">
+     	<apex:outputPanel id="op3" layout="block" rendered="{!IF(AND(NOT(ISBLANK(pharmacy)),pharmacy.size>0),'TRUE','FALSE')}">
+            <apex:pageBlock ID="thePageBlock3">
+                <apex:pageBlockSection columns="1">
+                    <apex:pageBlockTable value="{!pharmacy}" var="ph" id="theTable3" styleClass="opp-table" cellpadding="2" html-cid="accountsTable" >
+                        <apex:column headerValue="Channel">
+                            <apex:outputText value="{!ph.BOT_Channel__c}" />
+                            <!--<img class="x-grid3-sort-icon" src="/img/alohaSkin/sortArrows_sprite.png" />-->
+                        </apex:column>
+                        <apex:column headerValue="Pharmacy Services Name">
+                            <apex:outputLink value="/{!ph.id}" target="_top" style="font-weight"> {!ph.name}</apex:outputLink>
+                        </apex:column> 
+                        <apex:column headerValue="PBM Name">
+                            <apex:outputText value="{!ph.BOT_PBM_Name__c}" />
+                        </apex:column>
+                        <apex:column headerValue="Corpotate">
+                            <apex:outputField value="{!ph.BOT_Corporate__c}" />
+                        </apex:column>
+                        <apex:column headerValue="Other Provider Name">
+                            <apex:outputText value="{!ph.BOT_Other_Provider_Name__c}" />
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>	
+</apex:page>

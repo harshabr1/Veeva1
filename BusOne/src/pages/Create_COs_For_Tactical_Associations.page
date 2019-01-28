@@ -1,0 +1,5 @@
+<apex:page standardController="Plan_Tactic_vod__c">
+
+    <c:VOD_EMBED veevaModule="planTactic" veevaPage="new-call-objectives-for-plan-tactic" objectType="new-call-objectives-for-plan-tactic" queryParams="{!$CurrentPage.parameters.queryParams}"/>
+
+</apex:page>

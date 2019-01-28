@@ -1,0 +1,9 @@
+<apex:page standardController="Account">
+<apex:composition template="{!$Page.VODRedirect_vod}"/>
+<script type="text/javascript">  
+    var queryparams = "{!JSENCODE($CurrentPage.parameters.queryparams)}";
+    if (!queryparams)
+        queryparams = "&acct=" + "{!Account.Id}";  
+    com.vod309.redirect.redirect("sampleOptIn", queryparams);
+</script>
+</apex:page>

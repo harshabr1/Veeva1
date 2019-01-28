@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Product Strategy Tool to enable brand strategy and activity tracking by brand for each account</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Indicates if this plan is active.  Only Product Plans with this field checked will be visible when clicking on the &quot;Apply Product Plan&quot; button.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Complete__c</fullName>
+        <description>Percent Complete</description>
+        <externalId>false</externalId>
+        <label>% Complete</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Description of the plan</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Product Catalog records of type Detail Group.</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Plans (Detail Group)</relationshipLabel>
+        <relationshipName>Product_Plans_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Link to the product for this plan in the product catalog</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Plans</relationshipLabel>
+        <relationshipName>Product_Plan_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Picklist of available statuses for this plan.  This field is used in the approval workflow process</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In  Progress</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Product Plan</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Product Plan Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product Plans</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Product_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Complete__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.ALIAS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_ACTIVITY</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Complete__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OWNER.ALIAS</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LAST_ACTIVITY</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Product_vod__c</searchFilterFields>
+        <searchFilterFields>Complete__c</searchFilterFields>
+        <searchFilterFields>Active_vod__c</searchFilterFields>
+        <searchFilterFields>Description_vod__c</searchFilterFields>
+        <searchFilterFields>Status_vod__c</searchFilterFields>
+        <searchResultsAdditionalFields>Product_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Complete__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_ACTIVITY</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Update_Metrics</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Update Metrics</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/9.0/connection.js&quot;)}
+
+
+var lastval = &apos;__NONEDEF__VOD__&apos;;
+var unqProductPlans=0;
+
+var totalActivities=0;
+var totalHist = 0;
+var totalTask = 0;
+var totalEvents  = 0;
+var hasTasks  = false;
+var accountsWithPlan  = 0;
+var plannedAct = 0;
+var hasProdObj = false;
+var objList = [];
+var countList = [];
+
+var getObjResults = sforce.connection.query(&quot;Select Id, Plan_Objective__c from Product_Objectives__c Where Brand_Plan__r.Name = &apos;{!Product_Plan_vod__c.Name}&apos;&quot;);
+
+
+
+var getObjsRecord = getObjResults.getArray(&quot;records&quot;);
+
+
+for (var recCount = 0; recCount &lt; getObjsRecord.length; recCount++) {
+       var updProdObj= new sforce.SObject(&apos;Product_Objectives__c&apos;);
+       updProdObj.Id  = getObjsRecord[recCount].Id;
+       updProdObj.Plan_Objective__c= getObjsRecord[recCount].Plan_Objective__c;
+       updProdObj.Account_Adoption__c = 0;
+       updProdObj.Total_Activities__c = 0;
+       updProdObj.Applied_Activities__c = 0;
+       updProdObj.Closed_Activities__c  = 0;
+       objList.push(updProdObj);
+
+        var countProdObj= new sforce.SObject(&apos;Product_Objectives__c&apos;);
+       countProdObj.Id  = getObjsRecord[recCount].Id;
+       countProdObj.Plan_Objective__c= getObjsRecord[recCount].Plan_Objective__c;
+       countProdObj.Account_Adoption__c = 0;
+       countProdObj.Applied_Activities__c = 0;
+       countProdObj.Closed_Activities__c  = 0;
+      countProdObj.Total_Activities__c = 0;
+      countList.push(countProdObj);
+}
+var results = sforce.connection.query(&quot;Select Id, Name, (Select Subject, IsTask, Status, Product_Objective__c, Product_Plan__c From ActivityHistories where Product_Plan__c = &apos;{!Product_Plan_vod__c.Name}&apos; ORDER BY  Product_Plan__c, Product_Objective__c), (Select IsTask, Status, Product_Objective__c, Product_Plan__c From OpenActivities where Product_Plan__c = &apos;{!Product_Plan_vod__c.Name}&apos; ORDER BY  Product_Plan__c , Product_Objective__c) from Account_Plan__c &quot;);
+
+var it = new sforce.QueryResultIterator(results);
+
+while (it.hasNext()) {
+       hasTasks  = false;
+       hasProdObj = false;
+        var record= it.next();
+
+         if ( record.OpenActivities != null) {
+               var openIter = new sforce.QueryResultIterator(record.OpenActivities);
+
+               while (openIter.hasNext()) {
+                      var openRecord= openIter.next();
+                      totalActivities++;
+                      hasTasks = true;
+                
+                       for (var countSearch = 0; countSearch &lt; countList.length; countSearch++) {
+                             if (countList[countSearch ].Plan_Objective__c == openRecord.Product_Objective__c)     {
+                                  countList[countSearch ].Account_Adoption__c++;
+                             
+                                  countList[countSearch ].Applied_Activities__c++;
+                            }
+                       }
+                }
+          }
+          if (record.ActivityHistories != null) {
+              var histIter = new sforce.QueryResultIterator(record.ActivityHistories);
+              while (histIter.hasNext()) {
+                      var histRecord= histIter.next();
+                       totalActivities++;
+                       totalHist++;
+                       hasTasks = true;
+                       for (var countSearch = 0; countSearch &lt; countList.length; countSearch++) {
+                             if (countList[countSearch ].Plan_Objective__c == histRecord.Product_Objective__c)    {
+                                  countList[countSearch ].Applied_Activities__c++;
+                                  countList[countSearch ].Closed_Activities__c++;
+                                  countList[countSearch ].Account_Adoption__c++;
+                              }
+                       }
+              }
+         }
+
+
+        for (var ncountObjs = 0; ncountObjs &lt; countList.length; ncountObjs++) {
+              if (countList[ncountObjs].Account_Adoption__c &gt; objList[ncountObjs].Account_Adoption__c) 
+                      objList[ncountObjs].Account_Adoption__c++;
+                 objList[ncountObjs].Applied_Activities__c = countList[ncountObjs].Applied_Activities__c ;
+                 objList[ncountObjs].Closed_Activities__c  = countList[ncountObjs].Closed_Activities__c;
+                 countList[ncountObjs].Account_Adoption__c = objList[ncountObjs].Account_Adoption__c;
+              
+        }
+
+        if (hasTasks == true)       {
+           accountsWithPlan++;
+        }
+} 
+
+var numObjectives = 0;
+var prodobjres= sforce.connection.query(&quot;Select Brand_Plan__c, Brand_Plan__r.Id, Brand_Plan__r.Name, Plan_Objective__c, (Select Id From ActivityHistories), (Select Id From OpenActivities) from Product_Objectives__c Where Brand_Plan__r.Name = &apos;{!Product_Plan_vod__c.Name}&apos;&quot;);
+
+var it = new sforce.QueryResultIterator(prodobjres);
+while (it.hasNext()) {
+       hasTasks  = false;
+       numObjectives++;
+        var record= it.next();
+
+         if ( record.OpenActivities != null) {
+              var openIter = new sforce.QueryResultIterator(record.OpenActivities);
+              while (openIter.hasNext()) {
+                    var openRecord= openIter.next();
+                    for (var ncountObjs = 0; ncountObjs &lt; objList.length; ncountObjs++) {
+                          if (objList[ncountObjs ].Plan_Objective__c == record.Plan_Objective__c)    {
+                                 objList[ncountObjs ].Total_Activities__c++;
+                          }
+                    }
+                    plannedAct++;
+              }
+         }
+}
+
+var updList = [];
+var updProductPlan= new sforce.SObject(&apos;Product_Plan__c&apos;);
+
+updProductPlan.Id = &quot;{!Product_Plan_vod__c.Id}&quot;;
+updProductPlan.	Total_Account_Plans__c =accountsWithPlan; 
+updProductPlan.Applied_Activities__c = totalActivities;
+updProductPlan.Closed_Activities__c  = totalHist;
+updProductPlan.Planned_Activities__c   = plannedAct;
+updProductPlan.Planned_Obj__c = numObjectives;
+updProductPlan.Last_Updated__c = new Date();
+updList.push(updProductPlan);
+upRes = sforce.connection.update (updList);
+
+upObjs = sforce.connection.update (objList);
+
+location.reload(true);</url>
+    </webLinks>
+</CustomObject>

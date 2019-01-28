@@ -1,0 +1,65 @@
+<apex:component controller="VOD_ANGULAR_REDIRECT_CONTROLLER">
+    
+    <apex:attribute name="veevaModule" type="string" assignTo="{!veevaModuleName}" required="true"
+                    description="Name of the Veeva Module" />
+    <apex:attribute name="params" type="string" assignTo="{!extraParams}" required="true"
+                    description="Extra URL parameters" />
+    
+    
+    <!-- CSS -->
+    <apex:stylesheet value="{!VodUrl}/css/{!veevaModuleName}/app.min.css" />
+    
+    <!-- Vendor JS, module.js -->
+    <script type="text/javascript" src="{!VodUrl}/js/{!veevaModuleName}/vendor.js"></script>
+    <script type="text/javascript" src="{!VodUrl}/js/{!veevaModuleName}/module.js"></script>
+
+    <!-- "Veeva div" -->
+    <div id="ng-app" ng-app="{!veevaModuleName}" ng-controller="veeva" ng-cloak="" veeva="directive">
+    </div> 
+    
+    <!-- JS -->
+    <script type="text/javascript" src="{!VodUrl}/js/{!veevaModuleName}/app.js"></script>
+    
+    <script>
+    (function() {
+        
+        // "Veeva div" custom directive
+        angular.module('{!veevaModuleName}').directive('veeva', function ($compile) {
+            return {
+                restrict: 'A',
+                replace: true,
+                link: function ($scope, $ele) {
+                    $scope.$watch('veevaHTML', function (html) {
+                        $ele.html(html);
+                        $compile($ele.contents())($scope);
+                    });
+                }
+            }
+        });
+        
+        // Pass the "extraParams" Request parameters into Angular in addition to CXF.
+        angular.module('{!veevaModuleName}').constant('Request', {!parsedParams});
+
+        // Set up Angular defaults.
+        angular.module('{!veevaModuleName}').controller('veeva', function ($scope, $http) {
+
+            $scope.vodUrl = '{!VodUrl}';
+            $scope.veevaHTML = '';
+            
+            $http.defaults.headers.common.sfSession = '{!SfSession}';
+            $http.defaults.headers.common.sfEndpoint = '{!SfEndpoint}';
+            $http.defaults.headers.common.Authorization = 'Basic ' + btoa('{!SfdcUsername}:password');
+            
+            // Perform the AJAX callout for the "Veeva div"
+            $http({method: 'GET', url: '{!VeevaPageUrl}'})
+                .success(function (data) {
+                    $scope.veevaHTML = data;
+                })
+                .error(function (data) {
+                    console.log('There was a problem with the request.');
+                });
+        });
+    })();
+   </script>
+
+</apex:component>

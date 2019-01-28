@@ -1,0 +1,11 @@
+<apex:component controller="VODRedirectController" rendered="{!condition}">
+    <apex:attribute name="condition" required="true" type="Boolean" description="The condition that is checked for the redirect to be used." />
+    <apex:attribute name="actionURL" required="true" type="String" description="The action to follow if the condition is true." assignTo="{!redirectURL}" />
+    <apex:form >
+        <apex:actionFunction name="doRedirect" action="{!doRedirect}" immediate="true" />
+    </apex:form>
+    <script type="text/javascript" async="async">
+        doRedirect();
+    </script>
+    <h1> HELLO REDIRECT </h1>
+</apex:component>

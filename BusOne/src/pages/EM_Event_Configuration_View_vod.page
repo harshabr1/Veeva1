@@ -1,0 +1,3 @@
+<apex:page standardController="EM_Event_Configuration_vod__c" >
+    <c:VOD_EMBED veevaModule="em" veevaPage="event-configuration-view" objectType="EM_Event_Configuration_vod__c" />
+</apex:page>

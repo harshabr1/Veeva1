@@ -1,0 +1,4 @@
+<apex:page standardController="Expense_Line_vod__c" >
+    <c:VOD_EMBED veevaModule="em" veevaPage="expense-line-edit" objectType="Expense_Line_vod__c"
+    queryParams="{!$CurrentPage.parameters.queryParams}&objectId={!Expense_Line_vod__c.Id}"/>
+</apex:page>

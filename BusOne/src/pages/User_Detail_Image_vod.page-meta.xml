@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>20.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>This displays the photo_vod__c field on User_Detail_vod as an image rather than a base64 string.</description>
+    <label>User_Detail_Image_vod</label>
+</ApexPage>

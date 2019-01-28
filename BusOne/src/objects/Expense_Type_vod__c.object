@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Defines expense types.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to activate or deactivate expense types. In the UI, Veeva lookup fields to expense types will prevent the user from selecting inactive expense types.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Country_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Country that the expense type applies to. Can be used to establish user visibility to the expense types used in their country.</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <referenceTo>Country_vod__c</referenceTo>
+        <relationshipLabel>Expense Types</relationshipLabel>
+        <relationshipName>Expense_Types_Country</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Code_vod__c</fullName>
+        <description>Expense Code. This field should be used for expense reporting because the same expense type in different languages can be associated by having the same code.</description>
+        <externalId>false</externalId>
+        <label>Expense Code</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_Type_Identifier_vod__c</fullName>
+        <description>Used in the UI to help end users identify the correct expense type. This field should be populated by an admin, and be read-only to end users.</description>
+        <externalId>false</externalId>
+        <label>Expense Type Identifier</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Included_In_Speaker_Cap_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, any expense of this type that is associated with a speaker will automatically count toward that speaker&apos;s cap.</description>
+        <externalId>false</externalId>
+        <label>Included In Speaker Cap</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Meal_Expense_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to identify which expense types are included in meal cost calculations.</description>
+        <externalId>false</externalId>
+        <label>Meal Expense</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Expense_Type_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Parent Expense Type is used to establish relationships between expense types and expense sub-types</description>
+        <externalId>false</externalId>
+        <label>Parent Expense Type</label>
+        <referenceTo>Expense_Type_vod__c</referenceTo>
+        <relationshipLabel>Expense Sub-Types</relationshipLabel>
+        <relationshipName>Parent_Expense_Type_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Expense Type</label>
+    <listViews>
+        <fullName>All_Expenses</fullName>
+        <columns>NAME</columns>
+        <columns>Expense_Code_vod__c</columns>
+        <columns>Parent_Expense_Type_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Expenses</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Parent_Expenses</fullName>
+        <columns>NAME</columns>
+        <columns>Expense_Code_vod__c</columns>
+        <columns>Parent_Expense_Type_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Parent_Expense_Type_vod__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Parent Expenses</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Expense Types</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Expense_Type_vod</fullName>
+        <active>true</active>
+        <description>Used for top-level expense types</description>
+        <label>Expense_Category_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

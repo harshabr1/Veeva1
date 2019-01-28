@@ -1,0 +1,13 @@
+<apex:page standardController="Medical_Event_vod__c" showHeader="false" sidebar="false" standardStylesheets="false" >
+    <apex:pageBlock >
+        <p> Name: {!Medical_Event_vod__c.Name}</p>
+        <p> Active: {!Medical_Event_vod__c.Active_vod__c}</p> 
+        <p> Description: {!Medical_Event_vod__c.Description_vod__c}</p> 
+        <p> Start Date: {!Medical_Event_vod__c.Start_Date_vod__c}</p> 
+        <p> End Date: {!Medical_Event_vod__c.End_Date_vod__c}</p> 
+        <p> Primary Product: {!Medical_Event_vod__c.Primary_Product__c}</p> 
+        <p> Secondary Product: {!Medical_Event_vod__c.Secondary_Product__c}</p>
+        <p> Website: {!Medical_Event_vod__c.Website__c}</p>  
+        <p> Last Modified By: {!Medical_Event_vod__c.LastModifiedBy.Name}, {!Medical_Event_vod__c.LastModifiedDate}</p> 
+    </apex:pageBlock>
+</apex:page>

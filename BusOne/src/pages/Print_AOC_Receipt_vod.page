@@ -1,0 +1,26 @@
+<apex:page standardController="Content_Acknowledgement_vod__c" recordSetVar="acknowledgements" extensions="VOD_GetRecordIds,VODRedirectController,VEEVA_PRINT_AOC_CONTROLLER">
+    <apex:iframe scrolling="false" height="800px" width="100%"
+                 src="javascript:false" frameborder="false" id="vod_iframe" />
+    <c:Veeva_Resize_Component_vod />
+    <script>
+        var docBody = document.body || document.documentElement,
+        vodiframe = document.getElementById("vod_iframe"),
+        ids = "{!selectedRecordIds}",
+        url = "{!JSENCODE(VodUrl)}/aoc/print-aoc";
+
+        if (ids.length == 0) {
+        alert("{!errorMessage}");
+        window.history.back();
+        }
+
+        url += "?ses=" + "{!$Api.Session_ID}";
+        url += "&url=" + "{!URLENCODE($Api.Partner_Server_URL_240 )}";
+        url += "&acks=" + ids;
+        url += "&oType=" + "printaoc";
+
+        vodiframe.src = url;
+        com.vod309.resize.init(vodiframe);
+    </script>
+
+
+</apex:page>

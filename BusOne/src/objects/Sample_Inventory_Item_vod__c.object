@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Sample Inventory Item represents a physical count of a Sample Lot for a specific Sample Inventory.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Count_vod__c</fullName>
+        <description>Count represents the user entered physical count  for a Sample Lot as part of a Sample Inventory Item.</description>
+        <externalId>false</externalId>
+        <label>Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Difference_vod__c</fullName>
+        <description>Difference represents a calculated formula of the difference between the Count and Expected Quantity for a Sample Lot as part of a Sample Inventory Item.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL(Expected_Quantity_vod__c ), 0, Count_vod__c - Expected_Quantity_vod__c)</formula>
+        <label>Difference</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expected_Quantity_vod__c</fullName>
+        <description>Expected Quantity represents the quantity that the system expects for a Sample Lot as part of a Sample Inventory Item.  The Expected Quantity is calculated based on the summation of the Inventory Impact Quantity field for  all Sample Transactions by the user for the Sample Lot.   The Roll-up of the Sample Transactions for a Sample Lot is maintained on the Sample Lot object in the field Calculated Quantity. 
+
+The display of Expected Quantity on the Sample Inventory Screen is controlled by the Sample Inventory Layout.  If the Expected Quantity is removed from the Layout, then the Difference field will not be displayed as well.</description>
+        <externalId>false</externalId>
+        <label>Expected Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expiration_Date_vod__c</fullName>
+        <description>Expiration Date represents the Expiration Date of the Sample Lot represented in the Sample Inventory Item.</description>
+        <externalId>false</externalId>
+        <label>Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Inventory_Name_vod__c</fullName>
+        <description>Inventory Name represents the Sample Inventory that the Sample Inventory Item is a child of.</description>
+        <externalId>false</externalId>
+        <label>Inventory Name</label>
+        <referenceTo>Sample_Inventory_vod__c</referenceTo>
+        <relationshipLabel>Sample Inventory Items</relationshipLabel>
+        <relationshipName>Sample_Inventory_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Lot_Lookup_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Sample Lot record of the Sample Inventory line item. This field should not be displayed on the layout, but used to establish a relationship between the Sample Inventory Item and Sample Lot record including determining the Product Type and Qty Per Case for the Calculator.</description>
+        <externalId>false</externalId>
+        <label>Lot #</label>
+        <referenceTo>Sample_Lot_vod__c</referenceTo>
+        <relationshipLabel>Sample Inventory Items</relationshipLabel>
+        <relationshipName>Sample_Inventory_Items_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Lot_vod__c</fullName>
+        <description>Lot # represents the Lot # of the Sample Lot that the Sample Inventory Item represents.</description>
+        <externalId>false</externalId>
+        <label>Lot #</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_vod__c</fullName>
+        <description>Sample represents the Sample name of the Sample Lot for the Sample Inventory Item.</description>
+        <externalId>false</externalId>
+        <label>Sample</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>U_M_vod__c</fullName>
+        <description>U/M represents the Unit of Measurement of the Sample Lot for the Sample Inventory Item.</description>
+        <externalId>false</externalId>
+        <label>U/M</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unlock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Unlock checkbox is used by the VBioPharma application to determine if a user has access to Unlock a Sample Inventory Item that has been Submitted. Access is controlled by Field Level security on the Unlock checkbox.</description>
+        <externalId>false</externalId>
+        <label>Unlock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Sample Inventory Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>INVI-{000000000}</displayFormat>
+        <label>Sample Inventory Item Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Sample Inventory Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Sample_Inventory_Count_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(FLOOR(Count_vod__c) &lt;&gt; Count_vod__c , Count_vod__c &lt; 0)</errorConditionFormula>
+        <errorMessage>Quantity: Invalid Number</errorMessage>
+    </validationRules>
+</CustomObject>

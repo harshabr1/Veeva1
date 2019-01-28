@@ -1,0 +1,5 @@
+<apex:page standardController="EM_Event_vod__c" >
+    <c:VOD_EMBED veevaModule="em" veevaPage="em-new" objectType="EM_Event_vod__c"
+                           recordType18="{!URLENCODE(CASESAFEID($CurrentPage.parameters.RecordType))}" />
+
+</apex:page>

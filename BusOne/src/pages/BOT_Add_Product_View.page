@@ -1,0 +1,21 @@
+<apex:page standardController="Call2_vod__c" extensions="BOT_Call_Edit_Extn" >
+    <apex:form >
+		<apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<apex:outputLabel >
+                	<h2>
+                        Call Objectives
+                    </h2>
+        		</apex:outputLabel>
+            </apex:pageBlockSection>
+        	<apex:outputPanel id="oPanel" layout="block">
+        		<apex:pageBlockSection columns="4">
+                    <apex:inputField value="{!productSingle.Product__c}" />
+                    <apex:inputField value="{!productSingle.Objective1__c}" />
+                    <apex:inputField value="{!productSingle.Objective2__c}" />
+                    <apex:inputField value="{!productSingle.Objective3__c}" />
+                </apex:pageBlockSection>
+        	</apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

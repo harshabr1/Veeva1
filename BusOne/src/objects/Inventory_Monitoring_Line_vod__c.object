@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Inventory Monitoring Line is a child of Inventory Monitoring. It holds information about a particular product and data captured at an account.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Added_From_Photo_vod__c</fullName>
+        <description>Used to identify if the IM Line is associated to the Parent or a particular Child IM record:
+            If the Inventory_Monitoring.Photo_Rank_vod__c is blank, then Added_From_Photo_vod__c= blank, which indicates that this Line is associated to the Parent IM
+            If the Inventory_Monitoring.Photo_Rank_vod__c is populated, then stamp its rank value in the Added_From_Photo_vod__c field. The stamped value will indicate in which child section this IM Line belongs</description>
+        <externalId>false</externalId>
+        <label>Added From Photo?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Consumer_Price_vod__c</fullName>
+        <description>Price consumers are charged for products at the pharmacy.</description>
+        <externalId>false</externalId>
+        <label>Consumer Price</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Facings_horizontal_vod__c</fullName>
+        <description>Number of Facings visible in the shelf on the horizontal axis .</description>
+        <externalId>false</externalId>
+        <label>Horizontal</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Facings_simple_vod__c</fullName>
+        <description>Amount of shelf space, in terms of product units quantity, a particular product is given at retail location.</description>
+        <externalId>false</externalId>
+        <label>Facings</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Facings_vertical_vod__c</fullName>
+        <description>Number of Facings visible in the shelf on the vertical axis.</description>
+        <externalId>false</externalId>
+        <label>Vertical</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inventory_Monitoring_vod__c</fullName>
+        <description>The Inventory Monitoring that the line item belongs to.</description>
+        <externalId>false</externalId>
+        <label>Inventory Monitoring</label>
+        <referenceTo>Inventory_Monitoring_vod__c</referenceTo>
+        <relationshipLabel>Inventory Monitoring Lines</relationshipLabel>
+        <relationshipName>Inventory_Monitoring_Lines</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Inventory_vod__c</fullName>
+        <description>Quantity of product in stock at the pharmacy.</description>
+        <externalId>false</externalId>
+        <label>Inventory</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Layer_vod__c</fullName>
+        <description>The visibility layer the facings are seen (eye level, above eye level, below eye level). Customers can add values to this picklist.</description>
+        <externalId>false</externalId>
+        <label>Layer</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Above_eye_level</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Eye_level</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Below_eye_level</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Field used by mobile products for synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Moved_Goods_vod__c</fullName>
+        <description>Quantity of product that was moved between two documented pharmacy stocks (turnover).</description>
+        <externalId>false</externalId>
+        <label>Moved Goods</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Position_vod__c</fullName>
+        <description>Position of the product on the shelf/counter (Front of Counter, Back of Counter, Open Shelf). Customer can add values to this picklist.</description>
+        <externalId>false</externalId>
+        <label>Position</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Front_of_counter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Back_of_counter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Open_shelf</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Identifier_vod__c</fullName>
+        <description>This is a pull-in field that allows the display of the Product Identifier field from the Product Catalog object on Inventory Monitoring Lines.</description>
+        <externalId>false</externalId>
+        <label>Product Identifier</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The product the Inventory Monitoring Line item is referring to.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Inventory Monitoring Lines</relationshipLabel>
+        <relationshipName>Inventory_Monitoring_Lines</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>U_M_vod__c</fullName>
+        <description>Unit of Measurement for the line item being monitored.</description>
+        <externalId>false</externalId>
+        <label>U/M</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Modified_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flags if line was modified by user</description>
+        <externalId>false</externalId>
+        <label>User Modified</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Inventory Monitoring Line</label>
+    <nameField>
+        <displayFormat>IML-{000000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Inventory Monitoring Lines</pluralLabel>
+    <recordTypes>
+        <fullName>Inventory_Monitoring_vod</fullName>
+        <active>false</active>
+        <description>Base record type for Inventory Monitoring Lines</description>
+        <label>Inventory Monitoring</label>
+        <picklistValues>
+            <picklist>Layer_vod__c</picklist>
+            <values>
+                <fullName>Above_eye_level</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Below_eye_level</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eye_level</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Position_vod__c</picklist>
+            <values>
+                <fullName>Back_of_counter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Front_of_counter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open_shelf</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

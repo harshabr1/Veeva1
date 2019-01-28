@@ -1,0 +1,5 @@
+<apex:page controller="VOD_NAS_CONTROLLER" title="{!Title}">
+    
+    <c:Veeva_Angular_Redirect_vod veevaModule="nas" params="{!ExtraParams}" />
+    
+</apex:page>

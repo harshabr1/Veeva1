@@ -1,0 +1,4 @@
+<apex:page standardController="Contract_vod__c">
+    <c:VOD_EMBED veevaModule="contract" veevaPage="contract-edit" objectType="Contract_vod__c"/>
+
+</apex:page>

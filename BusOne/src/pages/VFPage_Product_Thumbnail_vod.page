@@ -1,0 +1,5 @@
+<apex:page standardController="Product_vod__c">
+    <c:VOD_EMBED veevaModule="product.img"
+                 veevaPage="img-view"
+                 queryParams="&productId={!Product_vod__c.Id}&isAccessible={!$ObjectType.Product_vod__c.fields.Product_Thumbnail_vod__c.Accessible}&isCreateable={!$ObjectType.Product_vod__c.fields.Product_Thumbnail_vod__c.Createable}&isUpdateable={!$ObjectType.Product_vod__c.fields.Product_Thumbnail_vod__c.Updateable}"/>
+</apex:page>

@@ -1,0 +1,6 @@
+<apex:page standardController="Key_Message_vod__c" showHeader="false">
+    <apex:composition template="{!$Page.VODRedirectCustom_vod}"/>
+    <script type="text/javascript">
+        com.vod309.redirect.redirectContent("fileUpload", "&objectType=Key_Message_vod__c&objectId={!Key_Message_vod__c.id}&mode=n");
+    </script>
+</apex:page>

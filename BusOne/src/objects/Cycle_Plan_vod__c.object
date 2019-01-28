@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>Edit_Cycle_Plan_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>View_Cycle_Plan_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Cycle Plan object holds a list of target accounts for a specified time frame.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, the Cycle Plan is considered Active.  There should be only one active Cycle Plan per user in a territory.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Calls_vod__c</fullName>
+        <description>number of calls the user has made to date against his/her targeted accounts</description>
+        <externalId>false</externalId>
+        <label>Actual Calls</label>
+        <summarizedField>Cycle_Plan_Target_vod__c.Actual_Calls_vod__c</summarizedField>
+        <summaryForeignKey>Cycle_Plan_Target_vod__c.Cycle_Plan_vod__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Attainment_Difference_vod__c</fullName>
+        <description>Subtracts the actual attainment from the expected attainment. This value is used to color the Attained container on the VMobile Home page widget.</description>
+        <externalId>false</externalId>
+        <formula>(Expected_Attainment_vod__c - Attainment_vod__c) * 100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Attainment Difference</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attainment_vod__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Planned_Calls_vod__c &gt; 0, Actual_Calls_vod__c / Planned_Calls_vod__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Attainment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Comments_vod__c</fullName>
+        <description>comments or instructions about the goals of this Cycle Plan</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>End_Date_vod__c</fullName>
+        <description>The last day the Cycle Plan is in effect.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Attainment_vod__c</fullName>
+        <description>Calculates the expected attainment percentage for the cycle plan period.</description>
+        <externalId>false</externalId>
+        <formula>IF ( TODAY()  &gt;= End_Date_vod__c , 1, 
+  IF ( TODAY() &lt; Start_Date_vod__c, 0,  
+     (TODAY() - Start_Date_vod__c) / (End_Date_vod__c - Start_Date_vod__c)
+  )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expected Attainment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Calls_vod__c</fullName>
+        <description>Calculates the expected number of calls to be completed.</description>
+        <externalId>false</externalId>
+        <formula>Expected_Attainment_vod__c * Planned_Calls_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expected Calls</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Auto-populates with the concatenation of &lt;Territory&gt; + 2 underscore characters + &lt;Active Flag&gt;, for example:  21199__true. If Cycle Plan is inactive, then External ID is left blank.</description>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_Calls_vod__c</fullName>
+        <description>number of calls the user is supposed to make during the Cycle Plan’s time period</description>
+        <externalId>false</externalId>
+        <label>Planned Calls</label>
+        <summarizedField>Cycle_Plan_Target_vod__c.Planned_Calls_vod__c</summarizedField>
+        <summaryForeignKey>Cycle_Plan_Target_vod__c.Cycle_Plan_vod__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Remaining_vod__c</fullName>
+        <description>The remaining number of calls the user must complete in the Cycle Plan period to achieve their overall planned call objective. Default value is 0.</description>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISBLANK(Planned_Calls_vod__c),ISBLANK(Actual_Calls_vod__c)),0
+                  ,IF(ISBLANK(Actual_Calls_vod__c) ,Planned_Calls_vod__c 
+                      , IF(ISBLANK(Planned_Calls_vod__c ),0
+                            , IF((Planned_Calls_vod__c  -Actual_Calls_vod__c )&gt;=0,Planned_Calls_vod__c  -Actual_Calls_vod__c ,0)
+                        )
+                    )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date_vod__c</fullName>
+        <description>The first day the Cycle Plan is in effect.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Holds the status of the Cycle Plan.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In_Progress_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Territory_vod__c</fullName>
+        <description>the territory of the Cycle Plan</description>
+        <externalId>false</externalId>
+        <label>Territory</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Cycle Plan</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Territory_vod__c</columns>
+        <columns>Active_vod__c</columns>
+        <columns>Planned_Calls_vod__c</columns>
+        <columns>Status_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Cycle Plans</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Start_Date_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>End_Date_vod__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>StartDateGreaterThanEndDate</fullName>
+        <active>true</active>
+        <description>Start Date cannot be greater than End Date</description>
+        <errorConditionFormula>Start_Date_vod__c  &gt;  End_Date_vod__c</errorConditionFormula>
+        <errorMessage>Start Date cannot be greater than End Date.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Submit_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Submit</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>//</url>
+    </webLinks>
+</CustomObject>

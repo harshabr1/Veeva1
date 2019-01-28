@@ -1,0 +1,64 @@
+<!-- 
+- 
+- Confidentiality Information: 
+- 
+- This module is the confidential and proprietary information of 
+- Verticals onDemand, Inc.; it is not to be copied, reproduced, or transmitted 
+- in any form, by any means, in whole or in part, nor is it to be used 
+- for any purpose other than that for which it is expressly provided 
+- without the written permission of Verticals onDemand. 
+- 
+- Copyright (c) 2009 Verticals onDemand, Inc. All Rights Reserved. 
+- 
+-->
+<apex:page controller="VOD_ApplyProductPlanController" title="{!$Label.ApplyProductPlan_Title_vod}" tabStyle="Account_Plan_vod__c">
+
+<apex:includeScript value="{!JSENCODE(include)}" />
+
+<apex:sectionHeader title="{!$Label.ApplyProductPlan_Title_vod}" subtitle="{!subtitle}"/>
+<apex:form >
+<p>
+{!$Label.ApplyProductPlan_HelperText_vod}
+</p>
+<p>
+<apex:commandButton action="{!save}" value="{!$Label.Common_SaveButton_vod}"></apex:commandButton>
+<apex:commandButton action="{!cancel}" value="{!$Label.Common_CancelButton_vod}"></apex:commandButton>
+</p>
+
+<apex:messages ></apex:messages>
+
+<apex:pageBlock rendered="{!hideTactics}">
+    <apex:pageBlockTable value="{!productStrategies}" var="strategy" id="vod_strategies">
+        <apex:column >
+            <apex:facet name="header"><apex:inputCheckbox onclick="checkAll(event)" /></apex:facet>
+            <apex:inputCheckbox value="{!strategy.selected}" />
+        </apex:column>
+                
+        <apex:column headervalue="{!$ObjectType.Product_Plan_vod__c.label}" value="{!strategy.plan}"></apex:column>
+        <apex:column headervalue="{!$ObjectType.Product_Strategy_vod__c.label}">
+            <apex:outputLink value="javascript:localopenwizard('/{!strategy.id}','',1);">{!strategy.strategy}</apex:outputLink>
+        </apex:column>
+        <apex:column headervalue="{!$ObjectType.Product_Strategy_vod__c.fields.Description_vod__c.label}" value="{!strategy.description}"></apex:column>
+        <apex:column headervalue="{!$Label.ApplyProductPlan_NumTacticsColumnLabel_vod}" value="{!strategy.numberOfTactics}"></apex:column>      
+    </apex:pageBlockTable>
+</apex:pageBlock>  
+
+<apex:pageBlock rendered="{!showTactics}" >
+    <apex:pageBlockTable value="{!productTactics}" var="tactic" id="vod_tactics">
+        <apex:column >
+            <apex:facet name="header"><apex:inputCheckbox onclick="checkAll(event)" /></apex:facet>
+            <apex:inputCheckbox value="{!tactic.selected}" />
+        </apex:column>
+        <apex:column headervalue="{!$ObjectType.Product_Plan_vod__c.label}" value="{!tactic.plan}"></apex:column>
+        <apex:column headervalue="{!$ObjectType.Product_Strategy_vod__c.label}">
+            <apex:outputLink value="javascript:localopenwizard('/{!tactic.strategyId}','',1);">{!tactic.strategyName}</apex:outputLink>
+        </apex:column>
+        <apex:column headervalue="{!$ObjectType.Product_Plan_vod__c.fields.Product_vod__c.label}" value="{!tactic.product}"></apex:column>        
+        <apex:column headervalue="{!$ObjectType.Product_Tactic_vod__c.label}" value="{!tactic.tactic}"></apex:column>
+        <apex:column headervalue="{!$ObjectType.Product_Strategy_vod__c.fields.Description_vod__c.label}" value="{!tactic.description}"></apex:column>
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+</apex:form>
+
+</apex:page>

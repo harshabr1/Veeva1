@@ -1,0 +1,6 @@
+<apex:page controller="VOD_SObjectNewRedirectController" action="{!sObjectNewRedirect}">
+    <c:VOD_EMBED veevaModule="{!$CurrentPage.parameters.veevaModule}" 
+                 veevaPage="{!$CurrentPage.parameters.veevaPage}" 
+                 objectType="{!$CurrentPage.parameters.objectType}" 
+                 queryParams="{!$CurrentPage.parameters.queryParams}&RecordType={!$CurrentPage.parameters.RecordType}"/>
+</apex:page>

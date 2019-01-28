@@ -1,0 +1,10 @@
+<apex:component controller="VOD_EMBED_CONTROLLER">
+    <apex:attribute name="veevaModule" type="string" assignTo="{!veevaModuleName}" required="true"
+                    description="Name of the Veeva Module" />
+    <apex:attribute name="veevaPage" type="string" assignTo="{!veevaPageName}" required="true"
+                    description="Name of the page in the Veeva Module" />
+    <apex:attribute name="mcEngine" type="string" assignTo="{!veevaMcEngine}" required="false"
+                    description="Page is used in MC Engine" />
+    <c:VOD_EMBED_DETAIL_V1 rendered="{!mcVersion < 250504}" veevaModule="{!veevaModuleName}" veevaPage="{!veevaPageName}" mcEngine="true" />
+    <c:VOD_EMBED_DETAIL_V2 rendered="{!mcVersion >= 250504}" veevaModule="{!veevaModuleName}" veevaPage="{!veevaPageName}" mcEngine="true" />
+</apex:component>

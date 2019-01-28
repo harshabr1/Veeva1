@@ -1,0 +1,10 @@
+<apex:component controller="VODRedirectController" >
+    <apex:attribute name="oType" required="true" type="String" description="The query parameter oType for a CRM redirect." />
+    <apex:iframe scrolling="false" height="2000px" width="100%" src="javascript:false" frameborder="false" id="vod_iframe"/>
+    
+    <c:VEEVA_COMMON_JAVASCRIPT />
+    
+    <script>
+        com.vod309.redirect.redirect("{!oType}","");
+    </script>
+</apex:component>

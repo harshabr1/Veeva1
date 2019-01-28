@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>As part of an Inventory Order, a line item containing specific product and ordered quantity.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Exception_Comments_vod__c</fullName>
+        <description>User entered comments regarding the request to be granted an exemption for ordering in excess of the allocation quantity.</description>
+        <externalId>false</externalId>
+        <label>Exception Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Exception_Severity_vod__c</fullName>
+        <description>This field controls how the error will be handled by the online application</description>
+        <externalId>false</externalId>
+        <label>Exception Severity</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Prevent_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Warn_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Require_Approval_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Exception_Type_vod__c</fullName>
+        <description>This field identifies which attribute gave rise to an exception</description>
+        <externalId>false</externalId>
+        <label>Exception Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>QuantityDate_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Date_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Quantity_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Inventory_Order_Allocation_vod__c</fullName>
+        <description>Row ID for Inventory Order Allocation record against which the order line is being recorded.</description>
+        <externalId>false</externalId>
+        <label>Inventory Order Allocation</label>
+        <referenceTo>Inventory_Order_Allocation_vod__c</referenceTo>
+        <relationshipLabel>Inventory Order Lines</relationshipLabel>
+        <relationshipName>Inventory_Order_Lines_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Inventory_Order_Header_vod__c</fullName>
+        <description>Row ID for Order Header record for which the order line is being created</description>
+        <externalId>false</externalId>
+        <label>Inventory Order Header</label>
+        <referenceTo>Inventory_Order_vod__c</referenceTo>
+        <relationshipLabel>Inventory Order Lines</relationshipLabel>
+        <relationshipName>Inventory_Order_Lines_vod</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Inventory_Order_Line_Status_vod__c</fullName>
+        <description>This field identifies the status of this order line. The online application managers New, Save and Submitted. The customer&apos;s integration with their fulfillment system can use the other delivered values.</description>
+        <externalId>false</externalId>
+        <label>Inventory Order Line Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Saved_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In_Process_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Canceled_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Order_Fulfilled_Quantity_vod__c</fullName>
+        <description>The quantity fulfilled from this order. The fulfilled quantity is used to decrement the available allocation.</description>
+        <externalId>false</externalId>
+        <label>Order Fulfilled Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Quantity_UOM_vod__c</fullName>
+        <description>The unit of measure for the order quantity.</description>
+        <externalId>false</externalId>
+        <label>Order Quantity UOM</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Box</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Case</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Carton</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Order_Quantity_vod__c</fullName>
+        <description>The quantity being ordered.</description>
+        <externalId>false</externalId>
+        <label>Order Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The product being ordered on this inventory order line.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Inventory Order Lines</relationshipLabel>
+        <relationshipName>Inventory_Order_Lines_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Delivery_Date_vod__c</fullName>
+        <description>The requested date for the order line to be delivered to the Ordered For user.</description>
+        <externalId>false</externalId>
+        <label>Requested Delivery Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Inventory Order Line</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>IOL-{0000000}</displayFormat>
+        <label>Inventory Order Line Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Inventory Order Lines</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>VEEVA_DELIVERY_DATE_CHECK</fullName>
+        <active>true</active>
+        <description>This rule enforces that the requested delivery date is not before the order create date.</description>
+        <errorConditionFormula>Requested_Delivery_Date_vod__c &lt;  Inventory_Order_Header_vod__r.Order_Create_Date_vod__c</errorConditionFormula>
+        <errorMessage>Delivery date cannot be before the order create date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VEEVA_NEGATIVE_QUANTITY</fullName>
+        <active>true</active>
+        <description>This validation rule enforces that the quantity ordered is not a negative number.</description>
+        <errorConditionFormula>Order_Quantity_vod__c &lt; 0</errorConditionFormula>
+        <errorMessage>Order quantity cannot be less than 0</errorMessage>
+    </validationRules>
+</CustomObject>

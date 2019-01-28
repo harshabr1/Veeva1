@@ -1,0 +1,57 @@
+<!--
+Name:Event_ProductInformation
+Created By :Harsha BR
+Created Date:02/03/2017
+Overview:Used to add the details for the Product Information. 
+-->
+
+<apex:page standardController="Event" extensions="Event_CallHistoryExtension" sidebar="false" >
+    <apex:form id="theForm">
+    <apex:pageMessages id="pageMsg"/>
+        <apex:pageBlock mode="edit" id="pb" title="Add Product Information">
+            <apex:variable value="{!0}" var="rowNumber" />  
+
+            <apex:pageBlockSection >
+            <apex:outputPanel id="panelWithVar">
+                <apex:variable value="{!0}" var="rowNumber" />
+            </apex:outputPanel>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="pbsId">
+                <apex:outputPanel id="prodItems" >
+                    <table border="0" cellpadding="2" cellspacing="2" id="myTable">
+                        <tr>
+                           <th>Product</th>
+                           <th>Objective1</th>
+                           <th>Objective2</th>
+                           <th>Objective3</th>
+                        </tr>
+
+                    <apex:repeat value="{!lstProducts}" var="a" id="Products" >
+                        <tr>
+                            <td ><apex:inputField value="{!a.Product__c}"/></td>
+                            <td ><apex:inputField value="{!a.Objective1__c}"/></td>
+                            <td ><apex:inputField value="{!a.Objective2__c}" /></td>
+                            <td ><apex:inputField value="{!a.Objective3__c}"/></td>
+                            <td >
+                                <apex:commandButton value="Delete" id="deleteButton" action="{!deleteNewProd}" reRender="prodItems,panelWithVar" rendered="{!IF(lstProducts.size > 1, TRUE, FALSE)}">
+                                    <apex:param name="p1" value="{!rowNumber}" assignTo="{!numberOfRowToRemove}"/>
+                                </apex:commandButton>
+                            </td>
+                            <td><apex:variable var="rowNumber" value="{!rowNumber + 1}" /></td>
+                        </tr>
+                    </apex:repeat>
+                </table>  
+            </apex:outputPanel>
+        </apex:pageBlockSection>
+
+            
+        <apex:pageBlockButtons id="pbb" location="bottom" >
+            <apex:commandButton id="add" value="Add New Product" title="Add " action="{!addProducts}" />
+            <apex:commandButton id="save" value="Save" title="Save" action="{!saveProducts}" />
+            <apex:commandButton id="Close" value="Close" title="Close" action="{!closeProducts}" />
+        </apex:pageBlockButtons>
+   
+        </apex:pageBlock>
+    </apex:form>   
+</apex:page>

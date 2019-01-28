@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Sample Limits provide the ability to define and enforce the sample quantities disbursed for a given Sample or BRC product. Limits can be defined at the Account-User, Account, or User level.  Sample Limits are supported for Person Accounts only.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Types_vod__c</fullName>
+        <description>Defines the Person Account record type associated to the Sample Limit template. Must be a literal match of the Record Type (example: Professional_vod) and must be the non-translated value of the account Record Type</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use Only  Person record type</inlineHelpText>
+        <label>Account Types</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Account for which the limit applies; Lookup to Account object; Account and/or User must be selected.  Sample Limits are supported for Person Accounts only.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Sample Limits</relationshipLabel>
+        <relationshipName>Sample_Limit_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Disable_Txn_Create_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If the value is set to true the Sample Limit Transaction record will not be created and the value will then be switched to false. This field should be read-only or not visible to user that are not performing integrations or system admin functions.</description>
+        <externalId>false</externalId>
+        <label>Disable Txn Create</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disbursed_Amount_vod__c</fullName>
+        <description>Shows and stores the disbursed amount for the selected Product or Sample Product Group</description>
+        <externalId>false</externalId>
+        <label>Disbursed Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Disbursed_Quantity_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Total quantity distributed for the designated product during the defined time period; Value must be a non-fractional number; Based upon sample disbursement requests created for a User and/or Account; Default value is zero.</description>
+        <externalId>false</externalId>
+        <label>Disbursed Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date_vod__c</fullName>
+        <description>Date the sample limit period ends; Required field.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Enforce_Limit_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Indicates whether the limit should be strictly enforced or if requests can exceed the defined limit quantity; Default value is checked.</description>
+        <externalId>false</externalId>
+        <label>Enforce Limit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>External_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Customer designated unique identifier for the sample limit record.</description>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Id_vod__c</fullName>
+        <description>Used to search for limits to apply to a Call Report; Concatenation of Account/User/Product IDs on the sample limit record.</description>
+        <externalId>true</externalId>
+        <label>Group Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Limit_Amount_vod__c</fullName>
+        <description>Shows and stores the limit in value (amount) defined for the selected Product or Sample Product Group</description>
+        <externalId>false</externalId>
+        <label>Limit Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Limit_Per_Call_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Defines whether the rule applies per call or not.</description>
+        <externalId>false</externalId>
+        <label>Limit Per Call</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Limit_Quantity_vod__c</fullName>
+        <description>Allocated quantity for the associated product for the defined time period; Value must be a positive number; Default value is zero.</description>
+        <externalId>false</externalId>
+        <label>Limit Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Merge_Conflict_Id_vod__c</fullName>
+        <description>During an Account Merge, indicates the SFDC Id of the conflicting Sample Limit record if, during an Account Merge, a Sample Limit record of the losing Account cannot be transferred to the winning Account due to overlap in date range.</description>
+        <externalId>false</externalId>
+        <label>Merge Conflict Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Merged_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>During an Account Merge, indicates that the Sample Limit record was originally created for the losing Account.</description>
+        <externalId>false</externalId>
+        <label>Merged</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Original_Account_Id_vod__c</fullName>
+        <description>When a Sample Limit record is transferred during an Account Merge, maintains the SFDC Id of the original Account the Sample Limit record was created for.</description>
+        <externalId>false</externalId>
+        <label>Original Account Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product for which the limit applies; Lookup to Product Catalog; Only Sample and BRC products are supported; Required field.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Sample Limits</relationshipLabel>
+        <relationshipName>Sample_Limit_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Remaining_Amount_vod__c</fullName>
+        <description>Shows and stores the remaining cost (limit amount– disbursed amount) for the selected product or promo product group</description>
+        <externalId>false</externalId>
+        <formula>Limit_Amount_vod__c  -  Disbursed_Amount_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Remaining_Quantity_vod__c</fullName>
+        <description>Available quantity remaining for the defined limit; Calculated as Limit Quantity minus Disbursed Quantity; Value can be less than zero.</description>
+        <externalId>false</externalId>
+        <formula>Limit_Quantity_vod__c - Disbursed_Quantity_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rolling_Period_vod__c</fullName>
+        <description>Defines the number of months of the rolling limit for the associated product.</description>
+        <externalId>false</externalId>
+        <label>Rolling Period</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_Limit_Type_vod__c</fullName>
+        <description>Identifies the level at which the sample limit is applied (Account-User, Account, or User); Field value is automatically set based upon the fields populated for the sample limit record; Read-only.</description>
+        <externalId>false</externalId>
+        <label>Sample Limit Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>01</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>02</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>03</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>04</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Split_Period_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Split Period</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>12Months</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Year</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date_vod__c</fullName>
+        <description>Date the sample limit period begins.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Template_Group_vod__c</fullName>
+        <description>To allow customers to separate sample templates by sharing rules for profiles/user groups</description>
+        <externalId>false</externalId>
+        <label>Template Group</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Template_In_Use_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>flag used to determine if the selected Sample Limit Template has already been used to generate a Sample Limit record.</description>
+        <externalId>false</externalId>
+        <label>Template in Use</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Template_Unique_Key_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Template Unique Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>User for which the limit applies; Lookup to User object; User and/or Account must be selected.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Sample_Limits</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Sample Limit</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account_vod__c</columns>
+        <columns>User_vod__c</columns>
+        <columns>Product_vod__c</columns>
+        <columns>Limit_Quantity_vod__c</columns>
+        <columns>Disbursed_Quantity_vod__c</columns>
+        <columns>Remaining_Quantity_vod__c</columns>
+        <columns>Start_Date_vod__c</columns>
+        <columns>End_Date_vod__c</columns>
+        <columns>Enforce_Limit_vod__c</columns>
+        <columns>Group_Id_vod__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Sample Limit Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Sample Limits</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>LIMIT_AMOUNT_GT_0</fullName>
+        <active>true</active>
+        <description>Limit Amount must be equal to or greater than 0</description>
+        <errorConditionFormula>AND(NOT(ISNULL( Limit_Amount_vod__c )), Limit_Amount_vod__c  &lt; 0)</errorConditionFormula>
+        <errorMessage>Record could not be saved.  Limit Amount can not be less than 0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>LIMIT_VALUE_GT_0</fullName>
+        <active>true</active>
+        <description>Limit Quantity must be greater than 0</description>
+        <errorConditionFormula>AND(NOT(ISNULL(Limit_Quantity_vod__c)), Limit_Quantity_vod__c &lt; 0)</errorConditionFormula>
+        <errorMessage>Record could not be saved.  Limit Quantity can not be less than 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_SLT_Both</fullName>
+        <active>true</active>
+        <description>This validation rule prevents the creation of a sample limit template for both quantity and value as part of same template record.</description>
+        <errorConditionFormula>AND(
+NOT(ISBLANK(Account_Types_vod__c)),
+NOT(ISNULL(Limit_Quantity_vod__c)), NOT(ISNULL(Limit_Amount_vod__c))
+)</errorConditionFormula>
+        <errorMessage>A Sample Limit Template can not be created for both quantity and value in the same template.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_User_Sample_Product_Group_vod</fullName>
+        <active>true</active>
+        <description>You cannot specify a user when creating limits for a sample product group.</description>
+        <errorConditionFormula>IF( ISPICKVAL( Product_vod__r.Product_Type_vod__c , &apos;Sample Product Group&apos;),
+NOT( ISBLANK( User_vod__c ) ) ,
+false)</errorConditionFormula>
+        <errorDisplayField>User_vod__c</errorDisplayField>
+        <errorMessage>You cannot specify a user when creating limits for a sample product group.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>REQUIRE_END_DATE</fullName>
+        <active>true</active>
+        <description>Require a End Date</description>
+        <errorConditionFormula>ISNULL(End_Date_vod__c)</errorConditionFormula>
+        <errorMessage>Record could not be saved. The following fields are required: End Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>REQUIRE_PRODUCT</fullName>
+        <active>true</active>
+        <description>Require a Product</description>
+        <errorConditionFormula>OR(ISNULL(Product_vod__c), ISBLANK(Product_vod__c))</errorConditionFormula>
+        <errorMessage>Record could not be saved. The following fields are required: Product</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>REQUIRE_START_DATE</fullName>
+        <active>true</active>
+        <description>Require a Start Date</description>
+        <errorConditionFormula>ISNULL(Start_Date_vod__c)</errorConditionFormula>
+        <errorMessage>Record could not be saved. The following fields are required: Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>REQUIRE_USER_OR_ACCOUNT</fullName>
+        <active>true</active>
+        <description>An account or user is required on the Sample Limit row.</description>
+        <errorConditionFormula>AND
+(
+ISBLANK(Account_vod__c), 
+ISBLANK(User_vod__c),
+ISBLANK( Account_Types_vod__c)
+)</errorConditionFormula>
+        <errorMessage>Record could not be saved. The following fields are required: Account Or User Or Account Type</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>STL_MandatoryFields</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND
+(
+ Account_Types_vod__c != NULL,
+OR
+(
+Product_vod__c = NULL,
+Limit_Quantity_vod__c = NULL,
+Start_Date_vod__c = NULL,
+End_Date_vod__c = NULL
+)
+)</errorConditionFormula>
+        <errorMessage>Product, Limit Quantity, and Start/End Dates are mandatory if Account Type is used</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>STL_NoAccount</fullName>
+        <active>true</active>
+        <description>Exclude account  for templates</description>
+        <errorConditionFormula>AND
+(
+ Account_vod__c != NULL,
+ Account_Types_vod__c != NULL  
+)
+
+||
+
+AND
+(
+  User_vod__c  != NULL,
+ Account_Types_vod__c != NULL  
+)</errorConditionFormula>
+        <errorMessage>Account and Account Type OR User and Account Type  can not be both set</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>STL_RollingPeriod</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND
+(
+Account_Types_vod__c  = NULL,
+NOT( ISBLANK( Rolling_Period_vod__c))
+)</errorConditionFormula>
+        <errorMessage>Rolling Period  must be empty  if Account Type is empty</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>STM_datetime</fullName>
+        <active>true</active>
+        <errorConditionFormula>End_Date_vod__c &lt; Start_Date_vod__c</errorConditionFormula>
+        <errorDisplayField>End_Date_vod__c</errorDisplayField>
+        <errorMessage>End Date must be greater than or equal to Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SplitPeriodRolling</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND
+(
+TEXT(Split_Period_vod__c) != NULL,
+OR 
+( 
+Rolling_Period_vod__c &lt;&gt; 24, 
+ISBLANK(Rolling_Period_vod__c) 
+) 
+)</errorConditionFormula>
+        <errorDisplayField>Rolling_Period_vod__c</errorDisplayField>
+        <errorMessage>if Split Period  is set rolling period must be 24</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SplitPeriod_Rule</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND
+(
+ ISBLANK( Account_Types_vod__c) ,
+ LEN( TEXT( Split_Period_vod__c ) )  &gt; 0
+)</errorConditionFormula>
+        <errorMessage>Split Period can not be set if Account Type is empty</errorMessage>
+    </validationRules>
+</CustomObject>

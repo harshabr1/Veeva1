@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <comment>Clone inventory</comment>
+        <content>Clone_Inventory_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <comment>Edit Inventory</comment>
+        <content>Edit_Inventory_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>view inventory</comment>
+        <content>View_Inventory_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Inventory Monitoring object holds general information about the inventory monitoring activities that took place.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_ID_vod__c</fullName>
+        <description>Stores Account ID</description>
+        <externalId>false</externalId>
+        <label>Account ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Name_vod__c</fullName>
+        <description>Stores Account Name</description>
+        <externalId>false</externalId>
+        <label>Account Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The account where the Inventory Monitoring was taken.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Inventory Monitorings</relationshipLabel>
+        <relationshipName>Inventory_Monitorings_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Assortment_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Designates the specific list of IM products to be loaded, and in which section they should be displayed to the user</description>
+        <externalId>false</externalId>
+        <label>Assortment</label>
+        <referenceTo>Assortment_vod__c</referenceTo>
+        <relationshipLabel>Inventory Monitorings</relationshipLabel>
+        <relationshipName>Inventory_Monitorings</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Call2_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Call is a reference field to the Call record from which the Inventory Monitoring record was initiated. This reference value will be removed if the Call record is deleted.</description>
+        <externalId>false</externalId>
+        <label>Call</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Inventory Monitorings</relationshipLabel>
+        <relationshipName>Inventory_Monitorings_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Call_Objective_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Specifies the Call Objective associated to the Inventory Monitoring</description>
+        <externalId>false</externalId>
+        <label>Call Objective</label>
+        <referenceTo>Call_Objective_vod__c</referenceTo>
+        <relationshipLabel>Inventory Monitorings</relationshipLabel>
+        <relationshipName>Inventory_Monitorings_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to select the contract to be associated to the Inventory Monitoring.</description>
+        <externalId>false</externalId>
+        <label>Contract</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contract_vod__c.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Listing_vod</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contract_vod__c</referenceTo>
+        <relationshipLabel>Inventory Monitorings</relationshipLabel>
+        <relationshipName>Inventory_Monitorings_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DateTime_vod__c</fullName>
+        <description>Date and time the Inventory Monitoring was submitted.</description>
+        <externalId>false</externalId>
+        <label>DateTime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_Id_vod__c</fullName>
+        <description>For internal use only.</description>
+        <externalId>true</externalId>
+        <label>Entity Reference Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inventory_Monitoring_Date_vod__c</fullName>
+        <defaultValue>today()</defaultValue>
+        <description>Date the Inventory Monitoring record was captured. Default: current date.</description>
+        <externalId>false</externalId>
+        <label>Inventory Monitoring Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Is_Parent_Inventory_Monitoring_vod__c</fullName>
+        <description>Formula field to determine if the Inventory Monitoring is the Parent IM or a child IM. 1 indicates that the record is the Parent IM, 0 indicates that it is a Child IM</description>
+        <externalId>false</externalId>
+        <formula>IF(LEN(Parent_Inventory_Monitoring_ID_vod__c)&gt;0, 0,1)</formula>
+        <label>Is Parent Inventory Monitoring?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the Inventory Monitoring record is locked for editing.</description>
+        <externalId>false</externalId>
+        <label>Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_Created_Datetime_vod__c</fullName>
+        <description>Time the Inventory Monitoring was created on a mobile device.</description>
+        <externalId>false</externalId>
+        <label>Mobile Created Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Field used by mobile products for synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_Last_Modified_Datetime_vod__c</fullName>
+        <description>Last time the Inventory Monitoring was modified on a mobile device.</description>
+        <externalId>false</externalId>
+        <label>Mobile Last Modified Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Notes_vod__c</fullName>
+        <description>Any additional information pertinent to the Inventory Monitoring.</description>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Inventory_Monitoring_ID_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Be careful when changing the label as it may affect existing merge templates.</description>
+        <externalId>false</externalId>
+        <label>Parent Inventory Monitoring ID</label>
+        <referenceTo>Inventory_Monitoring_vod__c</referenceTo>
+        <relationshipLabel>Inventory Monitorings</relationshipLabel>
+        <relationshipName>Inventory_Monitorings_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Photo_Rank_vod__c</fullName>
+        <description>Used to score the sequence in which the photo was captured during an Inventory Monitoring, that leverages the zvod_Photo_Tag marker field</description>
+        <externalId>false</externalId>
+        <label>Photo Rank</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status of the Inventory Monitoring. Customers can add values to this picklist.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Saved_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>zvod_Photo_Tag_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to enable parent/child IM logic for multiple photo tagging</description>
+        <externalId>false</externalId>
+        <label>zvod_Photo_Tag</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Inventory Monitoring</label>
+    <nameField>
+        <displayFormat>IM-{000000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Inventory Monitorings</pluralLabel>
+    <recordTypes>
+        <fullName>Inventory_Monitoring_vod</fullName>
+        <active>false</active>
+        <description>Base record type for Inventory Monitoring Header</description>
+        <label>Inventory Monitoring</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Saved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Save_vod</fullName>
+        <availability>online</availability>
+        <description>Save button</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Save</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>&lt;!-- place holder --&gt;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Submit</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>&lt;!-- place holder --&gt;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>new_inventory</fullName>
+        <availability>online</availability>
+        <description>button to invoke new inventory page</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Inventory</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/New_Inventory_vod?acctid={!Account.Id}</url>
+    </webLinks>
+</CustomObject>

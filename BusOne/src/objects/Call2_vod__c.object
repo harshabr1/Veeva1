@@ -1,0 +1,4129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>Call_Edit_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>CallBlockAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>Call_View_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores the main call header information. There is one call row for every account or contact on the call. A group call with 3 doctors will produce 4 call rows.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ASSMCA_vod__c</fullName>
+        <description>The ASSMCA # is a license number when sampling controlled substances for a Puerto Rican-based Physician.</description>
+        <externalId>false</externalId>
+        <label>ASSMCA</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Plan_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to account plan associated with this call. This field is optional.</description>
+        <externalId>false</externalId>
+        <label>Account Plan</label>
+        <referenceTo>Account_Plan_vod__c</referenceTo>
+        <relationshipLabel>Calls</relationshipLabel>
+        <relationshipName>Call2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the account that the call is associated with.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Calls (Account)</relationshipLabel>
+        <relationshipName>Call2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Activity_Type__c</fullName>
+        <description>Activity type sample field (e.g. General Meeting, Contracts Discussion or Tactical Discussion...) for this call.</description>
+        <externalId>false</externalId>
+        <label>Activity Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>General Meeting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contracts Discussion</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tactical Discussion</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Marketing Program</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Disease Management</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Add_Detail_vod__c</fullName>
+        <description>Field used to assist in the creation of Call2 Detail records to a Call2 record. The 18-digit Product Ids are ordered from left to right and are comma-delimited. The field will be blanked out after each save.  A trigger on Call2 Header will parse the delimited list and create Call2 Detail records for the Call2 record with priorities set from left to right.  This field is intended to assist in the creation of the child Call2 Detail records, but is not required for loading data.
+E.g., A00T0000000HFNHYET,A00T0000000HFNOYER</description>
+        <externalId>false</externalId>
+        <label>Add Detail</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Add_Key_Message_vod__c</fullName>
+        <description>Field used to assist in the creation of Call2 Key Message records for a Call2 record. Input format is a list delimited by &quot;;;;&quot; of the following five fields (the last two, though, are optional) that are separated by &quot;@@&quot; - &lt;Key_Message_ID&gt;@@&lt;Product_ID&gt;@@&lt;Reaction&gt;@@&lt;Category&gt;@@&lt;Vehicle&gt;. An example would be &quot;Key Message Id 1@@Product ID 1@@Reaction 1;;;Key Message Id 2@@Product ID 1@@Reaction 2@@Category 2@@Vehicle 2&quot;. A trigger on Call2 Header will parse the delimited lists and create Call2 Key Message records for the Call2 record.  This field is intended to assist in the creation of the child Call2 Key Message records, but is not required for loading data.</description>
+        <externalId>false</externalId>
+        <label>Add Key Message</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Address_Line_1_vod__c</fullName>
+        <description>Address Line 1 of the Call Address. This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Address Line 1</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address_Line_2_vod__c</fullName>
+        <description>Address Line 2 of the Call Address.  This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Address Line 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address_vod__c</fullName>
+        <description>A field used to denormalize the address information associated with a call. This aids in data loading and displaying information on related lists.</description>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <length>500</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Allowed_Products_vod__c</fullName>
+        <description>When populated, only listed products will be detail-able when a rep views this call.  The format is a double semi-colon delimited list of Product Names. These will be textual Product Catalog records of type = Detail. For example,  Cholecap;;Labrinone.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When populated, only listed products will be detail-able when a rep views this call.  The format is a double semi-colon delimited list of Product Names. These will be textual Product Catalog records of type = Detail. For example,  Cholecap;;Labrinone.</inlineHelpText>
+        <label>Allowed Products</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Assigner_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to User Id that assigned the call to its owner</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to User Id that assigned the call to its owner</inlineHelpText>
+        <label>Assigner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Assigner_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Assignment_Datetime_vod__c</fullName>
+        <description>Date and time of when the call was assigned to a user</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date and time of when the call was assigned to a user</inlineHelpText>
+        <label>Assignment Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Attendee_Post_Status_vod__c</fullName>
+        <description>This field was included as an option in v14. It is no longer being utilized in the current version of the integration and is not part of the standard connector.</description>
+        <externalId>false</externalId>
+        <label>Attendee Post Status</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attendee_Type_vod__c</fullName>
+        <description>The type of entity who the call is created for. This field is used in reporting. For performance reasons, this is not set by an APEX  trigger. For data import, this field should be set correctly otherwise reports that depend on this field may not run correctly.</description>
+        <externalId>false</externalId>
+        <label>Attendee Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Group_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contact_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Person_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>User_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Event_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Attendee_list_vod__c</fullName>
+        <description>This text field is a semi colon delimited list of Non-HCP attendees who were on this call. This text field can be displayed in Concur so that the User can then match to other Non-HCPs later.</description>
+        <externalId>false</externalId>
+        <label>Other Non-HCP Attendees</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Attendees_vod__c</fullName>
+        <description>The total number of attendees for this call. For a group call with four doctors, this would be &quot;3&quot; for the parent call associated to the parent account and &quot;0&quot; for the child calls.  For performance reasons, this is not set via a trigger.</description>
+        <externalId>false</externalId>
+        <label>Attendees</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CDS_Expiration_Date_vod__c</fullName>
+        <description>The expiration date of the CDS registration number for the call.</description>
+        <externalId>false</externalId>
+        <label>CDS Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>CDS_vod__c</fullName>
+        <description>The CDS registration number for the corresponding state of the call address.</description>
+        <externalId>false</externalId>
+        <label>CDS #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CLM_Location_Latitude_vod__c</fullName>
+        <description>Stores the latitude coordinate of the location where the key message is shown</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the latitude coordinate of the location where the key message is shown</inlineHelpText>
+        <label>CLM Location Latitude</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CLM_Location_Longitude_vod__c</fullName>
+        <description>Stores the longitude coordinate of the location where the key message is shown</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the longitude coordinate of the location where the key message is shown</inlineHelpText>
+        <label>CLM Location Longitude</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CLM_Location_Services_Status_vod__c</fullName>
+        <description>Indicates the state of location services at the time the key messages is shown.
+Enabled_vod - location services are turned on and the system is able to get the user&apos;s location
+Disabled_vod - location services are turned off
+No_connection_vod - no network connection</description>
+        <externalId>false</externalId>
+        <label>CLM Location Services Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Enabled_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Disabled_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No_connection_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CLM_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked indicates CLM has been run for this call and the call contents were populated from CLM.</description>
+        <externalId>false</externalId>
+        <label>CLM</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Call_Comments_vod__c</fullName>
+        <description>Free text comments for call.</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Call_Date_vod__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <description>The date of the call when it was first saved or submitted. This field is set via a trigger to the current date if neither the date or datetime field is supplied.</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Call_Datetime_vod__c</fullName>
+        <description>The time when the rep specified for the call unless the call was signed, in which case this is the signature time.  This field is optional for users who which to plan their calls down to a specific hour or minute.  If a datetime is specified, a corresponding salesforce.com event is created via a trigger for calendar integration.</description>
+        <externalId>false</externalId>
+        <label>Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Call_Type_vod__c</fullName>
+        <description>Type of call which is system maintained based on the type and contents of the call. This field is used for reporting purposes. Valid values are:  Detail Only, Detail with Sample, Group Detail, Group Detail with Sample, Sample Only. These values should not be changed, but the translations for these picklists may be changed.  Attendees have the same call type as the header call. For a Group call with 3 professionals, all 4 records have the call type of &quot;Group Detail&quot;</description>
+        <externalId>false</externalId>
+        <label>Call Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Detail Only</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Detail with Sample</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Group Detail</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Group Detail with Sample</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sample Only</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Call Only</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Event Only</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Event Detail</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Check_In_Latitude_vod__c</fullName>
+        <description>Captures latitude on check in</description>
+        <externalId>false</externalId>
+        <label>Check In Latitude</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Check_In_Location_Services_Status_vod__c</fullName>
+        <description>Captures device Location Services status.
+Enabled_vod – location services are turned on and the system is able to get the user&apos;s location.
+Disabled_vod – location services are turned off.
+No_Connection_vod – no network connection.</description>
+        <externalId>false</externalId>
+        <label>Check In Location Services Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Enabled_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Disabled_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No_connection_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Check_In_Longitude_vod__c</fullName>
+        <description>Captures longitude on check in</description>
+        <externalId>false</externalId>
+        <label>Check In Longitude</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Check_In_Status_vod__c</fullName>
+        <description>Captures check in status.
+Checked_In_vod - GPS coordinates were captured.
+Not_Checked_In_vod - GPS coordinates could not be captured.</description>
+        <externalId>false</externalId>
+        <label>Check In Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Checked_In_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not_Checked_In_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Check_In_Timestamp_vod__c</fullName>
+        <description>Captures check in date and time</description>
+        <externalId>false</externalId>
+        <label>Check In Timestamp</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child_Account_Id_vod__c</fullName>
+        <description>The textual ID of the Child Account value maintained in the Child_Account_vod field.</description>
+        <externalId>false</externalId>
+        <label>Child Account Id</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child_Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>When using the Child Account feature, maintains the Child Account record that holds the relationship between the Person Account and the Location of the Call for Person Calls using Call Location and Group Calls with Attendees.</description>
+        <externalId>false</externalId>
+        <label>Child Account</label>
+        <referenceTo>Child_Account_vod__c</referenceTo>
+        <relationshipLabel>Calls</relationshipLabel>
+        <relationshipName>Calls</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>City_vod__c</fullName>
+        <description>City of the Call Address.  This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cobrowse_MC_Activity_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Stores the reference to the CoBrowse Multichannel Activity header record</description>
+        <externalId>false</externalId>
+        <label>CoBrowse Activity</label>
+        <referenceTo>Multichannel_Activity_vod__c</referenceTo>
+        <relationshipName>Call2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cobrowse_MC_Session_vod__c</fullName>
+        <description>Stores the MC Engine CoBrowse unique identifier</description>
+        <externalId>false</externalId>
+        <label>CoBrowse Session</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cobrowse_Presentation_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Stores the CoBrowse presentation selected for this Call</description>
+        <externalId>false</externalId>
+        <label>Presentation</label>
+        <referenceTo>Content_Deployment_vod__c</referenceTo>
+        <relationshipName>Call2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cobrowse_URL_Participant_vod__c</fullName>
+        <description>Stores the CoBrowse URL for the participant</description>
+        <externalId>false</externalId>
+        <label>Participant URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cobrowse_URL_Presenter_vod__c</fullName>
+        <description>Stores the CoBrowse URL for the presenter</description>
+        <externalId>false</externalId>
+        <label>Presenter URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Color_vod__c</fullName>
+        <description>The user-selectable color for a call, as visible in VMobile.</description>
+        <externalId>false</externalId>
+        <label>Color</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Gray</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yellow</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Red</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Orange</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Peach</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Teal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Olive</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Blue</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Purple</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Maroon</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Steel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkSteel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkGray</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Black</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkRed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkOrange</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkPeach</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkYellow</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkGreen</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkTeal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkOlive</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkBlue</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkPurple</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkMaroon</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Concur_Report_Name_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Concur Report Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the contact (if any) that the call is associated with.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Calls (Contacts)</relationshipLabel>
+        <relationshipName>Call2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Credentials_vod__c</fullName>
+        <description>The credentials of the Account signing for a sample</description>
+        <externalId>false</externalId>
+        <label>Credentials</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEA_Address_Line_1_vod__c</fullName>
+        <description>Address Line 1 of the DEA Address.</description>
+        <externalId>false</externalId>
+        <label>DEA Address Line 1</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEA_Address_Line_2_vod__c</fullName>
+        <description>Address Line 2 of the DEA Address.</description>
+        <externalId>false</externalId>
+        <label>DEA Address Line 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEA_Address_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The DEA Address is a reference field to the Address record where the Controlled Substance has been sampled or shipped.  This reference value will be removed if the Address record is deleted.</description>
+        <externalId>false</externalId>
+        <label>DEA Address</label>
+        <referenceTo>Address_vod__c</referenceTo>
+        <relationshipLabel>Calls (DEA Address)</relationshipLabel>
+        <relationshipName>Calls1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DEA_City_vod__c</fullName>
+        <description>City of the DEA Address.</description>
+        <externalId>false</externalId>
+        <label>DEA City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEA_Expiration_Date_vod__c</fullName>
+        <description>DEA Expiration Date of the Physician&apos;s DEA License that received the controlled substance.</description>
+        <externalId>false</externalId>
+        <label>DEA Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DEA_State_vod__c</fullName>
+        <description>State of the DEA Address.</description>
+        <externalId>false</externalId>
+        <label>DEA State</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEA_Zip_4_vod__c</fullName>
+        <description>Zip Code 4 of the DEA Address.</description>
+        <externalId>false</externalId>
+        <label>DEA Zip 4</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEA_Zip_vod__c</fullName>
+        <description>Zip Code of the DEA Address.</description>
+        <externalId>false</externalId>
+        <label>DEA Zip</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEA_vod__c</fullName>
+        <description>The DEA # is the DEA License # of the Physician that received the Samples.</description>
+        <externalId>false</externalId>
+        <label>DEA #</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Detailed_Products_vod__c</fullName>
+        <description>A helper field to display the list of detailed products for a call. Product names should be delimited by double-spaces and order in priority from left to right. This field does not control processing and is included to make related lists and reports more user friendly.</description>
+        <externalId>false</externalId>
+        <label>Detailed Products</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Disbursed_To_vod__c</fullName>
+        <description>Used to record sample disbursement information (if any). This contains all PDMA required fields (name, address, etc.) in text format. This value is copied in to the sample transaction object via a trigger. It is maintained on call header for synchronization purposes.</description>
+        <externalId>false</externalId>
+        <label>Disbursed To</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disbursement_Order_Created_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>System field used to indicate that Sample Disbursement and/or Sample Order Transaction records were created for associated Call Sample records.</description>
+        <externalId>false</externalId>
+        <label>Disbursement Created</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disclaimer_vod__c</fullName>
+        <description>Used to record sample disclaimer used if a disbursement was made. This value is copied in to the sample transaction object via a trigger. It is maintained on call header for synchronization purposes.</description>
+        <externalId>false</externalId>
+        <label>Disclaimer</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Duration_vod__c</fullName>
+        <description>Duration of the call in minutes.</description>
+        <externalId>false</externalId>
+        <label>Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EM_Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to associate a call report with a Veeva Event Management event.</description>
+        <externalId>false</externalId>
+        <label>EM Event</label>
+        <referenceTo>EM_Event_vod__c</referenceTo>
+        <relationshipLabel>Calls</relationshipLabel>
+        <relationshipName>Call2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Entity_Display_Name_vod__c</fullName>
+        <description>Entity&apos;s displayed name</description>
+        <externalId>false</externalId>
+        <formula>IF( LEN( TRIM(Account_vod__c)) &gt; 0, Account_vod__r.Formatted_Name_vod__c ,              
+IF(LEN( TRIM(Contact_vod__c))  &gt;0, Contact_vod__r.FirstName &amp; &quot; &quot; &amp;  Contact_vod__r.LastName,                   
+IF(LEN( TRIM(User_vod__c))  &gt;0,    User_vod__r.FirstName &amp; &quot; &quot; &amp;  User_vod__r.LastName ,
+IF(LEN( TRIM(Medical_Event_vod__c ))  &gt;0,    Medical_Event_vod__r.Name , &quot;&quot;))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Entity Display Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_Id_vod__c</fullName>
+        <description>For Internal Use Only</description>
+        <externalId>false</externalId>
+        <label>Entity Reference Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Error_Reference_Call_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates the call this call is a duplicate of.</description>
+        <externalId>false</externalId>
+        <label>Error Reference Call</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Calls (Error Reference Call)</relationshipLabel>
+        <relationshipName>Calls</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Amount_vod__c</fullName>
+        <description>Holds the number of amount of the expense on this call</description>
+        <externalId>false</externalId>
+        <label>Expense Amount</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Attendee_Type_vod__c</fullName>
+        <description>The Expense Attendee Type is meant to be placed in the Attendee Specific Fields section of the Call Report page layout. The values of this picklist should match the values available in the third-party expense system, such as Concur.</description>
+        <externalId>false</externalId>
+        <label>Expense Attendee Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BUSGUEST</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Expense_Post_Status_vod__c</fullName>
+        <description>Holds a Success or Fail status based on the attempt to post this status into Concur.  If the expense was not yet posted, status = null</description>
+        <externalId>false</externalId>
+        <label>Expense Post Status</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_Receipt_Status_vod__c</fullName>
+        <description>Stores Expense Receipts status after posting to Concur. Success or Fail based on the attempt to post to Concur. If it is not posted yet, it is Null.</description>
+        <externalId>false</externalId>
+        <label>Expense Receipt Status</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_System_External_ID_vod__c</fullName>
+        <description>The ID that maps to the expense management system</description>
+        <externalId>false</externalId>
+        <label>Expense System ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Attendees with the Incurred Expense button checked will be posted as Attendees to Concur.</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Parent_Call_vod__c</fullName>
+        <description>Formula Field to determine if the Call record is the Parent Call or an Attendee Call record.  1 indicates that the record is the Parent Call.  0 indicates that it is an Attendee Call.</description>
+        <externalId>false</externalId>
+        <formula>IF(LEN( Parent_Call_vod__c )&gt;0, 0,1)</formula>
+        <label>Is Parent Call?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Sampled_Call_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked if this call header designates the account that received samples for the call.</description>
+        <externalId>false</externalId>
+        <label>Is Sampled Call</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Last_Device_vod__c</fullName>
+        <description>This field is used to track the last device used to save a call. You can build reports using this field to determine what devices are being used to record calls.</description>
+        <externalId>false</externalId>
+        <label>Last Device</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>WinModern_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Data_Load_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>iPhone_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mobile_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Online_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tablet_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Blackberry_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>iPad_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>License_Expiration_Date_vod__c</fullName>
+        <description>The License Expiration Date field stores the Practitioner&apos;s State License Expiration Date that signed for Samples.</description>
+        <externalId>false</externalId>
+        <label>License Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>License_Status_vod__c</fullName>
+        <description>The License Status field stores the current Status of the Practitioner&apos;s State License at the time the Signature was captured for Samples.</description>
+        <externalId>false</externalId>
+        <label>License Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>License_vod__c</fullName>
+        <description>State License Number for the corresponding State of the Address.</description>
+        <externalId>false</externalId>
+        <label>License #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_Id_vod__c</fullName>
+        <description>The textual ID of the Location value maintained in the Location_Name_vod field.</description>
+        <externalId>false</externalId>
+        <label>Location Id</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Location_Name_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Maintains the relationship between the Person Account and the Location of the Call for Person Calls using Call Location and Group Calls with Attendees.</description>
+        <externalId>false</externalId>
+        <label>Location Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Calls (Location Name)</relationshipLabel>
+        <relationshipName>Calls_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Location_Services_Status_vod__c</fullName>
+        <description>Indicates the state of location services at the time a signature was  captured.
+
+Enabled_vod – location services are turned on and the system is able to get the user’s location.
+Disabled_vod – location services are turned off.
+No_Connection_vod – no network connection.</description>
+        <externalId>false</externalId>
+        <label>Location Services Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Enabled_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Disabled_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No_Connection_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Location_vod__c</fullName>
+        <description>Text field to note the location of the call. There is no special processing on this field.</description>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Medical_Discussions_vod__c</fullName>
+        <description>Used to display the list of Products discussed on a Medical Interaction. Product names are delimited by double-spaces and alphabetical from left to right. This field does not control processing.</description>
+        <externalId>false</externalId>
+        <label>Medical Discussions</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Medical_Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Medical Event associated to the Call.</description>
+        <externalId>false</externalId>
+        <label>Medical Event</label>
+        <referenceTo>Medical_Event_vod__c</referenceTo>
+        <relationshipLabel>Calls</relationshipLabel>
+        <relationshipName>Call2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Inquiry_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to associate a call report to a Medical Inquiry.</description>
+        <externalId>false</externalId>
+        <label>Medical Inquiry</label>
+        <referenceTo>Medical_Inquiry_vod__c</referenceTo>
+        <relationshipLabel>Calls</relationshipLabel>
+        <relationshipName>Calls_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_Created_Datetime_vod__c</fullName>
+        <description>Date and time the Call was created on the mobile device.</description>
+        <externalId>false</externalId>
+        <label>Mobile Created Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_Last_Modified_Datetime_vod__c</fullName>
+        <description>Date and time the Call was last saved or submitted on the mobile device.</description>
+        <externalId>false</externalId>
+        <label>Mobile Last Modified Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Next_Call_Notes_vod__c</fullName>
+        <description>Free text area to store next call notes.  In call scheduling, Pre call notes are populated from the next-call notes of the last call that the user did on this account.  So, Next-Call notes become the pre-call notes for the next call by a same user on the same account.</description>
+        <externalId>false</externalId>
+        <label>Next Call Notes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>No_Disbursement_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The No_Disbursement_vod field is used by the Call2_vod Trigger that creates Disbursement Sample Transactions. If this field is set to True, then the Sample Transactions will not be created by the Trigger. This can be utilized when loading historical call data when the intention is to not recreate the corresponding Disbursement Sample Transactions.</description>
+        <externalId>false</externalId>
+        <label>No Disbursement</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Helper field for data loads.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Address_Id_vod__c</fullName>
+        <description>The Id of the Parent Address that was used when the Call was created; the text value of the Parent_Address_vod field.</description>
+        <externalId>false</externalId>
+        <label>Parent Address Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Address_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to address associated with this call. When data loading historical data, this field is not required and it will generally be easier to use the Address text field on call.</description>
+        <externalId>false</externalId>
+        <label>Parent Address</label>
+        <referenceTo>Address_vod__c</referenceTo>
+        <relationshipLabel>Calls</relationshipLabel>
+        <relationshipName>Call2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Call_Mobile_ID_vod__c</fullName>
+        <description>Mobile ID of the parent call object</description>
+        <externalId>false</externalId>
+        <label>Parent Call Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Call_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If this call record is part of a larger group call, this field is used to provide a link to that call.</description>
+        <externalId>false</externalId>
+        <label>Parent Call</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Calls (Parent Call)</relationshipLabel>
+        <relationshipName>Call2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pre_Call_Notes_vod__c</fullName>
+        <description>Free text area to store pre-call notes.  Pre call notes are populated from the next-call notes of that last call that the user did on this account.  So, Next-Call notes become the pre-call notes for the next call by a same user on the same account.</description>
+        <externalId>false</externalId>
+        <label>Pre-Call Notes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Presentations_vod__c</fullName>
+        <description>Comma separated list of presentations for this call.</description>
+        <externalId>false</externalId>
+        <label>Presentations</label>
+        <length>500</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_Priority_1_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>First product to be discussed during the call. This is the suggested priority – actual discussion order can be modified during the call.  Product is loaded from Call Cycle Entry record.</description>
+        <externalId>false</externalId>
+        <label>Product Priority 1</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Priority 1</relationshipLabel>
+        <relationshipName>Product_Priority_1_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Priority_2_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Second product to be discussed during the call. This is the suggested priority – actual discussion order can be modified during the call.  Product is loaded from Call Cycle Entry record.</description>
+        <externalId>false</externalId>
+        <label>Product Priority 2</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Priority 2</relationshipLabel>
+        <relationshipName>Product_Priority_2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Priority_3_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Third product to be discussed during the call. This is the suggested priority – actual discussion order can be modified during the call.  Product is loaded from Call Cycle Entry record</description>
+        <externalId>false</externalId>
+        <label>Product Priority 3</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Priority 3</relationshipLabel>
+        <relationshipName>Product_Priority_3_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Priority_4_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Fourth product to be discussed during the call. This is the suggested priority – actual discussion order can be modified during the call.  Product is loaded from Call Cycle Entry record.</description>
+        <externalId>false</externalId>
+        <label>Product Priority 4</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Priority 4</relationshipLabel>
+        <relationshipName>Product_Priority_4_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Priority_5_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Fifth product to be discussed during the call. This is the suggested priority – actual discussion order can be modified during the call.  Product is loaded from Call Cycle Entry record.</description>
+        <externalId>false</externalId>
+        <label>Product Priority 5</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Priority 5</relationshipLabel>
+        <relationshipName>Product_Priority_5_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Property_vod__c</fullName>
+        <description>System field used to store metadata about the call report. When data loading, this can be ignored.</description>
+        <externalId>false</externalId>
+        <label>Property</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Receipt_Email_vod__c</fullName>
+        <description>Email address used when sending an Approved Email Receipt</description>
+        <externalId>false</externalId>
+        <label>Receipt Email Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Remote_Meeting_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>When populated, designates the Call as a Remote Meeting.</description>
+        <externalId>false</externalId>
+        <label>Remote Meeting</label>
+        <referenceTo>Remote_Meeting_vod__c</referenceTo>
+        <relationshipLabel>Calls</relationshipLabel>
+        <relationshipName>Calls</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Request_Receipt_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Mark true to if a receipt was requested for a disbursement.</description>
+        <externalId>false</externalId>
+        <label>Request Receipt</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Salutation_vod__c</fullName>
+        <description>The salutation of the Account signing for a sample</description>
+        <externalId>false</externalId>
+        <label>Salutation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_Card_Reason_vod__c</fullName>
+        <description>The field is designed to capture the reason a Sample Card was used rather than electronic signature.</description>
+        <externalId>false</externalId>
+        <label>Sample Card Reason</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Laptop Unavailable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Application Unavailable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sample_Card_vod__c</fullName>
+        <description>Sample card number if a disbursement was made with a sample card.</description>
+        <externalId>false</externalId>
+        <label>Sample Card #</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_Limit_Transaction_Created_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>System field used to indicate that Sample Limit Transaction records have been created for required Call Sample records</description>
+        <externalId>false</externalId>
+        <label>Sample Limit Transaction Created</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sample_Send_Card_vod__c</fullName>
+        <description>Sample send card number if a disbursement was made with a sample send card.</description>
+        <externalId>false</externalId>
+        <label>Sample Send Card #</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_ASSMCA_vod__c</fullName>
+        <description>The ASSMCA number corresponding to the ship to address.</description>
+        <externalId>false</externalId>
+        <label>Ship ASSMCA #</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Address_Line_1_vod__c</fullName>
+        <description>The Ship Address Line 1 field stores the first line of the Ship to Address for a BRC Sample.  This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Ship Address Line 1</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Address_Line_2_vod__c</fullName>
+        <description>The Ship Address Line 2 field stores the second line of the Ship to Address for a BRC Sample.  This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Ship Address Line 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_CDS_Expiration_Date_vod__c</fullName>
+        <description>The expiration date of the CDS registration number for the ship to address.</description>
+        <externalId>false</externalId>
+        <label>Ship CDS Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ship_CDS_vod__c</fullName>
+        <description>The CDS registration number for the corresponding state of the ship to address.</description>
+        <externalId>false</externalId>
+        <label>Ship CDS #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_City_vod__c</fullName>
+        <description>The Ship City field stores the City of the Ship to Address for a BRC Sample.  This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Ship City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Country_vod__c</fullName>
+        <description>The Ship Country field stores the Country of the Ship to Address for a BRC Sample.  This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Ship Country</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_DEA_Expiration_Date_vod__c</fullName>
+        <description>The expiration date of the DEA number corresponding to the ship to address.</description>
+        <externalId>false</externalId>
+        <label>Ship DEA Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ship_DEA_vod__c</fullName>
+        <description>The DEA number corresponding to the ship to address.</description>
+        <externalId>false</externalId>
+        <label>Ship DEA #</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_License_Expiration_Date_vod__c</fullName>
+        <description>The Ship License Expiration Date field stores the Physician&apos;s State License Expiration Date that signed for Samples.  This field should not be added to the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Ship License Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ship_License_Status_vod__c</fullName>
+        <description>The Ship License Status field stores the current Status of the Physician&apos;s State License at the time the Signature was captured for Samples.  This field should not be added the page layout.</description>
+        <externalId>false</externalId>
+        <label>Ship License Status</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_License_vod__c</fullName>
+        <description>The Ship License # field stores the State License # for the Physician signing the BRC.</description>
+        <externalId>false</externalId>
+        <label>Ship License #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Location_Id_vod__c</fullName>
+        <description>The textual ID of the Child Account value maintained in the Ship_To_Location_vod field.</description>
+        <externalId>false</externalId>
+        <label>Ship Location Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Location_vod__c</fullName>
+        <description>The Ship Location field stores the Business Account location for a BRC Sample. This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Ship Location</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_State_Distributor_Exp_Date_vod__c</fullName>
+        <description>The expiration date of the State Distributor number corresponding to the Business ship to address.</description>
+        <externalId>false</externalId>
+        <label>Ship State Distributor Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ship_State_Distributor_vod__c</fullName>
+        <description>The State Distributor number corresponding to the Business ship to address.</description>
+        <externalId>false</externalId>
+        <label>Ship State Distributor</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_State_vod__c</fullName>
+        <description>The Ship State field stores the State of the Ship to Address for a BRC Sample.  This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Ship State</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_To_Address_Text_vod__c</fullName>
+        <description>The Ship to Address Formula field corresponds to a formatted version of the Ship to Address fields.  This value is leveraged in the case that the referenced Ship to Address has been deleted.  This field should not be added to a Page Layout.</description>
+        <externalId>false</externalId>
+        <formula>Ship_Address_Line_1_vod__c    &amp; IF(LEN(Ship_Address_Line_2_vod__c) &gt; 0,   &quot;, &quot; &amp;  Ship_Address_Line_2_vod__c, &quot;&quot;)  &amp; IF(LEN(Ship_City_vod__c) &gt; 0,   &quot;, &quot; &amp;  Ship_City_vod__c, &quot;&quot;)  &amp; IF(LEN(Ship_State_vod__c) &gt; 0,   &quot;, &quot; &amp;  Ship_State_vod__c, &quot;&quot;)   &amp; IF(LEN(Ship_Zip_vod__c) &gt; 0,   &quot; &quot; &amp;  Ship_Zip_vod__c, &quot;&quot;)  &amp; IF(LEN(Ship_Country_vod__c) &gt; 0,   &quot; &quot; &amp;  Ship_Country_vod__c, &quot;&quot;)</formula>
+        <label>Ship To Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_To_Address_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Ship to Address Lookup field corresponds to the selected Address record where BRC Samples will be shipped.  This field should not be added to a Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Ship To Address</label>
+        <referenceTo>Address_vod__c</referenceTo>
+        <relationshipLabel>Calls (Ship To Address)</relationshipLabel>
+        <relationshipName>Calls</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ship_To_Location_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Ship to Location Lookup field corresponds to the selected Business Account record where BRC Samples will be shipped. This field should not be added to a Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Ship To Location</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Calls (Ship To Location)</relationshipLabel>
+        <relationshipName>Calls1_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ship_Zip_4_vod__c</fullName>
+        <description>The Ship Zip 4 field stores the Zip Code 4 of the Ship to Address for a BRC Sample. This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Ship Zip 4</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Zip_vod__c</fullName>
+        <description>The Ship Zip field stores theZip Code/Postal Code of the Ship to Address for a BRC Sample.  This field should not be displayed on the Page Layout.</description>
+        <externalId>false</externalId>
+        <label>Ship Zip</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_Date_vod__c</fullName>
+        <description>Date and time of the captured signature for a disbursement. This value is copied in to the sample transaction object via a trigger. It is maintained on call header for synchronization purposes.</description>
+        <externalId>false</externalId>
+        <label>Signature Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Signature_Location_Latitude_vod__c</fullName>
+        <description>Stores the latitude coordinate of the location where the signature was captured.</description>
+        <externalId>false</externalId>
+        <label>Signature Location Latitude</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_Location_Longitude_vod__c</fullName>
+        <description>Stores the longitude coordinate of the location where the signature was captured.</description>
+        <externalId>false</externalId>
+        <label>Signature Location Longitude</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_Page_Display_Name_vod__c</fullName>
+        <description>The value of the Account.Signature_Page_Display_Name_vod at the time of Signature Capture.</description>
+        <externalId>false</externalId>
+        <label>Signature Page Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_Page_Image_vod__c</fullName>
+        <description>The string displayed in the Signature Page Image picklist</description>
+        <externalId>false</externalId>
+        <label>Signature Page Image</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_Timestamp_vod__c</fullName>
+        <description>Device up-time in seconds, at the time the signature was captured.</description>
+        <externalId>false</externalId>
+        <label>Signature Timestamp</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_on_Sync_vod__c</fullName>
+        <description>Indicates the presence of a practitioner signature on sync of a saved call to determine ability of practitioner to re-sign for samples with sample limits</description>
+        <externalId>false</externalId>
+        <formula>IF( ISBLANK( Signature_Date_vod__c ) || ISNULL( Signature_Date_vod__c ) , &quot;No_vod&quot;, &quot;Yes_vod&quot; )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Signature on Sync</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_vod__c</fullName>
+        <description>Encoded signature captured during disbursement.  Encoded using base64. This value is copied in to the sample transaction object via a trigger. It is maintained on call header for synchronization purposes.</description>
+        <externalId>false</externalId>
+        <label>Signature</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Significant_Event__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Denotes a significant event.</description>
+        <externalId>false</externalId>
+        <label>Significant Event</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>State_Distributor_Expiration_Date_vod__c</fullName>
+        <description>State Distributor license expiration date corresponding to the Business ship to address</description>
+        <externalId>false</externalId>
+        <label>State Distributor Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>State_Distributor_vod__c</fullName>
+        <description>State Distributor License Number for the corresponding Business Address.</description>
+        <externalId>false</externalId>
+        <label>State Distributor</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State_vod__c</fullName>
+        <description>State of the Call Address.  This field should not be displayed on the Page Layout..</description>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status of the call -- Planned, Saved or Submitted. Use the translation workbench to change the display values.  The triggers on call look at this field to see whether the call is locked (submitted). This value is set for the user when the Save or Submit button is pressed.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Submitted_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Planned_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Saved_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Subject_vod__c</fullName>
+        <description>Subject of the call. This is purely an optional text field with no special processing.</description>
+        <externalId>false</externalId>
+        <label>Subject</label>
+        <length>128</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submit_Location_Latitude_vod__c</fullName>
+        <description>Stores the latitude coordinate of the location where the submit button is clicked</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the latitude coordinate of the location where the submit button is clicked</inlineHelpText>
+        <label>Submit Location Latitude</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submit_Location_Longitude_vod__c</fullName>
+        <description>Stores the longitude coordinate of the location where the submit button is clicked</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the longitude coordinate of the location where the submit button is clicked</inlineHelpText>
+        <label>Submit Location Longitude</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submit_Location_Services_Status_vod__c</fullName>
+        <description>Indicates the state of location services at the time the submit button was clicked.
+Enabled_vod - location services are turned on and the system is able to get the user&apos;s location
+Disabled_vod - location services are turned off
+No_connection_vod - no network connection</description>
+        <externalId>false</externalId>
+        <label>Submit Location Services Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Enabled_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Disabled_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No_connection_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Submit_Timestamp_vod__c</fullName>
+        <description>Device up-time in seconds, at the time the submit button was clicked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Device up-time in seconds, at the time the submit button was clicked.</inlineHelpText>
+        <label>Submit Timestamp</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submitted_By_Mobile_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the call was submitted from a mobile transaction.</description>
+        <externalId>false</externalId>
+        <label>Submitted By Mobile</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Suggestion_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Associates Call Report to Suggestion</description>
+        <externalId>false</externalId>
+        <label>Suggestion</label>
+        <referenceTo>Suggestion_vod__c</referenceTo>
+        <relationshipLabel>Calls</relationshipLabel>
+        <relationshipName>Calls_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Supervising_Physician_Credential_vod__c</fullName>
+        <description>The credentials of the Supervising Physician at the time of the Call.</description>
+        <externalId>false</externalId>
+        <label>Supervising Physician Credential</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supervising_Physician_License_vod__c</fullName>
+        <description>The state license number of the Supervising Physician at the time of the Call.</description>
+        <externalId>false</externalId>
+        <label>Supervising Physician License</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supervising_Physician_Name_vod__c</fullName>
+        <description>The name of the Supervising Physician at the time of the Call.</description>
+        <externalId>false</externalId>
+        <label>Supervising Physician Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Supervising_Physician_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Supervising Physician if the Call is for a midlevel practitioner in a state where the collaborative relationship with the supervising physician is required to be captured on the call record.</description>
+        <externalId>false</externalId>
+        <label>Supervising Physician</label>
+        <referenceTo>Account_Authorization_vod__c</referenceTo>
+        <relationshipLabel>Calls</relationshipLabel>
+        <relationshipName>Calls_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Territory_vod__c</fullName>
+        <description>The Territory of the User at the time of the Account Call.  If the User and Account are in more than one territory, it uses the first territory from the User that matches a Territory of the Account.  If no match between User and Rep, do not populate the Territory on the Call</description>
+        <externalId>false</externalId>
+        <label>Territory</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Expense_Attendees_Count_vod__c</fullName>
+        <description>Holds the number of attendees who are on this call that should be tied to the expense amount. This number represents everyone, including non-HCPs</description>
+        <externalId>false</externalId>
+        <label>Total Call Attendee Count</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unlock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this field is updated to true on a submitted call report, the call status will changed to &quot;Saved&quot; by the call trigger. Note that the value &quot;True&quot; is never actually saved in the unlock field. It is simply a way to unlock submitted calls. Normally only administrators will have field level security to the Unlock field.</description>
+        <externalId>false</externalId>
+        <label>Unlock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>User_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the user (if any) that the call is associated with. This does not mean the user who submitted the call, but means a user who has been added on the attendee list.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Call2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Veeva_Remote_Meeting_Id_vod__c</fullName>
+        <description>Unique meeting identifier for a remote meeting participant</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unique meeting identifier for a remote meeting participant</inlineHelpText>
+        <label>Veeva Remote Meeting Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip_4_vod__c</fullName>
+        <description>Zip + 4 of the Call Address.  This field should not be displayed on the Page Layout..</description>
+        <externalId>false</externalId>
+        <label>Zip_4</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip_vod__c</fullName>
+        <description>Zip Code of the Call Address.  This field should not be displayed on the Page Layout..</description>
+        <externalId>false</externalId>
+        <label>Zip</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zvod_Account_Account_Identifier_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker Field used to place the Account Identifier on layout</description>
+        <externalId>false</externalId>
+        <label>zvod_Account.Account_Identifier_vod__c</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Account_Call_Reminder_vod_c_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The contents of the Call_Reminder_vod on the parent account will be displayed here.</description>
+        <externalId>false</externalId>
+        <label>zvod_Account.Call_Reminder_vod__c</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Account_Credentials_vod_c_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Account Credentials control on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Account.Credentials_vod__c</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Account_Preferred_Name_vod_c_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Preferred Name control on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Account.Preferred_Name_vod__c</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Account_Primary_Parent_vod_c_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker Field used to place the Account Primary Parent on layout</description>
+        <externalId>false</externalId>
+        <label>zvod_Account.Primary_Parent_vod__c</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Account_Sample_Status_vod_c_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place sample status indicator on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Address_vod__c.Sample_Status_vod__c</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Add_Expense_Receipt_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used to add expense receipts</description>
+        <externalId>false</externalId>
+        <label>Add Expense Receipt</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Address_Sample_Send_Status_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place valid address indicator for sample send status on layout</description>
+        <externalId>false</externalId>
+        <label>zvod_Address.Sample_Send_Status_vod__c</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Address_vod_c_DEA_Status_vod_c_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place DEA sample status indicator on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Address_vod__c.DEA_Status_vod__c</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Attachments_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Attachments section on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Attachments</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Attendees_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place attendee section on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Attendees</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Business_Account_vod__c</fullName>
+        <description>Placeholder for the special logic on the Call Report Page.</description>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zvod_CLMDetails_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place CLM Details section on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_CLMDetails</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Call_Conflict_Status_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Warning of potential call schedule conflicts</description>
+        <externalId>false</externalId>
+        <label>Call Conflict Status</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Call_Objective_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field to determine where to display the call objective selector on the call report page</description>
+        <externalId>false</externalId>
+        <label>zvod_Call_Objective_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Check_In_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that adds Check In button on Call Report page</description>
+        <externalId>false</externalId>
+        <label>zvod_Check_In</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_CoBrowse_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place CoBrowse section on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_CoBrowse_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Delete_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place delete button on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Delete</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Detailing_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Detailing section on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Detailing</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Entity_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Provides single placeholder for rendering the Account, Contact or User label/hyperlink.</description>
+        <externalId>false</externalId>
+        <label>zvod_Call2_vod__c.Entity</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Expenses_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Expenses section on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Expenses</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Followup_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Follow-up Activities section on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Followup</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Key_Messages_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Key Messages section on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Key_Messages</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Medical_Discussion_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Medical Discussions on the page layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Medical_Discussion</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Medical_Inquiry_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to display Medical Inquiry Fulfillment records within an Interaction Report and to capture associated Responses.</description>
+        <externalId>false</externalId>
+        <label>zvod_Medical_Inquiry_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_More_Actions_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place More Actions button on page layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_More_Actions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Product_Discussion_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Product Discussion section on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Product_Discussion</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Sample_Opt_In_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Sample Opt In status on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Sample_Opt_In_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Samples_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Samples section on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Samples</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_SaveNew_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place &quot;Save&amp;New&quot; button on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_SaveNew_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Save_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Save button on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Save</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Submit_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Submit button on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Submit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Survey_Target_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Survey Target section on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Survey_Target</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Surveys_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field used to place Survey section on layout.</description>
+        <externalId>false</externalId>
+        <label>zvod_Surveys</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Unique_Group_Activities_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field which allows users to capture unique detail and sampling information for each attendee on a call to a Business Account.</description>
+        <externalId>false</externalId>
+        <label>zvod_Unique_Group_Activities_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Call</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>C{000000000}</displayFormat>
+        <label>Call Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Calls</pluralLabel>
+    <recordTypes>
+        <fullName>CallReport_vod</fullName>
+        <active>true</active>
+        <label>Call Report_vod</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Contracts Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disease Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tactical Discussion</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Attendee_Type_vod__c</picklist>
+            <values>
+                <fullName>Contact_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Person_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Type_vod__c</picklist>
+            <values>
+                <fullName>Call Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detail Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detail with Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Detail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Detail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Detail with Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Color_vod__c</picklist>
+            <values>
+                <fullName>Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkBlue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGreen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkMaroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOlive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOrange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPeach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPurple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkRed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkSteel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkTeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkYellow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Olive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Last_Device_vod__c</picklist>
+            <values>
+                <fullName>Blackberry_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location_Services_Status_vod__c</picklist>
+            <values>
+                <fullName>Disabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No_Connection_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sample_Card_Reason_vod__c</picklist>
+            <values>
+                <fullName>Application Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laptop Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Planned_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CoBrowse_Interaction</fullName>
+        <active>true</active>
+        <label>CoBrowse Interaction</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Contracts Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disease Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tactical Discussion</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Attendee_Type_vod__c</picklist>
+            <values>
+                <fullName>Contact_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Person_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Type_vod__c</picklist>
+            <values>
+                <fullName>Call Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detail Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detail with Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Detail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Detail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Detail with Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Color_vod__c</picklist>
+            <values>
+                <fullName>Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkBlue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGreen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkMaroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOlive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOrange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPeach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPurple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkRed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkSteel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkTeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkYellow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Olive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Last_Device_vod__c</picklist>
+            <values>
+                <fullName>Blackberry_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location_Services_Status_vod__c</picklist>
+            <values>
+                <fullName>Disabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No_Connection_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sample_Card_Reason_vod__c</picklist>
+            <values>
+                <fullName>Application Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laptop Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Planned_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Event_vod</fullName>
+        <active>true</active>
+        <description>Record type to support Event-based Call Reports</description>
+        <label>Event_vod</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Contracts Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disease Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tactical Discussion</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Attendee_Type_vod__c</picklist>
+            <values>
+                <fullName>Contact_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Person_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Type_vod__c</picklist>
+            <values>
+                <fullName>Call Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detail Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detail with Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Detail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Detail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Detail with Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Color_vod__c</picklist>
+            <values>
+                <fullName>Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkBlue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGreen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkMaroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOlive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOrange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPeach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPurple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkRed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkSteel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkTeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkYellow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Olive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Last_Device_vod__c</picklist>
+            <values>
+                <fullName>Blackberry_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location_Services_Status_vod__c</picklist>
+            <values>
+                <fullName>Disabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No_Connection_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sample_Card_Reason_vod__c</picklist>
+            <values>
+                <fullName>Application Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laptop Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Planned_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MSLMeetingBrief_vod</fullName>
+        <active>true</active>
+        <label>MSL Meeting Brief_vod</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Contracts Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disease Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tactical Discussion</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Attendee_Type_vod__c</picklist>
+            <values>
+                <fullName>Contact_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Person_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Type_vod__c</picklist>
+            <values>
+                <fullName>Call Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detail Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detail with Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Detail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Detail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Detail with Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Color_vod__c</picklist>
+            <values>
+                <fullName>Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkBlue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGreen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkMaroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOlive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOrange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPeach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPurple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkRed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkSteel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkTeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkYellow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Olive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Last_Device_vod__c</picklist>
+            <values>
+                <fullName>Blackberry_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location_Services_Status_vod__c</picklist>
+            <values>
+                <fullName>Disabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No_Connection_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sample_Card_Reason_vod__c</picklist>
+            <values>
+                <fullName>Application Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laptop Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Planned_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Medical_Inquiry_Fulfillment_vod</fullName>
+        <active>true</active>
+        <description>Call record created to capture the fulfillment of a medical inquiry record.</description>
+        <label>Medical_Inquiry_Fulfillment_vod</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Contracts Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disease Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tactical Discussion</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Attendee_Type_vod__c</picklist>
+            <values>
+                <fullName>Contact_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Person_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CLM_Location_Services_Status_vod__c</picklist>
+            <values>
+                <fullName>Disabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No_connection_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Type_vod__c</picklist>
+            <values>
+                <fullName>Call Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detail Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detail with Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Detail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Detail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Detail with Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Check_In_Location_Services_Status_vod__c</picklist>
+            <values>
+                <fullName>Disabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No_connection_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Check_In_Status_vod__c</picklist>
+            <values>
+                <fullName>Checked_In_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not_Checked_In_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Color_vod__c</picklist>
+            <values>
+                <fullName>Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkBlue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGreen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkMaroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOlive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOrange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPeach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPurple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkRed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkSteel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkTeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkYellow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Olive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Expense_Attendee_Type_vod__c</picklist>
+            <values>
+                <fullName>BUSGUEST</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Last_Device_vod__c</picklist>
+            <values>
+                <fullName>Blackberry_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data_Load_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WinModern_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPhone_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location_Services_Status_vod__c</picklist>
+            <values>
+                <fullName>Disabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No_Connection_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sample_Card_Reason_vod__c</picklist>
+            <values>
+                <fullName>Application Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laptop Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Planned_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Submit_Location_Services_Status_vod__c</picklist>
+            <values>
+                <fullName>Disabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No_connection_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MeetingBrief_vod</fullName>
+        <active>true</active>
+        <description>Meeting Brief</description>
+        <label>Meeting Brief_vod</label>
+        <picklistValues>
+            <picklist>Activity_Type__c</picklist>
+            <values>
+                <fullName>Contracts Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Disease Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tactical Discussion</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Attendee_Type_vod__c</picklist>
+            <values>
+                <fullName>Contact_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Person_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Type_vod__c</picklist>
+            <values>
+                <fullName>Call Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detail Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Detail with Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Detail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event Only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Detail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group Detail with Sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Color_vod__c</picklist>
+            <values>
+                <fullName>Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkBlue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGreen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkMaroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOlive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOrange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPeach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPurple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkRed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkSteel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkTeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkYellow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Olive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Last_Device_vod__c</picklist>
+            <values>
+                <fullName>Blackberry_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Location_Services_Status_vod__c</picklist>
+            <values>
+                <fullName>Disabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No_Connection_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sample_Card_Reason_vod__c</picklist>
+            <values>
+                <fullName>Application Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laptop Unavailable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Planned_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Call_Type_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Call_Datetime_vod__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Call_Type_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Call_Datetime_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account_vod__c</searchFilterFields>
+        <searchFilterFields>Call_Type_vod__c</searchFilterFields>
+        <searchFilterFields>Call_Datetime_vod__c</searchFilterFields>
+        <searchFilterFields>Status_vod__c</searchFilterFields>
+        <searchResultsAdditionalFields>Account_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Parent_Address_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Call_Type_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Call_Datetime_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status_vod__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Add_Products</fullName>
+        <availability>online</availability>
+        <description>To add products from call edit page</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Add Products</masterLabel>
+        <openType>sidebar</openType>
+        <page>BOT_Add_Product_View</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Assign_vod</fullName>
+        <availability>online</availability>
+        <description>Allows one user to change the owner of a Call as well. This also sets the AssignerID and Assignment_Datetime fields of the Call</description>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Assign</masterLabel>
+        <openType>sidebar</openType>
+        <page>Call_Booking_vod</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>Print_Sample_Receipt_vod</fullName>
+        <availability>online</availability>
+        <description>Generates a PDF representation of a sample receipt.</description>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>sControl</linkType>
+        <masterLabel>Print Sample Receipt</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <scontrol>Print_Sample_Receipt_vod</scontrol>
+    </webLinks>
+    <webLinks>
+        <fullName>View_Signatures_vod</fullName>
+        <availability>online</availability>
+        <description>Button to be placed on Calls related list to view captured Signatures.</description>
+        <displayType>massActionButton</displayType>
+        <height>2000</height>
+        <linkType>sControl</linkType>
+        <masterLabel>View Signatures</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <scontrol>Signature_View_From_Call_List</scontrol>
+    </webLinks>
+</CustomObject>

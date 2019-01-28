@@ -1,0 +1,65 @@
+<!--
+Name:BOT_SpecialtyProvider_View
+Created By:Harsha BR
+Created Date:03/07/2017
+Overview :Used to display the specialty provider data related to a Thera class.
+
+Modified By: Harsha BR
+Modified Date: 04/24/2017
+Reason: To add Pagination
+-->
+
+<apex:page standardController="BOT_Thera_Class__c" name="Specialty View" title="Specialty View" sidebar="false" showHeader="false" extensions="BOT_Specialty_View_Extn">
+    <!-- Jquery -->
+    <apex:includeScript value="//code.jquery.com/jquery-1.11.3.min.js"/>
+    <apex:stylesheet value="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"/>
+ 
+    <!-- DataTable -->
+    <apex:includeScript value="//cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"/>
+    <apex:stylesheet value="//cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css"/>
+    
+    <script type="text/javascript">
+    $(document).ready(function(){
+        specialtyMethod();
+    });
+    
+    function specialtyMethod()
+    {  
+        var specialtyTable = $('[cid$="specialtyTable"]').parent('table').eq(0).DataTable({
+        //adds copy, print buttons...
+        dom: 'rt'//l=length, B=buttons, f=filter(search), r=processing, t=the table, I=table summary, p=page controls
+        });
+     }
+    </script>
+    
+    <apex:form id="theForm">
+        <apex:pageBlock mode="edit" id="pb" rendered="{!IF(AND(NOT(ISBLANK(lstSpecialties)),lstSpecialties.size>0),'TRUE','FALSE')}">
+
+            <apex:outputPanel id="drugPanel"  layout="block" >
+                
+                <apex:outputPanel id="pagerButtons" style="width:100%; text-align:right; padding: 2px 0px;" layout="block"  rendered="{!blnButtons}" >
+                    <apex:commandButton action="{!first}" disabled="{!disablePrevious}" title="First" value="<<"  reRender="drugPanel"  oncomplete="specialtyMethod()"/>
+                    <apex:commandButton action="{!Previous}" disabled="{!disablePrevious}" title="Previous" value="<" reRender="drugPanel" oncomplete="specialtyMethod()"/>        
+                    <apex:commandButton action="{!Next}"  disabled="{!disableNext}" title="Next" value=">"  reRender="drugPanel" oncomplete="specialtyMethod()"/>
+                    <apex:commandButton action="{!last}" disabled="{!disableNext}" title="Last" value=">>"  reRender="drugPanel" oncomplete="specialtyMethod()"/>           
+                </apex:outputPanel>
+                
+                <apex:pageBlockTable id="pharResult" cellpadding="2" cellspacing="2" border="1" columns="7" value="{!lstSpecialties}" var="objSpec" html-cid="specialtyTable">
+                    <apex:facet name="header">
+                        Showing Page # {!pageNumber} of {!totalPages}
+                    </apex:facet>
+                    <apex:column id="name" headerValue="Specialty Provider Name">
+                    <apex:outputLink id="oLink" value="/{!objSpec.Id}" target="_top" style="font-weight:bold"> {!objSpec.Name}</apex:outputLink>                                                                              
+                    </apex:column>
+                    <apex:column id="type" value="{!objSpec.BOT_SPP_Type__c}"/>
+                    <apex:column id="pbm" value="{!objSpec.BOT_PBM__c}"/>
+                    <apex:column id="phone" value="{!objSpec.BOT_Phone__c}"/>
+                    <apex:column id="city" value="{!objSpec.BOT_City__c}"/>
+                    <apex:column id="state" value="{!objSpec.BOT_State__c}"/>
+                    <apex:column id="website" value="{!objSpec.BOT_website__c}"/>
+                    
+                </apex:pageBlockTable>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

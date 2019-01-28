@@ -1,0 +1,10 @@
+<apex:page standardController="Account_Plan_vod__c" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_Scroll_1800_vod}"/>
+<script type="text/javascript">
+    var params = "&acctid=" + "{!URLENCODE($CurrentPage.parameters.acctId)}";
+    params += "&acctPlanId=" + "{!URLENCODE($CurrentPage.parameters.acctPlanId)}"
+    params += "&acctPlanName=" + "{!URLENCODE($CurrentPage.parameters.acctPlanName)}"
+    params += "&type=hierarchy"
+    com.vod309.redirect.redirect("keyStakeholder", params)    
+</script>
+</apex:page>

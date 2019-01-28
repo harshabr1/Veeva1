@@ -1,0 +1,8 @@
+<apex:page standardController="Medical_Event_vod__c" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_vod}"/>
+<script type="text/javascript">        
+    var queryparams = "&medId=" + "{!Medical_Event_vod__c.Id}";
+    queryparams += "&isEM=" + "{!URLENCODE($CurrentPage.parameters.isEM)}"     
+    com.vod309.redirect.redirect("manageeventattendees", queryparams );
+</script>
+</apex:page>

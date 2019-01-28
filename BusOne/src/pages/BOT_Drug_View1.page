@@ -1,0 +1,168 @@
+<!--
+Name:BOT_Drug_View1
+Created By:Harsha BR
+Created Date:05/16/2018
+Overview :Used to display the Drug data related to a Formulary.
+
+Modified By: Harsha BR
+Modified Date: 04/04/2017
+Reason: To add Pagination
+-->
+<apex:page standardController="Formulary_Products_vod__c" name="Drug View" title="Drug View" sidebar="false" showHeader="false" extensions="BOT_Drug_View_Extn1">
+
+    <apex:form id="theForm">
+        
+        <apex:pageBlock mode="edit" id="pb" rendered="{!blnAlphabets}"> 
+            <apex:pageblocksection columns="2">
+                <apex:outputPanel ID="op" style="width:100%; text-align:left; padding: 10px 0px;" layout="block">
+                    <apex:outputText escape="false" value="<b>Therapeutic Class:</b>"/>
+                    <apex:selectList size="1" value="{!selected}">
+                    <apex:selectOptions value="{!dynamiclist}"></apex:selectOptions>
+                     <apex:actionSupport action="{!fetchResults}" event="onchange" reRender="drugPanel,pagerButtons" status="status"/>
+                    </apex:selectList>
+                </apex:outputPanel>
+                <apex:outputPanel id="alphaFilters" style="width:100%; text-align:center; padding: 10px 0px;" layout="block"> 
+                	<apex:commandLink action="{!filterByAlphabets}" title="A" value="A" reRender="drugPanel,pagerButtons" status="status">
+                     	 <apex:param name="a"  value="a" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="B" value="B" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name="b"  value="b" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="C" value="C" reRender="drugPanel,pagerButtons" status="status">
+                     	 <apex:param name="c"  value="c" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="D" value="D" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name="d"  value="d" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="E" value="E" reRender="drugPanel,pagerButtons" status="status">
+                     	 <apex:param name="e"  value="e" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="F" value="F" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name="f"  value="f" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="G" value="G" reRender="drugPanel,pagerButtons" status="status">
+                     	 <apex:param name="g"  value="g" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="H" value="H" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name="h"  value="h" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="I" value="I" reRender="drugPanel,pagerButtons" status="status">
+                     	 <apex:param name="i"  value="i" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="J" value="J" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name="j"  value="j" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="K" value="K" reRender="drugPanel,pagerButtons" status="status">
+                     	 <apex:param name="k"  value="k" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="L" value="L" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name="l"  value="l" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="M" value="M" reRender="drugPanel,pagerButtons" status="status">
+                     	 <apex:param name="m"  value="m" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="N" value="N" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name="n"  value="n" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="O" value="O" reRender="drugPanel,pagerButtons" status="status">
+                     	 <apex:param name="o"  value="o" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="P" value="P" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name="p"  value="p" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="Q" value="Q" reRender="drugPanel,pagerButtons" status="status">
+                     	 <apex:param name="q"  value="q" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="R" value="R" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name="r"  value="r" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="S" value="S" reRender="drugPanel,pagerButtons" status="status">
+                     	 <apex:param name="s"  value="s" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="T" value="T" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name="t"  value="t" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="U" value="U" reRender="drugPanel,pagerButtons" status="status">
+                     	 <apex:param name="u"  value="u" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="V" value="V" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name="v"  value="v" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="W" value="W" reRender="drugPanel,pagerButtons" status="status">
+                     	 <apex:param name="w"  value="w" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="X" value="X" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name="x"  value="x" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="Y" value="Y" reRender="drugPanel,pagerButtons" status="status">
+                     	 <apex:param name="y"  value="y" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="Z" value="Z" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name="z"  value="z" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    <apex:outputText value=" | " style="color:grey;" />
+                    <apex:commandLink action="{!filterByAlphabets}" title="All" value="All" reRender="drugPanel,pagerButtons" status="status">
+                        <apex:param name=""  value="" assignTo="{!alphaFilter}" />
+                    </apex:commandLink>
+                    		
+                </apex:outputPanel>
+
+            </apex:pageblocksection>
+
+            <apex:outputPanel id="drugPanel" layout="block" >
+            
+                <apex:outputPanel id="pagerButtons" style="width:100%; text-align:right; padding: 2px 0px;" layout="block"  rendered="{!blnButtons}" >  
+                    <apex:commandButton action="{!first}" disabled="{!disablePrevious}" title="First" value="<<"  reRender="drugPanel" />
+                    <apex:commandButton action="{!Previous}" disabled="{!disablePrevious}" title="Previous" value="<" reRender="drugPanel"/>        
+                    <apex:commandButton action="{!Next}"  disabled="{!disableNext}" title="Next" value=">"  reRender="drugPanel"/>
+                    <apex:commandButton action="{!last}" disabled="{!disableNext}" title="Last" value=">>"  reRender="drugPanel"/>
+                </apex:outputPanel> 
+                
+                <apex:actionStatus id="status" StartText="Searching..." startStyle="font-color:red;">
+                    <apex:facet name="start">
+                        <apex:image value="/img/loading.gif" />
+                    </apex:facet>
+                 </apex:actionStatus>
+                 
+                <apex:pageBlockTable id="pharResult" cellpadding="2" cellspacing="2" border="1" columns="6" value="{!lstProducts}" var="objProd" rendered="{!IF(AND(NOT(ISBLANK(lstProducts)),lstProducts.size>0),'TRUE','FALSE')}">
+                    <apex:facet name="header">
+                        Showing Page # {!pageNumber} of {!totalPages} 
+                    </apex:facet>  
+                    <apex:column id="class" value="{!objProd.Therapeutic_Class_vod__c}"/>   
+                    <apex:column id="name" value="{!objProd.Name}"/>
+                    <apex:column id="strength" value="{!objProd.BOT_Strength__c}"/>
+                    <apex:column id="status" value="{!objProd.BOT_Status__c}"/>
+                    <apex:column id="restriction" value="{!objProd.Restricted_States_vod__c}"/>
+                    <apex:column id="copay" value="{!objProd.BOT_Copay__c}"/>
+                                        
+                </apex:pageBlockTable>
+            </apex:outputPanel> 
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

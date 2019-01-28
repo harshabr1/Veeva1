@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Metric Configurations allows configuration of the product metrics scontrol, such as display order, type, and visibility</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Setting a metric to inactive means it will not be displayed for any users.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Applies_To_vod__c</fullName>
+        <description>Shows which record types of accounts this metric is used for.  For example, Awareness might be relevant for a Professional and KOL record type, but not a Hospital record type. If a new record type of Account is added to the Account object, it should also be added to the possible values for this picklist.</description>
+        <externalId>false</externalId>
+        <label>Applies To</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Practice_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Professional_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pharmacy_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MCO_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>MCO Plan_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Laboratory_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hospital_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hospital Department_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Employer_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Board_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Available_Values_vod__c</fullName>
+        <description>The list of available picklist values for the specified product/metric value-pair. Each value specified here must match an API value in the metric picklist.</description>
+        <externalId>false</externalId>
+        <label>Available Values</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Product Catalog records of type Detail Group.</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Metric Configurations</relationshipLabel>
+        <relationshipName>Metric_Configurations_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Topic_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, this metric applies to Detail Topic, not Detail</description>
+        <externalId>false</externalId>
+        <label>Detail Topic</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_Order_vod__c</fullName>
+        <description>The order (left to right) that the metric will be displayed in.  The absolute number is not important, but lower numbered metrics are displayed to the left of higher numbered metrics.</description>
+        <externalId>false</externalId>
+        <label>Display Order</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Metric_Type_vod__c</fullName>
+        <description>The metric type controls the display of the metric in the ratings scontrol.   Numbers can be of type number_vod or arrows_vod.  Picklists can be of type text_vod (normal picklist) or Box_vod (Netflix type rating).</description>
+        <externalId>false</externalId>
+        <label>Metric Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Number_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Text_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Box_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Arrows_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Checkbox_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The product that this metric configuration record will apply to.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Metric Configurations (Product Catalog)</relationshipLabel>
+        <relationshipName>Metric_Configurations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Red_Yellow_vod__c</fullName>
+        <description>Only used for the arrows_vod type metric, this gives the breakpoint between red and yellow colors.</description>
+        <externalId>false</externalId>
+        <label>Red/Yellow</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Yellow_Green_vod__c</fullName>
+        <description>Only used for the arrows_vod type metric, this gives the breakpoint between yellow and green colors.</description>
+        <externalId>false</externalId>
+        <label>Yellow/Green</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Metric Configuration</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Display_Order_vod__c</columns>
+        <columns>Metric_Type_vod__c</columns>
+        <columns>Applies_To_vod__c</columns>
+        <columns>Red_Yellow_vod__c</columns>
+        <columns>Yellow_Green_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_d_2</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Metric</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Metric Configurations</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Applies_To_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Display_Order_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Metric_Type_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Red_Yellow_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Yellow_Green_vod__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Display_Order_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Metric_Type_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Applies_To_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Red_Yellow_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Yellow_Green_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Applies_To_vod__c</searchFilterFields>
+        <searchFilterFields>Display_Order_vod__c</searchFilterFields>
+        <searchFilterFields>Metric_Type_vod__c</searchFilterFields>
+        <searchFilterFields>Red_Yellow_vod__c</searchFilterFields>
+        <searchFilterFields>Yellow_Green_vod__c</searchFilterFields>
+        <searchResultsAdditionalFields>Display_Order_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Metric_Type_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Applies_To_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Yellow_Green_vod__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Detail_Group_Type_Check</fullName>
+        <active>true</active>
+        <description>Only products of type &apos;Detail Group&quot; are allowed</description>
+        <errorConditionFormula>IF(ISPICKVAL( Detail_Group_vod__r.Product_Type_vod__c, &apos;Detail Group&apos;), false, 
+IF( ISBLANK(Detail_Group_vod__c) , false, true) )</errorConditionFormula>
+        <errorDisplayField>Detail_Group_vod__c</errorDisplayField>
+        <errorMessage>Only type of &apos;Detail Group&quot; is allowed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Product_Lookup_Validation_Check</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( ISBLANK(Product_vod__c), False,
+    OR(
+    AND
+    (Detail_Topic_vod__c = True, NOT
+    (ISPICKVAL
+    (Product_vod__r.Product_Type_vod__c, &apos;Detail Topic&apos;)
+    )
+    ),
+
+    AND
+    (Detail_Topic_vod__c = False,
+    ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Detail Topic&apos;)
+    ),
+    AND(
+    NOT
+    (ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Detail Topic&apos;)
+    ),
+    NOT
+    (ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Detail&apos;)
+    )
+    )
+    )
+    )</errorConditionFormula>
+        <errorMessage>Error: Invalid product type for Product lookup field. This field may only have products that are Detail or Detail Topic.</errorMessage>
+    </validationRules>
+</CustomObject>

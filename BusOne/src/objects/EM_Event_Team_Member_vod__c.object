@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Team members for events in Veeva Event Management. Team members are automatically granted edit permission to an event.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Email_vod__c</fullName>
+        <description>Primary email address of the team member.</description>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_vod__c</fullName>
+        <description>The event for which the person is a team member.</description>
+        <externalId>false</externalId>
+        <label>Event</label>
+        <referenceTo>EM_Event_vod__c</referenceTo>
+        <relationshipLabel>Event Team Members</relationshipLabel>
+        <relationshipName>EM_Event_Team_Member_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name_vod__c</fullName>
+        <description>Team Member&apos;s first name</description>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Name_vod__c</fullName>
+        <description>Stores the name of the public group or queue that is added as a team member.</description>
+        <externalId>false</externalId>
+        <label>Group Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Name_vod__c</fullName>
+        <description>Team Member&apos;s last name</description>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Field used by mobile products for synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Helper field for data loads.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Phone_Number_vod__c</fullName>
+        <description>Primary phone number of the team member</description>
+        <externalId>false</externalId>
+        <label>Phone Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Role_vod__c</fullName>
+        <description>Role of an event team member. Team members will automatically have read/write access to an event. Roles can be used in the Event Configuration Page Layout Engine. Custom values can be added to this fied.</description>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Organizer_vod</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Vendor_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approver_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cohost_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Event Owner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approver</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Team_Member_Type_vod__c</fullName>
+        <description>Used to control the UI when entering team members. Values cannot be added or removed.</description>
+        <externalId>false</externalId>
+        <label>Team Member Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Group_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Write_In_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Team_Member_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>System users who are part of an event team.</description>
+        <externalId>false</externalId>
+        <label>Team Member</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Event_Team_Members_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Event Team Member</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Event Team Members</pluralLabel>
+    <recordTypes>
+        <fullName>Event_Team_Member_vod</fullName>
+        <active>true</active>
+        <description>Event Team Member</description>
+        <label>Event_Team_Member_vod</label>
+        <picklistValues>
+            <picklist>Role_vod__c</picklist>
+            <values>
+                <fullName>Approver_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cohost_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizer_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Group_vod</fullName>
+        <active>true</active>
+        <description>Used for a group team member</description>
+        <label>Group_vod</label>
+        <picklistValues>
+            <picklist>Role_vod__c</picklist>
+            <values>
+                <fullName>Approver_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cohost_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organizer_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vendor_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Person_Group_vod</fullName>
+        <active>true</active>
+        <description>Please select a person or a group</description>
+        <errorConditionFormula>AND( LEN( Team_Member_vod__r.Id )&gt;0,  LEN( Group_Name_vod__c )&gt;0  )</errorConditionFormula>
+        <errorMessage>Please select a person or a group</errorMessage>
+    </validationRules>
+</CustomObject>

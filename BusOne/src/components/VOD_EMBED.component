@@ -1,0 +1,14 @@
+<apex:component controller="VOD_EMBED_CONTROLLER">
+    <apex:attribute name="veevaModule" type="string" assignTo="{!veevaModuleName}" required="true"
+                    description="Name of the Veeva Module" />
+    <apex:attribute name="veevaPage" type="string" assignTo="{!veevaPageName}" required="true"
+                    description="Name of the page in the Veeva Module" />
+    <apex:attribute name="objectType" type="string" assignTo="{!veevaObjectType}" required="false"
+                    description="Type of object to be used" />
+    <apex:attribute name="queryParams" type="string" assignTo="{!veevaParams}" required="false"
+                    description="query parameters" />
+    <apex:attribute name="recordType18" type="string" assignTo="{!recordType18Digit}" required="false"
+                    description="query parameters" />
+    <c:VOD_EMBED_DETAIL_V1 rendered="{!vodVersion < 250504}" veevaModule="{!veevaModuleName}" veevaPage="{!veevaPageName}" objectType="{!veevaObjectType}" queryParams="{!veevaParams}" recordType18="{!recordType18}" />
+    <c:VOD_EMBED_DETAIL_V2 rendered="{!vodVersion >= 250504}" veevaModule="{!veevaModuleName}" veevaPage="{!veevaPageName}" objectType="{!veevaObjectType}" queryParams="{!veevaParams}" recordType18="{!recordType18}" />
+</apex:component>

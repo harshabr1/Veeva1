@@ -1,0 +1,12 @@
+<apex:page controller="ChartController_extn">
+    <apex:chart height="400" width="700" data="{!pieData}" legend="true">
+        <apex:legend position="left"/>
+        <apex:axis type="Numeric" position="left" fields="data1,data2,data3" title="Drug View" grid="true" dashSize="2">
+            <apex:chartLabel />
+        </apex:axis>
+        <apex:axis type="Category" position="bottom" fields="name" title="Stacked columns">
+            <apex:chartLabel rotate="316"></apex:chartLabel>
+        </apex:axis>
+        <apex:BarSeries Orientation="vertical" axis="left" stacked="true" xField="name" yField="data1,data2,data3" title="Test1,Test2,Test3"/>
+    </apex:chart>
+</apex:page>

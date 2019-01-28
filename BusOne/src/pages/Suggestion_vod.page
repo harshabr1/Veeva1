@@ -1,0 +1,3 @@
+<apex:page controller="VOD_EMBED_CONTROLLER">
+    <c:VOD_EMBED veevaModule="suggestion" veevaPage="suggestion-list" objectType="Suggestion_vod__c" queryParams=""/>
+</apex:page>

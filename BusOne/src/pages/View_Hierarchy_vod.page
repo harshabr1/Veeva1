@@ -1,0 +1,7 @@
+<apex:page standardController="Child_Account_vod__c" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_Scroll_1800_vod}"/>
+<script type="text/javascript">        
+    var queryparams = "&event=viewHierarchy&childAccountId=" + "{!Child_Account_vod__c.Id}" + "&acctid=" + "{!Child_Account_vod__c.Child_Account_vod__c}";  
+    com.vod309.redirect.redirect("childAccount", queryparams);
+</script>
+</apex:page>

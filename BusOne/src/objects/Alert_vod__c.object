@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores alerts that get displayed to users. Alerts can be public or be visible based on profiles or users.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Activation_Date_vod__c</fullName>
+        <description>The date and time when the alert should first be displayed.</description>
+        <externalId>false</externalId>
+        <label>Activation Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Alert_Text_vod__c</fullName>
+        <description>Alert content.</description>
+        <externalId>false</externalId>
+        <label>Alert Text</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Dismissible_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the alert can be dismissed by a user.</description>
+        <externalId>false</externalId>
+        <label>Dismissible</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Expiration_Date_vod__c</fullName>
+        <description>The date and time when the alert expires and is hidden from view.</description>
+        <externalId>false</externalId>
+        <label>Expiration Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Push_Notify_APNS_Datetime_vod__c</fullName>
+        <description>Date/Time stamp of when the Scheduled Push Notification job processed the alert to the APNS</description>
+        <externalId>false</externalId>
+        <label>Last Push Notify APNS Date/Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Link_Reference_Long_vod__c</fullName>
+        <description>Longer version of the Link_Reference_vod field. When populating this field, use the same formatting as the Link_Reference_vod field.</description>
+        <externalId>false</externalId>
+        <label>Link Reference Long</label>
+        <length>9000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Link_Reference_vod__c</fullName>
+        <description>This field can be populated with three possible values.
+
+An absolute URL and the text to display separated by a comma. The format is ABS_URL,DISPLAY_TEXT (e.g. &quot;http://www.cnn.com, CNN&quot;). 
+
+A relative SFDC URL and the text to display separated by a comma. The format is REL_URL,DISPLAY_TEXT (e.g. &quot;/home/home.jsp, Veeva CRM&quot;). 
+
+An 18 character SFDC Id. This will drill into the detail page for the record offline. The display text for the link is the value of the Name field for the record. If the system cannot determine the source object or the referenced record is not available offline, then the link does not display.</description>
+        <externalId>false</externalId>
+        <label>Link Reference</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Priority_vod__c</fullName>
+        <description>Alert priority. Values: Urgent, Important, Normal.</description>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Urgent</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Important</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Normal</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Public_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines if the alert is visible by everyone in the org (TRUE) or if visibility is limited by the selected users or profiles (FALSE).</description>
+        <externalId>false</externalId>
+        <label>Public</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Push_Notify_APNS_Status_vod__c</fullName>
+        <description>Status used by the Scheduled Push Notification job for pushing notifications to the APNS</description>
+        <externalId>false</externalId>
+        <label>Push Notify APNS Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Queued_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Processed_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Alert</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Title</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Alerts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Link_Reference_Long_Check</fullName>
+        <active>true</active>
+        <description>Ensure that both link reference fields are not populated on the same alert</description>
+        <errorConditionFormula>AND( NOT(ISBLANK(Link_Reference_Long_vod__c)),NOT(ISBLANK(Link_Reference_vod__c)))</errorConditionFormula>
+        <errorDisplayField>Link_Reference_Long_vod__c</errorDisplayField>
+        <errorMessage>Error: Both the Link Reference Long and Link Reference fields cannot be populated on the same alert.</errorMessage>
+    </validationRules>
+</CustomObject>

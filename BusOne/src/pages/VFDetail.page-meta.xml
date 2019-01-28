@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>21.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Documentation will indicate that the page security needs to be shared with all relevant profiles and mention that only simple HTML renders properly in the native browser (native Salesforce or Salesforce styling is not recommended).</description>
+    <label>VFDetail</label>
+</ApexPage>

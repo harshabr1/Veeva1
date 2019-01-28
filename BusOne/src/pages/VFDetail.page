@@ -1,0 +1,6 @@
+<apex:page standardController="Account" showHeader="false" sidebar="false" standardStylesheets="false" >
+    <apex:pageBlock >
+        <p> Account Name: {!account.Name}</p>
+        <p> Website: {!account.website}</p>     
+    </apex:pageBlock>
+</apex:page>

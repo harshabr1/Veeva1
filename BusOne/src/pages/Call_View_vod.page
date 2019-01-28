@@ -1,0 +1,3 @@
+<apex:page standardcontroller="Call2_vod__c">
+    <c:VOD_EMBED veevaModule="call" veevaPage="view-call" objectType="Call2_vod__c"/>
+</apex:page>

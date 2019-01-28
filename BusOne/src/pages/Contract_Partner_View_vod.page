@@ -1,0 +1,6 @@
+<apex:page standardController="Contract_Partner_vod__c" extensions="VODRedirectController" standardStylesheets="true">
+    <c:Veeva_Conditional_Redirect_vod actionURL="{!URLFOR($Action.Contract_Partner_vod__c.Edit, Contract_Partner_vod__c.Id, null, true)}"
+            condition="{!AND($CurrentPage.parameters.retURL != '', OR(NOT(Contract_Partner_vod__c.Lock_vod__c), Contract_Partner_vod__c.Agreement_vod__c), NOT(Contract_Partner_vod__c.Agreement_vod__c && Contract_Partner_vod__c.Contract_vod__r.Status_vod__c == "Signed_vod"))}" />
+    <c:Veeva_Detail_Component_vod VodUrl="{!VodUrl}" recordId="{!Contract_Partner_vod__c.Id}" sObjectType="Contract_Partner_vod__c" beforeReady="veeva.beforeReady" />
+    <apex:includeScript value="{!VodUrl}/js/contract/contractpartnerview.js" />
+</apex:page>

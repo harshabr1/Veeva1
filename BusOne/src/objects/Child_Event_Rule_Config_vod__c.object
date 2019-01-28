@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores configurations for child event rules</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>EM_Event_Rule_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The event rule for a child event config</description>
+        <externalId>false</externalId>
+        <label>Event Rule</label>
+        <referenceTo>EM_Event_Rule_vod__c</referenceTo>
+        <relationshipLabel>Event Rules</relationshipLabel>
+        <relationshipName>Child_Event_Rule_Configurations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Event_Field_vod__c</fullName>
+        <description>Stores the parent field for a child event rule config</description>
+        <externalId>false</externalId>
+        <label>Parent Event Field</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Event_Related_List_vod__c</fullName>
+        <description>Stores the related list for a child event rule config</description>
+        <externalId>false</externalId>
+        <label>Parent Event Related List</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Child Event Rule Configuration</label>
+    <nameField>
+        <displayFormat>ER-{0000000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Child Event Rule Configurations</pluralLabel>
+    <recordTypes>
+        <fullName>Child_Event_Rule_Field_vod</fullName>
+        <active>true</active>
+        <description>Stores a parent event field that is associated to a child event rule</description>
+        <label>Child Event Rule Field</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Child_Event_Rule_Related_List_vod</fullName>
+        <active>true</active>
+        <description>Stores a parent event related list that is associated to a child event rule</description>
+        <label>Child Event Rule Related List</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

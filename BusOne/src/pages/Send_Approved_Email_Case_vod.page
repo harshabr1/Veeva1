@@ -1,0 +1,11 @@
+<apex:page standardController="Case" standardStylesheets="true" sidebar="false" extensions="VOD_CASE_CONTROLLER_EXTENSION">
+<apex:composition template="{!$Page.VODRedirect_vod}" />
+<script type="text/javascript"> 
+
+    var queryparams = "&accts=" + "{!case.AccountId}";
+    queryparams += "&location=Case_vod";
+    queryparams += "&Case.Id=" + "{!case.Id}";
+    
+    com.vod309.redirect.redirect("approvedEmail", queryparams);
+</script>
+</apex:page>

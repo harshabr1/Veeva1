@@ -1,0 +1,3 @@
+<apex:page standardController="Assortment_vod__c">
+    <c:VOD_EMBED veevaModule="assortment" veevaPage="assortment-preview" queryParams="id={!Assortment_vod__c.Id}"/>
+</apex:page>

@@ -1,0 +1,57 @@
+<!--
+Name:Event_CallHistory
+Created By:Harsha BR
+Created Date:01/30/2017
+Overview :Used to store the Call History details related to the account.
+!-->
+<apex:page id="thePage" standardController="Event" name="Call history" title="Call History" sidebar="false" showHeader="false" extensions="Event_CallHistoryExtension" rendered="{!blnFound}">
+    <style>
+    .ct{
+            text-align:center;
+        }
+    </style>
+    
+    <script type="text/javascript">
+    function recurrence(name)
+    {
+        window.open("/"+name)
+    }
+    </script>
+    <apex:form id="theForm">
+        <apex:pageBlock mode="edit" id="pb">
+            <h3>
+                Call History:{!accName}
+            </h3>
+            <apex:outputPanel layout="block" style="overflow:scroll;height:200px;margin:2px">
+            <apex:pageBlockTable id="pbtResult" cellpadding="2" cellspacing="2" border="1" columns="8" value="{!lstEvents}" var="objResult" >
+                
+                <apex:column id="dateColId" headerValue="Date">
+                    <apex:outputText id="dateTextId" value="{0,date,MM-dd-yyyy}">
+                        <apex:param id="dateParamId" value="{!objResult.StartDateTime}" />
+                    </apex:outputText>
+                </apex:column> 
+                <apex:column id="clmn" headerValue="Subject">
+                    <apex:outputLink id="oLink" value="/{!objResult.Id}" target="_top" style="font-weight:bold"> {!objResult.subject}</apex:outputLink>                                                                              
+                </apex:column>
+
+                <apex:column id="callTypeId" value="{!objResult.Call_Type__c}"/>
+
+                <apex:column id="primary" headerValue="Primary Product">{!objResult.Product__c}
+                </apex:column>
+                <apex:column id="objective" value="{!objResult.Objective1__c}">
+                </apex:column>
+                <apex:column id="recurrence" headerValue="Recurrence" headerClass="ct" style="text-align:center;" >
+                    <apex:image title="Recurring Event" url="/img/recurring_activity.gif" onclick="recurrence('{!objResult.Id}')" rendered="{!objResult.IsRecurrence}"/>
+                </apex:column>
+                <apex:column id="attachmentClmn" headerValue="Attachments" >
+                    <apex:pageBlockTable id="attachTable"   columns="1" value="{!objResult.Attachments}" var="objAttach" rendered="{!IF(objResult.Attachments.size > 0, TRUE, FALSE)}">
+                        <apex:column id="attachmentClmn">                      
+                        <apex:outputLink target="_top" value="/{!objAttach.Id}">{!objAttach.Name}</apex:outputLink>
+                        </apex:column>
+                    </apex:pageBlockTable>               
+                </apex:column>
+            </apex:pageBlockTable>
+            </apex:outputPanel>
+        </apex:pageBlock>  
+    </apex:form>
+</apex:page>

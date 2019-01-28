@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores the consent template records used to define the criteria for expiring a Sample Opt In record created in the Multichannel Consent object</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Calendar_Effective_Date_vod__c</fullName>
+        <description>The effective date or start date of Sample Consent periods when using Calendar based Expiration Dates. If the Calendar_Effective_Date_vod field is set to 2015-01-01 and the Expiration_Threshold_vod is set to 12, the Expiration Date of a Sample Consent records will be set to 12-31-2015 and every 12 months after.</description>
+        <externalId>false</externalId>
+        <label>Calendar Effective Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>End_Date_vod__c</fullName>
+        <description>The end date or expiration date of the Sample Consent Template; when the Sample Consent Template is no longer valid to create Expiration Dates for Sample Consent records.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expiration_Threshold_vod__c</fullName>
+        <description>Defines the number of months a Sample Consent effective period is valid for.</description>
+        <externalId>false</externalId>
+        <label>Expiration Threshold</label>
+        <precision>2</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expiration_Type_vod__c</fullName>
+        <description>Defines how the Expiration Date will be determined for Sample Consent records. Calendar expiration dates are set based on a pre-determined calendar date. Rolling expiration dates are sent based on the date the Sample Consent was captured.</description>
+        <externalId>false</externalId>
+        <label>Expiration Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Calendar_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rolling_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date_vod__c</fullName>
+        <description>The start date or effective date of the Sample Consent Template; when the Sample Consent Template is valid to create Expiration Dates for Sample Consent records.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Consent Template</label>
+    <nameField>
+        <label>Template Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Consent Templates</pluralLabel>
+    <recordTypes>
+        <fullName>Sample_Consent_Template_vod</fullName>
+        <active>true</active>
+        <description>Record type to define criteria for expiring a Sample Consent record created in the Multichannel Consent object.</description>
+        <label>Sample_Consent_Template_vod</label>
+        <picklistValues>
+            <picklist>Expiration_Type_vod__c</picklist>
+            <values>
+                <fullName>Calendar_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rolling_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Required_Effective_Date_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Expiration_Type_vod__c,&quot;Calendar_vod&quot;), ISNULL(Calendar_Effective_Date_vod__c))</errorConditionFormula>
+        <errorMessage>Calendar Effective Date is required when Expiration Type is Calendar</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Required_Fields_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(ISNULL(Start_Date_vod__c), ISNULL(Expiration_Threshold_vod__c), ISPICKVAL(Expiration_Type_vod__c, &quot;&quot;))</errorConditionFormula>
+        <errorMessage>Required fields missing</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Start_End_Date_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(NOT(ISNULL(End_Date_vod__c)), End_Date_vod__c &lt; Start_Date_vod__c)</errorConditionFormula>
+        <errorMessage>End Date cannot be earlier than Start Date</errorMessage>
+    </validationRules>
+</CustomObject>

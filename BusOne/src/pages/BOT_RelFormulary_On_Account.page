@@ -1,0 +1,66 @@
+<!-- Name : BOT_RelFormulary_On_Account
+Created by : Sreenivasulu Adipudi
+Created Date : 03/08/2017
+Overview : To display the related Formulary records for selected account on account detail page
+-->
+<apex:page standardController="Account" extensions="BOT_RelFormulary_VF" >
+    <apex:outputPanel ID="op2">
+        <apex:pageBlock ID="thePageBlock2">
+            <apex:pageBlockSection columns="1">
+                <table border="1" style="width:100%;border: 1px solid black;border-collapse: collapse;position:relative" >
+                    <tr style="border:1px solid black;height:25px;">
+                        <th style="border:1px solid black;text-align:center;vertical-align:middle;">Channel</th>
+                        <th style="border:1px solid black;text-align:center;vertical-align:middle;">Formulary Name</th>
+                        <th style="border:1px solid black;text-align:center;vertical-align:middle;">Product Type</th>
+                        <th style="border:1px solid black;text-align:center;vertical-align:middle;">Plan Product Name</th>
+                        <th style="border:1px solid black;text-align:center;vertical-align:middle;">Formulary Lives</th>
+                        
+                    </tr>
+                </table>
+                <apex:pageBlockTable value="{!formulary}" var="form" id="theTable1" rendered="{!temp}">
+                    <apex:column width="90%" breakBefore="true" >
+                        <apex:dataTable value="{!form.Formularies_Unique__r}" var="for">
+                            <apex:column width="8%">
+                                <apex:outputText value="{!for.BOT_Channel__c}" />
+                            </apex:column>
+                            <apex:column width="54%">
+                                <apex:outputLink value="/{!for.BOT_Formulary_Product__c}" target="_top">{!for.BOT_Formulary_Name__c}</apex:outputLink>
+                            </apex:column>
+                            <apex:column width="8%">
+                                <apex:outputText value="{!for.BOT_Product_Type__c}"/>
+                            </apex:column>
+                            <apex:column width="30%">
+                                <apex:outputText value="{!for.BOT_Account_Plan_Name__c}"/>
+                            </apex:column>
+                        </apex:dataTable>
+                    </apex:column>
+                    <apex:column width="10%">
+                        <apex:outputText value="{!form.BOT_Formulary_Lives__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+                <!--
+                <apex:pageBlockTable value="{!formulary}" var="form" id="theTable1" rendered="{!temp}">
+                        <apex:column >
+                        	<apex:outputText value="{!form.BOT_Channel__c}" />
+                        </apex:column>
+                        <apex:column >
+                            <apex:outputText value="{!form.BOT_Formulary_Name__c}" /> 
+                        </apex:column>
+                        <apex:column >
+                        	<apex:outputText value="{!form.name}"/>
+                        </apex:column>
+                   		<apex:column >
+                        	<apex:outputText value="{!form.BOT_Formulary_Lives__c}"/>
+                    	</apex:column>
+                    	<apex:column >
+                        	<apex:outputText value="{!form.BOT_Sales_force_SNo__c}"/>
+                        </apex:column>
+                   		<apex:column >
+                        	<apex:outputText value="{!form.BOT_Account__c}"/>
+                    	</apex:column>
+                </apex:pageBlockTable>
+				-->
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:outputPanel>
+</apex:page>

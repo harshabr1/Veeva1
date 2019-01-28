@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Defines a product that is associated to a Cycle Plan Channel.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Activity_Goal_Edit_vod__c</fullName>
+        <description>Edited number of product activities for the Channel and Target</description>
+        <externalId>false</externalId>
+        <label>Activity Goal Edit</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Channel_vod__c</fullName>
+        <description>Channel label from the Cycle Channel</description>
+        <externalId>false</externalId>
+        <formula>Cycle_Plan_Channel_vod__r.Cycle_Channel_vod__r.Channel_Label_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Channel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cycle_Plan_Channel_vod__c</fullName>
+        <description>Related Cycle Plan Channel record</description>
+        <externalId>false</externalId>
+        <label>Cycle Plan Channel</label>
+        <referenceTo>MC_Cycle_Plan_Channel_vod__c</referenceTo>
+        <relationshipLabel>MC Cycle Plan Products</relationshipLabel>
+        <relationshipName>MC_Cycle_Plan_Products_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Cycle_Plan_vod__c</fullName>
+        <externalId>false</externalId>
+        <formula>Cycle_Plan_Channel_vod__r.Cycle_Plan_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cycle Plan</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cycle_Product_vod__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Cycle Product that this Cycle Plan Product is associated with. This defines how product activities are calculated</description>
+        <externalId>false</externalId>
+        <label>Cycle Product</label>
+        <referenceTo>MC_Cycle_Product_vod__c</referenceTo>
+        <relationshipLabel>MC Cycle Plan Products</relationshipLabel>
+        <relationshipName>MC_Cycle_Plan_Products_vod</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_Name_vod__c</fullName>
+        <description>Detail Group label from the Cycle Product</description>
+        <externalId>false</externalId>
+        <formula>Cycle_Product_vod__r.Detail_Group_vod__r.Name</formula>
+        <label>Detail Group</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Detail_Priority_vod__c</fullName>
+        <description>Suggested detail order the product should be detailed to the Target</description>
+        <externalId>false</externalId>
+        <label>Detail Priority</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID for data loading.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Activity_Date_vod__c</fullName>
+        <description>Date of the most recent activity that was counted towards the Product Activity Actual</description>
+        <externalId>false</externalId>
+        <label>Product Last Activity Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Activity_Datetime_vod__c</fullName>
+        <description>Date/time of the most recent activity that was counted towards the Product Activity Actual</description>
+        <externalId>false</externalId>
+        <label>Product Last Activity Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_Calculated_vod__c</fullName>
+        <description>Date and time the Cycle Plan was last calculated.</description>
+        <externalId>false</externalId>
+        <label>Last Calculated</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Product_Activity_Goal_vod__c</fullName>
+        <description>Suggested number of product activities for the Channel and Target</description>
+        <externalId>false</externalId>
+        <label>Product Activity Goal</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Activity_Max_vod__c</fullName>
+        <description>Maximum number of product activities allowed toward product attainment</description>
+        <externalId>false</externalId>
+        <label>Product Activity Max</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Activity_Remaining_vod__c</fullName>
+        <description>Goals - Actual. If no goals provided then remaining will be blank.</description>
+        <externalId>false</externalId>
+        <label>Product Activity Remaining</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Actual_Activity_vod__c</fullName>
+        <description>Count of actual product activities according to the Cycle Channel Criteria.</description>
+        <externalId>false</externalId>
+        <label>Product Activity Actual</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Attainment_vod__c</fullName>
+        <description>Product Interactions Earned / Product Interactions Goal. If no goals then attainment is blank.</description>
+        <externalId>false</externalId>
+        <label>Product Attainment</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Product_Interactions_Actual_vod__c</fullName>
+        <description>Product Actual Activity x Product Activity Weight</description>
+        <externalId>false</externalId>
+        <label>Product Interactions Actual</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Interactions_Earned_vod__c</fullName>
+        <description>If Channel Activity Actual is greater than Channel Activity Max this value will be Channel Activity Max, otherwise Channel Activity Actual.</description>
+        <externalId>false</externalId>
+        <label>Product Interactions Earned</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Interactions_Goal_vod__c</fullName>
+        <description>Product Activity Goal x Product Weight. If no goals then value is blank.</description>
+        <externalId>false</externalId>
+        <label>Product Interactions Goal</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Name_vod__c</fullName>
+        <description>Product label from the Cycle Product</description>
+        <externalId>false</externalId>
+        <formula>Cycle_Product_vod__r.Product_vod__r.Name</formula>
+        <label>Product</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Status_vod__c</fullName>
+        <description>Comparing the Cycle Plan Product&apos;s Product Attainment and the % Cycle Completed.</description>
+        <externalId>false</externalId>
+        <label>Product Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Over_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Under_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>On_Schedule_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Team_Activity_Goal_Edit_vod__c</fullName>
+        <description>Edited number of team product activities for the Channel and Target</description>
+        <externalId>false</externalId>
+        <label>Team Activity Goal Edit</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Last_Activity_Date_vod__c</fullName>
+        <description>Date of the most recent activity that was counted towards the Team Product Activity Actual</description>
+        <externalId>false</externalId>
+        <label>Team Product Last Activity Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Team_Last_Activity_Datetime_vod__c</fullName>
+        <description>Date/time of the most recent activity that was counted towards the Team Product Activity Actual</description>
+        <externalId>false</externalId>
+        <label>Team Product Last Activity Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Team_Product_Activity_Goal_vod__c</fullName>
+        <description>Suggested number of team product activities for the Channel and Target</description>
+        <externalId>false</externalId>
+        <label>Team Product Activity Goal</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Product_Activity_Max_vod__c</fullName>
+        <description>Maximum number of team product activities allowed toward team product attainment</description>
+        <externalId>false</externalId>
+        <label>Team Product Activity Max</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Product_Activity_Remaining_vod__c</fullName>
+        <description>Team Product Activity Goal minus Team Product Activity Actual, if no goals provided then remaining will be blank</description>
+        <externalId>false</externalId>
+        <label>Team Product Activity Remaining</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Product_Actual_Activity_vod__c</fullName>
+        <description>Count of actual team product activities according to the Cycle Channel Criteria</description>
+        <externalId>false</externalId>
+        <label>Team Product Activity Actual</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Product_Attainment_vod__c</fullName>
+        <description>Team Product Interactions Earned / Team Product Interactions Goal. If no goals, then attainment is blank.</description>
+        <externalId>false</externalId>
+        <label>Team Product Attainment</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Team_Product_Interactions_Actual_vod__c</fullName>
+        <description>Team Product Actual Activity * Cycle Product Weight</description>
+        <externalId>false</externalId>
+        <label>Team Product Interactions Actual</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Product_Interactions_Earned_vod__c</fullName>
+        <description>If Team Product Activity Actual is greater than Team Product Activity Max, then this value will be the Team Product Activity Max, else Team Product Activity Actual.</description>
+        <externalId>false</externalId>
+        <label>Team Product Interactions Earned</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Product_Interactions_Goal_vod__c</fullName>
+        <description>Team Product Activity Goal * Cycle Product Weight. If no goals, then value is blank.</description>
+        <externalId>false</externalId>
+        <label>Team Product Interactions Goal</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Product_Status_vod__c</fullName>
+        <description>Comparing the Team Product Attainment and the % Cycle Completed.</description>
+        <externalId>false</externalId>
+        <label>Team Product Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On_Schedule_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Under_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Over_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System set to prevent duplicate Products for a Cycle Plan Channel. Cycle_Plan_Channel_vod__c.Id +__+ Cycle_Product_vod__c.Id</description>
+        <externalId>true</externalId>
+        <label>Veeva External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>zvod_Last_Activity_Date_vod__c</fullName>
+        <description>Marker field to display the date of the most recent activity that was counted towards the Product Activity Actual</description>
+        <externalId>false</externalId>
+        <label>Product Last Activity Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Team_Last_Activity_Date_vod__c</fullName>
+        <description>Marker field to display the date of the most recent activity that was counted towards the Team Product Activity Actual</description>
+        <externalId>false</externalId>
+        <label>Team Product Last Activity Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>MC Cycle Plan Product</label>
+    <nameField>
+        <displayFormat>CPP-{0000}</displayFormat>
+        <label>Cycle Plan Product</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>MC Cycle Plan Products</pluralLabel>
+    <recordTypes>
+        <fullName>Product_vod</fullName>
+        <active>true</active>
+        <label>Product_vod</label>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Cycle_Plan_Channel_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Channel_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Name_vod__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Goal_Validations_vod</fullName>
+        <active>true</active>
+        <description>Product_Activity_Goal_vod cannot be less than 0</description>
+        <errorConditionFormula>Product_Activity_Goal_vod__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Product_Activity_Goal_vod__c</errorDisplayField>
+        <errorMessage>Channel Activity Goal cannot be less than 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Max_Validations_vod</fullName>
+        <active>true</active>
+        <description>Product_Activity_Max_vod cannot be less than 0 or less than Product_Activity_Goal_vod</description>
+        <errorConditionFormula>OR(
+Product_Activity_Max_vod__c &lt; 0,
+Product_Activity_Max_vod__c &lt; Product_Activity_Goal_vod__c
+)</errorConditionFormula>
+        <errorDisplayField>Product_Activity_Max_vod__c</errorDisplayField>
+        <errorMessage>Product Activity Max cannot be less than 0 or less than Product Activity Goal.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Team_Goal_Validations_vod</fullName>
+        <active>true</active>
+        <description>Team_Product_Activity_Goal_vod cannot be less than 0</description>
+        <errorConditionFormula>Team_Product_Activity_Goal_vod__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Team_Product_Activity_Goal_vod__c</errorDisplayField>
+        <errorMessage>Team Product Activity Goal cannot be less than 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Team_Max_Validations_vod</fullName>
+        <active>true</active>
+        <description>Team_Product_Activity_Max_vod cannot be less than 0 or less than Team_Product_Activity_Goal_vod</description>
+        <errorConditionFormula>OR(
+Team_Product_Activity_Max_vod__c &lt; 0,
+Team_Product_Activity_Max_vod__c &lt;Team_Product_Activity_Goal_vod__c
+)</errorConditionFormula>
+        <errorDisplayField>Team_Product_Activity_Max_vod__c</errorDisplayField>
+        <errorMessage>Team Product Activity Max cannot be less than 0 or less than Team Product Activity Goal.</errorMessage>
+    </validationRules>
+</CustomObject>

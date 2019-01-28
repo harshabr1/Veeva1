@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to associate records to a folder hierarchy</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Display_Order_vod__c</fullName>
+        <description>Indicates what order the folder should be displayed. If NULL, ABC order is used.</description>
+        <externalId>false</externalId>
+        <label>Display Order</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID of the Directory. Used for Vault Integration and CLM Presentation migration</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Level_vod__c</fullName>
+        <description>Describes what level the directory is at. Read only. Auto-populated by trigger.</description>
+        <externalId>false</externalId>
+        <label>Level</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Directory_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>References the directory one level up</description>
+        <externalId>false</externalId>
+        <label>Parent Directory</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>((1 AND 2) OR 3) AND 4</booleanFilter>
+            <errorMessage>Value does not exist or does not match filter criteria</errorMessage>
+            <filterItems>
+                <field>Directory_vod__c.Level_vod__c</field>
+                <operation>lessThan</operation>
+                <value>4</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>CLM_vod</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>notEqual</operation>
+                <value>CLM_vod</value>
+            </filterItems>
+            <filterItems>
+                <field>Directory_vod__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <valueField>$Source.RecordTypeId</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Directory_vod__c</referenceTo>
+        <relationshipLabel>Directories</relationshipLabel>
+        <relationshipName>Directories_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Directory</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Directory Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Directories</pluralLabel>
+    <recordTypes>
+        <fullName>CLM_vod</fullName>
+        <active>true</active>
+        <description>Used for CLM Presentations</description>
+        <label>CLM_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

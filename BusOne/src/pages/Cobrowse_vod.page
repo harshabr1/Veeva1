@@ -1,0 +1,9 @@
+<apex:page standardController="Account" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_Scroll_1800_vod}"/>
+<script type="text/javascript">
+    var params = "&acctid=" + "{!URLENCODE($CurrentPage.parameters.acctId)}";
+    params += "&accountName=" + "{!URLENCODE($CurrentPage.parameters.accountName)}";
+    params += "&presentation=" + "{!URLENCODE($CurrentPage.parameters.presentation)}";
+    com.vod309.redirect.redirect("cobrowse", params);    
+</script>
+</apex:page>

@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores information about next best action suggestions</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Priority_Score_vod__c</fullName>
+        <description>This field controls what the display order will be for Suggestions, Score is summed for Territory View Account prioritization</description>
+        <externalId>false</externalId>
+        <label>Account Priority Score</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Associates Account with Suggestion</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Suggestions</relationshipLabel>
+        <relationshipName>Suggestions_vod</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Action_Count_vod__c</fullName>
+        <description>Used for Trigger to Summarize data</description>
+        <externalId>false</externalId>
+        <label>Action Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actioned_vod__c</fullName>
+        <description>Used for Trigger to Summarize data</description>
+        <externalId>false</externalId>
+        <label>Actioned</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Objective_CLM_ID_vod__c</fullName>
+        <description>Controls which CLM presentation will be pulled through to the Call Objective</description>
+        <externalId>false</externalId>
+        <label>Call Objective CLM ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Objective_From_Date_vod__c</fullName>
+        <description>The date range for each Suggestion of type Call_Objective</description>
+        <externalId>false</externalId>
+        <label>Call Objective From Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Call_Objective_On_By_Default_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox determines whether call objective is on by default</description>
+        <externalId>false</externalId>
+        <label>Call Objective On By Default</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Call_Objective_Record_Type_vod__c</fullName>
+        <description>Defines what Record Type to use on Suggestions of Type: Call_Objective</description>
+        <externalId>false</externalId>
+        <label>Call Objective Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Objective_To_Date_vod__c</fullName>
+        <description>The date range for each Suggestion of type Call_Objective</description>
+        <externalId>false</externalId>
+        <label>Call Objective To Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Dismiss_Count_vod__c</fullName>
+        <description>Used for Trigger to Summarize data and to facilitate dismissal of suggestions at account vs user level</description>
+        <externalId>false</externalId>
+        <label>Dismiss Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Dismissed_vod__c</fullName>
+        <description>Used for Trigger to Summarize data and to facilitate dismissal of suggestions at account vs user level</description>
+        <externalId>false</externalId>
+        <label>Dismissed</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display_Dismiss_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When set to True, Suggestion will display the Dismiss option</description>
+        <externalId>false</externalId>
+        <label>Dismiss</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_Mark_As_Complete_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When set to True, Suggestion will display the Mark as Complete option</description>
+        <externalId>false</externalId>
+        <label>Mark as Complete</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_Score_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When set to True, Suggestion will display the Score on Homepage</description>
+        <externalId>false</externalId>
+        <label>Score</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Email_Template_ID_vod__c</fullName>
+        <description>Drives what template is used when Email_Template_vod = True, maps to the Approved_Document_vod.Vault_Document_ID_vod</description>
+        <externalId>false</externalId>
+        <label>Email Template ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_Template_Vault_ID_vod__c</fullName>
+        <description>Drives what template is used when Email_Template_vod = True</description>
+        <externalId>false</externalId>
+        <label>Email Template Vault ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_Template_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether there is a specified template as part of the suggestion. Checked = True (Template)</description>
+        <externalId>false</externalId>
+        <label>Email Template</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Expiration_Date_vod__c</fullName>
+        <description>Date that drives Suggestion expiration</description>
+        <externalId>false</externalId>
+        <label>Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Mark_Complete_Count_vod__c</fullName>
+        <description>Used for Trigger to Summarize data</description>
+        <externalId>false</externalId>
+        <label>Mark Complete Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Marked_As_Complete_vod__c</fullName>
+        <description>Used for Trigger to Summarize data</description>
+        <externalId>false</externalId>
+        <label>Marked As Complete</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Homepage_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When set to True, Suggestion will not display on the Homepage view. It will only display on the Account Overview Timeline panel.</description>
+        <externalId>false</externalId>
+        <label>Do Not Display on Homepage</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Planned_Call_Date_vod__c</fullName>
+        <description>Determines date Call is scheduled for</description>
+        <externalId>false</externalId>
+        <label>Planned Call Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Posted_Date_vod__c</fullName>
+        <description>Date that Suggestion was posted, Age Calculation</description>
+        <externalId>false</externalId>
+        <label>Posted Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Priority_vod__c</fullName>
+        <description>Determines the priority of the Suggestion</description>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Urgent_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Normal_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Reason_vod__c</fullName>
+        <description>Long Text Field for Suggestion Insights: Supports Rich Text formatting (bullets, numbering, bold, italics, line breaks) and hyperlinks</description>
+        <externalId>false</externalId>
+        <label>Reason</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Record_Type_Name_vod__c</fullName>
+        <description>Designates what record type suggestion uses</description>
+        <externalId>false</externalId>
+        <label>Record Type Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Suggestion_External_Id_vod__c</fullName>
+        <description>Map to Suggestion and User for feedback, unique External ID</description>
+        <externalId>true</externalId>
+        <label>Suggestion External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Suggestion_Survey_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Identifies the Survey to be used during Suggestion Dismissal if Suggestion Surveys are configured.</description>
+        <externalId>false</externalId>
+        <label>Suggestion Survey</label>
+        <referenceTo>Survey_vod__c</referenceTo>
+        <relationshipLabel>Suggestions</relationshipLabel>
+        <relationshipName>Suggestions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Suppress_Reason_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When set to True, reason text does not display on the Homepage view. It will only display on the Account Overview Timeline panel.</description>
+        <externalId>false</externalId>
+        <label>Suppress Reason</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Title_vod__c</fullName>
+        <description>Suggestion Title</description>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Suggestion</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SI-{000000000}</displayFormat>
+        <label>Suggestion Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Suggestions</pluralLabel>
+    <recordTypes>
+        <fullName>Call_Objective_vod</fullName>
+        <active>true</active>
+        <description>Used for Call Objective type Suggestions and drives page layout</description>
+        <label>Call_Objective_vod</label>
+        <picklistValues>
+            <picklist>Priority_vod__c</picklist>
+            <values>
+                <fullName>Normal_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urgent_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Call_vod</fullName>
+        <active>true</active>
+        <description>Used for Call type Suggestions and drives page layout</description>
+        <label>Call_vod</label>
+        <picklistValues>
+            <picklist>Priority_vod__c</picklist>
+            <values>
+                <fullName>Normal_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urgent_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Email_vod</fullName>
+        <active>true</active>
+        <description>Used for Email type Suggestions and drives page layout</description>
+        <label>Email_vod</label>
+        <picklistValues>
+            <picklist>Priority_vod__c</picklist>
+            <values>
+                <fullName>Normal_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urgent_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Insight_vod</fullName>
+        <active>true</active>
+        <description>Used for creating Insights and drives page layout</description>
+        <label>Insight_vod</label>
+        <picklistValues>
+            <picklist>Priority_vod__c</picklist>
+            <values>
+                <fullName>Normal_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Urgent_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

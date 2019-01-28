@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object to store key stakeholders on an account plan.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Plan_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The account plan a key stakeholder is related to</description>
+        <externalId>false</externalId>
+        <label>Account Plan</label>
+        <referenceTo>Account_Plan_vod__c</referenceTo>
+        <relationshipLabel>Key Stakeholders</relationshipLabel>
+        <relationshipName>Key_Stakeholder_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Key_Stakeholder_Name_vod__c</fullName>
+        <description>Text value of the key stakeholder&apos;s name. Used for stakeholders that are not in the CRM system. Stamped via trigger when the Key Stakeholder is populated</description>
+        <externalId>false</externalId>
+        <label>Key Stakeholder Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key_Stakeholder_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Key stakeholder on an account plan</description>
+        <externalId>false</externalId>
+        <label>Key Stakeholder</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Key Stakeholders</relationshipLabel>
+        <relationshipName>Key_Stakeholder_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Role_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Affiliated with</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Board Member</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Department Head</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>P&amp;T Committee Member</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Practice member</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medical Director</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VP Compliance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VP Marketing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CFO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contracts Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Plan Administrator</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Stakeholder_Owner_Name_vod__c</fullName>
+        <description>Text value of the stakeholder owner&apos;s name. Used for users who are not in the CRM system. Stamped via trigger with the Stakeholder Owner is populated</description>
+        <externalId>false</externalId>
+        <label>Stakeholder Owner Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stakeholder_Owner_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Person in charge of the relationship with the key stakeholder for the account plan</description>
+        <externalId>false</externalId>
+        <label>Stakeholder Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Key_Stakeholder_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Key Stakeholder</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>KS-{0000000000}</displayFormat>
+        <label>ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Key Stakeholders</pluralLabel>
+    <recordTypes>
+        <fullName>Key_Stakeholder_vod</fullName>
+        <active>true</active>
+        <description>Base record type for Key Stakeholders</description>
+        <label>Key_Stakeholder_vod</label>
+        <picklistValues>
+            <picklist>Role_vod__c</picklist>
+            <values>
+                <fullName>Affiliated with</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Board Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CFO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracts Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Department Head</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical Director</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P%26T Committee Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plan Administrator</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Practice member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VP Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VP Marketing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <listViewButtons>Add_From_Affiliations_vod</listViewButtons>
+        <listViewButtons>Add_from_Hierarchy_vod</listViewButtons>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Add_From_Affiliations_vod</fullName>
+        <availability>online</availability>
+        <description>Opens the sphere of influence to select key stakeholders for an account plan</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add from Affiliations</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/Key_Stakeholder_Affiliation_vod?acctId={!Account_Plan_vod__c.Account_vodId__c}&amp;acctPlanId={!CASESAFEID( Account_Plan_vod__c.Id )}&amp;acctPlanName={!Account_Plan_vod__c.Name}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Add_from_Hierarchy_vod</fullName>
+        <availability>online</availability>
+        <description>Opens the account hierarchy to select key stakeholders for an account plan</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add from Hierarchy</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/Key_Stakeholder_Hierarchy_vod?acctId={!Account_Plan_vod__c.Account_vodId__c}&amp;acctPlanId={!CASESAFEID( Account_Plan_vod__c.Id )}&amp;acctPlanName={!Account_Plan_vod__c.Name}</url>
+    </webLinks>
+</CustomObject>

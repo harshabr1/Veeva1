@@ -1,0 +1,12 @@
+<apex:page standardController="Event" showHeader="false" sidebar="false" standardStylesheets="false" >
+    <apex:pageBlock >    
+        <p> Assigned To: {!event.Owner.Name}</p>
+        <p> Subject: {!event.Subject}</p>
+        <p> Private: {!event.IsPrivate}</p>     
+        <p> Start: {!event.StartDateTime}</p>
+        <p> End: {!event.EndDateTime}</p>
+        <p> All Day Event: {!event.IsAllDayEvent}</p>
+        <p> Show Time As: {!event.ShowAs}</p>
+        <p> Last Modified By: {!event.LastModifiedBy.Name}, {!event.LastModifiedDate}</p>
+    </apex:pageBlock>
+</apex:page>

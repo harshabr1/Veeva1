@@ -1,0 +1,29 @@
+<!--
+Name			: BOT_Diagnostic_Requirements_CP
+Created by		: Sreenivasulu Adipudi
+Created Date	: 04-19-2018
+Description		: It is used on BOT_coverage_policy record detail page to display the diagnostic reqirements
+-->
+<apex:page standardController="BOT_Coverage_Policy__c" extensions="BOT_Diagnostic_Requirements_CP_extn">
+    <apex:form >
+    	<apex:pageBlock >
+           <apex:pageBlockTable value="{!coveragePolicy}" var="policy" cellpadding="2" cellspacing="2" style="width: 100%">
+            	<apex:column headerValue="Diagnostic requirements for initial therapy details" style="width: 30%">
+                    <apex:outputField style="width: 30%" value="{!policy.BOT_Initial_Therapy_details__c}" />
+                </apex:column>
+                <apex:column headerValue="Conditions" style="width: 15%">
+                    <apex:outputField style="width: 15%" value="{!policy.BOT_Conditions__c}" />
+                </apex:column>
+                <apex:column headerValue="Requirement(s)" style="width: 20%">
+                    <apex:outputField style="width: 20%" value="{!policy.BOT_Requirement_s__c}" />
+                </apex:column>
+                <apex:column headerValue="Diagnostic Response" style="width: 15%">
+                    <apex:outputField style="width: 15%" value="{!policy.BOT_Diagnostic_Response__c}" />
+                </apex:column>
+                <apex:column headerValue="Monitor for/none of the following" style="width: 20%">
+                    <apex:outputField style="width: 20%" value="{!policy.BOT_Monitor_for_Noneofthe_following__c}" />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

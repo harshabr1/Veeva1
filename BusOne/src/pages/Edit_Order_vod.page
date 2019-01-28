@@ -1,0 +1,8 @@
+<apex:page standardController="Order_vod__c" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_Scroll_1800_vod}"/>
+<script type="text/javascript">        
+    var queryparams = "&orderid=" + "{!Order_vod__c.id}";  
+    queryparams += '&mode=e';
+    com.vod309.redirect.redirect("order", queryparams);
+</script>
+</apex:page>

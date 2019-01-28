@@ -1,0 +1,26 @@
+<apex:page standardController="User_Detail_vod__c" standardStylesheets="true" showHeader="false">
+
+<apex:outputPanel layout="block" styleClass="bPageBlock bDetailBlock ">
+    <apex:outputPanel layout="block" styleClass="pbBody bDetailBlock">
+    
+        <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+                <tr>
+                    <td class="labelCol last">       
+                        <apex:outputLabel value="{!$ObjectType.User_Detail_vod__c.fields.Photo_vod__c.Label}" />   
+                    </td>
+                    <td class="dataCol col02 last">   
+                        <apex:image rendered="{!User_Detail_vod__c.Photo_vod__c != Null}"  value="data:image/png;base64,{!User_Detail_vod__c.Photo_vod__c}"/>   
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+    
+    </apex:outputPanel>
+
+</apex:outputPanel>
+
+
+
+</apex:page>

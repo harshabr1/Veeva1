@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Settings related to territory management</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ATL_Mode_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>0 or null = classic ATL mode that fully masters manual territory assignments for an Account. Each ATL record insert or update will initially delete all Territories with AccountShare.RowCause=TerritoryManual for the Account, and subsequently insert only the Territories listed in the ATL.Territory_vod__c field. 
+1 = ATL mode that has an &quot;additive&quot; approach only. Each ATL record insert or update will not initially delete any Territories from AccountShare. This mode only looks for new Territories added to Territory_vod__c and attempts to only insert the new territory (not touching any other Territories in AccountShare)</description>
+        <externalId>false</externalId>
+        <label>ATL Mode</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Align_Integration_User_vod__c</fullName>
+        <description>The Align Integration User that is integrated to this Veeva CRM Org.</description>
+        <externalId>false</externalId>
+        <label>Align Integration User</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Align_Server_vod__c</fullName>
+        <description>The Align Server URL that is integrated to this Veeva CRM Org.</description>
+        <externalId>false</externalId>
+        <label>Align Server</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Align_Territory_Feedback_Mode_vod__c</fullName>
+        <description>Null or 0 = Feedback point of entry is disabled/hidden
+1 = Feedback Lite is enabled</description>
+        <externalId>false</externalId>
+        <label>Align Territory Feedback Mode</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Align_Vault_Id_vod__c</fullName>
+        <description>The Align Vault Id that is integrated to this Veeva CRM Org.</description>
+        <externalId>false</externalId>
+        <label>Align Vault Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Align_Vault_Integration_Id_vod__c</fullName>
+        <description>The Align Vault GUID that is integrated to this Veeva CRM Org.</description>
+        <externalId>false</externalId>
+        <label>Align Vault Integration Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Align_Version_vod__c</fullName>
+        <description>The Align Version that is integrated to this Veeva CRM Org.</description>
+        <externalId>false</externalId>
+        <label>Align Version</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID used for Metadata migration</description>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Territory Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

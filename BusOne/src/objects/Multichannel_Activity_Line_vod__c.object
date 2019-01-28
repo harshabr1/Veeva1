@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Captures detailed information about what occurred during an interaction.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CLM_Presentation_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Specifies the CLM Presentation that the Key Message is a part of</description>
+        <externalId>false</externalId>
+        <label>CLM Presentation</label>
+        <referenceTo>Clm_Presentation_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activity Lines</relationshipLabel>
+        <relationshipName>Multichannel_Activity_Lines</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Call_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates which Call record the activity line is associated with</description>
+        <externalId>false</externalId>
+        <label>Call</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activity Lines</relationshipLabel>
+        <relationshipName>Multichannel_Activity_Lines_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Custom_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Denotes if the record was written natively by the system or through custom code utilizing the JavaScript Library.</description>
+        <externalId>false</externalId>
+        <label>Custom</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DateTime_vod__c</fullName>
+        <description>Date time of the event occurence</description>
+        <externalId>false</externalId>
+        <label>DateTime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Debug_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the debug parameter was set to true</description>
+        <externalId>false</externalId>
+        <label>Debug?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_VExternal_Id_vod__c</fullName>
+        <description>Stamped Detail Group VExternal Id</description>
+        <externalId>false</externalId>
+        <label>Detail Group VExternal Id</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Detail group associated to the Multichannel Content Asset</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activity Lines (Detail Group)</relationshipLabel>
+        <relationshipName>Multichannel_Activity_Lines_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Duration_vod__c</fullName>
+        <description>Duration in seconds.</description>
+        <externalId>false</externalId>
+        <label>Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_KM_ID_vod__c</fullName>
+        <description>For Internal Use Only. Utilized to maintain relationship to Key Message during sync.</description>
+        <externalId>false</externalId>
+        <label>Entity Reference KM ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Subtype_vod__c</fullName>
+        <description>Details of the event.</description>
+        <externalId>false</externalId>
+        <label>Event Subtype</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Type_vod__c</fullName>
+        <description>Type of event which is being tracked</description>
+        <externalId>false</externalId>
+        <label>Event Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Clickstream_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Chat_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Slide_View_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Key_Message_VExternal_Id_vod__c</fullName>
+        <description>Stamped Key Message VExternal ID</description>
+        <externalId>false</externalId>
+        <label>Key Message VExternal Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key_Message_Version_vod__c</fullName>
+        <description>Version of the Key Message</description>
+        <externalId>false</externalId>
+        <label>Key Message Version</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key_Message_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates which Key Message record the activity line is associated with</description>
+        <externalId>false</externalId>
+        <label>Key Message</label>
+        <referenceTo>Key_Message_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activity Lines</relationshipLabel>
+        <relationshipName>Multichannel_Activity_Lines_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates which Medical Event record the activity is associated with.</description>
+        <externalId>false</externalId>
+        <label>Medical Event</label>
+        <referenceTo>Medical_Event_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activity Lines</relationshipLabel>
+        <relationshipName>Multichannel_Activity_Lines_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Multichannel_Activity_vod__c</fullName>
+        <description>Parent Multichannel Activity</description>
+        <externalId>false</externalId>
+        <label>Multichannel Activity</label>
+        <referenceTo>Multichannel_Activity_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activity Lines</relationshipLabel>
+        <relationshipName>Multichannel_Activity_Lines_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Multichannel_Content_Asset_Id_vod__c</fullName>
+        <description>Stamped Multichannel Content Asset VExternal ID</description>
+        <externalId>false</externalId>
+        <label>Asset VExternal ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Multichannel_Content_Asset_Version_vod__c</fullName>
+        <description>Stamped Multichannel Content Asset Version</description>
+        <externalId>false</externalId>
+        <label>Asset Version</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Multichannel_Content_Asset_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates which Multichannel Content Asset record the activity line is associated with</description>
+        <externalId>false</externalId>
+        <label>Multichannel Content Asset</label>
+        <referenceTo>Multichannel_Content_Asset_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activity Lines</relationshipLabel>
+        <relationshipName>Multichannel_Activity_Lines_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Multichannel_Content_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates which Multichannel Content record the activity line is associated with</description>
+        <externalId>false</externalId>
+        <label>Multichannel Content</label>
+        <referenceTo>Multichannel_Content_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activity Lines</relationshipLabel>
+        <relationshipName>Multichannel_Activity_Lines_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Page_List_vod__c</fullName>
+        <description>Comma delimited list of pages viewed</description>
+        <externalId>false</externalId>
+        <label>Page List</label>
+        <length>100000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_VExternal_Id_vod__c</fullName>
+        <description>Stamped Product VExternal Id</description>
+        <externalId>false</externalId>
+        <label>Product VExternal Id</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product associated to the Multichannel Content Asset</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activity Lines</relationshipLabel>
+        <relationshipName>Multichannel_Activity_Lines1_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reaction_vod__c</fullName>
+        <description>Picklist of reaction to the message.</description>
+        <externalId>false</externalId>
+        <label>Reaction</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Positive</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Neutral</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Negative</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Record_Type_Name_vod__c</fullName>
+        <description>Record Type DeveloperName of the record. Field is referenced in trigger.</description>
+        <externalId>false</externalId>
+        <label>Record Type Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Segment_vod__c</fullName>
+        <description>Holds the segment of the Account to which this Call Key Message was delivered</description>
+        <externalId>false</externalId>
+        <label>Segment</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sent_Email_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates which Sent Email record the activity line is associated with</description>
+        <externalId>false</externalId>
+        <label>Sent Email</label>
+        <referenceTo>Sent_Email_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activity Lines</relationshipLabel>
+        <relationshipName>Multichannel_Activity_Lines_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Total_Doc_Pages_vod__c</fullName>
+        <description>Total # of pages in the document</description>
+        <externalId>false</externalId>
+        <label>Total Pages in Document</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Pages_Viewed_vod__c</fullName>
+        <description>Total count of pages viewed</description>
+        <externalId>false</externalId>
+        <label>Total Pages Viewed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Input_vod__c</fullName>
+        <description>User inputted text</description>
+        <externalId>false</externalId>
+        <label>User Input</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id used by Veeva CRM</description>
+        <externalId>true</externalId>
+        <label>Veeva External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Video_Last_Viewed_Time_vod__c</fullName>
+        <description>Time in seconds of the furthest viewed frame on the video.</description>
+        <externalId>false</externalId>
+        <label>Last Viewed Time on Video</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Video_Length_vod__c</fullName>
+        <description>Time in seconds of the length of the video</description>
+        <externalId>false</externalId>
+        <label>Length of Video</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Video_Total_Time_Spent_vod__c</fullName>
+        <description>Time in seconds where the video was playing.</description>
+        <externalId>false</externalId>
+        <label>Total Time spent watching Video</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>View_Order_vod__c</fullName>
+        <description>Order that the Asset was viewed by the end user</description>
+        <externalId>false</externalId>
+        <label>View Order</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Multichannel Activity Line</label>
+    <nameField>
+        <displayFormat>MAL-{000000000}</displayFormat>
+        <label>Multichannel Activity Line Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Multichannel Activity Lines</pluralLabel>
+    <recordTypes>
+        <fullName>CLM_vod</fullName>
+        <active>false</active>
+        <description>Used for records created by CLM</description>
+        <label>CLM_vod</label>
+        <picklistValues>
+            <picklist>Event_Type_vod__c</picklist>
+            <values>
+                <fullName>Chat_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slide_View_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reaction_vod__c</picklist>
+            <values>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Cobrowse_vod</fullName>
+        <active>true</active>
+        <description>Used for records created by CoBrowse</description>
+        <label>Cobrowse_vod</label>
+        <picklistValues>
+            <picklist>Event_Type_vod__c</picklist>
+            <values>
+                <fullName>Chat_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slide_View_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Engage_vod</fullName>
+        <active>true</active>
+        <description>Used for records created via Engage</description>
+        <label>Engage_vod</label>
+        <picklistValues>
+            <picklist>Event_Type_vod__c</picklist>
+            <values>
+                <fullName>Slide_View_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Event_vod</fullName>
+        <active>true</active>
+        <description>Used for records created by Engage Events</description>
+        <label>Event_vod</label>
+        <picklistValues>
+            <picklist>Event_Type_vod__c</picklist>
+            <values>
+                <fullName>Chat_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clickstream_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slide_View_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reaction_vod__c</picklist>
+            <values>
+                <fullName>Negative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Positive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

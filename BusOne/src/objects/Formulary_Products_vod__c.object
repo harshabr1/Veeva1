@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>To display products in the formulary viewer, they must be entered into Formulary Product. Formulary product is referred to by Benefit Design Lines. Formulary product must be loaded before Benefit Design Lines.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>BOT_Account_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to store the related account plan.</description>
+        <externalId>false</externalId>
+        <label>Plan Product Name</label>
+        <referenceTo>Account_Plan_vod__c</referenceTo>
+        <relationshipLabel>Plan Formulary</relationshipLabel>
+        <relationshipName>Formulary_Products</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BOT_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to store the associated Account</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Plan Formulary</relationshipLabel>
+        <relationshipName>Formulary_Products</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BOT_Benefit_Design__c</fullName>
+        <description>To store the benefit design i.e. 2 tier or 3 tier</description>
+        <externalId>false</externalId>
+        <label>Benefit Design</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_ChannelPBM__c</fullName>
+        <description>Used to store the channel value of the PBM accounts</description>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Commercial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medicare</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BOT_Channel__c</fullName>
+        <description>Used to display the channel</description>
+        <externalId>false</externalId>
+        <formula>TEXT( BOT_Account_Plan__r.BOT_Channel__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Channel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Copay__c</fullName>
+        <description>To store the copay for the selected Formulary benefit design</description>
+        <externalId>false</externalId>
+        <label>Copay</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Formulary_ID__c</fullName>
+        <description>Used to store the Formulary ID</description>
+        <externalId>false</externalId>
+        <label>Formulary ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Formulary_Lives__c</fullName>
+        <description>Used to store the Formulary lives value</description>
+        <externalId>false</externalId>
+        <label>Total Formulary Lives</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Formulary_Name__c</fullName>
+        <description>Used to store the name of the Formulary.</description>
+        <externalId>false</externalId>
+        <label>Formulary Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Product_Type__c</fullName>
+        <description>Used to store the Product type of the associated Plan Product</description>
+        <externalId>false</externalId>
+        <formula>BOT_Account_Plan__r.BOT_Product_Type__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Sales_force_SNo__c</fullName>
+        <description>To store the Unique Sno for salesforce reference. Because there is no unique value in this object.</description>
+        <externalId>false</externalId>
+        <label>Sales force SNo</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Status__c</fullName>
+        <description>To store the status for Formulary benefit design</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Total_Formulary_Lives__c</fullName>
+        <description>To store the total formulary lives associated with all the products</description>
+        <externalId>false</externalId>
+        <label>Total Formulary Lives</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Competitor_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether the product belongs to a competitor. If not, the product is assumed to be a company product and shows up in bold in the formulary viewer.</description>
+        <externalId>false</externalId>
+        <label>Competitor</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID is only used for data loading.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Market_vod__c</fullName>
+        <description>Market (such as Cholesterol Reducer) that this product belongs to.  This field is used as a filter in the formulary viewer.</description>
+        <externalId>false</externalId>
+        <label>Market</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>ACE Inhibitors</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Allergy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cholesterol Reducer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dopaminergic Agents</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Vasodilator</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Formulary Product</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Formulary ID</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Formulary Products</pluralLabel>
+    <recordTypes>
+        <fullName>BOT_Formulary_Main_Screen</fullName>
+        <active>true</active>
+        <label>Formulary Main Screen</label>
+        <picklistValues>
+            <picklist>BOT_ChannelPBM__c</picklist>
+            <values>
+                <fullName>Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Market_vod__c</picklist>
+            <values>
+                <fullName>Cholesterol Reducer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dopaminergic Agents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vasodilator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Formulary_PBM</fullName>
+        <active>true</active>
+        <description>To store the PBM related formulary records</description>
+        <label>Formulary PBM</label>
+        <picklistValues>
+            <picklist>BOT_ChannelPBM__c</picklist>
+            <values>
+                <fullName>Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Market_vod__c</picklist>
+            <values>
+                <fullName>Cholesterol Reducer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dopaminergic Agents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vasodilator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Formulary_Product</fullName>
+        <active>true</active>
+        <description>To store the formulary records</description>
+        <label>Formulary Product</label>
+        <picklistValues>
+            <picklist>BOT_ChannelPBM__c</picklist>
+            <values>
+                <fullName>Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Market_vod__c</picklist>
+            <values>
+                <fullName>Cholesterol Reducer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dopaminergic Agents</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vasodilator</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+</CustomObject>

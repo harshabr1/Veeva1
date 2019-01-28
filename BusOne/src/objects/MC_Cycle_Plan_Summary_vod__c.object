@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores Channel and Product aggregate calculations for each cycle plan.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Attainment_vod__c</fullName>
+        <description>Interactions_Earned_vod / Interactions_Goal_vod. If no goals then value is blank.</description>
+        <externalId>false</externalId>
+        <label>Attainment</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Cycle_Channel_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Distinct Channel that the Summary record may be related to.</description>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <referenceTo>MC_Cycle_Channel_vod__c</referenceTo>
+        <relationshipLabel>Cycle Plan Summaries</relationshipLabel>
+        <relationshipName>MC_Cycle_Plan_Summaries_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cycle_Plan_vod__c</fullName>
+        <description>Cycle Plan that the Summary record is related to.</description>
+        <externalId>false</externalId>
+        <label>Cycle Plan</label>
+        <referenceTo>MC_Cycle_Plan_vod__c</referenceTo>
+        <relationshipLabel>Cycle Plan Summary</relationshipLabel>
+        <relationshipName>MC_Cycle_Plan_Summaries_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Detail Group that the Product belongs to that the Summary record may be related to</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>MC Cycle Plan Summaries (Detail Group)</relationshipLabel>
+        <relationshipName>MC_Cycle_Plan_Summaries_Detail_Group</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Interactions_Earned_vod__c</fullName>
+        <description>Sum of all interactions earned based on the RecordType.</description>
+        <externalId>false</externalId>
+        <label>Interactions Earned</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Interactions_Goal_vod__c</fullName>
+        <description>Sum of all interaction goals based on the RecordType</description>
+        <externalId>false</externalId>
+        <label>Interactions Goal</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Calculated_vod__c</fullName>
+        <description>Date and time the Cycle Plan was last calculated.</description>
+        <externalId>false</externalId>
+        <label>Last Calculated</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Percent_All_Goals_vod__c</fullName>
+        <description>Percent that the distinct channel or product represents of all goals for all channels or products (depending on the RecordType). All goals add up to 100% when activity goals are used. If no goals used this value will be blank.</description>
+        <externalId>false</externalId>
+        <label>% of All Goals</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product that the Summary record may be related to.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>MC Cycle Plan Summaries</relationshipLabel>
+        <relationshipName>MC_Cycle_Plan_Summaries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Comparing the Cycle Plan &apos;s Attainment and the % Cycle Completed.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Over_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Under_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>On_Schedule_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Summary_For_vod__c</fullName>
+        <description>Channel Label or Product Name that is being summarized.</description>
+        <externalId>false</externalId>
+        <formula>IF(
+  RecordType.DeveloperName = &apos;Channel_vod&apos;,
+  Cycle_Channel_vod__r.Channel_Label_vod__c,
+IF(
+  RecordType.DeveloperName = &apos;Product_vod&apos;,
+  Product_vod__r.Name,
+NULL
+))</formula>
+        <label>Summary For</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Attainment_vod__c</fullName>
+        <description>Team_Interactions_Earned_vod / Team_Interactions_Goal_vod. If no goals then value is blank.</description>
+        <externalId>false</externalId>
+        <label>Team Attainment</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Team_Interactions_Earned_vod__c</fullName>
+        <description>Sum of all team interactions earned based on the RecordType.</description>
+        <externalId>false</externalId>
+        <label>Team Interactions Earned</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Interactions_Goal_vod__c</fullName>
+        <description>Sum of all team interaction goals based on the RecordType</description>
+        <externalId>false</externalId>
+        <label>Team Interactions Goal</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Team_Status_vod__c</fullName>
+        <description>Comparing the Target&apos;s Team Attainment and the % Cycle Completed.</description>
+        <externalId>false</externalId>
+        <label>Team Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On_Schedule_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Under_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Over_Reached_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Veeva_External_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System set external id field.</description>
+        <externalId>true</externalId>
+        <label>Veeva External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>MC Cycle Plan Summary</label>
+    <nameField>
+        <displayFormat>CPS-{0000}</displayFormat>
+        <label>Cycle Plan Summary</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>MC Cycle Plan Summaries</pluralLabel>
+    <recordTypes>
+        <fullName>Channel_vod</fullName>
+        <active>true</active>
+        <description>Aggregate calculations for each distinct channel for a cycle plan.</description>
+        <label>Channel_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Product_vod</fullName>
+        <active>true</active>
+        <description>Aggregate calculations for each distinct product for a cycle plan.</description>
+        <label>Product_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

@@ -1,0 +1,3 @@
+<apex:page standardController="EM_Event_Team_Member_vod__c">
+    <c:VOD_EMBED veevaModule="em" objectType="EM_Event_Team_Member_vod__c" veevaPage="team-member-edit" queryParams="RecordType={!URLENCODE($CurrentPage.parameters.RecordType)}&queryParams={!URLENCODE($CurrentPage.parameters.queryParams)}"/>
+</apex:page>

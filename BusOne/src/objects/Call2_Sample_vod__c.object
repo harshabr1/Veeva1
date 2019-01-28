@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Samples and Promotional Items itemized on Call Reports</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the account for which the disbursement was performed.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Call2_Sample_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Amount_vod__c</fullName>
+        <description>Shows and stamps the disbursed amount for the product (quantity x value)</description>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Apply_Limit_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>System field used in the application of Sample Limits against a Call Sample record. Should not be displayed in any page layouts.</description>
+        <externalId>false</externalId>
+        <label>Apply_Limit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Attendee_Type_vod__c</fullName>
+        <description>Type of attendee such as Group Account, Person Account or Contact.</description>
+        <externalId>false</externalId>
+        <label>Attendee Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Group_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contact_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Person_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>User_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Event_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Call2_Mobile_ID_vod__c</fullName>
+        <description>Mobile ID of the parent Call object</description>
+        <externalId>false</externalId>
+        <label>Call Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call2_vod__c</fullName>
+        <description>Lookup to Call2. All call samples need to refer to a call.</description>
+        <externalId>false</externalId>
+        <label>Call</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipName>Call2_Sample_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Call_Date_vod__c</fullName>
+        <description>Date of the disbursement.</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Cold_Chain_Status_vod__c</fullName>
+        <description>The Cold Chain Status for the corresponding Sample line item. Only pertains to samples that have been designated as cold chain product via the Product Catalog.</description>
+        <externalId>false</externalId>
+        <label>Cold Chain Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Range</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not In Range</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Custom_Text_vod__c</fullName>
+        <description>Custom text captured for the corresponding product line item. Only pertains to product that have been flagged to allow capture of custom text via the Product Catalog.</description>
+        <externalId>false</externalId>
+        <label>Custom Text</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delivery_Status_vod__c</fullName>
+        <description>Contains a list of possible statuses for a Call Sample.</description>
+        <externalId>false</externalId>
+        <label>Delivery Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In_Progress_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Shipped_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Delivered_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cancel_Request_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cancelled_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Distributor_vod__c</fullName>
+        <description>The Distributor field is used to indicate the name of the Company that will be distributing the BRC Sample Product Types to the requesting Physicians. The Distributor name is displayed on the Signature capture form for all BRC records.</description>
+        <externalId>false</externalId>
+        <label>Distributor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_Id_vod__c</fullName>
+        <description>ID of object associated with the sample such as an account.</description>
+        <externalId>false</externalId>
+        <label>Entity Reference Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Parent_Call_vod__c</fullName>
+        <description>Formula Field to determine if the Call Sample record is part of the Parent Call or of an Attendee Call record.  1 indicates that the record is associated with the Parent Call.  0 indicates that it is associated with an Attendee Call.</description>
+        <externalId>false</externalId>
+        <formula>IF(LEN(Call2_vod__r.Parent_Call_vod__c )&gt;0, 0,1)</formula>
+        <label>Is Parent Call?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Limit_Applied_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether Sample Limits have been applied against a Call Sample to prevent duplicate transactions from being created against a Sample Limit for a single call.</description>
+        <externalId>false</externalId>
+        <label>Limit Applied</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lot_vod__c</fullName>
+        <description>Sample lot number for a sample.</description>
+        <externalId>false</externalId>
+        <label>Lot #</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manufacturer_vod__c</fullName>
+        <description>Name of Manufacturer of the sampled product – stored at the time of sample capture.</description>
+        <externalId>false</externalId>
+        <label>Manufacturer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Helper field for data loads.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Product_Value_vod__c</fullName>
+        <description>Shows and stamps the value defined for the product at the date of the call</description>
+        <externalId>false</externalId>
+        <label>Product Value</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the product catalog for the item disbursed.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipName>Call_Sample_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity_vod__c</fullName>
+        <description>The quantity of the items disbursed.</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>6</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tag_Alert_Number_vod__c</fullName>
+        <description>The Tag Alert Number for the corresponding Sample line item. Only pertains to samples that have been designated as cold chain product via the Product Catalog.</description>
+        <externalId>false</externalId>
+        <label>Tag Alert Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Call Sample</label>
+    <nameField>
+        <displayFormat>CS{000000000}</displayFormat>
+        <label>Call Sample Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Call Samples</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Call_Date_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Account_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Call2_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Product_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Quantity_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Lot_vod__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Call_Date_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OWNER.ALIAS</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Lot_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Quantity_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account_vod__c</searchFilterFields>
+        <searchFilterFields>Call2_vod__c</searchFilterFields>
+        <searchFilterFields>Call_Date_vod__c</searchFilterFields>
+        <searchFilterFields>Lot_vod__c</searchFilterFields>
+        <searchFilterFields>Product_vod__c</searchFilterFields>
+        <searchFilterFields>Quantity_vod__c</searchFilterFields>
+        <searchResultsAdditionalFields>Call_Date_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Call2_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Account_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Quantity_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Lot_vod__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Cancel_Send_vod</fullName>
+        <availability>online</availability>
+        <description>Attempt to cancel a Sample Order.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Cancel Send</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/9.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/9.0/apex.js&quot;)}
+{!REQUIRESCRIPT(&quot;/js/functions.js&quot;)}
+{!INCLUDE($SControl.VOD_JS_UTILS_vod)}
+var user = sforce.connection.getUserInfo(); 
+var query = sforce.connection.query(&quot;SELECT Name, Text_vod__c FROM Message_vod__c WHERE Language_vod__c=&apos;&quot;+user.userLanguage+&quot;&apos; AND Category_vod__c=&apos;CANCEL_SEND&apos;&quot;); 
+var records = query.getArray(&quot;records&quot;); 
+var NO_ACCESS_ERROR = null;
+var COMPLETED=null;
+var NO_SAMPS_SELECTED=null;
+if (records != null) {
+	for (var i=0;i&lt;records.length;i++) { 
+		if (records[i].Name == &quot;NO_ACCESS&quot;)  {
+			NO_ACCESS_ERROR  = records[i].Text_vod__c; 
+        } else if (records[i].Name == &quot;COMPLETED&quot;)  {
+        	COMPLETED= records[i].Text_vod__c; 
+        } else if (records[i].Name == &quot;NO_SAMPS_SELECTED&quot;) {
+        	NO_SAMPS_SELECTED = records[i].Text_vod__c; 
+        }
+	}
+}
+// BASE Language
+var query = sforce.connection.query(&quot;SELECT Name, Text_vod__c FROM Message_vod__c WHERE Language_vod__c=&apos;en_US&apos; AND Category_vod__c=&apos;CANCEL_SEND&apos;&quot;); 
+var records = query.getArray(&quot;records&quot;); 
+
+if (records != null) {
+	for (var i=0;i&lt;records.length;i++) { 
+		if (records[i].Name == &quot;NO_ACCESS&quot; &amp;&amp; NO_ACCESS_ERROR  == null)  {
+			NO_ACCESS_ERROR  = records[i].Text_vod__c; 
+		} else if (records[i].Name == &quot;COMPLETED&quot; &amp;&amp; COMPLETED == null)  {
+			COMPLETED= records[i].Text_vod__c; 
+		} else if (records[i].Name == &quot;NO_SAMPS_SELECTED&quot;) {
+                 NO_SAMPS_SELECTED = records[i].Text_vod__c; 
+        }
+	}
+}
+var samplids = {!GETRECORDIDS($ObjectType.Call2_Sample_vod__c)};
+
+if (samplids == null || samplids.length ==0) {
+    alert (NO_SAMPS_SELECTED);
+} else {
+	try {
+		var samprecs = [] ;
+
+		for  (var i=0; i &lt; samplids.length; i++) {
+			var samprec = new sforce.SObject(&quot;Call2_Sample_Cancel_vod__c&quot;); 
+			samprec.Call2_Sample_vod__c = samplids[i];
+			samprecs.push(samprec);    
+		}
+
+		var result = sforce.connection.create(samprecs);
+		var succ = true;
+		var sb = &quot;&quot;;
+		for (var i=0; i&lt;result.length; i++) {
+			if (result[i].getBoolean(&quot;success&quot;)) {
+			} else {
+				succ = false;
+				if (result[i].errors.statusCode == &quot;CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY&quot;) {
+					sb+= NO_ACCESS_ERROR ;
+				} else {
+					sb +=  result[i].errors.message;
+				}
+				break;
+			}
+		}
+		if (succ == false)
+			alert(sb);
+		else
+			alert (COMPLETED);
+
+	} catch (err) {
+		if (err.faultcode.sf = &apos;INVALID_TYPE&apos;)
+			alert (NO_ACCESS_ERROR );
+		else 
+			alert (err);
+	}
+}</url>
+    </webLinks>
+</CustomObject>

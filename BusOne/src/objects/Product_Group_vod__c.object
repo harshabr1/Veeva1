@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Defines a group of products</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>A short description of the product group.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>End_Date_vod__c</fullName>
+        <description>The end date of validity of the Sample Product Group record</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Master_Align_Id_vod__c</fullName>
+        <description>Globally unique identifier for this object. This Id is managed by Align</description>
+        <externalId>false</externalId>
+        <label>Master Align Id</label>
+        <length>36</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Catalog_vod__c</fullName>
+        <description>Should only point to product catalog records of type „Product Group“</description>
+        <externalId>false</externalId>
+        <label>Product Catalog</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Groups (Product Catalog)</relationshipLabel>
+        <relationshipName>Product_Groups1</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This is the reference that defines which products belong to a group</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Groups</relationshipLabel>
+        <relationshipName>Product_Groups</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity_vod__c</fullName>
+        <description>Used to define the default quantity of a product within a product group</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date_vod__c</fullName>
+        <description>Start date of validity of the Sample Product Group record</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Product Group</label>
+    <nameField>
+        <label>Product Group Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product Groups</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Detail_Group_Company_Product_Check</fullName>
+        <active>true</active>
+        <description>Verify that non-company product detail groups are not linked to company product detail products or topics</description>
+        <errorConditionFormula>If( ISPICKVAL(Product_Catalog_vod__r.Product_Type_vod__c, &quot;Detail Group&quot;) ,If ( Product_vod__r.Company_Product_vod__c,  If (Product_Catalog_vod__r.Company_Product_vod__c ,false,true), false), false)</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>You cannot link a Detail Group that is not a Company Product to a Detail Product or Topic that is a Company Product.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Detail_Group_Prod_Type_Check_vod</fullName>
+        <active>true</active>
+        <description>Verifies only detail topic or detail are linked to detail product groups.</description>
+        <errorConditionFormula>IF(ISPICKVAL(Product_Catalog_vod__r.Product_Type_vod__c, &apos;Detail Group&apos;), 
+NOT( OR(ISPICKVAL(Product_vod__r.Product_Type_vod__c , &apos;Detail&apos;), ISPICKVAL(Product_vod__r.Product_Type_vod__c , &apos;Detail Topic&apos;) ) ), 
+false)</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>Only products of type &quot;Detail Topic&quot; or &quot;Detail&quot; can be associated to a Detail Product Group</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Group_Prod_Type_Check</fullName>
+        <active>true</active>
+        <description>only product type of &apos;Product Group&apos; or &apos;Sample Product Group&apos; is allowed</description>
+        <errorConditionFormula>NOT( OR( ISPICKVAL(Product_Catalog_vod__r.Product_Type_vod__c, &apos;Product Group&apos;), ISPICKVAL(Product_Catalog_vod__r.Product_Type_vod__c, &apos;Sample Product Group&apos;) ,ISPICKVAL(Product_Catalog_vod__r.Product_Type_vod__c, &apos;Detail Group&apos;)) )</errorConditionFormula>
+        <errorDisplayField>Product_Catalog_vod__c</errorDisplayField>
+        <errorMessage>Only Type of &apos;Product Group&apos; or &apos;Sample Product Group&apos; or &apos;Detail Group&apos; is allowed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Order_Prod_Type_Check</fullName>
+        <active>true</active>
+        <description>only product type of &apos;order&apos; is allowed</description>
+        <errorConditionFormula>IF(ISPICKVAL(Product_Catalog_vod__r.Product_Type_vod__c, &apos;Product Group&apos;),
+NOT(ISPICKVAL(Product_vod__r.Product_Type_vod__c , &apos;Order&apos;)),
+false)</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>Only Type of &apos;Order&apos; is allowed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sample_Prod_Type_Check_vod</fullName>
+        <active>true</active>
+        <description>Verifies only samples (Sample and BRC) are linked to sample product groups.</description>
+        <errorConditionFormula>(ISPICKVAL(Product_Catalog_vod__r.Product_Type_vod__c, &apos;Sample Product Group&apos;)) &amp;&amp;  (Product_vod__r.No_Promo_Items_vod__c = &quot;TRUE&quot;) &amp;&amp;(NOT(ISPICKVAL(Product_vod__r.Product_Type_vod__c , &apos;BRC&apos;)))</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>Only products of type “Sample”, “BRC”, ” High Value Promotional”,  “Alternative Sample”, &quot;Promotional&quot;, &quot;Reprint&quot; and others can be associated to a Sample Product Group</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Valid_Date_Bundle_Check_vod</fullName>
+        <active>true</active>
+        <description>Verifies that start and end dates are provided for product groups with a quantity</description>
+        <errorConditionFormula>!ISBLANK(Quantity_vod__c) &amp;&amp;  (ISBLANK(Start_Date_vod__c) || ISBLANK(End_Date_vod__c))</errorConditionFormula>
+        <errorMessage>Start Date and End Date must be populated if a Quantity is defined</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Valid_Date_Sample_Group_vod</fullName>
+        <active>true</active>
+        <description>Verifies start and end dates are provided for sample product groups.</description>
+        <errorConditionFormula>IF(ISPICKVAL(Product_Catalog_vod__r.Product_Type_vod__c, &apos;Sample Product Group&apos;),
+OR( OR( ISBLANK( Start_Date_vod__c ) , ISBLANK( End_Date_vod__c ) ), Start_Date_vod__c &gt; End_Date_vod__c) ,
+false)</errorConditionFormula>
+        <errorMessage>Valid start date and end date are required.</errorMessage>
+    </validationRules>
+</CustomObject>

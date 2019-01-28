@@ -1,0 +1,6 @@
+<apex:page standardController="Child_Account_vod__c" >
+    <c:VOD_EMBED veevaModule="childaccount"
+        veevaPage="childaccount-view"
+        objectType="Child_Account_vod__c"
+        queryParams="id={!Child_Account_vod__c.Id}" />
+</apex:page>

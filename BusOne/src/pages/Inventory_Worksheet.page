@@ -1,0 +1,51 @@
+<apex:page controller="VOD_InventoryWorksheetController" renderAs="pdf">
+    <apex:image style="float:right; padding-top: 10px" url="{!$Resource.vod_logo}"/>
+    <div style="padding: 20px; font-size: .8em; font-family: 'Arial Unicode MS';">
+        <apex:outputText style="font-weight:bold" value="{!inventoryForMessage}: "/>{!userDetails.FirstName} {!userDetails.LastName}
+        <br/><br/>
+        <apex:outputText style="font-weight:bold" value="{!$ObjectType.Territory.fields.Name.label}: "/>{!territoryNames}
+        <br/><br/>
+        <!--example of pulling data from User object-->
+        <apex:outputText style="font-weight:bold" value="{!$Label.Employee_Number_Label_vod}: "/>{!userDetails.EmployeeNumber}
+        <br/><br/>
+        <!--example of pulling data from Rep Roster object 
+        <apex:outputText style="font-weight:bold" value="{!$Label.Rep_Roster_Zip_Label_vod}: "/>{!repRoster.Zip_vod__c}
+        <br/><br/>
+        -->
+        <apex:outputText style="font-weight:bold" value="{!$ObjectType.Sample_Inventory_vod__c.fields.Inventory_From_Date_vod__c.label}: "/><apex:outputField value="{!sampInvMaxDate.Submitted_Date_vod__c}"/>
+        <br/><br/>
+        <apex:outputText style="font-weight:bold" value="{!$ObjectType.Order_vod__c.fields.Disclaimer_vod__c.label}: "/>{!$Label.Inventory_Worksheet_Disclaimer_Text_vod}
+        <br/><br/>
+        <apex:dataTable value="{!activeSamples}" var="activeSample" cellpadding="5" border="1">
+            <apex:column style="font-family: 'Arial Unicode MS';" width="25%">
+                <apex:facet name="header">{!$ObjectType.Sample_Lot_vod__c.fields.Sample_vod__c.label}</apex:facet>
+                <apex:outputField value="{!activeSample.Sample_vod__c}"/>
+            </apex:column>
+            <apex:column style="font-family: 'Arial Unicode MS';" width="1%">
+                <apex:facet name="header">{!$ObjectType.Sample_Lot_vod__c.fields.Name.label}</apex:facet>
+                <apex:outputField value="{!activeSample.Name}"/>
+            </apex:column>
+            <apex:column style="font-family: 'Arial Unicode MS';" width="1%">
+                <apex:facet name="header">{!$ObjectType.Sample_Lot_vod__c.fields.Expiration_Date_vod__c.label}</apex:facet>
+                <apex:outputField value="{!activeSample.Expiration_Date_vod__c}"/>
+            </apex:column>
+            <apex:column style="font-family: 'Arial Unicode MS';" >
+                <apex:facet name="header">{!quantityMessage}</apex:facet>
+            </apex:column>
+            <apex:column style="font-family: 'Arial Unicode MS';" width="1%">
+                <apex:facet name="header">{!$ObjectType.Sample_Lot_vod__c.fields.U_M_vod__c.label}</apex:facet>
+                <apex:outputField value="{!activeSample.U_M_vod__c}"/>
+            </apex:column>
+        </apex:dataTable>
+        <!--
+        <apex:dataTable value="{!productCatalog}" var="product" cellpadding="5" border="1">
+            <apex:column width="25%">
+                <apex:outputField value="{!product.Name}"/>
+            </apex:column>
+            <apex:column width="25%">
+                <apex:outputField value="{!product.Company_Product_vod__c}"/>
+            </apex:column>
+        </apex:dataTable>
+        -->
+    </div>
+</apex:page>

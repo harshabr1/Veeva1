@@ -1,0 +1,6 @@
+<apex:page standardController="Event_Attendee_vod__c" extensions="EMRedirectController" action="{!redirectEdit}">
+	<apex:form >
+        <apex:inputHidden value="{!Event_Attendee_vod__c.EM_Attendee_vod__c}"/>
+        <apex:inputHidden value="{!Event_Attendee_vod__c.EM_Event_Speaker_vod__c}"/>
+    </apex:form>
+</apex:page>

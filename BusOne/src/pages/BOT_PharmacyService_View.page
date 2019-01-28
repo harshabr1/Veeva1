@@ -1,0 +1,70 @@
+<!--
+Name:BOT_PharmacyService_View
+Created By:Harsha BR
+Created Date:03/08/2017
+Overview :Used to display the Benefit design data related to a Formulary.
+
+Modified By: Harsha BR
+Modified Date: 04/06/2017
+Reason: To add Pagination
+-->
+<apex:page standardController="Account" name="Pharmacy Service" title="Pharmacy Service" sidebar="false" showHeader="false" extensions="BOT_Pharmacy_View_Extn">
+    <apex:form id="theForm">
+        <apex:pageBlock mode="edit" id="pb" rendered="{!IF(AND(NOT(ISBLANK(lstPharmacies)),lstPharmacies.size>0),'TRUE','FALSE')}">
+            <apex:pageBlockSection columns="3">
+                
+                <apex:outputPanel ID="op1" >
+                    <apex:outputText escape="false" value="<b>Channel:</b>"/>
+                    <apex:selectList size="1" value="{!selChannel}">
+                    <apex:selectOptions value="{!channelList}"></apex:selectOptions>
+                    <apex:actionSupport action="{!changeChannel}" event="onchange" reRender="drugPanel,op" status="status"/>
+                    </apex:selectList>
+                </apex:outputPanel>
+                
+                <apex:outputPanel ID="op">
+                    <apex:outputText escape="false" value="<b>Service Name:</b>"/>
+                    <apex:selectList size="1" value="{!selected}">
+                    <apex:selectOptions value="{!dynamiclist}"></apex:selectOptions>
+                        <apex:actionSupport action="{!changePharmacy}" event="onchange" reRender="drugPanel" status="status"/>
+                    </apex:selectList>
+                </apex:outputPanel>
+                
+            </apex:pageBlockSection>
+            
+            <apex:outputPanel id="drugPanel"  layout="block"  >
+                
+                <apex:outputPanel id="pagerButtons" style="width:100%; text-align:right; padding: 2px 0px;" layout="block" rendered="{!blnButtons}">  
+                    <apex:commandButton action="{!first}" disabled="{!disablePrevious}"  title="First" value="<<"  reRender="drugPanel"/>
+                    <apex:commandButton action="{!Previous}" disabled="{!disablePrevious}" title="Previous" value="<" reRender="drugPanel"/>        
+                    <apex:commandButton action="{!Next}" disabled="{!disableNext}" title="Next" value=">"  reRender="drugPanel"/>
+                    <apex:commandButton action="{!last}" disabled="{!disableNext}" title="Last" value=">>"  reRender="drugPanel"/>
+                </apex:outputPanel>
+                
+                <apex:actionStatus id="status" StartText="Searching..." startStyle="font-color:red;">
+                    <apex:facet name="start">
+                        <apex:image value="/img/loading.gif" />
+                    </apex:facet>
+                 </apex:actionStatus>
+                
+                <apex:pageBlockTable id="designResults" cellpadding="2" cellspacing="2" border="1" columns="6" value="{!lstPharmacies}" var="objPhar" rendered="{!IF(AND(NOT(ISBLANK(lstPharmacies)),lstPharmacies.size>0),'TRUE','FALSE')}">
+                    <apex:facet name="header">
+                        Showing Page # {!pageNumber} of {!totalPages}
+                    </apex:facet>
+                    <apex:column id="channel" value="{!objPhar.BOT_Channel__c}"/>
+                    <apex:column id="name" headerValue="Service Name">
+                        <apex:outputLink id="oLink" value="/{!objPhar.Id}" target="_top" style="font-weight:bold">{!objPhar.Name}</apex:outputLink>                                                                              
+                    </apex:column>
+                    
+                    <apex:column id="accName" headerValue="MCO Name">
+                        <apex:outputLink id="oLink1" value="/{!objPhar.BOT_Account__c}" target="_top" style="font-weight:bold">{!objPhar.BOT_Account__r.Name}</apex:outputLink>                                                                              
+                    </apex:column>
+                    
+                    <apex:column id="type" headerValue="MCO Type">
+                        {!objPhar.BOT_Account__r.Entity_Level__c}
+                    </apex:column>
+                    <apex:column id="state" value="{!objPhar.BOT_Account__r.BOT_State__c}" />
+                </apex:pageBlockTable>  
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page standardController="Analytics_Files_vod__c" standardStylesheets="true">
+  <apex:composition template="{!$Page.VODRedirectCustom_vod}"/>
+
+  <script>
+    var id = "{!Analytics_Files_vod__c.Id}"; 
+    var name = "{!URLENCODE(Analytics_Files_vod__c.Type_vod__c)}"; 
+    var status = "{!URLENCODE(Analytics_Files_vod__c.Status_vod__c)}"; 
+    var fname = "{!URLENCODE(Analytics_Files_vod__c.File_Name_vod__c)}"; 
+    var mkt = "{!URLENCODE(Analytics_Files_vod__c.Market_vod__c)}"; 
+
+    var queryParams = "&id="+id + "&dmname="+name +"&fname="+fname + "&status=" + status + "&mkt=" + mkt;
+
+    com.vod309.redirect.redirect("AACCERRREP", queryParams);
+  </script>
+
+</apex:page>

@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <content>VMobile_Config_Clone_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>VMobile_Config_Edit_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>VMobile_Config_New_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>VMobile_Config_View_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The VMobile Object Configuration object controls what objects and records are sent to Veeva CRM Mobile Tablet or to iRep. The data is entered on the VMobile Object Configuration tab.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Lookup_Field_vod__c</fullName>
+        <description>Once populated with a value, the sync server will consider the object to be part of the incremental account sync and send it down.</description>
+        <externalId>false</externalId>
+        <label>Account Lookup Field</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Active_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field determines if the row is used when calculating the a user tablet configuration.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Child_Object_Name_vod__c</fullName>
+        <description>Not currently supported - Holds the value of the child object.</description>
+        <externalId>false</externalId>
+        <label>Child Object Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child_Relationship_vod__c</fullName>
+        <description>Not currently supported - Used to store a child relationship.</description>
+        <externalId>false</externalId>
+        <label>Child Relationship</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Device_vod__c</fullName>
+        <description>This determines the Client Device.  A blank value is interpreted as Tablet_vod.</description>
+        <externalId>false</externalId>
+        <label>Device</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CRM_Engage_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>iPhone_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WinModern_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tablet_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>iPad_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Enable_Enhanced_Sync_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enable for objects which use a Private sharing model or have an updated Where clause. Forces a full comparison of all the object&apos;s records the user has access to with the records on the device. Note: This has the potential to significantly increase sync times. This field is ignored for the Account Object and any child objects of Account, which always has this enabled.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enable to force a refresh on objects which use a Private sharing model or have an updated Where clause. May cause an in increase sync times.</inlineHelpText>
+        <label>Enable Enhanced Sync</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Exclude_Field_List_vod__c</fullName>
+        <description>Allows a small number of fields to be excluded from the download to the client device.</description>
+        <externalId>false</externalId>
+        <label>Exclude Field List</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>This is an out of the box External Id field provided. There is no logic associated with how this gets populated. This field if used will have to be populated by the implementation team.  This field will be used for data loading.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Field_List_vod__c</fullName>
+        <description>Limits the columns sent to the client device to the comma separated list of fields.  This should be used with care and a large amount of testing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Limits the columns sent to the client device to the comma separated list of fields.  This should be used with care and a large amount of testing.</inlineHelpText>
+        <label>Limit Fields To List</label>
+        <length>3000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Include_Attachments_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines if the mobile synchronization process should synchronize attachment information for this object. Attachment body will only be loaded on demand.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Include attachment information when synchronizing object.</inlineHelpText>
+        <label>Include Attachments</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Include_Related_Objects_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines if the tablet configuration should determine what objects are related to this object based on its related list (layout based).  It is only valid for Top Level Objects.</description>
+        <externalId>false</externalId>
+        <label>Include Related Objects</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Meta_Data_Only_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this box is checked then the sync process will never download data for this object. Used for data that is only sent up from the tablet.</description>
+        <externalId>false</externalId>
+        <label>Meta Data Only</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Object_Name_vod__c</fullName>
+        <description>Name of the object to add to the tablet configuration.</description>
+        <externalId>false</externalId>
+        <label>Object Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Object_Name_vod__c</fullName>
+        <description>If an object is to be processed as a child of another object, the name of the parent object is stored in this field.</description>
+        <externalId>false</externalId>
+        <label>Parent Object Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Profile_ID_vod__c</fullName>
+        <description>Stores the Profile ID that the row of data applies to.  If the value is null or blank then it applies to all.  If the Profile ID is present then it will override any rows with null or blank values and the same object.</description>
+        <externalId>false</externalId>
+        <label>Profile</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Profile_Name_vod__c</fullName>
+        <description>The Profile that this record applies to.</description>
+        <externalId>false</externalId>
+        <label>Profile Name</label>
+        <length>254</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Relationship_Field_vod__c</fullName>
+        <description>Not currently supported - If a object is a child of another object this stores the field name of the relationship  between the parent and the child object.</description>
+        <externalId>false</externalId>
+        <label>Relationship Field</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Relationship_Name_vod__c</fullName>
+        <description>If an object is a child of another object this stores the relationship name between the parent and the child object.</description>
+        <externalId>false</externalId>
+        <label>Relationship Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_vod__c</fullName>
+        <description>Sets the behavior of the configuration row.  T - Top Level Object which means other objects can reference it.  F - Full object sync.  R - Relates to a Top Level Object.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>T</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>R</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>F</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>C</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Where_Clause_vod__c</fullName>
+        <description>This field contains the where clause that will be added to the query of  a Top Level or Full Sync object.  Example : Where Account.Name != null</description>
+        <externalId>false</externalId>
+        <label>Where Clause</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <label>VMobile Object Configuration</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Device_vod__c</columns>
+        <columns>Type_vod__c</columns>
+        <columns>Object_Name_vod__c</columns>
+        <columns>Account_Lookup_Field_vod__c</columns>
+        <columns>Where_Clause_vod__c</columns>
+        <columns>Active_vod__c</columns>
+        <columns>Parent_Object_Name_vod__c</columns>
+        <columns>Meta_Data_Only_vod__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Network</fullName>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Device_vod__c</columns>
+        <columns>Type_vod__c</columns>
+        <columns>Object_Name_vod__c</columns>
+        <columns>Account_Lookup_Field_vod__c</columns>
+        <columns>Where_Clause_vod__c</columns>
+        <columns>Active_vod__c</columns>
+        <columns>Parent_Object_Name_vod__c</columns>
+        <columns>Meta_Data_Only_vod__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Object_Name_vod__c</field>
+            <operation>startsWith</operation>
+            <value>Network</value>
+        </filters>
+        <filters>
+            <field>Object_Name_vod__c</field>
+            <operation>startsWith</operation>
+            <value>DCR</value>
+        </filters>
+        <filters>
+            <field>Object_Name_vod__c</field>
+            <operation>startsWith</operation>
+            <value>Data_Change</value>
+        </filters>
+        <label>Network</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>TSM-{0000000}</displayFormat>
+        <label>VMobile Object Configuration Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>VMobile Object Configurations</pluralLabel>
+    <recordTypes>
+        <fullName>TABLET</fullName>
+        <active>true</active>
+        <label>TABLET</label>
+        <picklistValues>
+            <picklist>Device_vod__c</picklist>
+            <values>
+                <fullName>Tablet_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_vod__c</picklist>
+            <values>
+                <fullName>C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>T</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Profile_Name_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Object_Name_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Parent_Object_Name_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Device_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Active_vod__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Object_Name_vod</fullName>
+        <active>true</active>
+        <description>Object_Name_vod must be specified.</description>
+        <errorConditionFormula>Object_Name_vod__c=NULL</errorConditionFormula>
+        <errorMessage>Object Name must be specified.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Parent_Object_Name_vod</fullName>
+        <active>true</active>
+        <description>Parent_Object_Name_vod and Relationship_Name_vod must be specified on VMOCs that relate to a top level object</description>
+        <errorConditionFormula>AND(OR(Parent_Object_Name_vod__c=NULL,Relationship_Name_vod__c=NULL),ISPICKVAL(Type_vod__c,&apos;R&apos;))</errorConditionFormula>
+        <errorMessage>Parent Object Name and Relationship Name must be specified on VMOCs that relate to a top level object</errorMessage>
+    </validationRules>
+</CustomObject>

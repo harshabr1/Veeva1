@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is used to store the Product and its objective related details.It is the child of the Event standard object.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Event_ID__c</fullName>
+        <description>Used to store the Event ID</description>
+        <externalId>false</externalId>
+        <label>Event ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Objective1__c</fullName>
+        <description>Used to store the first objective.</description>
+        <externalId>false</externalId>
+        <label>Objective1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Clinical</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Call-General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contract</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Issue Resolution</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pull Through</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strategic Partnership Discussion</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Benchmarks/Economics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PT/DUR/MAC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PT/DUR/MAC - Non - MS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Account Readiness/Launch Prepardness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Disease Education(Could be specific to disease states if you want)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Objective2__c</fullName>
+        <description>Used to store the second objective.</description>
+        <externalId>false</externalId>
+        <label>Objective2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Clinical</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Call-General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contract</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Issue Resolution</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pull Through</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strategic Partnership Discussion</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Benchmarks/Economics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PT/DUR/MAC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PT/DUR/MAC - Non - MS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Account Readiness/Launch Prepardness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Disease Education(Could be specific to disease states if you want)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Objective3__c</fullName>
+        <description>Used to store the thrid objective.</description>
+        <externalId>false</externalId>
+        <label>Objective3</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Clinical</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Call-General</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contract</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Issue Resolution</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pull Through</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Business Review</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Strategic Partnership Discussion</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Benchmarks/Economics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PT/DUR/MAC</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PT/DUR/MAC - Non - MS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Account Readiness/Launch Prepardness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Disease Education(Could be specific to disease states if you want)</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <description>Used to store the name of the product</description>
+        <externalId>false</externalId>
+        <label>Company(s)/Product(s)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Myrbetriq</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Xtandi</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Product</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Product__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Product ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Products</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

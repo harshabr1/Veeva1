@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Time Off Territory data</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Date_vod__c</fullName>
+        <description>Starting date requested for time off.</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Hours_off_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Hours off</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Time_vod__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>7</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Hours_vod__c</fullName>
+        <description>Formula to calculate the # of hours based on the Time picklist</description>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Time_vod__c, &quot;AM Off&quot;), 4, 
+  IF(ISPICKVAL(Time_vod__c, &quot;PM Off&quot;), 4, 
+   IF(ISPICKVAL(Time_vod__c, &quot;All day&quot;), 8,
+     IF(ISPICKVAL(Time_vod__c, &quot;2 Days&quot;), 16,
+       IF(ISPICKVAL(Time_vod__c, &quot;3 Days&quot;), 24,
+          IF(ISPICKVAL(Time_vod__c, &quot;4 Days&quot;), 32,
+             IF(ISPICKVAL(Time_vod__c, &quot;5 Days&quot;), 40, 
+                 IF(ISPICKVAL(Time_vod__c, &quot;Hourly&quot;),  VALUE(TEXT(Hours_off_vod__c))   ,0)
+              )
+          )
+       )
+    )
+   )
+ )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>The Mobile ID field allows for the creation of TOT records from VMobile.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_vod__c</fullName>
+        <description>Picklist of available reason codes for time off</description>
+        <externalId>false</externalId>
+        <label>Reason</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Vacation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sick</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Jury Duty</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bereavement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Car Trouble</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Time_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Start Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Time_vod__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>8:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5:00 PM</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>8:00 AM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>8:30 AM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>9:00 AM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>9:30 AM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>10:00 AM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>10:30 AM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>11:00 AM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>11:30 AM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>12:00 PM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>12:30 PM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>1:00 PM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>1:30 PM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>2:00 PM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>2:30 PM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>3:00 PM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>3:30 PM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>4:00 PM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>4:30 PM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hourly</controllingFieldValue>
+                <valueName>5:00 PM</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Picklist of available statuses.  This field is used in the approval process workflow.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Territory_vod__c</fullName>
+        <description>Territory of User that creates the Time Off Territory request.  This field is populated via a Trigger on Time Off Territory.</description>
+        <externalId>false</externalId>
+        <label>Territories</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_vod__c</fullName>
+        <description>Picklist of available time frames for time off.  (AM, PM, 2 days, etc.) This field drives the # hours calculated in the Hours field.</description>
+        <externalId>false</externalId>
+        <label>Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AM Off</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>PM Off</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>All Day</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2 Days</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3 Days</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4 Days</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5 Days</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Hourly</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Time Off Territory</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Date_vod__c</columns>
+        <columns>Reason_vod__c</columns>
+        <columns>Status_vod__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>TOT-{0000}</displayFormat>
+        <label>TOT ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Time Off Territory</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Date_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Reason_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Time_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Hours_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Date_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Reason_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Time_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Hours_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Date_vod__c</searchFilterFields>
+        <searchFilterFields>Reason_vod__c</searchFilterFields>
+        <searchFilterFields>Status_vod__c</searchFilterFields>
+        <searchFilterFields>Time_vod__c</searchFilterFields>
+        <searchFilterFields>Hours_vod__c</searchFilterFields>
+        <searchFilterFields>CREATEDBY_USER</searchFilterFields>
+        <searchResultsAdditionalFields>Date_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Reason_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Time_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Hours_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

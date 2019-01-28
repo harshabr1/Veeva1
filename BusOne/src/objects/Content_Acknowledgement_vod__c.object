@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>Content_Acknowledgement_Edit_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>Content_Acknowledgement_Edit_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>Content_Acknowledgement_View_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Maintains fulfillment data for items shipped directly to HPCs including shipment and delivery status. Used to capture Acknowledgement of Content receipt signatures.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AOC_Due_Date_vod__c</fullName>
+        <externalId>false</externalId>
+        <formula>Ship_Date_vod__c + 14</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AOC Due Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>References the Account that requested the product for fulfillment.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Content Acknowledgements</relationshipLabel>
+        <relationshipName>Content_Acknowledgements</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Alert_Created_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether an Alert has been created for the User when the Acknowledgement of Content Due Date was reached.</description>
+        <externalId>false</externalId>
+        <label>Alert Created</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Alert_Duration_vod__c</fullName>
+        <description>Determines the number of days an Alert will be active if created via the Create_Alert_vod field.</description>
+        <externalId>false</externalId>
+        <label>Alert Duration</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Reference_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>References the Call record that contains the initial BRC request.</description>
+        <externalId>false</externalId>
+        <label>Call Reference</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Content Acknowledgements</relationshipLabel>
+        <relationshipName>Content_Acknowledgements</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Call_Text_vod__c</fullName>
+        <description>The textual value of the Call record that contains the initial BRC request.</description>
+        <externalId>false</externalId>
+        <label>Call Text</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Create_Alert_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether an Alert should be created for the User when the Acknowledgement of Content Due Date is reached.</description>
+        <externalId>false</externalId>
+        <label>Create Alert</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Credentials_vod__c</fullName>
+        <description>The medical degree of the Account that the requested the product for fullfillment.</description>
+        <externalId>false</externalId>
+        <label>Credentials</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delivery_Date_vod__c</fullName>
+        <description>The date on which the product was received by the requesting Account per the common carrier delivery receipt (UPS, FedEx, Priority, etc).</description>
+        <externalId>false</externalId>
+        <label>Delivery Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Disclaimer_vod__c</fullName>
+        <description>Used to record sample disclaimer displayed when an Acknowledgement of Content is signed.</description>
+        <externalId>false</externalId>
+        <label>Disclaimer</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>External_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Unique record Id used for data loading.</description>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Field used by mobile products for synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Not_Received_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set to true to indicate that a product shipment was not received by an Account. Can be selected from the Signature page when capturing a signature from within Veeva CRM.</description>
+        <externalId>false</externalId>
+        <label>Not Received</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Order_Id_vod__c</fullName>
+        <description>The Id of the product shipment assigned during the fulfillment process.</description>
+        <externalId>false</externalId>
+        <label>Order Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Received_By_FirstName_vod__c</fullName>
+        <description>Hosts the first name of the Receiver in the Content Acknowledgment form</description>
+        <externalId>false</externalId>
+        <label>Received By First Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Received_By_LastName_vod__c</fullName>
+        <description>Hosts the last name of the Receiver in the Content Acknowledgment form</description>
+        <externalId>false</externalId>
+        <label>Received By Last Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Received_By_Middle_vod__c</fullName>
+        <description>Hosts the Middle name of the Receiver in the Content Acknowledgment form</description>
+        <externalId>false</externalId>
+        <label>Received By Middle Name</label>
+        <length>55</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Received_By_vod__c</fullName>
+        <description>The textual name of the person signing for the receipt of the product shipment as indicated on the AOC Signature page.</description>
+        <externalId>false</externalId>
+        <label>Received By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Received_Title_vod__c</fullName>
+        <description>The title of the person signing for the receipt of the product shipment as indicated on the AOC Signature page.</description>
+        <externalId>false</externalId>
+        <label>Received Title</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Request_Receipt_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set to a value of True if a receipt is requested from the receiver for the AOC via the signature page.</description>
+        <externalId>false</externalId>
+        <label>Request Receipt</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ship_ASSMCA_vod__c</fullName>
+        <description>Stores the ASSMCA # of the practitioner that requested the BRC product shipment for shipments to PR.</description>
+        <externalId>false</externalId>
+        <label>Ship ASSMCA #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Address_Line_1_vod__c</fullName>
+        <description>Stores the first line of the Ship to Address for the product shipment.</description>
+        <externalId>false</externalId>
+        <label>Ship Address Line 1</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Address_Line_2_vod__c</fullName>
+        <description>Stores the second line of the Ship to Address for the product shipment.</description>
+        <externalId>false</externalId>
+        <label>Ship Address Line 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Address_vod__c</fullName>
+        <externalId>false</externalId>
+        <formula>Ship_Address_Line_1_vod__c &amp; IF(LEN(Ship_Address_Line_2_vod__c) &gt; 0, &quot;, &quot; &amp; Ship_Address_Line_2_vod__c, &quot;&quot;) &amp; IF(LEN(Ship_City_vod__c) &gt; 0, &quot;, &quot; &amp; Ship_City_vod__c, &quot;&quot;) &amp; IF(LEN(Ship_State_vod__c) &gt; 0, &quot;, &quot; &amp; Ship_State_vod__c, &quot;&quot;) &amp; IF(LEN(Ship_Zip_vod__c) &gt; 0, &quot; &quot; &amp; Ship_Zip_vod__c, &quot;&quot;)&amp; IF(LEN(Ship_Country_vod__c) &gt; 0, &quot;&quot; &amp; Ship_Country_vod__c, &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ship Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_CDS_vod__c</fullName>
+        <description>Stores the CDS # of the practitioner that requested the BRC product shipment when a CDS # is required in the state.</description>
+        <externalId>false</externalId>
+        <label>Ship CDS #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_City_vod__c</fullName>
+        <description>Stores the city of the Ship to Address for the product shipment.</description>
+        <externalId>false</externalId>
+        <label>Ship City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Country_vod__c</fullName>
+        <description>Stores the country of the Ship to Address for the product shipment.</description>
+        <externalId>false</externalId>
+        <label>Ship Country</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_DEA_vod__c</fullName>
+        <description>Stores the DEA # of the practitioner that requested the BRC product shipment when the product shipped is a controlled substance.</description>
+        <externalId>false</externalId>
+        <label>Ship DEA #</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Date_vod__c</fullName>
+        <description>The date on which the product shipment was sent to the Account.</description>
+        <externalId>false</externalId>
+        <label>Ship Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ship_License_vod__c</fullName>
+        <description>Stores the License # of the practitioner that requested the BRC product shipment.</description>
+        <externalId>false</externalId>
+        <label>Ship License #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Location_vod__c</fullName>
+        <description>Stores the Business Account location for the product shipment.</description>
+        <externalId>false</externalId>
+        <label>Ship Location</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_State_Distributor_vod__c</fullName>
+        <description>Stores the State Distributor # of the Business Address where practitioner requested the BRC product shipment when a State Distributor is required in the state.</description>
+        <externalId>false</externalId>
+        <label>Ship State Distributor #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_State_vod__c</fullName>
+        <description>Stores the state of the Ship to Address for the product shipment.</description>
+        <externalId>false</externalId>
+        <label>Ship State</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Zip_4__c</fullName>
+        <description>Stores the zip 4 of the Ship to Address for the product shipment.</description>
+        <externalId>false</externalId>
+        <label>Ship Zip 4</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Zip_vod__c</fullName>
+        <description>Stores the zip code of the Ship to Address for the product shipment.</description>
+        <externalId>false</externalId>
+        <label>Ship Zip</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_Date_vod__c</fullName>
+        <description>Captures the date and time of the signature captured for the AOC record. Users must have access to this field in order to capture a signature for an AOC record.</description>
+        <externalId>false</externalId>
+        <label>Signature Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Signature_vod__c</fullName>
+        <description>Contains the base64 encoded string that represents the captured signature.</description>
+        <externalId>false</externalId>
+        <label>Signature</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>The status of the AOC record. When an AOC record is completed, the record is locked and displayed as read-only.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Shipped_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Delivered_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unlock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When editable to a user, displays an Unlock button which allows the User to unlock and edit a record with a Completed status.</description>
+        <externalId>false</externalId>
+        <label>Unlock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Content Acknowledgement</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AOC-{000000000}</displayFormat>
+        <label>AOC Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Content Acknowledgements</pluralLabel>
+    <recordTypes>
+        <fullName>Call_vod</fullName>
+        <active>true</active>
+        <description>Used to capture fulfillment data of BRC product requested via Calls</description>
+        <label>Call_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Completed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivered_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Shipped_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Print_AOC_Receipt_vod</fullName>
+        <availability>online</availability>
+        <description>A button to add to the Content Acknowledgement related list for an account which generates a PDF file of the Content Acknowledgement receipt.</description>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Print AOC Receipt</masterLabel>
+        <openType>sidebar</openType>
+        <page>Print_AOC_Receipt_vod</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+</CustomObject>

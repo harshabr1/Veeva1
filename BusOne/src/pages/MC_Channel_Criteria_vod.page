@@ -1,0 +1,6 @@
+<apex:page standardStylesheets="true" standardController="MC_Cycle_Channel_vod__c" showHeader="false">
+    <div id="loadingDiv" style="margin-left:30%">           
+        <img src="{!$Resource.vod_loading_gif}"/>
+    </div>
+    <c:Veeva_Multichannel_Redirect_vod urlPath="mccp/criteria" loadingElementId="loadingDiv" paramString="channelId={!MC_Cycle_Channel_vod__c.Id}" />
+</apex:page>

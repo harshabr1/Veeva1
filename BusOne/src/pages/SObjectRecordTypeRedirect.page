@@ -1,0 +1,2 @@
+<apex:page controller="VOD_SObjectNewRedirectController" action="{!redirect}">
+</apex:page>

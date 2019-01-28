@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Maintains the data of the attendees who joined the remote meeting</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Call_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Reference to the Call that the attendee is associated with</description>
+        <externalId>false</externalId>
+        <label>Call</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Remote Meeting Attendees</relationshipLabel>
+        <relationshipName>Remote_Meeting_Attendees_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Device_vod__c</fullName>
+        <description>Show the device type the Remote Meeting Attendee used to join the meeting</description>
+        <externalId>false</externalId>
+        <label>Device</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EM_Attendee_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Reference to the EM Attendee that the participant is associated with</description>
+        <externalId>false</externalId>
+        <label>Event Attendee</label>
+        <referenceTo>EM_Attendee_vod__c</referenceTo>
+        <relationshipLabel>Remote Meeting Attendees</relationshipLabel>
+        <relationshipName>Remote_Meeting_Attendees_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EM_Event_Speaker_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Reference to the EM Speaker that the participant is associated with</description>
+        <externalId>false</externalId>
+        <label>Event Speaker</label>
+        <referenceTo>EM_Event_Speaker_vod__c</referenceTo>
+        <relationshipLabel>Remote Meeting Attendees</relationshipLabel>
+        <relationshipName>Remote_Meeting_Attendees_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Event</label>
+        <referenceTo>EM_Event_vod__c</referenceTo>
+        <relationshipLabel>Remote Meeting Attendees</relationshipLabel>
+        <relationshipName>Remote_Meeting_Attendees_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Join_Time_vod__c</fullName>
+        <description>Date and time of when the attendee joined the meeting</description>
+        <externalId>false</externalId>
+        <label>Join Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Leave_Time_vod__c</fullName>
+        <description>Date and time of when the attendee left the meeting</description>
+        <externalId>false</externalId>
+        <label>Leave Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Meeting_End_Time_vod__c</fullName>
+        <description>Date and time of when the meeting ended</description>
+        <externalId>false</externalId>
+        <label>Meeting End Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Meeting_Start_Time_vod__c</fullName>
+        <description>Date and time of when the meeting started</description>
+        <externalId>false</externalId>
+        <label>Meeting Start Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Name_vod__c</fullName>
+        <description>Name entered by the attendee when joining the Remote Meeting</description>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Network_Type_vod__c</fullName>
+        <description>Show the network type the Remote Meeting Attendee used to join the meeting</description>
+        <externalId>false</externalId>
+        <label>Network Type</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Participant_Id_vod__c</fullName>
+        <description>Participant Id for the attendee when joining the Remote Meeting</description>
+        <externalId>false</externalId>
+        <label>Participant Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Remote_Meeting_vod__c</fullName>
+        <description>Remote meeting the attendee participated in</description>
+        <externalId>false</externalId>
+        <label>Remote Meeting</label>
+        <referenceTo>Remote_Meeting_vod__c</referenceTo>
+        <relationshipLabel>Remote Meeting Attendees</relationshipLabel>
+        <relationshipName>Remote_Meeting_Attendees_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id used by Veeva CRM</description>
+        <externalId>true</externalId>
+        <label>Veeva External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Veeva_Remote_Meeting_Id_vod__c</fullName>
+        <description>Remote Meeting Id entered by the attendee when joining the Remote Meeting</description>
+        <externalId>false</externalId>
+        <label>Veeva Remote Meeting Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Remote Meeting Attendee</label>
+    <nameField>
+        <label>Remote Meeting Attendee Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Remote Meeting Attendees</pluralLabel>
+    <recordTypes>
+        <fullName>Call_vod</fullName>
+        <active>true</active>
+        <description>For Remote Meeting Attendees on Call</description>
+        <label>Call_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Webinar_vod</fullName>
+        <active>false</active>
+        <description>For Remote Meeting Attendees on Webinar</description>
+        <label>Webinar_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

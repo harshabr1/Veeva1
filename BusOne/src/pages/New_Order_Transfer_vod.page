@@ -1,0 +1,10 @@
+<apex:page standardController="Sample_Order_Transaction_vod__c" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_vod}"/>
+<script type="text/javascript">        
+    var queryparams = "&id=" + "{! Sample_Order_Transaction_vod__c.Id}";    
+    queryparams += "&RecordTypeName=Transfer_vod"; 
+    var retURL = '{!URLENCODE($Request.retURL)}'; 
+    queryparams += "&retURL=" + retURL; 
+    com.vod309.redirect.redirect("samporders", queryparams);
+</script>
+</apex:page>

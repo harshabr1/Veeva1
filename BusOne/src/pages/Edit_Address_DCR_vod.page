@@ -1,0 +1,14 @@
+<apex:page standardController="Address_vod__c">
+<apex:composition template="{!$Page.VODRedirect_4000_vod}"/>
+    <script type="text/javascript">
+        var queryParams = "&mode=e";
+        queryParams += "&id=";
+        queryParams += "{!URLENCODE(CASESAFEID(Address_vod__c.Id))}";
+    	queryParams += "&recordTypeId=";
+        queryParams += "{!URLENCODE(CASESAFEID($CurrentPage.parameters.RecordType))}";
+        queryParams += "&retURL=";
+        queryParams += "{!URLENCODE($CurrentPage.parameters.retURL)}"; 
+        
+        com.vod309.redirect.redirect("networkEnabledAddress", queryParams);
+    </script>
+</apex:page>

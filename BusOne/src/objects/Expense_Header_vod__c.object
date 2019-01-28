@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>Expense_Header_Edit_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>Expense_Header_Edit_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>Expense_Header_View_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Aggregates details of an expense line, such as the payee, the person who incurred the expense, and the payment status. Represents an invoice.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_vod__c</fullName>
+        <description>Actual Expense.</description>
+        <externalId>false</externalId>
+        <label>Actual</label>
+        <summarizedField>Expense_Line_vod__c.Actual_vod__c</summarizedField>
+        <summaryForeignKey>Expense_Line_vod__c.Expense_Header_vod__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Committed_vod__c</fullName>
+        <description>Committed expense.</description>
+        <externalId>false</externalId>
+        <label>Committed</label>
+        <summarizedField>Expense_Line_vod__c.Committed_vod__c</summarizedField>
+        <summaryForeignKey>Expense_Line_vod__c.Expense_Header_vod__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Concur_Report_ID_vod__c</fullName>
+        <description>Stores the Concur Report ID used when an expense entry is successfully created</description>
+        <externalId>false</externalId>
+        <label>Concur Report ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concur_Report_vod__c</fullName>
+        <description>Name of the Concur report the expense was submitted to</description>
+        <externalId>false</externalId>
+        <label>Concur Report</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concur_Response_Receipt_Timestamp_vod__c</fullName>
+        <description>Stores the time a response was received from Concur</description>
+        <externalId>false</externalId>
+        <label>Concur Response Receipt Timestamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Concur_Response_Timestamp_Entry_vod__c</fullName>
+        <description>Stores the time a response was received from Concur</description>
+        <externalId>false</externalId>
+        <label>Concur Response Entry Timestamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Concur_Status_vod__c</fullName>
+        <description>Status of sending an expense to Concur</description>
+        <externalId>false</externalId>
+        <label>Concur Submission Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unsubmitted_vod</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Sending_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Failed_Connection_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Failed_Config_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Failed_Duplicate_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Canceled_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Concur_System_ID_vod__c</fullName>
+        <description>Stores the ID returned from Concur when an expense entry is successfully created</description>
+        <externalId>false</externalId>
+        <label>Concur System ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concur_System_Receipt_ID_vod__c</fullName>
+        <description>Stores the ID returned from Concur when a receipt is successfully created</description>
+        <externalId>false</externalId>
+        <label>Concur System Receipt ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The country that the expense is associated with.</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <referenceTo>Country_vod__c</referenceTo>
+        <relationshipLabel>Expense Headers</relationshipLabel>
+        <relationshipName>Expense_Header_Country_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>not OOTB. To describe the Expense Header and display in RL. Sarav VPS 8/20</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Canceled_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked automatically if the associated event is canceled.</description>
+        <externalId>false</externalId>
+        <label>Event Canceled</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Event that the expense is associated with.</description>
+        <externalId>false</externalId>
+        <label>Event</label>
+        <referenceTo>EM_Event_vod__c</referenceTo>
+        <relationshipLabel>Expense Headers</relationshipLabel>
+        <relationshipName>Expense_Header_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>ID of the Expense Header</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The account that incurred an expense.</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense (Account)</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Expense Headers (Incurred Expenses)</relationshipLabel>
+        <relationshipName>Incurred_Expense_Account_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_Attendee_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The attendee that incurred an expense</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense (Attendee)</label>
+        <referenceTo>EM_Attendee_vod__c</referenceTo>
+        <relationshipLabel>Expense Headers (Incurred Expenses)</relationshipLabel>
+        <relationshipName>Incurred_Expense_Attendee_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_Speaker_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The speaker that incurred an expense</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense (Speaker)</label>
+        <referenceTo>EM_Event_Speaker_vod__c</referenceTo>
+        <relationshipLabel>Expense Headers (Incurred Expenses)</relationshipLabel>
+        <relationshipName>Incurred_Expense_Speaker_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_Team_Member_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The team member that incurred an expense</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense (Team Member)</label>
+        <referenceTo>EM_Event_Team_Member_vod__c</referenceTo>
+        <relationshipLabel>Expense Headers</relationshipLabel>
+        <relationshipName>Incurred_Expense_Team_Member_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_Vendor_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The vendor that incurred an expense</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense (Vendor)</label>
+        <referenceTo>EM_Vendor_vod__c</referenceTo>
+        <relationshipLabel>Expense Headers (Incurred Expenses)</relationshipLabel>
+        <relationshipName>Incurred_Expense_Vendor_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_Venue_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The venue that incurred an expense</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense (Venue)</label>
+        <referenceTo>EM_Venue_vod__c</referenceTo>
+        <relationshipLabel>Expense Headers</relationshipLabel>
+        <relationshipName>Incurred_Expense_Venue_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_vod__c</fullName>
+        <description>The entity that incurred the expense</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Field used by mobile products for synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Helper field for data loads.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Payee_Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The account that was paid.</description>
+        <externalId>false</externalId>
+        <label>Payee (Account)</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Expense Headers (Payee)</relationshipLabel>
+        <relationshipName>Payee_Account_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payee_Attendee_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The attendee that was paid</description>
+        <externalId>false</externalId>
+        <label>Payee (Attendee)</label>
+        <referenceTo>EM_Attendee_vod__c</referenceTo>
+        <relationshipLabel>Expense Headers (Payee)</relationshipLabel>
+        <relationshipName>Payee_Attendee_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payee_Speaker_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The speaker that was paid</description>
+        <externalId>false</externalId>
+        <label>Payee (Speaker)</label>
+        <referenceTo>EM_Event_Speaker_vod__c</referenceTo>
+        <relationshipLabel>Expense Headers (Payee)</relationshipLabel>
+        <relationshipName>Payee_Speaker_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payee_Team_Member_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The team member that was paid.</description>
+        <externalId>false</externalId>
+        <label>Payee (Team Member)</label>
+        <referenceTo>EM_Event_Team_Member_vod__c</referenceTo>
+        <relationshipLabel>Expense Headers (Payee)</relationshipLabel>
+        <relationshipName>Payee_Team_Member_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payee_Vendor_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The vendor that was paid.</description>
+        <externalId>false</externalId>
+        <label>Payee (Vendor)</label>
+        <referenceTo>EM_Vendor_vod__c</referenceTo>
+        <relationshipLabel>Expense Headers (Payee)</relationshipLabel>
+        <relationshipName>Payee_Vendor_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payee_Venue_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The venue that was paid.</description>
+        <externalId>false</externalId>
+        <label>Payee (Venue)</label>
+        <referenceTo>EM_Venue_vod__c</referenceTo>
+        <relationshipLabel>Expense Headers (Payee)</relationshipLabel>
+        <relationshipName>Payee_Venue_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payee_vod__c</fullName>
+        <description>The entity that was paid</description>
+        <externalId>false</externalId>
+        <label>Payee</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Date_vod__c</fullName>
+        <description>Date the payment was made.</description>
+        <externalId>false</externalId>
+        <label>Payment Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Due_Date_vod__c</fullName>
+        <description>Date the payment is due</description>
+        <externalId>false</externalId>
+        <label>Payment Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Split_Lines_vod__c</fullName>
+        <description>Determines if an expense header contains split expense lines or not. If yes, the incurred expense parties are set on the expense lines, rather than the expense header.</description>
+        <externalId>false</externalId>
+        <label>Split Lines?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status of payment</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unpaid_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Paid_in_Full_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Partial_Payment_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Transaction_Date_vod__c</fullName>
+        <description>Date of the transaction. Transaction date is required if sending expenses to Concur. If left blank, the event&apos;s date will be used.</description>
+        <externalId>false</externalId>
+        <label>Transaction Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Expense Header</label>
+    <nameField>
+        <displayFormat>EH-{0000000000}</displayFormat>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Expense Headers</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Event_Expense_Header_vod</fullName>
+        <active>true</active>
+        <description>Event Expense Header</description>
+        <label>Event_Expense_Header_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Paid_in_Full_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial_Payment_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unpaid_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>Event_Team_Member_vod__c</fullName>
+        <label>Event Team Member</label>
+    </sharingReasons>
+    <webLinks>
+        <fullName>Submit_to_Concur_vod</fullName>
+        <availability>online</availability>
+        <description>Saves an expense and submits it to Concur</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit to Concur</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;Submit to Concur&apos;);</url>
+    </webLinks>
+</CustomObject>

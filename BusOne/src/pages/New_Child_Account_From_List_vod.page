@@ -1,0 +1,16 @@
+<apex:page standardController="Child_Account_vod__c" recordSetVar="childAccounts" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_vod}"/>
+<script type="text/javascript">        
+    var queryparams = '&mode=n';
+    var param = "{!URLENCODE($CurrentPage.parameters.acctid)}";
+    if (param != '')
+        queryparams += "&acctid=" + param;
+    param = "{!URLENCODE($CurrentPage.parameters.newChild)}";
+    if (param != '')
+        queryparams += "&newChild=" + param;
+    param = "{!URLENCODE($CurrentPage.parameters.newParent)}";
+    if (param != '')
+        queryparams += "&newParent=" + param;    
+    com.vod309.redirect.redirect("childAccount", queryparams);
+</script>
+</apex:page>

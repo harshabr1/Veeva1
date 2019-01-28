@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Call Cycle Entries store information about a rep&apos;s weekly route.  They only store account name, the default address for each account is used when the call cycle is applied to a day.  Call cycles (and their titles) are only editable on VMobile.  However, reporting or viewing of calls cycles online, is supported.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the target Account.  The Accounts default address will be used when applying a call cycle to a day or week.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Call_Cycle_Entries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Child_Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the target Child Account</description>
+        <externalId>false</externalId>
+        <label>Child Account</label>
+        <referenceTo>Child_Account_vod__c</referenceTo>
+        <relationshipLabel>Call Cycle Entries</relationshipLabel>
+        <relationshipName>Call_Cycle_Entry_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Color_vod__c</fullName>
+        <description>Custom color associated with Call-Cycle entry.  Colors from a call cycle are copied to a week when the call cycle is applied.  Configuration of the choice of colors is not supported.</description>
+        <externalId>false</externalId>
+        <label>Color</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Gray</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yellow</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Day_Title_vod__c</fullName>
+        <description>Label for a day of a call cycle.  This label is editable at the top of each day in Call Cycle view in VMobile.  It appears in search results for that call cycle and can be searched on to find call cycles by day name.  Warning: The day title and day/week are read-only online to prevent corrupt day titles.  The day titles for all call cycle entries for a given day must be the same.  On VMobile this is handled automatically.</description>
+        <externalId>false</externalId>
+        <label>Day Title</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Day_of_Week_vod__c</fullName>
+        <description>A call cycle entry is located at a (Week#, Day of Week, and Time).  When applied to a week, a call cycle is placed on the week according to its (Day of Week, Time).</description>
+        <externalId>false</externalId>
+        <label>Day of Week</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sunday</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Monday</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tuesday</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wednesday</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Thursday</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Friday</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Saturday</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Duration_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Duration of the call cycle entry in minutes.</description>
+        <externalId>false</externalId>
+        <label>Duration</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Priority_1_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>First product to be discussed during the call. This is the suggested priority – actual discussion order can be modified during the call.</description>
+        <externalId>false</externalId>
+        <label>Product Priority 1</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Call Cycle Entries</relationshipLabel>
+        <relationshipName>Call_Cycle_Entries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Priority_2_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Second product to be discussed during the call. This is the suggested priority – actual discussion order can be modified during the call.</description>
+        <externalId>false</externalId>
+        <label>Product Priority 2</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Call Cycle Entries (Product Priority 2)</relationshipLabel>
+        <relationshipName>Call_Cycle_Entries1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Priority_3_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Third product to be discussed during the call. This is the suggested priority – actual discussion order can be modified during the call.</description>
+        <externalId>false</externalId>
+        <label>Product Priority 3</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Call Cycle Entries (Product Priority 3)</relationshipLabel>
+        <relationshipName>Call_Cycle_Entries2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Priority_4_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Fourth product to be discussed during the call. This is the suggested priority – actual discussion order can be modified during the call.</description>
+        <externalId>false</externalId>
+        <label>Product Priority 4</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Call Cycle Entries (Product Priority 4)</relationshipLabel>
+        <relationshipName>Call_Cycle_Entries3</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Priority_5_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Fifth product to be discussed during the call. This is the suggested priority – actual discussion order can be modified during the call.</description>
+        <externalId>false</externalId>
+        <label>Product Priority 5</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Call Cycle Entries (Product Priority 5)</relationshipLabel>
+        <relationshipName>Call_Cycle_Entries4</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Start_Time_vod__c</fullName>
+        <description>A call cycle entry is located at a (Week#, Day of Week, and Time). When applied to a week, a call cycle is placed on the week according to its (Day of Week, Time).</description>
+        <externalId>false</externalId>
+        <label>Start Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>7:00 AM</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>7:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>7:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>8:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>9:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>10:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11:00 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>11:30 PM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>1:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>4:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>5:30 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6:00 AM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6:30 AM</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Week_vod__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>A call cycle entry is located at a (Week#, Day of Week, and Time). When applied to a week, a call cycle is placed on the week according to its (Day of Week, Time).  A user can have as many call cycle weeks as they choose.  Only non-empty weeks are visible in search results.</description>
+        <externalId>false</externalId>
+        <label>Week</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Call Cycle Entry</label>
+    <nameField>
+        <displayFormat>CCEN{00000000}</displayFormat>
+        <label>Call Cycle Entry Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Call Cycle Entries</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+</CustomObject>

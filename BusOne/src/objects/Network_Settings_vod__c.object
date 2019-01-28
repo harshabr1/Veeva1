@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Settings for Veeva Network integration.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ACCT_PREVIEW_DURING_CREATION_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Determines if user can preview full account profile during new account creation process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This flag determines whether or not to display account preview page in new account creation process. Value 1 turns it ON.</inlineHelpText>
+        <label>Account Preview During Creation</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACTIVATE_NETWORK_ACCOUNT_SEARCH_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Activates Veeva Network integration when searching for accounts.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Activates Veeva Network integration when searching for accounts.</inlineHelpText>
+        <label>ACTIVATE NETWORK ACCOUNT SEARCH</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ADD_PARENTS_TO_TERRITORY_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Determines if user can select parent accounts and align to territory</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This flag determines whether or not to display parent accounts for user to add to territory after Network search.</inlineHelpText>
+        <label>Add Parent Accounts to Territory</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALLOWED_RELATIONSHIP_TYPES_vod__c</fullName>
+        <description>List of relationship types that will be displayed and imported to CRM.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Network search and import filter on relationship type. Blank means no filter is used.</inlineHelpText>
+        <label>Allowed Relationship Types</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CRM_MANAGED_ACCOUNT_TYPES_vod__c</fullName>
+        <defaultValue>&quot;CRM_MANAGED_ACCOUNT_TYPES;;NETWORK&quot;</defaultValue>
+        <description>This setting points to the name of the Veeva Message used to configure what Account record types and child entities should be managed locally in CRM. Please see documentation for more details.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>All Account Record Types included in this setting are managed locally in CRM</inlineHelpText>
+        <label>CRM Managed Account Types</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DISPLAY_PARENT_HCO_NAMES_IN_NAS_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Determines whether to display parent HCO names in Network search result.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This flag determines whether to display parent HCO names in Network search result.</inlineHelpText>
+        <label>Display Parent HCO Names in NAS</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FILTER_INACTIVE_NETWORK_RECORDS_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The setting for enabling the feature which handles Network records that do not have Active status.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A value of 1 will enable the feature that properly handles records in Network that do not have Active status</inlineHelpText>
+        <label>Filter Inactive Network Records</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HCO_ACTIVE_STATUSES_vod__c</fullName>
+        <defaultValue>&quot;A&quot;</defaultValue>
+        <description>The setting to define a broader set of active statuses using Network reference code, statuses other than &quot;A&quot; can be added in this setting, delimited by comma.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>HCO records with these statuses will not be filtered in subscription process, used together with Filter Inactive Network Records setting</inlineHelpText>
+        <label>HCO Active Statuses</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HCP_ACTIVE_STATUSES_vod__c</fullName>
+        <defaultValue>&quot;A&quot;</defaultValue>
+        <description>The setting to define a broader active statuses using Network reference code, customer may specify more statuses than &quot;A&quot; in this setting, delimited by comma.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>HCP records with these statuses will not be filtered in subscription process, used together with Filter Inactive Network Records setting</inlineHelpText>
+        <label>HCP Active Statuses</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NAS_BUSINESS_RESULT_FIELDS_vod__c</fullName>
+        <defaultValue>&quot;NAS_BUSINESS_DETAILS;;NETWORK&quot;</defaultValue>
+        <description>This setting points to the names of the Veeva Message used to configure which custom fields are returned viewing business account results in a Network Account Search. Please see documentation for more details.</description>
+        <externalId>false</externalId>
+        <label>NAS Business Result Fields</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NAS_FILTERS_vod__c</fullName>
+        <description>The filter string to be applied to Network Account Search.
+If the filters is larger than 255 characters, the setting can refer to a Veeva Message.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Network Account Search (NAS) filter based on the Network API syntax.  Blank means no default filter is defined. For user specific filters, use User.NAS_Filters_vod__c.</inlineHelpText>
+        <label>NAS Filters</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NAS_LOCATION_AUTO_POPULATION_vod__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>Determine if to automatically populate Network Account Search Location search box with user&apos;s location.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use 0 to disable, 1 to enable</inlineHelpText>
+        <label>NAS Location Auto Population</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NAS_PERSON_RESULT_FIELDS_vod__c</fullName>
+        <defaultValue>&quot;NAS_PERSON_DETAILS;;NETWORK&quot;</defaultValue>
+        <description>This setting points to the names of the Veeva Message used to configure which custom fields are returned viewing person account results in a Network Account Search. Please see documentation for more details.</description>
+        <externalId>false</externalId>
+        <label>NAS Person Result Fields</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NETWORK_ADDRESS_DELETION_PROCESS_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>The setting that determines how inactive Network addresses should be processed, refer to documentation for details.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A value of 1 or 2 will delete inactive/invalid Network addresses, refer to documentation for details.</inlineHelpText>
+        <label>Network Address Deletion Process</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NETWORK_CUSTOMER_MASTER_MODE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Determines if user DCRs should be sent to Veeva Network. See documentation for more details.</description>
+        <externalId>false</externalId>
+        <label>Network Customer Master Mode</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NETWORK_INTEGRATION_PROCESS_INTERVAL_vod__c</fullName>
+        <defaultValue>12</defaultValue>
+        <description>Determines the interval in hours at which the auxiliary Network Integration processes will run. Each process will check to see if a former process is currently running, if so the process will wait one interval of time before attempting to process again. If Null, the auxiliary process will not be scheduled and any existing processes will be un-scheduled. Values must between 1 and 24. If the values falls outside of that range, the process will not be scheduled and any existing processes will be un-scheduled. Default value is 12.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter an integer between 1 and 24</inlineHelpText>
+        <label>Network Integration Process Interval</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NETWORK_NAW_ASSIGN_ALL_TERR_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This flag, when true, will determine if all of the User&apos;s territories are assigned to an Account in the New Account Wizard.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This flag, when true, will determine if all of the User&apos;s territories are assigned to an Account in the New Account Wizard.</inlineHelpText>
+        <label>NETWORK_NAW_ASSIGN_ALL_TERR</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SUPPORT_NETWORK_ADDRESS_INHERITANCE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Setting for supporting Network address inheritance.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A value of 1 will enable CRM to support Network address inheritance.</inlineHelpText>
+        <label>Support Network Address Inheritance</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>THIRD_PARTY_MANAGED_ACCOUNT_TYPES_vod__c</fullName>
+        <defaultValue>&quot;THIRD_PARTY_MANAGED_ACCOUNT_TYPES;;NETWORK&quot;</defaultValue>
+        <description>This setting points to the name of the Veeva Message used to configure what Account record types and child entities should be managed by third party. Please see documentation for more details.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>All Account Record Types included in this setting are managed by third party.</inlineHelpText>
+        <label>Third Party Managed Account Types</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Network Settings</label>
+    <visibility>Protected</visibility>
+</CustomObject>

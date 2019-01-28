@@ -1,0 +1,388 @@
+<apex:component controller="VOD_Cycle_Plan_Account_Data">
+<apex:includeScript value="{!vodUrl}/js/jquery-1.4.2.min.js" />
+<apex:includeScript value="{!vodUrl}/js/highcharts.js" />
+
+<link href="/sCSS/sprites/{!$User.UIThemeDisplayed}/default/common.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" />
+<link href="/sCSS/sprites/{!$User.UIThemeDisplayed}/default/extended.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" />
+
+<style type="text/css">
+    markclass {   /*this is a marker class since salesforce generate an id for component which jquery does not know*/  } 
+    markclass2 {  }
+</style> 
+  <apex:attribute name="theAccountId" description="Attribute on the component."
+                  type="String" required="required" assignTo="{!accountId}"/>
+  <apex:attribute name="cshowActualCalls" description="Attribute on the component."
+                  type="boolean" required="required" assignTo="{!showActualCalls}"/>
+  <apex:attribute name="cshowTotalCalls" description="Attribute on the component."
+                  type="boolean" required="required" assignTo="{!showTotalCalls}"/>
+  <apex:attribute name="cshowProdDetails" description="Attribute on the component."
+                  type="boolean" required="required" assignTo="{!showProdDetails}"/>
+  <apex:attribute name="cenableRemaining" description="Attribute on the component."
+                  type="boolean" required="required" assignTo="{!enableRemainingSetting}"/>                                                        
+                  
+
+        <script type="text/javascript">
+            var hasResult = {!hasResult};
+            var cyclePlanId = '{!cyclePlanId}';
+            var showTotalCalls = {!showTotalCalls };
+            var showActualCalls = {!showActualCalls };
+            var showProdDetails ={!showProdDetails };
+            var expectedAttainment = {!expectedAttainment };
+            var enableRemaining = {!enableRemainingSetting};
+            var threshold = {!thresholdJS};
+            var colors = {!colors};
+            var colorsTm = {!colorsTm};
+            if(!hasResult){ //override other values
+                showProdDetails = false;
+            }
+            if(cyclePlanId == ''){
+                showTotalCalls = false;
+                showActualCalls = false;
+            }
+            if(showTotalCalls ){
+                var archievedTotalPercent= {!archievedTotalPercent};
+                var ttcolor = '';
+                if((expectedAttainment - archievedTotalPercent) <= threshold [0]){
+                    ttcolor = 'green';
+                }else if((expectedAttainment - archievedTotalPercent) <= threshold [1]){
+                    ttcolor = '#FFA500'; //changing to color code because IE 8 and older renders 'orange' as black
+                }else{
+                    ttcolor = 'red';
+                }
+                
+                var pctArrayTotal = [0,50,0,0,0];
+                var clrInnrTotal = ['#ffffff','#ffffff','#ffffff','black','#ffffff']
+                var clrOuterTotal = [ttcolor ,'#ffffff',ttcolor ,'black',ttcolor ]
+                        
+                var totalPct = 0;
+                if(isNaN(archievedTotalPercent)){
+                   totalPct = 0;
+                }else{
+                   totalPct = archievedTotalPercent/2;
+                }
+                
+                if(totalPct >= 25){
+                    if(totalPct >=50)
+                        totalPct = 49;
+                    pctArrayTotal = [totalPct-25,1, 49 - totalPct,50,25];
+                    var clrInnrTotal = ['#ffffff','black','#ffffff','#ffffff','#ffffff']
+                    var clrOuterTotal = [ttcolor ,'black',ttcolor ,'#ffffff',ttcolor ]
+                    
+                }else{
+                    pctArrayTotal = [25,50,totalPct,1, 24 - totalPct];
+                }
+    //alert(pctArrayTotal [0] + "," + pctArrayTotal [1]+ "," + pctArrayTotal [2]+ "," + pctArrayTotal [3]+ "," + pctArrayTotal [4]); 
+            }
+            if(showActualCalls ){
+                var archievedPercent= {!archievedPercent};
+                var mycolor = '';
+                if((expectedAttainment - archievedPercent)<= threshold [0]){
+                    mycolor = 'green';
+                }else if((expectedAttainment - archievedPercent)<= threshold [1]){
+                    mycolor = '#FFA500'; //changing to color code because IE 8 and older renders 'orange' as black
+                }else{
+                    mycolor = 'red';
+                }
+                var pctArrayMy = [0,50,0,0,0];
+                var clrInnrMy = ['#ffffff','#ffffff','#ffffff','black','#ffffff']
+                var clrOuterMy = [mycolor ,'#ffffff',mycolor ,'black',mycolor ]
+                        
+                var myPct = 0;
+                if(isNaN(archievedPercent)){
+                   myPct = 0;
+                }else{
+                   myPct = archievedPercent/2;
+                }
+                
+                if(myPct >= 25){
+                    if(myPct >=50)
+                        myPct = 49;
+                    pctArrayMy = [myPct -25,1, 49 - myPct ,50,25];
+                    var clrInnrMy = ['#ffffff','black','#ffffff','#ffffff','#ffffff']
+                    var clrOuterMy = [mycolor ,'black',mycolor ,'#ffffff',mycolor ]
+                    
+                }else{
+                    pctArrayMy = [25,50,myPct ,1, 24 - myPct ];
+                }
+    //alert(pctArrayMy [0] + "," + pctArrayMy [1]+ "," + pctArrayMy [2]+ "," + pctArrayMy [3]+ "," + pctArrayMy [4]); 
+    //heigh chart part
+            }
+            var chartMyCall;
+            var chartTotalCall;
+            $(document).ready(function() {
+               if(showActualCalls ){
+                    chartMyCall = new Highcharts.Chart({
+                        chart: {
+                            renderTo: 'mycall_cntnr',
+                            plotBackgroundColor: 'none',
+                            plotBorderWidth: 0,
+                            inverted: true,
+                            plotShadow: false
+                        },
+                        title: {
+                            text: ''
+                        },
+                        plotOptions: {
+                            pie: {
+                                borderWidth: 0,
+                                dataLabels: {
+                                    enabled: false
+                                }
+                            }
+                        },
+                        exporting:{
+                            enabled: false
+                        },
+                        tooltip :{
+                            enabled: false
+                        },
+                        plotArea: {
+                            shadow: null,
+                            borderWidth: null,
+                            backgroundColor: null
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        series: [
+                            {
+                            type: 'pie',
+                            name: 'inner',
+                            size: '55%',
+                            data: [
+                                { name: 'inr', y: pctArrayMy [0], color: clrInnrMy [0] },
+                                { name: 'inr', y: pctArrayMy [1], color: clrInnrMy [1] },
+                                { name: 'inr', y: pctArrayMy [2], color: clrInnrMy [2] },
+                                { name: 'inr', y: pctArrayMy [3], color: clrInnrMy [3] },
+                                { name: 'inr', y: pctArrayMy [4], color: clrInnrMy [4] }
+                            ]
+                        },
+                        {
+                            type: 'pie',
+                            name: 'outer',
+                            innerSize: '55%',
+                            size: '100%',
+                            data: [
+                                { name: 'otr', y: pctArrayMy [0], color: clrOuterMy [0] },
+                                { name: 'otr', y: pctArrayMy [1], color: clrOuterMy [1] },
+                                { name: 'otr', y: pctArrayMy [2], color: clrOuterMy [2] },
+                                { name: 'otr', y: pctArrayMy [3], color: clrOuterMy [3] },
+                                { name: 'otr', y: pctArrayMy [4], color: clrOuterMy [4] }
+                            ]
+                        }]
+                    });
+                    var htdiv = $("<div id=\"blockerMy\" style=\"position:absolute; bottom:0;right:0; width:200px; height:95px;background:white\"></div>");
+                    var spn = $("<span id=\"blockerSpnMy\" style=\"margin:0 20px 0 15px\"><span style=\"margin:0 54px 0 10px\">0</Span><span style=\"margin:0 50px 0 10px;\">" + '{!actualCallsFormat}' + "</span><span id=\"blockerSpnMy\">"+ '{!plannedCallsFormat}' + "</Span></span>");
+                    var divPct;
+                    var divlbl;
+                    if(enableRemaining) {
+                        divPct = "";
+                        divlbl = $("<div style=\"text-align:center; width:100%;margin-top:5px\">{!remainingLbl}: " + '{!remainingCallsFormat}' + "</div>");
+                    }
+                    else {
+                        divPct = $("<div style=\"text-align:center; width:100%;margin-top:5px\"><span style=\"color: " +mycolor + "\">" + '{!archievedPercentFormat}' + "%</span></div>");
+                        divlbl = $("<div style=\"text-align:center; width:100%;margin-top:5px\">{!myCallLbl}</div>");
+                    }
+                    $("#mycall_cntnr").append(htdiv);
+                    $("#blockerMy").append(spn);
+                    $("#blockerMy").append(divPct );
+                    $("#blockerMy").append(divlbl );
+                    $("#mycall_cntnr :first").css('z-index', 1); //fix ie 6/7 z index issue
+                    $("#blockerMy").css('z-index', 2);
+                    if(!showTotalCalls ){
+                        $("#mycall_cntnr").css({'float' : ''}); 
+                        $("#total_cntnrtl").remove();
+                    }
+                }
+                if(showTotalCalls ){
+                    chartTotalCall = new Highcharts.Chart({
+                        chart: {
+                            renderTo: 'total_cntnrtl',
+                            plotBackgroundColor: 'none',
+                            plotBorderWidth: 0,
+                            inverted: true,
+                            plotShadow: false
+                        },
+                        title: {
+                            text: ''
+                        },
+                        plotOptions: {
+                            pie: {
+                                borderWidth: 0,
+                                dataLabels: {
+                                    enabled: false
+                                }
+                            }
+                        },
+                        exporting:{
+                            enabled: false
+                        },
+                        tooltip :{
+                            enabled: false
+                        },
+                        plotArea: {
+                            shadow: null,
+                            borderWidth: null,
+                            backgroundColor: null
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        series: [
+                            {
+                            type: 'pie',
+                            name: 'inner',
+                            size: '55%',
+                            data: [
+                                { name: 'inr', y: pctArrayTotal [0], color: clrInnrTotal [0] },
+                                { name: 'inr', y: pctArrayTotal [1], color: clrInnrTotal [1] },
+                                { name: 'inr', y: pctArrayTotal [2], color: clrInnrTotal [2] },
+                                { name: 'inr', y: pctArrayTotal [3], color: clrInnrTotal [3] },
+                                { name: 'inr', y: pctArrayTotal [4], color: clrInnrTotal [4] }
+                            ]
+                        },
+                        {
+                            type: 'pie',
+                            name: 'outer',
+                            innerSize: '55%',
+                            size: '100%',
+                            data: [
+                                { name: 'otr', y: pctArrayTotal [0], color: clrOuterTotal [0] },
+                                { name: 'otr', y: pctArrayTotal [1], color: clrOuterTotal [1] },
+                                { name: 'otr', y: pctArrayTotal [2], color: clrOuterTotal [2] },
+                                { name: 'otr', y: pctArrayTotal [3], color: clrOuterTotal [3] },
+                                { name: 'otr', y: pctArrayTotal [4], color: clrOuterTotal [4] }
+                            ]
+                        }]
+                    });
+                    if(!showActualCalls ){
+                        $("#mycall_cntnr").remove(); 
+                        $("#total_cntnrtl").css({'float' : ''});
+                    }                    
+                    var htdiv = $("<div id=\"blockerTotal\" style=\"position:absolute; bottom:0;right:0; width:200px; height:95px;background:white\"></div>");
+                    var spntl = $("<span id=\"blockerTtlMy\" style=\"margin:0 20px 0 15px\"><span style=\"margin:0 54px 0 10px\">0</Span><span style=\"margin:0 50px 0 10px;\">" + '{!actualTotalCallsFormat}'
+                              + "</span><span id=\"blockerSpnMy\">"+ '{!plannedTotalCallsFormat}' + "</Span></span>");
+                    var divPct;
+                    var divlbl;
+                    if(enableRemaining) {
+                        divPct = "";
+                        divlbl = $("<div style=\"text-align:center; width:100%;margin-top:5px\">{!remainingLbl}: " + '{!remainingTotalCallsFormat}' + "</div>");
+                    } else {
+                        divPct = $("<div style=\"text-align:center; width:100%;margin-top:5px\"><span style=\"color: " +ttcolor + "\">" + '{!archievedTotalPercentFormat}' + "%</span></div>");
+                        divlbl = $("<div style=\"text-align:center; width:100%;margin-top:5px\">{!totalCallLbl}</div>");
+                    }
+
+                    $("#total_cntnrtl").append(htdiv);
+                    $("#blockerTotal").append(spntl);
+                    $("#blockerTotal").append(divPct);
+                    $("#blockerTotal").append(divlbl );
+                    $("#total_cntnrtl :first").css('z-index', 1); //fix ie 6/7 z index issue
+                    $("#blockerTotal").css('z-index', 2); 
+                }
+                if(!showActualCalls && !showTotalCalls){
+                 $('#call_charts_cntr').remove();
+                 $('#detail_prod_table_area').css('height','260px');
+                }
+                if(showProdDetails){
+                    var rows =$(".markclass").find('tbody > tr').get();
+                    if(rows && rows.length > 0){
+                        for( i = 0 ; i < rows.length; i ++){
+                            rows[i].getElementsByTagName("td")[3].style.color=colors[i];
+                        }
+                    }
+                    rows =$(".markclass2").find('tbody > tr').get();
+                    if(rows && rows.length > 0){
+                        for( i = 0 ; i < rows.length; i ++){
+                            rows[i].getElementsByTagName("td")[3].style.color=colors[i];
+                        }
+                    }                    
+                }
+         if(!hasResult && cyclePlanId == ''){
+            $('#headerLine').css("font-size","22px");
+         }
+         var viewportheight ;       
+         if (typeof window.innerWidth != 'undefined'){
+              viewportheight = window.innerHeight
+         }
+         
+        // IE6 in standards compliant mode (i.e. with a valid doctype as the first line in the document)
+        
+         else if (typeof document.documentElement != 'undefined'
+             && typeof document.documentElement.clientWidth !=
+             'undefined' && document.documentElement.clientWidth != 0){
+               viewportheight = document.documentElement.clientHeight
+         }
+                        
+          var dh = ((viewportheight  - 260 >0)?(viewportheight - 260):20);
+//          alert("viewportheight " + viewportheight + " dh: " + dh);
+          if(showTotalCalls == true || showActualCalls == true){
+            $('#detail_prod_table_area').css('height',dh+'px');
+          }
+        });
+            
+        </script>
+        
+    <div style="margin-bottom:10px"><a href='/{!cyclePlanId}' target="_parent">{!planName}</a>
+          <span id="headerLine" style="margin-left:20px;width:200px">{!headerLine }</span>
+    </div>
+
+    <div id="call_charts_cntr">
+        <div id="mycall_cntnr" style="position:relative;width: 200px; height: 200px; float:left"></div>
+        <div id="total_cntnrtl" style="position:relative;width: 200px; height: 200px; float:right; margin-right:300px"></div>
+    </div>
+
+    <apex:pageBlock rendered="{!showProdDetails && cyclePlanDetail.size > 0 && showTotalCalls}">
+      <div id="detail_prod_table_area" style="overflow-y:auto">  
+        <table cellspacing="0" cellpadding="0" border="0">
+        <tr><td></td><td align="center">{!myCallLbl}</td><td align="center">{!totalCallLbl}</td></tr>
+        <tr>
+        <td>
+        <apex:pageBlockTable value="{!cyclePlanDetail}" var="o" >
+            <apex:column value="{!o.product_vod__r.name}" headerValue="{!prodLbl}" style="white-space:nowrap;"/>
+        </apex:pageBlockTable>
+        </td>
+        <td>
+        <apex:pageBlockTable value="{!cyclePlanDetail}" var="o" styleClass="markclass">
+            <apex:column value="{!o.Actual_Details_vod__c}" headerValue="{!actualLbl}"/>
+            <apex:column value="{!o.Planned_Details_vod__c}" headerValue="{!plannedLbl}"/>
+            <apex:column value="{!o.Scheduled_Details_vod__c}" headerValue="{!scheduledLbl}"/>
+            <apex:column value="{!o.Attainment_vod__c}" headerValue="{!achievedLbl}" />
+        </apex:pageBlockTable>
+        </td>
+        <td>
+        <apex:pageBlockTable value="{!cyclePlanDetail}" var="o" styleClass="markclass2">
+            <apex:column value="{!o.Total_Actual_Details_vod__c}" headerValue="{!tmActualLbl}"/>
+            <apex:column value="{!o.Total_Planned_Details_vod__c}" headerValue="{!tmPlannedLbl}"/>
+            <apex:column value="{!o.Total_Scheduled_Details_vod__c}" headerValue="{!tmScheduledLbl}"/>
+            <apex:column value="{!o.Total_Attainment_vod__c}" headerValue="{!tmAchievedLbl}" />            
+        </apex:pageBlockTable>
+        </td>
+        </tr>
+        </table>
+      </div>
+    </apex:pageBlock>
+
+    <apex:pageBlock rendered="{!showProdDetails && cyclePlanDetail.size > 0 && NOT(showTotalCalls)}">
+      <div id="detail_prod_table_area" style="overflow-y:auto">  
+        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr><td></td><td align="center">{!myCallLbl}</td></tr>
+        <tr>
+        <td>
+        <apex:pageBlockTable value="{!cyclePlanDetail}" var="o" >
+            <apex:column value="{!o.product_vod__r.name}" headerValue="{!prodLbl}" style="white-space:nowrap;"/>
+        </apex:pageBlockTable>
+        </td>
+        <td>
+        <apex:pageBlockTable value="{!cyclePlanDetail}" var="o" styleClass="markclass">
+            <apex:column value="{!o.Actual_Details_vod__c}" headerValue="{!actualLbl}"/>
+            <apex:column value="{!o.Planned_Details_vod__c}" headerValue="{!plannedLbl}"/>
+            <apex:column value="{!o.Scheduled_Details_vod__c}" headerValue="{!scheduledLbl}"/>
+            <apex:column value="{!o.Attainment_vod__c}" headerValue="{!achievedLbl}" />
+        </apex:pageBlockTable>
+        </td>
+        </tr>
+        </table>
+      </div>
+    </apex:pageBlock>
+    
+</apex:component>

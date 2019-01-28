@@ -1,0 +1,8 @@
+<apex:page standardController="Survey_Target_vod__c" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_Scroll_1800_vod}"/>
+<script type="text/javascript">
+    var queryparams = "&id=" + "{!Survey_Target_vod__c.id}";
+    queryparams += '&mode=v';
+    com.vod309.redirect.redirect("surveytarget", queryparams);
+</script>
+</apex:page>

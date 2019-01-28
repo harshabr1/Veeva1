@@ -1,0 +1,53 @@
+<!-- 
+- 
+- Confidentiality Information: 
+- 
+- This module is the confidential and proprietary information of 
+- Verticals onDemand, Inc.; it is not to be copied, reproduced, or transmitted 
+- in any form, by any means, in whole or in part, nor is it to be used 
+- for any purpose other than that for which it is expressly provided 
+- without the written permission of Verticals onDemand. 
+- 
+- Copyright (c) 2009 Verticals onDemand, Inc. All Rights Reserved. 
+- 
+--> 
+<apex:page controller="VOD_PackageLabelController" title="{!IF(isTransfer,$Label.PackageLabel_TransferTitle_vod,$Label.PackageLabel_ReturnTitle_vod)}" tabStyle="Sample_Transaction_vod__c" showHeader="false" sidebar="false" standardStylesheets="true">
+<body class="Custom41Tab">
+<apex:includeScript value="{!JSENCODE(include)}" />
+
+<apex:sectionHeader title="" subtitle="{!IF(isTransfer,$Label.PackageLabel_TransferTitle_vod,$Label.PackageLabel_ReturnTitle_vod)}"/>
+<apex:form >
+
+<apex:messages ></apex:messages>
+
+<apex:pageBlock title="{!IF(isTransfer,$Label.PackageLabel_TransferTitle_vod,$Label.PackageLabel_ReturnTitle_vod)}">
+    <apex:pageBlockButtons location="top" >
+        <apex:commandButton action="{!create}" value="{!$Label.PackageLabel_CreateButton_vod}" id="Create_Package_Label_Btn"/>
+    </apex:pageBlockButtons>
+    
+    <apex:outputPanel id="samTranList">
+    <apex:pageBlockTable value="{!history}" var="trxn" id="vod_transactions">
+        <apex:column >
+            <apex:facet name="header"><apex:inputCheckbox onclick="checkAll(event)" /></apex:facet>
+            <apex:inputCheckbox value="{!trxn.selected}" />
+        </apex:column>
+                
+        <apex:column headervalue="{!$ObjectType.Sample_Transaction_vod__c.fields.Name.label}" value="{!trxn.samTran.Name}"></apex:column>
+        <apex:column rendered="{!isTransfer}" headervalue="{!$ObjectType.Sample_Transaction_vod__c.fields.Transferred_Date_vod__c.label}" value="{!trxn.samTran.Transferred_Date_vod__c}"></apex:column>        
+        <apex:column rendered="{!isReturn}" headervalue="{!$ObjectType.Sample_Transaction_vod__c.fields.Adjusted_Date_vod__c.label}" value="{!trxn.samTran.Adjusted_Date_vod__c}"></apex:column>
+        <apex:column headervalue="{!$ObjectType.Sample_Transaction_vod__c.fields.Submitted_Date_vod__c.label}" value="{!trxn.samTran.Submitted_Date_vod__c}"></apex:column>        
+        <apex:column headervalue="{!$ObjectType.Sample_Transaction_vod__c.fields.Sample_vod__c.label}" value="{!trxn.samTran.Sample_vod__c}"></apex:column>        
+        <apex:column headervalue="{!$ObjectType.Sample_Transaction_vod__c.fields.Lot_vod__c.label}" value="{!trxn.samTran.Lot_vod__r.Name}"></apex:column>
+        <apex:column headervalue="{!$ObjectType.Sample_Transaction_vod__c.fields.Quantity_vod__c.label}" value="{!trxn.samTran.Quantity_vod__c}"></apex:column>
+        <apex:column rendered="{!isTransfer}" headervalue="{!$ObjectType.Sample_Transaction_vod__c.fields.Transfer_To_vod__c.label}" value="{!trxn.samTran.Transfer_To_vod__c}"></apex:column>        
+        <apex:column rendered="{!isReturn}" headervalue="{!$ObjectType.Sample_Transaction_vod__c.fields.Return_To_vod__c.label}" value="{!trxn.samTran.Return_To_vod__c}"></apex:column>        
+
+    </apex:pageBlockTable>
+    </apex:outputPanel>
+    
+    <span style="visibility:{!IF($CurrentPage.parameters.show='all','hidden','visible')}"><center>Show me&nbsp;<apex:outputLink value="{!$CurrentPage.URL}&show=all"><apex:image title="Show More" value="/img/show_more_arrow.gif" width="17" height="15"/>more</apex:outputLink>&nbsp;records</center></span>
+
+</apex:pageBlock>
+</apex:form>
+</body>
+</apex:page>

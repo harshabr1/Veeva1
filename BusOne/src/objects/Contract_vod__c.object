@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>Contract_View_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>Contract_View_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Contract header to establish an agreement between the company and one or more parties (accounts).</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Specific_Template_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flags a Contract template as associated with a particular account(s).</description>
+        <externalId>false</externalId>
+        <label>Account Specific Template</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Agreement_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flags the Contract record as an Agreement. Records flagged as Agreements do not appear in Order Management and Inventory Monitoring.</description>
+        <externalId>false</externalId>
+        <label>Agreement</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Batch_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag for contract target batch job.</description>
+        <externalId>false</externalId>
+        <label>Enable Batch</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Call_Objective_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Link to the Call Objective from which the contract record was created</description>
+        <externalId>false</externalId>
+        <label>Call Objective</label>
+        <referenceTo>Call_Objective_vod__c</referenceTo>
+        <relationshipLabel>Contracts</relationshipLabel>
+        <relationshipName>Contracts_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Default_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag to make this particuler contract the default one among other valid contracts.</description>
+        <externalId>false</externalId>
+        <label>Default</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Stores and shows the statement describing the contract.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Device_Type_vod__c</fullName>
+        <description>Used to capture the device used to generate the record.</description>
+        <externalId>false</externalId>
+        <label>Device Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>iPad_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WinModern_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tablet_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Online_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Data_Load_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Disclaimer_vod__c</fullName>
+        <description>Displays the disclaimer value from the Veeva Message DISCLAIMER in the CONTRACTS category.</description>
+        <externalId>false</externalId>
+        <label>Disclaimer</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EM_Catalog_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Print Template</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>EM_Catalog_vod__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Contract_vod</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>EM_Catalog_vod__c</referenceTo>
+        <relationshipLabel>Contract Data Templates</relationshipLabel>
+        <relationshipName>Contract_Data_Templates_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EM_Tier_vod__c</fullName>
+        <description>Used to find Speakers with matching Tier information for generating Speaker Contracts.</description>
+        <externalId>false</externalId>
+        <label>Tier</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EM_Total_Payment_vod__c</fullName>
+        <description>Indicates the final payment value to be applied at the contract level. This field is only used by Veeva Event Management.</description>
+        <externalId>false</externalId>
+        <label>Total Payment</label>
+        <summarizedField>Contract_Line_vod__c.EM_Total_Payment_vod__c</summarizedField>
+        <summaryForeignKey>Contract_Line_vod__c.Contract_vod__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>End_Date_vod__c</fullName>
+        <description>End date of the contract.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expired_vod__c</fullName>
+        <description>If current date &gt; End_Date_vod__c, the contract is considered expired. Used to facilitate reporting.</description>
+        <externalId>false</externalId>
+        <formula>End_Date_vod__c &lt; TODAY()</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expired?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID is used for data loading only.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Inventory_Monitoring_Type_vod__c</fullName>
+        <description>Inventory Monitoring record type that the contract is valid for.</description>
+        <externalId>false</externalId>
+        <label>Inventory Monitoring Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Inventory Monitoring</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Language_vod__c</fullName>
+        <description>Language of the Contract</description>
+        <externalId>false</externalId>
+        <label>Language</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>English</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Last_Batch_Datetime_vod__c</fullName>
+        <description>Last date and time this contract was updated by the batch job.</description>
+        <externalId>false</externalId>
+        <label>Last Batch Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If locked, cannot be edited.</description>
+        <externalId>false</externalId>
+        <label>Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_Created_Datetime_vod__c</fullName>
+        <description>Date and time the Contract was created on the mobile device.</description>
+        <externalId>false</externalId>
+        <label>Mobile Created Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_Last_Modified_Datetime_vod__c</fullName>
+        <description>Date and time the Contract was last modified on the mobile device.</description>
+        <externalId>false</externalId>
+        <label>Mobile Last Modified Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This allows a non-Admin User to make changes to a Submitted Contract or Contract Lines without requiring the User to unlock the Order. This is only intended for integration and/or custom pages/coding i.e. not through our Contract User Interface</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Product_Bound_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If enabled, only the products associated to this contract via pricing rules will be selectable when creating a new order related to this contract. For inventory monitoring, only products with corresponding Contract Lines can be selected. If disabled, other products will be selectable as well.</description>
+        <externalId>false</externalId>
+        <label>Product Bound</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date_vod__c</fullName>
+        <description>Start date of the contract.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Stores and shows the status of the contract.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Saved_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Signed_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Draft_vod</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>In_Approval_Process_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Activated_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Template_Name_vod__c</fullName>
+        <description>Name of the Template.</description>
+        <externalId>false</externalId>
+        <label>Template Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Template_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flags the Contract record as a Template. Records flagged as Templates do not appear in Order Management and Inventory Monitoring.</description>
+        <externalId>false</externalId>
+        <label>Template</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Wholesaler_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to associate a particular wholesaler to a contract.</description>
+        <externalId>false</externalId>
+        <label>Wholesaler</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Value does not exist or does not match filter criteria.</errorMessage>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Wholesaler_vod</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Contracts</relationshipLabel>
+        <relationshipName>Contracts_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Contract</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Contract Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Contracts</pluralLabel>
+    <recordTypes>
+        <fullName>EM_Speaker_Contract_vod</fullName>
+        <active>true</active>
+        <description>Used to define a contract for speaker services.</description>
+        <label>EM_Speaker_Contract_vod</label>
+        <picklistValues>
+            <picklist>Device_Type_vod__c</picklist>
+            <values>
+                <fullName>Data_Load_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WinModern_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Inventory_Monitoring_Type_vod__c</picklist>
+            <values>
+                <fullName>Inventory Monitoring</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Activated_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>In_Approval_Process_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signed_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Listing_vod</fullName>
+        <active>true</active>
+        <description>Used for Contracts that will be associated with Inventory Monitoring.</description>
+        <label>Listing_vod</label>
+        <picklistValues>
+            <picklist>Device_Type_vod__c</picklist>
+            <values>
+                <fullName>Data_Load_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WinModern_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Activated_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>In_Approval_Process_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sales_vod</fullName>
+        <active>true</active>
+        <description>Used for Contracts that will be associated with Orders.</description>
+        <label>Sales_vod</label>
+        <picklistValues>
+            <picklist>Device_Type_vod__c</picklist>
+            <values>
+                <fullName>Data_Load_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WinModern_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Activated_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>In_Approval_Process_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>End_Date_After_Start_Date</fullName>
+        <active>true</active>
+        <description>End Date must be later than Start Date.</description>
+        <errorConditionFormula>End_Date_vod__c &lt; Start_Date_vod__c</errorConditionFormula>
+        <errorMessage>The End Date cannot be before the Start Date.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Activate_vod</fullName>
+        <availability>online</availability>
+        <description>Clicking this button changes a contract&apos;s status to Activated_vod.  The Contract and its related Contract Line items will also be locked.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Activate</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/28.0/connection.js&quot;)}
+
+var record = sforce.connection.query(&quot;SELECT Id FROM Contract_vod__c WHERE Id = &apos;{!Contract_vod__c.Id}&apos;&quot;).getArray(&quot;records&quot;)[0];
+record.Status_vod__c = &apos;Activated_vod&apos;;
+
+var result = sforce.connection.upsert(&quot;Id&quot;, [record]);
+
+if(result[0].success === &quot;false&quot;) {
+    var error = result[0].errors;
+    alert(error.message);
+} else {
+    window.location.reload();
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Unlock_vod</fullName>
+        <availability>online</availability>
+        <description>Clicking this button sets the Lock_vod value to FALSE on both the Contract and related Contract Lines, and sets Status_vod to Draft_vod.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Unlock</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/28.0/connection.js&quot;)}
+
+var record = sforce.connection.query(&quot;SELECT Id FROM Contract_vod__c WHERE Id = &apos;{!Contract_vod__c.Id}&apos;&quot;).getArray(&quot;records&quot;)[0];
+record.Lock_vod__c = &apos;false&apos;;
+
+var result = sforce.connection.upsert(&quot;Id&quot;, [record]);
+
+if(result[0].success === &quot;false&quot;) {
+    var error = result[0].errors;
+    alert(error.message);
+} else {
+    window.location.reload();
+}</url>
+    </webLinks>
+</CustomObject>

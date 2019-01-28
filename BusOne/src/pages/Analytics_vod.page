@@ -1,0 +1,64 @@
+<apex:page >
+<apex:composition template="{!$Page.VODRedirect_vod}"/>
+
+<!--
+    -
+    -               Confidentiality Information:
+    -
+    - This module is the confidential and proprietary information of
+    - Verticals onDemand, Inc.; it is not to be copied, reproduced, or transmitted
+    - in any form, by any means, in whole or in part, nor is it to be used
+    - for any purpose other than that for which it is expressly provided
+    - without the written permission of Verticals onDemand.
+    -
+    - Copyright (c) 2009 Verticals onDemand, Inc.  All Rights Reserved.
+    -
+-->
+
+<script type="text/javascript">
+    function getQueryStringValue(url, name) {
+        var query = url.search.substring(1);
+        var pairs = query.split("&");
+
+        for(var i = 0; i < pairs.length; i++) {
+            var pos = pairs[i].indexOf('=');
+            if (pos == -1) continue;
+            var argname = pairs[i].substring(0,pos);
+
+            var value = pairs[i].substring(pos+1);
+
+            if (argname == name) return unescape(value);
+        }
+        return "";
+    }
+
+    <!-- Put your queryparms here.  Format is &<tag>=value -->
+
+    var queryParams = "&today={!TODAY()}";
+
+    var availableParams = new Array();
+    availableParams.push("analytic");
+    availableParams.push("scale");
+    availableParams.push("startDate");
+    availableParams.push("endDate");
+    availableParams.push("range");
+    availableParams.push("dataType");
+    availableParams.push("callType");
+    availableParams.push("accountType");
+    availableParams.push("segment");
+    availableParams.push("market");
+    availableParams.push("target");
+    availableParams.push("accountId");
+    availableParams.push("displayCompetitors");
+    availableParams.push("countAttendees");
+    availableParams.push("displayEvents");
+
+    for (var i=0;i<availableParams.length;i++) {
+        var value = getQueryStringValue(parent.location, availableParams[i]);
+        if (value != "")
+            queryParams += "&"+availableParams[i]+"="+value;
+    }
+
+    com.vod309.redirect.redirect("analytics", queryParams);
+</script>
+</apex:page>

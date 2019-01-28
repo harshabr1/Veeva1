@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores information on key suggestion attributes</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to define which product groups are associated with a Suggestion. Lookup to the Product Group on Product_vod.</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Suggestion Tags</relationshipLabel>
+        <relationshipName>Suggestion_Tags_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Driver_vod__c</fullName>
+        <description>Used to define which data drivers are associated with a suggestion</description>
+        <externalId>false</externalId>
+        <label>Driver</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_Fragment_order_vod__c</fullName>
+        <description>Specifies order in which attachments are attached to email template</description>
+        <externalId>false</externalId>
+        <label>Email Fragment Order</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_Fragment_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to capture fragment ids associated to template in suggestions</description>
+        <externalId>false</externalId>
+        <label>Email Fragment</label>
+        <referenceTo>Approved_Document_vod__c</referenceTo>
+        <relationshipLabel>Suggestion Tags</relationshipLabel>
+        <relationshipName>Suggestion_Tags_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <description>External ID</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to define which products are associated with a Suggestion. Lookup to the Product/s in the Product Catalog.(Detail, Detail Topic, Detail Group)</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Suggestion Tags (Product)</relationshipLabel>
+        <relationshipName>Suggestion_Tags1_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Record_Type_Name_vod__c</fullName>
+        <description>Designates what record type suggestion tag uses</description>
+        <externalId>false</externalId>
+        <label>Record Type Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Suggestion_vod__c</fullName>
+        <description>Used to associate tag attributes to suggestion</description>
+        <externalId>false</externalId>
+        <label>Suggestion</label>
+        <referenceTo>Suggestion_vod__c</referenceTo>
+        <relationshipLabel>Suggestion Tags</relationshipLabel>
+        <relationshipName>Suggestion_Tags_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Suggestion Tag</label>
+    <nameField>
+        <displayFormat>SI-{000000000}</displayFormat>
+        <label>Suggestion Tag Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Suggestion Tags</pluralLabel>
+    <recordTypes>
+        <fullName>Driver_vod</fullName>
+        <active>true</active>
+        <description>Record type to support data driven Suggestions</description>
+        <label>Driver_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Email_Fragment_vod</fullName>
+        <active>true</active>
+        <description>Record type to support email fragment assignments</description>
+        <label>Email_Fragment_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Product_vod</fullName>
+        <active>true</active>
+        <description>Record type to support product driven suggestions</description>
+        <label>Product_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

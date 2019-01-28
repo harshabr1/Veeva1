@@ -1,0 +1,3 @@
+<apex:page standardController="Alert_Profile_vod__c" >
+    <c:VOD_EMBED veevaModule="alert" veevaPage="alert-profile-view" objectType="Alert_Profile_vod__c" />
+</apex:page>

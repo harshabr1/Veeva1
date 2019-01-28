@@ -1,0 +1,29 @@
+<apex:component controller="VODRedirectController" >
+    <apex:attribute name="urlPath" required="true" type="String" description="The URL path following <mc url>/app/." />
+    <apex:attribute name="paramString" required="false" type="String" description="Additional parameters to add to the url." />
+    <apex:attribute name="loadingElementId" required="false" type="String" description="ID of an element which should be hidden when the iframe is done loading." />
+
+
+    <apex:iframe scrolling="false" height="2000px" width="100%" src="javascript:false" frameborder="false" id="mc_iframe"/>
+    
+    <c:Veeva_Resize_Component_vod />
+    <c:Veeva_Loading_Component_vod />
+
+    
+    <script>
+        var docBody = document.body || document.documentElement;
+        var vodiframe = document.getElementById("mc_iframe");
+        com.vod309.loading.init(vodiframe, "{!loadingElementId}");
+        
+        var url = "{!McUrl}/app/{!urlPath}";
+        url += "?ses=" + "{!$Api.Session_ID}";
+        url += "&url=" + "{!URLENCODE($Api.Partner_Server_URL_260 )}";
+        url += "&tab=" + "{!URLENCODE($Request.sfdc.tabName)}";
+        url += "&motif=" + encodeURIComponent(docBody.className);
+        url += "&retURL=" + decodeURIComponent("{!URLENCODE($Request.retURL)}");
+        url += "&{!paramString}";
+        vodiframe.src = url;
+        com.vod309.resize.init(vodiframe);
+    </script>
+    
+</apex:component>

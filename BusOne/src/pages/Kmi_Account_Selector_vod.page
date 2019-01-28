@@ -1,0 +1,5 @@
+<apex:page standardController="Medical_Event_vod__c" extensions="Medical_Event_Extension_vod" tabStyle="Medical_Insight_vod__c">
+    <c:VOD_EMBED veevaModule="kmi" objectType="Medical_Insight_vod__c"
+     veevaPage="{!IF(skipAcctSelector,'medical-insight-edit','select-account')}"
+     queryParams="eventId={!Medical_Event_vod__c.Id}"/>
+</apex:page>

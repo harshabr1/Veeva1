@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object used to store saved sets of filters, display configurations, and sort settings.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Display_Configuration_vod__c</fullName>
+        <description>Field to hold the display configuration for the Bookmark. Format of the value is: CONTEXT::ATTRIBUTE::DETAIL_ATTRIBUTE</description>
+        <externalId>false</externalId>
+        <label>Display Configuration</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Filter_Criteria_vod__c</fullName>
+        <description>Field to hold the filter definitions for the Bookmark. Format is OBJECT_NAME.FIELD_NAME::OPERATOR::VALUE;;OBJECT_NAME.FIELD_NAME::OPERATOR::VALUE</description>
+        <externalId>false</externalId>
+        <label>Field Criteria</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Sort_Definition_vod__c</fullName>
+        <description>Field to hold the column being sorted by in the Bookmark. Schedule views can only be sorted on one field. Format is one ObjectName.FieldName follwed by sort order, ASC or DESC. Example, &quot;Account.Formatted_Name_vod__c::ASC&quot;</description>
+        <externalId>false</externalId>
+        <label>Sort Definition</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Bookmark</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Bookmarks</pluralLabel>
+    <recordTypes>
+        <fullName>Account_Schedule_vod</fullName>
+        <active>true</active>
+        <description>Record type indicating the filter settings are related to Account Views and Lists</description>
+        <label>Account_Schedule_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Cycle_Plan_Schedule_vod</fullName>
+        <active>true</active>
+        <description>Record type indicating the filter settings are related to Cycle Plan</description>
+        <label>Cycle_Plan_Schedule_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sphere_Of_Influence_vod</fullName>
+        <active>true</active>
+        <description>Record type indicating the filter settings are related to the Sphere of Influence</description>
+        <label>Sphere_Of_Influence_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

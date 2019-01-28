@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is a system object that holds the definition of logic rules and drives their functionality on the Veeva offline platforms.
+
+Do not modify, load or delete data in this object.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Devices_vod__c</fullName>
+        <description>Indicates which devices currently utilize the logic defined for the object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates which devices currently utilize the logic defined for the object.</inlineHelpText>
+        <label>Devices</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Validation_Rules_vod__c</fullName>
+        <description>Number of Validation Rules for the object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of Validation Rules for the object.</inlineHelpText>
+        <label>Number Validation Rules</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Predicate_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Predicate</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status of the overall object deployment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of the overall object deployment.</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Enabled_vod</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Disabled_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id for the record. Format is [Object Name]</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External Id for the record. Format is [Object Name]</inlineHelpText>
+        <label>VExternal Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Rule Object Header</label>
+    <nameField>
+        <label>Rule Object Header Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Rule Object Headers</pluralLabel>
+    <recordTypes>
+        <fullName>SFDC_Lookup_Filter_Header_vod</fullName>
+        <active>true</active>
+        <description>System record type. Do not modify.</description>
+        <label>SFDC_Lookup_Filter_Header_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Disabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enabled_vod</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>SFDC_Rule_Object_Header_vod</fullName>
+        <active>true</active>
+        <description>System record type. Do not modify.</description>
+        <label>SFDC_Rule_Object_Header_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Disabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enabled_vod</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

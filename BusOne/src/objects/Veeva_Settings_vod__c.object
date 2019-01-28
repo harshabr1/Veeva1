@@ -1,0 +1,3501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ACCOUNT_HIERARCHY_PAGE_vod__c</fullName>
+        <description>A comma delimited list of settings for special configuration of the Account Hierarchy Page. i.e.: a value of 1 turns on the Account Plans Overaly</description>
+        <externalId>false</externalId>
+        <label>ACCOUNT_HIERARCHY_PAGE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACCOUNT_LIST_COLS_vod__c</fullName>
+        <defaultValue>&quot;ACCOUNT_LIST_COLS;;TABLET&quot;</defaultValue>
+        <description>List of columns to display for an Account List in the VMobile Tablet application. Enter column names in the following format: Object_Name.API_Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of columns to display for an Account List in the VMobile Tablet application.   Enter column names in the following format: Object_Name.API_Name.</inlineHelpText>
+        <label>ACCOUNT_LIST_COLS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACCOUNT_MOBILE_SOQL_BB_vod__c</fullName>
+        <defaultValue>&quot;ACCOUNT_MOBILE_SOQL;;Blackberry&quot;</defaultValue>
+        <description>String used by application. ACCOUNT_MOBILE_SOQL_BB is a comma separated list containing the fields on account to include in the VOD BlackBerry mobile application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A comma separated list containing the Account fields to include in the VMobile BlackBerry application.</inlineHelpText>
+        <label>ACCOUNT_MOBILE_SOQL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACCOUNT_MOBILE_SOQL_vod__c</fullName>
+        <defaultValue>&quot;ACCOUNT_MOBILE_SOQL;;MOBILE_SOQL&quot;</defaultValue>
+        <description>String used by application. ACCOUNT_MOBILE_SOQL is a comma separated list containing the fields on account to include in the VOD mobile application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A comma separated list containing the Account fields to include in the VMobile applications.</inlineHelpText>
+        <label>ACCOUNT_MOBILE_SOQL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACCOUNT_RECORD_TYPE_ICON_MAP_vod__c</fullName>
+        <defaultValue>&quot;ACCOUNT_RECORD_TYPE_ICON_MAP;;Common&quot;</defaultValue>
+        <description>The value of this setting is a reference to a Veeva message that contains a delimited string of the format: 
+&lt;ICON_NAME&gt;:&lt;CUSTOM_RECORD_TYPE&gt;,&lt;CUSTOM_RECORD_TYPE&gt;;&lt;ICON_NAME&gt;:&lt;CUSTOM_RECORD_TYPE&gt;,&lt;CUSTOM_RECORD_TYPE&gt; 
+
+ICON_NAME is one of the standard icons we deliver (see Admin Guide) and CUSTOM_RECORD_TYPE is the name of the custom record type that is mapped to the icon. Multiple custom record types can be tied to the same icon by placing them in a comma delimited list. 
+
+Multiple icon mappings are separated by a semicolon. 
+
+Example: 
+
+Professional_vod:MyCustom1,MyCustom2;Hospital_vod:MyCustom3</description>
+        <externalId>false</externalId>
+        <label>ACCOUNT_RECORD_TYPE_ICON_MAP</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACCT_PREVIEW_DURING_CREATION_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Determines if user can preview full account profile during new account creation process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This flag determines whether or not to display account preview page in new account creation process. Value 1 turns it ON.</inlineHelpText>
+        <label>Account Preview during Creation</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACTIVITY_SYNC_PROCESS_LIFE_TIME_vod__c</fullName>
+        <defaultValue>3</defaultValue>
+        <description>Controls the number of days before the activity sync process to be stop.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Controls the number of days before the activity sync process to be stop.</inlineHelpText>
+        <label>ACTIVITY_SYNC_PROCESS_LIFE_TIME</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ADVANCED_ATTENDEE_MANAGEMENT_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Advanced Attendee Management</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ADVANCED_SEARCH_VOD__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Turns on the Advanced Search capability.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this to enable Advanced Search.</inlineHelpText>
+        <label>Advanced Search</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AFFILIATION_VOD_MOBILE_SOQL_vod__c</fullName>
+        <defaultValue>&quot;AFFILIATION_VOD__C_MOBILE_SOQL;;Blackberry&quot;</defaultValue>
+        <description>String used by application. AFFILIATION_VOD__C_MOBILE_SOQL is a comma separated list containing the fields on Affiliation_vod__c to include in the VOD mobile BlackBerry application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A comma separated list containing the Affiliation fields to include in the VMobile BlackBerry application.</inlineHelpText>
+        <label>AFFILIATION_VOD__C_MOBILE_SOQL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AFFILIATION_VOD_WHERE_CLAUSE_vod__c</fullName>
+        <defaultValue>&quot;AFFILIATION_VOD__C_WHERE_CLAUSE;;Blackberry&quot;</defaultValue>
+        <description>BlackBerry Affiliation Where Clause</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where clause used to filter the Affiliation records downloaded to the VMobile BlackBerry application.</inlineHelpText>
+        <label>AFFILIATION_VOD__C_WHERE_CLAUSE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ALLOWED_CALL_RECORD_TYPES_vod__c</fullName>
+        <defaultValue>&quot;ALLOWED_CALL_RECORD_TYPES;;Common&quot;</defaultValue>
+        <description>References a Veeva message that contains the configuration for allowing only certain call record types for each account record type. The syntax for the Veeva message is: &lt;ACCOUNT_RECORD_TYPE1&gt;,&lt;CALL_RECORD_TYPE1&gt;,&lt;CALL_RECORD_TYPE2&gt;,...;;
+            If there is no call record type provided, the call functionality will be removed for the account record type.</description>
+        <externalId>false</externalId>
+        <label>Allowed Call RecordTypes</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ANALYTIC_ACCOUNT_CAP_vod__c</fullName>
+        <defaultValue>50000</defaultValue>
+        <description>Veeva Internal Use Only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The threshold value for the number of accounts for which VInsights Sales Data is synchronized to the VMobile Tablet application.</inlineHelpText>
+        <label>ANALYTIC_ACCOUNT_CAP</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ATL_LAST_UPDATE_TRACKING_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag that enables tracking of changes to Account Shares  generated by Account Territory Loader tool. This is to allow territory changes on mobile platforms to be properly synchronized. When enabled, a special field on Account, ATL_Last_Update_Date_Time_vod__c, will be updated on all Accounts affected by the ATL process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Account Territory Loader activity tracking for mobile synchronization.</inlineHelpText>
+        <label>ATL_LAST_UPDATE_TRACKING</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ATTEMPT_REFRESH_IF_OLDER_HOURS_vod__c</fullName>
+        <defaultValue>24</defaultValue>
+        <description>Number of hours since the last Refresh when the user will be alerted to perform a Manual Refresh.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of hours since the last Refresh when the user will be alerted to perform a Manual Refresh for the VMobile BlackBerry application.</inlineHelpText>
+        <label>ATTEMPT_REFRESH_IF_OLDER_HOURS</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ATTEMPT_REFRESH_REMINDER_DELAY_vod__c</fullName>
+        <defaultValue>60</defaultValue>
+        <description>Number of minutes to wait before sending the next Refresh reminder to a user if the current VMobile BlackBerry data needs to be refreshed.  The default value is 60 minutes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of minutes to wait before sending the next Refresh reminder to a user if the current VMobile BlackBerry data needs to be refreshed.  The default value is 60 minutes.</inlineHelpText>
+        <label>ATTEMPT_REFRESH_REMINDER_DELAY</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AUTO_ADD_UNASSIGNED_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enables the automatic creation of an unassigned call with the Exploria integration.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables the automatic creation of an unassigned call with the Exploria integration.</inlineHelpText>
+        <label>AUTO_ADD_UNASSIGNED</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>AUTO_SYNC_vod__c</fullName>
+        <defaultValue>15</defaultValue>
+        <description>Activates the Auto Send feature for submitted Calls and Medical Inquiry records in the VMobile Tablet application. This process also checks for an available internet connection.  The default value is 15 minutes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Activates the Auto Send feature for submitted Calls and Medical Inquiry records in the VMobile Tablet application. The default value is 15 minutes.</inlineHelpText>
+        <label>AUTO_SYNC</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Plan_Object_Hierarchy_vod__c</fullName>
+        <defaultValue>&quot;Plan_Tactic_vod__c.Account_Plan_vod__r,Account_Tactic_vod__c.Plan_Tactic_vod__r,Call_Objective_vod__c.Account_Tactic_vod__r&quot;</defaultValue>
+        <description>Comma delimited list of object API names and relationship names used to determine the Account Plan progress object hierarchy. Each value should be the name of an object followed by the name of the relationship separated by a dot. The first object.relationship is considered the top of the hierarchy, the last at the bottom. Default hierarchy is: Plan_Tactic_vod__c.Account_Plan_vod__r, Account_Tactic_vod__c.Plan_Tactic_vod__r, Call_Objective_vod__c.Account_Tactic_vod__r</description>
+        <externalId>false</externalId>
+        <label>Account Plan Object Hierarchy</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Plan_Sharing_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Enables automatic sharing of Account Plan related data to Team Members. See documentation for more details.
+            0 - Disabled (default value)
+            1 - Enabled</description>
+        <externalId>false</externalId>
+        <label>Account Plan Sharing</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_REGEX_vod__c</fullName>
+        <defaultValue>&quot;ACCOUNT_REGEX;;Common&quot;</defaultValue>
+        <description>Reference to the Veeva message that contains the fields and their regular expressions.</description>
+        <externalId>false</externalId>
+        <label>Account_REGEX</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address_vod_REGEX_vod__c</fullName>
+        <defaultValue>&quot;ADDRESS_VOD_REGEX;;Common&quot;</defaultValue>
+        <description>Reference to the Veeva message that contains the fields and their regular expressions.</description>
+        <externalId>false</externalId>
+        <label>Address_vod_REGEX</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BB_Account_Link_URL_vod__c</fullName>
+        <defaultValue>&quot;BB_Account_Link_URL;;Blackberry&quot;</defaultValue>
+        <description>URL in VMobile BlackBerry application that links to more information about an Account online. The URL can be configured to point to any Visualforce page that can render in the BlackBerry browser.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL in VMobile BlackBerry application that links to more information about an Account online.</inlineHelpText>
+        <label>BB_Account_Link_URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BB_LINK_1_vod__c</fullName>
+        <defaultValue>&quot;BB_LINK_1;;Blackberry&quot;</defaultValue>
+        <description>URL that can be configured as a menu item in the VMobile BlackBerry application to go online. URL can point to any Visualforce page that can render in the BlackBerry browser. Refer to the VMobile BlackBerry Guide for instruction regarding the URL format.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL that can be configured as a menu item in the VMobile BlackBerry application to go online. The URL can point to any Visualforce page that can render in the BlackBerry browser.</inlineHelpText>
+        <label>BB_LINK_1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BB_LINK_2_vod__c</fullName>
+        <defaultValue>&quot;BB_LINK_2;;Blackberry&quot;</defaultValue>
+        <description>URL that can be configured as a menu item in the VMobile BlackBerry application to go online. URL can point to any Visualforce page that can render in the BlackBerry browser. Refer to the VMobile BlackBerry Guide for instruction regarding the URL format.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL that can be configured as a menu item in the VMobile BlackBerry application to go online. The URL can point to any Visualforce page that can render in the BlackBerry browser.</inlineHelpText>
+        <label>BB_LINK_2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BB_LINK_3_vod__c</fullName>
+        <defaultValue>&quot;BB_LINK_3;;Blackberry&quot;</defaultValue>
+        <description>URL that can be configured as a menu item in the VMobile BlackBerry application to go online. URL can point to any Visualforce page that can render in the BlackBerry browser. Refer to the VMobile BlackBerry Guide for instruction regarding the URL format.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>URL that can be configured as a menu item in the VMobile BlackBerry application to go online. The URL can point to any Visualforce page that can render in the BlackBerry browser.</inlineHelpText>
+        <label>BB_LINK_3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BULK_CALL_OBJECTIVE_CREATION_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Enables bulk call objective creation from the Plan_Tactic_View visual force page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables bulk call objective creation from the Plan_Tactic_View visual force page.</inlineHelpText>
+        <label>Bulk Call Objective Creation</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BUSINESS_ACCOUNT_ATTENDEE_MODE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Determines if a user can add business accounts as event attendees. See documentation for more details.</description>
+        <externalId>false</externalId>
+        <label>Business Account Attendee Mode</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CACHE_TIMEOUT_vod__c</fullName>
+        <defaultValue>960</defaultValue>
+        <description>Time in minutes before an object stored in VOD cache is expired.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Controls the timing of the cache rebuild for Veeva CRM application specific components.  Default value is 960 minutes (16 hours).</inlineHelpText>
+        <label>CACHE_TIMEOUT</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALC_CYCLE_PLANS_ACTUAL_vod__c</fullName>
+        <defaultValue>&quot;CALC_CYCLE_PLANS_ACTUAL;;CyclePlan&quot;</defaultValue>
+        <description>Points to the Veeva Message to define the query of what calls should be used for calculation</description>
+        <externalId>false</externalId>
+        <label>CALC_CYCLE_PLANS_ACTUAL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALC_CYCLE_PLANS_REALTIME_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Turns on the real time calculation of cycle plans</description>
+        <externalId>false</externalId>
+        <label>CALC_CYCLE_PLANS_REALTIME</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CALC_CYCLE_PLANS_SCHEDULED_vod__c</fullName>
+        <defaultValue>&quot;CALC_CYCLE_PLANS_SCHEDULED;;CyclePlan&quot;</defaultValue>
+        <description>Points to the Veeva Message to define the query of what calls should be used for calculation</description>
+        <externalId>false</externalId>
+        <label>CALC_CYCLE_PLANS_SCHEDULED</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALL2_BB_HISTORY_vod__c</fullName>
+        <defaultValue>90</defaultValue>
+        <description>Determines the time frame for the download of Partial call headers for past Calls to the VMobile BlackBerry application.  The default value is 90 days.  For improved performance, the recommended value is 30 days.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines the time frame for the download of Partial call headers for past Calls to the VMobile BlackBerry application.</inlineHelpText>
+        <label>CALL2_BB_HISTORY</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALL2_HEADER_FIELDS_vod__c</fullName>
+        <defaultValue>&quot;CALL2_HEADER_FIELDS;;Blackberry&quot;</defaultValue>
+        <description>List of Call fields synced to the VMobile BlackBerry application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of Call fields synced to the VMobile BlackBerry application.</inlineHelpText>
+        <label>CALL2_HEADER_FIELDS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALLS_PER_DAY_MENU_vod__c</fullName>
+        <defaultValue>&quot;CALLS_PER_DAY_MENU;;Blackberry&quot;</defaultValue>
+        <description>Displays simple metrics for a rep using keywords like: %30DAY, %7DAY, %1DAY, %AVG and /n</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Displays simple metrics for a rep using keywords like: %30DAY, %7DAY, %1DAY, %AVG and /n</inlineHelpText>
+        <label>CALLS_PER_DAY_MENU</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALL_ARCHIVE_USER_vod__c</fullName>
+        <description>Contains a valid SFDC Username that is permitted to archive locked calls.</description>
+        <externalId>false</externalId>
+        <label>CALL_ARCHIVE_USER</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALL_BACKDATE_LIMIT_vod__c</fullName>
+        <defaultValue>-1</defaultValue>
+        <description>Represents the number of days in the past that a user cannot save a call before. Example: If the value is 30, then a user cannot save a call where the date is more than 30 days in the past.</description>
+        <externalId>false</externalId>
+        <label>Call Backdate Limit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALL_CHILD_WHERE_vod__c</fullName>
+        <defaultValue>&quot;CALL_CHILD_WHERE;;MOBILE_SOQL&quot;</defaultValue>
+        <description>This setting is no longer used by the application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting is no longer used by the application.</inlineHelpText>
+        <label>CALL_CHILD_WHERE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALL_FUTURE_IN_DAYS_vod__c</fullName>
+        <defaultValue>90</defaultValue>
+        <externalId>false</externalId>
+        <label>CALL_FUTURE_IN_DAYS</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALL_HEADER_WHERE_BB_vod__c</fullName>
+        <defaultValue>&quot;CALL_HEADER_WHERE;;Blackberry&quot;</defaultValue>
+        <description>String used by application. Contains the SOQL where clause to filter the number of calls downloaded to the mobile application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where clause used to filter the Call records downloaded to the VMobile BlackBerry application.</inlineHelpText>
+        <label>CALL_HEADER_WHERE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALL_HEADER_WHERE_vod__c</fullName>
+        <defaultValue>&quot;CALL_HEADER_WHERE;;MOBILE_SOQL&quot;</defaultValue>
+        <description>String used by application. Contains the SOQL where clause to filter the number of calls downloaded to the mobile application.</description>
+        <externalId>false</externalId>
+        <label>CALL_HEADER_WHERE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALL_HISTORY_IN_DAYS_vod__c</fullName>
+        <defaultValue>90</defaultValue>
+        <description>Historical number of days of call history that will be synced.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Historical number of days of call history that will be synced.</inlineHelpText>
+        <label>CALL_HISTORY_IN_DAYS</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALL_OBJECTIVES_ALERT_THRESHOLD_DAYS_vod__c</fullName>
+        <defaultValue>14</defaultValue>
+        <description>This value determines the number of days before a Call Objective&apos;s due date to display an alert to the user. For example, if this value is 14, alerts will be displayed for Call Objectives beginning two weeks before the objectives are due. The value of the To_Date_vod field is used to determine the due date.
+
+NOTES:
+
+    In order for the alert to display, the current date must be greater than or equal to both the alert threshold date and the From_Date_vod value for the Call Objective.
+    If this value is 0, the alert will display on the day the objective is due.
+    If this value is blank or negative, no alerts will show.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This value determines the number of days before a Call Objective due date to display an alert to the user. For example, if this value is 14, alerts will be displayed for Call Objectives beginning two weeks before the objectives are due.</inlineHelpText>
+        <label>CALL_OBJECTIVES_ALERT_THRESHOLD_DAYS</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CALL_SUBMISSION_MONTHLY_WINDOW_vod__c</fullName>
+        <defaultValue>&quot;CALL_SUBMISSION_MONTHLY_WINDOW;;CallReport&quot;</defaultValue>
+        <description>This Veeva Setting limits the ability to submit calls from the prior month past a date in the following month. Define a list of dates where calls cannot be submitted past for the prior month.
+
+- CALL_SUBMISSION_MONTHLY_WINDOW =  &lt;MONTH_NUMBER&gt;,&lt;NUMBER OF DAYS OF WINDOW&gt;;&lt;MONTH NUMBER&gt;, &lt;NUMBER OF DAYS OF WINDOW&gt;;
+
+- Where &lt;NUMBER OF DAYS OF WINDOW&gt; determines the number of days of the defined &lt;MONTH NUMBER&gt; that you allow calls to be submitted for the previous month  (&lt;MONTH NUMBER&gt; - 1 unless January, then it would be 12)</description>
+        <externalId>false</externalId>
+        <label>Call Submission Monthly Window</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CAPPED_CALL_HISTORY_IN_DAYS_vod__c</fullName>
+        <defaultValue>60</defaultValue>
+        <description>Number of days of call history to sync for user over the account cap.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of days of call history to sync for user over the account cap.</inlineHelpText>
+        <label>CAPPED_CALL_HISTORY_IN_DAYS</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CLM_ENABLE_AUTO_LAUNCH_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, presentations launch directly from the presentation viewer and start on the first slide</description>
+        <externalId>false</externalId>
+        <label>CLM Enable Auto Launch</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CLM_EXIT_CONFIRMATION_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Show a modal allowing user to select an account before exiting a CLM presentation.</description>
+        <externalId>false</externalId>
+        <label>CLM Exit Confirmation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CLM_HIGHLIGHTER_PEN_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, enables the highlighter pen in CLM.</description>
+        <externalId>false</externalId>
+        <label>CLM Highlighter Pen</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CLM_NAV_BAR_HIDE_CONTENT_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, when a CLM user displays the navigation bar at the bottom of the iPad’s screen, the top part of the screen will fade out to black to hide the content.</description>
+        <externalId>false</externalId>
+        <label>CLM_NAV_BAR_HIDE_CONTENT</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CLM_PRESENTATION_GROUPING_vod__c</fullName>
+        <defaultValue>&quot;CLM_PRESENTATION_GROUPING;;CLM&quot;</defaultValue>
+        <description>Comma delimited list of Field API names on CLM_Presentation_vod__c which defines possible groupings of CLM presentations</description>
+        <externalId>false</externalId>
+        <label>CLM Presentation Grouping</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CLM_SELECT_ACCOUNT_PREVIEW_MODE_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, enables ability to create a call after selecting an account while previewing media in the Media Player.</description>
+        <externalId>false</externalId>
+        <label>CLM_Select_Account_Preview_Mode</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CLM_VIDEO_AUTOPLAY_VOD__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, video key messages will begin playing as soon as the user swipes to the key message. When unchecked, users will have to tap the screen to begin the video.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This does not apply to videos embedded in HTML5 content.</inlineHelpText>
+        <label>CLM_VIDEO_AUTOPLAY</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>COMPANY_FIELDS_FOR_PRINT_vod__c</fullName>
+        <defaultValue>&quot;COMPANY_FIELDS_FOR_PRINT;;ORDER_MANAGEMENT&quot;</defaultValue>
+        <description>Contains the HTML that designates the company information displayed on a printed order.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains the HTML that designates the company information displayed on a printed order.</inlineHelpText>
+        <label>COMPANY_FIELDS_FOR_PRINT</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CONTENT_ACKNOWLEDGEMENT_TEMPLATE_vod__c</fullName>
+        <defaultValue>&quot;CONTENT_ACKNOWLEDGEMENT_TEMPLATE;;AOC&quot;</defaultValue>
+        <description>The format of the generated Content Acknowledgment receipt can be configured by modifying the HTML text contained within this setting.</description>
+        <externalId>false</externalId>
+        <label>Content Acknowledgement Template</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CONTENT_ALERT_MSG_NUM_DAYS_vod__c</fullName>
+        <defaultValue>15</defaultValue>
+        <description>The duration in days for which the alert for new content is displayed to the users.</description>
+        <externalId>false</externalId>
+        <label>Content Alert Duration</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CONTRACT_DISCLAIMER_vod__c</fullName>
+        <defaultValue>&quot;DISCLAIMER;;CONTRACTS&quot;</defaultValue>
+        <description>This setting points to a Veeva Message that determines the default disclaimer text to display on contracts. The correct format for this setting is MESSAGENAME;;CATEGORY for the Veeva Message to be used.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting points to a Veeva Message that determines the default disclaimer text to display on contracts. The correct format for this setting is MESSAGENAME;;CATEGORY for the Veeva Message to be used.</inlineHelpText>
+        <label>Contract Disclaimer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CYCLE_PLAN_NO_DATA_DISPLAY_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>When checked, a message will display to the user when no cycle plan data exists. The message is configured through the CYCLE_PLAN_NO_DATA_MESSAGE Veeva message.  Default value is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables the display of a message to the user in the Account Cycle Plan when no cycle plan data exists for the account.  Default value is checked.</inlineHelpText>
+        <label>CYCLE_PLAN_NO_DATA_DISPLAY</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CYCLE_PLAN_TAB_COLS_vod__c</fullName>
+        <defaultValue>&quot;CYCLE_PLAN_TAB_COLS;;TABLET&quot;</defaultValue>
+        <description>List of column headers for the cycle plan tab. Only fields from the Cycle_Plan_vod object can be added to this list.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of columns to display in Cycle Plan Targets in the VMobile Tablet application.</inlineHelpText>
+        <label>CYCLE_PLAN_TAB_COLS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CYCLE_PLAN_TARGET_VOD_C_WHERE_CLAUSE_vod__c</fullName>
+        <defaultValue>&quot;CYCLE_PLAN_TARGET_VOD__C_WHERE_CLAUSE;;Blackberry&quot;</defaultValue>
+        <description>Where clause to filter the Cycle Plan Target records downloaded to the VMobile BlackBerry application.  WHERE ( Cycle_Plan_vod__r.Territory_vod__c in (@@VOD_MY_TERRITORY@@) OR Cycle_Plan_vod__r.OwnerId = @@VOD_SF_USER_ID@@).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where used clause to filter the Cycle Plan Target records downloaded to the VMobile BlackBerry application.</inlineHelpText>
+        <label>CYCLE_PLAN_TARGET_VOD__C_WHERE_CLAUSE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CYCLE_PLAN_THRESHOLD_vod__c</fullName>
+        <defaultValue>&quot;CYCLE_PLAN_THRESHOLD;;TABLET&quot;</defaultValue>
+        <description>Threshold value that determines the color of the Cycle Plan gauge and the Actual call count graphics on the VMobile Tablet Home Page.  The threshold value format is two integers separated by a comma (xx,yy).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Threshold value that determines the color of the Cycle Plan gauge and the Actual call count graphics on the VMobile Tablet Home Page.</inlineHelpText>
+        <label>CYCLE_PLAN_THRESHOLD</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CYCLE_PLAN_VOD_C_WHERE_CLAUSE_vod__c</fullName>
+        <defaultValue>&quot;CYCLE_PLAN_VOD__C_WHERE_CLAUSE;;Blackberry&quot;</defaultValue>
+        <description>Where clause to filter the Cycle Plan records downloaded to the VMobile BlackBerry application.  Default value is WHERE Territory_vod__c in (@@VOD_MY_TERRITORY@@).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where clause to filter the Cycle Plan records downloaded to the VMobile BlackBerry application.</inlineHelpText>
+        <label>CYCLE_PLAN_VOD__C_WHERE_CLAUSE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_ScheduleConflict_Threshold_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Conflict Status Threshold.
+Values possible: 0, 1, 2, 3
+0: no conflict control is done</description>
+        <externalId>false</externalId>
+        <label>Call Schedule Conflict Threshold</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Camera_Roll_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Determines if user has access to the Camera Roll.
+    0 - Camera Roll is on
+    1 - Camera Roll is off</description>
+        <externalId>false</externalId>
+        <label>Camera Roll</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Sync_Timeout_vod__c</fullName>
+        <defaultValue>3600</defaultValue>
+        <description>Timeout, in number of seconds, for client communication requests.  60 = 1 minute, 3600 = 1 hour.  Warning: lowering this value may result in sync failures.</description>
+        <externalId>false</externalId>
+        <label>Client Sync Timeout</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Content_Sync_Confirm_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, users will be prompted to choose whether to begin content sync or not.</description>
+        <externalId>false</externalId>
+        <label>MEDIA SYNC CONFIRM</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Content_Sync_Interval_vod__c</fullName>
+        <defaultValue>30</defaultValue>
+        <description>Number of days that a user can go without being notified of not syncing of CLM content</description>
+        <externalId>false</externalId>
+        <label>MEDIA SYNC INTERVAL</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DATA_CHANGE_REQUEST_MODE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Determines if a user can create Data Change Requests. See documentation for more details.</description>
+        <externalId>false</externalId>
+        <label>Data Change Request Mode</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DCR_ALERT_MSG_NUM_DAYS_vod__c</fullName>
+        <defaultValue>7</defaultValue>
+        <description>The number of days DCR update notifications will be displayed in the Alert widget on iRep.</description>
+        <externalId>false</externalId>
+        <label>DCR Alert Message Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEFAULT_ACCOUNT_PROFILE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Setting for determining default homepage for Account when Account is not flagged as a KOL.
+For Commercial CRM:
+   •   0 or 2 = Account Detail (default)
+   •   1 or 3 = Account Overview Timeline (default)
+For Medical CRM:
+   •   0 or 1 = Account Overview Timeline (default)
+   •   2 or 3 = Account Detail (default)</description>
+        <externalId>false</externalId>
+        <label>Default Account Profile</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEFAULT_ATTENDEE_RECORD_TYPE_vod__c</fullName>
+        <defaultValue>&quot;DEFAULT_ATTENDEE_RECORD_TYPE;;MEDICAL_EVENTS&quot;</defaultValue>
+        <description>Name of the Veeva Message which stores the mapping between event record types and attendee record types. Default value is DEFAULT_ATTENDEE_RECORD_TYPE;;MEDICAL_EVENTS.Syntax is MessageName;;MessageCategory</description>
+        <externalId>false</externalId>
+        <label>Default Attendee Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEFAULT_CALL_RECORD_TYPE_vod__c</fullName>
+        <defaultValue>&quot; DEFAULT_CALL_RECORD_TYPE;;Common&quot;</defaultValue>
+        <description>References a Veeva message that contains the configuration for setting a default call record type by the account record type of the call. The syntax for the Veeva message is: &lt;ACCOUNT_RECORD_TYPE1&gt;,&lt;CALL_RECORD_TYPE1&gt;;;...
+            If there is no call record type provided, the setting is ignored.</description>
+        <externalId>false</externalId>
+        <label>Default Call RecordType</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEFAULT_KOL_PROFILE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Setting to determine the default page for KOL Profile. This does not apply to the Medical app. 0 is Detail page. 1 is KOL HTML Summary Profile page</description>
+        <externalId>false</externalId>
+        <label>Default KOL Profile</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEFAULT_vod__c</fullName>
+        <defaultValue>&quot;DEFAULT;;MOBILE_CALL_CUSTOM_FIELD&quot;</defaultValue>
+        <description>This list of call object field names (e.g. &quot;Ship_Zip_vod, Color_vod&quot;) will be displayed on the PDA call report for the DEFAULT call record type. Similar messages with message names of a Record-Type, e.g. MSL Meeting Brief_vod can also be created.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of Call fields to display on the Call Report in the VMobile PDA application for the DEFAULT call record type.</inlineHelpText>
+        <label>DEFAULT</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DESTINATION_AUTHENTICATION_ENDPOINTS_vod__c</fullName>
+        <defaultValue>&quot;DESTINATION_AUTHENTICATION_ENDPOINTS;;Common&quot;</defaultValue>
+        <description>References a Veeva message that contains the list of destination endpoints used for Delegated Authentication to log in to other orgs. List of destination endpoints used for Delegated Authentication to log in to other orgs. Syntax is &lt;ENDPOINT NAME&gt;,&lt;AUTH URL&gt;,&lt;APPLIES TO URL&gt;;;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The ENDPOINT NAME is displayed to end users and cannot include commas or semicolons.</inlineHelpText>
+        <label>DESTINATION AUTHENTICATION ENDPOINTS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DISABLE_ACCOUNT_DOWNLOAD_CSV_EXCEL_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, the Download: CSV | Excel link does not appear in My Accounts</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this checkbox suppresses the ability to download Accounts via CSV or Excel data from the My Accounts page.</inlineHelpText>
+        <label>Disable Account Download CSV Excel</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_ALL_ACCOUNTS_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If set to True then the All Accounts option in the territory picklist will be removed if the user is aligned to at least one territory. Default is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the All Accounts option is displayed in the My Accounts page Territory picklist for users aligned to at least one territory.  Default is Unchecked.</inlineHelpText>
+        <label>DISABLE_ALL_ACCOUNTS</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_ALL_MARKETS_IN_ANALYTICS_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If true, for Analytics reports online, the &quot;All Markets vs. My Markets&quot; selector is removed and only &quot;My Markets&quot; are shown. Regardless of this setting, the Tablet never displays &quot;All Markets&quot;.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the &quot;All Markets&quot; selector is displayed when viewing VInsights reports in the Veeva CRM online application.  Default value is Unchecked.</inlineHelpText>
+        <label>DISABLE_ALL_MARKETS_IN_ANALYTICS</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_BB_OFFLINE_CALL_REPORT_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Blackberry Message to disable offline call report.  If checked the Record Call menu item is not displayed.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Disables offline Call Reporting capabilities in the VMobile BlackBerry application.  Default value is Unchecked.</inlineHelpText>
+        <label>DISABLE_BLACKBERRY_OFFLINE_CALL_REPORT</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_CALL_LOCATION_NONE_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the option of None displays in the Call Location picklist when creating an Individual Call for a Person Account.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the option of None displays in the Call Location picklist when creating an Individual Call for a Person Account.  Default value is Unchecked.</inlineHelpText>
+        <label>Disable Call Location None</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_FIRST_NAME_REQUIRED_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This determines whether the First Name field is required in the New Account Wizard. Default is unchecked, making first name required.</description>
+        <externalId>false</externalId>
+        <label>DISABLE_FIRST_NAME_REQUIRED</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_HIERARCHY_AUTOCREATE_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Prevents a child account from being created automatically when creating a new account record using the Record Type Wizard or Parent Account Wizard.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Prevents a child account from being created automatically when creating a new account record using the Record Type Wizard or Parent Account Wizard.  Default value is Unchecked.</inlineHelpText>
+        <label>DISABLE_HIERARCHY_AUTOCREATE</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_MAP_ENTRYPOINTS_vod__c</fullName>
+        <defaultValue>&quot;All_vod&quot;</defaultValue>
+        <description>This setting will disable entry points into the Account Map page. Disabling multiple entry point should be delimited with a double semi-colon.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting will disable entry points into the Account Map page. Disabling multiple entry point should be delimited with a double semi-colon.</inlineHelpText>
+        <label>Disable Map Entry Points</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DISABLE_MASS_UPDATE_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Configurable parameter to prevent display of Mass Update button on My Accounts.
+	
+	&quot;false&quot; = (Default) Display Mass Update button.
+	&quot;true&quot; = Do not display Mass Update button.
+	
+	TEXT MUST NOT BE TRANSLATED.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Prevents the display of the Mass Update button in the My Accounts page.  Default value is Unchecked.</inlineHelpText>
+        <label>DISABLE_MASS_UPDATE</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_MI_SIGN_BUTTON_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Disables the Sign button for a Medical Inquiry once a signature has been captured/accepted preventing the user from returning to the Signature page to view or clear the signature.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Disables the Sign button for a Medical Inquiry once a signature has been captured/accepted.  Default value is Unchecked.</inlineHelpText>
+        <label>DISABLE_MI_SIGN_BUTTON</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_NEW_CALENDAR_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When true, this disables the new calendar and shows the old my schedule in VMobile.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines which version of the My Schedule calendar view is displayed in the VMobile Tablet application.  Default value is Unchecked.</inlineHelpText>
+        <label>DISABLE_NEW_CALENDAR</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_PARENT_WIZARD_ACCT_TYPES_vod__c</fullName>
+        <description>This setting designates the account types for which the Parent Account Wizard should not display. Account record types should be entered in a comma delimited list based on the Record Type Label.  For example, Hospital_vod.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of the account Record Types for which the Parent Account Wizard should not display.</inlineHelpText>
+        <label>DISABLE_PARENT_WIZARD_ACCT_TYPES</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_RELATED_LIST_NEW_BUTTON_vod__c</fullName>
+        <defaultValue>&quot;DISABLE_RELATED_LIST_NEW_BUTTON;;Common&quot;</defaultValue>
+        <description>This setting points to a Veeva message of the same name for disabling new button on related list on iPad.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Default value: DISABLE_RELATED_LIST_NEW_BUTTON;;Common</inlineHelpText>
+        <label>DISABLE RELATED LIST NEW BUTTON</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DISABLE_RM_QUERY_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Configurable parameter to prevent a view from executing for a territory with too many levels.
+	
+Unchecked = Runs as normal. (Default)
+Checked = Only runs view for a territory that is at most one level deep.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Parameter used to prevent a view from executing for a territory with too many levels.  Default value is Unchecked.</inlineHelpText>
+        <label>DISABLE_RM_QUERY</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_SAMPLE_RECEIPT_DEFAULT_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the Confirmed Quantity value on a Sample Receipt record is defaulted or if the user is required to enter in the quantity received for each line item.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the Confirmed Quantity value on a Sample Receipt record is defaulted or if the user is required to enter in the quantity received for each line item.  Default value is Unchecked.</inlineHelpText>
+        <label>DISABLE_SAMPLE_RECEIPT_DEFAULT</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_SEARCH_TERMS_VOD__c</fullName>
+        <defaultValue>&quot;DISABLE_SEARCH_TERMS_VOD;;Common&quot;</defaultValue>
+        <description>This holds a list of search terms that would be disabled for the User.
+             
+             &lt;Object1&gt;.&lt;Field_API_name1&gt;,&lt;Object1&gt;.&lt;Field_API_name2&gt;,&lt;Object2&gt;.&lt;Field_API_name1&gt;...
+                 
+                 For example: &quot;Account.Account_Identifier,Address_Vod.Phone_1_vod__c&quot; will turn off the ability to search on Account Identifier or Phone 1. This does not remove the field from the results set visibility.</description>
+        <externalId>false</externalId>
+        <label>Disable Search Terms</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DISABLE_SEND_LOG_FILES_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If Checked then the Send Log Files button on the Options dialog on the tablet will be hidden.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the Send Log Files button displays in the Options for the VMobile Tablet application.  Default value is Unchecked.</inlineHelpText>
+        <label>DISABLE_SEND_LOG_FILES</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_SIGN_BUTTON_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If true then the sign button is disabled after a signature is captured.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If true then the sign button is disabled after a signature is captured.</inlineHelpText>
+        <label>DISABLE_SIGN_BUTTON</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_TOT_WEEKENDS_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Causes weekend days to be included when placing multi-day TOT records on the calendar. For example, a three-day TOT will show up on three consecutive days regardless of whether one or more of those days are on a weekend. This setting also alters the Average Calls Per Day report in VInsights to ensure TOT hours that falls on weekend days (defined by the SFDC locale) are excluded from the calculation.</description>
+        <externalId>false</externalId>
+        <label>DISABLE_TOT_WEEKENDS</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_VALIDATION_RULES_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Setting will disable Validation Rules execution across all devices when set to TRUE.</description>
+        <externalId>false</externalId>
+        <label>Disable Validation Rules</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISCLAIMER_CALL_ACK_vod__c</fullName>
+        <defaultValue>&quot;DISCLAIMER_CALL_ACK;;CallReport&quot;</defaultValue>
+        <description>References a Veeva message that gets displayed in the call signature page when no samples or details are selected for a call.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>References a Veeva message that gets displayed in the call signature page when no samples or details are selected for a call.</inlineHelpText>
+        <label>Disclaimer Call Acknowledgement</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DISCLAIMER_DETAIL_ONLY_vod__c</fullName>
+        <defaultValue>&quot;DISCLAIMER_DETAIL_ONLY;;CallReport&quot;</defaultValue>
+        <description>The Disclaimer statement text that is displayed in the Call Signature page for a Call Type of Detail-Only when the --sd section signal is configured for the Product Detail section of the Call page layout.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Disclaimer statement text that is displayed in the Call Signature page for a Call Type of Detail-Only.</inlineHelpText>
+        <label>DISCLAIMER_DETAIL_ONLY</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DISCLAIMER_FONT_SIZE_vod__c</fullName>
+        <defaultValue>16</defaultValue>
+        <description>Designates the font size of the Disclaimer statement text on the VMobile Tablet Signature page.  Default value is 16.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates the font size of the Disclaimer statement text on the VMobile Tablet Signature page.  Default value is 16.</inlineHelpText>
+        <label>DISCLAIMER_FONT_SIZE</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DISCLAIMER_MI_vod__c</fullName>
+        <defaultValue>&quot;DISCLAIMER;;MEDICAL_INQUIRY&quot;</defaultValue>
+        <description>String used by application.  The Disclaimer statement text that is displayed in the Medical Inquiry Signature page.  Default value is &apos;Enter Disclaimer Text Here&apos;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Disclaimer statement text that is displayed in the Medical Inquiry Signature page.</inlineHelpText>
+        <label>DISCLAIMER</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DISCLAIMER_vod__c</fullName>
+        <defaultValue>&quot;DISCLAIMER;;CallReport&quot;</defaultValue>
+        <description>String used by application. The Disclaimer statement text that is displayed in the Call Signature page.  Default value is &apos;I hereby certify that I have requested the listed Samples and Quantities and all information pertaining to my License is valid and accurate&apos;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Disclaimer statement text that is displayed in the Call Signature page.</inlineHelpText>
+        <label>DISCLAIMER</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Default_Call_Address_None_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, the Address field on a new Call will always default to --None-- regardless of whether or not a value exists in the Preferred Address field on the Territory Field object. If the Address field is marked as required, the --None-- value will not be an acceptable value.</description>
+        <externalId>false</externalId>
+        <label>Default Call Address None</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disable_Affiliation_Autocreate_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Prevents the creation of an Affiliation when creating a new account using the New Record Type Wizard or Parent Account Wizard.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Prevents the creation of an Affiliation when creating a new account using the New Record Type Wizard or Parent Account Wizard.  Default value is Unchecked.</inlineHelpText>
+        <label>Disable Affiliation Autocreate</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disable_Call_DL_By_Visibility_BB_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Disables the download of Account calls recorded by other team members. If checked only Account calls owned by the current user are downloaded to the VMobile BlackBerry application.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Disables the download of Account calls recorded by other team members to the VMobile BlackBerry application. Default value is Unchecked.</inlineHelpText>
+        <label>Disable_Call_Download_By_Visibility</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disable_Call_DL_By_Visibility_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked only Account calls owned by the current user are downloaded to the VMobile PDA application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked only Account calls owned by the current user are downloaded to the VMobile PDA application.</inlineHelpText>
+        <label>Disable_Call_Download_By_Visibility</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disable_Call_Datetime_Overwrite_vod__c</fullName>
+        <description>On capture of signature, user-entered value of Call Datetime field is not overwritten by the value of Signature Date field.  A value of -1 indicates this setting is disabled.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>On capture of signature, user-entered value of Call Datetime field is not overwritten by the value of Signature Date field.  A value of -1 indicates this setting is disabled.</inlineHelpText>
+        <label>Disable Call Datetime Overwrite</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disable_Edit_Account_Metrics_Tab_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If set to True, Reps cannot edit the Product Group tabs in the Account Ratings and Evaluations section. Default is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether Reps cannot edit the Product Group tabs in the Account Ratings and Evaluations section. Default is Unchecked.</inlineHelpText>
+        <label>Disable Edit Account Metrics Tab</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disable_Rebate_Mixing_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether line level discounts are allowed when free goods are included in the Order Line. Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether line level discounts are allowed when free goods are included in the Order Line. Default value is Unchecked.</inlineHelpText>
+        <label>Disable Rebate Mixing</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disable_iRep_Autosend_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Disable autosend functionality on the iRep platform.</description>
+        <externalId>false</externalId>
+        <label>Disable iRep Autosend</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>EDetail_vod__c</fullName>
+        <defaultValue>&quot;EDetail;;CallReport&quot;</defaultValue>
+        <description>Value displayed in parentheses next to a Detail record on a Call Report to differentiate between electronic and paper details.  For use when detailing via a 3rd party electronic detailing solution.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Value displayed in parentheses next to a Detail record on a Call Report to differentiate between electronic and paper details.  For use when detailing via a 3rd party electronic detailing solution.</inlineHelpText>
+        <label>EDetail</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ENABLE_ACCOUNT_PARENT_DISPLAY_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This flag, when true, will enable the display of the Account&apos;s TSF Preferred Location, or the Account&apos;s Primary Parent when available.</description>
+        <externalId>false</externalId>
+        <label>ENABLE_ACCOUNT_PARENT_DISPLAY</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_ADV_CYCPLN_SCHEDULING_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enables configurable cycle plan display and sorting in the call schedulers.</description>
+        <externalId>false</externalId>
+        <label>Enable Advanced Cycle Plan Scheduling</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_BLACKBERRY_ONLINE_CALL_REPORT_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Blackberry Message to enable online call report.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables online Call Reporting for the VMobile BlackBerry application.  Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_BLACKBERRY_ONLINE_CALL_REPORT</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_BRICK_VINSIGHTS_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enables VInsights sales data analysis at both the Brick and the Account level.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables VInsights sales data analysis at both the Brick and the Account level.  Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_BRICK_VINSIGHTS</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_CALENDAR_AGENDA_VIEW_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Setting to control the visibility of the Agenda in the iRep Calendar.</description>
+        <externalId>false</externalId>
+        <label>Enable Calendar Agenda View</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_CALENDAR_MONTH_VIEW_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Makes the Month view visible.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Makes the Month view visible.</inlineHelpText>
+        <label>Enable Calendar Month View</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_CALENDAR_WEEK_VIEW_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Setting to control the visibility of the Week view in the iRep calendar.</description>
+        <externalId>false</externalId>
+        <label>Enable Calendar Week View</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_CHILD_ACCOUNTS_IN_ANALYTICS_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Designates whether Child Accounts are included in the roll up of data in Analytics.  If Unchecked, Analytics will not use the Child Account object to roll up data within an account hierarchy. If Checked, a nightly process runs against the Child_Account_vod object to create a flattened ID Map (up to five levels deep).  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates whether Child Accounts are included in the roll up of data in Analytics.  Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_CHILD_ACCOUNTS_IN_ANALYTICS</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_CHILD_ACCOUNT_IN_WIZARDS_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to enable the display of the Child Account information section in the Account creation wizards.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to enable the display of the Child Account information section in the Account creation wizards.</inlineHelpText>
+        <label>Child Account info in Account Wizard</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_CUSTOM_RELATIONSHIP_FIELDS_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Turns on custom fields in the UI for supported relationship controls. See documentation for more details.</description>
+        <externalId>false</externalId>
+        <label>Enable Custom Relationship Fields</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ENABLE_CYCLE_PLANS_REMAINING_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, the Cycle Plan Target list and the Account Cycle Plan will display a calculation for the remaining number of calls in place of the current attainment percentage.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, the Cycle Plan Target list and the Account Cycle Plan will display a calculation for the remaining number of calls in place of the current attainment percentage.</inlineHelpText>
+        <label>ENABLE_CYCLE_PLANS_REMAINING</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_DUAL_LICENSE_CHECK_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Designates whether dual license validation is performed when sampling a controlled substance.  When this setting is Checked, the Physician must have a valid State License for the State in which the controlled substance is being received as well as a valid DEA registration.  Default value is Checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates whether dual license validation is performed when sampling a controlled substance. Default value is Checked.</inlineHelpText>
+        <label>ENABLE_DUAL_LICENSE_CHECK</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_EXPIRATION_FILTER_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Prevents expired Sample Lots from displaying in the Lot # picklist when creating a Call Report. If set to Checked, then all Sample Lots that have an Expiration Date that is prior to Today’s date will not be available for selection. Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Prevents expired Sample Lots from displaying in the Lot # picklist when creating a Call Report.  Default Value is Unchecked.</inlineHelpText>
+        <label>ENABLE_EXPIRATION_FILTER</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_EXTERNAL_CALENDARS_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Allows users to view events from iPad calendars within iRep</description>
+        <externalId>false</externalId>
+        <label>ENABLE_EXTERNAL_CALENDARS</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_FLASH_CHARTS_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether Flash based charts or native WPF charts will be displayed in the VMobile Tablet application. Default value is Unchecked.  It is recommended to use the native WPF charts.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether Flash based charts or native WPF charts will be displayed in the VMobile Tablet application. Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_FLASH_CHARTS</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_GROUP_FILTERING_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If set to true then AccountShare, Groups and TSF will be filtered by user territories when syncing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If set to true then AccountShare, Groups and TSF will be filtered by user territories when syncing.</inlineHelpText>
+        <label>ENABLE_GROUP_FILTERING</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_INVENTORY_WORKSHEET_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the Print Inventory Worksheet link is displayed on the My Samples page.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the Print Inventory Worksheet link is displayed on the My Samples page.  Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_INVENTORY_WORKSHEET</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_IPAD_MYSAMPLES_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>checkbox setting which controls if my samples tab is shown on iRep</description>
+        <externalId>false</externalId>
+        <label>ENABLE_IPAD_MYSAMPLES</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_LICENSE_EXP_DATE_BYPASS_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Designates whether the License Expiration Date validation should be bypassed to allow for one-time sample disbursements.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates whether the License Expiration Date validation should be bypassed to allow for one-time sample disbursements.  Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_LICENSE_EXP_DATE_BYPASS</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_LIST_SCHEDULER_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>For Japanese customers, enables productive call scheduling.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For Japanese customers, enables productive call scheduling.</inlineHelpText>
+        <label>ENABLE_LIST_SCHEDULER</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_LOCATION_SERVICES_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enables location-based functionality.</description>
+        <externalId>false</externalId>
+        <label>Enable Location Services</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_MYSAMPLES_LOGIN_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enables a User Lookup field on the My Samples page allowing Manager&apos;s and Administrators to view the My Samples page of another User.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables a User Lookup field on the My Samples page allowing Manager&apos;s and Administrators to view the My Samples page of another User.</inlineHelpText>
+        <label>ENABLE_MYSAMPLES_LOGIN</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_MYSCHEDULE_CALL_LOCATION_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Remove the display of Address from My Schedule and replace with Read-Only Call Location. Default is false.</description>
+        <externalId>false</externalId>
+        <label>ENABLE_MYSCHEDULE_CALL_LOCATION</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_NEG_SAMPLE_INDICATOR_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enables the display of an indicator when a sample drop or transfer will result in a negative balance of inventory for a given sample lot. Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables the display of an indicator when a sample drop or transfer will result in a negative balance of inventory for a given sample lot. Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_NEG_SAMPLE_INDICATOR</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_NEW_CALENDAR_ONLINE_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Enables the My Schedule interactive calendar functionality such as drag and drop, tool tip display, etc. in Veeva CRM online application. Default value is Checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables the My Schedule interactive calendar functionality such as drag and drop, tool tip display, etc. in Veeva CRM online application. Default value is Checked.</inlineHelpText>
+        <label>ENABLE_NEW_CALENDAR_ONLINE</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_NEW_IPAD_CALENDAR_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enable the new calendar and scheduler for the iPad.</description>
+        <externalId>false</externalId>
+        <label>Enable New iPad Calendar</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_OFFLINE_CALL_OBJECTIVES_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checking this box will turn on the Call Objectives menu item on VMobile and iRep. This will display as a tab on the top navigation bar on VMobile and as a menu item on the home page of iRep.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checking this box will turn on the Call Objectives menu item on VMobile and iRep. This will display as a tab on the top navigation bar on VMobile and as a menu item on the home page of iRep.</inlineHelpText>
+        <label>ENABLE_OFFLINE_CALL_OBJECTIVES</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_OFFLINE_VINSIGHTS_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Controls whether iRep uses VInsights offline or online. Offline Account Summary is turned off by default.</description>
+        <externalId>false</externalId>
+        <label>ENABLE_OFFLINE_VINSIGHTS</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_ORDER_APPROVAL_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Setting for enabling Order Approval Automatic Request to SFDC Approvals. Set 0 to disable and 1 to enable.</description>
+        <externalId>false</externalId>
+        <label>ENABLE ORDER APPROVAL</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ENABLE_PARENT_ACCOUNT_ADDRESS_COPY_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This determines whether the Account being created should use the Address Inheritance logic, to copy from a Parent Account.</description>
+        <externalId>false</externalId>
+        <label>ENABLE_PARENT_ACCOUNT_ADDRESS_COPY</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_PARENT_ACCOUNT_WIZARD_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Designates whether the Parent Account Wizard will be used when creating a new account from the My Accounts page.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates whether the Parent Account Wizard will be used when creating a new account from the My Accounts page.  Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_PARENT_ACCOUNT_WIZARD</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_PARENT_WIZARD_OPT_ACCT_TYPES_vod__c</fullName>
+        <defaultValue>&quot;ENABLE_PARENT_WIZARD_OPT_ACCT_TYPES;;Account&quot;</defaultValue>
+        <description>This determines a subset of Parent account types that a Account can be created from in the New Account Wizard&apos;s Parent Wizard</description>
+        <externalId>false</externalId>
+        <label>ENABLE PARENT WIZARD OPT ACCT TYPES</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ENABLE_RECEIPT_ACTIVATION_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>ENABLE_RECEIPT_ACTIVATION</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_REMOTE_INTERACTION_TERMS_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enables the display of a terms statement when a remote interaction is initiated using the Specialist button in the iRep media player. Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables the display of a terms statement when a remote interaction is initiated using the Specialist button in the iRep media player. Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_REMOTE_INTERACTION_TERMS</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_SAMPLES_ON_SIGN_SAVE_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this is true, then the online triggers will create the Sample Transactions if the Call is status of Saved or Submitted and the Signature Date is populated. Profile level configurations will be ignored, this is org wide only.</description>
+        <externalId>false</externalId>
+        <label>ENABLE_SAMPLES_ON_SIGN_SAVE</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_SAMPLE_CARD_LICENSE_CHECK_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Designates whether license validation should be performed against Call Reports where a Sample Card has been provided. When enabled a user cannot submit a sample call for an account address with a License Valid to Sample status of &apos;Invalid&apos;.  Default value is Checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates whether license validation should be performed against Call Reports where a Sample Card has been provided. Default value is Checked.</inlineHelpText>
+        <label>ENABLE_SAMPLE_CARD_LICENSE_CHECK</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_SAMPLE_DISTRIBUTED_BY_SIG_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the Distributed By value is displayed on the signature page. If the Company Name is available the field value will be automatically populated.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the Distributed By value is displayed on the signature page. If the Company Name is available the field value will be automatically populated.  Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_SAMPLE_DISTRIBUTED_BY_SIG</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_SAMPLE_LIMIT_MONITOR_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enables the sample limit monitor to show sample limits on the call.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables the sample limit monitor to show sample limits on the call.</inlineHelpText>
+        <label>ENABLE_SAMPLE_LIMIT_MONITOR</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_SCHEDULE_MEDICAL_EVENT_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, Medical Events will appear in the Day and Week Views in the calendar</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, Medical Events will appear in the Day and Week Views in the calendar</inlineHelpText>
+        <label>ENABLE_SCHEDULE_MEDICAL_EVENT</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_SPECIALIST_LOOKUP_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the Specialist button is displayed in the iRep CLM media player.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the Specialist button is displayed in the iRep CLM media player.  Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_SPECIALIST_LOOKUP</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_TABLET_MYSAMPLES_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the My Samples tab is available in the VMobile Tablet application.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the My Samples tab is available in the VMobile Tablet application.  Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_TABLET_MYSAMPLES</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_TABLET_VINSIGHTS_TAB_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the VInsights tab is available in the VMobile Tablet application.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the VInsights tab is available in the VMobile Tablet application.  Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_TABLET_VINSIGHTS_TAB</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_TACTIC_LIST_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the Apply Product Plan button is displayed at the Product Strategy level or the Product Tactic level. If enabled, the Apply Product Plan button is displayed at the individual Tactic level.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the Apply Product Plan button is displayed at the Product Strategy level or the Product Tactic level. Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_TACTIC_LIST</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_TRANSFER_WORKSHEET_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the Print Transfer Worksheet link is displayed on the My Samples page.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the Print Transfer Worksheet link is displayed on the My Samples page.  Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_TRANSFER_WORKSHEET</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_USER_CALL_SYNC_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Enables the sync of Call records where the User is an Attendee on the Call Reports.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables the sync of Call records where the User is an Attendee on the Call Reports.</inlineHelpText>
+        <label>ENABLE_USER_CALL_SYNC</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_VINSIGHTS_FILTERS_CONFIG_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Provides the ability to configure the report filters displayed in specific VInsights reports. Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provides the ability to configure the report filters displayed in specific VInsights reports.  Default value is Unchecked.</inlineHelpText>
+        <label>ENABLE_VINSIGHTS_FILTERS_CONFIG</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_VINSIGHTS_PRODUCTS_CONFIG_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If true, enables VInsights administrator to configure products shown in the Display Products filter.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, enables VInsights administrator to configure products shown in the Display Products filter, based on the Display Order field on Analytics Product Groups.</inlineHelpText>
+        <label>ENABLE_VINSIGHTS_PRODUCTS_CONFIG</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENHANCED_COACHING_COLS_vod__c</fullName>
+        <defaultValue>&quot;ENHNCD_COACHING_COLS;;Surveys&quot;</defaultValue>
+        <description>This setting points to a Veeva Message that holds a configurable list of columns that will be displayed on the offline platforms.</description>
+        <externalId>false</externalId>
+        <label>Enhanced Coaching Columns</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ENHANCED_COACHING_MODE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>This setting determines which enhanced coaching mode is to be used.</description>
+        <externalId>false</externalId>
+        <label>Enhanced Coaching Mode</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ENHANCED_LOOKUPS_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Setting will enable Enhanced Lookup Dialogs &amp; Filters. Please see documentation for more information.</description>
+        <externalId>false</externalId>
+        <label>Enable Enhanced Lookups</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EVENT_ATTENDEE_VOD_C_WHERE_CLAUSE__c</fullName>
+        <defaultValue>&quot;EVENT_ATTENDEE_VOD__C_WHERE_CLAUSE;;Blackberry&quot;</defaultValue>
+        <description>Only download event attendee records for medical events that you have access to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where clause for downloading only relevant records for Event_Attendee_vod__c</inlineHelpText>
+        <label>EVENT_ATTENDEE_VOD__C_WHERE_CLAUSE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EVENT_GRID_VIEW_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Setting to turn on the Event Grid View for iPad. Please see documentation for more information.</description>
+        <externalId>false</externalId>
+        <label>Event Grid View</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EVENT_WHERE_CLAUSE_vod__c</fullName>
+        <defaultValue>&quot;EVENT_WHERE_CLAUSE;;Blackberry&quot;</defaultValue>
+        <description>Blackberry WHERE CLAUSE filter for Event object.  Default value is WHERE (ActivityDateTime ›= LAST_N_DAYS:30 OR ActivityDate ›= LAST_N_DAYS:30) AND @@VOD_USERS_IN_MY_TERRITORY:OwnerId@@</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where clause used to filter the Event records downloaded to the VMobile BlackBerry application.</inlineHelpText>
+        <label>EVENT_WHERE_CLAUSE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EXTERNAL_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID used for Metadata migration.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External ID used for Metadata migration.</inlineHelpText>
+        <label>EXTERNAL_ID</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Enable_Account_Metric_Detail_Filter_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If set to True, Product Metrics per Detail Group defined on the Account act as an additional filter for Call Detail quick entry. Detail items for Groups that are not captured in Product Metrics for the Account continue to be available through Search. Default is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether Product Metrics per Detail Group defined on the Account act as an additional filter for Call Detail quick entry. Detail items for Groups that are not captured in Product Metrics for the Account continue to be available through Search.</inlineHelpText>
+        <label>Enable_Account_Metric_Detail_Filter</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Child_Account_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When enabled, specified CRM activity is performed against the Child Account records instead of the Account records. This setting is used to replace the Business Professional record type. The activity performed against Child Account records are: My Account Search and Profile View, My Schedule, Call Report and Attendee Search, and Multi-Channel Cycle Plans.</description>
+        <externalId>false</externalId>
+        <label>Enable Child Account</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Copy_To_Call_Cycle_Button_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the Copy button displays in the My Schedule Week view.  If Checked, a user can copy their weekly schedule to a call cycle by clicking the Copy button.  Requires the Call Cycle view to be displayed in My Schedule.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the Copy button displays in the My Schedule Week view.  If Checked, a user can copy their weekly schedule to a call cycle by clicking the Copy button.  Default value is Unchecked.</inlineHelpText>
+        <label>Enable_Copy_To_Call_Cycle_Button</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Flash_Sphere_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the prior Flash based version or the HTML5 version of the Sphere of Influence is displayed in the Account Detail page. If Checked, the Flash based Sphere of Influence will be displayed.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the prior Flash based version or the HTML5 version of the Sphere of Influence is displayed in the Account Detail page. Default value is Unchecked.</inlineHelpText>
+        <label>Enable Flash Sphere</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Group_Call_Attendee_Display_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Enables the display of the number of attendees for a group call or for individual call with attendees in the My Schedule Day and Week views.  The value displays when a user hovers over a call in the calendar.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables the display of the number of attendees for a group call or for individual call with attendees in the My Schedule Day and Week views.  Default value is Unchecked.</inlineHelpText>
+        <label>Enable_Group_Call_Attendee_Display</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_SSO_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines if SSO is enabled. Setting value should be the same as the current Profile&apos;s &quot;IsSsoEnabloed&quot; value (English label for Profile field IsSsoEnabloed is &quot;Is Single Sign On Enabled&quot;)</description>
+        <externalId>false</externalId>
+        <label>Enable SSO</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Sample_Receipt_Grouping_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>System groups all pending sample receipts by Shipment ID.</description>
+        <externalId>false</externalId>
+        <label>Enable_Sample_Receipt_Grouping</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Samples_On_Save_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Provides the ability to generate Sample Transactions on the Save of a Call Report with an electronic Signature or Sample Card. If Unchecked, Sample Transactions are generated on Submit of a Call Report.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Provides the ability to generate Sample Transactions on the Save of a Call Report with an electronic Signature or Sample Card. Default value is Unchecked.</inlineHelpText>
+        <label>Enable Samples On Save</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Signature_Graphic_Picklist_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the product graphic picklist displays in the signature page in the VMobile Tablet application.  The picklist contains a list of all the product names that correspond to a detailed or sampled product on the Call Report. Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the product graphic picklist displays in the signature page in the VMobile Tablet application.  Default value is Unchecked.</inlineHelpText>
+        <label>Enable_Signature_Graphic_Picklist</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Simple_Hierarchy_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines the type of Account Hierarchy supported by the application.  If Checked, a Child Account can be associated to only one parent account, else a Child Account can be associated to many parent accounts. Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines the type of Account Hierarchy supported by the application.  Default value is Unchecked.</inlineHelpText>
+        <label>Enable Simple Hierarchy</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Simple_Rebate_Addition_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the algorithm for combining Pricing Rules of different types is linear (simple) or iterative.  Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the algorithm for combining Pricing Rules of different types is linear (simple) or iterative.  Default value is Unchecked.</inlineHelpText>
+        <label>Enable Simple Rebate Addition</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_User_Assigned_Territory_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the Territory field is displayed as a picklist or read-only field when creating a new Account using the New Record Type Wizard or Parent Account Wizard. Default value is Unchecked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines whether the Territory field is displayed as a picklist or read-only field when creating a new Account using the New Record Type Wizard or Parent Account Wizard. Default value is Unchecked.</inlineHelpText>
+        <label>Enable User Assigned Territory</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FORGOT_PASSWORD_URL_vod__c</fullName>
+        <defaultValue>&quot;FORGOT_PASSWORD_URL;;TABLET&quot;</defaultValue>
+        <description>Determines the action that occurs when a user clicks the Forgot Password link in the VMobile Tablet login screen. The link value can direct the user to a website URL or send an email using the mailto: tag.  If a value is not configured the Forgot Password link will not be displayed.  Default value is blank.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines the action that occurs when a user clicks the Forgot Password link in the VMobile Tablet login screen.  Default value is blank.</inlineHelpText>
+        <label>FORGOT_PASSWORD_URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>GO_ONLINE_URL_REDIRECT_vod__c</fullName>
+        <defaultValue>&quot;GO_ONLINE_URL_REDIRECT;;Common&quot;</defaultValue>
+        <description>Delimited string of URL redirects/replacements.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Delimited string of URL redirects/replacements.</inlineHelpText>
+        <label>GO_ONLINE_URL_REDIRECT</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HOME_ALERTS_DISPLAY_ROWS_vod__c</fullName>
+        <defaultValue>5</defaultValue>
+        <description>Determines the number of Alert records displayed at one time in the VMobile Home Page.  Default value is 5.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines the number of Alert records displayed at one time in the VMobile Home Page.  Default value is 5.</inlineHelpText>
+        <label>HOME_ALERTS_DISPLAY_ROWS</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HTML_LIST_vod__c</fullName>
+        <defaultValue>&quot;HTML_LIST;;REFRESH_HTML&quot;</defaultValue>
+        <description>This setting is no longer used by the application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting is no longer used by the application.</inlineHelpText>
+        <label>HTML_LIST</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HTML_TEMPLATE_vod__c</fullName>
+        <defaultValue>&quot;HTML_TEMPLATE;;SampleReceipt&quot;</defaultValue>
+        <description>Reference to the HTML template used when printing a Sample Receipt.  Configured using the corresponding HTML_TEMPLATE Veeva Message.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference to the HTML template used when printing a Sample Receipt.</inlineHelpText>
+        <label>HTML_TEMPLATE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IM_CONTINUOUS_MONITORING_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Enables copy of values from last submitted Inventory Monitoring record: 0= disabled, 1 = copies values from last submitted IM.</description>
+        <externalId>false</externalId>
+        <label>Continuous Inventory Monitoring</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IM_INVENTORY_LINE_COLUMN_WIDTH_vod__c</fullName>
+        <defaultValue>&quot;IM_INVENTORY_LINE_COLUMN_WIDTH;;INVENTORY_MANAGEMENT&quot;</defaultValue>
+        <description>Reference to a Veeva message that defines pixel widths for columns in the Inventory Lines list in the inventory entry window.</description>
+        <externalId>false</externalId>
+        <label>IM_INVENTORY_LINE_COLUMN_WIDTH</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IM_TOUCH_ENTRY_MODE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Determines the IM entry mode behavior on touch devices: 0 = no change, 1 = Mass Add, 2 = Save Valid Lines, 3 = Mass Add and Save Valid Lines, 4 = Contract Products Mass Add (saves valid lines only)</description>
+        <externalId>false</externalId>
+        <label>Inventory Monitoring Touch Entry Mode</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>INCREMENTAL_CALLS_SYNC_DELAY_MINUTES_vod__c</fullName>
+        <defaultValue>60</defaultValue>
+        <description>Designates the number of minutes between the running of the incremental Call Sync process for the VMobile BlackBerry application. Default value is 60 minutes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates the number of minutes between the running of the incremental Call Sync process for the VMobile BlackBerry application. Default value is 60 minutes.</inlineHelpText>
+        <label>INCREMENTAL_CALLS_SYNC_DELAY_MINUTES</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IPAD_MAXIMUM_SAMPLES_vod__c</fullName>
+        <defaultValue>8</defaultValue>
+        <description>Identifies the value for the maximum number of samples allowed to be signed for on the iPad. Default value is 8; increasing the value may result in scrolling signature page.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies the value for the maximum number of samples allowed to be signed for on the iPad. Default value is 8; increasing the value may result in scrolling signature page.</inlineHelpText>
+        <label>iPad Maximum Samples</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>JDNET_DETAIL_COLS_vod__c</fullName>
+        <defaultValue>&quot;JDNET_DETAIL_COLS;;Analytics&quot;</defaultValue>
+        <description>comma separated list of fields to display on the JDNet Detail Report</description>
+        <externalId>false</externalId>
+        <inlineHelpText>comma separated list of fields to display on the JDNet Detail Report</inlineHelpText>
+        <label>JDNET_DETAIL_COLS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>JDNET_DETAIL_SUMMARY_COLS_vod__c</fullName>
+        <defaultValue>&quot;JDNET_DETAIL_SUMMARY_COLS;;Analytics&quot;</defaultValue>
+        <description>comma separated list of fields to display on the JDNet Detail Summary Report</description>
+        <externalId>false</externalId>
+        <inlineHelpText>comma separated list of fields to display on the JDNet Detail Summary Report</inlineHelpText>
+        <label>JDNET_DETAIL_SUMMARY_COLS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>KAM_ENABLE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Use to activate KAM functionality</description>
+        <externalId>false</externalId>
+        <label>KAM_ENABLE</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Kit_Components_Fixed_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Designates whether users enter an order quantity for a Product Kit or enter order quantities for individual Kit Items. When enabled users enter order quantities for Product Kits. Default value is Checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates whether users enter an order quantity for a Product Kit or enter order quantities for individual Kit Items. Default value is Checked.</inlineHelpText>
+        <label>Kit_Components_Fixed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Last_Address_Run_vod__c</fullName>
+        <description>Contains the last run time for the Address Inheritance batch address update process.  For Veeva Internal Use Only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains the last run time for the Address Inheritance batch address update process.</inlineHelpText>
+        <label>Last Address Run</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MAIL_TO_CALL_3_PARAMS_vod__c</fullName>
+        <defaultValue>&quot;MAIL_TO_CALL_3_PARAMS;;TABLET&quot;</defaultValue>
+        <description>Mail-to format for Call data with 3 parameters.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mail-to format for Call data with 3 parameters.</inlineHelpText>
+        <label>MAIL_TO_CALL_3_PARAMS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MAIL_TO_EVENT_4_PARAMS_vod__c</fullName>
+        <defaultValue>&quot;MAIL_TO_EVENT_4_PARAMS;;TABLET&quot;</defaultValue>
+        <description>Mail-to format for Event data with 4 parameters.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mail-to format for Event data with 4 parameters.</inlineHelpText>
+        <label>MAIL_TO_EVENT_4_PARAMS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MAXIMUM_SAMPLES_vod__c</fullName>
+        <defaultValue>20</defaultValue>
+        <description>Configured value for the maximum number of samples to be displayed in the Signature page for VMobile Tablet application.  Can be used as a limit for the number of samples that can be signed for by a Physician.  Default value is 20.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Configured value for the maximum number of samples to be displayed in the Signature page for VMobile Tablet application.  Default value is 20.</inlineHelpText>
+        <label>MAXIMUM_SAMPLES</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MAX_ACCOUNTS_IPAD_vod__c</fullName>
+        <defaultValue>15000</defaultValue>
+        <description>Maximum number of Accounts allowed for download to the VMobile iPad applicaiton.  Maximum value is 15000.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Maximum number of Accounts allowed for download to the VMobile iPad application.  Maximum value is 15000.</inlineHelpText>
+        <label>Max Accounts iPad</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MAX_ACCOUNTS_vod__c</fullName>
+        <defaultValue>50000</defaultValue>
+        <description>Veeva Internal Use Only. Do Not Change.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Veeva Internal Use Only. Do Not Change.</inlineHelpText>
+        <label>MAX_ACCOUNTS</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MAX_ACCT_THRESHOLD_vod__c</fullName>
+        <defaultValue>1000</defaultValue>
+        <description>Configuration property for My Accounts.  Default value is 1000.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Configuration property for My Accounts.  Default value is 1000.</inlineHelpText>
+        <label>MAX_ACCT_THRESHOLD</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MAX_ATTACH_SIZE_vod__c</fullName>
+        <defaultValue>5000000</defaultValue>
+        <description>Maximum size in bytes for attachments.  Default limit is 5000000 bytes which is 5 MB.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Maximum size in bytes for attachments. Default limit is 5000000 bytes.</inlineHelpText>
+        <label>MAX_ATTACH_SIZE</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MAX_CALL_AGE_vod__c</fullName>
+        <defaultValue>180</defaultValue>
+        <description>Configured value for maximum age of calls on the VMobile Tablet application in days.  Default value is 180 days.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Configured value for maximum age of calls on the VMobile Tablet application in days.  Default value is 180 days.</inlineHelpText>
+        <label>MAX_CALL_AGE</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MAX_SAMPLE_LINES_vod__c</fullName>
+        <defaultValue>10</defaultValue>
+        <description>Maximum number of sample lines in a group.  Default value is 10.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Maximum number of sample lines in a group. Default is 10.</inlineHelpText>
+        <label>MAX_SAMPLE_LINES</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MEDICAL_INSIGHTS_COLUMNS_vod__c</fullName>
+        <defaultValue>&quot;Date_vod__c,Summary_vod__c,Account_vod__c,Medical_Event_vod__c,Clinical_Trial_vod__c,Publication_vod__c&quot;</defaultValue>
+        <description>This setting holds a comma list of Medical Insights field API names. These fields will show as columns in the home page Medical Insights list on offline platforms.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Comma delimited list of fields to show as columns in the home page Medical Insights list. Maximum number of fields is 15.</inlineHelpText>
+        <label>Medical Insights Columns</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MEDICAL_INSIGHTS_RESTRICTED_WORDS_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Validates Key Medical Insight records for the words and phrases defined in the MEDICAL_INSIGHTS_RESTRICTED_WORDS Veeva Message.</description>
+        <externalId>false</externalId>
+        <label>Medical Insights Restricted Words</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MESSAGE_VOD_WHERE_CLAUSE_vod__c</fullName>
+        <defaultValue>&quot;MESSAGE_VOD__C_WHERE_CLAUSE;;Blackberry&quot;</defaultValue>
+        <description>BlackBerry Messages Where Clause</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where clause used to filter the Message records downloaded to the VMobile BlackBerry application.</inlineHelpText>
+        <label>MESSAGE_VOD__C_WHERE_CLAUSE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MOBILE_DESCRIBES_BB_vod__c</fullName>
+        <defaultValue>&quot;MOBILE_DESCRIBES;;Blackberry&quot;</defaultValue>
+        <description>Contains the list of objects that the VMobile BlackBerry application will perform a DESCRIBE against to determine fields and security.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains the list of objects that the VMobile BlackBerry application will perform a DESCRIBE against to determine fields and security.</inlineHelpText>
+        <label>MOBILE_DESCRIBES</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MOBILE_DESCRIBES_vod__c</fullName>
+        <defaultValue>&quot;MOBILE_DESCRIBES;;MOBILE&quot;</defaultValue>
+        <description>Contains the list of objects that the VMobile PDA application will perform describes on to determine fields and security.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains the list of objects that the VMobile PDA application will perform DESCRIBES against to determine fields and security.</inlineHelpText>
+        <label>MOBILE_DESCRIBES</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MSG_HOME_TERR_DELTA_NUM_DAYS_vod__c</fullName>
+        <defaultValue>7</defaultValue>
+        <description>Designates the number of days Territory delta information is preserved for display in the VMobile Tablet application Home Page.  Default value is 7 days.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates the number of days Territory delta information is preserved for display in the VMobile Tablet application Home Page.  Default value is 7 days.</inlineHelpText>
+        <label>MSG_HOME_TERR_DELTA_NUM_DAYS</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MULTICHANNEL_ACTIVITY_ALERT_NUM_DAYS_vod__c</fullName>
+        <defaultValue>15</defaultValue>
+        <description>The duration in days for which the alert for multichannel activity is displayed to the users.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The duration in days for which the alert for multichannel activity is displayed to the users.</inlineHelpText>
+        <label>Multichannel Activity Alert Duration</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MULTI_PROD_USER_DEFINED_PRESENTATION_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enables users to add key messages of multiple products to a User Defined Presentation using the Manage My Presentation UI.</description>
+        <externalId>false</externalId>
+        <label>MULTI_PROD_USER_DEFINED_PRESENTATION</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MY_DOMAIN_vod__c</fullName>
+        <defaultValue>&quot;MY_DOMAIN;;iPad&quot;</defaultValue>
+        <description>For users with My Domain functionality, this URL will replace the SFDC url on iRep</description>
+        <externalId>false</externalId>
+        <label>MY_DOMAIN</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MY_SAMPLES_LAYOUT_EDIT_vod__c</fullName>
+        <defaultValue>&quot;MY_SAMPLES_LAYOUT_EDIT;;SAMPLES_MGMT&quot;</defaultValue>
+        <description>Salesforce CSS for the My Samples Edit page layout icon and header bar in the Veeva CRM online application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Salesforce CSS for the My Samples Edit page layout icon and header bar in the Veeva CRM online application.</inlineHelpText>
+        <label>MY_SAMPLES_LAYOUT_EDIT</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MY_SAMPLES_LAYOUT_VIEW_vod__c</fullName>
+        <defaultValue>&quot;MY_SAMPLES_LAYOUT_VIEW;;SAMPLES_MGMT&quot;</defaultValue>
+        <description>Salesforce CSS for the My Samples View page layout icon and header bar in the Veeva CRM online application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Salesforce CSS for the My Samples View page layout icon and header bar in the Veeva CRM online application.</inlineHelpText>
+        <label>MY_SAMPLES_LAYOUT_VIEW</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Medical_Inquiry_Fulfillment_Default_vod__c</fullName>
+        <description>The username that a Medical Inquiry Fulfillment record is assigned to if the Medical Inquiry Fulfillment feature is enabled and the Assign To User field on a Medical Inquiry record is empty.</description>
+        <externalId>false</externalId>
+        <label>Medical Inquiry Fulfillment Default</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MultiselectLimitEnforced_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Limits the number of items that can be selected in the VInsights report options to 15.  If disabled, an unlimited number of items can be selected.  Default value is Checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Limits the number of items that can be selected in the VInsights report options to 15.  Default value is Checked.</inlineHelpText>
+        <label>MultiselectLimitEnforced</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NEW_ACCOUNT_WIZARD_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines the Account Wizard displayed when creating a new account from the My Accounts page.  When enabled the wizard performs a check for duplicate account names prior to Save. Default value is Unchecked.
+
+Unchecked = Use Salesforce.com standard wizard and do not check for duplicate accounts.
+Checked = Use Veeva Account Wizard and check for duplicate accounts.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines the Account Wizard displayed when creating a new account from the My Accounts page. Default value is Unchecked.</inlineHelpText>
+        <label>NEW_ACCOUNT_WIZARD</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NEW_ACC_TYPES_DISABLE_LICENSE_INFO_vod__c</fullName>
+        <defaultValue>&quot;NEW_ACCOUNT_TYPES_DISABLE_LICENSE_INFO;;Account&quot;</defaultValue>
+        <description>Contains a comma-delimited list of non-translated Account Record Types (denoted as &quot;Record Type Label&quot; in the SFDC UI-App Setup/Customize/Accounts/Person Accounts/Record Types).  This prevents users from capturing license info for these account types.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Disables the capture of License Information for the specified Account Record Types when creating a new account using the New Account or Parent Account Wizard.</inlineHelpText>
+        <label>NEW_ACCOUNT_TYPES_DISABLE_LICENSE_INFO</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NIGHTLY_REFRESH_INTERVAL_vod__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>Interval, in days, at which the VMobile BlackBerry application nightly refresh process will run.  Default value is 1 day.  If the value is set to 0 the nightly refresh will not run.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Interval, in days, at which the VMobile BlackBerry application nightly refresh process will run.  Default value is 1 day.</inlineHelpText>
+        <label>NIGHTLY_REFRESH_INTERVAL</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Delivery_Dates_vod__c</fullName>
+        <description>Number, range from 2 to 5, Defines how many delivery dates the user can add to the order.</description>
+        <externalId>false</externalId>
+        <label>Number Delivery Dates</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OBJECTIVE_CALL_RECORD_TYPE_vod__c</fullName>
+        <description>Enter a Call record type here. This call record type will be used when a user creates a call directly from a call objective. If this is left blank, creating a call from a call objective will use to the default record type for the user&apos;s profile.</description>
+        <externalId>false</externalId>
+        <label>Call Objective Call RecordType</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OBJECT_LIST_BB_vod__c</fullName>
+        <defaultValue>&quot;OBJECT_LIST;;Blackberry&quot;</defaultValue>
+        <description>List of objects downloaded to the VMobile BlackBerry application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of objects downloaded to the VMobile BlackBerry application.</inlineHelpText>
+        <label>OBJECT_LIST</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OBJECT_LIST_vod__c</fullName>
+        <defaultValue>&quot;OBJECT_LIST;;REFRESH_HTML&quot;</defaultValue>
+        <description>List of objects downloaded to the VMobile PDA Edition.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of objects downloaded to the VMobile PDA Edition.</inlineHelpText>
+        <label>OBJECT_LIST</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OM_DELIVERY_SPLIT_MODE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>0=disabled (default)
+                    1=enables the line split mode on the OM user interface from Affiliations
+                    2=enables the line split mode on the OM user interface from Account Partners</description>
+        <externalId>false</externalId>
+        <label>OM Delivery Split Mode</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OM_DISABLE_QUANTITY_SPLIT_ROLLUP_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Determines in OM Line Split deliveries if the individual split quantities should automatically roll-up to the master quantity on the Order Line. When disabled, the individual delivery quantities will not roll-up to the master quantity, and the Remaining Quantity field will indicate potential quantity entry discrepancies.</description>
+        <externalId>false</externalId>
+        <label>OM Disable Quantity Split Rollup</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OM_ENABLE_ENHANCED_BUNDLE_PACKS_vod__c</fullName>
+        <description>If enabled, bundle packs can be added as new order lines and each order lines are created in the background for each product/bundle pack combination so that external systems can identify how many quantities, and from which pack(s) the product was purchased</description>
+        <externalId>false</externalId>
+        <label>OM Enabled Enhanced Bundle Packs</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OM_ORDER_LINE_COLUMN_WIDTH_vod__c</fullName>
+        <defaultValue>&quot;OM_ORDER_LINE_COLUMN_WIDTH;;ORDER_MANAGEMENT&quot;</defaultValue>
+        <description>Reference to a Veeva message that defines pixel widths for columns in the Order Lines list in the order entry window.</description>
+        <externalId>false</externalId>
+        <label>OM_ORDER_LINE_COLUMN_WIDTH</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OM_Print_Blocked_Fields_vod__c</fullName>
+        <defaultValue>&quot;ORDER_LINE_PRINT_BLOCKED_FIELDS;;ORDER_MANAGEMENT&quot;</defaultValue>
+        <description>List of Order Line fields to be omitted when printing. Set the value to a Veeva Message, i.e. ORDER_LINE_PRINT_BLOCKED_FIELDS;;ORDER_MANAGEMENT, then define the list in the Veeva Message, i.e. Direct_vod:Warning_vod__c, Freegoods_vod__c;Transfer_vod:Total_Discount_vod__c.</description>
+        <externalId>false</externalId>
+        <label>OM Print Blocked Fields</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ORDER_DISCLAIMER_vod__c</fullName>
+        <defaultValue>&quot;DISCLAIMER;;ORDER_MANAGEMENT&quot;</defaultValue>
+        <description>It is used to be displayed on an order signature page, and to be saved to the order once the order is signed. Set it to a Veeva Message, i.e. DISCLAIMER;;ORDER_MANAGEMENT, then define the disclaimer in that Veeva Message.</description>
+        <externalId>false</externalId>
+        <label>ORDER DISCLAIMER</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ORDER_SUBMIT_MODE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Enables Submit before Save on Orders. 0 = no change, 1 = allows Submit order before saving</description>
+        <externalId>false</externalId>
+        <label>Order Submit Mode</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ORDER_TOUCH_ENTRY_MODE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Determines the OM entry mode behavior on touch devices: 0 = no change. 1 = enables Mass Add Lines. 2 = enables Saving of Valid Lines Only. 3 = enables Mass Add Lines AND Saving of Valid Lines Only.</description>
+        <externalId>false</externalId>
+        <label>Order Touch Entry Mode</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Online_Tab_URL_vod__c</fullName>
+        <defaultValue>&quot;Online_Tab_URL;;iPad&quot;</defaultValue>
+        <description>The URL a user is navigated to when the Go Online option is selected in the VMobile iPad application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The URL a user is navigated to when the Go Online option is selected in the VMobile iPad application.</inlineHelpText>
+        <label>Online_Tab_URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Management2_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Enables the Order Management capabilities in Veeva CRM online and the VMobile Tablet application.  Default is checked.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enables the Order Management capabilities in Veeva CRM online and the VMobile Tablet application.  Default is checked.</inlineHelpText>
+        <label>Order Management2</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PERMISSION_SET_SUPPORT_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, turns on Veeva support for PermissionSets. Requires VeevaUserPermissions Apex class installed, configured for Salesforce API v25+, and enabled for all profiles. When adding new profiles, be sure to enable access to the Apex class for them also.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, turns on Veeva support for PermissionSets. See field description for additional requirements.</inlineHelpText>
+        <label>PermissionSet Support</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PHOTO_QUALITY_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Determines the quality of photos uploaded from offline platforms. A value of &quot;0&quot; indicates that this feature is disabled. Please see the documentation for more details.</description>
+        <externalId>false</externalId>
+        <label>Photo Quality</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>POSITION_DISCLAIMER_ABOVE_SIGNATURE_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Moves the position of the disclaimer on the signature page for a call report to be above the signature box.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, move the position of the disclaimer on the signature page for a call report to be above the signature box.</inlineHelpText>
+        <label>POSITION_DISCLAIMER_ABOVE_SIGNATURE</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PREVENT_TOT_OVERLAP_vod__c</fullName>
+        <description>Setting for enabling warnings/errors when time off territory records overlap</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Setting for enabling warnings/errors when time off territory records overlap</inlineHelpText>
+        <label>Prevent TOT Overlap</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PREVENT_TOT_WEEKEND_vod__c</fullName>
+        <description>Setting for enabling warning/errors when time off territory is recorded on a weekend.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Setting for enabling warning/errors when time off territory is recorded on a weekend.</inlineHelpText>
+        <label>Prevent TOT Weekend</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PRODUCT_0_NOT_FOR_ACCOUNT_1_vod__c</fullName>
+        <defaultValue>&quot;PRODUCT_0_IS_NOT_ALLOWED_FOR_ACCOUNT_1;;Blackberry&quot;</defaultValue>
+        <description>Warning message displayed when a restricted product is selected for a Call Attendee in the VMobile BlackBerry application.  Message format is {0} is not allowed for {1} where the {0} is the product name and {1} is the attendee name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Warning message displayed when a restricted product is selected for a Call Attendee in the VMobile BlackBerry application.</inlineHelpText>
+        <label>PRODUCT_0_IS_NOT_ALLOWED_FOR_ACCOUNT_1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PaperDetail_vod__c</fullName>
+        <defaultValue>&quot;PaperDetail;;CallReport&quot;</defaultValue>
+        <description>Value displayed in parentheses next to a Detail record on a Call Report to differentiate between electronic and paper details.  For use when detailing via a 3rd party electronic detailing solution.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Value displayed in parentheses next to a Detail record on a Call Report to differentiate between electronic and paper details.  For use when detailing via a 3rd party electronic detailing solution.</inlineHelpText>
+        <label>PaperDetail</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Priority_BottomToTop_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to define whether the hierarchy of the Payment values should be applied from Bottom To Top (Line value wins over Brand value, Product Group, and Total Order values) or from Top to Bottom (Total Order value wins over Product Group value, Brand, and Line values).</description>
+        <externalId>false</externalId>
+        <label>Payment Priority BottomToTop</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Values_vod__c</fullName>
+        <description>Used to drive the allowed values that will be visible by the user in the fields Payment_vod__c, Payment_Group_vod__c, Payment_Brand_vod__c at the Order Line level, and Payment_vod__c at the Order Header level.</description>
+        <externalId>false</externalId>
+        <label>Payment Values</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Detail_Discussion_Default_vod__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>Determines the default Product Detail and Product Discussion behavior on call records. See documentation for more details. Setting options:
+            0 - Do not default Product Detail or Product Discussion
+            1 - Default Product Detail to checked but do not create a Product Discussion record (default)
+            2 - Default Product Detail to checked and create a Product Discussion record with Product field pre-populated (will not apply to group calls</description>
+        <externalId>false</externalId>
+        <label>Product_Detail_Discussion_Default</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RECEIPT_TEMPLATE_vod__c</fullName>
+        <defaultValue>&quot;RECEIPT_TEMPLATE;;MEDICAL_INQUIRY&quot;</defaultValue>
+        <description>Reference to the HTML template used when printing a Medical Inquiry. Configured using the corresponding RECEIPT_TEMPLATE Veeva Message.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference to the HTML template used when printing a Medical Inquiry.</inlineHelpText>
+        <label>RECEIPT_TEMPLATE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REQUIRED_JIT_TIMEOUT_vod__c</fullName>
+        <defaultValue>60</defaultValue>
+        <description>Controls the wait time for Just in Time sync of Call data partially downloaded to the VMobile BlackBerry application.  When this time is reached the sync process will timeout or fail. Default value is 60 minutes.  The minimum value allowed for this setting is 10 minutes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Controls the wait time for Just in Time sync of Call data partially downloaded to the VMobile BlackBerry application. Default value is 60 minutes.</inlineHelpText>
+        <label>REQUIRED_JIT_TIMEOUT</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REQUIRE_REFRESH_IF_OLDER_HOURS_vod__c</fullName>
+        <defaultValue>336</defaultValue>
+        <description>Indicates the number of hours at which a mandatory Refresh is required for the VMobile BlackBerry application.  The system will automatically initiate a refresh if this value is exceeded. Default value is 336 hours which is two weeks.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates the number of hours at which a mandatory Refresh is required for the VMobile BlackBerry application.  Default value is 336 hours.</inlineHelpText>
+        <label>REQUIRE_REFRESH_IF_OLDER_HOURS</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RETURN_TO_CLM_AFTER_SIGN_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When in CLM, enables users to return to CLM after capturing a signature</description>
+        <externalId>false</externalId>
+        <label>RETURN TO CLM AFTER SIGN</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ROW_COUNTS_vod__c</fullName>
+        <defaultValue>&quot;ROW_COUNTS;;TABLET&quot;</defaultValue>
+        <description>String used by application.  Default is: Synchronizing {0} row(s) for {1}. This is a system internal label. DO NOT TRANSLATE.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Veeva Systems Internal Use Only.</inlineHelpText>
+        <label>ROW_COUNTS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rebate_InLevel_Addition_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Controls the additive behavior for combining discounts within the same discount level: linear additive or price additive. 
+        
+Default is 0, linear additive behavior is active.</description>
+        <externalId>false</externalId>
+        <label>Rebate In Level Addition</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Restrictive_Address_Selector_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>In order management if this flag is checked, users can choose addresses only flagged as Billing or Shipping</description>
+        <externalId>false</externalId>
+        <label>Restrictive Address Selector</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SAMPLE_CARD_REG_EXPRESS_vod__c</fullName>
+        <defaultValue>&quot;SAMPLE_CARD_REG_EXPRESS;;CallReport&quot;</defaultValue>
+        <description>Expression used to validate the Sample Card value on Save or Submit of a Call. If an expression value is not configured then no validation is performed.
+	
+Example validation expression for Call Sample Card is ^[0-9]{10}$.  This expression requires that the Sample Card value is exactly 10 numeric characters.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Expression used to validate the Sample Card value on Save or Submit of a Call.</inlineHelpText>
+        <label>SAMPLE_CARD_REG_EXPRESS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAMPLE_LOT_EXP_WARNING_THRESHOLD_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Sample Lot Expiration Warning Threshold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAMPLE_LOT_QTY_WARNING_THRESHOLD_vod__c</fullName>
+        <description>For sample lots only. If the remaining on hand quantity is less than or equal to  the setting value, then the user will see a warning in the call report.</description>
+        <externalId>false</externalId>
+        <label>Sample Lot Quantity Warning Threshold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAMPLE_SEND_CARD_REG_EXPRESS_vod__c</fullName>
+        <defaultValue>&quot;SAMPLE_SEND_CARD_REG_EXPRESS;;CallReport&quot;</defaultValue>
+        <description>Expression used to validate the Sample Send Card value on Save or Submit of a Call. If an expression value is not configured then no validation is performed.
+	
+Example validation expression for Call Sample Send Card is ^[0-9]{10}$.  This expression requires that the Sample Send Card value is exactly 10 numeric characters.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Expression used to validate the Sample Send Card value on Save or Submit of a Call.</inlineHelpText>
+        <label>SAMPLE_SEND_CARD_REG_EXPRESS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SCHEDULER_CONFIGURE_DISPLAY_vod__c</fullName>
+        <description>Setting to allow the ability to display specific fields from the supported objects on My Schedule(via the &quot;Configure Display&quot; feature). This setting should hold a semicolon-delimited list of API Field Names from the Account, Child Account, and/or Address Objects.</description>
+        <externalId>false</externalId>
+        <label>SCHEDULER_CONFIGURE_DISPLAY</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SCHEDULER_FILTER_vod__c</fullName>
+        <description>Comma-delimited list of API Field Names for Account, Address, or TSF fields</description>
+        <externalId>false</externalId>
+        <label>SCHEDULER_FILTER</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SIDEBAR_ORDER_vod__c</fullName>
+        <defaultValue>&quot;SIDEBAR_ORDER;;TABLET&quot;</defaultValue>
+        <description>Designates the order of the sections displayed in sidebar for the VMobile Tablet application.  Values should be entered as a comma delimited list.  Example: Links_vod,Recent_Items_vod,Account_Lists_vod.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates the order of the sections displayed in sidebar for the VMobile Tablet application.</inlineHelpText>
+        <label>SIDEBAR_ORDER</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SURVEY_ALERT_THRESHOLD_vod__c</fullName>
+        <defaultValue>14</defaultValue>
+        <description>This value determines the number of days before a Survey&apos;s end date to display an alert to the user.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This value determines the number of days before a Survey&apos;s end date to display an alert to the user.</inlineHelpText>
+        <label>Survey Alert Threshold</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SYNC_CONFIGURATION_MODE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Controls use of VMobile Object Configurations. 0 indicates only one Top/Full configuration record per object. 1 indicates multiples are allowed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Set to 1 to allow multiple VMobile Object Configurations per object.</inlineHelpText>
+        <label>Sync Configuration Mode</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SYNC_DELETE_REFRESH_MODE_vod__c</fullName>
+        <description>For mobile sync, indicates whether to use special delete processing design for handling very large numbers of deletes. When enabled, will force an object refresh if user has not sync&apos;d for more than 15 days (1 day in TEST mode), or if the number of refreshes is too large for memory.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Set to one of OFF, PRODUCTION, or TEST. Use OFF unless planning large numbers of deletes.</inlineHelpText>
+        <label>SYNC_DELETE_REFRESH_MODE_vod</label>
+        <length>16</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SYNC_DELETE_REFRESH_OBJECTS_vod__c</fullName>
+        <description>If SYNC_DELETE_REFRESH_MODE_vod is PRODUCTION or TEST, then this setting establishes which tables to use the special delete refresh mode. This value can be &quot;ALL&quot; or the name and category of a Message, separated by 2 semicolons, e.g. &quot;SYNC_REFRESH_TABLES;;TABLET&quot;. The message itself should contain a comma-separated list of tables. Any value other than ALL or a valid Message reference will be treated as NONE.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>ALL, NONE,  or a Message reference in the format MESSAGE_NAME;;CATEGORY.</inlineHelpText>
+        <label>SYNC_DELETE_REFRESH_OBJECTS_vod</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SYNC_WARN_INTERVAL_vod__c</fullName>
+        <defaultValue>14</defaultValue>
+        <description>Indicates the number of days allowed to pass without a synchronization activity until a warning notification is displayed to the user on login and exit of the VMobile Tablet application.  Default value is 14 days.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates the number of days without a synchronization activity until a warning notification is displayed to the user in the VMobile Tablet application.  Default value is 14 days.</inlineHelpText>
+        <label>SYNC_WARN_INTERVAL</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_Management_Product_Types_vod__c</fullName>
+        <description>Contains the non-Sample product types that are included in the Sample Management functionality including product availability on Call indicated by a double semi colon list that may include BRC, Alternative Sample, High Value Promotional, Promotional, Reprint or any Custom product type.</description>
+        <externalId>false</externalId>
+        <label>Sample Management Product Types</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Short_Account_Level_vod__c</fullName>
+        <defaultValue>3000</defaultValue>
+        <description>Reduces the number of fields visible on an Account in the VMobile BlackBerry application to the fields listed in the Short_Account_Mobile_SOQL Veeva Message when the number of Accounts the user has visibility to exceeds the designated limit. 
+
+The optimal value for this setting is 1000.  It is not recommended set a limit greater than 6000.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reduces the number of fields visible on an Account in the VMobile BlackBerry application to the fields listed in the Short_Account_Mobile_SOQL Veeva Message. Default value is 3000.</inlineHelpText>
+        <label>Short_Account_Level</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Short_Account_Mobile_SOQL_vod__c</fullName>
+        <defaultValue>&quot;Short_Account_Mobile_SOQL;;Blackberry&quot;</defaultValue>
+        <description>List of Account fields to download to the VMobile BlackBerry application when the record count exceeds the Short_Account_Level setting value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of Account fields to download to the VMobile BlackBerry application when the record count exceeds the Short_Account_Level setting value.</inlineHelpText>
+        <label>Short_Account_Mobile_SOQL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Short_Address_Mobile_SOQL_vod__c</fullName>
+        <defaultValue>&quot;Short_Address_Mobile_SOQL;;Blackberry&quot;</defaultValue>
+        <description>List of Address fields to download to the VMobile BlackBerry application when the Account record count exceeds Short_Account_Level setting value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>List of Address fields to download to the VMobile BlackBerry application when the Account record count exceeds Short_Account_Level setting value.</inlineHelpText>
+        <label>Short_Address_Mobile_SOQL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Short_OBJECT_LIST_Metadata_Only_vod__c</fullName>
+        <defaultValue>&quot;Short_OBJECT_LIST_Metadata_Only;;Blackberry&quot;</defaultValue>
+        <description>Designates the objects for which only meta data, not records, will be downloaded to the VMobile BlackBerry application when the number of Accounts exceeds the Short_Account_Level setting value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates the objects for which only meta data, not records, will be downloaded to the VMobile BlackBerry application when the number of Accounts exceeds the Short_Account_Level setting value.</inlineHelpText>
+        <label>Short_OBJECT_LIST_Metadata_Only</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Publish_Apex_vod__c</fullName>
+        <description>Fill in with the name of the Apex Class to be used when publishing a survey. This Apex Class must be a subclass of BATCH_SURVEY_PUBLISH_ABSTRACT. If the field is empty, VEEVA_BATCH_SURVEY_PUBLISH will be used to publish a survey.</description>
+        <externalId>false</externalId>
+        <label>Survey Publish Apex</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TABLET_LINK_1_vod__c</fullName>
+        <defaultValue>&quot;TABLET_LINK_1;;TABLET&quot;</defaultValue>
+        <description>Configurable link for display in the Sidebar of the VMobile Tablet application.  An administrator can configure up to five links. The links will display in order from TABLET_LINK_1 to TABLET_LINK_5.  The value for the link is configured using the corresponding TABLET_LINK_1 Veeva Message.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Configurable link for display in the Sidebar of the VMobile Tablet application.</inlineHelpText>
+        <label>TABLET_LINK_1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TABLET_LINK_2_vod__c</fullName>
+        <defaultValue>&quot;TABLET_LINK_2;;TABLET&quot;</defaultValue>
+        <description>Configurable link for display in the Sidebar of the VMobile Tablet application.  An administrator can configure up to five links. The links will display in order from TABLET_LINK_1 to TABLET_LINK_5.  The value for the link is configured using the corresponding TABLET_LINK_2 Veeva Message.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Configurable link for display in the Sidebar of the VMobile Tablet application.</inlineHelpText>
+        <label>TABLET_LINK_2</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TABLET_LINK_3_vod__c</fullName>
+        <defaultValue>&quot;TABLET_LINK_3;;TABLET&quot;</defaultValue>
+        <description>Configurable link for display in the Sidebar of the VMobile Tablet application.  An administrator can configure up to five links. The links will display in order from TABLET_LINK_1 to TABLET_LINK_5.  The value for the link is configured using the corresponding TABLET_LINK_3 Veeva Message.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Configurable link for display in the Sidebar of the VMobile Tablet application.</inlineHelpText>
+        <label>TABLET_LINK_3</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TABLET_LINK_4_vod__c</fullName>
+        <defaultValue>&quot;TABLET_LINK_4;;TABLET&quot;</defaultValue>
+        <description>Configurable link for display in the Sidebar of the VMobile Tablet application.  An administrator can configure up to five links. The links will display in order from TABLET_LINK_1 to TABLET_LINK_5.  The value for the link is configured using the corresponding TABLET_LINK_4 Veeva Message.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Configurable link for display in the Sidebar of the VMobile Tablet application.</inlineHelpText>
+        <label>TABLET_LINK_4</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TABLET_LINK_5_vod__c</fullName>
+        <defaultValue>&quot;TABLET_LINK_5;;TABLET&quot;</defaultValue>
+        <description>Configurable link for display in the Sidebar of the VMobile Tablet application.  An administrator can configure up to five links. The links will display in order from TABLET_LINK_1 to TABLET_LINK_5.  The value for the link is configured using the corresponding TABLET_LINK_5 Veeva Message.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Configurable link for display in the Sidebar of the VMobile Tablet application.</inlineHelpText>
+        <label>TABLET_LINK_5</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TABLET_OBJECT_EXCLUDE_LIST_IP_vod__c</fullName>
+        <defaultValue>&quot;TABLET_OBJECT_EXCLUDE_LIST;;IPAD&quot;</defaultValue>
+        <description>Designates the objects to be excluded from download to the VMobile iPad application.  Default list is: Call2_Discussion_vod__c,Call2_Detail_vod__c,Call2_Sample_vod__c,Call2_Key_Message_vod__c,Task,Event_Attendee_vod__c,Benefit_Design_vod__c,Benefit_Design_Line_vod__c,Call2_Expense_vod__c</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates the objects to be excluded from download to the VMobile iPad application.</inlineHelpText>
+        <label>TABLET_OBJECT_EXCLUDE_LIST</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TABLET_OBJECT_EXCLUDE_LIST_vod__c</fullName>
+        <defaultValue>&quot;TABLET_OBJECT_EXCLUDE_LIST;;TABLET&quot;</defaultValue>
+        <description>String used by application.  Default is: Call2_Discussion_vod__c,Call2_Detail_vod__c,Call2_Sample_vod__c,Call2_Key_Message_vod__c,Task,Event_Attendee_vod__c,Benifit_Design_vod__c,Benefit_Design_Line_vod__c,Call2_Expense_vod__c</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Designates the objects to be excluded from download to the VMobile Tablet application.</inlineHelpText>
+        <label>TABLET_OBJECT_EXCLUDE_LIST</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TERRITORY_LINK_ON_ACCOUNT_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Setting to determine the display of the Territory field on the Account Details page</description>
+        <externalId>false</externalId>
+        <label>Territory Link on Account</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TERRITORY_WHERE_CLAUSE_vod__c</fullName>
+        <defaultValue>&quot;TERRITORY_WHERE_CLAUSE;;Blackberry&quot;</defaultValue>
+        <description>BlackBerry Territory where clause</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where clause used to filter the Territory records downloaded to the VMobile BlackBerry application.</inlineHelpText>
+        <label>TERRITORY_WHERE_CLAUSE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TERRITORY_WORKFLOW_vod__c</fullName>
+        <description>A comma delimited list of HCP or HCO types to turn on for Territory Workflow. Use the Veeva keyword HCP_vod or HCO_vod to configure on for all record types of that Account Type; presence of either keyword trumps any sub-record type label listed. List the untranslated record type labels instead to turn on at a record type level.</description>
+        <externalId>false</externalId>
+        <label>Territory Workflow</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>THIRD_PARTY_APPLIESTO_URL_vod__c</fullName>
+        <defaultValue>&quot;THIRD_PARTY_APPLIESTO_URL;;iPad&quot;</defaultValue>
+        <description>URL that goes into the AppliesTo section of the WS-Trust based token request</description>
+        <externalId>false</externalId>
+        <label>THIRD_PARTY_APPLIESTO_URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>THIRD_PARTY_AUTH_URL_vod__c</fullName>
+        <defaultValue>&quot;THIRD_PARTY_AUTH_URL;;iPad&quot;</defaultValue>
+        <description>URL points to endpoint where to send token request to for third party authentication on iRep</description>
+        <externalId>false</externalId>
+        <label>THIRD_PARTY_AUTH_URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TIMELINE_FILTER_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Setting for enabling Timeline Product and User filters
+   •   Checked enables filtering capability
+   •   Unchecked disables filtering capability</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Setting for enabling Timeline Product and User filters</inlineHelpText>
+        <label>Timeline Filter</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TIMEOUT_vod__c</fullName>
+        <defaultValue>30</defaultValue>
+        <description>Controls the number of minutes before the handheld application makes the user confirm their password.  Default value is 30.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Controls the number of minutes before the handheld application makes the user confirm their password.  Default value is 30.</inlineHelpText>
+        <label>TIMEOUT</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TIME_ZONE_DISPLAY_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Setting to determine the display of time zone data in the UI. See documentation for details.</description>
+        <externalId>false</externalId>
+        <label>Time Zone Display</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TOP_ACCTS_COLS_vod__c</fullName>
+        <defaultValue>&quot;TOP_ACCTS_COLS;;Analytics&quot;</defaultValue>
+        <description>For each specified top account report, a comma-separated list of fields to display. The configuration is defined in the specified Veeva message</description>
+        <externalId>false</externalId>
+        <label>TOP_ACCTS_COLS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TSF_FIELDS_SCHEDULER_vod__c</fullName>
+        <description>Setting to enable the surfacing of Territory Specific Fields in the Weekly Scheduler. Populate with the semicolon separated list of API field names (with trailing semicolon) that should be available for selection. If left blank, the Territory Fields option will not be available in the Weekly Scheduler. Example of values: ;LAST_ACTIVITY_DATE_VOD__C;FIRST_PICK__C;ROUTE_VOD__C;</description>
+        <externalId>false</externalId>
+        <label>TSF Fields in Scheduler</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TSF_VOD_WHERE_CLAUSE_vod__c</fullName>
+        <defaultValue>&quot;TSF_VOD__C_WHERE_CLAUSE;;Blackberry&quot;</defaultValue>
+        <description>BlackBerry TSF Where Clause</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where clause used to filter the TSF records downloaded to the VMobile BlackBerry application.</inlineHelpText>
+        <label>TSF_VOD__C_WHERE_CLAUSE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tag_Alert_Reg_Express_vod__c</fullName>
+        <description>Regular expression used to validate the Tag Alert Number value on confirmation of Sample Receipts. If the value is left blank, no validation is performed.
+             Example regular expression to validate the sample card is exactly 10 numeric values: ^[0-9]{10}$</description>
+        <externalId>false</externalId>
+        <label>Tag Alert Reg Express</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>UPDATE_CHECK_TIMEOUT_vod__c</fullName>
+        <defaultValue>10</defaultValue>
+        <description>Controls the wait time for Just in Time sync of Call data already downloaded to the VMobile BlackBerry application.  When this time is reached the sync process will timeout or fail. Default value is 10 minutes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Controls the wait time for Just in Time sync of Call data already downloaded to the VMobile BlackBerry application.  Default value is 10 minutes.</inlineHelpText>
+        <label>UPDATE_CHECK_TIMEOUT</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>USERTERRITORY_WHERE_CLAUSE_vod__c</fullName>
+        <defaultValue>&quot;USERTERRITORY_WHERE_CLAUSE;;Blackberry&quot;</defaultValue>
+        <description>Where clause to filter the User records downloaded to the VMobile BlackBerry application. Default value is WHERE @@VOD_USERS_IN_MY_TERRITORY:UserId@@</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where clause used to filter the User records downloaded to the VMobile BlackBerry application.</inlineHelpText>
+        <label>USERTERRITORY_WHERE_CLAUSE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>USER_MOBILE_SOQL_vod__c</fullName>
+        <defaultValue>&quot;USER_MOBILE_SOQL;;Blackberry&quot;</defaultValue>
+        <description>Limit the columns that are downloaded to the blackberry client for the User object</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Limit the columns that are downloaded to the blackberry client for the User object</inlineHelpText>
+        <label>USER_MOBILE_SOQL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VEEVA_SETTINGS_VOD_C_WHERE_CLAUSE_vod__c</fullName>
+        <defaultValue>&quot;VEEVA_SETTINGS_VOD__C_WHERE_CLAUSE;;Blackberry&quot;</defaultValue>
+        <description>Blackberry WHERE CLAUSE filter for Veeva_Settings_vod__c object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Where clause used to filter the Veeva Settings records downloaded to the VMobile BlackBerry application.</inlineHelpText>
+        <label>VEEVA_SETTINGS_VOD__C_WHERE_CLAUSE</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VINSIGHTS_AUTOBUILD_MODE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Disables the auto-building of VInsights reports (defined via Analytics_Layouts_vod). Usage:
+0 = default value. Does not disable auto-building
+1 = Disables auto-build for all VInsights reports, including Account Summary
+2 = Disables auto-build for all VInsights reports accessed from the VInsights tab only (excludes Account Summary)</description>
+        <externalId>false</externalId>
+        <label>VINSIGHTS_AUTOBUILD_MODE</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VINSIGHTS_CALENDAR_CONFIG_vod__c</fullName>
+        <defaultValue>&quot;VINSIGHTS_CALENDAR_CONFIG;;Analytics&quot;</defaultValue>
+        <description>A list of name and value pairs to configure calendar and work week options. The configuration is defined in the specified Veeva message</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A list of name and value pairs to configure calendar and work week options. The configuration is defined in the specified Veeva message</inlineHelpText>
+        <label>VINSIGHTS_CALENDAR_CONFIG</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VINSIGHTS_CONFIRM_SYNC_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, users will be prompted to choose whether to begin VInsights sync or not.</description>
+        <externalId>false</externalId>
+        <label>VINSIGHTS_CONFIRM_SYNC</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VInsights_Goal_Threshold_vod__c</fullName>
+        <defaultValue>&apos;10,25&apos;</defaultValue>
+        <description>Defines thresholds for the color of the Goal Attainment. If attainment is less than the first number, the attainment percentage will be displayed in Red. If between the first and second number, the attainment percentage will be displayed in yellow. Otherwise, will be displayed in Green.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines thresholds for the color of the Goal Attainment in VInsights.</inlineHelpText>
+        <label>VInsights Goal Threshold</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>WATERMARK_TRAINING_vod__c</fullName>
+        <defaultValue>&quot;WATERMARK_TRAINING;;CLM&quot;</defaultValue>
+        <description>When populated, this text is displayed as a watermark on all CLM Presentations marked as Training Content.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When populated, this text is displayed as a watermark on all CLM Presentations marked as Training Content.</inlineHelpText>
+        <label>WATERMARK_TRAINING</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WEB_SERVICE_TIMEOUT_vod__c</fullName>
+        <description>The number of seconds to wait for a web service (SOAP, REST) response until a timeout occurs.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of seconds to wait for a web service (SOAP, REST) response until a timeout occurs.</inlineHelpText>
+        <label>WEB SERVICE TIMEOUT</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WORK_HOURS_vod__c</fullName>
+        <defaultValue>8</defaultValue>
+        <description>This setting describes the number of hours in the work day and is used in the VInsights call activity calculations. Value should be a whole number between 1 and 24. If the value is not between 1 and 24, the default will be used.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This setting describes the number of hours in the work day and is used in the VInsights call activity calculations. Value should be a whole number between 1 and 24. If the value is not between 1 and 24, the default will be used.</inlineHelpText>
+        <label>WORK_HOURS</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Veeva Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

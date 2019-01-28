@@ -1,0 +1,74 @@
+<apex:component controller="VODRedirectController">
+    <script type="text/javascript">
+        var com;
+        if (!com) com = {};
+        if (!com.vod309) com.vod309 = {};
+        com.vod309.redirect = {};
+        com.vod309.redirect.getCookie = function(c_name) {
+            if (document.cookie.length>0) {
+                c_start=document.cookie.indexOf(c_name + "=");
+                if (c_start!=-1) {
+                    c_start=c_start + c_name.length+1;
+                    c_end=document.cookie.indexOf(";",c_start);
+                    if (c_end==-1) {
+                        c_end=document.cookie.length;
+                    }
+                    return unescape(document.cookie.substring(c_start,c_end))
+                }
+            }
+            return ""
+        }
+
+        com.vod309.redirect.isMaint = function() {
+            var freepass = false;
+            var excludeuserlist = '{!ExcludedUsers}'.split(',');
+            for (var x = 0; x < excludeuserlist.length; x++) {
+                if ('{!JSENCODE($User.Username)}'.indexOf(excludeuserlist[x]) == 0) {
+                    freepass = true;
+                }
+            }
+
+            if (freepass == false && {!InMaintenance} == true) {
+                return true;
+            }
+
+            return false;
+        }
+
+        com.vod309.redirect.getVoDURL = function (oType, paramString) {
+            if (com.vod309.redirect.isMaint() == true) {
+                return "javascript:'<B>The system is undergoing maintenance, please try again later.</B>'";
+            }
+            
+            var VOD_VERSION = "{!VodVersion}";
+            var sid = com.vod309.redirect.getCookie("sid");
+            var url = "{!VodUrl}";
+            url += "?VER=" + VOD_VERSION;
+            url += "&ses=" + "{!$Api.Session_ID}";
+            url += "&url=" + "{!URLENCODE($Api.Partner_Server_URL_240 )}";
+            url += "&retURL=" + "{!URLENCODE($Request.retURL)}";
+            url += "&SSID=" + sid + "&oType=" + oType + paramString;
+            return url;
+        }
+
+        com.vod309.redirect.redirect = function(oType, paramString) {
+            var vodiframe = document.getElementById("vod_iframe");
+            var url = com.vod309.redirect.getVoDURL(oType, paramString);
+            vodiframe.src = url;
+        }
+        
+        com.vod309.redirect.redirectContent = function(oType, paramString) {
+            var vodiframe = document.getElementById("vod_iframe");
+            var url = com.vod309.redirect.getVoDURL(oType, paramString);
+            url = url.replace("{!VodServerUrl}", "{!VodContentUrl}");
+            url += "&contentUrl={!VodContentUrl}";
+            vodiframe.src = url;
+        }
+        
+        //CRM-22334
+        var vodiframe = document.getElementById("vod_iframe");
+        if (vodiframe) {
+            vodiframe.setAttribute("onload", "scrollTo(0, 0)");
+        }
+  </script>
+</apex:component>

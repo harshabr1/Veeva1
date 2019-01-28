@@ -1,0 +1,7 @@
+<apex:page controller="VEEVA_AccountCyclePlan_Control" showHeader="false"  >
+    <c:Account_Cycle_Plan_View_vod theAccountId="{!AccountId}" 
+                                   cshowActualCalls="{!showActualCalls}"
+                                   cshowTotalCalls="{!showTotalCalls}"
+                                   cshowProdDetails="{!showProdDetails}"
+                                   cenableRemaining="{!enableRemainingSetting}"/>
+</apex:page>

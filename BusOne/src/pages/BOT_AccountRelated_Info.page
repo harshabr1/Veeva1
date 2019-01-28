@@ -1,0 +1,108 @@
+<!-- Name : BOT_AccountRelated_Info
+Created by : Sreenivasulu Adipudi
+Created Date : 07/19/2017
+Overview : To display the related Plan demography,Plan formulary and Pharmacy service records for selected account in account detail page
+-->
+<apex:page standardController="Account" extensions="BOT_AccountRelated_Info_extn">
+    <apex:form ID="FormID">
+        <apex:pageBlock >
+            
+            <!-- To display channel filter on the screen -->
+            <apex:outputlabel value="Select Channel  "/>
+            <apex:selectList size="1" value="{!selected}">
+                <apex:selectOptions value="{!dynamicList}"></apex:selectOptions>
+                <apex:actionSupport action="{!Get_Accout_Summary}" event="onchange" reRender="PlanTable1,formTable1,pharmacyTable1"/>
+            </apex:selectList>            
+            
+            <!--
+			<apex:pageblockButtons location="Top">
+				<apex:outputPanel id="myButtons">
+					<apex:commandButton value="Beginning" action="{!Beginning}" disabled="{!disabledPrevious}" reRender="myButtons,myPanel"/>
+					<apex:commandButton value="Previous" action="{!Previous}" disabled="{!disabledPrevious}" reRender="myButtons,myPanel"/>
+					<apex:commandButton value="Next" action="{!Next}" disabled="{!disabledNext}" reRender="myButtons,myPanel"/>
+					<apex:commandButton value="End" action="{!End}" disabled="{!disabledNext}" reRender="myButtons,myPanel"/>
+				</apex:outputPanel>
+			</apex:pageblockButtons>
+			-->
+            
+            <apex:pageBlockSection id="Plan1" title="Plan demographics" columns="1" >
+                <apex:pageBlockTable id="PlanTable1" title="Plan demographics" value="{!listOfPlans}" var="Plan">
+                    <apex:Column Value="{!Plan.BOT_Channel__c}" >                        
+                        <apex:facet name="header">
+                            <apex:CommandLink action="{!PlanOrderByChannel}" reRender="PlanTable1">{!$ObjectType.Account_Plan_vod__c.fields.BOT_Channel__c.label}</apex:CommandLink>
+                        </apex:facet>
+                    </apex:Column>
+                    <apex:Column >                        
+                        <apex:outputLink value="/{!Plan.id}">{!Plan.name}</apex:outputLink>
+                        <apex:facet name="header">
+                            <apex:CommandLink action="{!PlanOrderByName}" reRender="PlanTable1">{!$ObjectType.Account_Plan_vod__c.fields.name.label}</apex:CommandLink>
+                        </apex:facet>                            
+                    </apex:Column>                   
+                    <apex:Column headerValue="{!$ObjectType.Account_Plan_vod__c.fields.BOT_Product_Type__c.label}" >
+                        <apex:outputText value="{!Plan.BOT_Product_Type__c}" />
+                    </apex:Column>
+                    <apex:Column headerValue="{!$ObjectType.Account_Plan_vod__c.fields.BOT_Formulary_Used__c.label}" >
+                        <apex:outputText value="{!Plan.BOT_Formulary_Used__c}" />
+                    </apex:Column>
+                    <apex:Column headerValue="{!$ObjectType.Account_Plan_vod__c.fields.BOT_PBM__c.label}" >
+                        <apex:outputText value="{!Plan.BOT_PBM__c}" />
+                    </apex:Column>
+                    <apex:Column headerValue="{!$ObjectType.Account_Plan_vod__c.fields.BOT_Product_Lives_Rx__c.label}" >
+                        <apex:outputText value="{!Plan.BOT_Product_Lives_Rx__c}" />
+                    </apex:Column>                        
+                </apex:pageBlockTable>                    
+            </apex:pageBlockSection> 
+            
+            <apex:pageBlockSection id="form1" title="Formulary" columns="1">
+                <apex:pageBlockTable id="formTable1" title="Plan Formulary" value="{!formulary}" var="form">
+                    <apex:Column Value="{!form.BOT_Channel__c}" >                        
+                        <apex:facet name="header">
+                            <apex:CommandLink action="{!FormularyOrderByChannel}" reRender="formTable1">{!$ObjectType.Formulary_Products_vod__c.fields.BOT_Channel__c.label}</apex:CommandLink>
+                        </apex:facet>
+                    </apex:Column>
+                    <apex:Column >                        
+                        <apex:outputLink value="/{!form.id}">{!form.name}</apex:outputLink>
+                        <apex:facet name="header">
+                            <apex:CommandLink action="{!FormularyOrderByName}" reRender="formTable1">{!$ObjectType.Formulary_Products_vod__c.fields.name.label}</apex:CommandLink>
+                        </apex:facet>
+                    </apex:Column>
+                    <apex:Column headerValue="{!$ObjectType.Formulary_Products_vod__c.fields.BOT_Product_Type__c.label}" >
+                        <apex:outputText value="{!form.BOT_Product_Type__c}" />
+                    </apex:Column>
+                    <apex:Column headerValue="Plan product Name" >
+                        <apex:outputText value="{!form.BOT_Account_Plan__r.name}" />
+                    </apex:Column>
+                    <apex:Column headerValue="{!$ObjectType.Formulary_Products_vod__c.fields.BOT_Formulary_Lives__c.label}" >
+                        <apex:outputField value="{!form.BOT_Formulary_Lives__c}" />
+                    </apex:Column>                    
+                </apex:pageBlockTable>               
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="pharmacy1" title="Pharmacy Services" columns="1">
+                <apex:pageBlockTable id="pharmacyTable1" title="Pharmacy Services" value="{!Pharmacy}" var="pharm">
+                    <apex:Column Value="{!pharm.BOT_Channel__c}" >                        
+                        <apex:facet name="header">
+                            <apex:CommandLink action="{!pharmacyOrderByChannel}" reRender="pharmacyTable1">{!$ObjectType.BOT_Pharamcy_Service__c.fields.BOT_Channel__c.label}</apex:CommandLink>
+                        </apex:facet>
+                    </apex:Column>
+                    <apex:Column >                        
+                        <apex:outputLink value="/{!pharm.id}">{!pharm.name}</apex:outputLink>
+                        <apex:facet name="header">
+                            <apex:CommandLink action="{!pharmacyOrderByName}" reRender="pharmacyTable1">{!$ObjectType.BOT_Pharamcy_Service__c.fields.name.label}</apex:CommandLink>
+                        </apex:facet>
+                    </apex:Column>
+                    <apex:Column headerValue="{!$ObjectType.BOT_Pharamcy_Service__c.fields.BOT_PBM_Name__c.label}" >
+                        <apex:outputText value="{!pharm.BOT_PBM_Name__c}" />
+                    </apex:Column>
+                    <apex:Column headerValue="{!$ObjectType.BOT_Pharamcy_Service__c.fields.BOT_Corporate__c.label}" >
+                        <apex:outputField value="{!pharm.BOT_Corporate__c}" />
+                    </apex:Column>
+                    <apex:Column headerValue="{!$ObjectType.BOT_Pharamcy_Service__c.fields.BOT_Other_Provider_Name__c.label}" >
+                        <apex:outputText value="{!pharm.BOT_Other_Provider_Name__c}" />
+                    </apex:Column>                    
+                </apex:pageBlockTable>               
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

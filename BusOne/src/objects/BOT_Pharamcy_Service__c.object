@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to store the data related to the Pharmacy Service</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>BOT_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to store the related account</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Pharamcy_Services</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BOT_Channel__c</fullName>
+        <description>Used to display the channel</description>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Commercial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medicare</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BOT_Corporate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Corporate</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BOT_Other_Provider_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Provider Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ACS Pharm/DUR</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Allscripts</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Avella Specialty Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AxelaCare</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Biologics</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Biologics Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Burman`s Specialty Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Centric Health Resources</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cystic Fibrosis Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Diplomat Specialty Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>ePocrates</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Foundation Care</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>IVSolutions</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Local Pharmacies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Option Care</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pharmaceutical Specialties Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>State</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Surescripts</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>US Bioservices Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wellpartner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wellpartner Specialty Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Acro Pharmaceutical Services</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>RxCrossroads</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kroger</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Advanced Care Scripts</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wellpartner Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Affinity Biotech</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Walgreens</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kroger Prescription Plans</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AllCare Plus</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Avella Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Benevere Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cardinal Specilaty Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cascade Hemophilia</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Elwyn Specialty Care</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Giant Eagle Specialty Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kings Specialty Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Walgreens Specialty Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Benever Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Factor One Source Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CareMed Specialty Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>US Bioservcies Inc</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Blood Center of Wisconsin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Amber Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Asti`s South Hills Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Aureus Specialty Pharmacy</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BOT_PBM_ID__c</fullName>
+        <description>Used to store the PBM ID.</description>
+        <externalId>false</externalId>
+        <label>PBM ID</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_PBM_Name__c</fullName>
+        <description>Used to store the PBM Name.</description>
+        <externalId>false</externalId>
+        <label>PBM Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Service_ID__c</fullName>
+        <description>Used to store the pharmacy service ID</description>
+        <externalId>false</externalId>
+        <label>Service ID</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Pharmacy Service</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>BOT_PBM_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Pharamcy Services Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Pharmacy Services</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Pharmacy_Service</fullName>
+        <active>true</active>
+        <description>It is used for commercial plans</description>
+        <label>Pharmacy Service</label>
+        <picklistValues>
+            <picklist>BOT_Channel__c</picklist>
+            <values>
+                <fullName>Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>BOT_Other_Provider_Name__c</picklist>
+            <values>
+                <fullName>ACS Pharm%2FDUR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Acro Pharmaceutical Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advanced Care Scripts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Affinity Biotech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AllCare Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Allscripts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asti%60s South Hills Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aureus Specialty Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Avella Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Avella Specialty Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AxelaCare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Benevere Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biologics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Biologics Inc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Burman%60s Specialty Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cardinal Specilaty Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cascade Hemophilia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Centric Health Resources</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cystic Fibrosis Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Diplomat Specialty Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Elwyn Specialty Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foundation Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Giant Eagle Specialty Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IVSolutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kings Specialty Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kroger</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kroger Prescription Plans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local Pharmacies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Option Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmaceutical Specialties Inc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RxCrossroads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surescripts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>US Bioservices Inc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walgreens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walgreens Specialty Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wellpartner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wellpartner Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wellpartner Specialty Pharmacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ePocrates</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

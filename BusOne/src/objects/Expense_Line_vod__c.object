@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>Expense_Line_Edit_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>Expense_Line_Edit_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>Expense_Line_View_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Contains details of an individual expense line. Represents an individual line on an invoice, broken out by sub-type.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_vod__c</fullName>
+        <description>Paid expense.</description>
+        <externalId>false</externalId>
+        <label>Actual</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Budget__c</fullName>
+        <description>Not OOTB. Used to display budget in Expense Line item.</description>
+        <externalId>false</externalId>
+        <formula>Event_Budget_vod__r.Budget_Name_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Budget</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Committed_vod__c</fullName>
+        <description>Committed expense.</description>
+        <externalId>false</externalId>
+        <label>Committed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Concur_Response_Timestamp_vod__c</fullName>
+        <description>Stores the time a response was received from Concur</description>
+        <externalId>false</externalId>
+        <label>Concur Response Timestamp</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Concur_System_ID_vod__c</fullName>
+        <description>Stores the ID returned from Concur when an expense itemization is successfully created</description>
+        <externalId>false</externalId>
+        <label>Concur System ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Description of the expense.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Budget_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The budget an expense is being paid from. This field must be populated for the expense line to roll up to a budget.</description>
+        <externalId>false</externalId>
+        <label>Event Budget</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>$Source.Event_vod__c</field>
+                <operation>equals</operation>
+                <valueField>EM_Event_Budget_vod__c.Event_vod__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>EM_Event_Budget_vod__c</referenceTo>
+        <relationshipLabel>Expense Lines</relationshipLabel>
+        <relationshipName>Expense_Line_Expense_Budgets_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The event for which an expense was incurred.</description>
+        <externalId>false</externalId>
+        <label>Event</label>
+        <referenceTo>EM_Event_vod__c</referenceTo>
+        <relationshipLabel>Expense Lines</relationshipLabel>
+        <relationshipName>Expense_Lines_Event_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Estimate_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Optional relationship to roll up actual expenses to individual estimates (e.g. rolling up all meal expenses to the meal estimate).</description>
+        <externalId>false</externalId>
+        <label>Expense Estimate</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>EM_Expense_Estimate_vod__c.Event_vod__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Event_vod__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>EM_Expense_Estimate_vod__c</referenceTo>
+        <relationshipLabel>Expense Estimates</relationshipLabel>
+        <relationshipName>Expense_Line_Expense_Estimates_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Expense_Header_vod__c</fullName>
+        <description>Relationship to an expense header</description>
+        <externalId>false</externalId>
+        <label>Expense Header</label>
+        <referenceTo>Expense_Header_vod__c</referenceTo>
+        <relationshipLabel>Expense Lines</relationshipLabel>
+        <relationshipName>Expense_Lines_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Expense_Type_Code_vod__c</fullName>
+        <description>Stamped value of the expense type code as the expense was recorded. This value will remain constant even if the expense type changes.</description>
+        <externalId>false</externalId>
+        <label>Expense Type Code</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_Type_Name_vod__c</fullName>
+        <description>Stamped value of the expense type as the expense was recorded. This value will remain constant even if the expense type changes.</description>
+        <externalId>false</externalId>
+        <label>Expense Type Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_Type_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The type of the expense.</description>
+        <externalId>false</externalId>
+        <label>Expense Type</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Expense_Type_vod__c.Active_vod__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Expense_Type_vod__c</referenceTo>
+        <relationshipLabel>Expense Types</relationshipLabel>
+        <relationshipName>Expense_Line_Expense_Types_vod</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Header_Description__c</fullName>
+        <description>Not OOTB. Used to describe the Expense Header for this Expense Line. Sarav VPS 8/20</description>
+        <externalId>false</externalId>
+        <formula>Expense_Header_vod__r.Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Header Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Field used by mobile products for synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Of_People_vod__c</fullName>
+        <description>Displays the number of people an expense line is split.</description>
+        <externalId>false</externalId>
+        <label># People</label>
+        <summaryForeignKey>Expense_Attribution_vod__c.Expense_Line_vod__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Helper field for data loads.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Expense_Type_Code_vod__c</fullName>
+        <description>Stamped value of the parent expense type code as the expense was recorded. This value will remain constant even if the expense type changes.</description>
+        <externalId>false</externalId>
+        <label>Parent Expense Type Code</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Expense_Type_Name_vod__c</fullName>
+        <description>Stamped value of the parent expense type as the expense was recorded. This value will remain constant even if the expense type changes.</description>
+        <externalId>false</externalId>
+        <label>Parent Expense Type Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Split_Amount_Per_Person_vod__c</fullName>
+        <description>Average split amount per person. Calculated by dividing the actual amount of the expense lines by the number of times it is split.</description>
+        <externalId>false</externalId>
+        <formula>IF(Number_Of_People_vod__c = 0, 0, Actual_vod__c / Number_Of_People_vod__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Split Amount Person</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Expense Line</label>
+    <nameField>
+        <displayFormat>EL-{0000000000}</displayFormat>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Expense Lines</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Event_Expense_Line_vod</fullName>
+        <active>true</active>
+        <description>Event Expense Line</description>
+        <label>Event_Expense_Line_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

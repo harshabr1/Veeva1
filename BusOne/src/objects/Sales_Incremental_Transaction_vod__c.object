@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Similar to the Sales Transaction object. No data is stored in here, but defines the fields and labels for the JDNet fields.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Delivery_Price_vod__c</fullName>
+        <description>Delivery Price</description>
+        <externalId>false</externalId>
+        <label>Delivery Price</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Distributor_Branch_Id_vod__c</fullName>
+        <description>Distributor Branch code of the distributor branch account record.</description>
+        <externalId>false</externalId>
+        <label>Distributor Branch Id</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Distributor_Comment_vod__c</fullName>
+        <description>Comment on Receipt by distributor</description>
+        <externalId>false</externalId>
+        <label>Distributor Comment</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Distributor_Id_vod__c</fullName>
+        <description>The distributor code. Every drug in Japan must be sold from a distributor, not from a pharmaceutical company. This code indicates which distributor (Wholesaler) sells their product to a Hospital.</description>
+        <externalId>false</externalId>
+        <label>Distributor Id</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <description>Unique identified used for data loading.  For JD-NET, this should be the unique JD-NET ID from the sales file.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hospital_Id_vod__c</fullName>
+        <description>The Hospital code of the hospital account record</description>
+        <externalId>false</externalId>
+        <label>Hospital Id</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Issue_Date_vod__c</fullName>
+        <description>The purchase order date</description>
+        <externalId>false</externalId>
+        <label>Issue Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Metric_1_vod__c</fullName>
+        <description>Metric field in sales file. For JD-NET, this should be the Sales Amount.</description>
+        <externalId>false</externalId>
+        <label>Metric 1</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Metric_2_vod__c</fullName>
+        <description>Metric field in sales file. For JD-NET, this should be the Settlement Amount.</description>
+        <externalId>false</externalId>
+        <label>Metric 2</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Metric_3_vod__c</fullName>
+        <description>Metric field in sales file. For JD-NET, this should be the Delivery Amount.</description>
+        <externalId>false</externalId>
+        <label>Metric 3</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pharmacy_Id_vod__c</fullName>
+        <description>The pharmacy code of the pharmacy account record.</description>
+        <externalId>false</externalId>
+        <label>Pharmacy Id</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Group_vod__c</fullName>
+        <description>Product code. This code indicate SKU (Store Keeping Unit) level product code like Cholecap 120mm.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Receipt_Comment_vod__c</fullName>
+        <description>Comment on Receipt by pharmacy</description>
+        <externalId>false</externalId>
+        <label>Receipt Comment</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Date_vod__c</fullName>
+        <description>Sales date</description>
+        <externalId>false</externalId>
+        <label>Sales Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Quantity_vod__c</fullName>
+        <description>Used to store Sales quantity from JDNet</description>
+        <externalId>false</externalId>
+        <label>Sales Quantity</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Settlement_Price_vod__c</fullName>
+        <description>Settlement price</description>
+        <externalId>false</externalId>
+        <label>Settlement Price</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Slip_Number_vod__c</fullName>
+        <description>Slip number of each payment.
+Unique id of receipt. Wholesaler assign the ID to identify receipt. Single id is used for sales receipt and refund receipt.</description>
+        <externalId>false</externalId>
+        <label>Slip Number</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Slip_Type_vod__c</fullName>
+        <description>Indicate slip type sales slip or refund slip</description>
+        <externalId>false</externalId>
+        <label>Slip Type</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transaction_Datetime_vod__c</fullName>
+        <description>Date of transaction within pharma company.</description>
+        <externalId>false</externalId>
+        <label>Transaction Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Unit_Price_vod__c</fullName>
+        <description>Unit price</description>
+        <externalId>false</externalId>
+        <label>Unit Price</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Sales Incremental Transaction</label>
+    <nameField>
+        <label>Sales Incremental Transaction Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Sales Incremental Transactions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

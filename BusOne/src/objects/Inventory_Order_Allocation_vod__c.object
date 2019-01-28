@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A date effective limit placed by the company on the quantity of a particular product (sample or promo item) that can be ordered by a particular user (or user group) within a particular timeframe</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>When unchecked, indicates that this record is not currently active.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Allocation_End_Date_vod__c</fullName>
+        <description>This date reflects the last day that this allocation record is in available for selection during order entry.</description>
+        <externalId>false</externalId>
+        <label>Allocation End Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Allocation_Start_Date_vod__c</fullName>
+        <description>This date reflects the first date this order allocation quantity is available for selection during order entry.</description>
+        <externalId>false</externalId>
+        <label>Allocation Start Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Allow_Date_Exceptions_vod__c</fullName>
+        <description>Indicates the appropriate actions when a user attempts to submit an order outside of the order dates for the current allocation.</description>
+        <externalId>false</externalId>
+        <label>Allow Date Exceptions</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Prevent_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Warn_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Require_Approval_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DoNothing_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Allow_Quantity_Exceptions_vod__c</fullName>
+        <description>Indicates the appropriate actions when a user attempts to submit an order for a quantity that exceeds their current allocation.</description>
+        <externalId>false</externalId>
+        <label>Allow Quantity Exceptions</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Prevent_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Warn_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Require_Approval_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DoNothing_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Customer-defined description or comment for the Order Allocation Record.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <description>External ID allows customers to externally reference an ID that can assist in data loading.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Minimum_Single_Order_Quantity_vod__c</fullName>
+        <description>The minimum quantity that can be ordered in a single order against this order allotment.</description>
+        <externalId>false</externalId>
+        <label>Minimum Single Order Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_End_Date_vod__c</fullName>
+        <description>The first date in which orders can begin to be submitted against this allocation.</description>
+        <externalId>false</externalId>
+        <label>Order End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Order_Start_Date_vod__c</fullName>
+        <description>The last date in which orders can begin to be submitted against this allocation.</description>
+        <externalId>false</externalId>
+        <label>Order Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Allocation_Id_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the parent (manager’s) allocation of the current  (user’s) allocation.</description>
+        <externalId>false</externalId>
+        <label>Parent Allocation Id</label>
+        <referenceTo>Inventory_Order_Allocation_vod__c</referenceTo>
+        <relationshipLabel>Inventory Order Allocations</relationshipLabel>
+        <relationshipName>Inventory_Order_Allocations_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Order_Allocation_Quantity_vod__c</fullName>
+        <description>The maximum quantity that can be ordered across all orders the allotment duration.</description>
+        <externalId>false</externalId>
+        <label>Inventory Order Allocation Quantity</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product ID for which the order allocation applies; 18 digit Salesforce.com ID</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Inventory Order Allocations</relationshipLabel>
+        <relationshipName>Product_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Total_Order_Fulfilled_Quantity_vod__c</fullName>
+        <description>This field represents the sum of the fulfilled quantity from all order lines that match this user, product, and allocation record.</description>
+        <externalId>false</externalId>
+        <label>Total Ordered Quantity</label>
+        <summarizedField>Inventory_Order_Line_vod__c.Order_Fulfilled_Quantity_vod__c</summarizedField>
+        <summaryForeignKey>Inventory_Order_Line_vod__c.Inventory_Order_Allocation_vod__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>User_Allocation_Group_vod__c</fullName>
+        <description>Is used to match to the User Record new field for UserGroupAttribute. If the allocation field matches the user&apos;s allocation field, this allocation record applies to that user.</description>
+        <externalId>false</externalId>
+        <label>User Allocation Group</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Group A</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>User_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>User ID for which the order allocation applies; 18 digit Salesforce.com ID.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Inventory_Order_Allocations_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Inventory Order Allocation</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Inventory Order Allocation Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Inventory Order Allocations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>VEEVA_DATES_MISMATCH_CHECK</fullName>
+        <active>true</active>
+        <description>This validation rule ensures that the Start Date always falls before the End Date.</description>
+        <errorConditionFormula>Allocation_Start_Date_vod__c &gt; Allocation_End_Date_vod__c || Order_Start_Date_vod__c &gt; Order_End_Date_vod__c</errorConditionFormula>
+        <errorMessage>Start date cannot be after end date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VEEVA_MINIMUM_ORDER_CHECK</fullName>
+        <active>true</active>
+        <description>This rule enforces that the minimum order is not greater than the allocation quantity.</description>
+        <errorConditionFormula>Minimum_Single_Order_Quantity_vod__c &gt; Product_Order_Allocation_Quantity_vod__c</errorConditionFormula>
+        <errorMessage>Minimum order quantity cannot be greater than the allocation quantity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VEEVA_ORDER_DATES_CHECK</fullName>
+        <active>true</active>
+        <description>This validation rule enforces Order Dates falling within the Allocation Dates.</description>
+        <errorConditionFormula>Order_Start_Date_vod__c &lt; Allocation_Start_Date_vod__c || Order_End_Date_vod__c &gt; Allocation_End_Date_vod__c</errorConditionFormula>
+        <errorMessage>Order Dates must fall within Allocation Dates</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VEEVA_QUANTITIES_CHECK</fullName>
+        <active>true</active>
+        <description>This rule enforces that the allocation quantity or minimum order quantity are positive numbers.</description>
+        <errorConditionFormula>Product_Order_Allocation_Quantity_vod__c &lt; 0 || Minimum_Single_Order_Quantity_vod__c &lt; 0</errorConditionFormula>
+        <errorMessage>Quantity cannot be less than 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VEEVA_QUANTITY_FULFILLED_CHECK</fullName>
+        <active>true</active>
+        <description>This validation rule ensures that the allocation quantity cannot be less than the fulfilled quantity.</description>
+        <errorConditionFormula>ISPICKVAL(Allow_Quantity_Exceptions_vod__c, &apos;Prevent_vod&apos;)  &amp;&amp; Product_Order_Allocation_Quantity_vod__c &lt; Total_Order_Fulfilled_Quantity_vod__c</errorConditionFormula>
+        <errorMessage>Allocation quantity cannot be less than the fulfilled quantity.</errorMessage>
+    </validationRules>
+</CustomObject>

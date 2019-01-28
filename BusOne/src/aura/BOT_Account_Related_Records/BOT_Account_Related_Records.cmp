@@ -1,0 +1,500 @@
+<!--
+Name 			: BOT_Account_Related_Records
+Created by 		: Sreenivasulu Adipudi
+Created date 	: 03/28/2018
+Description 	: To display the list of account related records with a channel filter.
+-->
+<aura:component controller="BOT_Account_Related_List" Implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes" Access="Global">
+    <!-- Id of the Account the page hosting this component is showing -->
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="channels" type="String[]"/>
+    <!--<aura:registerEvent name="accountRelatedPlans" type="c:BOT_Account_RelPlans_Event" />-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!--<aura:handler event="force:refreshView" action="{!c.getPlansByChannel}" />-->
+    <aura:attribute name="Plans" type="List" />
+    <aura:attribute name="Formularies" type="List" />
+    <aura:attribute name="Pharmacy" type="List" />
+    
+    <!-- For Account plan pagination -->
+    <aura:attribute name="paginationPlans" type="Account_Plan_vod__c[]"/>
+    <aura:attribute name="page" type="integer" description="using to store page Number"/>
+    <aura:attribute name="pages" type="integer" description="using to store All Pages page Number"/>
+    <aura:attribute name="total" type="integer" description="total records count store "/>
+    <!-- End of For Account plan pagination -->
+    
+    <!-- For Account Formulary pagination -->
+    <aura:attribute name="paginationFormulary" type="Formulary_Products_vod__c[]"/>
+    <aura:attribute name="formularyPage" type="integer" description="using to store page Number"/>
+    <aura:attribute name="formularyPages" type="integer" description="using to store All Pages page Number"/>
+    <aura:attribute name="formularyTotal" type="integer" description="total records count store "/>
+    <aura:attribute name="hideFormulayLives" type="integer" description="to avoid duplicate values in lives column "/>
+    <!-- End of For Account Formulary pagination -->
+    
+    <!-- For Pharmacy services pagination -->
+    <aura:attribute name="paginationPharmacy" type="BOT_Pharamcy_Service__c[]"/>
+    <aura:attribute name="pharmacyPage" type="integer" description="using to store page Number"/>
+    <aura:attribute name="pharmacyPages" type="integer" description="using to store All Pages page Number"/>
+    <aura:attribute name="pharmacyTotal" type="integer" description="total records count store "/>
+    <!-- End of For Pharmacy services pagination -->
+    
+    <div>
+        <!-- Creation of channel dropdown dynamically -->
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_2-of-10">
+                Select Channel : 
+            </div>
+            <div class="slds-col slds-size_2-of-10">
+                <!-- Creation of channel dropdown dynamically -->
+                <ui:inputSelect aura:id="levels" label=" " change="{!c.channelFilter}">
+                    <aura:iteration items="{!v.channels}" var="level">
+                        <ui:inputSelectOption text="{!level}" label="{!level}"/>
+                    </aura:iteration>
+                </ui:inputSelect>
+                <!-- End of Creation of channel dropdown dynamically -->
+            </div>
+        </div>
+        <!-- End of Creation of channel dropdown dynamically -->
+    </div>
+    
+    <!-- Header section of plan demographics -->
+    <div class="slds-page-header">
+        <div class="slds-media">
+            <!--
+            <div class="slds-media__figure">
+           <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+              <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+              </svg>
+           </span>
+        </div>
+      	-->
+            <div class="slds-media__body">
+                <!-- Grid layout -->
+                <div class="slds-grid slds-gutters">
+                    
+                    <!-- Grid layout section 1 diplsys icon, title, total records -->
+                    <div class="slds-col slds-size_3-of-12">   
+                        <header class="slds-media slds-media--center slds-has-flexi-truncate" data-aura-rendered-by="65:600;a">
+        					<div class="slds-media__figure" data-aura-rendered-by="66:600;a">
+								<div class="extraSmall forceEntityIcon" style="background-color: #4dca76" data-aura-rendered-by="2071:0" data-aura-class="forceEntityIcon">
+        							<span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+                                    	<span data-aura-rendered-by="1563:0" class="uiImage" data-aura-class="uiImage">
+											<img data-aura-rendered-by="1561:0" src="https://maestro-veeva--BusiOne.cs60.my.salesforce.com/img/icon/t4v35/custom/custom86_120.png" class="icon " alt="Demographics" title="Demographics"/>
+										</span>
+									</span>
+								</div>
+        					</div>
+        					<div class="slds-media__body" data-aura-rendered-by="67:600;a">
+            					<h2 id="header" data-aura-rendered-by="68:600;a">
+                					<a class="slds-card__header-link baseCard__header-title-container" href="javascript:void(0);" data-aura-rendered-by="69:600;a"><span class="slds-text-heading--small slds-truncate slds-m-right--xx-small" title="Demographics" data-aura-rendered-by="70:600;a">Demographics ({!v.total})</span><span class="slds-text-heading--small slds-shrink-none slds-m-right--xx-small" title="(6+)" data-aura-rendered-by="73:600;a"> </span></a>
+            					</h2>
+        					</div>
+    					</header>
+                        <!--
+                        <div class="slds-grid">
+                        	<div class="slds-col slds-size_1-of-8">
+                                <lightning:icon iconName="custom:custom86" size="small" alternativeText="Indicates approval"/>
+                            </div>
+                            <div class="slds-col slds-size_7-of-8">
+                            	<h2 class="slds-text-align_left" title="Plan Demographics">Plan Demographics ({!v.total})</h2>
+                            </div>
+						</div>
+						-->
+					</div>
+                    <!-- End of the grid layout section 1 -->
+                    <!-- Grid layout section 2 diplsys Pagination buttons -->
+                    <div class="slds-col slds-size_6-of-12">
+                        <!-- Pagenation buttons -->
+                        <div class="slds-align_absolute-center;slds-button-group" role="group">            
+                            <lightning:button disabled="{!v.page == 1}" variant="brand" label="First Page" onclick="{! c.navigate }" />            
+                            <lightning:button disabled="{!v.page == 1}" variant="brand" label="Previous Page" onclick="{! c.navigate }" />            
+                            <lightning:button disabled="{!v.page == v.pages}" variant="brand" label="Next Page" onclick="{! c.navigate }" />
+                            <lightning:button disabled="{!v.page == v.pages}" variant="brand" label="Last Page" onclick="{! c.navigate }" />
+                        </div>
+                        <!-- End of pagenation buttons -->
+                    </div>
+                    <!-- End of Grid layout section 2 -->       			
+                    <!-- Grid layout section 3 & 4 display records per page -->
+                    <div class="slds-col slds-size_1-of-12">
+                        Records Per Page :
+                    </div>
+                    <div class="slds-col slds-size_2-of-12">
+                        <!-- Drop down to select "display no of records per page" --> 
+                        <ui:inputSelect aura:id="recordSize" label=" " class="select-auto-width" change="{!c.onSelectChange}">
+                            <ui:inputSelectOption text="5" label="5" value="true"/>
+                            <ui:inputSelectOption text="10" label="10"/>
+                            <ui:inputSelectOption text="15" label="15"/>
+                            <ui:inputSelectOption text="20" label="20"/>
+                        </ui:inputSelect>	    
+                        <!-- End of drop down to select "display no of records per page" -->
+                        
+                    </div>
+                    <!-- End of Grid layout section 3 & 4 -->
+                </div>
+                <!-- End of Grid layout -->
+            </div>
+        </div>   
+    </div>
+    <!-- End of the Header section of plan demographics -->
+    <lightning:layout class="slds-grid_align-space" multipleRows="true">
+        <!-- A table to display plan demographics -->
+        <lightning:layoutItem padding="around-large" flexibility="auto" size="12" >
+            <div class="slds-scrollable_x">
+                <!-- Pagenation buttons -->
+                <!--
+                <div class="slds-align_absolute-center">            
+                    <lightning:button disabled="{!v.page == 1}" variant="brand" label="First Page" onclick="{! c.navigate }" />            
+                    <lightning:button disabled="{!v.page == 1}" variant="brand" label="Previous Page" onclick="{! c.navigate }" />            
+                    <lightning:button disabled="{!v.page == v.pages}" variant="brand" label="Next Page" onclick="{! c.navigate }" />
+                    <lightning:button disabled="{!v.page == v.pages}" variant="brand" label="Last Page" onclick="{! c.navigate }" />
+                </div>
+    			-->
+                <!-- End of pagenation buttons -->
+                <div class="slds-truncate">Displaying page {!v.page} of {!v.pages}</div>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer" style="vertical-align:middle;width: 100%">
+                    <!-- Header row of plan demographics table -->
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th style="column-width: 10%" scope="col"> 
+                                <div class="slds-truncate" title="Channel">Channel</div>
+                            </th> 
+                            <th style="column-width: 35%" scope="col"> 
+                                <div class="slds-truncate" title="Plan Product Name">Plan Product Name</div>
+                            </th>
+                            <th style="column-width: 15%" scope="col"> 
+                                <div class="slds-truncate" title="Product Type">Product Type</div>
+                            </th>
+                            <th style="column-width: 15%" scope="col"> 
+                                <div class="slds-truncate" title="Formulary Used">Formulary Used</div>
+                            </th>
+                            <th style="column-width: 15%" scope="col"> 
+                                <div class="slds-truncate" title="PBM">PBM</div>
+                            </th>
+                            <th style="column-width: 10%" scope="col"> 
+                                <div class="slds-truncate" title="Product Lives Rx">Product Lives Rx</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <!-- end of header row of plan demographics table -->
+                    
+                    <!-- Plan demographcis records -->
+                    <tbody>
+                        <aura:iteration items="{!v.paginationPlans}" var="plan">
+                            <tr>
+                                <td style="vertical-align:middle;column-width: 10%"><div class="slds-truncate" title="{!plan.BOT_Channel__c}">{!plan.BOT_Channel__c}</div></td>
+                                <td style="vertical-align:middle;column-width: 35%">
+                                    <div class="outputLookupContainer forceOutputLookupWithPreview" data-aura-rendered-by="1909:0" data-aura-class="forceOutputLookupWithPreview" style="height:25px;">
+                                        <a href="{! '/' + plan.Id}">
+                                        	{!plan.Name}
+                                        </a>
+                                        <!--
+                                        <a href="{!'/one/one.app#/sObject/'+plan.Id+'/view'}" target="_self" >
+                                            {!plan.Name}
+                                        </a>
+ 										-->
+                                    </div>
+                                </td>
+                                <td style="vertical-align:middle;column-width: 15%"><div class="slds-truncate" title="{!plan.BOT_Product_Type__c}">{!plan.BOT_Product_Type__c}</div></td>
+                                <td style="vertical-align:middle;column-width: 15%"><div class="slds-truncate" title="{!plan.BOT_Formulary_Used__c}">{!plan.BOT_Formulary_Used__c}</div></td>
+                                <td style="vertical-align:middle;column-width: 15%"><div class="slds-truncate" title="{!plan.BOT_PBM__c}">{!plan.BOT_PBM__c}</div></td>
+                                <td style="vertical-align:middle;column-width: 10%"><div class="slds-truncate" title="{!plan.BOT_Product_Lives_Rx__c}">{!plan.BOT_Product_Lives_Rx__c}</div></td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                    <!-- End of the table to display plan demographics -->
+                </table>
+            </div>
+        </lightning:layoutItem><br /><br />
+    </lightning:layout>
+    
+    <!-- Header section of plan formulary -->
+    <div class="slds-page-header">
+        <div class="slds-media">
+            <!--
+            <div class="slds-media__figure">
+           <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+              <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+              </svg>
+           </span>
+        </div>
+      -->
+            <div class="slds-media__body">
+                <!-- Grid layout -->
+                <div class="slds-grid slds-gutters">
+                    <!-- Grid layout section 1 diplsys icon, title, total records -->
+                    <div class="slds-col slds-size_3-of-12">
+                        <header class="slds-media slds-media--center slds-has-flexi-truncate" data-aura-rendered-by="65:600;a">
+        					<div class="slds-media__figure" data-aura-rendered-by="66:600;a">
+								<div class="extraSmall forceEntityIcon" style="background-color: #4dca76" data-aura-rendered-by="2071:0" data-aura-class="forceEntityIcon">
+        							<span data-aura-rendered-by="2074:0" class="uiImage" data-aura-class="uiImage">
+                    					<img data-aura-rendered-by="2072:0" src="https://maestro-veeva--BusiOne.cs60.my.salesforce.com/img/icon/t4v35/custom/custom18_120.png" class="icon " alt="Plan Formulary" title="Plan Formulary"/>
+                					</span>
+								</div>
+        					</div>
+        					<div class="slds-media__body" data-aura-rendered-by="67:600;a">
+            					<h2 id="header" data-aura-rendered-by="68:600;a">
+                					<a class="slds-card__header-link baseCard__header-title-container" href="javascript:void(0);" data-aura-rendered-by="69:600;a"><span class="slds-text-heading--small slds-truncate slds-m-right--xx-small" title="Plan Formulary" data-aura-rendered-by="70:600;a">Plan Formulary ({!v.formularyTotal})</span><span class="slds-text-heading--small slds-shrink-none slds-m-right--xx-small" title="(6+)" data-aura-rendered-by="73:600;a"> </span></a>
+            					</h2>
+        					</div>
+    					</header>
+                        <!--<span>
+                            <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Plan Formulary">Plan Formulary</h1>
+                            <p class="slds-text-body_small slds-line-height_reset">Records found : {!v.formularyTotal}.</p>
+                        </span>-->
+                    </div>
+                    <!-- End of the grid layout section 1 -->
+                    <!-- Grid layout section 2 diplsys Pagination buttons -->
+                    <div class="slds-col slds-size_6-of-12">
+                        <!-- Pagenation buttons -->
+                        <div class="slds-align_absolute-center;slds-button-group" role="group">            
+                            <lightning:button disabled="{!v.formularyPage == 1}" variant="brand" label="First Page" onclick="{! c.formularyNavigate }" />            
+                            <lightning:button disabled="{!v.formularyPage == 1}" variant="brand" label="Previous Page" onclick="{! c.formularyNavigate }" />            
+                            <lightning:button disabled="{!v.formularyPage == v.formularyPages}" variant="brand" label="Next Page" onclick="{! c.formularyNavigate }" />
+                            <lightning:button disabled="{!v.formularyPage == v.formularyPages}" variant="brand" label="Last Page" onclick="{! c.formularyNavigate }" />
+                        </div>
+                        <!-- End of pagenation buttons -->
+                    </div>
+                    <!-- End of Grid layout section 2 -->       			
+                    <!-- Grid layout section 3 & 4 display records per page -->
+                    <div class="slds-col slds-size_1-of-12">
+                        Records Per Page :
+                    </div>
+                    <div class="slds-col slds-size_2-of-12">
+                        <!-- Drop down to select "display no of records per page" --> 
+                        <ui:inputSelect aura:id="formularyRecordSize" label=" " class="select-auto-width" change="{!c.onFormularySelectChange}">
+                            <ui:inputSelectOption text="5" label="5" value="true"/>
+                            <ui:inputSelectOption text="10" label="10"/>
+                            <ui:inputSelectOption text="15" label="15"/>
+                            <ui:inputSelectOption text="20" label="20"/>
+                        </ui:inputSelect>	    
+                        <!-- End of drop down to select "display no of records per page" -->
+                        
+                    </div>
+                    <!-- End of Grid layout section 3 & 4 -->
+                </div>
+                <!-- End of Grid layout -->
+            </div>
+        </div>   
+    </div>
+    <!-- End of the Header section of plan formulary -->
+    <lightning:layout class="slds-grid_align-space" multipleRows="true">
+        <!-- A table to display plan formulary -->
+        <lightning:layoutItem padding="around-large" flexibility="auto" size="12" >
+            <div class="slds-scrollable_x">
+                <!-- Pagenation buttons -->
+                <!--
+                <div class="slds-align_absolute-center">            
+                 <lightning:button disabled="{!v.formularyPage == 1}" variant="brand" label="First Page" onclick="{! c.formularyNavigate }" />            
+                    <lightning:button disabled="{!v.formularyPage == 1}" variant="brand" label="Previous Page" onclick="{! c.formularyNavigate }" />            
+                    <lightning:button disabled="{!v.formularyPage == v.formularyPages}" variant="brand" label="Next Page" onclick="{! c.formularyNavigate }" />
+                    <lightning:button disabled="{!v.formularyPage == v.formularyPages}" variant="brand" label="Last Page" onclick="{! c.formularyNavigate }" />
+                </div>
+    -->
+                <!-- End of pagenation buttons -->
+                <div class="slds-truncate">Displaying page {!v.formularyPage} of {!v.formularyPages}</div>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer" style="vertical-align:middle;width: 100%">
+                    <!-- Header row of plan Formularies table -->
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th style="column-width: 10%" scope="col"> 
+                                <div class="slds-truncate" title="Channel">Channel</div>
+                            </th> 
+                            <th style="column-width: 40%" scope="col"> 
+                                <div class="slds-truncate" title="Formulary Name">Formulary Name</div>
+                            </th>
+                            <th style="column-width: 15%" scope="col"> 
+                                <div class="slds-truncate" title="Product Type">Product Type</div>
+                            </th>
+                            <th style="column-width: 25%" scope="col"> 
+                                <div class="slds-truncate" title="Plan Product Name">Plan Product Name</div>
+                            </th>
+                            <th style="column-width: 10%" scope="col"> 
+                                <div class="slds-truncate" title="Formulary Lives">Formulary Lives</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <!-- end of header row of plan formulary table -->
+                    
+                    <!-- Plan formulary records -->
+                    <tbody>
+                        <aura:iteration items="{!v.paginationFormulary}" var="form">
+                            <tr>
+                                <td style="vertical-align:middle;column-width: 10%"><div class="slds-truncate" title="{!form.BOT_Channel__c}">{!form.BOT_Channel__c}</div></td>
+                                <td style="vertical-align:middle;column-width: 40%">
+                                    <div class="outputLookupContainer forceOutputLookupWithPreview" data-aura-rendered-by="1909:0" data-aura-class="forceOutputLookupWithPreview" style="height:25px;">
+                                        <a href="{! '/' + form.Id}">
+                                        	{!form.BOT_Formulary_Name__c}
+                                        </a>
+                                        <!--
+                                        <a href="{!'/one/one.app#/sObject/'+form.Id+'/view'}" data-special-link="true" data-aura-class="forceOutputLookup" target="_self" >
+                                            {!form.BOT_Formulary_Name__c}
+                                        </a>
+ 										-->
+                                    </div>
+                                </td>
+                                <td style="vertical-align:middle;column-width: 15%"><div class="slds-truncate" title="{!form.BOT_Product_Type__c}">{!form.BOT_Product_Type__c}</div></td>
+                                <td style="vertical-align:middle;column-width: 25%"><div class="slds-truncate" title="{!form.BOT_Account_Plan__r.Name}">{!form.BOT_Account_Plan__r.Name}</div></td>
+                               	<!--
+                                <aura:if isTrue="{!form.BOT_Formulary_Lives__c}">
+                                	<td rowspan="{!form.BOT_Sales_force_SNo__c}" style="text-align: center;vertical-align:middle;column-width: 10%"><div class="slds-truncate" title="{!form.BOT_Formulary_Lives__c}">{!form.BOT_Formulary_Lives__c}</div></td>
+                                </aura:if>
+								-->
+                                <td style="vertical-align:middle;column-width: 10%"><div class="slds-truncate" title="{!form.BOT_Formulary_Lives__c}">{!form.BOT_Formulary_Lives__c}</div></td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                    <!-- End of Plan formulary records -->                    
+                </table>
+                <!-- End of the table to display Plan Formularies -->
+            </div>
+        </lightning:layoutItem><br /><br />
+    </lightning:layout>
+    
+    <!-- Header section of pharmacy services -->
+    <div class="slds-page-header">
+        <div class="slds-media">
+            <!--
+            <div class="slds-media__figure">
+           <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+              <svg class="slds-icon slds-page-header__icon" aria-hidden="true">
+                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity" />
+              </svg>
+           </span>
+        </div>
+      -->
+            <div class="slds-media__body">
+                <!-- Grid layout -->
+                <div class="slds-grid slds-gutters">
+                    <!-- Grid layout section 1 diplsys icon, title, total records -->
+                    <div class="slds-col slds-size_3-of-12">
+                        <header class="slds-media slds-media--center slds-has-flexi-truncate" data-aura-rendered-by="65:600;a">
+        					<div class="slds-media__figure" data-aura-rendered-by="66:600;a">
+								<div class="extraSmall forceEntityIcon" style="background-color: #4dca76" data-aura-rendered-by="2071:0" data-aura-class="forceEntityIcon">
+        							<span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+                                    	<span data-aura-rendered-by="1563:0" class="uiImage" data-aura-class="uiImage">
+											<img data-aura-rendered-by="1561:0" src="https://maestro-veeva--BusiOne.cs60.my.salesforce.com/img/icon/t4v35/custom/custom86_120.png" class="icon " alt="Pharmacy Services" title="Pharmacy Services"/>
+										</span>
+									</span>
+								</div>
+        					</div>
+        					<div class="slds-media__body" data-aura-rendered-by="67:600;a">
+            					<h2 id="header" data-aura-rendered-by="68:600;a">
+                					<a class="slds-card__header-link baseCard__header-title-container" href="javascript:void(0);" data-aura-rendered-by="69:600;a"><span class="slds-text-heading--small slds-truncate slds-m-right--xx-small" title="Pharmacy Services" data-aura-rendered-by="70:600;a">Pharmacy Services ({!v.pharmacyTotal})</span><span class="slds-text-heading--small slds-shrink-none slds-m-right--xx-small" title="(6+)" data-aura-rendered-by="73:600;a"> </span></a>
+            					</h2>
+        					</div>
+    					</header>
+                        <!--
+                        <span>
+                            <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Pharmacy Services">Pharmacy Services</h1>
+                            <p class="slds-text-body_small slds-line-height_reset">Records found : {!v.pharmacyTotal}.</p>
+                        </span>
+						-->
+                    </div>
+                    <!-- End of the grid layout section 1 -->
+                    <!-- Grid layout section 2 diplsys Pagination buttons -->
+                    <div class="slds-col slds-size_6-of-12">
+                        <!-- Pagenation buttons -->
+                        <div class="slds-align_absolute-center;slds-button-group" role="group">            
+                            <lightning:button disabled="{!v.pharmacyPage == 1}" variant="brand" label="First Page" onclick="{! c.pharmacyNavigate }" />            
+                            <lightning:button disabled="{!v.pharmacyPage == 1}" variant="brand" label="Previous Page" onclick="{! c.pharmacyNavigate }" />            
+                            <lightning:button disabled="{!v.pharmacyPage == v.pharmacyPages}" variant="brand" label="Next Page" onclick="{! c.pharmacyNavigate }" />
+                            <lightning:button disabled="{!v.pharmacyPage == v.pharmacyPages}" variant="brand" label="Last Page" onclick="{! c.pharmacyNavigate }" />
+                        </div>
+                        <!-- End of pagenation buttons -->
+                    </div>
+                    <!-- End of Grid layout section 2 -->       			
+                    <!-- Grid layout section 3 & 4 display records per page -->
+                    <div class="slds-col slds-size_1-of-12">
+                        Records Per Page :
+                    </div>
+                    <div class="slds-col slds-size_2-of-12">
+                        <!-- Drop down to select "display no of records per page" --> 
+                        <ui:inputSelect aura:id="pharmacyRecordSize" label=" " class="select-auto-width" change="{!c.onPharmacySelectChange}">
+                            <ui:inputSelectOption text="5" label="5" value="true"/>
+                            <ui:inputSelectOption text="10" label="10"/>
+                            <ui:inputSelectOption text="15" label="15"/>
+                            <ui:inputSelectOption text="20" label="20"/>
+                        </ui:inputSelect>	    
+                        <!-- End of drop down to select "display no of records per page" -->
+                        
+                    </div>
+                    <!-- End of Grid layout section 3 & 4 -->
+                </div>
+                <!-- End of Grid layout -->
+            </div>
+        </div>   
+    </div>
+    <!-- End of the Header section of pharmacy services -->
+    <lightning:layout class="slds-grid_align-space" multipleRows="true">
+        <!-- A table to display pharmacy services -->
+        <lightning:layoutItem padding="around-large" flexibility="auto" size="12" >
+            <div class="slds-scrollable_x">
+                <!-- Pagenation buttons -->
+                <!--
+                <div class="slds-align_absolute-center">            
+                 <lightning:button disabled="{!v.pharmacyPage == 1}" variant="brand" label="First Page" onclick="{! c.pharmacyNavigate }" />            
+                    <lightning:button disabled="{!v.pharmacyPage == 1}" variant="brand" label="Previous Page" onclick="{! c.pharmacyNavigate }" />            
+                    <lightning:button disabled="{!v.pharmacyPage == v.pharmacyPages}" variant="brand" label="Next Page" onclick="{! c.pharmacyNavigate }" />
+                    <lightning:button disabled="{!v.pharmacyPage == v.pharmacyPages}" variant="brand" label="Last Page" onclick="{! c.pharmacyNavigate }" />
+                </div>
+    -->
+                <!-- End of pagenation buttons -->
+                <div class="slds-truncate">Displaying page {!v.pharmacyPage} of {!v.pharmacyPages}</div>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer" style="vertical-align:middle;width: 100%">
+                    <!-- Header row of Pharmacy Services table -->
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th style="column-width: 10%" scope="col"> 
+                                <div class="slds-truncate" title="Channel">Channel</div>
+                            </th> 
+                            <th style="column-width: 40%" scope="col"> 
+                                <div class="slds-truncate" title="Pharmacy Service Name">Pharmacy Service Name</div>
+                            </th>
+                            <th style="column-width: 30%px" scope="col"> 
+                                <div class="slds-truncate" title="PBM Name">PBM Name</div>
+                            </th>
+                            <th style="column-width: 10%" scope="col"> 
+                                <div class="slds-truncate" title="Corporate">Corporate</div>
+                            </th>
+                            <th style="column-width: 10%" scope="col"> 
+                                <div class="slds-truncate" title="Other Provider Name">Other Provider Name</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <!-- end of header row of Pharmacy Services table -->
+                    
+                    <!-- Pharmacy Services records -->
+                    <tbody>
+                        <aura:iteration items="{!v.paginationPharmacy}" var="pharm">
+                            <tr>
+                                <td style="vertical-align:middle;column-width: 10%"><div class="slds-truncate" title="{!pharm.BOT_Channel__c}">{!pharm.BOT_Channel__c}</div></td>
+                                <!--
+                                <td style="vertical-align:middle;column-width: 40%"><div class="slds-truncate" title="{!pharm.Name}">{!pharm.Name}</div></td>
+                   				-->
+                                <td style="vertical-align:middle;column-width: 40%">
+                                    <div class="outputLookupContainer forceOutputLookupWithPreview" data-aura-rendered-by="1909:0" data-aura-class="forceOutputLookupWithPreview" style="height:25px;">
+                                        <a href="{! '/' + pharm.Id}">
+                                        	{!pharm.Name}
+                                        </a>
+                                        <!--
+                                        <a href="{!'/one/one.app#/sObject/'+pharm.Id+'/view'}" target="_self" >
+                                            {!pharm.Name}
+                                        </a>
+ 										-->
+                                    </div>
+                                </td>
+                                <td style="vertical-align:middle;column-width: 30%"><div class="slds-truncate" title="{!pharm.BOT_PBM_Name__c}">{!pharm.BOT_PBM_Name__c}</div></td>
+                                <td style="vertical-align:middle;column-width: 10%"><div class="slds-truncate" title="{!pharm.BOT_Corporate__c}"><ui:outputCheckbox value="{!pharm.BOT_Corporate__c}"/></div></td>
+                                <td style="vertical-align:middle;column-width: 10%"><div class="slds-truncate" title="{!pharm.BOT_Other_Provider_Name__c}">{!pharm.BOT_Other_Provider_Name__c}</div></td>                                
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                    <!-- End of the Pharmacy Services records -->
+                </table>
+                <!-- End of the table to display plan Formularies -->
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <!-- End of creation of layout to display Accout related records like plans, formularies, pharmacy services -->
+</aura:component>

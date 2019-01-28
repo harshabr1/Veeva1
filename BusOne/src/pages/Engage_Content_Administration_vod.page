@@ -1,0 +1,4 @@
+<apex:page standardStylesheets="true" controller="VOD_EMBED_CONTROLLER">
+    <c:VOD_EMBED_MC veevaModule="admin" veevaPage="content" mcEngine="true" rendered="{!mcVersion >= 240500}"/>
+    <c:Veeva_Multichannel_Redirect_vod urlPath="admin/content" rendered="{!mcVersion < 240500}"/>
+</apex:page>

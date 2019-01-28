@@ -1,0 +1,4 @@
+<apex:page standardcontroller="Call2_vod__c">
+    <c:VOD_EMBED veevaModule="call" veevaPage="edit-call" objectType="Call2_vod__c"
+    queryParams="{!$CurrentPage.parameters.queryParams}&Status={!Call2_vod__c.Status_vod__c}&Call={!Call2_vod__c.Id}"/>
+</apex:page>

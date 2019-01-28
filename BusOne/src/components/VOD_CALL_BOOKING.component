@@ -1,0 +1,4 @@
+<apex:component controller="VOD_CALL_BOOKING">
+    <apex:attribute name="unformattedDate" type="Datetime" description="Format date time" assignTo="{!callDate}"/>
+    <apex:outputText value="{!formattedDate}"/>
+</apex:component>

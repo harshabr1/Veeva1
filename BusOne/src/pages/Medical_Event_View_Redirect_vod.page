@@ -1,0 +1,5 @@
+<apex:page standardController="Medical_Event_vod__c" extensions="EMRedirectController" action="{!redirectView}">
+    <apex:form >
+        <apex:inputHidden value="{!Medical_Event_vod__c.EM_Event_vod__c}"/>
+    </apex:form>    
+</apex:page>

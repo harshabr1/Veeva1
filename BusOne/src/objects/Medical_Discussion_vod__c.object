@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to capture Medical Discussions that occur during an Interaction. The layout of the Medical Discussion section is displayed based on the page layout of the selected Medical Discussion record type.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Tactic_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If the Medical Discussion pertains to an Account Tactic, maintains the reference to that Tactic.</description>
+        <externalId>false</externalId>
+        <label>Account Tactic</label>
+        <referenceTo>Account_Tactic_vod__c</referenceTo>
+        <relationshipLabel>Medical Discussions</relationshipLabel>
+        <relationshipName>Medical_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Account for which the Medical Discussion occurred.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Medical Discussions</relationshipLabel>
+        <relationshipName>Medical_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Attendee_Type_vod__c</fullName>
+        <description>The type of entity who the Medical Discussion is created for.</description>
+        <externalId>false</externalId>
+        <label>Attendee Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Person_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Event_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Group_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>User_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contact_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Call2_Mobile_ID_vod__c</fullName>
+        <description>The Mobile Id of the Call record that the Medical Discussion is associated to.</description>
+        <externalId>false</externalId>
+        <label>Call Mobile Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Date_vod__c</fullName>
+        <description>The Date of the Call record that the Medical Discussion is associated to.</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contact_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If the Medical Discussion pertains to a Contact, maintains the reference to that Contact.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Medical Discussions</relationshipLabel>
+        <relationshipName>Medical_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>References the Product Group associated with the Medical Discussion.</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Medical Discussions</relationshipLabel>
+        <relationshipName>Medical_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Discussion_vod__c</fullName>
+        <description>Used to capture the details of the Medical Discussion</description>
+        <externalId>false</externalId>
+        <label>Discussion</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_Id_vod__c</fullName>
+        <description>Veeva internal field that ensures proper synchronization after account merges or territory realignments.</description>
+        <externalId>false</externalId>
+        <label>Entity Reference Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Interaction_vod__c</fullName>
+        <description>The Interaction on which the Medical Discussion occurred.</description>
+        <externalId>false</externalId>
+        <label>Interaction</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Medical Discussions</relationshipLabel>
+        <relationshipName>Medical_Discussion_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Medical_Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If the Medical Discussion pertains to a Medical Event, maintains the reference to that Event.</description>
+        <externalId>false</externalId>
+        <label>Medical Event</label>
+        <referenceTo>Medical_Event_vod__c</referenceTo>
+        <relationshipLabel>Medical Discussions</relationshipLabel>
+        <relationshipName>Medical_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>The Mobile Id of the Medical Discussion record.</description>
+        <externalId>true</externalId>
+        <label>Mobile Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to modify a submitted Medical Discussion without the need to unlock the record.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Product_Strategy_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If the Medical Discussion pertains to a Product Strategy, maintains the reference to that Strategy.</description>
+        <externalId>false</externalId>
+        <label>Product Strategy</label>
+        <referenceTo>Product_Strategy_vod__c</referenceTo>
+        <relationshipLabel>Medical Discussions</relationshipLabel>
+        <relationshipName>Medical_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Tactic_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If the Medical Discussion pertains to a Product Tactic, maintains the reference to that Tactic.</description>
+        <externalId>false</externalId>
+        <label>Product Tactic</label>
+        <referenceTo>Product_Tactic_vod__c</referenceTo>
+        <relationshipLabel>Medical Discussions</relationshipLabel>
+        <relationshipName>Medical_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>References the Product Detail or Topic associated with the Medical Discussion.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Medical Discussions (Product)</relationshipLabel>
+        <relationshipName>Medical_Discussions_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>User_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If the Medical Discussion pertains to a User, maintains the reference to that User.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Medical_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Product_Map_vod__c</fullName>
+        <description>Special field used to create dependent picklists on Medical Discussions based on product. The values for this field are the textual names of Product Details and Topics. This field should not be placed on any of the Medical Discussion page layouts.</description>
+        <externalId>false</externalId>
+        <label>Product Map</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DELETE</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Medical Discussion</label>
+    <nameField>
+        <displayFormat>MDI{000000000}</displayFormat>
+        <label>Medical Discussion</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Medical Discussions</pluralLabel>
+    <recordTypes>
+        <fullName>Medical_Discussion_vod</fullName>
+        <active>true</active>
+        <description>Standard record type used to create Medical Discussions.</description>
+        <label>Medical_Discussion_vod</label>
+        <picklistValues>
+            <picklist>Attendee_Type_vod__c</picklist>
+            <values>
+                <fullName>Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Person_Account_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>zvod_Product_Map_vod__c</picklist>
+            <values>
+                <fullName>DELETE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

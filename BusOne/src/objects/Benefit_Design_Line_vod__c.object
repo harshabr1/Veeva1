@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A Benefit Design Line is a child of a Benefit Design. It represents the formulary information for one product for a specific benefit design.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Benefit_Design_vod__c</fullName>
+        <description>Link to the parent Benefit Design.</description>
+        <externalId>false</externalId>
+        <label>Benefit Design</label>
+        <referenceTo>Benefit_Design_vod__c</referenceTo>
+        <relationshipLabel>Benefit Design Lines</relationshipLabel>
+        <relationshipName>Benefit_Design_Line_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Competitor_vod__c</fullName>
+        <description>Indicates whether the product is a competitor product. If true, product is a competitor; otherwise it is a company product. Evaluated from the Competitor_vod field in Formulary_Product_vod object. Not visible in the page layout - used only by the application.</description>
+        <externalId>false</externalId>
+        <formula>Product_vod__r.Competitor_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Competitor</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Copay_Source_vod__c</fullName>
+        <description>Copay (Source) value for this benefit design line.</description>
+        <externalId>false</externalId>
+        <label>Copay (Source)</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Copay_vod__c</fullName>
+        <description>Copay for this benefit deisgn line.</description>
+        <externalId>false</externalId>
+        <label>Copay</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID is used for data loading only.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Notes_Source_vod__c</fullName>
+        <description>This data is meant to be loaded and refreshed by the customer from the source data provider, such as MediMedia and not changed by end users. If the Notes field is filled in, it will override the Notes (Source) field in the display of the formulary control.</description>
+        <externalId>false</externalId>
+        <label>Notes (Source)</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Notes_vod__c</fullName>
+        <description>Notes about any restrictions or status for this product on this benefit design.</description>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product is a lookup the Formulary Product object. Note that this is not a lookup to the product catalog that is used for sampling and detailing.  This field is required because every benefit design line relates to a product.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Formulary_Products_vod__c</referenceTo>
+        <relationshipLabel>Benefit Design Lines</relationshipLabel>
+        <relationshipName>Product_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Restrictions_Source_vod__c</fullName>
+        <description>This data is meant to be loaded and refreshed by the customer from the source data provider, such as MediMedia and not changed by end users. If the Restrictions field is filled in, it will override the Restrictions (Source) field in the display of the formulary control.</description>
+        <externalId>false</externalId>
+        <label>Restrictions (Source)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>QL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SE</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Restrictions_vod__c</fullName>
+        <description>Restriction codes for this product in this benefit design line. For example, one of the codes might be &apos;PA&apos;, which stands for Prior Auth. The valid values in this field are controlled by the value of the type field, because not all restriction codes are valid for all types of benefit designs.</description>
+        <externalId>false</externalId>
+        <label>Restrictions</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>Type_vod__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>QL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AL</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SE</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Commercial</controllingFieldValue>
+                <controllingFieldValue>Medicaid</controllingFieldValue>
+                <controllingFieldValue>Medicare</controllingFieldValue>
+                <valueName>PA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercial</controllingFieldValue>
+                <controllingFieldValue>Medicare</controllingFieldValue>
+                <controllingFieldValue>VA</controllingFieldValue>
+                <valueName>QL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercial</controllingFieldValue>
+                <controllingFieldValue>Medicare</controllingFieldValue>
+                <valueName>AL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercial</controllingFieldValue>
+                <controllingFieldValue>Medicare</controllingFieldValue>
+                <valueName>SE</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status_Source_vod__c</fullName>
+        <description>This data is meant to be loaded and refreshed by the customer from the source data provider, such as MediMedia and not changed by end users. If the Status field is filled in, it will override the Status (Source) field in the display of the formulary control.</description>
+        <externalId>false</externalId>
+        <label>Status (Source)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved with Restrictions</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Formulary</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Formulary / Covered</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Formulary / Higher Copay</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Formulary / Not Reimbursed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Formulary / Prior Authorization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Formulary / Unknown</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Listed / Covered</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Listed / Higher Copay</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Listed / Not Reimbursed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Listed / Prior Authorization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Listed / Unknown</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Reimbursed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Preferred</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Prior Authorization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 9</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status codes for this product in this benefit design line. For example, one of the codes might be &apos;Tier 1&apos;.  The valid values in this field are controlled by the value of the type field, because not all status values are valid for all types of benefit designs.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type_vod__c</controllingField>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approved with Restrictions</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Formulary</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Formulary / Covered</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Formulary / Higher Copay</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Formulary / Not Reimbursed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Formulary / Prior Authorization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Non-Formulary / Unknown</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Listed / Covered</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Listed / Higher Copay</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Listed / Not Reimbursed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Listed / Prior Authorization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Listed / Unknown</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Reimbursed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Preferred</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Prior Authorization</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 4</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 5</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 6</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 7</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 8</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 9</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Commercial</controllingFieldValue>
+                <controllingFieldValue>Medicare</controllingFieldValue>
+                <valueName>Tier 1</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercial</controllingFieldValue>
+                <controllingFieldValue>Medicare</controllingFieldValue>
+                <valueName>Tier 2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercial</controllingFieldValue>
+                <controllingFieldValue>Medicare</controllingFieldValue>
+                <valueName>Tier 3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercial</controllingFieldValue>
+                <controllingFieldValue>Medicare</controllingFieldValue>
+                <valueName>Tier 4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercial</controllingFieldValue>
+                <controllingFieldValue>Medicare</controllingFieldValue>
+                <valueName>Tier 5</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercial</controllingFieldValue>
+                <valueName>Tier 6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercial</controllingFieldValue>
+                <valueName>Tier 7</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercial</controllingFieldValue>
+                <valueName>Tier 8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Commercial</controllingFieldValue>
+                <valueName>Tier 9</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Medicaid</controllingFieldValue>
+                <controllingFieldValue>VA</controllingFieldValue>
+                <valueName>Approved</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Medicaid</controllingFieldValue>
+                <valueName>Approved with Restrictions</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Medicaid</controllingFieldValue>
+                <valueName>Non-Formulary / Covered</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Medicaid</controllingFieldValue>
+                <valueName>Non-Formulary / Higher Copay</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Medicaid</controllingFieldValue>
+                <valueName>Non-Formulary / Not Reimbursed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Medicaid</controllingFieldValue>
+                <valueName>Non-Formulary / Prior Authorization</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Medicaid</controllingFieldValue>
+                <valueName>Non-Formulary / Unknown</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Medicare</controllingFieldValue>
+                <valueName>Not Listed / Covered</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Medicare</controllingFieldValue>
+                <valueName>Not Listed / Higher Copay</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>VA</controllingFieldValue>
+                <valueName>Not Reimbursed</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Type_vod__c</fullName>
+        <description>The type field is the type of benefit design (commercial, VA, Medicade, etc.)  It is populated by a trigger, which pulls down the value from the type field on the parent benefit design object. The type field needs to be replicated to the benefit design line object so that it can control the dependent picklists for status and restrictions.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Commercial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medicaid</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medicare</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VA</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Benefit Design Line</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{000000}</displayFormat>
+        <label>Linenumber</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Benefit Design Lines</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

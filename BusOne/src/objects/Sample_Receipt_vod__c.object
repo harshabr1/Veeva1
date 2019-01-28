@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Sample Receipt contains all Pending Sample Receipts for users.  A Sample Receipt is created by the Sample_Transaction_vod trigger on Sample Transaction on the Submit of a Transfer Sample Transaction.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Cold_Chain_Status_vod__c</fullName>
+        <description>The Cold Chain Status for the corresponding Sample line item. Only pertains to samples that have been designated as cold chain product via the Product Catalog.</description>
+        <externalId>false</externalId>
+        <label>Cold Chain Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In Range</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not In Range</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Comments_vod__c</fullName>
+        <description>Comments contain the Comments from the Transfer Sample Transaction that generated the Sample Receipt.</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Confirmed_Quantity_vod__c</fullName>
+        <description>Confirmed Quantity contains the quantity of Samples that the recipient of the Transfer has confirmed from a Transfer Sample Transaction.</description>
+        <externalId>false</externalId>
+        <label>Confirmed Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Custom_Text_vod__c</fullName>
+        <description>Custom text captured for the corresponding product line item. Only pertains to product that have been flagged to allow capture of custom text via the Product Catalog.</description>
+        <externalId>false</externalId>
+        <label>Custom Text</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lot_Name_vod__c</fullName>
+        <description>Lot # Name represents the textual Lot # name of the Sample for the Sample Receipt.</description>
+        <externalId>false</externalId>
+        <label>Lot # Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lot_vod__c</fullName>
+        <description>Lot # represents the Lot # of the Sample for the Sample Receipt.</description>
+        <externalId>false</externalId>
+        <label>Lot #</label>
+        <referenceTo>Sample_Lot_vod__c</referenceTo>
+        <relationshipLabel>Sample Receipts</relationshipLabel>
+        <relationshipName>R00N410000055nSkEAI</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Quantity_vod__c</fullName>
+        <description>Quantity represents the amount of Sample from the Transfer Sample Transaction for the Sample Receipt.</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Receipt_Comments_vod__c</fullName>
+        <description>Receipt Comments represents comments for the Sample Receipt.</description>
+        <externalId>false</externalId>
+        <label>Receipt Comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Received_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Contains the status of the receipt.  If true then the transfer has been received.</description>
+        <externalId>false</externalId>
+        <label>Received</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ref_Order_Transaction_Id_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Ref Order Transaction Id</label>
+        <referenceTo>Sample_Order_Transaction_vod__c</referenceTo>
+        <relationshipLabel>Sample Receipts</relationshipLabel>
+        <relationshipName>Sample_Receipts_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ref_Transaction_Id_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Ref Transaction Id represents the Id of the related Transfer Sample Transaction that generated the Sample Receipt.</description>
+        <externalId>false</externalId>
+        <label>Ref Transaction Id</label>
+        <referenceTo>Sample_Transaction_vod__c</referenceTo>
+        <relationshipLabel>Sample Receipts</relationshipLabel>
+        <relationshipName>R00N410000055nSGEAY</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sample_vod__c</fullName>
+        <description>Sample represents the Sample being received for the Sample Receipt.</description>
+        <externalId>false</externalId>
+        <label>Sample</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipment_Id_vod__c</fullName>
+        <description>Shipment Id represents the 3rd party id, if the Sample Receipt was generated by a back-office application or distributor system.</description>
+        <externalId>false</externalId>
+        <label>Shipment Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tag_Alert_Number_vod__c</fullName>
+        <description>The Tag Alert Number for the corresponding Sample line item. Only pertains to samples that have been designated as cold chain product via the Product Catalog.</description>
+        <externalId>false</externalId>
+        <label>Tag Alert Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transferred_Date_vod__c</fullName>
+        <description>Transferred Date represents the effective date of the Transfer Sample Transaction for the Sample Receipt.</description>
+        <externalId>false</externalId>
+        <label>Transferred Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Transferred_From_Name_vod__c</fullName>
+        <description>Transferred From Name represents the User name that the Sample Receipt originated from.</description>
+        <externalId>false</externalId>
+        <label>Transferred From Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transferred_From_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Transferred From represents the User that the Sample Receipt originated from.</description>
+        <externalId>false</externalId>
+        <label>Transferred From</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>R00N410000055nRPEAY</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>U_M_vod__c</fullName>
+        <description>U/M represents the Unit of Measurement for the Sample for the Sample Receipt.</description>
+        <externalId>false</externalId>
+        <label>U/M</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Sample Receipt</label>
+    <nameField>
+        <displayFormat>R-{00000000}</displayFormat>
+        <label>Receipt Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Sample Receipts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Confirmed_Quantity_Quantity_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>Confirmed_Quantity_vod__c &lt; 0</errorConditionFormula>
+        <errorMessage>Error: Confirmed Quantity must be &gt;= 0</errorMessage>
+    </validationRules>
+</CustomObject>

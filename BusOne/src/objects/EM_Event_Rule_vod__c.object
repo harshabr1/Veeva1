@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to store rules for a particular event type. Used by Veeva Event Management.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Attendee_Fields_vod__c</fullName>
+        <description>Used to store fields that display on the Account List of the Attendee Selection interface. Format is: ;FieldName1;FieldName2;...FieldNameX;
+                     Fields can be from the Account object, or keywords that display special sections, such as Recent Events or MCCP.</description>
+        <externalId>false</externalId>
+        <label>Account Attendee Fields</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CLM_Presentation_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>References the CLM Presentation that is associated to this Event Configuration. When an event is created that uses this Event Configuration, this CLM presentation will automatically be made available on this event.</description>
+        <externalId>false</externalId>
+        <label>CLM Presentation</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>(1 OR 2 OR 3) AND 4</booleanFilter>
+            <filterItems>
+                <field>Clm_Presentation_vod__c.Status_vod__c</field>
+                <operation>equals</operation>
+                <value>Approved</value>
+            </filterItems>
+            <filterItems>
+                <field>Clm_Presentation_vod__c.Status_vod__c</field>
+                <operation>equals</operation>
+                <value>Staged</value>
+            </filterItems>
+            <filterItems>
+                <field>Clm_Presentation_vod__c.Status_vod__c</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <filterItems>
+                <field>Clm_Presentation_vod__c.Content_Channel_vod__c</field>
+                <operation>notEqual</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Clm_Presentation_vod__c</referenceTo>
+        <relationshipLabel>Event Rules</relationshipLabel>
+        <relationshipName>Event_Rules</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Child_Event_Record_Type_vod__c</fullName>
+        <description>Defines which record type is used for an event configuration</description>
+        <externalId>false</externalId>
+        <label>Child Event Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Attendee_Fields_vod__c</fullName>
+        <description>Fields that display on the Contact List on the Attendee Selection interface. Fields can be fields that exist on the Contact object, or keywords that display special sections, such as recent events.</description>
+        <externalId>false</externalId>
+        <label>Contact Attendee Fields</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Country_Override_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used if an event rule only applies to one specific country within the Event Configuration set.</description>
+        <externalId>false</externalId>
+        <label>Country Override</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>EM_Event_Configuration_Country_vod__c.Event_Configuration_vod__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Event_Configuration_vod__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>EM_Event_Configuration_Country_vod__c</referenceTo>
+        <relationshipLabel>Event Rules</relationshipLabel>
+        <relationshipName>Event_Rules</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Email_Template_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>References the Email Template that is associated to this Event Configuration. When an event is created that uses this Event Configuration, this Email Template will automatically be made available on this event.</description>
+        <externalId>false</externalId>
+        <label>Email Template</label>
+        <referenceTo>Approved_Document_vod__c</referenceTo>
+        <relationshipLabel>Event Rules</relationshipLabel>
+        <relationshipName>Event_Rules</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Event_Configuration_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The event configuration that the event rule is applied to.</description>
+        <externalId>false</externalId>
+        <label>Event Configuration</label>
+        <referenceTo>EM_Event_Configuration_vod__c</referenceTo>
+        <relationshipLabel>Event Rules</relationshipLabel>
+        <relationshipName>Event_Rules</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>External ID.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Filter_Type_vod__c</fullName>
+        <description>The type of filter being used for speaker selection. If a filter is mandatory, it is automatically applied and cannot be deselected. If a filter is optional on, the filter is applied at page load, but can be toggled off. If a filter is optional off, the filter is not applied at page load, but can be toggled on.</description>
+        <externalId>false</externalId>
+        <label>Filter Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Mandatory_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Optional_On_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Optional_Off_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Material_Type_vod__c</fullName>
+        <description>Stores the untranslated label of the record type of the material.</description>
+        <externalId>false</externalId>
+        <label>Material Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Material_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Defines the material that can be used for a particular event configuration</description>
+        <externalId>false</externalId>
+        <label>Material</label>
+        <referenceTo>EM_Catalog_vod__c</referenceTo>
+        <relationshipLabel>Event Types Using Material</relationshipLabel>
+        <relationshipName>Event_Rules_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Online_Registration_Fields_vod__c</fullName>
+        <description>Used to store fields that are required by online registrants. This value is automatically copied down to all event records that use this event configuration. If using the Veeva API to create attendees from an online portal, the API will validate that these fields are required when posting the attendee information to Salesforce. Format is: ;FieldName1;FieldName2;...FieldNameX;</description>
+        <externalId>false</externalId>
+        <label>Online Registration Fields</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Qualification_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The required service or training for a speaker to be selected for an event.</description>
+        <externalId>false</externalId>
+        <label>Qualification</label>
+        <referenceTo>EM_Catalog_vod__c</referenceTo>
+        <relationshipLabel>Event Rules</relationshipLabel>
+        <relationshipName>Event_Rules</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Search_Outside_Territory_Filter_vod__c</fullName>
+        <description>Additional Filter for Search Outside Territory</description>
+        <externalId>false</externalId>
+        <label>Search Outside Territory Filter</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Search_Outside_Territory_Record_Type_vod__c</fullName>
+        <description>Semicolon separated list of Account Record Types to be included in the result list for Search Outside Territory</description>
+        <externalId>false</externalId>
+        <label>Search Outside Territory Record Types</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Search_Outside_Territory_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>True: Allow user to search outside my territory.
+False: Don&apos;t allow user to search outside my territory.
+Default: False</description>
+        <externalId>false</externalId>
+        <label>Search Outside My Territory</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Speaker_Fields_vod__c</fullName>
+        <defaultValue>&quot;;;CV;;Services;;RecentEvents;;Training;;Address_vod;;Status_vod;;Cap_Remaining_vod;;Year_to_Date_Utilization_vod;;&quot;</defaultValue>
+        <description>Fields that display on the speaker profile on the speaker selection interface. Fields can be fields that exist on the EM_Speaker_vod object, or special keywords that display special sections, such as recent events or current training information. See documentation for more information.</description>
+        <externalId>false</externalId>
+        <label>Speaker Fields</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User_Attendee_Fields_vod__c</fullName>
+        <description>Fields that display on the User List on the Attendee Selection interface. Fields can be fields that exist on the User object, or keywords that display special sections, such as recent events.</description>
+        <externalId>false</externalId>
+        <label>User Attendee Fields</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Walk_In_Attendee_Statuses_vod__c</fullName>
+        <description>Controls values that display in the status field used when creating new walk-ins. Field accepts values from the Status_vod. Values display in the order listed with the first item displaying as the default value. Format is: ;Status1_vod;Status2_vod; Example: ;Attended_vod;No_Show_vod;</description>
+        <externalId>false</externalId>
+        <label>Walk-In Attendee Statuses</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Walk_In_Fields_vod__c</fullName>
+        <description>Used to store fields that are entered by walk-in attendees. Format is: ;FieldName1;FieldName2;...FieldNameX;
+Fields can be marked as &quot;Required&quot; on the walk-in form by adding a &lt;R&gt; tag after a field name. For example, ;Last_Name_vod&lt;R&gt;;First_Name_vod&lt;R&gt;;Email_vod&lt;R&gt;</description>
+        <externalId>false</externalId>
+        <label>Walk-In Fields</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Event Rule</label>
+    <nameField>
+        <displayFormat>ER-{0000000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Event Rules</pluralLabel>
+    <recordTypes>
+        <fullName>Attendee_Fields_vod</fullName>
+        <active>true</active>
+        <description>For setting Attendee Fields definition.</description>
+        <label>Attendee_Fields_vod</label>
+        <picklistValues>
+            <picklist>Filter_Type_vod__c</picklist>
+            <values>
+                <fullName>Mandatory_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_Off_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_On_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Child_Event_Settings_vod</fullName>
+        <active>true</active>
+        <description>Configures child events that are associated to an event configuration</description>
+        <label>Child_Event_Settings_vod</label>
+        <picklistValues>
+            <picklist>Filter_Type_vod__c</picklist>
+            <values>
+                <fullName>Mandatory_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_Off_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_On_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Material_vod</fullName>
+        <active>true</active>
+        <description>Defines which print invitation templates are associated to an event configuration</description>
+        <label>Material_vod</label>
+        <picklistValues>
+            <picklist>Filter_Type_vod__c</picklist>
+            <values>
+                <fullName>Mandatory_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_Off_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_On_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Online_Registration_Fields_vod</fullName>
+        <active>true</active>
+        <description>Used to store fields that are entered by online registrants.</description>
+        <label>Online_Registration_Fields_vod</label>
+        <picklistValues>
+            <picklist>Filter_Type_vod__c</picklist>
+            <values>
+                <fullName>Mandatory_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_Off_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_On_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Speaker_Fields_vod</fullName>
+        <active>true</active>
+        <description>Used to define the fields that display in the user interface when selecting a speaker for an event.</description>
+        <label>Speaker_Fields_vod</label>
+        <picklistValues>
+            <picklist>Filter_Type_vod__c</picklist>
+            <values>
+                <fullName>Mandatory_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_Off_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_On_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Speaker_Qualification_vod</fullName>
+        <active>true</active>
+        <description>Used to store the speaker qualification that is required for a speaker to be selected for an event.</description>
+        <label>Speaker_Qualification_vod</label>
+        <picklistValues>
+            <picklist>Filter_Type_vod__c</picklist>
+            <values>
+                <fullName>Mandatory_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_Off_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_On_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Walk_In_Fields_vod</fullName>
+        <active>true</active>
+        <description>Used to store fields that are entered by walk-in attendees.</description>
+        <label>Walk-In Fields</label>
+        <picklistValues>
+            <picklist>Filter_Type_vod__c</picklist>
+            <values>
+                <fullName>Mandatory_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_Off_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Optional_On_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Email_CLM_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Len(Email_Template_vod__c) &gt; 1, Len(CLM_Presentation_vod__c) &gt;1 )</errorConditionFormula>
+        <errorMessage>A single rule cannot have both Email Template and CLM Presentation populated. Please create separate rules for these two items.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Material_CLM_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Len(CLM_Presentation_vod__c) &gt; 1, Len(Material_vod__c) &gt;1 )</errorConditionFormula>
+        <errorMessage>A single rule cannot have both Material and CLM Presentation populated. Please create separate rules for these two items.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Material_Email_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Len(Email_Template_vod__c) &gt; 1, Len(Material_vod__c) &gt;1 )</errorConditionFormula>
+        <errorMessage>A single rule cannot have both Material and Email Template populated. Please create separate rules for these two items.</errorMessage>
+    </validationRules>
+</CustomObject>

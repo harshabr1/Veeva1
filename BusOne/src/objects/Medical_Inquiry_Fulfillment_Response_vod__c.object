@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Captures the detailed responses used to fulfill the associated Medical Inquiry Fulfillment records.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Assign_To_Comments_vod__c</fullName>
+        <description>Used to record comments when reassigning a Medical Inquiry Fulfillment record.</description>
+        <externalId>false</externalId>
+        <label>Assign To Comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Assign_To_User_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to assign the associated Medical Inquiry Fulfillment record to a different User in order to complete the request. User list will be filtered to those Users who are assigned to the same territory as the Account on the Medical Inquiry record.</description>
+        <externalId>false</externalId>
+        <label>Assign To User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Medical_Inquiry_Fulfillment_Response_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Completed_By_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The User that completed the Medical Inquiry Fulfillment Response.</description>
+        <externalId>false</externalId>
+        <label>Completed By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Medical_Fulfillment_Resp_CompletedBy_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Datetime_vod__c</fullName>
+        <description>The Date and Time that the Medical Inquiry Fulfillment Response was completed.</description>
+        <externalId>false</externalId>
+        <label>Completed Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Fulfillment_Materials_vod__c</fullName>
+        <description>Used to capture the Fulfillment Materials used to respond to the Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>Fulfillment Materials</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Fulfillment_Response_vod__c</fullName>
+        <description>Used to capture a description of the Fulfillment Response to the Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>Fulfillment Response</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Interaction_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Interaction Report which was used to capture the Medical Inquiry Fulfillment Response.</description>
+        <externalId>false</externalId>
+        <label>Interaction</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Medical Inquiry Fulfillment Responses</relationshipLabel>
+        <relationshipName>Medical_Inquiry_Fulfillment_Response_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Inquiry_Fulfillment_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The associated Medical Inquiry Fulfillment record.</description>
+        <externalId>false</externalId>
+        <label>Medical Inquiry Fulfillment</label>
+        <referenceTo>Medical_Inquiry_Fulfillment_vod__c</referenceTo>
+        <relationshipLabel>Medical Inquiry Fulfillment Responses</relationshipLabel>
+        <relationshipName>Medical_Inquiry_Fulfillment_Response_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Method_vod__c</fullName>
+        <description>The means by which the Medical Inquiry Fulfillment Response was delivered.</description>
+        <externalId>false</externalId>
+        <label>Method</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Face_to_Face_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Phone_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Email_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fax_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mail_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mobile_Created_Datetime_vod__c</fullName>
+        <description>Date and time the Medical Inquiry Fulfillment Response record was created on the mobile device.</description>
+        <externalId>false</externalId>
+        <label>Mobile Created Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field to aid in synchronization and allow for the creation of Medical Inquiry Fulfillment records on the offline platforms.
+Help Text</description>
+        <externalId>true</externalId>
+        <label>Mobile Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Reassign_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to indicate that the associated Medical Inquiry Fulfillment record requires an additional response for completion.</description>
+        <externalId>false</externalId>
+        <label>Reassign?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>The state of the Medical Inquiry Fulfillment Response record. When a Medical Inquiry Fulfillment Response record has a status of Saved, the Edit option is displayed. When a Medical Inquiry Fulfillment Response record has a status of Completed, the Edit option is hidden.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Saved_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Medical Inquiry Fulfillment Response</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>MIFR-{00000}</displayFormat>
+        <label>Ml Fulfillment Response Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Medical Inquiry Fulfillment Responses</pluralLabel>
+    <recordTypes>
+        <fullName>Assign_MIFR_vod</fullName>
+        <active>false</active>
+        <description>Medical Inquiry Fulfillment Response created when MIF is assigned using Assign Button.</description>
+        <label>Assign_MIFR_vod</label>
+        <picklistValues>
+            <picklist>Method_vod__c</picklist>
+            <values>
+                <fullName>Email_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face_to_Face_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Completed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saved_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Medical_Inquiry_Fulfillment_Response_vod</fullName>
+        <active>true</active>
+        <description>Medical Inquiry Fulfillment Response created in relation to an associated Medical Inquiry Fulfillment record.</description>
+        <label>Medical Inquiry Fulfillment Response</label>
+        <picklistValues>
+            <picklist>Method_vod__c</picklist>
+            <values>
+                <fullName>Email_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Face_to_Face_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fax_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mail_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Completed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saved_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

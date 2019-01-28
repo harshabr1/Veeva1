@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>Network_Field_Mapping_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>Network_Field_Mapping_vod</content>
+        <skipRecordTypeSelect>true</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores information of CRM fields mapping with Network fields.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CRM_Field_API_Name_vod__c</fullName>
+        <description>CRM field API name</description>
+        <externalId>false</externalId>
+        <label>CRM Field API Name</label>
+        <length>43</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>External ID for use in loading and migration of mapping configuration.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Lookup_ID_API_Name_vod__c</fullName>
+        <description>CRM lookup object ID field API name</description>
+        <externalId>false</externalId>
+        <label>Lookup ID API Name</label>
+        <length>43</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Max_Field_Group_Values_vod__c</fullName>
+        <description>Relevant only for mappings of Multi-Select Picklists to FieldGroups in Network. Holds the maximum number of values available for selection in a multi-select picklist that is mapped to a Field Group in Network.</description>
+        <externalId>false</externalId>
+        <label>Maximum FieldGroup Values</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Network_Field_API_Name_vod__c</fullName>
+        <description>Network field API name</description>
+        <externalId>false</externalId>
+        <label>Network Field API Name</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Network_Object_Mapping_vod__c</fullName>
+        <description>Link to Network Object Mapping.</description>
+        <externalId>false</externalId>
+        <label>Network Object Mapping</label>
+        <referenceTo>Network_Object_Mapping_vod__c</referenceTo>
+        <relationshipLabel>Network Field Mappings</relationshipLabel>
+        <relationshipName>Network_Field_Mappings_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Object_Mapping_Reference_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Link to child Object Mapping</description>
+        <externalId>false</externalId>
+        <label>Object Mapping Reference</label>
+        <referenceTo>Network_Object_Mapping_vod__c</referenceTo>
+        <relationshipLabel>Parent Field Mapping References</relationshipLabel>
+        <relationshipName>Object_Mapping_References_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Unique_Key_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Unique key preventing duplicate Network field mappings within the same Network Object Mapping. Composed of concatenated values of: Network_Object_Mapping_vod and 
+Network_Field_API_Name_vod. Handled by trigger.</description>
+        <externalId>false</externalId>
+        <label>Unique Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Validation_Notes_vod__c</fullName>
+        <description>Validation status description if Validation Status is &quot;Invalid&quot;</description>
+        <externalId>false</externalId>
+        <label>Validation Notes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Validation_Status_vod__c</fullName>
+        <description>Mapping validation status</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Mapping validation status</inlineHelpText>
+        <label>Validation Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unvalidated_vod</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Valid_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Invalid_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Network Field Mapping</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>NFM{000000000}</displayFormat>
+        <label>Field Mapping ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Network Field Mappings</pluralLabel>
+    <recordTypes>
+        <fullName>Boolean_vod</fullName>
+        <active>true</active>
+        <description>CRM checkbox to a Network &apos;Boolean&apos; Reference Mapping.</description>
+        <label>Boolean_vod</label>
+        <picklistValues>
+            <picklist>Validation_Status_vod__c</picklist>
+            <values>
+                <fullName>Invalid_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unvalidated_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Valid_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>External_ID_vod</fullName>
+        <active>true</active>
+        <description>External ID mapping.</description>
+        <label>External_ID_vod</label>
+        <picklistValues>
+            <picklist>Validation_Status_vod__c</picklist>
+            <values>
+                <fullName>Invalid_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unvalidated_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Valid_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Lookup_vod</fullName>
+        <active>true</active>
+        <description>CRM Lookup to Network Reference mapping.</description>
+        <label>Lookup_vod</label>
+        <picklistValues>
+            <picklist>Validation_Status_vod__c</picklist>
+            <values>
+                <fullName>Invalid_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unvalidated_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Valid_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Name_vod</fullName>
+        <active>true</active>
+        <description>Mapping by field names</description>
+        <label>Name_vod</label>
+        <picklistValues>
+            <picklist>Validation_Status_vod__c</picklist>
+            <values>
+                <fullName>Invalid_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unvalidated_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Valid_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Object_Reference_vod</fullName>
+        <active>true</active>
+        <description>Reference to Network Object Mapping.</description>
+        <label>Object_Reference_vod</label>
+        <picklistValues>
+            <picklist>Validation_Status_vod__c</picklist>
+            <values>
+                <fullName>Invalid_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unvalidated_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Valid_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Picklist_vod</fullName>
+        <active>true</active>
+        <description>CRM Picklist to Network Reference mapping.</description>
+        <label>Picklist_vod</label>
+        <picklistValues>
+            <picklist>Validation_Status_vod__c</picklist>
+            <values>
+                <fullName>Invalid_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unvalidated_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Valid_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Record_Type_vod</fullName>
+        <active>true</active>
+        <description>CRM Record Type to Network Reference mapping.</description>
+        <label>Record_Type_vod</label>
+        <picklistValues>
+            <picklist>Validation_Status_vod__c</picklist>
+            <values>
+                <fullName>Invalid_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unvalidated_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Valid_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

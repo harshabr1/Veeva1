@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Anaytics Product Group object provides a location to load the Product Groupings utilized in the Analytics Files that have been loaded.  The Product Groupings can be aggregated for display purposes utilizing the self-referencing Lookup.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Company_Product_Group_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox to define if the Product Group is a Company product.</description>
+        <externalId>false</externalId>
+        <label>Company Product Group</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Country_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Country is used for data loading</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <referenceTo>Country_vod__c</referenceTo>
+        <relationshipLabel>Analytics Product Groups</relationshipLabel>
+        <relationshipName>Analytics_Product_Groups</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Display_In_Reports_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Field to determine if the Analytics Product Group should be displayed in the Analytics Reports.   If checked, the group will be displayed on Reports.</description>
+        <externalId>false</externalId>
+        <label>Display In Reports?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Display_Name_vod__c</fullName>
+        <description>The Display Name is used to represent the Product Group within the Analytics Reports.</description>
+        <externalId>false</externalId>
+        <label>Display Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Display_Order_vod__c</fullName>
+        <description>Display Order is used to control the order in which the Product Group is displayed in the reports.</description>
+        <externalId>false</externalId>
+        <label>Display Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Do_Not_Display_in_Formulary_for_Rep_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked this Analytics Product Group record in the Formulary for the Rep will not be displayed.</description>
+        <externalId>false</externalId>
+        <label>Do Not Display in Formulary for Rep</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id is used for data loading only</description>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Market_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Market associated to the Analytics Product Group.</description>
+        <externalId>false</externalId>
+        <label>Market</label>
+        <referenceTo>Analytics_Markets_vod__c</referenceTo>
+        <relationshipLabel>Analytics Product Groups</relationshipLabel>
+        <relationshipName>R00NT0000000lduqMAA</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Product_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Parent Product Group provides for aggregation of data within the Sales Reports.  A Product Group record that has multiple Product Group children records will be displayed in the reports with the aggregated sales data from the child product groups.</description>
+        <externalId>false</externalId>
+        <label>Parent Product Group</label>
+        <referenceTo>Analytics_Product_Group_vod__c</referenceTo>
+        <relationshipLabel>Analytics Product Groups</relationshipLabel>
+        <relationshipName>Analytics_Product_Group_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Analytics Product Group</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Display_Name_vod__c</columns>
+        <columns>Display_Order_vod__c</columns>
+        <columns>Company_Product_Group_vod__c</columns>
+        <columns>Display_In_Reports_vod__c</columns>
+        <columns>Parent_Product_Group_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Product Group</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Analytics Product Groups</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Display_Name_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Display_Order_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Company_Product_Group_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Parent_Product_Group_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Market_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Display_In_Reports_vod__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Display_Name_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Display_Order_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Company_Product_Group_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Parent_Product_Group_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Market_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Display_In_Reports_vod__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Display_Name_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Display_Order_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Company_Product_Group_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Parent_Product_Group_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Market_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Display_In_Reports_vod__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

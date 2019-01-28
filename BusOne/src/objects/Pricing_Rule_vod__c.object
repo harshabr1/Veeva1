@@ -1,0 +1,1118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Holds list of pricing rules for products with specifically defined quantities and timeframes. Can also be specific to an account or an account group.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Group_vod__c</fullName>
+        <description>A group of accounts for which the pricing rule is valid. If this field is populated, then Account_vod must remain blank.</description>
+        <externalId>false</externalId>
+        <label>Account Group</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The account for which the pricing rule is valid. If this field is populated, then Account_Group_vod must remain blank.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Pricing Rules</relationshipLabel>
+        <relationshipName>Pricing_Rules_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Active_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether the pricing rule is active.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Chain_Rule_Operator_vod__c</fullName>
+        <description>Used to indicate the logical operator to be used between comparison product conditions in chain pricing rules.</description>
+        <externalId>false</externalId>
+        <label>Chain Rule Operator</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AND_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>OR_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Chain_Rule_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to indicate the rule as a chain pricing rule.</description>
+        <externalId>false</externalId>
+        <label>Chain Rule</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Comparison_Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Product Catalog</description>
+        <externalId>false</externalId>
+        <label>Comparison_Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Pricing Rules (Comparison_Product)</relationshipLabel>
+        <relationshipName>Pricing_Rules</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comparison_Type_vod__c</fullName>
+        <description>This defines, if the field values in  Quantity_Min_vod__c and Quantity_Max_vod__c are counted against the quantities or against the list or net values ordered</description>
+        <externalId>false</externalId>
+        <label>Comparison Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Product Quantity</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>List Value</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Net Value</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Contract_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to select the contract to be associated to the Pricing Rule.</description>
+        <externalId>false</externalId>
+        <label>Contract</label>
+        <referenceTo>Contract_vod__c</referenceTo>
+        <relationshipLabel>Pricing Rules</relationshipLabel>
+        <relationshipName>Pricing_Rules_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cross_Product_Rule_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, indicates the Pricing Rule applies across two products</description>
+        <externalId>false</externalId>
+        <label>Cross_Product_Rule</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_End_Date_vod__c</fullName>
+        <description>Represents the latest available delivery date</description>
+        <externalId>false</externalId>
+        <label>Delivery End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_Order_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, this field flags the rule as delivery order specific.</description>
+        <externalId>false</externalId>
+        <label>Delivery Order</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_Start_Date_vod__c</fullName>
+        <description>Represents the earliest available delivery date</description>
+        <externalId>false</externalId>
+        <label>Delivery Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Discount_Override_Max_vod__c</fullName>
+        <description>Defines the upper boundary of manual discount override that the rep can enter (in %).</description>
+        <externalId>false</externalId>
+        <label>Discount Override Max</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Discount_Override_vod__c</fullName>
+        <description>Discount to be applied by the system, in percent (%)</description>
+        <externalId>false</externalId>
+        <label>Discount Override</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Discount_vod__c</fullName>
+        <description>Percentage discount defined by the pricing rule.</description>
+        <externalId>false</externalId>
+        <formula>IF(List_Price_vod__c&gt;0, (List_Price_vod__c - Net_Price_vod__c)/List_Price_vod__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Discount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>End_Date_vod__c</fullName>
+        <description>Defines, together with the start date, the validity period of the pricing rule.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>External_Id_vod__c</fullName>
+        <description>Unique identifier for the pricing rule.</description>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Free_Goods_Max_vod__c</fullName>
+        <description>Defines the upper boundary of free good amount override that the rep can enter</description>
+        <externalId>false</externalId>
+        <label>Free Goods Max</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Free_Goods_Percentage_Max_vod__c</fullName>
+        <description>This is the limit the rep would be allowed to enter free goods on his own when using Percentage Free Good rules.</description>
+        <externalId>false</externalId>
+        <label>Free Goods Percentage Max</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Free_Goods_Percentage_vod__c</fullName>
+        <description>Used for defining percentage of product free goods in an order.</description>
+        <externalId>false</externalId>
+        <label>Free Goods Percentage</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Free_Goods_vod__c</fullName>
+        <description>If the pricing logic at order line entry determines to apply the pricing rule (quantities,...), this amount of free goods needs to be applied to the order line</description>
+        <externalId>false</externalId>
+        <label>Free Goods</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Limit_Bound_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If unchecked, the limit rule triggers a warning only. If checked, the limit rule prevents saving/submit of the order.</description>
+        <externalId>false</externalId>
+        <label>Limit Bound</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>List_Price_vod__c</fullName>
+        <description>List price for the product of this pricing rule.</description>
+        <externalId>false</externalId>
+        <label>List Price</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Min_Delivery_Time_Frame_vod__c</fullName>
+        <description>Used to specify the minimum number of days required between two deliveries.</description>
+        <externalId>false</externalId>
+        <label>Minimum Delivery Time Frame</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Net_Price_Min_vod__c</fullName>
+        <description>This is the limit the rep would be allowed to enter a discounted price on his own</description>
+        <externalId>false</externalId>
+        <label>Net Price Min</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Net_Price_vod__c</fullName>
+        <description>Net Price</description>
+        <externalId>false</externalId>
+        <label>Net Price</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Order_Campaign_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>It specifies the campaign to which the pricing rule belongs.</description>
+        <externalId>false</externalId>
+        <label>Order Campaign</label>
+        <referenceTo>Order_Campaign_vod__c</referenceTo>
+        <relationshipLabel>Pricing Rules</relationshipLabel>
+        <relationshipName>Pricing_Rules_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Max_vod__c</fullName>
+        <description>Defines the allowed values of the manual Payment Term override that a rep can enter.</description>
+        <externalId>false</externalId>
+        <label>Payment Max</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_vod__c</fullName>
+        <description>Defines the payment value to be applied to the Order Line.</description>
+        <externalId>false</externalId>
+        <label>Payment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price_Book_vod__c</fullName>
+        <description>Text field used to associate a pricing rule record to a price book</description>
+        <externalId>false</externalId>
+        <label>Price Book</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pricing_Group_vod__c</fullName>
+        <description>To allow customers to separate pricing rules by sharing rules for profiles/user groups</description>
+        <externalId>false</externalId>
+        <label>Pricing Group</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Comparison_Type_vod__c</fullName>
+        <description>Defines whether the Cross Product Limit is Quantity or Value based.</description>
+        <externalId>false</externalId>
+        <label>Product Comparison Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Product Quantity</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>List Value</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Maximum_vod__c</fullName>
+        <description>Defines the maximum amount of the Product.</description>
+        <externalId>false</externalId>
+        <label>Product Maximum</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Minimum_vod__c</fullName>
+        <description>Defines the minimum amount of the Product.</description>
+        <externalId>false</externalId>
+        <label>Product Minimum</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <errorMessage>Value does not exist or does not match filter criteria.</errorMessage>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>notEqual</operation>
+                <value>Delivery_Period_vod</value>
+            </filterItems>
+            <filterItems>
+                <field>Product_vod__c.Product_Type_vod__c</field>
+                <operation>equals</operation>
+                <value>Order</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Pricing Rules</relationshipLabel>
+        <relationshipName>Pricing_Rules_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity_Max_vod__c</fullName>
+        <description>Maximum number of items that can be ordered such that a pricing rule is applicable.</description>
+        <externalId>false</externalId>
+        <label>Maximum Quantity</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity_Min_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Minimum number of items that can be ordered such that a pricing rule is applicable.</description>
+        <externalId>false</externalId>
+        <label>Minimum Quantity</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rule_Description_vod__c</fullName>
+        <description>Textual description of the pricing rule. Will appear on the line item.</description>
+        <externalId>false</externalId>
+        <label>Rule Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date_vod__c</fullName>
+        <description>Date the pricing rule becomes active.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Suggested_Retail_Price_vod__c</fullName>
+        <description>Suggested retail price</description>
+        <externalId>false</externalId>
+        <label>Suggested Retail Price</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Suggestion_Text_vod__c</fullName>
+        <description>Suggestion text that is displayed if the quantity chosen is near another rule that will give the customer a more attractive discount.</description>
+        <externalId>false</externalId>
+        <label>Suggestion Text</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Suggestion_Threshold_vod__c</fullName>
+        <description>If the quantity entered on the line item passes this threshold, then the Suggestion Text will be displayed.</description>
+        <externalId>false</externalId>
+        <label>Suggestion Threshold</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Pricing Rule</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Start_Date_vod__c</columns>
+        <columns>Quantity_Min_vod__c</columns>
+        <columns>Quantity_Max_vod__c</columns>
+        <columns>Account_vod__c</columns>
+        <columns>Account_Group_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Pricing Rule Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Pricing Rules</pluralLabel>
+    <recordTypes>
+        <fullName>Brand_Level_Rule_vod</fullName>
+        <active>true</active>
+        <description>This pricing rule is for defining value-based rebates on a brand level. A brand is represented by the Detail product the order products are associated with. Brand Level rules can utilize scales (quantity, value)</description>
+        <label>Brand_Level_Rule_vod</label>
+        <picklistValues>
+            <picklist>Comparison_Type_vod__c</picklist>
+            <values>
+                <fullName>List Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Quantity</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Delivery_Period_vod</fullName>
+        <active>true</active>
+        <description>This pricing rule is for defining delivery conditions.</description>
+        <label>Delivery_Period_vod</label>
+        <picklistValues>
+            <picklist>Comparison_Type_vod__c</picklist>
+            <values>
+                <fullName>List Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Comparison_Type_vod__c</picklist>
+            <values>
+                <fullName>List Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Discount_Rule_vod</fullName>
+        <active>true</active>
+        <description>This pricing rule is for defining value-based rebates, also known as discounts. Those can be direct net prices or percentage-based discounts. Discount rules can utilize scales (quantity, value) as well as user overrides.</description>
+        <label>Discount_Rule_vod</label>
+        <picklistValues>
+            <picklist>Comparison_Type_vod__c</picklist>
+            <values>
+                <fullName>List Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Quantity</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Free_Goods_Percentage_Rule_vod</fullName>
+        <active>false</active>
+        <description>This pricing rule is used to define free goods as a percentage of paid-for product.</description>
+        <label>Free_Goods_Percentage_Rule_vod</label>
+        <picklistValues>
+            <picklist>Chain_Rule_Operator_vod__c</picklist>
+            <values>
+                <fullName>AND_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OR_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Comparison_Type_vod__c</picklist>
+            <values>
+                <fullName>List Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Comparison_Type_vod__c</picklist>
+            <values>
+                <fullName>List Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Free_Goods_Rule_vod</fullName>
+        <active>true</active>
+        <description>This pricing rule is for defining free goods-based rebates, also known as natural rebates. Free goods rules can utilize scales (quantity, value) as well as user overrides.</description>
+        <label>Free_Goods_Rule_vod</label>
+        <picklistValues>
+            <picklist>Comparison_Type_vod__c</picklist>
+            <values>
+                <fullName>List Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Quantity</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Limit_Rule_vod</fullName>
+        <active>true</active>
+        <description>This pricing rule type is for defining various limits on order quantity or values. Limits can be defined as hard stops or warnings only.</description>
+        <label>Limit_Rule_vod</label>
+        <picklistValues>
+            <picklist>Comparison_Type_vod__c</picklist>
+            <values>
+                <fullName>List Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Quantity</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>List_Price_Rule_vod</fullName>
+        <active>true</active>
+        <description>This pricing rule type is for defining the list price of an order product (SKU). A valid list price rule needs to exist for a product to appear during order entry.</description>
+        <label>List_Price_Rule_vod</label>
+        <picklistValues>
+            <picklist>Comparison_Type_vod__c</picklist>
+            <values>
+                <fullName>List Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Payment_Terms_Rule_vod</fullName>
+        <active>true</active>
+        <description>This pricing rule is used to define how payment should be handled. Payment Term rules can be configured to target Products, Brands, Product Groups, or the Order level.</description>
+        <label>Payment_Terms_Rule_vod</label>
+        <picklistValues>
+            <picklist>Comparison_Type_vod__c</picklist>
+            <values>
+                <fullName>List Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Quantity</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Product_Group_Level_Rule_vod</fullName>
+        <active>true</active>
+        <description>This pricing rule is for defining value-based rebates on a product group level. A product group is defined through the product catalog entry of the same name and the underlying order products. Product Group rules can utilize scales (quantity, value).</description>
+        <label>Product_Group_Level_Rule_vod</label>
+        <picklistValues>
+            <picklist>Comparison_Type_vod__c</picklist>
+            <values>
+                <fullName>List Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Net Value</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Quantity</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Account_And_Account_Group_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(LEN(Account_Group_vod__c)&gt;0,  LEN(Account_vod__c)&gt;0) || AND(LEN(Account_Group_vod__c)&gt;0,  LEN(Price_Book_vod__c)&gt;0) || AND(LEN(Price_Book_vod__c)&gt;0,  LEN(Account_vod__c)&gt;0)</errorConditionFormula>
+        <errorMessage>Only one of Account, Account Group, or Price book should be specified</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Brand_Level_Rule_Type_Check</fullName>
+        <active>true</active>
+        <description>Only product type of &apos;Detail&apos; is allowed</description>
+        <errorConditionFormula>AND($RecordType.DeveloperName = &apos;Brand_Level_Rule_vod&apos; ,NOT(ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Detail&apos;) ) )</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>Only product type of &apos;Detail&apos; is allowed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Chain_And_Cross_Product_vod</fullName>
+        <active>true</active>
+        <description>Only one of Chain and Cross Product Rule should be checked</description>
+        <errorConditionFormula>Chain_Rule_vod__c &amp;&amp; Cross_Product_Rule_vod__c</errorConditionFormula>
+        <errorMessage>Only one of Chain and Cross Product Rule should be checked</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Chain_Comparison_Product_vod</fullName>
+        <active>true</active>
+        <description>Comparison Product must be blank</description>
+        <errorConditionFormula>Chain_Rule_vod__c == true &amp;&amp; NOT(ISBLANK( Comparison_Product_vod__c ))</errorConditionFormula>
+        <errorDisplayField>Comparison_Product_vod__c</errorDisplayField>
+        <errorMessage>Comparison Product must be blank</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Chain_Delivery_Order_vod</fullName>
+        <active>true</active>
+        <description>Chain Rule cannot be Delivery Order</description>
+        <errorConditionFormula>Chain_Rule_vod__c == true &amp;&amp;  Delivery_Order_vod__c == true</errorConditionFormula>
+        <errorDisplayField>Delivery_Order_vod__c</errorDisplayField>
+        <errorMessage>Chain Rule cannot be Delivery Order</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Chain_Limit_Bound_vod</fullName>
+        <active>true</active>
+        <description>Chain Rule cannot be limit bound.</description>
+        <errorConditionFormula>Chain_Rule_vod__c == true &amp;&amp;  Limit_Bound_vod__c == true</errorConditionFormula>
+        <errorDisplayField>Limit_Bound_vod__c</errorDisplayField>
+        <errorMessage>Chain Rule cannot be limit bound.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Chain_Operator_vod</fullName>
+        <active>true</active>
+        <description>Chain Rule Operator must be either AND or OR</description>
+        <errorConditionFormula>Chain_Rule_vod__c == true &amp;&amp; ISBLANK(TEXT(Chain_Rule_Operator_vod__c))</errorConditionFormula>
+        <errorDisplayField>Chain_Rule_Operator_vod__c</errorDisplayField>
+        <errorMessage>Chain Rule Operator must be either AND or OR</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Chain_Products_vod</fullName>
+        <active>true</active>
+        <description>Product must have a value and cannot equal Kit Item</description>
+        <errorConditionFormula>Chain_Rule_vod__c == true &amp;&amp; (ISBLANK(Product_vod__c) ||
+ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Kit Item&apos;))</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>Product must have a value and cannot equal Kit Item</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Comp_Prod_Min_Max_Check_vod</fullName>
+        <active>true</active>
+        <description>Checks that Maximum Comparison Product Quantity is greater than Minimum Comparison Product Quantity</description>
+        <errorConditionFormula>Product_Maximum_vod__c &lt;=  Product_Minimum_vod__c</errorConditionFormula>
+        <errorDisplayField>Product_Maximum_vod__c</errorDisplayField>
+        <errorMessage>The Maximum Quantity must be greater than the Minimum Quantity.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Comp_Type_Check</fullName>
+        <active>true</active>
+        <description>Comparison Type &apos;Net Value&apos; is not supported.</description>
+        <errorConditionFormula>AND(ISPICKVAL(Comparison_Type_vod__c, &apos;Net Value&apos;), 
+OR(Cross_Product_Rule_vod__c =true, AND(NOT($RecordType.DeveloperName = &apos;Limit_Rule_vod&apos;), ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Order&apos;))))</errorConditionFormula>
+        <errorDisplayField>Comparison_Type_vod__c</errorDisplayField>
+        <errorMessage>Comparison Type &apos;Net Value&apos; is not supported.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>DISCOUNT_NOT_NEG</fullName>
+        <active>true</active>
+        <description>Discount Override cannot be negative.</description>
+        <errorConditionFormula>Discount_Override_vod__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Discount_Override_vod__c</errorDisplayField>
+        <errorMessage>Discount may not be negative.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Delivery_Order_Product_Check</fullName>
+        <active>true</active>
+        <description>Limit Rules flagged as Delivery Order cannot be associated with a particular product. Product field must be blank for Delivery Order limit rules.</description>
+        <errorConditionFormula>AND(Delivery_Order_vod__c = true, NOT(ISBLANK(Product_vod__c)))</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>Delivery Order Limit Rules cannot be associated to a particular product.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Delivery_Order_Rule_Type_Check</fullName>
+        <active>true</active>
+        <description>Only pricing rules of Limit_Rule_vod record type can be flagged as Delivery Order.</description>
+        <errorConditionFormula>AND(Delivery_Order_vod__c = true, NOT($RecordType.DeveloperName = &apos;Limit_Rule_vod&apos;))</errorConditionFormula>
+        <errorDisplayField>Delivery_Order_vod__c</errorDisplayField>
+        <errorMessage>Only Limit Rules can be flagged as Delivery Order.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Delivery_Period_Date_Check_vod</fullName>
+        <active>true</active>
+        <description>Delivery End date must be greater than Delivery Start date</description>
+        <errorConditionFormula>Delivery_End_Date_vod__c &lt;= Delivery_Start_Date_vod__c</errorConditionFormula>
+        <errorDisplayField>Delivery_End_Date_vod__c</errorDisplayField>
+        <errorMessage>Delivery End date must be greater than Delivery Start date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Delivery_Period_Prod_Check_vod</fullName>
+        <active>true</active>
+        <description>If product type= ‘Order’, Delivery Start and End Dates must be populated</description>
+        <errorConditionFormula>RecordType.DeveloperName == &apos;Delivery_Period_vod&apos; &amp;&amp; ISPICKVAL(Product_vod__r.Product_Type_vod__c , &apos;Order&apos;) &amp;&amp; ( ISNULL(Delivery_Start_Date_vod__c) ||  ISNULL(Delivery_End_Date_vod__c))</errorConditionFormula>
+        <errorMessage>If product type= ‘Order’, Delivery Start and End Dates must be populated</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Delivery_Rule_Type_Check_vod</fullName>
+        <active>true</active>
+        <description>Product can be ‘empty’ or of type ‘order’</description>
+        <errorConditionFormula>RecordType.DeveloperName == &apos;Delivery_Period_vod&apos; &amp;&amp; Product_vod__c != null &amp;&amp; !ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Order&apos;)</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>Product can be ‘empty’ or of type ‘order’</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Delivery_Start_Check_vod</fullName>
+        <active>true</active>
+        <description>Delivery Start Date must be equal or greater than rule Start Date</description>
+        <errorConditionFormula>Delivery_Start_Date_vod__c &lt; Start_Date_vod__c</errorConditionFormula>
+        <errorDisplayField>Delivery_Start_Date_vod__c</errorDisplayField>
+        <errorMessage>Delivery Start Date must be equal or greater than rule Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Discount_Rule_Rule_Type_Check</fullName>
+        <active>true</active>
+        <description>Product can be empty or of type &apos;Order&apos; and &apos;Kit Item&apos;.</description>
+        <errorConditionFormula>AND($RecordType.DeveloperName = &apos;Discount_Rule_vod&apos; ,NOT(ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Order&apos;) || ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Kit Item&apos;) || ISBLANK(  Product_vod__c ) ) )</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>Product can be empty or of type &apos;Order&apos; and &apos;Kit Item&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Discount_rule_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(ISBLANK( Discount_Override_vod__c ), NOT(ISBLANK( Discount_Override_Max_vod__c)),AND( NOT(ISBLANK( Discount_Override_Max_vod__c)), 
+Discount_Override_Max_vod__c&lt;Discount_Override_vod__c ))</errorConditionFormula>
+        <errorMessage>Discount Override Max is lower than Discount</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>EndDate_After_StartDate_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>Start_Date_vod__c &gt; End_Date_vod__c</errorConditionFormula>
+        <errorMessage>Start date after end date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Free_Good_No_Percent_Max_Allowed</fullName>
+        <active>true</active>
+        <description>Throw error if Percentage Free Good Max used for regular Free Good rules</description>
+        <errorConditionFormula>AND($RecordType.DeveloperName = &apos;Free_Goods_Rule_vod&apos;, NOT(ISBLANK(Free_Goods_Percentage_Max_vod__c)))</errorConditionFormula>
+        <errorDisplayField>Free_Goods_Percentage_Max_vod__c</errorDisplayField>
+        <errorMessage>Percentage Free Good Max cannot be populated for regular Free Good rules</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Free_Good_Percent_Comp_Type_Check</fullName>
+        <active>true</active>
+        <description>For Free Goods Percentage Rules, List Value Comparison Type is not supported</description>
+        <errorConditionFormula>AND($RecordType.DeveloperName = &apos;Free_Goods_Percentage_Rule_vod&apos; ,ISPICKVAL(Comparison_Type_vod__c, &apos;List Value&apos;) )</errorConditionFormula>
+        <errorDisplayField>Comparison_Type_vod__c</errorDisplayField>
+        <errorMessage>Comparison Type &apos;List Value&apos; is not supported.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Free_Good_Percent_Max_Check</fullName>
+        <active>true</active>
+        <description>For Free Goods Percentage Rules, Free Goods Max is not supported</description>
+        <errorConditionFormula>Free_Goods_Percentage_Max_vod__c &lt; Free_Goods_Percentage_vod__c</errorConditionFormula>
+        <errorDisplayField>Free_Goods_Percentage_Max_vod__c</errorDisplayField>
+        <errorMessage>Percentage Max cannot be lower than Percentage Free Good.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Free_Good_Type_Check</fullName>
+        <active>true</active>
+        <description>Only product type of &apos;Order&apos; is allowed</description>
+        <errorConditionFormula>AND($RecordType.DeveloperName = &apos;Free_Goods_Rule_vod&apos; || $RecordType.DeveloperName = &apos;Free_Goods_Percentage_Rule_vod&apos; ,NOT(ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Order&apos;) || ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Kit Item&apos;) ) )</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>Only product type of &apos;Order&apos; and &apos;Kit Item&apos; is allowed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Free_Goods_rule_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(AND(ISBLANK(Free_Goods_Percentage_vod__c), ISBLANK(Free_Goods_vod__c)), NOT(ISBLANK( Free_Goods_Max_vod__c )),AND( NOT(ISBLANK( Free_Goods_Max_vod__c )), NOT(ISBLANK( Free_Goods_vod__c )),
+Free_Goods_Max_vod__c&lt;Free_Goods_vod__c))</errorConditionFormula>
+        <errorMessage>Free Good Max is lower than Free Good. If Free Good Max is not blank, then either Free Goods or Free Good Percent must be populated.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Kit_Item_Product_Type_Check</fullName>
+        <active>true</active>
+        <description>Kit Item is not allowed in Cross Product Rebate.</description>
+        <errorConditionFormula>AND( Cross_Product_Rule_vod__c = true, OR(  ISPICKVAL(Product_vod__r.Product_Type_vod__c , &apos;Kit Item&apos;),  ISPICKVAL( Comparison_Product_vod__r.Product_Type_vod__c,  &apos;Kit Item&apos;) ))</errorConditionFormula>
+        <errorMessage>Kit Item is not allowed in Cross Product Rebate.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Limit_Rule_Type_Check</fullName>
+        <active>true</active>
+        <description>Product can be empty or Order,Detail,Product_Group,Kit_Item</description>
+        <errorConditionFormula>AND($RecordType.DeveloperName = &apos;Limit_Rule_vod&apos; ,NOT(ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Order&apos;) || ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Kit Item&apos;) || ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Detail&apos;) || ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Product Group&apos;)
+|| ISBLANK(  Product_vod__c ) ) )</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>Product can be empty or of type &apos;Order&apos;,&apos;Detail&apos;,&apos;Product_Group&apos;,&apos;Kit Item&apos;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>List_Price_Rule_Type_Check</fullName>
+        <active>true</active>
+        <description>Only product type of &apos;Order&apos; and &apos;Kit Item&apos; is allowed</description>
+        <errorConditionFormula>AND($RecordType.DeveloperName = &apos;List_Price_Rule_vod&apos; ,NOT(ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Order&apos;) || ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Kit Item&apos;) ) )</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>Only product type of &apos;Order&apos; and &apos;Kit Item&apos; is allowed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Max_Greater_than_Min_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(OR(ISBLANK(Quantity_Max_vod__c),ISNULL(Quantity_Max_vod__c)), FALSE, Quantity_Min_vod__c &gt; Quantity_Max_vod__c)</errorConditionFormula>
+        <errorDisplayField>Quantity_Max_vod__c</errorDisplayField>
+        <errorMessage>The Maximum Quantity must be greater than the Minimum Quantity.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Min_Delivery_Time_Frame_Date_Check_vod</fullName>
+        <active>true</active>
+        <description>If Min Delivery Time Frame is populated, Delivery Start Date and Delivery End Date must be empty</description>
+        <errorConditionFormula>!ISNULL(Min_Delivery_Time_Frame_vod__c) &amp;&amp; (!ISNULL( Delivery_Start_Date_vod__c ) || !ISNULL( Delivery_End_Date_vod__c ))</errorConditionFormula>
+        <errorMessage>If Min Delivery Time Frame is populated, Delivery Start Date and Delivery End Date must be empty</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Min_Delivery_Time_Frame_Prod_Check_vod</fullName>
+        <active>true</active>
+        <description>If Min Delivery Timeframe is populated, Product_vod must be empty</description>
+        <errorConditionFormula>Min_Delivery_Time_Frame_vod__c &gt; 0 &amp;&amp; Product_vod__c != null</errorConditionFormula>
+        <errorMessage>If Min Delivery Timeframe is populated, Product_vod must be empty</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Net_Price_Discount_Override_exclude_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(NOT(ISBLANK( Net_Price_vod__c )),NOT(ISBLANK( Discount_Override_vod__c )))</errorConditionFormula>
+        <errorMessage>Net Price and Discount Override all present</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Net_Price_rule_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(ISBLANK( Net_Price_vod__c ), NOT(ISBLANK( Net_Price_Min_vod__c )),AND( NOT(ISBLANK( Net_Price_Min_vod__c )), 
+Net_Price_Min_vod__c &gt;Net_Price_vod__c ))</errorConditionFormula>
+        <errorMessage>Net Price Min is greater than net price</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PaymentTermsRule_CrossProductRebate</fullName>
+        <active>true</active>
+        <description>Cross-Product Rebates on Payment Term Rules not supported.</description>
+        <errorConditionFormula>AND($RecordType.DeveloperName = &apos;Payment_Terms_Rule_vod&apos;, Cross_Product_Rule_vod__c=true)</errorConditionFormula>
+        <errorMessage>Payment Term Rules don&apos;t support Cross Product Rebate.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PaymentTermsRule_KitItem</fullName>
+        <active>true</active>
+        <description>Payment Terms Rule does not support Kit Item product type.</description>
+        <errorConditionFormula>AND( $RecordType.DeveloperName = &apos;Payment_Terms_Rule_vod&apos;,  ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Kit Item&apos;) )</errorConditionFormula>
+        <errorMessage>Payment Terms Rule does not support Kit Item product type.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Product_Comparison_Check</fullName>
+        <active>true</active>
+        <description>Only product types Order, Detail, [empty] or Product Group is allowed.</description>
+        <errorConditionFormula>NOT(ISBlank(Comparison_Product_vod__c) ||  AND(ISPICKVAL(Comparison_Product_vod__r.Product_Type_vod__c, &apos;Order&apos;) ||
+ ISPICKVAL(Comparison_Product_vod__r.Product_Type_vod__c, &apos;Detail&apos;) ||
+ ISPICKVAL(Comparison_Product_vod__r.Product_Type_vod__c, &apos;Product Group&apos;),  Cross_Product_Rule_vod__c = true))</errorConditionFormula>
+        <errorDisplayField>Comparison_Product_vod__c</errorDisplayField>
+        <errorMessage>Only product types Order, Detail, [empty], Product Group or Fixed Kit is allowed. And when the product is not empty, Cross Product Rule check box needs to be checked.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Product_Comparison_Type_Required</fullName>
+        <active>true</active>
+        <description>Cross Product Limit Rules need Product Comparison Types</description>
+        <errorConditionFormula>RecordType.DeveloperName = &apos;Limit_Rule_vod&apos; &amp;&amp;  Cross_Product_Rule_vod__c &amp;&amp;  ISPICKVAL(Product_Comparison_Type_vod__c,&quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Product_Comparison_Type_vod__c</errorDisplayField>
+        <errorMessage>Valid Product Comparison Type is Required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Product_Comparison_and_Product</fullName>
+        <active>true</active>
+        <description>Product must be different than Comparison Product and not empty.</description>
+        <errorConditionFormula>AND(Cross_Product_Rule_vod__c = true, OR(Comparison_Product_vod__c = Product_vod__c, ISBLANK(Product_vod__c ) ))</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>Product must be different than Comparison Product and not empty.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Product_Group_Level_Rule_Type_Check</fullName>
+        <active>true</active>
+        <description>Only product type of &apos;Product Group&apos; is allowed</description>
+        <errorConditionFormula>AND($RecordType.DeveloperName = &apos;Product_Group_Level_Rule_vod&apos; ,NOT(ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Product Group&apos;) ) )</errorConditionFormula>
+        <errorDisplayField>Product_vod__c</errorDisplayField>
+        <errorMessage>Only product type of &apos;Product Group&apos; is allowed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Product_Min_Max_Required</fullName>
+        <active>true</active>
+        <description>Cross Product Limit Rules must have Product Minimum and/or Product Maximum value</description>
+        <errorConditionFormula>RecordType.DeveloperName = &apos;Limit_Rule_vod&apos; &amp;&amp;  Cross_Product_Rule_vod__c &amp;&amp; (ISNULL(Product_Minimum_vod__c) &amp;&amp; ISNULL(Product_Maximum_vod__c))</errorConditionFormula>
+        <errorMessage>Product Minimum or Product Maximum is Required</errorMessage>
+    </validationRules>
+</CustomObject>

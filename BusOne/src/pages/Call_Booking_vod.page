@@ -1,0 +1,49 @@
+<apex:page standardController="Call2_vod__c" recordSetVar="Calls" extensions="VOD_CALL_BOOKING">
+<apex:form >            
+        <apex:pageBlock title="{!$Label.SELECT_NEW_CALL_OWNER}" mode="edit">
+            <br />
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="{!$Label.Common_SaveButton_vod}" action="{!assign}"/>
+                <input class="btn" type="button" value="{!$Label.Common_CancelButton_vod}" onclick="history.back()"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageMessages />
+            <apex:pageBlockSection columns="1">
+            <apex:pageBlockSectionItem >
+                <apex:outputlabel for="owner">{!$Label.ASSIGN_TO}</apex:outputlabel>
+                <apex:inputfield id="owner" value="{!Call2_vod__c.OwnerId}"/>
+            </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:pageblocksection title="{!$ObjectType.Call2_vod__c.LabelPlural}" columns="1">
+                <apex:pageBlockTable value="{!selected}" var="j"
+                styleClass="list" rowClasses="dataRow" onRowMouseOver="hiOn(this);" onRowMouseOut="hiOff(this);">
+                <apex:column >
+                <apex:facet name="header">{!$ObjectType.Account.label}</apex:facet>
+                {!j.Account_vod__r.Name}
+                </apex:column>
+                <apex:column >
+                <apex:facet name="header">{!$ObjectType.Call2_vod__c.fields.Address_Line_1_vod__c.label}</apex:facet>
+                {!j.Address_Line_1_vod__c}
+                </apex:column>
+                <apex:column >
+                <apex:facet name="header">{!$ObjectType.Call2_vod__c.fields.City_vod__c.label}</apex:facet>
+                {!j.City_vod__c}
+                </apex:column>
+                <apex:column >
+                <apex:facet name="header">{!$ObjectType.Call2_vod__c.fields.Territory_vod__c.label}</apex:facet>
+                {!j.Territory_vod__c}
+                </apex:column>
+                <apex:column >
+                <apex:facet name="header">{!$ObjectType.Call2_vod__c.fields.Call_Datetime_vod__c.label}</apex:facet>
+                <c:VOD_CALL_BOOKING unformattedDate="{!j.Call_Datetime_vod__c}"></c:VOD_CALL_BOOKING>
+                </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageblocksection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="{!$Label.Common_SaveButton_vod}" action="{!assign}"/>
+                <input class="btn" type="button" value="{!$Label.Common_CancelButton_vod}" onclick="history.back()"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

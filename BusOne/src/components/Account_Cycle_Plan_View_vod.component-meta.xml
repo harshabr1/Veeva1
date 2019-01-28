@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>20.0</apiVersion>
+    <description>cycle plan view on account page</description>
+    <label>Account_Cycle_Plan_View_vod</label>
+</ApexComponent>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores all expense data recorded on a call</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The person account associated with the call expense.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Call Expenses(Accounts)</relationshipLabel>
+        <relationshipName>Call2_Expense_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Amount_vod__c</fullName>
+        <description>The amount of the expense associated with a single person.</description>
+        <externalId>false</externalId>
+        <label>Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Attendee_Type_vod__c</fullName>
+        <description>The type of attendee. Default values are: Contact, Event, Group Account, Person account and User</description>
+        <externalId>false</externalId>
+        <label>Attendee Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Contact_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Event_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Group_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Person_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>User_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Call2_vod__c</fullName>
+        <description>The call that this expense was reported.</description>
+        <externalId>false</externalId>
+        <label>Call</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Call Expenses</relationshipLabel>
+        <relationshipName>Call2_Expense_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Call_Date_vod__c</fullName>
+        <description>The date of the call it was recorded for.</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contact_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The contact associated with this expense.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Call Expenses(Contacts)</relationshipLabel>
+        <relationshipName>Call2_Expense_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_Id_vod__c</fullName>
+        <description>ID of object associated with the expense such as an account.</description>
+        <externalId>false</externalId>
+        <label>Entity Reference Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Parent_Call_vod__c</fullName>
+        <description>Formula Field to determine if the Call Expense record is part of the Parent Call or of an Attendee Call record.  1 indicates that the record is associated with the Parent Call.  0 indicates that it is associated with an Attendee Call.</description>
+        <externalId>false</externalId>
+        <formula>IF(LEN(Call2_vod__r.Parent_Call_vod__c )&gt;0, 0,1)</formula>
+        <label>Is Parent Call?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used for mobile integration.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Note_vod__c</fullName>
+        <description>Free text note for this expense line.</description>
+        <externalId>false</externalId>
+        <label>Note</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Helper field for data loads.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type_vod__c</fullName>
+        <description>Picklist containing the type of the expense. To edit expense types, edit the picklist values.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Food</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Entertainment</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cab Fare</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>User_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The user associated with the call expense.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Call2_Expense_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Call Expense</label>
+    <nameField>
+        <displayFormat>CE{000000000}</displayFormat>
+        <label>Call Expense Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Call Expenses</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Amount_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Call2_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Contact_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Note_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type_vod__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Amount_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Call2_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Contact_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Note_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account_vod__c</searchFilterFields>
+        <searchFilterFields>Amount_vod__c</searchFilterFields>
+        <searchFilterFields>Call2_vod__c</searchFilterFields>
+        <searchFilterFields>Contact_vod__c</searchFilterFields>
+        <searchFilterFields>Note_vod__c</searchFilterFields>
+        <searchFilterFields>Type_vod__c</searchFilterFields>
+        <searchResultsAdditionalFields>Account_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Amount_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Call2_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contact_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Note_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type_vod__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

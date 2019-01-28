@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Defines how actions taken on a medical event, such as button presses, move an event forward or backward within its lifecycle. Used by Veeva Event Management.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Allow_Comments_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, clicking this button will prompt the user to enter in comments. This comment will be stored along with the action in the Event History object. The user must also have edit permission on the Comments field in the Event History object for the comment dialog to display.</description>
+        <externalId>false</externalId>
+        <label>Allow Comments</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Approver_Role_vod__c</fullName>
+        <description>Default role given to any approvers added in this step. This field can be used in conjunction with the Veeva &quot;Submit_for_Approval_vod&quot; button, or with any button using a Salesforce Approval Workflow. If an approver is added as a result of this action, the approver will use the role specified in this field. Custom values can be added that use the same name and any value on the Role_vod field on the EM_Event_Team_Member_vod object. If this value is blank, any approvers added will use the Approver_vod role.</description>
+        <externalId>false</externalId>
+        <label>Approver Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approver_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Button_Name_vod__c</fullName>
+        <description>Name of the button performing the action. Uses untranslated label.</description>
+        <externalId>false</externalId>
+        <label>Button Name</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Confirmation_Message_vod__c</fullName>
+        <description>Used to store the name and category of a Veeva Message. If populated, this Veeva Message will display when the Event Action is executed. The format for this field is: Name;;Category of the Veeva Message. (e.g. EVENT_CRITERIA_US_ADVISORY;;VERTEO_CUSTOM). Customers can create new Veeva Messages to support the confirmation messages that will be displayed.</description>
+        <externalId>false</externalId>
+        <label>Confirmation Message</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_Override_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If this field is blank, the Event Action record will apply to all countries associated with an Event Configuration record. If it is populated, the Event Layout will only apply to that specific country</description>
+        <externalId>false</externalId>
+        <label>Country Override</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>EM_Event_Configuration_Country_vod__c.Event_Configuration_vod__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Event_Configuration_vod__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>EM_Event_Configuration_Country_vod__c</referenceTo>
+        <relationshipLabel>Event Actions</relationshipLabel>
+        <relationshipName>Country_Override_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Ending_Status_vod__c</fullName>
+        <description>Indicates the resulting status the event is changed to after the action is complete.</description>
+        <externalId>false</externalId>
+        <label>Ending Status</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entry_Criteria_Not_Met_Message_vod__c</fullName>
+        <description>Used to store the name and category of a Veeva Message. If populated, this Veeva Message will display when the event is submitted for approval but fails the entry criteria for the named process. The format for this field is: Name;;Category of the Veeva Message. (e.g. EVENT_CRITERIA_US_ADVISORY;;VERTEO_CUSTOM). Customers can create new Veeva Messages to support the error messages that will be displayed.</description>
+        <externalId>false</externalId>
+        <label>Entry Criteria Not Met Message</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Configuration_vod__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>The event configuration that the action record is used for.</description>
+        <externalId>false</externalId>
+        <label>Event Configuration</label>
+        <referenceTo>EM_Event_Configuration_vod__c</referenceTo>
+        <relationshipLabel>Event Actions</relationshipLabel>
+        <relationshipName>Event_Configuration_vod</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SFDC_Action_Type_vod__c</fullName>
+        <description>Name of the action to be performed when using a Salesforce Approval Workflow. This field must be populated if this action uses a Salesforce Approval Workflow.</description>
+        <externalId>false</externalId>
+        <label>SFDC Action Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Submit_Manual_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submit_Auto_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Approve_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reject_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recall_Approval_Request_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SO__c</fullName>
+        <externalId>false</externalId>
+        <label>SO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Starting_Status_vod__c</fullName>
+        <description>Indicates the event status for which this button action is initiated from.</description>
+        <externalId>false</externalId>
+        <label>Starting Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Event Action</label>
+    <nameField>
+        <displayFormat>EA-{0000000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Event Actions</pluralLabel>
+    <recordTypes>
+        <fullName>Button_Click_vod</fullName>
+        <active>true</active>
+        <description>Button Click</description>
+        <label>Button_Click_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

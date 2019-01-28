@@ -1,0 +1,3 @@
+<apex:page standardController="Account" tabStyle="MyAccounts__tab">
+    <c:VOD_EMBED veevaModule="contract" veevaPage="select-contract-template" queryParams="acctId={!account.Id}"/>
+</apex:page>

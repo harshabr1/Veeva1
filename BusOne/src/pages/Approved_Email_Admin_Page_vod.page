@@ -1,0 +1,4 @@
+<apex:page standardStylesheets="true" controller="VOD_EMBED_CONTROLLER">
+    <c:VOD_EMBED_MC veevaModule="admin" veevaPage="ae" mcEngine="true" rendered="{!mcVersion >= 240505}"/>
+    <c:Veeva_Approved_Email_Redirect_vod oType="approvedEmailAdmin" rendered="{!mcVersion < 240505}"/>
+</apex:page>

@@ -1,0 +1,45 @@
+<!--
+Name:BOT_Account_View
+Created By:Harsha BR
+Created Date:03/09/2017
+Overview :Used to display all the accounts related to the Pahrmacy Services.
+-->
+<apex:page standardController="BOT_Pharamcy_Service__c" name="Account" title="Account" sidebar="false" showHeader="false" extensions="BOT_Account_Extn">
+    <apex:form id="theForm">
+        <apex:pageBlock mode="edit" id="pb" rendered="{!IF(lstAccs.size > 0, TRUE, FALSE)}" title="Accounts"> 
+            
+            <apex:pageBlockSection >
+                <apex:outputPanel ID="op">
+                    <apex:outputText escape="false" value="<b>Account Type:</b>"/>
+                    <apex:selectList size="1" value="{!selected}">
+                    <apex:selectOptions value="{!dynamiclist}"></apex:selectOptions>
+                     <apex:actionSupport action="{!fetchResults}" event="onchange" reRender="drugPanel" status="status"/>
+                    </apex:selectList>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            
+            <apex:outputPanel id="drugPanel"  layout="block" style="overflow:scroll;height:150px;margin:2px" >
+                
+                <apex:actionStatus id="status" StartText="Searching..." startStyle="font-color:red;">
+                    <apex:facet name="start">
+                        <apex:image value="/img/loading.gif" />
+                    </apex:facet>
+                 </apex:actionStatus>
+                
+            	<apex:pageBlockTable id="pharResult" cellpadding="2" cellspacing="2" border="1" columns="7" value="{!lstAccs}" var="objAcc">
+                    
+					<apex:column id="type" value="{!objAcc.Account_Type__c}"/>
+                    <apex:column id="name" headerValue="Account Name">
+                        <apex:outputLink id="oLink" value="/{!objAcc.Id}" target="_top" style="font-weight:bold"> {!objAcc.Name}</apex:outputLink>                                                                              
+                	</apex:column>
+                    <apex:column id="pbm" value="{!objAcc.Entity_Level__c}"/>
+                    <apex:column id="phone" value="{!objAcc.BOT_Street_Address__c}"/>
+                    <apex:column id="city" value="{!objAcc.BOT_City__c}"/>
+                    <apex:column id="state" value="{!objAcc.BOT_State__c}"/>
+                    <apex:column id="website" value="{!objAcc.BOT_Zip__c}"/>
+                    
+                </apex:pageBlockTable>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

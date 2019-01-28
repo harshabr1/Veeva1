@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Medical Inquiry Audit is a read-only object maintained by the Medcial_Inquiry_To_Audit_vod trigger on Medical_Inquiry_vod that stores audit history of updates and deletions of Medical Inquiry records. A row is created here only if a Medical Inquiry has been updated or deleted - an audit record does not get created upon creation of a Medical Inquiry.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <description>Account is the audit representation of the Account Id field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Account is the audit representation of the Account Id field on the Medical Inquiry object.</inlineHelpText>
+        <label>Account</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Action_vod__c</fullName>
+        <description>Action represents the type of Action performed on the Medical Inquiry record that triggered the creation of the Medical Inquiry Audit record. &quot;U&quot; represents Update. &quot;D&quot; represents Delete.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Action represents the type of Action performed on the Medical Inquiry record that triggered the creation of the Medical Inquiry Audit record. &quot;U&quot; represents Update. &quot;D&quot; represents Delete.</inlineHelpText>
+        <label>Action</label>
+        <length>1</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address_Line_1_vod__c</fullName>
+        <description>he audit representation of the Address Line 1 field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>he audit representation of the Address Line 1 field on the Medical Inquiry object.</inlineHelpText>
+        <label>Address Line 1</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address_Line_2_vod__c</fullName>
+        <description>The audit representation of the Address Line 2 field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The audit representation of the Address Line 2 field on the Medical Inquiry object.</inlineHelpText>
+        <label>Address Line 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call2_vod__c</fullName>
+        <description>The audit representation of the Call field (text representation of the call&apos;s SFDC ID)on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Call</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City_vod__c</fullName>
+        <description>The audit representation of the City field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The audit representation of the City field on the Medical Inquiry object.</inlineHelpText>
+        <label>City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_vod__c</fullName>
+        <description>The audit representation of the Country field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>USA</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Delivery_Method_vod__c</fullName>
+        <description>The audit representation of the Delivery Method field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The audit representation of the Delivery Method field on the Medical Inquiry object.</inlineHelpText>
+        <label>Delivery Method</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Urgent_Mail_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mail_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Phone_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fax_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Email_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Disclaimer_vod__c</fullName>
+        <description>The audit representation of the Disclaimer field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Disclaimer</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Email_vod__c</fullName>
+        <description>The audit representation of the Email field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The audit representation of the Email field on the Medical Inquiry object.</inlineHelpText>
+        <label>Email</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_ID_vod__c</fullName>
+        <description>The audit representation of the Entity Reference ID field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Entity Reference ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fax_Number_vod__c</fullName>
+        <description>The audit representation of the Fax Number field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The audit representation of the Fax Number field on the Medical Inquiry object.</inlineHelpText>
+        <label>Fax Number</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Identifier_vod__c</fullName>
+        <description>The audit representation of the Group Identifier field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Group Identifier</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inquiry_Text__c</fullName>
+        <description>The audit representation of the Inquiry field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The audit representation of the Inquiry field on the Medical Inquiry object.</inlineHelpText>
+        <label>Inquiry Text</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The audit representation of the Lock field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The audit representation of the Lock field on the Medical Inquiry object.</inlineHelpText>
+        <label>Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Inquiry_Id_vod__c</fullName>
+        <description>The audit representation of the Medical Inquiry Id field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Medical Inquiry Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone_Number_vod__c</fullName>
+        <description>The audit representation of the Phone Number field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Phone Number</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <description>The audit representation of the Product field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cholecap</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Restolar</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Labrinone</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Request_Receipt_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The audit representation of the Request Receipt field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Request Receipt</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Rush_Delivery__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The audit representation of the Rush Delivery field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Rush Delivery</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Signature_Date_vod__c</fullName>
+        <description>The audit representation of the Signature Date field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Signature Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Signature_vod__c</fullName>
+        <description>The audit representation of the Signature field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Signature</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>State_vod__c</fullName>
+        <description>The audit representation of the State field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>The audit representation of the Status field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Saved_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Submitted_By_Mobile_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The audit representation of the Submitted by Mobile field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Submitted By Mobile</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Zip_vod__c</fullName>
+        <description>The audit representation of the Zip field on the Medical Inquiry object.</description>
+        <externalId>false</externalId>
+        <label>Zip</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Medical Inquiry Audit</label>
+    <nameField>
+        <displayFormat>ASI-{000000000}</displayFormat>
+        <label>Medical Inquiry Audit Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Medical Inquiry Audits</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

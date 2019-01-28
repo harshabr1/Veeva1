@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>To store the Master Accounts Data</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>BOT_Account_Type__c</fullName>
+        <description>To store the type of the Account like Commercial or Medicare.</description>
+        <externalId>false</externalId>
+        <label>Account Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Entity_ID__c</fullName>
+        <description>To store the BOT Entity ID</description>
+        <externalId>true</externalId>
+        <label>BOT_Entity_ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Entity_Level__c</fullName>
+        <description>To store the Entity Level</description>
+        <externalId>false</externalId>
+        <label>Entity Level</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Entity_State__c</fullName>
+        <description>It store the Associated state of an Entity</description>
+        <externalId>false</externalId>
+        <label>Entity State</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Parent_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>It is a self-lookup relationship. Parent Account ID will be populated here.</description>
+        <externalId>false</externalId>
+        <label>Parent Account</label>
+        <referenceTo>Account_Unique__c</referenceTo>
+        <relationshipLabel>Primary Parent</relationshipLabel>
+        <relationshipName>Parent_Account</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Accounts Unique</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>BOT_Account_Type__c</columns>
+        <columns>BOT_Entity_Level__c</columns>
+        <columns>BOT_Entity_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Commercial</fullName>
+        <columns>NAME</columns>
+        <columns>BOT_Account_Type__c</columns>
+        <columns>BOT_Entity_Level__c</columns>
+        <columns>BOT_Entity_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BOT_Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Commercial</value>
+        </filters>
+        <label>Commercial</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Employer</fullName>
+        <columns>NAME</columns>
+        <columns>BOT_Account_Type__c</columns>
+        <columns>BOT_Entity_Level__c</columns>
+        <columns>BOT_Entity_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BOT_Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Employer</value>
+        </filters>
+        <label>Employer</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Medicare</fullName>
+        <columns>NAME</columns>
+        <columns>BOT_Account_Type__c</columns>
+        <columns>BOT_Entity_Level__c</columns>
+        <columns>BOT_Entity_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BOT_Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Medicare</value>
+        </filters>
+        <label>Medicare</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>PBM</fullName>
+        <columns>NAME</columns>
+        <columns>BOT_Account_Type__c</columns>
+        <columns>BOT_Entity_Level__c</columns>
+        <columns>BOT_Entity_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BOT_Account_Type__c</field>
+            <operation>equals</operation>
+            <value>PBM</value>
+        </filters>
+        <label>PBM</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Specialty_Provider</fullName>
+        <columns>NAME</columns>
+        <columns>BOT_Account_Type__c</columns>
+        <columns>BOT_Entity_Level__c</columns>
+        <columns>BOT_Entity_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BOT_Account_Type__c</field>
+            <operation>equals</operation>
+            <value>Specialty Provider</value>
+        </filters>
+        <label>Specialty Provider</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>State_Medicaid</fullName>
+        <columns>NAME</columns>
+        <columns>BOT_Account_Type__c</columns>
+        <columns>BOT_Entity_Level__c</columns>
+        <columns>BOT_Entity_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BOT_Account_Type__c</field>
+            <operation>equals</operation>
+            <value>State Medicaid</value>
+        </filters>
+        <label>State Medicaid</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>TriCare</fullName>
+        <columns>NAME</columns>
+        <columns>BOT_Account_Type__c</columns>
+        <columns>BOT_Entity_Level__c</columns>
+        <columns>BOT_Entity_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>BOT_Account_Type__c</field>
+            <operation>equals</operation>
+            <value>TriCare</value>
+        </filters>
+        <label>TriCare</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Account Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Accounts Unique</pluralLabel>
+    <recordTypes>
+        <fullName>Commercial</fullName>
+        <active>true</active>
+        <description>Used to assign the commercial page layout.</description>
+        <label>Commercial</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Employer</fullName>
+        <active>true</active>
+        <description>Used to assign the Employer page layout.</description>
+        <label>Employer</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>State_Medicaid</fullName>
+        <active>true</active>
+        <description>Used to assign the state medicaid page layout.</description>
+        <label>State Medicaid</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Tricare</fullName>
+        <active>true</active>
+        <description>Used to assign the tricare page layout.</description>
+        <label>Tricare</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

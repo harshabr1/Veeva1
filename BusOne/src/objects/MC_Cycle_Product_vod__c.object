@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Defines the list of Products a Cycle Channel has.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Applicable_Product_Metrics_vod__c</fullName>
+        <description>Comma delimited list of pull through Product Metric fields that are applicable for this Cycle Product. Populated by the MCCP MCE process.</description>
+        <externalId>false</externalId>
+        <label>Applicable Product Metrics</label>
+        <length>10000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Channel_Label_vod__c</fullName>
+        <description>Channel Label from the Channel record.</description>
+        <externalId>false</externalId>
+        <formula>Cycle_Channel_vod__r.Channel_Label_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Channel Label</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cycle_Channel_vod__c</fullName>
+        <description>The channel that the Product and/or Detail Group is related to.</description>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <referenceTo>MC_Cycle_Channel_vod__c</referenceTo>
+        <relationshipLabel>MC Cycle Products</relationshipLabel>
+        <relationshipName>MC_Cycle_Products_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Cycle_vod__c</fullName>
+        <description>Cycle Name from the respective Cycle.</description>
+        <externalId>false</externalId>
+        <formula>Cycle_Channel_vod__r.Cycle_vod__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Cycle</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Detail Product Group that the product is associated to. Product Type must equal Detail Group</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>MC Cycle Products (Detail Group)</relationshipLabel>
+        <relationshipName>MC_Cycle_Detail_Groups_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID for data loading.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Weight_vod__c</fullName>
+        <description>Value associated to the activities for this product / channel combination.</description>
+        <externalId>false</externalId>
+        <label>Weight</label>
+        <precision>5</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Product that is associated to the channel. Product Type must equal Detail.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Cycle Products</relationshipLabel>
+        <relationshipName>MC_Cycle_Products_vod</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System set to prevent duplicate products on a channel. Value will be Cycle Channel.Id + __ + Product.Id</description>
+        <externalId>true</externalId>
+        <label>Veeva External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>MC Cycle Product</label>
+    <nameField>
+        <displayFormat>CP-{0000}</displayFormat>
+        <label>Cycle Product</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>MC Cycle Products</pluralLabel>
+    <recordTypes>
+        <fullName>Product_vod</fullName>
+        <active>true</active>
+        <description>Product only</description>
+        <label>Product_vod</label>
+    </recordTypes>
+    <searchLayouts>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Product_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Cycle_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Channel_Label_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Weight_vod__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

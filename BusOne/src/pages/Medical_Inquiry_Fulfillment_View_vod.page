@@ -1,0 +1,3 @@
+<apex:page standardController="Medical_Inquiry_Fulfillment_vod__c">
+    <c:VOD_EMBED veevaModule="mif" objectType="Medical_Inquiry_Fulfillment_vod__c" veevaPage="mif-view"/>
+</apex:page>

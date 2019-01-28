@@ -1,0 +1,4 @@
+<apex:page standardController="Contract_Line_vod__c" extensions="VeevaRecordTypeConstraint" standardStylesheets="true"
+        action="{!NULLVALUE(redirect.url, URLFOR($Action.Contract_Line_vod__c.New, '', null, true))}">
+    This message should not show up.
+</apex:page>

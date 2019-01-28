@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A Call Follow-up Template controls how follow-up activities are created on Call Reports. One Template per Follow-up type (todo, medical information,...).</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Assign_to_Creator_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>If this checkbox is set, the follow-up activity will be assigned to the person creating the activity.</description>
+        <externalId>false</externalId>
+        <label>Assign to Creator</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Days_Before_Due_vod__c</fullName>
+        <description>This field determines the due date for the activity. The due date is set to the number of calendar days after the activity is created.</description>
+        <externalId>false</externalId>
+        <label>Days Before Due</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Default_Task_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Use this checkbox to denote a follow-up activity as default. When a new follow-up activity is created on a call report, this setting is used to determine which activity is the initial activity type.</description>
+        <externalId>false</externalId>
+        <label>Default Task</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Language_vod__c</fullName>
+        <description>Allows display of follow up templates by user&apos;s language. Any follow up template that match the user&apos;s language or has a blank value will be displayed.</description>
+        <externalId>false</externalId>
+        <label>Language</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>en_US</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>es</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>de</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>fr</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>zh_CN</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Send_Notification_Email_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Denotes whether an email notification should be sent for this follow up template.</description>
+        <externalId>false</externalId>
+        <label>Send Notification Email</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>User_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field can set a specific user to always be assigned the follow-up activities created by this template. This value is used when the &quot;Assign to Creator&quot; checkbox is cleared.</description>
+        <externalId>false</externalId>
+        <label>Default Assignee</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Call_Followup_Template_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Call Followup Template</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Assign_to_Creator_vod__c</columns>
+        <columns>Days_Before_Due_vod__c</columns>
+        <columns>User_vod__c</columns>
+        <columns>Default_Task_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Call Followup Template Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Call Followup Templates</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Assign_to_Creator_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Days_Before_Due_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>User_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Default_Task_vod__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Assign_to_Creator_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Days_Before_Due_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>User_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Default_Task_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Assign_to_Creator_vod__c</searchFilterFields>
+        <searchFilterFields>Days_Before_Due_vod__c</searchFilterFields>
+        <searchFilterFields>User_vod__c</searchFilterFields>
+        <searchFilterFields>Default_Task_vod__c</searchFilterFields>
+        <searchResultsAdditionalFields>Assign_to_Creator_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Days_Before_Due_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>User_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Default_Task_vod__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

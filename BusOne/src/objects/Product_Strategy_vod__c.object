@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores all product strategies for a product plan</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Indicates if this strategy is active.   Only Product Strategies with this field checked will be visible when clicking on the &quot;Apply Product Plan&quot; button.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Description of the strategy</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Est_Market_Share_Increase__c</fullName>
+        <description>Estimated increase in market share this strategy is believed to generate if executed properly</description>
+        <externalId>false</externalId>
+        <label>Est. Shr Incr</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>External ID for use in data loading and migration.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Plan_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Link to the product plan</description>
+        <externalId>false</externalId>
+        <label>Product Plan</label>
+        <referenceTo>Product_Plan_vod__c</referenceTo>
+        <relationshipLabel>Product Strategies</relationshipLabel>
+        <relationshipName>Product_Strategy_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Strategy_type_vod__c</fullName>
+        <description>Picklist of strategy types.</description>
+        <externalId>false</externalId>
+        <label>Strategy Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Extend Days on Therapy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Promote Efficacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Promote Awareness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Promote New Indication</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Improve Tier Listing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Improve Coverage Position</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Increase Product Switches</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Product Strategy</label>
+    <nameField>
+        <label>Product Strategy</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product Strategies</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Active_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Description_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Est_Market_Share_Increase__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Plan_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Strategy_type_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Active_vod__c</searchFilterFields>
+        <searchFilterFields>Description_vod__c</searchFilterFields>
+        <searchFilterFields>Est_Market_Share_Increase__c</searchFilterFields>
+        <searchFilterFields>Product_Plan_vod__c</searchFilterFields>
+        <searchFilterFields>Strategy_type_vod__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

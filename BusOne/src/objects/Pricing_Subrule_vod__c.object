@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Child of the Pricing Rule object. Used to define pricing rule conditions.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Comparison_Type_vod__c</fullName>
+        <description>Defines whether the rule condition is evaluated based on product quantity, SKU count, or product list value.</description>
+        <externalId>false</externalId>
+        <label>Comparison Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Quantity_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>List_Value_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>SKU_Count_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Max_Quantity_vod__c</fullName>
+        <description>Defines the highest acceptable value.</description>
+        <externalId>false</externalId>
+        <label>Maximum Quantity</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Min_Quantity_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Defines the lowest acceptable value. Default 0. Value required.</description>
+        <externalId>false</externalId>
+        <label>Minimum Quantity</label>
+        <precision>15</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pricing_Rule_vod__c</fullName>
+        <description>Pricing rule with which the subrule is associated.</description>
+        <externalId>false</externalId>
+        <label>Pricing Rule</label>
+        <referenceTo>Pricing_Rule_vod__c</referenceTo>
+        <relationshipLabel>Pricing Subrules</relationshipLabel>
+        <relationshipName>Pricing_Subrules_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Product Catalog. In chain rules, Comparison Product cannot be the same as Product and it cannot belong to the same Product Group or Brand as Product.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Pricing Subrules</relationshipLabel>
+        <relationshipName>Pricing_Subrules</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Pricing Subrule</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SR-{0000000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Pricing Subrules</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Kit_Item_Check_vod</fullName>
+        <active>true</active>
+        <description>Comparison Product of product type Kit Item is not supported.</description>
+        <errorConditionFormula>ISPICKVAL(Product_vod__r.Product_Type_vod__c, &apos;Kit Item&apos;)</errorConditionFormula>
+        <errorMessage>Kit Items are not supported as Comparison Product</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Min_Max_Check_vod</fullName>
+        <active>true</active>
+        <description>Validates that maximum can&apos;t be less than minimum on Comparison Product.</description>
+        <errorConditionFormula>Max_Quantity_vod__c &lt;  Min_Quantity_vod__c</errorConditionFormula>
+        <errorDisplayField>Max_Quantity_vod__c</errorDisplayField>
+        <errorMessage>The maximum quantity must be greater or equal to the minimum quantity.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SKU_Count_Min_vod</fullName>
+        <active>true</active>
+        <description>SKU Count must be &gt; 0.</description>
+        <errorConditionFormula>ISPICKVAL(Comparison_Type_vod__c, &apos;SKU_Count_vod&apos;) &amp;&amp;  Min_Quantity_vod__c &lt;= 0</errorConditionFormula>
+        <errorDisplayField>Min_Quantity_vod__c</errorDisplayField>
+        <errorMessage>SKU Count must be &gt; 0</errorMessage>
+    </validationRules>
+</CustomObject>

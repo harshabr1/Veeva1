@@ -1,0 +1,18 @@
+<apex:page standardStylesheets="true" controller="VODRedirectController" >
+   <apex:iframe scrolling="false" height="2000px" width="100%" src="javascript:false" frameborder="false" id="mc_iframe"/>
+   <c:Veeva_Resize_Component_vod />
+   <script>
+    var docBody = document.body || document.documentElement;
+    var vodiframe = document.getElementById("mc_iframe");
+    var url = "{!McUrl}/app/admin/clmmap";
+    url += "?ses=" + "{!$Api.Session_ID}";
+    url += "&url=" + "{!URLENCODE($Api.Partner_Server_URL_240 )}";
+    url += "&dev=" + "{!URLENCODE($Request.dev)}";
+    url += "&tab=" + "{!URLENCODE($Request.sfdc.tabName)}";
+    url += "&motif=" + encodeURIComponent(docBody.className);
+    url += "&retURL=" + decodeURIComponent("{!URLENCODE($Request.retURL)}");
+    vodiframe.src = url;
+    com.vod309.resize.init(vodiframe);
+   </script>
+
+</apex:page>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>15.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>This page creates an iframe which displays contents from VOD server.
+This will be used as a embed control in other sales force layout.</description>
+    <label>VODRedirect ftp small</label>
+</ApexPage>

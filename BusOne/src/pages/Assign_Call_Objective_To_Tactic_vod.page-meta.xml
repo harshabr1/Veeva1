@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>23.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>A button to add to the Call Objective Related list on the Account Tactic page, for linking an existing Call Objective to an existing Account Tactic</description>
+    <label>Assign Call Objective to Tactic</label>
+</ApexPage>

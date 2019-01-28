@@ -1,0 +1,13 @@
+<apex:page standardController="Survey_Target_vod__c" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_Scroll_1800_vod}"/>
+<script type="text/javascript">        
+    var queryparams = "&id=" + "{!Survey_Target_vod__c.id}"; 
+    queryparams += "&RecordType=" + "{!URLENCODE($CurrentPage.parameters.RecordType)}";      
+    queryparams += '&mode=' + '{!IF(Survey_Target_vod__c.RecordType.DeveloperName != 'Coaching_Report_vod' || Survey_Target_vod__c.Report_Status_vod__c == 'In_Progress_vod' || Survey_Target_vod__c.Report_Status_vod__c == 'Under_Employee_Review_vod', 'e', 'v')}';
+    if ('{!URLENCODE($CurrentPage.parameters.newCoachReport)}' === '1') {
+        queryparams += "&newCoachReport=" + "{!URLENCODE($CurrentPage.parameters.newCoachReport)}";
+        queryparams += "&surveyId=" + "{!URLENCODE($CurrentPage.parameters.surveyId)}";   
+    }
+    com.vod309.redirect.redirect("surveytarget", queryparams);
+</script>
+</apex:page>

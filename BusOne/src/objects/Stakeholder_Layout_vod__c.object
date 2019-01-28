@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to configure the KOL Stakeholder profile page</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>zvod_ACCT_Career_Status_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes career status available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Career Status</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_ACCT_Group_Specialty_1_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes group specialty available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Group Specialty</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_ACCT_KOL_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes KOL indicator available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>KOL</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_ACCT_Name__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes Stakeholder name available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_ACCT_PersonDepartment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes stakeholder department available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Department</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_ACCT_PersonEmail__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes stakeholder email available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_ACCT_Phone__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes phone number available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_ACCT_Primary_Parent_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes stakeholder&apos;s primary Institution available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Institution</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_ACCT_Specialty_1_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes stakeholder specialty available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Specialty</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_ACCT_Specialty_2_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes second specialty available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Specialty 2</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_ACCT_Territory_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes territory available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Territory</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_ADDR_Primary_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes address available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Primary Address</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_CCLB_Chart_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes company collaboration summary chart available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>zvod_CCLB_Chart_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_CCLB_Company_Name_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes company collaboration name available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Company Name</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_CCLB_Details_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes company collaboration details available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Details</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_CCLB_Relationship_Strength_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes company collaboration strength available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Relationship Strength</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_CT_Chart_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes clinical trial summary chart available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>zvod_CT_Chart_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_CT_End_Date_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes clinical trial end date available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_CT_ID_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes clinical trial ID available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>ID</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_CT_Name__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes clinical trial name available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_CT_Phase__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes clinical trial phase available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Clinical Trial Phase</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_CT_Start_Date_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes clinical trial start date available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_EVENTATTENDEE_Position_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes medical attendee position available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Position</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_EVENTATTENDEE_Talk_Title_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes medical attendee talk title available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Talk Title</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_FOCUSAREA_Chart_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes focus area summary charrt available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>zvod_FOCUSAREA_Chart_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_FOCUS_Focus_Name_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes focus area available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Focus Name</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_FOCUS_High_Focus_Score_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes focus area high score available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Highest Score</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_FOCUS_Total_Focus_Score_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes focus area score available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Stakeholder Score</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_KOL_Activity_Index_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes Index charts available on the KOL Stakeholder profile page</description>
+        <externalId>false</externalId>
+        <label>zvod_KOL_Activity_Index_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_KOL_Scientific_Index_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes Index charts available on the KOL Stakeholder profile page</description>
+        <externalId>false</externalId>
+        <label>zvod_KOL_Scientific_Index_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_MEDEVENT_Address_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes medical event address available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_MEDEVENT_Chart_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes medical event summery chart available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>zvod_MEDEVENT_Chart_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_MEDEVENT_Country_Name_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes medical event country available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_MEDEVENT_End_Date_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes medical event end date available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_MEDEVENT_Event_Display_Name_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes medical event available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Event Title</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_MEDEVENT_Event_Type__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes medical event type available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Event Type</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_MEDEVENT_Start_Date_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes medical event start date available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_POSITION_Chart_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes position summary chart available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>zvod_POSITION_Chart_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_POSITION_End_Date_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes position end date available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_POSITION_Institution_Type_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes position institution type available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Institution Type</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_POSITION_Institution_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes institution available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Institution</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_POSITION_Job_Title_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes position title available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Job Title</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_POSITION_Past_Position_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes past position available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Past Position</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_POSITION_Position_Type_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes stakeholder primary position available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Position</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_POSITION_Primary_Position_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes primary position available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Primary Position</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_POSITION_Start_Date_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes position start date available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_PUB_Chart_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes publication summary chart available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>zvod_PUB_Chart_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_PUB_Date__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes publication date available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_PUB_Journal_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes journals available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Journals</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_PUB_PubMed_ID_Name_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Pull in field that males publication ID name available on the KOL profile page</description>
+        <externalId>false</externalId>
+        <label>PubMed ID</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_PUB_PubMed_URL_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Pull in field that makes publication PubMedbURL available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>PubMed URL</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_PUB_Publication_Type_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes publication type available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_PUB_Title__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes publication title available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_SHCT_Role_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes clinical trial role available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_SHPUB_Authorship_Position_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes authorship position available on the KOL profile page.</description>
+        <externalId>false</externalId>
+        <label>Authorship Position</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Stakeholder Profile Layout</label>
+    <nameField>
+        <displayFormat>SPL-{00000}</displayFormat>
+        <label>Stakeholder Profile Layout Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Stakeholder Profile Layouts</pluralLabel>
+    <recordTypes>
+        <fullName>KOL_Layout_vod</fullName>
+        <active>true</active>
+        <description>Used for KOL layout</description>
+        <label>KOL_Layout_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

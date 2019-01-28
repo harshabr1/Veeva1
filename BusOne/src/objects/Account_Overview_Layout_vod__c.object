@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object used to configure the account timeline page.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>zvod_Call_Objectives_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that displays the Call Objectives component.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Marker field that displays the Call Objectives component.</inlineHelpText>
+        <label>Call Objectives</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Cycle_Plan_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that displays the Cycle Plans component.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Marker field that displays the Cycle Plans component.</inlineHelpText>
+        <label>Cycle Plans</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Insights_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that displays the Insights component</description>
+        <externalId>false</externalId>
+        <label>zvod_Insights</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Product_Metrics_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that displays the Product Metrics component.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Marker field that displays the Product Metrics component.</inlineHelpText>
+        <label>Product Metrics</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Product_Restrictions_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field to display the Product restrictions control on the Account page</description>
+        <externalId>false</externalId>
+        <label>Product Restrictions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Stakeholder_Preferences_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that displays the Stakeholder Preferences component on the Suggestions Panel</description>
+        <externalId>false</externalId>
+        <label>zvod_Stakeholder_Preferences</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Suggestions_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that displays the Suggestions component</description>
+        <externalId>false</externalId>
+        <label>zvod_Suggestions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Timeline_CT_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes Clinical Trials available on the timeline.</description>
+        <externalId>false</externalId>
+        <label>zvod_Timeline_CT</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Timeline_Calls_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes calls available on the timeline.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Marker field that makes calls available on the timeline.</inlineHelpText>
+        <label>zvod_Timeline_Calls</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Timeline_Email_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes Approved Email available on the timeline.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Marker field that makes Approved Email available on the timeline.</inlineHelpText>
+        <label>zvod_Timeline_Email</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Timeline_Engage_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes Engage activities available on the timeline.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Marker field that makes Engage activities available on the timeline.</inlineHelpText>
+        <label>zvod_Timeline_Engage</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Timeline_Events_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes SFDC events available on the timeline.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Marker field that makes SFDC events available on the timeline.</inlineHelpText>
+        <label>zvod_Timeline_Events</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Timeline_IM_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes inventory monitorings available on the timeline.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Marker field that makes inventory monitorings available on the timeline.</inlineHelpText>
+        <label>zvod_Timeline_IM</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Timeline_ME_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes medical events available on the timeline.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Marker field that makes medical events available on the timeline.</inlineHelpText>
+        <label>zvod_Timeline_ME</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Timeline_MI_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes medical inquiries available on the timeline.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Marker field that makes medical inquiries available on the timeline.</inlineHelpText>
+        <label>zvod_Timeline_MI</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Timeline_Orders_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes orders available on the timeline.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Marker field that makes orders available on the timeline.</inlineHelpText>
+        <label>zvod_Timeline_Orders</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Timeline_Publication_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that makes Publications available on the timeline.</description>
+        <externalId>false</externalId>
+        <label>zvod_Timeline_Publication</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Account Overview Layout</label>
+    <nameField>
+        <displayFormat>AOL-{000000}</displayFormat>
+        <label>Account Overview Layout</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Account Overview Layouts</pluralLabel>
+    <recordTypes>
+        <fullName>Board_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Board_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Business_Professional_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Business_Professional_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Distributor_Branch_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Distributor Branch_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Distributor_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Distributor_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Employer_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Employer_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Government_Agency_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Government_Agency_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Hospital_Department_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Hospital Department_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Hospital_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Hospital_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Institution_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Institution_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>KOL_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>KOL_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Laboratory_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Laboratory_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MCO_Plan_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>MCO Plan_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MCO_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>MCO_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Organization_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Organization_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Pharmacy_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Pharmacy_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Practice_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Practice_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Professional_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Professional_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Publication_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Publication_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Wholesaler_vod</fullName>
+        <active>true</active>
+        <description>Used to create configuration specific to accounts of this record type.</description>
+        <label>Wholesaler_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

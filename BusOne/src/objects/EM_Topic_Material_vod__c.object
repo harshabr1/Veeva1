@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to associate materials to a particular event topic for Veeva Events Management</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CLM_Presentation_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>References the CLM Presentation that is associated to this Event Topic. When an event is created that uses this Event Topic, this CLM Presentation will automatically be made available on this event.</description>
+        <externalId>false</externalId>
+        <label>CLM Presentation</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>(1 OR 2 OR 3) AND 4</booleanFilter>
+            <filterItems>
+                <field>Clm_Presentation_vod__c.Status_vod__c</field>
+                <operation>equals</operation>
+                <value>Approved</value>
+            </filterItems>
+            <filterItems>
+                <field>Clm_Presentation_vod__c.Status_vod__c</field>
+                <operation>equals</operation>
+                <value>Staged</value>
+            </filterItems>
+            <filterItems>
+                <field>Clm_Presentation_vod__c.Status_vod__c</field>
+                <operation>equals</operation>
+                <value></value>
+            </filterItems>
+            <filterItems>
+                <field>Clm_Presentation_vod__c.Content_Channel_vod__c</field>
+                <operation>notEqual</operation>
+                <value></value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Clm_Presentation_vod__c</referenceTo>
+        <relationshipLabel>Topic Materials</relationshipLabel>
+        <relationshipName>Topic_Materials</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Email_Template_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>References the Email Template that is associated to this Event Topic. When an event is created that uses this Event Topic, this Email Template will automatically be made available on this event.</description>
+        <externalId>false</externalId>
+        <label>Email Template</label>
+        <referenceTo>Approved_Document_vod__c</referenceTo>
+        <relationshipLabel>Topic Materials</relationshipLabel>
+        <relationshipName>Topic_Materials</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Material_Type_vod__c</fullName>
+        <description>Stores the untranslated label of the record type of the material.</description>
+        <externalId>false</externalId>
+        <label>Material Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Material_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The material that is associated with a particular event topic.</description>
+        <externalId>false</externalId>
+        <label>Material</label>
+        <referenceTo>EM_Catalog_vod__c</referenceTo>
+        <relationshipLabel>Topics Using Material</relationshipLabel>
+        <relationshipName>Topic_Materials_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Topic_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The event topic that is associated with a particular material.</description>
+        <externalId>false</externalId>
+        <label>Topic</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>EM_Catalog_vod__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Event_Topic_vod</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>EM_Catalog_vod__c</referenceTo>
+        <relationshipLabel>Topic Materials (Topic)</relationshipLabel>
+        <relationshipName>Topic_Materials1_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Topic Material</label>
+    <nameField>
+        <displayFormat>TM-{0000000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Topic Materials</pluralLabel>
+    <recordTypes>
+        <fullName>Topic_Material_vod</fullName>
+        <active>true</active>
+        <description>Used to associate materials from the EM Catalog to a particular event topic</description>
+        <label>Topic_Material_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Email_CLM_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Len(Email_Template_vod__c) &gt; 1, Len(CLM_Presentation_vod__c) &gt;1 )</errorConditionFormula>
+        <errorMessage>A single rule cannot have both Email Template and CLM Presentation populated. Please create separate rules for these two items.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Material_CLM_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Len(CLM_Presentation_vod__c) &gt; 1, Len(Material_vod__c) &gt;1 )</errorConditionFormula>
+        <errorMessage>A single topic material cannot have both Material and CLM Presentation populated. Please create separate rules for these two items.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Material_Email_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Len(Email_Template_vod__c) &gt; 1, Len(Material_vod__c) &gt;1 )</errorConditionFormula>
+        <errorMessage>A single topic material cannot have both Material and Email Template populated. Please create separate rules for these two items.</errorMessage>
+    </validationRules>
+</CustomObject>

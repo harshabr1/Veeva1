@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Assortment header containing start/end dates, order type, account type, account group and additional header information</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Group_vod__c</fullName>
+        <description>The Account Group the Assortment is valid for.</description>
+        <externalId>false</externalId>
+        <label>Account Group</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Record_Type_vod__c</fullName>
+        <description>The type of Account the Assortment is valid for.
+Values need to match the Account Record Type in Account</description>
+        <externalId>false</externalId>
+        <label>Account Record Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pharmacy_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Wholesaler_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>All_Others_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to determine if the Assortment should include a section containing all remaining
+products not included in any other section</description>
+        <externalId>false</externalId>
+        <label>All Others</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Assortment_Group_vod__c</fullName>
+        <description>Used together with sharing settings to limit visibility to specific sets of users
+(e.g. country level, role, division, etc.)</description>
+        <externalId>false</externalId>
+        <label>Assortment Group</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date_vod__c</fullName>
+        <description>End date of the validity of the assortment</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Used for data loads.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Inventory_Monitoring_Record_Type_vod__c</fullName>
+        <description>The type of IM the Assortment is valid for.
+Values need to match the IM Record Type in Inventory_Monitoring_vod</description>
+        <externalId>false</externalId>
+        <label>Inventory Monitoring Record Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Inventory_Monitoring_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Order_Record_Type_vod__c</fullName>
+        <description>The type of Order the Assortment is valid for.
+Values need to match the Order Record Type in Order_vod</description>
+        <externalId>false</externalId>
+        <label>Order Record Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Direct_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Transfer_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Bound_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines if the Assortment is strict or not.</description>
+        <externalId>false</externalId>
+        <label>Product Bound</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date_vod__c</fullName>
+        <description>Start date of the validity of the assortment</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Assortment</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Assortments</pluralLabel>
+    <recordTypes>
+        <fullName>IM_Assortment_vod</fullName>
+        <active>true</active>
+        <description>IM Assortment Header Layout</description>
+        <label>IM Assortment</label>
+        <picklistValues>
+            <picklist>Account_Record_Type_vod__c</picklist>
+            <values>
+                <fullName>Pharmacy_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wholesaler_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Inventory_Monitoring_Record_Type_vod__c</picklist>
+            <values>
+                <fullName>Inventory_Monitoring_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Order_Record_Type_vod__c</picklist>
+            <values>
+                <fullName>Direct_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>OM_Assortment_vod</fullName>
+        <active>true</active>
+        <description>Order Assortment header</description>
+        <label>OM Assortment</label>
+        <picklistValues>
+            <picklist>Account_Record_Type_vod__c</picklist>
+            <values>
+                <fullName>Pharmacy_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wholesaler_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Order_Record_Type_vod__c</picklist>
+            <values>
+                <fullName>Direct_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>EndDate_After_StartDate_vod</fullName>
+        <active>true</active>
+        <description>Start date after end date</description>
+        <errorConditionFormula>IF(AND(NOT(ISNULL(Start_Date_vod__c)),NOT(ISNULL(End_Date_vod__c))), Start_Date_vod__c &gt; End_Date_vod__c,false)</errorConditionFormula>
+        <errorMessage>Start date after end date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ProductBound_CannotHave_AllOthers_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(Product_Bound_vod__c, All_Others_vod__c)</errorConditionFormula>
+        <errorMessage>A Product Bound Assortment cannot have the All Others section displayed</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Assortment_Preview_vod</fullName>
+        <availability>online</availability>
+        <description>Opens the page to display the preview of the Assortment</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Preview</masterLabel>
+        <openType>sidebar</openType>
+        <page>Assortment_Preview_vod</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

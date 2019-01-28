@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Defines an overall cycle.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Activate_Edited_Goals_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If true, when the MCCP integration runs it will copy the edited goal value to the active goal field</description>
+        <externalId>false</externalId>
+        <label>Activate Edited Goals</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Calculate_Pull_Through_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If true and pull-through fields exist on the MC_Target_vod object, when the MCCP integration runs it will populate the pull-through fields. It is not advised to set this often, only when pull-through values are needed to be populated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If true and pull-through fields exist on the MC_Target_vod object, when the MCCP integration runs it will populate the pull-through fields. It is not advised to set this often, only when pull-through values are needed to be populated.</inlineHelpText>
+        <label>Calculate Pull Through</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Brief description of the Cycle.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>End_Date_vod__c</fullName>
+        <description>End date of the cycle.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>External_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID for data loading.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Goal_Editing_Rules_vod__c</fullName>
+        <description>Used to enable optional goal editing features at the MC Cycle level</description>
+        <externalId>false</externalId>
+        <label>Goal Editing Rules</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Enable_Edit_My_Goal_to_Zero_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Enable_Edit_Team_Goal_to_Zero_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Over_Reached_Threshold_vod__c</fullName>
+        <description>Value used in determining Attainment Status. The attainment is compared to the Percent_Cycle_Completed_vod field, and if the attainment is more than (Percent_Cycle_Completed_vod + this value) then the Attainment Status is mapped to the OVER_REACHED Veeva Message.</description>
+        <externalId>false</externalId>
+        <label>Over Reached Threshold</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date_vod__c</fullName>
+        <description>Start date of the cycle.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Indicates the Status of the Cycle.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Planned_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In_Progress_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Under_Reached_Threshold_vod__c</fullName>
+        <description>Value used in determining Attainment Status. The attainment is compared to the Percent_Cycle_Completed_vod field, and if the attainment is less than (Percent_Cycle_Completed_vod - this value) then the Attainment Status is mapped to the UNDER_REACHED Veeva Message.</description>
+        <externalId>false</externalId>
+        <label>Under Reached Threshold</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>MC Cycle</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Start_Date_vod__c</columns>
+        <columns>End_Date_vod__c</columns>
+        <columns>Status_vod__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Cycle Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>MC Cycles</pluralLabel>
+    <recordTypes>
+        <fullName>Cycle_vod</fullName>
+        <active>true</active>
+        <description>Cycle Definition</description>
+        <label>Cycle_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Completed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In_Progress_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Start_Date_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>End_Date_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Start_Date_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>End_Date_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LAST_UPDATE</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End_Date_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>StartDate_GreaterThan_EndDate_vod</fullName>
+        <active>true</active>
+        <description>Start_Date_vod cannot be greater than or equal to the End_Date_vod.</description>
+        <errorConditionFormula>Start_Date_vod__c &gt;= End_Date_vod__c</errorConditionFormula>
+        <errorDisplayField>End_Date_vod__c</errorDisplayField>
+        <errorMessage>Start Date cannot be greater than or equal to the End Date.</errorMessage>
+    </validationRules>
+</CustomObject>

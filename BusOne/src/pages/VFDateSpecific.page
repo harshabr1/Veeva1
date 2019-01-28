@@ -1,0 +1,5 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" >
+
+  <h1>My Schedule Day View Online Stub Page</h1>
+ 
+</apex:page>

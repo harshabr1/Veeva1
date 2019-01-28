@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Defines layouts for the VMobile home page. Content is controlled by placing specialized Marker Fields onto a Page Layout.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>zvod_alerts_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker Field that places the alerts content area on the Home page.</description>
+        <externalId>false</externalId>
+        <label>zvod_alerts</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_call_objectives_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If placed on the page layout, the Call Objectives home page widget will display.</description>
+        <externalId>false</externalId>
+        <label>zvod_call_objectives</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_cycle_plan_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker Field that places the cycle plan summary content area on the Home page.</description>
+        <externalId>false</externalId>
+        <label>zvod_cycle_plan</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_mc_activity_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This marker field corresponds to the Multichannel Activity component on the home page.</description>
+        <externalId>false</externalId>
+        <label>zvod_mc_activity</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_salutation_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker Field that places the salutation and notifications content areas on the Home page.</description>
+        <externalId>false</externalId>
+        <label>zvod_salutation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_suggestions_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker field that displays the Suggestions component</description>
+        <externalId>false</externalId>
+        <label>zvod_suggestions_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_surveys_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If placed on the page layout, the Surveys home page widget will display.</description>
+        <externalId>false</externalId>
+        <label>zvod_surveys_vod</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_sync_stats_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This marker field corresponds to the Sync Stats component on the home page.</description>
+        <externalId>false</externalId>
+        <label>zvod_sync_stats</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_tasks_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker Field that places the tasks content area on the Home page.</description>
+        <externalId>false</externalId>
+        <label>zvod_tasks</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zvod_terr_changes_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marker Field that places the territory adds/drops content area on the Home page.</description>
+        <externalId>false</externalId>
+        <label>zvod_terr_changes</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>VMobile Home Page Layout</label>
+    <nameField>
+        <label>VMobile Home Page Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>VMobile Home Page Layouts</pluralLabel>
+    <recordTypes>
+        <fullName>WindowsModern_vod</fullName>
+        <active>true</active>
+        <description>The page layout associated to this record type will be used for Windows Modern.</description>
+        <label>WindowsModern_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>iPad_vod</fullName>
+        <active>true</active>
+        <description>The page layout associated to this record type will be used for iPad</description>
+        <label>iPad_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,29 @@
+<!--
+Name:Event_ProductInformation
+Created By :Harsha BR
+Created Date:02/06/2017
+Overview:Used to display the Product Information. 
+-->
+<apex:page id="thePage" standardController="Event" extensions="Event_CallHistoryExtension" >
+    <apex:form >
+        <apex:pageBlock rendered="{!IF(lstProdDisplay.size>0,TRUE,FALSE)}">
+        
+        <h3>
+              Product Information Details
+        </h3>
+        <apex:outputPanel id="oPanel" layout="block" style="overflow:scroll;height:200px">
+            <apex:pageBlockTable id="prodResult" cellpadding="2" cellspacing="2" border="1" columns="5" value="{!lstProdDisplay}" var="obj">
+                <apex:column id="Product" value="{!obj.Product__c}"/>
+                <apex:column id="objective1" value="{!obj.Objective1__c}"/>
+                <apex:column id="objective2" value="{!obj.Objective2__c}"/>
+                <apex:column id="objective3" value="{!obj.Objective3__c}"/>
+                <apex:column id="delete">
+                    <apex:commandButton value="Delete" action="{!deleteProduct}" reRender="oPanel">
+                        <apex:param assignTo="{!prodId}" value="{!obj.Id}" name="assignvalue"/>
+                    </apex:commandButton>
+                </apex:column>  
+            </apex:pageblockTable>
+            </apex:outputPanel>
+        </apex:pageBlock>  
+    </apex:form>
+</apex:Page>

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores affiliations between person accounts, business accounts, and contacts. When an affiliation (A-&gt;B) is inserted, the opposite affiliation (B-&gt;A) is automatically created via a trigger.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Child_affiliation_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to complementary affiliation.</description>
+        <externalId>false</externalId>
+        <label>Child Affiliation</label>
+        <referenceTo>Affiliation_vod__c</referenceTo>
+        <relationshipLabel>Affiliations</relationshipLabel>
+        <relationshipName>Affiliation_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments_vod__c</fullName>
+        <description>User entered comments about affiliation.</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Disable_Trigger_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If true then the affiliation triggers will not update the mirror affiliation.</description>
+        <externalId>false</externalId>
+        <label>Disable Trigger</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>External_Id_vod__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>External Id that is populated by a Veeva Trigger.   The field is populate on insert\update with a composite index of rom_Account_vod__c + &apos;:&apos; + From_Contact_vod__c + &apos;:&apos; + To_Account_vod__c + &apos;:&apos;  + To_Contact_vod__c + &apos;:&apos; Role_vod__c.</description>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>From_Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to account that is the source of the affiliation. Exactly one of from_account or from_contact must be non blank.</description>
+        <externalId>false</externalId>
+        <label>From Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Affiliations (From Account)</relationshipLabel>
+        <relationshipName>Affiliation_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>From_Contact_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to account that is the source of the affiliation. Exactly one of from_account or from_contact must be non blank.</description>
+        <externalId>false</externalId>
+        <label>From Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Affiliations (From Contact)</relationshipLabel>
+        <relationshipName>Affiliation_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Influence_vod__c</fullName>
+        <description>Influence that the source of the affiliation has on the target.</description>
+        <externalId>false</externalId>
+        <label>Influence</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No influence</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Has influence</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Is influenced</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>System field used to track the first of the two affiliation records created.</description>
+        <externalId>false</externalId>
+        <label>Parent</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Relationship_Strength_vod__c</fullName>
+        <description>The line thickness is based on the value chosen in this picklist. Values range from 0-2 where null is treated like a 0.</description>
+        <externalId>false</externalId>
+        <label>Relationship Strength</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Role_vod__c</fullName>
+        <description>The role that the source of the affiliation plays at the target.</description>
+        <externalId>false</externalId>
+        <label>Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Affiliated with</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Assistant_Physician_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Board Member</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CFO</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contracts Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Department Head</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medical Director</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>P&amp;T Committee Member</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Physician_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Plan Administrator</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Practice member</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Professor_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reviewer_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Student_of_Medicine_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VP Compliance</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>VP Marketing</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Therapeutic_Area_vod__c</fullName>
+        <description>The therapeutic area of the affiliation. An affiliation can have one to many therapeutic areas. This is not required but can be set to Read Only for filtering purposes only.</description>
+        <externalId>false</externalId>
+        <label>Therapeutic Area</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cardiology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Emergency Medicine</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Family Medicine</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>General Practice</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Internal Medicine</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Oncology</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pediatrics</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>To_Account_Affiliation_Count_vod__c</fullName>
+        <description>The total number of affiliations that the To Account has.</description>
+        <externalId>false</externalId>
+        <label>To Account Affiliation Count</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>To_Account_Identifier_vod__c</fullName>
+        <description>The Account Identifier of the To Account. Should default to show the value of Account.Account_Identifier_vod__c. Off by default.</description>
+        <externalId>false</externalId>
+        <formula>To_Account_vod__r.Account_Identifier_vod__c</formula>
+        <label>To Account Identifier</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>To_Account_Name_vod__c</fullName>
+        <description>The Account Name of the To Account. Defaults to the same formula on Account.Formatted_Name.</description>
+        <externalId>false</externalId>
+        <formula>To_Account_vod__r.Formatted_Name_vod__c</formula>
+        <label>To Account Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>To_Account_Record_Type_vod__c</fullName>
+        <description>The Record Type of the To Account. The Record Type is required in order to see the record type icon for the account.</description>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(To_Account_vod__r.RecordTypeId)</formula>
+        <label>To Account Record Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>To_Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the target of the affiliation. Exactly one of to_account or to_contact must be non blank.</description>
+        <externalId>false</externalId>
+        <label>To Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Affiliations (To Account)</relationshipLabel>
+        <relationshipName>Affiliation_vod1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>To_Contact_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the target of the affiliation. Exactly one of to_account or to_contact must be non blank.</description>
+        <externalId>false</externalId>
+        <label>To Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Affiliations (To Contact)</relationshipLabel>
+        <relationshipName>Affiliation_vod1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>destroy_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>System field.  This is used by the update trigger to delete the affiliation (and its child or parent) regardless of the owner of the affiliation.   Without this trigger users can only delete affiliations that they create or affiliations that are owned by those lower in the role hierarchy. When the Sphere of influence wants to delete an affiliation, it uses this destroy field rather than a delete API call.</description>
+        <externalId>false</externalId>
+        <label>Destroy</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Affiliation</label>
+    <nameField>
+        <displayFormat>{0}</displayFormat>
+        <label>AffiliationNumber</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Affiliations</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>To_Account_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>To_Contact_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Role_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Influence_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Comments_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>To_Account_vod__c</searchFilterFields>
+        <searchFilterFields>To_Contact_vod__c</searchFilterFields>
+        <searchFilterFields>Role_vod__c</searchFilterFields>
+        <searchFilterFields>Influence_vod__c</searchFilterFields>
+        <searchFilterFields>Comments_vod__c</searchFilterFields>
+        <searchResultsAdditionalFields>From_Account_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>To_Account_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>From_Contact_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>To_Contact_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Role_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Influence_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Parent_vod__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>DUP_TO_FROM_ACCOUNT</fullName>
+        <active>true</active>
+        <description>Prevents self referencing affiliations.</description>
+        <errorConditionFormula>AND(To_Account_vod__c = From_Account_vod__c, To_Account_vod__c &lt;&gt; null)</errorConditionFormula>
+        <errorMessage>To Account cannot be the same as From Account</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>DUP_TO_FROM_CONTACT</fullName>
+        <active>true</active>
+        <description>Prevents self referencing affiliations.</description>
+        <errorConditionFormula>AND(To_Contact_vod__c = From_Contact_vod__c, To_Contact_vod__c &lt;&gt; null)</errorConditionFormula>
+        <errorMessage>To Contact cannot be the same as From Contact</errorMessage>
+    </validationRules>
+</CustomObject>

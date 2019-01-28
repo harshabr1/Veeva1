@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores all tactics created on an Account Plan</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Plan_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Link to account plan.</description>
+        <externalId>false</externalId>
+        <label>Account Plan</label>
+        <referenceTo>Account_Plan_vod__c</referenceTo>
+        <relationshipLabel>Account Tactics</relationshipLabel>
+        <relationshipName>Account_Tactic_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <description>Lookup to master account.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Tactics</relationshipLabel>
+        <relationshipName>Account_Tactic_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Call_Objective_Progress_vod__c</fullName>
+        <description>Sums up the progress based on Call Objective Completion represented as a percentage</description>
+        <externalId>false</externalId>
+        <label>Call Objective Progress</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Complete_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if this tactic is complete.</description>
+        <externalId>false</externalId>
+        <label>Complete</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Call_Objectives_vod__c</fullName>
+        <description>Contains the total number of COMPLETED Call Objectives (Completed_flag_vod = true) associated with Account Tactics within a given Account Plan</description>
+        <externalId>false</externalId>
+        <label>Completed Call Objectives</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Description of tactic.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Plan_Tactic_vod__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Associates Account Tactic to Plan Tactic</description>
+        <externalId>false</externalId>
+        <label>Plan Tactic</label>
+        <referenceTo>Plan_Tactic_vod__c</referenceTo>
+        <relationshipLabel>Account Tactics</relationshipLabel>
+        <relationshipName>Account_Tactics_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Strategy_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Link to product strategy associated with this tactic.</description>
+        <externalId>false</externalId>
+        <label>Product Strategy</label>
+        <referenceTo>Product_Strategy_vod__c</referenceTo>
+        <relationshipLabel>Account Tactics</relationshipLabel>
+        <relationshipName>Account_Tactic_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Tactic_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Link to product tactic associated with this tactic.</description>
+        <externalId>false</externalId>
+        <label>Product Tactic</label>
+        <referenceTo>Product_Tactic_vod__c</referenceTo>
+        <relationshipLabel>Account Tactics</relationshipLabel>
+        <relationshipName>Account_Tactic_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <description>Picklist of products associated with this tactic - for display in the related list.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cholecap</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Labrinone</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Restolar</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Progress_Type_vod__c</fullName>
+        <description>Drives how progress is defined: whether Call Objective completion or manually (set by Key Account Manager).</description>
+        <externalId>false</externalId>
+        <label>Progress Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Manual_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Call_Objective_vod</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pending_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Call_Objectives_vod__c</fullName>
+        <description>Contains the total number of Call Objectives associated with Account Tactics within a given Account Plan</description>
+        <externalId>false</externalId>
+        <label>Total Call Objectives</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_vod__c</fullName>
+        <description>Picklist describing the type of this account tactic.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Contracting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Co-promote</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Efficacy promotion</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Formulary position</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Account Tactic</label>
+    <nameField>
+        <label>Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Account Tactics</pluralLabel>
+    <recordTypes>
+        <fullName>Account_Tactic_vod</fullName>
+        <active>true</active>
+        <description>Base record type for Account Tactics</description>
+        <label>Account_Tactic_vod</label>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>Cholecap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labrinone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Restolar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_vod__c</picklist>
+            <values>
+                <fullName>Co-promote</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contracting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Efficacy promotion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Formulary position</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Account_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_Plan_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Strategy_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Tactic_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Complete_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Description_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account_vod__c</searchFilterFields>
+        <searchFilterFields>Account_Plan_vod__c</searchFilterFields>
+        <searchFilterFields>Product__c</searchFilterFields>
+        <searchFilterFields>Product_Strategy_vod__c</searchFilterFields>
+        <searchFilterFields>Product_Tactic_vod__c</searchFilterFields>
+        <searchFilterFields>Complete_vod__c</searchFilterFields>
+        <searchFilterFields>Description_vod__c</searchFilterFields>
+        <searchFilterFields>Type_vod__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Record_Call_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>2000</height>
+        <linkType>page</linkType>
+        <masterLabel>Record Call</masterLabel>
+        <openType>sidebar</openType>
+        <page>Call_from_Account_Tactic_vod</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

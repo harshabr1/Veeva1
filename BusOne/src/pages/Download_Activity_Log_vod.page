@@ -1,0 +1,9 @@
+<apex:page standardController="User" standardStylesheets="true" showHeader="false">
+  <apex:composition template="{!$Page.VODRedirectCustom_vod}"/>
+
+  <script type="text/javascript">
+    var queryParams = "&numDays=1&selectedUsername={!URLENCODE(User.Username)}";
+    com.vod309.redirect.redirect("DownloadActivityLog",queryParams);
+  </script>
+    
+</apex:page>

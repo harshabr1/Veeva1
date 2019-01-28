@@ -1,0 +1,33 @@
+<apex:component >
+    <apex:attribute name="VodUrl" required="true" type="String" description="URL to Veeva webapp." />
+    <apex:attribute name="recordId" required="true" type="Id" description="Id of record." />
+    <apex:attribute name="sObjectType" required="true" type="String" description="Type of record." />
+    <apex:attribute name="beforeReady" required="false" type="String" description="Callback to call before the page calls the ready method." />
+
+    <apex:includeScript value="{!VodUrl}/js/jquery-1.9.1.min.js" />
+    <apex:includeScript value="{!VodUrl}/js/vf/veevadetail.js" />
+    <script type="text/javascript">
+        var __sfdcSessionId = '{!GETSESSIONID()}';
+    </script>
+    <script src="../../soap/ajax/29.0/connection.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            {!beforeReady}();
+            jQuery("#veevaHidden").show();
+        });
+
+        var veeva;
+        if(!veeva) {
+            veeva = {};
+        }
+
+        veeva.bind = {};
+
+        veeva.bind.sObjectType = "{!sObjectType}";
+        veeva.bind.recordId= "{!recordId}";
+    </script>
+
+    <div id="veevaHidden" style="display:none;">
+        <apex:detail subject="{!recordId}" relatedList="true" title="true" inlineEdit="false" />
+    </div>
+</apex:component>

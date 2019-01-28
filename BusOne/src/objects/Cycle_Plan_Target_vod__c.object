@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Cycle Plan Target is an Account that is included in a Cycle Plan.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Actual_Calls_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>number of calls the user has made to date against his/her targeted accounts (populated automatically)</description>
+        <externalId>false</externalId>
+        <label>Actual Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attainment_vod__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Planned_Calls_vod__c &gt; 0,  Actual_Calls_vod__c  /  Planned_Calls_vod__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Attainment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Cycle_Plan_Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The account that is a target for this Cycle Plan.</description>
+        <externalId>false</externalId>
+        <label>Target</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Cycle Plan Targets</relationshipLabel>
+        <relationshipName>Cycle_Plan_Targets</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cycle_Plan_vod__c</fullName>
+        <description>The Cycle Plan of which this account is part of.</description>
+        <externalId>false</externalId>
+        <label>Cycle Plan</label>
+        <referenceTo>Cycle_Plan_vod__c</referenceTo>
+        <relationshipLabel>Cycle Plan Targets</relationshipLabel>
+        <relationshipName>Cycle_Plan_Targets</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Auto-populates External ID with the concatenation of &lt;Cycle_Plan_vod__c&gt; + 2 underscore characters + &lt;Cycle_Plan_Account_vod__c&gt;</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Original_Planned_Calls_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>number of calls the user was supposed to make according to the original Cycle Plan, before any updates were made by the user</description>
+        <externalId>false</externalId>
+        <label>Original Planned Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_Calls_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>number of calls the user is supposed to make during the Cycle Plan’s time period</description>
+        <externalId>false</externalId>
+        <label>Planned Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Remaining_Schedule_vod__c</fullName>
+        <description>Count of Remaining Scheduled Calls</description>
+        <externalId>false</externalId>
+        <formula>If(Planned_Calls_vod__c  -  Scheduled_Calls_vod__c -  Actual_Calls_vod__c &gt; 0, Planned_Calls_vod__c  -  Scheduled_Calls_vod__c -  Actual_Calls_vod__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining Schedule</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Remaining_vod__c</fullName>
+        <description>The remaining number of calls the user must complete in the Cycle Plan period to achieve their planned call objective for the targeted account.  Default value is 0.</description>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISBLANK(Planned_Calls_vod__c),ISBLANK(Actual_Calls_vod__c)),0
+                  ,IF(ISBLANK(Actual_Calls_vod__c) ,Planned_Calls_vod__c 
+                      , IF(ISBLANK(Planned_Calls_vod__c ),0
+                            , IF((Planned_Calls_vod__c  -Actual_Calls_vod__c )&gt;=0,Planned_Calls_vod__c  -Actual_Calls_vod__c ,0)
+                        )
+                    )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scheduled_Calls_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>It holds the number of calls scheduled by the user against the Cycle Plan Target.</description>
+        <externalId>false</externalId>
+        <label>Scheduled Calls</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Actual_Calls_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>number of calls the team has made to date against his/her targeted accounts</description>
+        <externalId>false</externalId>
+        <label>Actual Total Calls</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Attainment_vod__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Total_Planned_Calls_vod__c&gt;0, Total_Actual_Calls_vod__c/Total_Planned_Calls_vod__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Attainment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_Planned_Calls_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>number of calls the team is supposed to make during the Cycle Plan’s time period</description>
+        <externalId>false</externalId>
+        <label>Planned Total Calls</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Remaining_Schedule_vod__c</fullName>
+        <description>Total Count of Remaining Scheduled calls</description>
+        <externalId>false</externalId>
+        <formula>if (Total_Planned_Calls_vod__c -  Total_Scheduled_Calls_vod__c  -  Total_Actual_Calls_vod__c &gt; 0, Total_Planned_Calls_vod__c -  Total_Scheduled_Calls_vod__c  -  Total_Actual_Calls_vod__c, 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Remaining Schedule</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Remaining_vod__c</fullName>
+        <description>The remaining number of calls the team must complete in the Cycle Plan period to achieve their planned call objective for the targeted account.  Default value is 0.</description>
+        <externalId>false</externalId>
+        <formula>IF(AND(ISBLANK(Total_Planned_Calls_vod__c ),ISBLANK(Total_Actual_Calls_vod__c)),0
+                  ,IF(ISBLANK(Total_Actual_Calls_vod__c) ,Total_Planned_Calls_vod__c 
+                      , IF(ISBLANK(Total_Planned_Calls_vod__c ),0
+                            , IF((Total_Planned_Calls_vod__c -Total_Actual_Calls_vod__c)&gt;=0,
+                                     Total_Planned_Calls_vod__c -Total_Actual_Calls_vod__c,
+                                     0)
+                        )
+                    )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Remaining Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Scheduled_Calls_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>It holds the number of calls scheduled against the Cycle Plan Target by the team of representatives calling on that account.</description>
+        <externalId>false</externalId>
+        <label>Scheduled Total Calls</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zvod_Display_Product_Details_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If placed on the page layout , then the product detail columns will be displayed in the target list.</description>
+        <externalId>false</externalId>
+        <label>zvod Display Product Details</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Cycle Plan Target</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CPT-{000000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Cycle Plan Targets</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Cycle_Plan_Account_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Cycle_Plan_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Planned_Calls_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Actual_Calls_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Total_Planned_Calls_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Total_Actual_Calls_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>PlannedCallsLessThan0</fullName>
+        <active>true</active>
+        <description>Planned Calls can not be less than 0.</description>
+        <errorConditionFormula>Planned_Calls_vod__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Planned_Calls_vod__c</errorDisplayField>
+        <errorMessage>Planned Calls can not be less than 0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Trarget_vod</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK( Cycle_Plan_Account_vod__c ) = true</errorConditionFormula>
+        <errorMessage>Please specify a Target Account.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TotalPlannedCallsLessThan0</fullName>
+        <active>true</active>
+        <description>Total Planned Calls can not be less than 0.</description>
+        <errorConditionFormula>Total_Planned_Calls_vod__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Total_Planned_Calls_vod__c</errorDisplayField>
+        <errorMessage>Total Planned Calls can not be less than 0.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Cycle_Plan_Apply_List_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Apply List</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if (1==1)
+return;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Cycle_Plan_New_Target_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Target</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if (1==1)
+return;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Cycle_Plan_Schedule_Calls_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Schedule Calls</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if (1=1)
+return;</url>
+    </webLinks>
+</CustomObject>

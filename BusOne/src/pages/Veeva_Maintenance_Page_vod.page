@@ -1,0 +1,443 @@
+<apex:page controller="Veeva_Maintenance_Page_Controller" docType="html-5.0">
+  <head>
+    <!-- Version 1.0, Last Modified 2017-05-23 - Empty Picklist check due to Salesforce bug W-3976641 -->
+    <!-- Version 1.1, Last Modified 2017-06-27 - added Empty Default Picklist Value check for EM_Event_Team_Member_vod__c -->
+    <!-- Version 1.2, Last Modified 2017-08-28 - added Veeva_Maintenance_Page_Controller and supporting of Veeva_Maintenance_Call_Address Apex Class -->
+    <!-- Version 1.3, Last Modified 2017-09-05 - updated Veeva_Maintenance_Call_Address Apex Class interaction -->
+    <!-- Version 1.4, Last Modified 2017-10-23 - added Veeva_Maintenance_Sample_Limit Apex Class support -->
+    <title>Veeva Maintenance Visualforce Page</title>
+
+    <!-- We are going to use JQuery to send SFDC SOAP/REST API requests -->
+    <apex:includeScript value="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"/>
+    <script type="text/javascript">
+      var $j = jQuery.noConflict();
+      
+      // Get list of SOBJECTS using SFDC REST API
+      function getAllSObjects() {
+          // We are going to use Mapping Array here, like [{sobjname: name, sobjlabel: label, layoutable: true/false}]
+          var _allitems = [];
+          $j.ajax('/services/data/v39.0/sobjects',
+              {
+                async: false,
+                beforeSend: function(xhr) {
+                    // Set the OAuth header from the session ID
+                    xhr.setRequestHeader('Authorization', 'Bearer {!$Api.Session_ID}');
+                },
+                success: function(response) {
+                    // We got them - append our records to the js array
+                    $j.each(response.sobjects, function(index, record) {
+                        var _sobjitem = {sobjname: record.name, sobjlabel: record.label, layoutable: record.layoutable};
+                        if (_sobjitem) {
+                            _allitems.push(_sobjitem);
+                        }
+                    });
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    // Oops - what went wrong?
+                    alert(jqXHR.status + ': ' + errorThrown);
+                }
+              }
+          );
+          return _allitems;
+      }
+
+      // Get list of RECORDTYPES for selected SOBJECT using SFDC REST API
+      function getAllRecordTypesForSObject(sobjname) {
+          // We are going to use Mapping Array here, like [{sobjectname: sobject, layouts: [{rtid: recordTypeId, rtname: name}]}]
+          var _allitems = {sobjectname: sobjname, layouts: []};
+          
+          if (sobjname) {
+              $j.ajax('/services/data/v39.0/sobjects/' + sobjname + '/describe/layouts',
+                  {
+                    async: false,
+                    beforeSend: function(xhr) {
+                        // Set the OAuth header from the session ID
+                        xhr.setRequestHeader('Authorization', 'Bearer {!$Api.Session_ID}');
+                    },
+                    success: function(response) {
+                        // We got them - append our records to the js array
+                        $j.each(response.recordTypeMappings, function(index, record) {
+                            var _rtitem = {rtid: record.recordTypeId, rtname: record.name};
+                            if (_rtitem) {
+                                if (_rtitem.rtname !== 'Master' ) {
+                                    _allitems.layouts.push(_rtitem);
+                                }
+                            }
+                        });
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        // Oops - what went wrong?
+                        alert(jqXHR.status + ': ' + errorThrown);
+                    }
+                  }
+              );
+          }
+          return _allitems;
+      }
+
+      // Get list of PICKLISTS for selected SOBJECT and RECORDTYPE using SFDC REST API
+      function getAllPickListsForSObjectAndRecordType(sobjname, rtid, rtname) {
+          // We are going to use Mapping Array here, like [{sobjectname: sobject, layouts: [{rtid: recordTypeId, rtname: recordTypeName, picklists: [{plname: name, plsize: 0, pldefval: null}]}]}]
+          var _allitems = {rtid: rtid, rtname: rtname, picklists: []};
+          
+          if ((sobjname) && (rtid)) {
+              $j.ajax('/services/data/v39.0/sobjects/' + sobjname + '/describe/layouts/' + rtid,
+                  {
+                    async: false,
+                    beforeSend: function(xhr) {
+                        // Set the OAuth header from the session ID
+                        xhr.setRequestHeader('Authorization', 'Bearer {!$Api.Session_ID}');
+                    },
+                    success: function(response) {
+                        // We got them - append our records to the js array
+                        $j.each(response.editLayoutSections, function(index, recordSection) {
+                            $j.each(recordSection.layoutRows, function(index, recordRow) {
+                                $j.each(recordRow.layoutItems, function(index, recordItem) {
+                                    $j.each(recordItem.layoutComponents, function(index, recordComponent) {
+                                        if (recordComponent.type === 'Field') {
+                                            if (recordComponent.details.type === 'picklist') {
+                                                var _plitem = {plname: recordComponent.details.name, plsize: recordComponent.details.picklistValues.length, pldefval: recordComponent.details.defaultValue};
+                                                if (_plitem) {
+                                                    _allitems.picklists.push(_plitem);
+                                                }
+                                            }
+                                        }
+                                    });
+                                });
+                            });
+                        });
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        // Oops - what went wrong?
+                        alert(jqXHR.status + ': ' + errorThrown);
+                    }
+                  }
+              );
+          }
+          return _allitems;
+      }
+      
+      // Placeholder of SELECT control for any lists in Result section
+      function ResetListControl(listName,placeName) {
+          if ((listName) && (placeName)) {
+              var selectlabel = document.getElementById(listName + 'Control');
+              var selectbox = document.getElementById(listName + 'List');
+              if (selectbox) {
+                  // Control exists - we need to delete its elements
+                  while (selectbox.options.length) {
+                      selectbox.remove(0);
+                  }
+                  // and delete it now
+                  selectbox.parentNode.removeChild(selectbox);
+                  selectlabel.parentNode.removeChild(selectlabel);
+              }
+              // Now, try to re-create everything
+              // label
+              selectlabel = document.createElement('label');
+              selectlabel.id = listName + 'Control';
+              selectlabel.innerHTML = 'List of ' + listName;
+              selectlabel.style.visibility = 'hidden';
+              document.getElementById(placeName).appendChild(selectlabel);
+              // select
+              selectbox = document.createElement('select');
+              selectbox.id = listName + 'List';
+              selectbox.name = listName;
+              selectbox.style.visibility = 'hidden';
+              document.getElementById(placeName).appendChild(selectbox);
+              // option
+              var defoption = document.createElement("option");
+              defoption.text = '- none -';
+              defoption.value = 0;
+              document.getElementById(listName + 'List').add(defoption);
+          }
+      }
+
+      // Placeholder of SPAN control for any text in Result section
+      function ResetTextControl(textName,placeName,textValue) {
+          if ((textName) && (placeName) && (textValue)) {
+              var textbox = document.getElementById(textName + 'Box');
+              if (textbox) {
+                  // Control exists - we need to delete it
+                  textbox.parentNode.removeChild(textbox);
+              }
+              // Now, try to re-create everything
+              // text
+              textbox = document.createElement('span');
+              textbox.id = textName + 'Box';
+              textbox.name = textName;
+              textbox.innerHTML = textValue;
+              textbox.style.visibility = 'hidden';
+              document.getElementById(placeName).appendChild(textbox);
+          }
+      }
+      
+      // Check Empty Picklist Values
+      function CheckEmptyPicklistValues() {
+
+          // Request List of SObjects
+          // We are going to use Mapping Array here, like [{sobjname: name, sobjlabel: label, layoutable: true/false}]
+          var _allsobjects = [];
+//          ResetTextControl('sobjinfo','emptypicklistResult','<br>1. SObject information retrieving ... ');
+//          document.getElementById('sobjinfoBox').style.visibility ='visible';
+          _allsobjects = getAllSObjects();
+
+          if (_allsobjects.length > 0) {
+/*
+              // SOBJECTS DEBUG 
+              ResetListControl('sobjects','emptypicklistResult');
+              document.getElementById('sobjectsControl').innerHTML +=' (' + _allsobjects.length + '):';
+              document.getElementById('sobjectsControl').style.visibility ='visible';
+              for (i = 0; i < _allsobjects.length; i++) { 
+                  var soption = document.createElement("option");
+                  soption.text = _allsobjects[i].sobjname + ' (' + _allsobjects[i].sobjlabel + ')';
+                  soption.value = i + 1;
+                  document.getElementById('sobjectsList').add(soption);
+              }
+              document.getElementById('sobjectsList').style.visibility='visible';
+*/
+              // We are going to use Mapping Array here, like [{sobjectname: sobject, layouts: [{rtid: recordTypeId, rtname: name}]}]
+              var _allrecordtypes = [];
+//              ResetTextControl('rtminfo','emptypicklistResult','<br>2. RecordType mapping information retrieving ... ');
+//              document.getElementById('rtminfoBox').style.visibility ='visible';
+              for (i = 0; i < _allsobjects.length; i++) {
+                  if (_allsobjects[i].layoutable) {
+                      // Request List of RecordTypeMappings for each SObject
+                      var _RTMapping = getAllRecordTypesForSObject(_allsobjects[i].sobjname);
+                      if (_RTMapping.layouts.length > 0) {
+                          _allrecordtypes.push(_RTMapping);
+                      }
+                  }
+              }
+              
+              if (_allrecordtypes.length > 0) {
+/*
+                  // RECORDTYPES DEBUG
+                  ResetListControl('layouts','emptypicklistResult');
+                  document.getElementById('layoutsControl').innerHTML +=' (' + _allrecordtypes.length + '):';
+                  document.getElementById('layoutsControl').style.visibility ='visible';
+                  for (i = 0; i < _allrecordtypes.length; i++) { 
+                      var loption = document.createElement("option");
+                      loption.text = _allrecordtypes[i].sobjectname + ' (' + _allrecordtypes[i].layouts.length + ')';
+                      loption.value = _allrecordtypes[i].sobjectname;
+                      document.getElementById('layoutsList').add(loption);
+                  }
+                  document.getElementById('layoutsList').style.visibility='visible';
+*/                  
+                  // We are going to use Mapping Array here, like [{sobjectname: sobject, layouts: [{rtid: recordTypeId, rtname: recordTypeName, picklists: [{plname: name, plsize: 0, pldefval: null}]}]}]
+                  var _allpicklists = [];
+//                  ResetTextControl('plminfo','emptypicklistResult','<br>3. PickList mapping information retrieving ... ');
+//                  document.getElementById('plminfoBox').style.visibility ='visible';
+                  for (i = 0; i < _allrecordtypes.length; i++) { 
+                      var _PLSObj = {sobjectname: _allrecordtypes[i].sobjectname, layouts: []};
+                      for (j = 0; j < _allrecordtypes[i].layouts.length; j++) {
+                          var _PLInfo = getAllPickListsForSObjectAndRecordType(_allrecordtypes[i].sobjectname,_allrecordtypes[i].layouts[j].rtid,_allrecordtypes[i].layouts[j].rtname);
+                          if (_PLInfo.picklists.length > 0) {
+                              // Picklist detected
+                              _PLSObj.layouts.push(_PLInfo);
+                          }
+                          
+                      }
+                      if (_PLSObj.layouts.length > 0) {
+                          // Attach PicklistMapping
+                          _allpicklists.push(_PLSObj);
+                      }
+                  }
+                  
+                  if (_allpicklists.length > 0) {
+/*                      
+                      // PICKLISTS DEBUG
+                      ResetListControl('picklists','emptypicklistResult');
+                      document.getElementById('picklistsControl').innerHTML +=' (' + _allpicklists.length + '):';
+                      document.getElementById('picklistsControl').style.visibility ='visible';
+                      for (i = 0; i < _allpicklists.length; i++) { 
+                          var roption = document.createElement("option");
+                          roption.text = _allpicklists[i].sobjectname + ' (' + _allpicklists[i].layouts.length + ')';
+                          roption.value = _allpicklists[i].sobjectname;
+                          document.getElementById('picklistsList').add(roption);
+                      }
+                      document.getElementById('picklistsList').style.visibility='visible';
+*/
+                      // Prepare Report about Empty PickList Mappings
+                      var localURL = window.location.href;
+                      localURL = localURL.substring(0,localURL.search('apex'));
+//                      ResetTextControl('eplinfo','emptypicklistResult','<br>4. Empty PickLists Report preparing ... <br>');
+//                      document.getElementById('eplinfoBox').style.visibility ='visible';
+
+                      var epltable = document.getElementById('eplTable');
+                      if (epltable) {
+                          // Control exists - we need to delete it
+                          epltable.parentNode.removeChild(epltable);
+                      }
+                      // Now, try to re-create everything
+                      // table
+                      epltable = document.createElement('table');
+                      epltable.id = 'eplTable';
+                      epltable.style.width = '100%';
+                      epltable.style.border = '1px solid black';
+                      epltable.style.visibility = 'hidden';
+                      document.getElementById('emptypicklistResult').appendChild(epltable);
+                      // headers
+                      epltable = document.getElementById('eplTable');
+                      var eplh = epltable.createTHead();
+                      var eplhr = eplh.insertRow(0);
+                      var eplhsobj = eplhr.insertCell(0);
+                      eplhsobj.style.border = '1px solid black';
+                      eplhsobj.innerHTML = '<b>SOBJECT</b>';
+                      var eplhrt = eplhr.insertCell(1);
+                      eplhrt.style.border = '1px solid black';
+                      eplhrt.innerHTML = '<b>RECORD TYPE</b>';
+                      var eplhpl = eplhr.insertCell(2);
+                      eplhpl.style.border = '1px solid black';
+                      eplhpl.innerHTML = '<b>PICKLIST</b>';
+                      var eplhl = eplhr.insertCell(3);
+                      eplhl.style.border = '1px solid black';
+                      eplhl.innerHTML = '<b>LINK TO FIX</b>';
+                      // rows
+                      for (i = 0; i < _allpicklists.length; i++) { 
+                          for (j = 0; j < _allpicklists[i].layouts.length; j++) {
+                              for (k = 0; k < _allpicklists[i].layouts[j].picklists.length; k++) {
+                                  if ((_allpicklists[i].layouts[j].picklists[k].plsize <= 0) || ((_allpicklists[i].sobjectname == 'EM_Event_Team_Member_vod__c') && (_allpicklists[i].layouts[j].picklists[k].pldefval == null))) {
+                                      var eplbr = epltable.insertRow(epltable.rows.length);
+                                      var eplbsobj = eplbr.insertCell(0);
+                                      eplbsobj.style.border = '1px solid black';
+                                      eplbsobj.innerHTML = _allpicklists[i].sobjectname;
+                                      var eplbrt = eplbr.insertCell(1);
+                                      eplbrt.style.border = '1px solid black';
+                                      eplbrt.innerHTML = _allpicklists[i].layouts[j].rtname;
+                                      var eplbpl = eplbr.insertCell(2);
+                                      eplbpl.style.border = '1px solid black';
+                                      eplbpl.innerHTML = _allpicklists[i].layouts[j].picklists[k].plname;
+                                      var eplbl = eplbr.insertCell(3);
+                                      eplbl.style.border = '1px solid black';
+                                      eplbl.innerHTML = '<a href="' + localURL + 'setup/ui/recordtypefields.jsp?id=' + _allpicklists[i].layouts[j].rtid + '" target="_blank"><font color="blue">Click to fix</font></a>' ;
+                                  }
+                              }
+                          }
+                      }
+
+                      document.getElementById('eplTable').style.visibility ='visible';
+
+                  }
+              }
+              
+
+          } else {
+              document.getElementById("emptypicklistHeader").innerHTML = 'No SObjects were found';
+          }
+      }
+    </script>
+  </head>
+  
+  <body>
+    <h1>List of services to check Org consistency:</h1>
+
+    <!-- Page disclaimer -->
+    <p style="color:red;">* This page and these services should be used by Salesforce Administrator only!</p>
+
+    <!-- Methods table -->
+    <table style="width:100%;border:1px solid black">
+
+<!-- This section for future usage -->
+<!--
+        <tr>
+            <th colspan="2" style="border:1px solid black;text-align:left;background-color:#f1f1c1">&nbsp;1. VEEVA Configuration analysis: &nbsp;</th>
+        </tr>
+        <tr style="border:1px solid black;text-align:left">
+            <td style="border:1px solid black;text-align:left">Method 1: ... Placeholder for method description ...</td>
+            <td style="border:1px solid black;text-align:center;width:150px"><button id="method1" type="button" onclick="">Run</button></td>
+        </tr>
+        <tr>
+            <td colspan="2">... Placeholder for analysis results ...</td>
+        </tr>
+-->
+<!-- This section for Empty Picklist analysis -->
+        <tr>
+            <th colspan="2" style="border:1px solid black;text-align:left;background-color:#f1f1c1">&nbsp;1. Salesforce Empty Picklists analysis: &nbsp;</th>
+        </tr>
+        <tr style="border:1px solid black;text-align:left">
+            <td style="border:1px solid black;text-align:left">Check Picklist controls on all Page Layouts for each object:
+                <p>Picklist control could have empty list of values due to RecordType assignments.</p>
+                <p>This situation could be the reason of crashes in Veeva Offline Clients.</p>
+            </td>
+            <td style="border:1px solid black;text-align:center;width:150px"><br/><button id="EmptyPickListButton" type="button" onclick="CheckEmptyPicklistValues()">Run</button></td>
+        </tr>
+        <tr>
+            <td colspan="2" id="emptypicklistHeader">Salesforce Empty Picklist analysis Results:
+                <p id="emptypicklistResult">&nbsp;</p>
+            </td>
+        </tr>
+<!-- This section for Call Address analysis -->
+        <tr>
+            <th colspan="2" style="border:1px solid black;text-align:left;background-color:#f1f1c1">&nbsp;2. Call Addresses Consystency analysis: &nbsp;</th>
+        </tr>
+        <tr style="border:1px solid black;text-align:left">
+            <td style="border:1px solid black;text-align:left">
+                The service will check the internal consistency of Address information (Parent_Address_vod__c, Ship_To_Address_vod__c and DEA_Address_vod__c), used in the Calls, with current Address information from the Account.<br/>
+                A Salesforce Admin can run this service immediately, using <b>"Run" button</b> in this section, or the action could be scheduled, using <b>Veeva_Maintenance_Call_Address</b> Apex Class.<br/>
+                That service will create a SFDC Apex job, which will run multiple batches. By default, the size of batch is 200 records. Maximum size is 2000 records.<br/>
+                <b>Start date</b> and <b>End date</b> parameters can be used to set up the time interval of Calls data to be searched. Minimum value for Start date is 01 August 2017. <b>"Estimate" button</b> can be used to get the number of Calls to analyze in the selected time interval.<br/> 
+                The results of this analysis will be stored in several CSV files, located in <b>Private Library</b> of Salesforce Admin, and include these files:<br/>
+                <ul>
+                    <li><b>VM_Call_Address_Log_(index)_(timestamp).csv</b> - the log file</li>
+                    <li><b>VM_Call_Address_NotFound_(index)_(timestamp).csv</b> - the list of Calls where Parent_Address was not detected.</li>
+                    <li><b>VM_Call_Address_ToFix_(index)_(timestamp).csv</b> - this file contains the results of analysis, shows the detected status for each Address and can be used in SFDC DataLoader to correct the call data if it is necessary.</li>
+                </ul>
+            </td>
+            <td style="border:1px solid black;text-align:left;width:150px">
+                <apex:form >
+                    <br/>start date&nbsp;:&nbsp;<br/><apex:input type="date" value="{!usedStartDate}" id="usedStartDate" style="width:150px"/>
+                    <br/>end date&nbsp;:&nbsp;<br/><apex:input type="date" value="{!usedEndDate}" id="usedEndDate" style="width:150px"/>
+                    <br/>batch size&nbsp;:&nbsp;<apex:inputText value="{!calladdressbatchsize}" id="calladdressbatchsize" onkeypress="return event.charCode >= 48 && event.charCode <= 57" style="width:50px"/><br/>
+                    <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton action="{!Test_Call_Addresses}" value="Estimate" onComplete="if ('{!textAlertMessage}' != '') alert('{!textAlertMessage}');"/>&nbsp;&nbsp;&nbsp;<apex:commandButton action="{!Check_Call_Addresses}" value="Run"/><br/>&nbsp;
+                </apex:form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">List of useful links:<br/>
+                <ul>
+                    <li><a href="#" onclick="window.location.href = window.location.href.substring(0,window.location.href.search('apex'))+'_ui/core/chatter/files/FileTabPage';"><font color="blue">Private Library of Salesforce Admin</font></a></li>
+                    <li><a href="#" onclick="window.location.href = window.location.href.substring(0,window.location.href.search('apex'))+'apexpages/setup/listAsyncApexJobs.apexp?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DMonitoring&setupid=AsyncApexJobs';"><font color="blue">Apex Jobs Monitoring</font></a></li>
+                    <li><a href="#" onclick="window.location.href = window.location.href.substring(0,window.location.href.search('apex'))+'08e?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DMonitoring&setupid=ScheduledJobs';"><font color="blue">Apex Scheduled Jobs</font></a></li>
+                    <li><a href="#" onclick="window.location.href = window.location.href.substring(0,window.location.href.search('apex'))+'ui/setup/sforce/DataLoaderSetupPage?setupid=DataLoader&retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DDataManagement';"><font color="blue">SFDC DataLoader tool</font></a></li>
+                </ul>
+            </td>
+        </tr>
+<!-- This section for Sample Limit analysis -->
+        <tr>
+            <th colspan="2" style="border:1px solid black;text-align:left;background-color:#f1f1c1">&nbsp;3. Sample Limit Consystency analysis: &nbsp;</th>
+        </tr>
+        <tr style="border:1px solid black;text-align:left">
+            <td style="border:1px solid black;text-align:left">
+                The service will check the internal consistency of Sample_Limit Disbursement (Disbursed_Quantity_vod__c) with current Call_Sample information where Limit_Applied_vod__c = true.<br/>
+                A Salesforce Admin can run this service immediately, using <b>"Run" button</b> in this section, or the action could be scheduled, using <b>Veeva_Maintenance_Sample_Limit</b> Apex Class.<br/>
+                That service will create a SFDC Apex job, which will run multiple batches with 100 Sample_Limit records in each of them.<br/>
+                <b>Start date</b> and <b>End date</b> parameters can be used to set up the time interval of Sample_Limit data to be searched. By default, Apex Class will check data modified in the current month only.<br/> 
+                The results of this analysis will be stored in several CSV files, located in <b>Private Library</b> of Salesforce Admin, and include these files:<br/>
+                <ul>
+                    <li><b>VM_Sample_Limit_Log_(index)_(timestamp).csv</b> - the log file</li>
+                    <li><b>VM_Sample_Limit_ToFix_(index)_(timestamp).csv</b> - this file contains the results of analysis, shows the detected status for each Sample_Limit and can be used in SFDC DataLoader to correct the data if it is necessary.</li>
+                </ul>
+            </td>
+            <td style="border:1px solid black;text-align:left;width:150px">
+                <apex:form >
+                    <br/>start date&nbsp;:&nbsp;<br/><apex:input type="date" value="{!SL_StartDate}" id="SL_StartDate" style="width:150px"/>
+                    <br/>end date&nbsp;:&nbsp;<br/><apex:input type="date" value="{!SL_EndDate}" id="SL_EndDate" style="width:150px"/><br/>
+                    <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton action="{!Check_Sample_Limits}" value="Run"/><br/>&nbsp;
+                </apex:form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">List of useful links:<br/>
+                <ul>
+                    <li><a href="#" onclick="window.location.href = window.location.href.substring(0,window.location.href.search('apex'))+'_ui/core/chatter/files/FileTabPage';"><font color="blue">Private Library of Salesforce Admin</font></a></li>
+                    <li><a href="#" onclick="window.location.href = window.location.href.substring(0,window.location.href.search('apex'))+'apexpages/setup/listAsyncApexJobs.apexp?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DMonitoring&setupid=AsyncApexJobs';"><font color="blue">Apex Jobs Monitoring</font></a></li>
+                    <li><a href="#" onclick="window.location.href = window.location.href.substring(0,window.location.href.search('apex'))+'08e?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DMonitoring&setupid=ScheduledJobs';"><font color="blue">Apex Scheduled Jobs</font></a></li>
+                    <li><a href="#" onclick="window.location.href = window.location.href.substring(0,window.location.href.search('apex'))+'ui/setup/sforce/DataLoaderSetupPage?setupid=DataLoader&retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DDataManagement';"><font color="blue">SFDC DataLoader tool</font></a></li>
+                </ul>
+            </td>
+        </tr>
+
+    </table>
+    
+  </body>
+</apex:page>

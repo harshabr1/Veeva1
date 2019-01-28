@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Analytics Files stores SFDC records that correspond to the Analytics files loaded via Secure FTP to the VoD Server.  These records are utilized by the Analytics for metadata about the files.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Analytics_Location_vod__c</fullName>
+        <description>Custom field leveraged by VInsights for File Identification.</description>
+        <externalId>false</externalId>
+        <label>Analytics Location</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Buckets_vod__c</fullName>
+        <description>Buckets corresponds to the number of sales data buckets for the Analytics File.  For example, a Monthly file with 2 years worth of data will have a value of 24 for this field.</description>
+        <externalId>false</externalId>
+        <label>Buckets</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Column_Label_vod__c</fullName>
+        <description>The Column label defines the type of data stored within the uploaded file.  A few standard examples include: TRx, NRx, NQt, TQt, DDD$, etc.  This value is used to display the Units type on the Analytics Reports page.</description>
+        <externalId>false</externalId>
+        <label>Column Label</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contains_Goals_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the loaded file contains sales goals. Copied during processing from the Data Map Template</description>
+        <externalId>false</externalId>
+        <label>Contains Goals?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Data_Date_vod__c</fullName>
+        <description>The Data Date is the Date for the most current Bucket of Sales Data for the Analytics File.</description>
+        <externalId>false</externalId>
+        <label>Data Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Data_Map_Template_Id_vod__c</fullName>
+        <description>The 18 Digit SFDC Id of the Data Map Template utilized in processing the Analytics File.</description>
+        <externalId>false</externalId>
+        <label>Data Map Template Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Processed_vod__c</fullName>
+        <description>The Date Processed is the Date upon which the User processed the Analytics File to load into the VoD database.</description>
+        <externalId>false</externalId>
+        <label>Date Processed</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Decimal_Places_vod__c</fullName>
+        <description>Indicates how many numbers should be displayed to the right of the decimal point for figures on VInsights reports driven by the Analytics File. This field does not affect percentage figures on the reports.</description>
+        <externalId>false</externalId>
+        <label>Decimal Places</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Enable_Market_Sales_Analysis_Report_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox to determine whether the Market Sales Analysis
+            Report is enabled</description>
+        <externalId>false</externalId>
+        <label>Enable Market Sales Analysis Report?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Error_Reports_Status_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Display &quot;true&quot; or &quot;false&quot; to indicate whether there is any error when running Error Reports</description>
+        <externalId>false</externalId>
+        <label>Error Reports Status</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FTP_User_Name_vod__c</fullName>
+        <description>Textual Name of the User that performed the FTP of the Sales Data File to the VoD Server.</description>
+        <externalId>false</externalId>
+        <label>FTP User Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>File_Name_vod__c</fullName>
+        <description>The name of the Analytics File that has been loaded.</description>
+        <externalId>false</externalId>
+        <label>File Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Formulary_For_Rep_Label_vod__c</fullName>
+        <description>Indicates which columns of data to use for Formulary for the Rep.</description>
+        <externalId>false</externalId>
+        <label>Formulary for Rep Label</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>First_Column_Label_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Second_Column_Label_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Incremental_Load_Type_vod__c</fullName>
+        <description>Not used</description>
+        <externalId>false</externalId>
+        <label>Incremental Load Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Full_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Incremental_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Partial_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Incremental_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag to determine whether the data file is to be loaded using the JD-NET upload process</description>
+        <externalId>false</externalId>
+        <label>Incremental</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mapped_Fields_vod__c</fullName>
+        <description>Holds a comma delimited list of certain Data Map Template fields that were mapped when the Analytics File was processed. Fields that will be listed here can include Zip_vod, Brick_vod, Data_Channel_vod.</description>
+        <externalId>false</externalId>
+        <label>Mapped Fields</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Market_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Market associated to the Analytics File.</description>
+        <externalId>false</externalId>
+        <label>Market</label>
+        <referenceTo>Analytics_Markets_vod__c</referenceTo>
+        <relationshipLabel>Analytics Files</relationshipLabel>
+        <relationshipName>Analytics_Files_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Markets_Mapped_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The Markets Mapped checkbox indicates that the Sales File being loaded contains Multiple Markets of Sales Data and that the Data Map Template utilized, included a mapping for the Market_vod__c field.</description>
+        <externalId>false</externalId>
+        <label>Markets Mapped?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Override_Account_Threshold_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Mark this checkbox to always download all Sales Data for all Accounts to which the User has access.</description>
+        <externalId>false</externalId>
+        <label>Override Account Threshold</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Payer_Plan_Mapped_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox to determine if the Analytics File includes the Payer / Plan information, such as a Platrak data file.</description>
+        <externalId>false</externalId>
+        <label>Payer/Plan Mapped?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Row_Count_vod__c</fullName>
+        <description>Row Count is the number of records contained in the database for the Analytics file.  The Row Count is updated by the loading process.</description>
+        <externalId>false</externalId>
+        <label>Row Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scale_vod__c</fullName>
+        <description>Scale determines the type of data buckets loaded.  The two options are monthly or weekly.</description>
+        <externalId>false</externalId>
+        <label>Scale</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Week_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Month_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Second_Column_Label_vod__c</fullName>
+        <description>The Second Column Label represents the Column Label that corresponds to the second group of Sales Data Buckets in a Sales File. As an example, the Column Label will correspond to buckets B1 through B24 and the Second Column Label will correspond to Buckets B25 through B48.</description>
+        <externalId>false</externalId>
+        <label>Second Column Label</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>The Status of the Analytics File as it has been processed.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Archived_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Loaded_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>In_Progress_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Process_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Moved_To_Production_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Failed_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Territory_Names_Included_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The Territory Names Included checkbox is used to determine if the Data Map Template being utilized includes a map to the Territory_Name_vod field in Sales_Transaction_vod. Records inserted with the Territory_Name_vod defined indicated aggregated levels of data in the case that a Customer is defining the aggregation of Territory level data.</description>
+        <externalId>false</externalId>
+        <label>Territory Names Included?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type_vod__c</fullName>
+        <description>The type of the Analytics File.  This value is set by VoD based on the Data Template that is used to load the file.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Analytics Files</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>File_Name_vod__c</columns>
+        <columns>Type_vod__c</columns>
+        <columns>Buckets_vod__c</columns>
+        <columns>Column_Label_vod__c</columns>
+        <columns>Scale_vod__c</columns>
+        <columns>Status_vod__c</columns>
+        <columns>Payer_Plan_Mapped_vod__c</columns>
+        <columns>Data_Date_vod__c</columns>
+        <columns>Date_Processed_vod__c</columns>
+        <columns>Row_Count_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>AF{000000000}</displayFormat>
+        <label>File Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Analytics Files</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Account_Error_Report_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>sControl</linkType>
+        <masterLabel>Account Error Report</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <scontrol>ANALYTIC_ACC_ERROR_REPORT_vod</scontrol>
+    </webLinks>
+    <webLinks>
+        <fullName>Control_Totals_Report_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>sControl</linkType>
+        <masterLabel>Control Totals Report</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <scontrol>ACC_TERR_ROLLUP_RPT_vod</scontrol>
+    </webLinks>
+    <webLinks>
+        <fullName>Product_Error_Report_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>sControl</linkType>
+        <masterLabel>Product Error Report</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <scontrol>ANALYTIC_PROD_ERR_RPT_vod</scontrol>
+    </webLinks>
+    <webLinks>
+        <fullName>Run_Error_Reports_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Run Error Reports</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&apos;/resource/vod_jQuery_Run_Error_Reports/jQuery/jquery-1.8.2.min.js&apos;)}
+{!REQUIRESCRIPT(&apos;/resource/vod_jQuery_Run_Error_Reports/jQuery/ui/jquery-ui-1.9.1.custom.min.js&apos;)}
+{!REQUIRESCRIPT(&apos;/resource/vod_jQuery_Run_Error_Reports/jQuery/postmessage/jquery.ba-postmessage.js&apos;)}
+{!REQUIRESCRIPT(&apos;/resource/vod_jQuery_Run_Error_Reports/jQuery/bbq/jquery.ba-bbq.min.js&apos;)}
+requireCssFile(&apos;/resource/vod_jQuery_Run_Error_Reports/jQuery/css/ui-lightness/jquery-ui.css&apos;); 
+{!INCLUDE($SControl.VOD_URL_GEN_SNIPPET_vod)} 
+function requireCssFile(filename) 
+{ 
+var fileref = document.createElement(&apos;link&apos;);
+fileref.setAttribute(&apos;rel&apos;, &apos;stylesheet&apos;);
+fileref.setAttribute(&apos;type&apos;, &apos;text/css&apos;);
+fileref.setAttribute(&apos;href&apos;, filename);
+document.getElementsByTagName(&apos;head&apos;)[0].appendChild(fileref);
+} 
+try{
+
+var id = &quot;{!Analytics_Files_vod__c.Id}&quot;;
+var name = &quot;{!URLENCODE(Analytics_Files_vod__c.Type_vod__c)}&quot;;
+var status = &quot;{!Analytics_Files_vod__c.Status_vod__c}&quot;;
+var fname = &quot;{!URLENCODE(Analytics_Files_vod__c.File_Name_vod__c)}&quot;;
+var mkt = &quot;{!Analytics_Files_vod__c.Market_vodId__c}&quot;;
+var parent_domain = window.location.protocol + &apos;//&apos; + window.location.host; 
+
+var myqueryparms = &quot;&amp;id=&quot;+id + &quot;&amp;dmname=&quot;+name +&quot;&amp;fname=&quot;+fname + &quot;&amp;status=&quot; + status + &quot;&amp;mkt=&quot; + mkt + &quot;&amp;parent_domain=&quot; + parent_domain; 
+var iframe_url = getVoDURL (&quot;AERRREPDIALOG&quot;,myqueryparms);
+
+var j$ = jQuery.noConflict();
+var child_domain = iframe_url.substring(0, iframe_url.indexOf(&apos;/&apos;, 9));
+ j$.receiveMessage(
+    function(e){
+        var cross_result = j$.deparam(e.data);
+        if (cross_result.action == &apos;close_modal_dialog&apos;) {
+            j$( &quot;#dialog&quot; ).dialog(&apos;close&apos;);
+        }
+    },
+    child_domain
+);
+ 
+  jQuery(function() {
+    /*Append the jQuery CSS CDN Link to the Head tag.
+    jQuery(&apos;head&apos;).append(&apos;&lt;link rel=&quot;stylesheet&quot; href=&quot;//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/start/jquery-ui.css&quot; type=&quot;text/css&quot; /&gt;&apos;);*/
+    
+
+    var html = &apos;&lt;div id=&quot;dialog&quot;&gt;&lt;/div&gt;&apos;;
+     
+     
+    if(!jQuery(&apos;[id=dialog]&apos;).size()){
+      jQuery(&apos;body&apos;).append(html);
+    }    
+    jQuery( &quot;#dialog&quot; ).html(&apos;&lt;iframe id=&quot;iframeContentId&quot; src=&quot;&apos; + iframe_url + &apos;&quot; frameborder=&quot;0&quot; height=&quot;100%&quot; width=&quot;100%&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; scrolling=&quot;no&quot; /&gt;&apos;).dialog({
+      autoOpen: false,
+      width: 450,
+      height: 300,
+      title: &apos;&apos;,
+      position: &apos;center&apos;,
+      modal: true
+    }).css(&quot;background&quot;, &quot;#ebf6f9&quot;);
+ }); 
+ jQuery(&apos;#iframeContentId&apos;).ready
+    (
+        function()
+        {
+           jQuery( &quot;#dialog&quot; ).dialog(&apos;option&apos;, &apos;title&apos;, jQuery(&apos;[name=&quot;run_error_reports_vod&quot;]&apos;).attr( &quot;title&quot; ));
+           jQuery( &quot;#dialog&quot; ).dialog(&quot;open&quot;);
+           
+        }
+    );      
+}
+catch(e){
+alert(&apos;An Error has Occured. Error: &apos; + e);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Zip_Error_Report_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>sControl</linkType>
+        <masterLabel>Zip Error Report</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <scontrol>ANALYTIC_ZIP_ERROR_RPT_vod</scontrol>
+    </webLinks>
+</CustomObject>

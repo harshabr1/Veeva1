@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Customized labels to be applied in offline app for special user categories, such as Medical users.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Component_Name_vod__c</fullName>
+        <description>Field value corresponds to the last component in Translation Workbench export. For Object type, use special values &quot;Label&quot; or &quot;LabelPlural.&quot; For Custom Field type, must be &quot;FieldLabel,&quot; &quot;HelpText,&quot; or &quot;RelatedListLabel.&quot; For all other types except Veeva Message, this is the API name of the corresponding component, e.g. button, picklist value, custom label, custom tab, layout section or validation rule.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>API name of relabeled component.</inlineHelpText>
+        <label>Component Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>External Identifier to ease maintenance via data-loading</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Or_Layout_vod__c</fullName>
+        <description>Field name for Custom Field and Picklist Value record types. (Note the field name of custom fields does not include the __c in the Translation Workbench export. This is the value actually entered in the UI when the field was created.)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Field name for Custom Field and Picklist Value types - do not include __c.</inlineHelpText>
+        <label>Field Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Medical_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>True if this record is applies to the Medical application.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>True if this record is applies to the Medical application.</inlineHelpText>
+        <label>Is Medical</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Label_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Label</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Language_vod__c</fullName>
+        <description>ISO code of User language. Customers can add values as needed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>ISO code of User language</inlineHelpText>
+        <label>Language</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>en_US</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Object_API_Name_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Object API Name</label>
+        <length>45</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Original_Message_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>For VeevaMessage record type, Veeva Message to be replaced. Can be data-loaded using External_ID_vod__c on Veeva Message.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Veeva Message to be replaced.</inlineHelpText>
+        <label>Original Message</label>
+        <referenceTo>Message_vod__c</referenceTo>
+        <relationshipLabel>Application Replacements</relationshipLabel>
+        <relationshipName>Application_Replacements</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Record_Type_Name_vod__c</fullName>
+        <description>Field for data-loading record types. Trigger on this object will read this value and find the RecordTypeID of the record type with the corresponding DeveloperName.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>DeveloperName of Record Type</inlineHelpText>
+        <label>Record Type Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Replacement_Message_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>For VeevaMessage type, Veeva Message to substitute for Original Message. Can be data-loaded using External ID on Veeva Message.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Veeva Message to substitute for Original Message.</inlineHelpText>
+        <label>Replacement Message</label>
+        <referenceTo>Message_vod__c</referenceTo>
+        <relationshipLabel>Application Originals</relationshipLabel>
+        <relationshipName>Application_Originals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Target_Record_Type_ID_vod__c</fullName>
+        <description>ID of RecordType to be relabeled. Populated by trigger for RecordType records based on Object API Name and Component Name (used as DeveloperName).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Value populated by trigger for RecordType records</inlineHelpText>
+        <label>Target Record Type ID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Application Label</label>
+    <nameField>
+        <displayFormat>LBL-{00000}</displayFormat>
+        <label>Application Label Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Application Labels</pluralLabel>
+    <recordTypes>
+        <fullName>ButtonOrLink</fullName>
+        <active>true</active>
+        <label>ButtonOrLink</label>
+        <picklistValues>
+            <picklist>Language_vod__c</picklist>
+            <values>
+                <fullName>en_US</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CustomField</fullName>
+        <active>true</active>
+        <label>CustomField</label>
+        <picklistValues>
+            <picklist>Language_vod__c</picklist>
+            <values>
+                <fullName>en_US</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CustomLabel</fullName>
+        <active>true</active>
+        <label>CustomLabel</label>
+        <picklistValues>
+            <picklist>Language_vod__c</picklist>
+            <values>
+                <fullName>en_US</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>LayoutSection</fullName>
+        <active>true</active>
+        <label>LayoutSection</label>
+        <picklistValues>
+            <picklist>Language_vod__c</picklist>
+            <values>
+                <fullName>en_US</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Object_vod</fullName>
+        <active>true</active>
+        <label>Object_vod</label>
+        <picklistValues>
+            <picklist>Language_vod__c</picklist>
+            <values>
+                <fullName>en_US</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PicklistValue</fullName>
+        <active>true</active>
+        <label>PicklistValue</label>
+        <picklistValues>
+            <picklist>Language_vod__c</picklist>
+            <values>
+                <fullName>en_US</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>RecordType</fullName>
+        <active>true</active>
+        <label>RecordType</label>
+        <picklistValues>
+            <picklist>Language_vod__c</picklist>
+            <values>
+                <fullName>en_US</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ValidationFormula</fullName>
+        <active>true</active>
+        <label>ValidationFormula</label>
+        <picklistValues>
+            <picklist>Language_vod__c</picklist>
+            <values>
+                <fullName>en_US</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>VeevaMessage_vod</fullName>
+        <active>true</active>
+        <label>VeevaMessage_vod</label>
+        <picklistValues>
+            <picklist>Language_vod__c</picklist>
+            <values>
+                <fullName>en_US</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>WebTab</fullName>
+        <active>true</active>
+        <label>WebTab</label>
+        <picklistValues>
+            <picklist>Language_vod__c</picklist>
+            <values>
+                <fullName>en_US</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

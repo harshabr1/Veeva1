@@ -1,0 +1,16 @@
+<apex:page standardcontroller="Account" extensions="VODRedirectController">
+    <script type="text/javascript">
+        (function() {
+            if(!window.HTMLConfig) {            
+                window.HTMLConfig = {   
+                    currentObject: 'Account',
+                    currentObjectID: '{!$CurrentPage.parameters.Id}',
+                    sessionID:'{!$Api.Session_ID}'
+                };           
+            }
+        })();
+    </script>
+    <apex:includeScript value="{!URLFOR($Resource.HTML_Reports_Scripts, '/scripts/vendor.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.HTML_Reports_Scripts, '/scripts/main.js')}"/>
+    <c:VOD_EMBED veevaModule="custom_reports" veevaPage="account-report" objectType="HTML_Report_vod__c" queryParams="&id={!Account.Id}&typ=Account&{!$CurrentPage.parameters.queryParams}" />
+</apex:page>

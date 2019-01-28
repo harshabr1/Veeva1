@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Call Objective can be accessed through Call Report</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Plan_vod__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Associates Call Objective to Account Plan</description>
+        <externalId>false</externalId>
+        <label>Account Plan</label>
+        <referenceTo>Account_Plan_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objectives_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Tactic_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A lookup to Account Tactic</description>
+        <externalId>false</externalId>
+        <label>Account Tactic</label>
+        <referenceTo>Account_Tactic_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objectives_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The account that this tasks belongs to</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objectives_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Business_Event_Target_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Business Event Target</description>
+        <externalId>false</externalId>
+        <label>Business Event Target</label>
+        <referenceTo>Business_Event_Target_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objectives_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Business_Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>the event this task belongs to</description>
+        <externalId>false</externalId>
+        <label>Business Event</label>
+        <referenceTo>Business_Event_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objectives_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CLM_Messaging_vod__c</fullName>
+        <description>When populated, the text in this field will display for the CLM Call Objective.</description>
+        <externalId>false</externalId>
+        <label>CLM Messaging</label>
+        <length>500</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CLM_Presentation_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>If populated, selecting the call objective launches this CLM presentation.</description>
+        <externalId>false</externalId>
+        <label>CLM Presentation</label>
+        <referenceTo>Clm_Presentation_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objectives_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Call2_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>the call that this task belongs to</description>
+        <externalId>false</externalId>
+        <label>Call</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objectives_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comment_vod__c</fullName>
+        <description>The comment for this task</description>
+        <externalId>false</externalId>
+        <label>Comment</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Completed_Flag_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If MR finish this task, this flag is true</description>
+        <externalId>false</externalId>
+        <label>Completed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Partner_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Associates a Contract Partner record to the Call Objective</description>
+        <externalId>false</externalId>
+        <label>Contract Partner</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1</booleanFilter>
+            <filterItems>
+                <field>Contract_Partner_vod__c.Status_vod__c</field>
+                <operation>notEqual</operation>
+                <value>Activated_vod, Signed_vod</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contract_Partner_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objective_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is used to associate a Contract Call Objective with a Contract Template. Results are filtered to show only Contract records where Template = True, Lock = True, and Status = Activated.</description>
+        <externalId>false</externalId>
+        <label>Contract</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 AND 2 AND 3</booleanFilter>
+            <errorMessage>Contracts must be activated templates</errorMessage>
+            <filterItems>
+                <field>Contract_vod__c.Template_vod__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>Contract_vod__c.Lock_vod__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>Contract_vod__c.Status_vod__c</field>
+                <operation>equals</operation>
+                <value>Activated_vod</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contract_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objectives_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Date_vod__c</fullName>
+        <description>The date time of plan or activity date for task</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_Method_vod__c</fullName>
+        <description>The way of EPPV or PI</description>
+        <externalId>false</externalId>
+        <label>Delivery Method</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Call</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>FAX</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DM</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>NCW_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>From_Date_vod__c</fullName>
+        <description>The date range for each actions</description>
+        <externalId>false</externalId>
+        <label>From</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Information_vod__c</fullName>
+        <description>Information note for this task</description>
+        <externalId>false</externalId>
+        <label>Information</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inventory_Monitoring_Type_vod__c</fullName>
+        <description>Untranslated label of the record type of the Inventory Monitoring record to create.  This is only valid for Call Objectives with the Inventory Monitoring record type.</description>
+        <externalId>false</externalId>
+        <label>Inventory Monitoring Type</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inventory_Monitoring_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Specifies the Inventory Monitoring record associated to the Call Objective</description>
+        <externalId>false</externalId>
+        <label>Inventory Monitoring</label>
+        <referenceTo>Inventory_Monitoring_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objectives_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>NCW_Reason_vod__c</fullName>
+        <description>The reason of why does the MR could not complied with this task</description>
+        <externalId>false</externalId>
+        <label>NCW Reason</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Delivery_Method_vod__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pass this MS</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Recall</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No time</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>NCW_vod</controllingFieldValue>
+                <valueName>Pass this MS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>NCW_vod</controllingFieldValue>
+                <valueName>Recall</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>NCW_vod</controllingFieldValue>
+                <valueName>No time</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>NCW_vod</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Name_vod__c</fullName>
+        <description>The Name_vod field is used by iRep to display the name of the call objective in the call objectives list view. This field is also searchable in iRep.</description>
+        <externalId>false</externalId>
+        <label>Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Non_Executable_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field indicates that whether a Call Objective is good for execution (based on prerequisite execution), it works in conjunction with the Prerequisite field and uses negative logic</description>
+        <externalId>false</externalId>
+        <label>Non Executable</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Number_Of_PIs_vod__c</fullName>
+        <description>The number of PI copy which the MR pass</description>
+        <externalId>false</externalId>
+        <label>Number Of PIs</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Of_Patients_vod__c</fullName>
+        <description>The number of patients to which the doctor prescribes the new drug</description>
+        <externalId>false</externalId>
+        <label>Number Of Patients</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>On_By_Default_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, the call objective will display on the call report by default. If unchecked, users will be able to find the call objective by going through a search dialog on the call report.</description>
+        <externalId>false</externalId>
+        <label>On by default</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>One_Click_Completion_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this box is checked, a call objective can be completed by checking the box on the call report. The call objective&apos;s page layout will not display within the call report.</description>
+        <externalId>false</externalId>
+        <label>One click completion</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Objective_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to a parent call objective. Used for grouping recurring call objectives. Automatically populated.</description>
+        <externalId>false</externalId>
+        <label>Parent Objective</label>
+        <referenceTo>Call_Objective_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objectives_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Plan_Tactic_vod__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Associates Call Objective to Account Plan Tactics</description>
+        <externalId>false</externalId>
+        <label>Plan Tactic</label>
+        <referenceTo>Plan_Tactic_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objectives_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pre_Explain_Flag_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If the task is pre-explain call, this flag is true</description>
+        <externalId>false</externalId>
+        <label>Pre-Explain</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Prerequisite_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Prerequisite indicates that there is another Call Objective that needs to be executed prior to the execution of the current Call Objective. It works in conjunction with the Executable field.</description>
+        <externalId>false</externalId>
+        <label>Prerequisite</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Call_Objective_vod__c.Recurring_vod__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </filterItems>
+            <filterItems>
+                <field>Call_Objective_vod__c.Account_Plan_vod__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Account_Plan_vod__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Call_Objective_vod__c.From_Date_vod__c</field>
+                <operation>lessThan</operation>
+                <valueField>$Source.From_Date_vod__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Call_Objective_vod__c.Id</field>
+                <operation>notEqual</operation>
+                <valueField>$Source.Id</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Call_Objective_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives (Prerequisite)</relationshipLabel>
+        <relationshipName>Call_Objectives</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the Product Catalog for this objective.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objectives_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Recurring_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this checkbox is checked, the call objective is recurring. It will repeatedly show on the call report until the To date has been reached, It can be completed multiple times. Each time it is completed, a new call objective record is created.</description>
+        <externalId>false</externalId>
+        <label>Recurring</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Suggestion_Reason_vod__c</fullName>
+        <description>Displays Suggestion Reason information</description>
+        <externalId>false</externalId>
+        <label>Suggestion Reason</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Suggestion_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Associates Call Objective to Suggestion</description>
+        <externalId>false</externalId>
+        <label>Suggestion</label>
+        <referenceTo>Suggestion_vod__c</referenceTo>
+        <relationshipLabel>Call Objectives</relationshipLabel>
+        <relationshipName>Call_Objectives_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>To_Date_vod__c</fullName>
+        <description>The date range for each actions</description>
+        <externalId>false</externalId>
+        <label>To</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Visibility_vod__c</fullName>
+        <description>Defines Call Objective visibility</description>
+        <externalId>false</externalId>
+        <label>Visibility</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Owner_vod</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Call Objective</label>
+    <nameField>
+        <displayFormat>CO-{00000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Call Objectives</pluralLabel>
+    <recordTypes>
+        <fullName>CLM_vod</fullName>
+        <active>false</active>
+        <description>Used for Call Objectives that launch CLM Presentations</description>
+        <label>CLM</label>
+        <picklistValues>
+            <picklist>Delivery_Method_vod__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCW_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NCW_Reason_vod__c</picklist>
+            <values>
+                <fullName>No time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass this MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recall</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Contract_Partner_vod</fullName>
+        <active>true</active>
+        <description>Used for Call Objectives that launch Contract Partner activation or signature capture.</description>
+        <label>Contract Partner</label>
+        <picklistValues>
+            <picklist>Delivery_Method_vod__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCW_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NCW_Reason_vod__c</picklist>
+            <values>
+                <fullName>No time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass this MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recall</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Contract_vod</fullName>
+        <active>true</active>
+        <description>Used for completing Contract Call Objectives.</description>
+        <label>Contract</label>
+        <picklistValues>
+            <picklist>Delivery_Method_vod__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCW_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NCW_Reason_vod__c</picklist>
+            <values>
+                <fullName>No time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass this MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recall</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Visibility_vod__c</picklist>
+            <values>
+                <fullName>All_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Owner_vod</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>EPPV_vod</fullName>
+        <active>true</active>
+        <description>EPPV</description>
+        <label>EPPV</label>
+        <picklistValues>
+            <picklist>Delivery_Method_vod__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCW_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NCW_Reason_vod__c</picklist>
+            <values>
+                <fullName>No time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass this MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recall</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Inventory_Monitoring_vod</fullName>
+        <active>true</active>
+        <description>Used for Call Objectives that launch Inventory Monitoring</description>
+        <label>Inventory Monitoring</label>
+        <picklistValues>
+            <picklist>Delivery_Method_vod__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCW_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NCW_Reason_vod__c</picklist>
+            <values>
+                <fullName>No time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass this MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recall</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PI_vod</fullName>
+        <active>true</active>
+        <description>PI</description>
+        <label>PI</label>
+        <picklistValues>
+            <picklist>Delivery_Method_vod__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCW_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NCW_Reason_vod__c</picklist>
+            <values>
+                <fullName>No time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass this MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recall</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Suggestion_vod</fullName>
+        <active>true</active>
+        <description>Used for creating new Call Objectives from Suggestions</description>
+        <label>Suggestion_vod</label>
+        <picklistValues>
+            <picklist>Delivery_Method_vod__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NCW_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>NCW_Reason_vod__c</picklist>
+            <values>
+                <fullName>No time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pass this MS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Recall</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Recurring_Contract_Partner</fullName>
+        <active>true</active>
+        <description>Throw error when Recurring is true and Contract Partner has a value</description>
+        <errorConditionFormula>Recurring_vod__c &amp;&amp; NOT(ISBLANK(Contract_Partner_vod__c))</errorConditionFormula>
+        <errorMessage>Contract Partner Call Objectives must not be Recurring.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Assign_Call_Objective_To_Tactic</fullName>
+        <availability>online</availability>
+        <description>A button to add to the Call Objective Related list on the Account Tactic page, for linking an existing Call Objective to an existing Account Tactic</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Assign Call Objective To Tactic</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>var tacticId = &quot;{!Account_Tactic_vod__c.Id}&quot; ;
+	var newWin=null;
+	openLookupPopup(tacticId);
+
+	function openLookupPopup(id){
+		var url=&quot;apex/Assign_Call_Objective_To_Tactic_vod?tacticId=&quot;+id ;
+		newWin=window.open(url, &apos;Popup&apos;,&apos;height=500,width=600,left=100,top=100,resizable=no,scrollbars=yes,toolbar=no,status=no&apos;);
+        var timer = setInterval(function() {
+            if(newWin.closed) {
+                clearInterval(timer);
+                window.location.reload();
+            }
+        }, 1000);
+		if (window.focus){
+			newWin.focus();
+		}
+		return false;
+	}</url>
+    </webLinks>
+</CustomObject>

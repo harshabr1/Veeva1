@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Unsubscribe_Product_vod object stores the information on how and what details of a product are displayed on the unsubscribe page when the associated Unsubscribe_vod record is referenced.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Content_Type_Display_Name_vod__c</fullName>
+        <description>Content_Type_Display_Name_vod is the text that will be used to display an alternate name instead of the default Content_Type_vod.Name field for the associated Product.</description>
+        <externalId>false</externalId>
+        <label>Content Type Display Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Content_Type_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Content_Type_vod record for which consent is captured.</description>
+        <externalId>false</externalId>
+        <label>Content Type</label>
+        <referenceTo>Content_Type_vod__c</referenceTo>
+        <relationshipLabel>Unsubscribe Products</relationshipLabel>
+        <relationshipName>Unsubscribe_Product_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_Display_vod__c</fullName>
+        <description>Detail_Group_Display_vod is the text that will be used to display an alternate name instead of the default Product.Name field for the associated Detail Group.</description>
+        <externalId>false</externalId>
+        <label>Detail Group Display</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Detail_Group_vod represents the product to which this Unsubscribe_Product_vod record is associated.</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Unsubscribe Detail Groups</relationshipLabel>
+        <relationshipName>Unsubscribe_DetailGroups</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Display_Order_vod__c</fullName>
+        <description>The order in which the products will be displayed in on the unsubscribe page.</description>
+        <externalId>false</externalId>
+        <label>Display Order</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Display_vod__c</fullName>
+        <description>Product_Display_vod is the text that will be used to display an alternate name instead of the default Product.Name field for the associated Product.</description>
+        <externalId>false</externalId>
+        <label>Product Display</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product_vod represents the product to which this Unsubscribe_Product_vod record is associated.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Unsubscribe Products</relationshipLabel>
+        <relationshipName>Unsubscribe_Products</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Unsubscribe_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Unsubscribe_vod represents the Unsubscribe_vod record to which this Email_Activity_vod record is associated.</description>
+        <externalId>false</externalId>
+        <label>Unsubscribe</label>
+        <referenceTo>Unsubscribe_vod__c</referenceTo>
+        <relationshipLabel>Unsubscribe Products</relationshipLabel>
+        <relationshipName>Unsubscribe_Products</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Unsubscribe Product</label>
+    <nameField>
+        <label>Unsubscribe Product Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Unsubscribe Products</pluralLabel>
+    <recordTypes>
+        <fullName>Approved_Email_Content_Type_Unsubscribe_vod</fullName>
+        <active>true</active>
+        <description>recordtype of those Unsubscribe_Product_vod records that will be used store information about a Content Type to be used for Approved Email Unsubscribe page</description>
+        <label>Approved_Email_Content_Type_Unsubscribe_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Approved_Email_Unsubscribe_vod</fullName>
+        <active>true</active>
+        <description>Record type of those Unsubscribe_Product_vod records that will be used store information about a product to be used for Approved Email Unsubscribe page</description>
+        <label>Approved_Email_Unsubscribe_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

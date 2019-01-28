@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Settings related to the Veeva Data Store.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>VDS_Profile_vod__c</fullName>
+        <description>0 or null = Don&apos;t activate the VDS integration
+1 = Rep Profile
+2 = FLM Profile</description>
+        <externalId>false</externalId>
+        <inlineHelpText>1 = Rep Profile 
+2 = FLM Profile</inlineHelpText>
+        <label>VDS Profile</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>VDS Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,8 @@
+<apex:page standardController="Clm_Presentation_vod__c">
+<apex:composition template="{!$Page.VODRedirect_Scroll_1800_vod}"/>
+<script type="text/javascript">
+    var queryparams = "&presentationId=" + "{!URLENCODE(Clm_Presentation_vod__c.Id)}";  
+    com.vod309.redirect.redirect("mmgrtn", queryparams);
+</script>
+
+</apex:page>

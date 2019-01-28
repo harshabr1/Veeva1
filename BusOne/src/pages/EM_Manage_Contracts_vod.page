@@ -1,0 +1,3 @@
+<apex:page standardController="EM_Event_Speaker_vod__c">
+<c:VOD_EMBED veevaModule="em" veevaPage="em-manage-contracts" queryParams="{!$CurrentPage.parameters.queryParams}"/>
+</apex:page>

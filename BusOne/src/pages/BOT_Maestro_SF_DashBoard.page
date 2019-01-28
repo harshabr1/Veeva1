@@ -1,0 +1,91 @@
+<!--
+Name            : BOT_Maestro_SF_DashBoard
+Created Date    : 13-JUN-2017
+Created by      : SREENIVASULU ADIPUDI
+Description     : To generate a dynamic dashboard for data with is received from external system. This VF page will filter the dashboard based on the selected pick list value.
+-->
+<apex:page controller="pieChartController" title="pieChart" sidebar="false">
+    <script type="text/javascript">
+    function interactive(klass,item) {
+        
+        var m = item.storeItem;
+        //this.setTitle(m.get('formularyName'));
+        var forName=m.get('formularyName');
+        var e = window.event;
+        var t = e.target || e.srcElement;
+        t.onclick=function(event)
+        {
+            InteractiveChart(forName);   
+        }
+        this.update(''
+                    + '<table>'
+                    + '<tr><td><b>Formulary Name - </b>&nbsp;</td><td>' + m.get('formularyName') + '</td></tr>'
+                    + '<tr><td><b>Formulary Lives - </b>&nbsp;</td><td>' + m.get('formularyLives') + '</td></tr>'
+                    + '</table>'
+                   );
+        
+    }
+    </script>
+    
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock id="pb1">
+            <apex:actionFunction name="InteractiveChart" action="{!myActionInController}"  reRender="chart1,chart2,pb2" onComplete="alert('After apex method') ;">
+                <apex:param id="anode" name="formularyName" assignTo="{!formName}" value="" />
+            </apex:actionFunction>
+            <apex:pageBlockSection columns="2">
+                <apex:outputPanel id="panel1">
+                    <apex:outputLabel Value="Entity ID  ">
+                        <apex:inputText label="Entity ID" value="{!getEntityID}"/>
+                        <apex:commandButton value="Get" action="{!accountsData}"/>
+                    </apex:outputLabel>                    
+                </apex:outputPanel>
+                <apex:outputPanel id="panel2" rendered="{!displayFilter}">
+                    <apex:outputLabel value="Select Lives  ">
+                        <apex:selectList size="1" value="{!inputValue}">
+                            <apex:selectOptions value="{!dynamicList}"></apex:selectOptions>
+                        </apex:selectList>
+                        <!--<apex:actionSupport event="onchange" action="{!filterFormulary}"/>-->                      
+                        <apex:commandButton Value="Filter" action="{!filterFormulary}" reRender="chart1,chart2"/>
+                    </apex:outputLabel>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:outputPanel id="chart1" rendered="{!displayChart}">
+            <apex:chart id="BarChart" height="950" width="1000" data="{!pieData1}">
+                <apex:axis type="Numeric" position="left" fields="formularyLives" title="Formulary Lives" grid="true" gridFill="true"/>
+                <apex:axis type="Category" position="bottom" fields="formularyName" title="Formulary Name">
+                    <apex:chartLabel rotate="90" />
+                </apex:axis>
+                <apex:barSeries orientation="vertical" axis="left" xField="formularyName" yField="formularyLives" xPadding="2" yPadding="2" >
+                    <!--<apex:chartLabel font="Arial" display="outside"/>-->
+                    <apex:chartTips height="75" width="200" rendererFn="interactive" />
+                </apex:barSeries>
+            </apex:chart>
+        </apex:outputPanel>
+        <apex:outputPanel id="chart2" rendered="{!displayChart}">
+            <apex:chart id="pieChart" height="550" width="1200" data="{!pieData1}">        
+                <apex:pieSeries dataField="formularyLives" labelField="formularyName">
+                    <apex:chartTips height="75" width="200" rendererFn="interactive"/>
+                    <apex:chartLabel display="none"/>
+                </apex:pieSeries>
+                <apex:legend position="right" />
+            </apex:chart>
+        </apex:outputPanel>
+        <apex:pageBlock id="pb2" rendered="{!displayFormulary}">
+            <apex:pageBlockTable id="Table2" value="{!formularies}" var="val" cellpadding="2" cellspacing="2" >
+                <apex:column headerValue="Formulary Name">
+                    <apex:outputText value="{!val.FORMULARY_NAME}"/>
+                </apex:column>
+                <apex:column headerValue="Formulary Lives">
+                    <apex:outputText value="{!val.FORMULARY_LIVES}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+           	<!--
+            <apex:pageBlockButtons rendered="{!displayFormulary}" >
+            	<apex:commandButton value="Back" action="{!previouspage}" />
+            </apex:pageBlockButtons>
+			-->
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

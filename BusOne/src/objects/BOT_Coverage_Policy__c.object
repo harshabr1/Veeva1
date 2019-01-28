@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>To store the coverage policy details. It is having a lookup relationship with account object.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>BOT_Age_requirements__c</fullName>
+        <externalId>false</externalId>
+        <label>Age Requirements</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Authorization_LimitsforInitial_Stage__c</fullName>
+        <description>It is a subsection of Prior Authorization</description>
+        <externalId>false</externalId>
+        <label>Authorization Limits for Initial Stage</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_CPT_Codes__c</fullName>
+        <externalId>false</externalId>
+        <label>CPT Codes</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Channel__c</fullName>
+        <description>For channel selection neither commercial or medicate</description>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ALL</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Commercial</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medicare</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BOT_Conditions__c</fullName>
+        <description>It is a subsection of diagnostic requirements for initial therapy</description>
+        <externalId>false</externalId>
+        <label>Conditions</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Conditions_for_Initial_Stage__c</fullName>
+        <description>It is a subsection of Prior Authorization</description>
+        <externalId>false</externalId>
+        <label>Conditions for Initial Stage</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Diagnostic_Procedure__c</fullName>
+        <description>It is a subsection of diagnostic requirements for initial therapy</description>
+        <externalId>false</externalId>
+        <label>Diagnostic Procedure</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Diagnostic_Response__c</fullName>
+        <description>It is a subsection of diagnostic requirements for initial therapy</description>
+        <externalId>false</externalId>
+        <label>Diagnostic Response</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Documentation_Required_Initial_Stage__c</fullName>
+        <description>It is a subsection of Prior Authorization</description>
+        <externalId>false</externalId>
+        <label>Documentation Required - Initial Stage</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Drug__c</fullName>
+        <description>To store name of the drug</description>
+        <externalId>false</externalId>
+        <label>Drug</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Duration_for_Initial_Stage__c</fullName>
+        <description>It is a subsection of Prior Authorization</description>
+        <externalId>false</externalId>
+        <label>Duration for Initial Stage</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Effective_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BOT_HCPCS_Codes__c</fullName>
+        <externalId>false</externalId>
+        <label>HCPCS Codes</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_ICD_9_Codes__c</fullName>
+        <externalId>false</externalId>
+        <label>ICD-9 Codes</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Indication__c</fullName>
+        <externalId>false</externalId>
+        <label>Indication</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Initial_Therapy_details__c</fullName>
+        <description>It is a subsection of diagnostic requirements for initial therapy</description>
+        <externalId>false</externalId>
+        <label>Initial Therapy details</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BOT_Market__c</fullName>
+        <externalId>false</externalId>
+        <label>Market</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Monitor_for_Noneofthe_following__c</fullName>
+        <description>It is a subsection of diagnostic requirements for initial therapy</description>
+        <externalId>false</externalId>
+        <label>Monitor for / None of the following</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BOT_Origination_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Origination Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BOT_PA_Required_Y_N__c</fullName>
+        <description>It is a subsection of Prior Authorization</description>
+        <externalId>false</externalId>
+        <label>PA Required (Y/N)</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Plan_ID__c</fullName>
+        <description>It is a hidden field and it is used for internal reference purpose only</description>
+        <externalId>false</externalId>
+        <label>Plan ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Plan_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup relationship to the account object. related account Id will be populated here</description>
+        <externalId>false</externalId>
+        <label>Plan Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Coverage Policies</relationshipLabel>
+        <relationshipName>Plan_Name</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>BOT_Plan_State__c</fullName>
+        <description>It is used to store associated state of given plan</description>
+        <externalId>false</externalId>
+        <label>Plan State</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Plan_Type__c</fullName>
+        <description>It is a hidden field and used to store plan type.</description>
+        <externalId>false</externalId>
+        <label>Plan Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Policy_type__c</fullName>
+        <description>To store the policy type</description>
+        <externalId>false</externalId>
+        <label>Policy type</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Prior_Authorization_Details__c</fullName>
+        <description>It is a subsection of Prior Authorization</description>
+        <externalId>false</externalId>
+        <label>Prior Authorization Details</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Requirement_s__c</fullName>
+        <description>It is a sub section field of Diagnostic Requirements for Initial Therapy</description>
+        <externalId>false</externalId>
+        <label>Requirement(s)</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Requirements_for_Initial_Stage__c</fullName>
+        <description>It is a subsection of Prior Authorization</description>
+        <externalId>false</externalId>
+        <label>Requirements for Initial Stage</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_SP_Mandate_Y_N__c</fullName>
+        <externalId>false</externalId>
+        <label>SP Mandate (Y/N)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>BOT_SP_Provider__c</fullName>
+        <externalId>false</externalId>
+        <label>SP Provider</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Score</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Specialist__c</fullName>
+        <description>It is a subsection of Prior Authorization</description>
+        <externalId>false</externalId>
+        <label>Specialist</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Sub_Indication__c</fullName>
+        <externalId>false</externalId>
+        <label>Sub-Indication</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BOT_Treatment_Stage_s__c</fullName>
+        <description>It is a subsection of Prior Authorization</description>
+        <externalId>false</externalId>
+        <label>Treatment Stage(s)</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Coverage Policy</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Policy Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Coverage Policies</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

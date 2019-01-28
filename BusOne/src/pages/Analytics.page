@@ -1,0 +1,55 @@
+<apex:page >
+  <apex:composition template="{!$Page.VODRedirectCustom_vod}"/>
+  
+  <script type="text/javascript">        
+    var queryParams = "&today={!TODAY()}"; 
+
+    var value = "{!URLENCODE($CurrentPage.parameters.analytic)}"; 
+    if(value != "" ) queryParams = += "&analytic="+value;
+
+    value = "{!URLENCODE($CurrentPage.parameters.scale)}"; 
+    if(value != "" ) queryParams = += "&scale="+value;
+
+    value = "{!URLENCODE($CurrentPage.parameters.startDate)}"; 
+    if(value != "" ) queryParams = += "&startDate="+value;
+
+    value = "{!URLENCODE($CurrentPage.parameters.endDate)}"; 
+    if(value != "" ) queryParams = += "&endDate="+value;
+
+    value = "{!URLENCODE($CurrentPage.parameters.range)}"; 
+    if(value != "" ) queryParams = += "&range="+value;
+
+    value = "{!URLENCODE($CurrentPage.parameters.dataType)}"; 
+    if(value != "" ) queryParams = += "&dataType="+value;
+
+    value = "{!URLENCODE($CurrentPage.parameters.callType)}"; 
+    if(value != "" ) queryParams = += "&callType="+value;
+    
+    value = "{!URLENCODE($CurrentPage.parameters.accountType)}"; 
+    if(value != "" ) queryParams = += "&accountType="+value;
+
+    value = "{!URLENCODE($CurrentPage.parameters.segment)}"; 
+    if(value != "" ) queryParams = += "&segment="+value;
+
+    value = "{!URLENCODE($CurrentPage.parameters.market)}"; 
+    if(value != "" ) queryParams = += "&market="+value;
+
+    value = "{!URLENCODE($CurrentPage.parameters.target)}"; 
+    if(value != "" ) queryParams = += "&target="+value;
+
+    value = "{!URLENCODE($CurrentPage.parameters.accountId)}";
+    if(value != "" ) queryParams = += "&accountId="+value;
+
+    value = "{!URLENCODE($CurrentPage.parameters.displayCompetitors)}"; 
+    if(value != "" ) queryParams = += "&displayCompetitors="+value;
+
+    value = "{!URLENCODE($CurrentPage.parameters.countAttendees)}"; 
+    if(value != "" ) queryParams = += "&countAttendees="+value;
+
+    value = "{!URLENCODE($CurrentPage.parameters.displayEvents)}"; 
+    if(value != "" ) queryParams = += "&displayEvents="+value;
+
+    com.vod309.redirect.redirect("analytics", queryParams);
+  </script>
+
+</apex:page>

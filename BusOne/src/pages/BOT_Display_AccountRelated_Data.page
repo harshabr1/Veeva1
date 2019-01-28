@@ -1,0 +1,61 @@
+<!--
+Name        : BOT_Display_AccountRelated_data
+Created by  : Sreenivasulu Adipudi
+Created date: 21-MAR-2017
+Description : To dispaly the plan demographics, Plan formulary records related to the selected account and channel
+-->
+<apex:page standardController="Account" extensions="BOT_Display_AccountRelated_extn" sidebar="false">
+    <apex:form id="form1"> 
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="2" >
+                <apex:outputPanel id="panel1">
+                    <apex:outputLabel value="Select Channel  "/>
+                    <apex:selectList size="1" value="{!selected}" >
+                        <apex:selectOptions value="{!dynamicList}"></apex:selectOptions>
+                        <apex:actionSupport action="{!displayAccounts}" event="onchange" reRender="panel2"/>
+                    </apex:selectList>
+                </apex:outputPanel>
+                <apex:outputPanel id="panel2">
+                    <apex:outputLabel value="Select Account  "/>
+                    <apex:selectList size="1" value="{!selectedName}" disabled="{!isNull(selected)}">
+                        <apex:selectOptions value="{!dynamicNames}"></apex:selectOptions>
+                         <apex:actionSupport action="{!displayPlans}" event="onchange" reRender="panel3"/>
+                    </apex:selectList>
+                </apex:outputPanel>
+             	<apex:outputPanel id="panel3">
+                    <apex:outputLabel value="Select Plan       "/>
+                    <apex:selectList size="1" value="{!selectedPlan}" disabled="{!isNull(selectedName)}">
+                        <apex:selectOptions value="{!dynamicPlans}"></apex:selectOptions>
+                         <apex:actionSupport action="{!displayForm}" event="onchange" />
+                    </apex:selectList> 
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>        
+        <apex:pageBlock id="pb1" Title="No Formularies are aasociated to this Plan" rendered="{!temp1}"/>
+        <apex:pageBlock id="pb2" rendered="{!temp}">
+            <apex:pageBlockSection id="sec1" columns="1">
+                <apex:pageBlockTable value="{!formulary}" var="form" cellpadding="2" cellspacing="2" border="1" style="width:100%" >
+                    <apex:column style="width:30%" headerValue="Plan Demographics Name">
+                        <apex:outputText value="{!form.BOT_Account_Plan__r.name}"/>
+                    </apex:column>
+                    <apex:column style="width:35%" headerValue="Plan Formulary Name">
+                        <apex:outputLink value="/{!form.id}" target="_top" style="font-weight">{!form.BOT_Formulary_Name__c}</apex:outputLink>
+                    </apex:column>                    
+                    <apex:column style="width:35%" headervalue="Benefit Design">
+                        <apex:pageBlockTable value="{!form.Benefit_Designs__r}" var="ben" cellpadding="2" cellspacing="2"  border="1" columns="3">
+                            <apex:column style="width:35%" headerValue="Benefit Design">
+                                <apex:outputText value="{!ben.Name}"/>
+                            </apex:column>
+                            <apex:column style="width:35%" headerValue="Status" >
+                                <apex:outputText value="{!ben.BOT_Status__c}"/>
+                            </apex:column>
+                            <apex:column style="width:30%" headerValue="Copay">
+                                <apex:outputText value="{!ben.BOT_Copay__c}"/>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                    </apex:column>
+                </apex:pageBlockTable>                            
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

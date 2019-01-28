@@ -1,0 +1,31 @@
+<apex:page standardController="Account" standardStylesheets="true" sidebar="false">
+<apex:composition template="{!$Page.VODRedirect_vod}"/>
+<script type="text/javascript"> 
+    // add support for group id
+    var groupId = "{!if($CurrentPage.parameters.groupId== null, "", $CurrentPage.parameters.groupId)}";    
+    var actId = "{!Account.Id}"; 
+    var isPersonAct  = "{!Account.IsPersonAccount}";     
+    if (actId !== "" && isPersonAct === 'false') {        
+        groupId = "{!Account.Id}";
+    }
+    // for debugging purposes
+    //var actIds = "{!if($CurrentPage.parameters.accts == null, Account.Id, $CurrentPage.parameters.accts)}";
+    //var callIds = "{!if($CurrentPage.parameters.callIds== null, "", $CurrentPage.parameters.callIds)}";
+    //var groupCallId = "{!if($CurrentPage.parameters.groupCallId== null, "", $CurrentPage.parameters.groupCallId)}"; 
+     
+    var queryparams = "&accts=" + "{!if($CurrentPage.parameters.accts == null, Account.Id, $CurrentPage.parameters.accts)}";
+    queryparams += '&mode=e';
+    queryparams += "&location=" + "{!if($CurrentPage.parameters.location == null, "Account_vod", $CurrentPage.parameters.location)}";
+    queryparams += "&productids=" + "{!if($CurrentPage.parameters.productids == null, "", $CurrentPage.parameters.productids)}";
+    queryparams += "&callIds=" + "{!if($CurrentPage.parameters.callIds== null, "", $CurrentPage.parameters.callIds)}";
+    queryparams += "&Medical_Inquiry_vod__r.Id=" + "{!if($CurrentPage.parameters.Medical_Inquiry_vod__r.Id== null, "", $CurrentPage.parameters.Medical_Inquiry_vod__r.Id)}"; 
+    queryparams += "&groupCallId=" + "{!if($CurrentPage.parameters.groupCallId== null, "", $CurrentPage.parameters.groupCallId)}"; 
+    queryparams += "&groupId=" + groupId;
+    queryparams += "{!if($CurrentPage.parameters.emailType == null, "", "&emailType=" + $CurrentPage.parameters.emailType)}";
+    queryparams += "&suggestionId=" + "{!if($CurrentPage.parameters.suggestionId== null, "", $CurrentPage.parameters.suggestionId)}";
+    queryparams += "&suggestedEmailTemplates=" + "{!if($CurrentPage.parameters.suggestedEmailTemplates== null, "", $CurrentPage.parameters.suggestedEmailTemplates)}";
+    queryparams += "&suggestions=" + "{!if($CurrentPage.parameters.suggestions== null, "", $CurrentPage.parameters.suggestions)}";
+    queryparams = encodeURI(queryparams);
+    com.vod309.redirect.redirect("approvedEmail", queryparams);
+</script>
+</apex:page>

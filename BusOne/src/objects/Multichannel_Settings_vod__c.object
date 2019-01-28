@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Settings (introduced in v22 and beyond) for Veeva CLM</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CLM_EXPLICIT_OPT_IN_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines NULL behavior of Account.CLM_Opt_Type_vod attribute. If FALSE, then CLM consent will be Implicity Opt-In. When TRUE, this assumes that all accounts are Opted Out by default, and must be Explicitly Opted-In to receive email</description>
+        <externalId>false</externalId>
+        <label>CLM Explicit Opt In</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CLM_LASER_POINTER_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enables the laser pointer option for CLM. Can work in conjunction with the Highlighter Pen.</description>
+        <externalId>false</externalId>
+        <label>CLM Laser Pointer</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CLM_OPT_OUT_BEHAVIOR_vod__c</fullName>
+        <description>Determines tracking behavior when the proper consent is not available when CLM Media is displayed to an Account. 0 or NULL = No Tracking, 1 = Track anonymously to Multichannel Activity</description>
+        <externalId>false</externalId>
+        <label>CLM No Consent Behavior</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>COBROWSE_DEFAULT_RECORD_TYPE_vod__c</fullName>
+        <description>Stores the default recordtype name to be used when starting a CoBrowse session from the Account Detail page</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stores the default recordtype name to be used when starting a CoBrowse session from the Account Detail page</inlineHelpText>
+        <label>CoBrowse Default Call RecordType</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CUSTOM_PRESENTATION_MANAGEMENT_vod__c</fullName>
+        <description>0 or NULL - disabled, 1 - CLM Presentation Slides that link expired Key Messages are deleted in Vault integration</description>
+        <externalId>false</externalId>
+        <label>Custom Presentation Management</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CYCLE_PLAN_TARGET_MERGE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Toggles deletion of cycle plan targets of the losing Account during an Account merge. A value of 0 indicates it will maintain current behavior. A value of 1 means the cycle plan target of the account merge loser will be deleted by the merge</description>
+        <externalId>false</externalId>
+        <label>Cycle Plan Target Merge</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEFAULT_DIRECTORY_vod__c</fullName>
+        <description>Stores the External_Id_vod__c of the default Directory when accessing CLM.</description>
+        <externalId>false</externalId>
+        <label>Default Directory</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ENABLE_CLM_FROM_ORDERS_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>0 or NULL - disabled, 1 - CLM accessible from Order</description>
+        <externalId>false</externalId>
+        <label>Enable CLM from Orders</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ENHANCED_SUB_PRESENTATIONS_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Controls functionality for Sub Presentations.
+0 - Default
+1 - Sub Presentation Slides can be rearranged in Custom Presentations.</description>
+        <externalId>false</externalId>
+        <label>Enhanced Sub Presentations</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HIDE_CLM_THUMBNAILS_IN_ALL_DIR_VIEW_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>False: Thumbnails display in &quot;CLM Presentations&quot; and &quot;Training Presentations&quot; Directories. True: Thumbnails do not display in &quot;CLM Presentations&quot; and &quot;Training Presentations&quot; Directories.</description>
+        <externalId>false</externalId>
+        <label>Hide CLM Thumbnails In All Dir View</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MCCP_DISABLE_CALL_WIDGET_vod__c</fullName>
+        <defaultValue>&quot;MCCP_DISABLE_CALL_WIDGET;;Multichannel&quot;</defaultValue>
+        <description>Double semi-colon delimited list of call record types where the MCCP widget should not be displayed.</description>
+        <externalId>false</externalId>
+        <label>MCCP Disable Call Widget</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MCCP_ENABLE_ACTIONS_MY_PLAN_vod__c</fullName>
+        <defaultValue>&quot;Call2_vod&quot;</defaultValue>
+        <description>Setting for enabling action buttons from the &quot;My Plan&quot; menu. Values should be double semi-colon delimited.
+Call2_vod - Enables the Schedule Calls button</description>
+        <externalId>false</externalId>
+        <label>MCCP Enable Actions from My Plan</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MCCP_ENABLE_DETAIL_PRIORITY_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>0 or null = disabled
+1 = enables the MCCP sub-section in the Call Detail Priority section. Columns displayed will be Detail Priority and Product</description>
+        <externalId>false</externalId>
+        <label>MCCP Enable Detail Priority</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MCCP_ENABLE_GOALS_REM_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>0 or null = disabled
+1 = enables the MCCP sub-section in the Call Detail Priority section. Columns displayed will be Detail Priority and Product</description>
+        <externalId>false</externalId>
+        <label>MCCP Enable Goals Remaining</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MCCP_POPUP_FIELDS_vod__c</fullName>
+        <defaultValue>&quot;;Product_Attainment_vod__c;Product_Activity_Goal_vod__c;Product_Actual_Activity_vod__c;Product_Activity_Remaining_vod__c;&quot;</defaultValue>
+        <description>List of API field names from MC_Cycle_Plan_Product_vod to be displayed in the product grid in MCCP pop-up of MySchedule</description>
+        <externalId>false</externalId>
+        <label>MCCP Fields in MySchedule Pop-Up</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MCCP_SEND_TO_SCHED_TYPE_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Setting to determine the scheduler type to send filter list.
+0 = Send to Call Scheduler
+1 = Send to List Scheduler. Works in conjunction with the ENABLE_LIST_SCHEDULER Veeva Setting.</description>
+        <externalId>false</externalId>
+        <label>MCCP Send to Scheduler Type</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MEDIA_SEARCH_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>0 or Null - Media search is disabled
+1 - Media search is enabled</description>
+        <externalId>false</externalId>
+        <label>Media Search</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MEDICAL_INQUIRY_OVERLAY_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Setting to configure launching medical inquiries</description>
+        <externalId>false</externalId>
+        <label>Medical Inquiry Overlay</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>REMOTE_MEETING_DEFAULT_RECORD_TYPE_vod__c</fullName>
+        <description>Stores the default call record type name to be used when directly creating a remote meeting (such as through My Schedule) rather making an existing call a remote meeting.</description>
+        <externalId>false</externalId>
+        <label>Remote Meeting Default Call RecordType</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SELECT_CLM_CALL_RECORD_TYPE_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Allows users to select the call record type for a CLM Call</description>
+        <externalId>false</externalId>
+        <label>Select CLM Call Record Type</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SWIPE_SENSITIVITY_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Controls the width of the swipe gesture needed to proceed to previous/next Slide. Enter 0 (or leave blank) for the default swipe. Enter 1 for swipe that is less than the default swipe. Enter 2 for the least wide swipe.</description>
+        <externalId>false</externalId>
+        <label>Swipe Sensitivity</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TRACK_CLM_MEDIA_PREVIEW_vod__c</fullName>
+        <description>Setting to configure CLM Tracking from Media Preview when no Account is selected</description>
+        <externalId>false</externalId>
+        <inlineHelpText>0 or NULL - disabled, 1 - All activity, 2 - Training only</inlineHelpText>
+        <label>Track CLM Media Preview</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Multichannel Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

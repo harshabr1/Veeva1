@@ -1,0 +1,27 @@
+<!--
+Name:BOT_BenefitDesign_View
+Created By:Harsha BR
+Created Date:02/27/2017
+Overview :Used to display theBenefit design data related to a Formulary.
+-->
+<apex:page standardController="Formulary_Products_vod__c" name="Benefit Design" title="Benefit Design" sidebar="false" showHeader="false" extensions="BOT_Drug_View_Extn">
+    <apex:form id="theForm">
+        <apex:pageBlock mode="edit" id="pb" >
+            <apex:outputPanel id="drugPanel"  layout="block">
+                <apex:pageBlockTable id="designResults" cellpadding="2" cellspacing="2" border="1" value="{!lstDesigns}" var="objDesign" rendered="{!IF(AND(NOT(ISBLANK(lstDesigns)),lstDesigns.size>0),'TRUE','FALSE')}" >
+                    <apex:column value="{!objDesign.BOT_Formulary_Name__c}"/>
+                    <apex:column >
+                        <apex:pageBlockTable value="{!objDesign.Benefit_Designs__r}" var="ben" cellpadding="2" cellspacing="2"  border="1" columns="3">
+                            <apex:column id="name" value="{!ben.Name}"/>
+                            <apex:column id="status" value="{!ben.BOT_Status__c}"/>
+                            <apex:column id="copay" value="{!ben.BOT_Copay__c}"/>
+                        </apex:pageBlockTable>
+                    </apex:column>
+                </apex:pageBlockTable>
+                <apex:pageBlockSection rendered="{!IF(OR(ISBLANK(lstDesigns),lstDesigns.size==0),'TRUE','FALSE')}" >
+                    <apex:outputLabel style="font-size: 15px" value="No Benifit design records associated with selected formulary" />
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

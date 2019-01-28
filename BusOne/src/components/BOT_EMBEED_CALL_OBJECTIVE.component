@@ -1,0 +1,21 @@
+<apex:component controller="BOT_Call_Edit_Extn" >
+    <apex:form >
+		<apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<apex:outputLabel style="font-size:16px;" >
+                	Call Objectives
+        		</apex:outputLabel>
+            </apex:pageBlockSection>
+        	<div style="width:100%">
+            <apex:outputPanel id="oPanel">
+        		<apex:pageBlockSection columns="4">
+                 	<apex:inputField label="Product" value="{!productSingle.Product__c}" />
+                   	<apex:inputField label="Objective1" value="{!productSingle.Objective1__c}" />
+                    <apex:inputField label="Objective2" value="{!productSingle.Objective2__c}" />
+                   	<apex:inputField label="Objective3" value="{!productSingle.Objective3__c}" />
+                </apex:pageBlockSection>
+        	</apex:outputPanel>
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+</apex:component>

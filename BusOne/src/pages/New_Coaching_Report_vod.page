@@ -1,0 +1,3 @@
+<apex:page tabStyle="Advanced_Coaching_Reports_vod__tab">
+    <c:VOD_EMBED veevaModule="survey" veevaPage="add-survey-target" queryParams="coachingReports=true"/>
+</apex:page>

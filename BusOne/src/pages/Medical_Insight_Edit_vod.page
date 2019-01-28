@@ -1,0 +1,4 @@
+<apex:page standardController="Medical_Insight_vod__c">
+    <c:VOD_EMBED veevaModule="kmi" objectType="Medical_Insight_vod__c" veevaPage="{!IF(Medical_Insight_vod__c.Status_vod__c == 'Submitted_vod', 'medical-insight-view', 'medical-insight-edit')}"
+        queryParams="accountId={!IF(Medical_Insight_vod__c.Id == null && Medical_Insight_vod__c.Account_vod__c != null, Medical_Insight_vod__c.Account_vod__c, $CurrentPage.parameters.accountId)}&accountPlanId={!IF(Medical_Insight_vod__c.Id == null && Medical_Insight_vod__c.Account_Plan_vod__c != null, Medical_Insight_vod__c.Account_Plan_vod__c, $CurrentPage.parameters.accountPlanId)}&retURL={!$CurrentPage.parameters.retURL}&RecordType={!$CurrentPage.parameters.RecordType}"/>
+</apex:page>

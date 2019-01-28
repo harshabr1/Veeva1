@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores report files that can be displayed within the Veeva application.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Text area that contains the report description.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>External_Id_vod__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>External ID</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Failure_Msg_vod__c</fullName>
+        <description>Failure_Msg_vod captures the reasons for instances when file publishing is not completed successfully. It will be populated only when HTML_Report_vod.Status_vod = Failed_vod.</description>
+        <externalId>false</externalId>
+        <label>Status Details</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Object_RecordType_Id_vod__c</fullName>
+        <description>The stamped value of the object record type id.</description>
+        <externalId>false</externalId>
+        <label>Object Record Type Id</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Object_RecordType_vod__c</fullName>
+        <description>Used to display the object record type. When record is saved, it stored the object record type developer name.</description>
+        <externalId>false</externalId>
+        <label>Object Record Type</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check this field to configure MyInsights visualization for phone form factor</description>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Profile_Name_vod__c</fullName>
+        <description>Name of the profile that this record applies to.</description>
+        <externalId>false</externalId>
+        <label>Profile Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Profile_vod__c</fullName>
+        <description>Used to indicate which User Profile the report is applicable for.</description>
+        <externalId>false</externalId>
+        <label>Profile</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Published_Date_vod__c</fullName>
+        <description>Indicates the end time of a job from when all records have been written back to Salesforce.</description>
+        <externalId>false</externalId>
+        <label>Published Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Review_Before_Submit_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When enabled, the user will be forced to review the designated report before being able to submit the record</description>
+        <externalId>false</externalId>
+        <label>Enforce Report Review Before Submit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sharing_Group_vod__c</fullName>
+        <description>Used for Sharing Rules</description>
+        <externalId>false</externalId>
+        <label>Sharing Group</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status of the publishing job</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In_Progress_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Published_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Failed_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unpublished_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>HTML Report</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Report Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>HTML Reports</pluralLabel>
+    <recordTypes>
+        <fullName>Account_Plan_vod</fullName>
+        <active>true</active>
+        <description>Account Plan Dashboard</description>
+        <label>Account_Plan_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Failed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In_Progress_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Published_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unpublished_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Account_Profile_Override_vod</fullName>
+        <active>true</active>
+        <description>All HTML reports records with this record type will be Account Screen Replacements.</description>
+        <label>Account_Profile_Override_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Failed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In_Progress_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Published_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unpublished_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Account_Reports_vod</fullName>
+        <active>true</active>
+        <description>HTML Account Reports</description>
+        <label>Account_Reports_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Inventory_Monitoring_vod</fullName>
+        <active>true</active>
+        <description>HTML Reports for Inventory Monitoring</description>
+        <label>Inventory_Monitoring_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Failed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In_Progress_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Published_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unpublished_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>KOL_Profile_vod</fullName>
+        <active>true</active>
+        <description>KOL HTML Profile</description>
+        <label>KOL_Profile_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Orders_vod</fullName>
+        <active>true</active>
+        <description>Orders Report</description>
+        <label>Orders_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Remote_Meeting_vod</fullName>
+        <active>true</active>
+        <description>Remote Meeting</description>
+        <label>Remote_Meeting_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Failed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In_Progress_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Published_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unpublished_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Territory_Insights_vod</fullName>
+        <active>true</active>
+        <description>HTML Territory Insights</description>
+        <label>Territory_Insights_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Failed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In_Progress_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Published_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unpublished_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Publish_To_CDN_vod</fullName>
+        <availability>online</availability>
+        <description>Button to push HTML Report to CDN for online platform support</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Publish</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!INCLUDE($SControl.VSESSION_vod)}
+        var sfEndpoint = &apos;{!$Api.Partner_Server_URL_370}&apos;;
+        var sfSession = &apos;{!$Api.Session_ID}&apos;;
+        var htmlReportId = &apos;{!CASESAFEID(HTML_Report_vod__c.Id)}&apos;;
+        var mcServerUrl = MC_SERVER_URL + &apos;/&apos;+ MC_CONTEXT_ROOT;
+        var requestUrl = mcServerUrl + &apos;/api/v1/htmlreports/actions/publish&apos;;
+        var request = new XMLHttpRequest();
+        request.open(&apos;POST&apos;, requestUrl, true);
+        request.setRequestHeader(&apos;Content-Type&apos;, &apos;application/json;charset=UTF-8&apos;);
+        request.setRequestHeader(&apos;sfEndpoint&apos;, sfEndpoint);
+        request.setRequestHeader(&apos;sfSession&apos;, sfSession);
+        request.onload = function() {
+          if (request.status &gt;= 200 &amp;&amp; request.status &lt; 400) {
+            console.log(request.responseText);
+          }
+        };
+        var postBody = {};
+        postBody.htmlReportId = htmlReportId;
+        request.send(JSON.stringify(postBody));
+var btns = document.getElementsByClassName(&apos;btn&apos;), b = btns.length, btn;
+while(b--) {
+    btn = btns[b];
+    if(btn.getAttribute(&apos;name&apos;) === &apos;publish_to_cdn_vod&apos;) {
+        btn.setAttribute(&apos;disabled&apos;, true);
+        btn.setAttribute(&apos;class&apos;, &apos;btnDisabled&apos;);
+    }
+}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/apex.js&quot;)} 
+
+var messages = sforce.connection.query(&quot;select ID, Name, Text_vod__c from Message_vod__c where Name = &apos;PUBLISHING_STARTED&apos; and Category_vod__c = &apos;FieldReporting&apos;&quot;),
+message = messages.getArray(&quot;records&quot;)[0];
+alert(message.Text_vod__c);</url>
+    </webLinks>
+</CustomObject>

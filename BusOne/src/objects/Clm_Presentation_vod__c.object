@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Closed Loop Marketing presentations.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Approved_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the presentation has been reviewed and approved so that it can be migrated</description>
+        <externalId>false</externalId>
+        <label>Approved?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Content_Channel_vod__c</fullName>
+        <description>Used to store the content type.</description>
+        <externalId>false</externalId>
+        <label>Content Channel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Events_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CLM_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Control_Visibility_vod__c</fullName>
+        <description>If Product is selected, then Detail Group field is ignored when determining CLM content visibility.  If Detail Group is selected, then Product field is ignored when determining CLM content visibility.</description>
+        <externalId>false</externalId>
+        <label>Control Visibility</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Product_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Detail_Group_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Copied_From_vod__c</fullName>
+        <description>Populated with the 18 digit org ID from which this presentation was copied. If the presentation was created in the current org, this field is blank</description>
+        <externalId>false</externalId>
+        <label>Copied From</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Copy_Date_vod__c</fullName>
+        <description>Populated with the Date and Time when the presentation record was copied from a different org.</description>
+        <externalId>false</externalId>
+        <label>Copied On</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Default_Presentation_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if this presentation is the default presentation for the associated product.</description>
+        <externalId>false</externalId>
+        <label>Default Presentation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Contains the description of the CLM Presentation.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Directory_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to reference what directory the Presentation is in.</description>
+        <externalId>false</externalId>
+        <label>Directory</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Directory record must have Record Type = CLM_vod</errorMessage>
+            <filterItems>
+                <field>Directory_vod__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>CLM_vod</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Directory_vod__c</referenceTo>
+        <relationshipName>CLM_Presentations_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Survey_Overlay_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Allows the survey associated to the presentation to appear in the CRM overlay.</description>
+        <externalId>false</externalId>
+        <label>Enable Survey Overlay</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>End_Date_vod__c</fullName>
+        <description>Date when the presentation is made unavailable for users to record calls against.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Event_Content_vod__c</fullName>
+        <description>Used to store the content type.</description>
+        <externalId>false</externalId>
+        <label>Event Content</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Events_Only_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Events_CLM_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Hidden_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When checked, this presentation is not shown in the CLM Presentations view and does not appear in the presentation picker.</description>
+        <externalId>false</externalId>
+        <label>Hidden?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Keywords_vod__c</fullName>
+        <description>Comma separated keywords of the CLM Presentation.</description>
+        <externalId>false</externalId>
+        <label>Keywords</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Original_Record_ID_vod__c</fullName>
+        <description>Populated with the 18 digit SFDC ID in the source org for this presentation.</description>
+        <externalId>false</externalId>
+        <label>Original Record ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentId_vod__c</fullName>
+        <description>Parent Id of the presentation.</description>
+        <externalId>false</externalId>
+        <label>Parent Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Presentation_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Exploria Id of the presentation.</description>
+        <externalId>true</externalId>
+        <label>Presentation Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The product associated with this presentation.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipName>CLM_Presentations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date_vod__c</fullName>
+        <description>Date when the presentation is available for users to record calls against.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status of the presentation on the CDN. A piece of content will either be &apos;Approved&apos;, &apos;Staged&apos;, or &apos;Expired&apos;</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Staged_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Expired_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Survey_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Populate the survey lookup if the CLM presentation will reference surveys.</description>
+        <externalId>false</externalId>
+        <label>Survey</label>
+        <referenceTo>Survey_vod__c</referenceTo>
+        <relationshipName>CLM_Presentations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Training_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Presentations marked as training content will only be displayed in the media viewer when training mode is enabled.  These presentations will not be available when recording calls.</description>
+        <externalId>false</externalId>
+        <label>Training Content</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Type_vod__c</fullName>
+        <description>Indicates the type of presentation.  If blank or &quot;HQ&quot;, presentation is defined as one created by Headquarters.  &quot;Custom&quot; indicates a presentation created by an end user.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>HQ</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Custom</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id used by Veeva CRM.</description>
+        <externalId>true</externalId>
+        <label>Veeva External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_DNS_vod__c</fullName>
+        <description>Vault DNS of the document.</description>
+        <externalId>false</externalId>
+        <label>Vault DNS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_Doc_Id_vod__c</fullName>
+        <description>Vault Id of the document.</description>
+        <externalId>false</externalId>
+        <label>Vault Document ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_External_Id_vod__c</fullName>
+        <description>External ID from Vault</description>
+        <externalId>false</externalId>
+        <label>Vault External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_GUID_vod__c</fullName>
+        <description>Global Unique Identifier for Vault instance where this document resides.</description>
+        <externalId>false</externalId>
+        <label>Vault GUID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_Last_Modified_Date_Time_vod__c</fullName>
+        <description>Last modified date time of the content as reported by Vault.</description>
+        <externalId>false</externalId>
+        <label>Vault Last Modified Date Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Version_vod__c</fullName>
+        <description>Version of the Vault Document.</description>
+        <externalId>false</externalId>
+        <label>Version</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CLM Presentation</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>CLM Presentation Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>CLM Presentations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>End_Date_After_Start_Date</fullName>
+        <active>true</active>
+        <description>CLM Presentation end date must be later than start date.</description>
+        <errorConditionFormula>End_Date_vod__c  &lt;  Start_Date_vod__c</errorConditionFormula>
+        <errorDisplayField>End_Date_vod__c</errorDisplayField>
+        <errorMessage>The end date must be later than the start date.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Clone_Presentation_vod</fullName>
+        <availability>online</availability>
+        <description>This button launched a page that is used to perform a deep clone on CLM Presentation and associated CLM Presentation Slide objects.</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>sidebar</openType>
+        <page>Clone_Presentation_vod</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Migrate_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Migrate</masterLabel>
+        <openType>sidebar</openType>
+        <page>Migrate_CLM_Presentation_vod</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>View_All_Media_vod</fullName>
+        <availability>online</availability>
+        <description>This button launches a page that contains all related Key Message Media Files for the CLM Presentation record. From this page, Media Files are available for download.</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>View All Media</masterLabel>
+        <openType>sidebar</openType>
+        <page>View_All_Media_vod</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

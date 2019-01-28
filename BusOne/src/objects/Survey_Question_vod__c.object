@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Ordered questions associated with a particular survey target.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Answer_Choice_vod__c</fullName>
+        <description>Stores the potential answer choices for multiselect picklist, picklist, and radio questions. If the question is taken from question bank, this value will be copied from Question_vod.  Weights and response text can all be edited and will not change the question bank entry.</description>
+        <externalId>false</externalId>
+        <label>Answer Choices</label>
+        <length>700</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID is used for data loading only.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Max_Score_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Set by trigger every time response values are updated.  This stores the maximum possible score for a given question.  It only appears on picklist, multiselect picklist, and radio questions where at least one score is entered.  If no scores are entered, the value is 0.</description>
+        <externalId>false</externalId>
+        <label>Max Score</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Min_Score_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Set by trigger every time response values are updated.  This stores the minimum possible score for a given question.  It only appears on picklist, multiselect picklist, and radio questions where at least one score is entered.  If no scores are entered, the value is 0.</description>
+        <externalId>false</externalId>
+        <label>Min Score</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_vod__c</fullName>
+        <description>The display order of a question within the survey.</description>
+        <externalId>false</externalId>
+        <label>Question Order</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Question_Number_vod__c</fullName>
+        <description>Field that is Stamped with the corresponding number of the survey question as it displays in the UI.</description>
+        <externalId>false</externalId>
+        <label>Question Number</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Question_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Links a survey question to a question record.</description>
+        <externalId>false</externalId>
+        <label>Question</label>
+        <referenceTo>Question_vod__c</referenceTo>
+        <relationshipLabel>Survey Questions</relationshipLabel>
+        <relationshipName>Survey_Questions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Required_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If marked as required, a question becomes required on the survey.</description>
+        <externalId>false</externalId>
+        <label>Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Survey_vod__c</fullName>
+        <description>Links a question to a survey.</description>
+        <externalId>false</externalId>
+        <label>Survey Header</label>
+        <referenceTo>Survey_vod__c</referenceTo>
+        <relationshipLabel>Survey Questions</relationshipLabel>
+        <relationshipName>Survey_Questions_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Text_vod__c</fullName>
+        <description>Question text.</description>
+        <externalId>false</externalId>
+        <label>Question Text</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Survey Question</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Survey_vod__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Text_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>SQ{00000000}</displayFormat>
+        <label>Survey Question ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Survey Questions</pluralLabel>
+    <recordTypes>
+        <fullName>Date_vod</fullName>
+        <active>true</active>
+        <description>Used for date questions.</description>
+        <label>Date_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Datetime_vod</fullName>
+        <active>true</active>
+        <description>Used for datetime questions.</description>
+        <label>Datetime_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Decimal_vod</fullName>
+        <active>true</active>
+        <description>Stores the answer value for decimal type questions</description>
+        <label>Decimal_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Description_vod</fullName>
+        <active>true</active>
+        <description>Used for description text.</description>
+        <label>Description_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Long_Text_vod</fullName>
+        <active>true</active>
+        <description>Used for text questions where the answer is limited to 2,500 characters.</description>
+        <label>Long_Text_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Multiselect_vod</fullName>
+        <active>true</active>
+        <description>Used for multselect picklist type questions.</description>
+        <label>Multiselect_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Number_vod</fullName>
+        <active>true</active>
+        <description>Used for number questions.</description>
+        <label>Number_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Picklist_vod</fullName>
+        <active>true</active>
+        <description>Used for picklist questions. Picklist and radio type questions both only allow a single answer choice, but picklist questions display in a dropdown box.</description>
+        <label>Picklist_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Radio_vod</fullName>
+        <active>true</active>
+        <description>Used for radio questions.</description>
+        <label>Radio_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Text_vod</fullName>
+        <active>true</active>
+        <description>Used for text questions where the answer is limited to 255 characters.</description>
+        <label>Text_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Add_Selected_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Add Selected</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;noop&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Add_To_Question_Bank_vod</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Add To Question Bank</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>console.log(&apos;noop&apos;);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Add_To_Survey_vod</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Add To Survey</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log(&apos;noop&apos;);</url>
+    </webLinks>
+</CustomObject>

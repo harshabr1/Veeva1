@@ -1,0 +1,3 @@
+<apex:page sidebar="false" standardController="Contract_Partner_vod__c" recordSetVar="contractPartners">
+    <c:VOD_EMBED veevaModule="contract" veevaPage="viewSignatures" queryParams="partners={!selected}"/>
+</apex:page>

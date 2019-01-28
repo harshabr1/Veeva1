@@ -1,0 +1,5 @@
+<apex:page controller="VOD_Documentation_Controller" showHeader="false" sidebar="false">
+  <script type="text/javascript">
+      window.location='{!DocUrl}';
+  </script>
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:page standardController="Medical_Event_vod__c" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_Scroll_4000_vod}"/>
+<script type="text/javascript">        
+    var queryParams= "&Id="+"{!Medical_Event_vod__c.id}"+"&customobject=Medical_Event_vod__c&event=viewSignatures";
+    com.vod309.redirect.redirect("medicalEvent", queryParams);
+</script>
+</apex:page>

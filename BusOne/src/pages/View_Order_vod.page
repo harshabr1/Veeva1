@@ -1,0 +1,42 @@
+<apex:page standardController="Order_vod__c" extensions="OrderProcessExtension" standardStylesheets="true">
+<div id="approval_history_related_list" style="visibility: hidden">
+    <apex:outputPanel id="Approval_History_objects" rendered="{!rendered}">
+        <div id="bPageTitle" class="bPageTitle">
+            <div id="ptBody" class="ptBody secondaryPalette">
+                <div id="content" class="content">
+                    <img id="pageTitleIcon" src="/s.gif" alt="Home" class="pageTitleIcon"/>
+                    <h1 id="custLayout" class="pageType">{!$ObjectType.Order_vod__c.Label}<span id="span1" class="titleSeparatingColon">:</span>
+                    </h1>
+                    <h2 id="pageDescription" class="pageDescription">{!Order_vod__c.Name}</h2>
+                    <div id="divBlank" class="blank">&nbsp;</div>
+                </div>
+            </div>
+            <div id="ptBreadcrumb" class="ptBreadcrumb"></div>
+        </div>
+        <apex:relatedList list="ProcessSteps" >
+        </apex:relatedList>
+        <script>
+                var submitButton = document.querySelector('[class="relatedProcessHistory"] [class="pbButton"] [name="piSubmit"]');
+                if (submitButton) {
+                    // submitButton.parentNode.removeChild(submitButton);
+                    // keep spacing this way
+                    submitButton.attributes.onClick = null;
+                    submitButton.style.visibility = "hidden";
+                }
+        </script>
+    </apex:outputPanel>
+</div> 
+<apex:composition template="{!$Page.VODRedirect_Scroll_1800_vod}"/>
+<script> 
+    var vodiframe = document.getElementById("vod_iframe");
+    vodiframe.onload = function() {
+        var relatedList = document.getElementById('approval_history_related_list');
+        relatedList.style.visibility = "visible";
+    };    
+</script>
+<script type="text/javascript">        
+    var queryparams = "&orderid=" + "{!Order_vod__c.id}";  
+    queryparams += '&mode=v';
+    com.vod309.redirect.redirect("order", queryparams);
+</script>
+</apex:page>

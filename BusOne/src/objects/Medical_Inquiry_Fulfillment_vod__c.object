@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Captures the information from the initiating Medical Inquiry request, the current Assignee, and the Fulfillment Status.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Display_Name_vod__c</fullName>
+        <description>Veeva internal field that ensures proper display of Account Name after account merges or territory realignments</description>
+        <externalId>false</externalId>
+        <label>Account Display Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Account of the associated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Medical Inquiry Fulfillments</relationshipLabel>
+        <relationshipName>Medical_Inquiry_Fulfillment_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Address_Line_1_vod__c</fullName>
+        <description>The Address Line 1 of the Address captured for fulfillment of the associated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>Address Line 1</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address_Line_2_vod__c</fullName>
+        <description>The Address Line 2 of the Address captured for fulfillment of the associated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>Address Line 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Assigned_To_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The User currently assigned to respond to the Medical Inquiry Fulfillment record.</description>
+        <externalId>false</externalId>
+        <label>Assigned To</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Medical_Inq_Fulfillment_Assigned_To_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Call_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Call</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Medical Inquiry Fulfillments</relationshipLabel>
+        <relationshipName>Medical_Inquiry_Fulfillment_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>City_vod__c</fullName>
+        <description>The City of the Address captured for fulfillment of the associated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_vod__c</fullName>
+        <description>The Country of the Address captured for fulfillment of the associated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delivery_Method_vod__c</fullName>
+        <description>The selected Delivery Method of the associated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>Delivery Method</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_vod__c</fullName>
+        <description>The Email Address captured for fulfillment of the associated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>E-Mail</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_Id_vod__c</fullName>
+        <description>Veeva internal field that ensures proper synchronization after account merges or territory realignments.</description>
+        <externalId>false</externalId>
+        <label>Entity Reference Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fax_Number_vod__c</fullName>
+        <description>The Fax Number captured for fulfillment of the assoicated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>Fax Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Initiated_By_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The User that created the associated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>Initiated By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Medical_Inquiry_Fulfillment_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Initiated_Datetime_vod__c</fullName>
+        <description>The Date and time the Medical Inquiry fulfillment record was created via the associated Medical Inquiry Request.</description>
+        <externalId>false</externalId>
+        <label>Initiated Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Inquiry_Text_vod__c</fullName>
+        <description>The Inquiry Text captured for fulfillment of the associated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>Inquiry Text</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Medical_Inquiry_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Medical Inquiry request that the fulfillment record was created from.</description>
+        <externalId>false</externalId>
+        <label>Medical Inquiry</label>
+        <referenceTo>Medical_Inquiry_vod__c</referenceTo>
+        <relationshipLabel>Medical Inquiry Fulfillments</relationshipLabel>
+        <relationshipName>Medical_Inquiry_Fulfillment_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_Created_Datetime_vod__c</fullName>
+        <description>Date and time the Medical Inquiry Fulfillment record was created on the mobile device.</description>
+        <externalId>false</externalId>
+        <label>Mobile Created Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field to aid in synchronization and allow for the creation of Medical Inquiry Fulfillment records on the offline platforms.</description>
+        <externalId>true</externalId>
+        <label>Mobile Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Phone_Number_vod__c</fullName>
+        <description>The Phone Number captured for fulfillment of the associated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>Phone Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <description>The Product for which the Inquiry Text pertains to on the associated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rush_Delivery_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Represents whether the fulfillment of the associated Medical Inquiry request was requested as a rush.</description>
+        <externalId>false</externalId>
+        <label>Rush Delivery</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>State_vod__c</fullName>
+        <description>The State of the Address captured for fulfillment of the associated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>The state of the Medical Inquiry Fulfillment record.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Assigned_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Zip_vod__c</fullName>
+        <description>The Zip Code of the Address captured for fulfillment of the associated Medical Inquiry request.</description>
+        <externalId>false</externalId>
+        <label>Zip</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Medical Inquiry Fulfillment</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>MIF-{00000}</displayFormat>
+        <label>MI Fulfillment Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Medical Inquiry Fulfillments</pluralLabel>
+    <recordTypes>
+        <fullName>Email_vod</fullName>
+        <active>true</active>
+        <description>Medical Inquiry Fulfillment record created for an Email delivery method.</description>
+        <label>Email_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Assigned_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Fax_vod</fullName>
+        <active>true</active>
+        <description>Medical Inquiry Fulfillment record created for a Fax delivery method.</description>
+        <label>Fax_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Assigned_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Mail_vod</fullName>
+        <active>true</active>
+        <description>Medical Inquiry Fulfillment record created for an Urgent Mail or Mail delivery method.</description>
+        <label>Mail_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Assigned_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Phone_vod</fullName>
+        <active>true</active>
+        <description>Medical Inquiry Fulfillment record created for a Phone delivery method.</description>
+        <label>Phone_vod</label>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Assigned_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Assign_vod</fullName>
+        <availability>online</availability>
+        <description>Button caption to assign a MIF</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Assign</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>console.log();</url>
+    </webLinks>
+</CustomObject>

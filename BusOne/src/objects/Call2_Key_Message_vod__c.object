@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores all Key Messages recorded on a call</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the account for the source of the call. Each key message is associated with a call.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Call Key Messages(Accounts)</relationshipLabel>
+        <relationshipName>Call2_Key_Message_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Attendee_Type_vod__c</fullName>
+        <description>The type of entity who the call key message is created for. This field is used in reporting. For performance reasons, this is not set by an APEX trigger. For data import, this field should be set correctly otherwise reports that depend on this field may not run correctly.</description>
+        <externalId>false</externalId>
+        <label>Attendee Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Group_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contact_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Person_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>User_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CLM_ID_vod__c</fullName>
+        <description>Closed Loop Marketing slide Id.</description>
+        <externalId>false</externalId>
+        <label>CLM ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call2_vod__c</fullName>
+        <description>Lookup to the call. Each key message is associated with a call.</description>
+        <externalId>false</externalId>
+        <label>Call</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Call Key Messages</relationshipLabel>
+        <relationshipName>Call2_Key_Message_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Call_Date_vod__c</fullName>
+        <description>The date of the call it was recorded for.</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Category_vod__c</fullName>
+        <description>Records the message category of the message. Used primarily for reporting.</description>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Efficacy</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Safety</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tolerability</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Efficiencies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Clm_Presentation_Name_vod__c</fullName>
+        <description>Stamped CLM Presentation name</description>
+        <externalId>false</externalId>
+        <label>CLM Presentation Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Clm_Presentation_Version_vod__c</fullName>
+        <description>Version of the Presentation</description>
+        <externalId>false</externalId>
+        <label>Version</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Clm_Presentation_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Reference to the CLM Presentation</description>
+        <externalId>false</externalId>
+        <label>CLM Presentation</label>
+        <referenceTo>Clm_Presentation_vod__c</referenceTo>
+        <relationshipLabel>Call Key Messages</relationshipLabel>
+        <relationshipName>Call_Key_Messages_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the contact for the source of the call. Each key message is associated with a call.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Call Key Messages(Contacts)</relationshipLabel>
+        <relationshipName>Call2_Key_Message_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Product Catalog records of type Detail Group.</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Call Key Messages (Detail Group)</relationshipLabel>
+        <relationshipName>Call2_Key_Messages_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Display_Order_vod__c</fullName>
+        <description>The display order of CLM Messages presented on a call.  This only takes into account CLM type key messages.</description>
+        <externalId>false</externalId>
+        <label>Display Order</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Duration_vod__c</fullName>
+        <description>Duration of the visit to the slide. From Exploria, the value is in ticks (10,000,000 ticks = 1 second). Otherwise, the value is in seconds.</description>
+        <externalId>false</externalId>
+        <label>Duration</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_Id_vod__c</fullName>
+        <description>This Veeva field ensures proper synchronization even after account merges or territory realignments.</description>
+        <externalId>false</externalId>
+        <label>Entity Reference Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_KM_Id_vod__c</fullName>
+        <description>For Internal Use Only. Utilized to maintain relationship to Key Message during sync.</description>
+        <externalId>false</externalId>
+        <label>Entity Reference KM Id</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Parent_Call_vod__c</fullName>
+        <description>Formula Field to determine if the Call Key Message record is part of the Parent Call or of an Attendee Call record.  1 indicates that the record is associated with the Parent Call.  0 indicates that it is associated with an Attendee Call.</description>
+        <externalId>false</externalId>
+        <formula>IF(LEN(Call2_vod__r.Parent_Call_vod__c )&gt;0, 0,1)</formula>
+        <label>Is Parent Call?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key_Message_Name_vod__c</fullName>
+        <description>Stamped Key Message name</description>
+        <externalId>false</externalId>
+        <label>Key Message Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key_Message_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the Key Message template. Key Messages are created based on Key Message Templates.</description>
+        <externalId>false</externalId>
+        <label>Key Message</label>
+        <referenceTo>Key_Message_vod__c</referenceTo>
+        <relationshipLabel>Call Key Messages</relationshipLabel>
+        <relationshipName>Call2_Key_Message_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Helper field for data loads.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Presentation_ID_vod__c</fullName>
+        <description>Value is the CLM presentation Id concatenated with the Internal Name, separated by ::.</description>
+        <externalId>false</externalId>
+        <label>Presentation ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the product catalog for the product associated with the key message.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Call Key Messages</relationshipLabel>
+        <relationshipName>Call_Key_Messages_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reaction_vod__c</fullName>
+        <description>Picklist of reaction to the message. Edit the picklist to change the reaction values.</description>
+        <externalId>false</externalId>
+        <label>Reaction</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Positive</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Neutral</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Negative</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Segment_vod__c</fullName>
+        <description>Holds the segment of the Account to which this Call Key Message was delivered</description>
+        <externalId>false</externalId>
+        <label>Segment</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Slide_Version_vod__c</fullName>
+        <description>Version of this slide.</description>
+        <externalId>false</externalId>
+        <label>Slide Version</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Time_vod__c</fullName>
+        <description>Start Time when the slide was visited.</description>
+        <externalId>false</externalId>
+        <label>Start Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>User_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the user for the source of the call. Each key message is associated with a call.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>R00N410000055nU5EAI</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Vehicle_vod__c</fullName>
+        <description>Master list of all the Key Message vehicles used. Used to record what collateral is used to deliver the Key Message.</description>
+        <externalId>false</externalId>
+        <label>Vehicle</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>MVA</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Scionti reprint</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Schlegel reprint</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Urology Times Article</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Call Key Message</label>
+    <nameField>
+        <displayFormat>CMT{00000000}</displayFormat>
+        <label>Key Message Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Call Key Messages</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Account_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Call2_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Key_Message_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Reaction_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account_vod__c</searchFilterFields>
+        <searchFilterFields>Call2_vod__c</searchFilterFields>
+        <searchFilterFields>Key_Message_vod__c</searchFilterFields>
+        <searchFilterFields>Product_vod__c</searchFilterFields>
+        <searchFilterFields>Reaction_vod__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

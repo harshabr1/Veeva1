@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Data Map Template object is used to store mapping templates to support the loading of sales files into the VoD database.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Active checkbox to determine if the Data Map Template is available for selection in the Analytics Admin page for file loading.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Buckets_vod__c</fullName>
+        <description>Buckets corresponds to the number of sales data buckets for the Analytics File that will be processed with this data template.  For example, a Monthly file with 2 years worth of data will have a value of 24 for this field.</description>
+        <externalId>false</externalId>
+        <label>Buckets</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Column_Label_vod__c</fullName>
+        <description>The Column label defines the type of data for the data template that corresponds to the data stored within the uploaded file. A few standard examples include: TRx, NRx, NQt, TQt, DDD$, etc. This value is used to display the Units type on the Analytics Reports page.</description>
+        <externalId>false</externalId>
+        <label>Column Label</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Column_Labels_Included_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Column labels included defines if the file that will be loaded includes the column headers.  If checked, the first row of data will not be loaded as part of the processing.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If the file will have the column labels as the first line for this template, then check this box.</inlineHelpText>
+        <label>Column Labels Included</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contains_Goals_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the loaded file contains sales goals</description>
+        <externalId>false</externalId>
+        <label>Contains Goals?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Decimal_Places_vod__c</fullName>
+        <description>Indicates how many numbers should be displayed to the right of the decimal point for figures on VInsights reports. This field does not affect percentage figures on the reports.</description>
+        <externalId>false</externalId>
+        <label>Decimal Places</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Enable_Market_Sales_Analysis_Report_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Enable Market Sales Analysis Report determines if users want to use new VI report</description>
+        <externalId>false</externalId>
+        <inlineHelpText>To use the Market Sales Analysis report, designate only one sales data file of monthly scale. Sales data must also contain Prescriber ID, Market ID, Product Group ID</inlineHelpText>
+        <label>Enable Market Sales Analysis Report</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_for_Offline_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When true and used in conjunction with VMOC selection criteria, this field will allow customers to limit the number of data types downloaded to the mobile device</description>
+        <externalId>false</externalId>
+        <label>Enable for Offline</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Formulary_For_Rep_Label_vod__c</fullName>
+        <description>Indicates which column of data to use for Formulary for Rep.</description>
+        <externalId>false</externalId>
+        <label>Formulary for Rep Label</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>First_Column_Label_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Second_Column_Label_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Incremental_Load_Type_vod__c</fullName>
+        <description>Not used</description>
+        <externalId>false</externalId>
+        <label>Incremental Load Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Full_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Incremental_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Partial_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Incremental_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Flag to determine whether the data file is to be loaded using the JD-NET upload process</description>
+        <externalId>false</externalId>
+        <label>Incremental</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Markets_Mapped_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The Markets Mapped checkbox indicates that the Sales File being loaded contains Multiple Markets of Sales Data and that a Data Map Template Field mapping has been created that maps a Field to the Market_vod__c field.</description>
+        <externalId>false</externalId>
+        <label>Markets Mapped?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Override_Account_Threshold_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Mark this checkbox to always download all Sales Data for all Accounts to which the user has access.</description>
+        <externalId>false</externalId>
+        <label>Override Account Threshold</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Payer_Plan_Mapped_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox to determine for the data template if the corresponding Analytics File will include the Payer / Plan information, such as a Platrak data file.</description>
+        <externalId>false</externalId>
+        <label>Payer/Plan Mapped?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Scale_vod__c</fullName>
+        <description>Scale determines the type of data buckets that will be loaded via this template. The two options are monthly or weekly.</description>
+        <externalId>false</externalId>
+        <label>Scale</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Week_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Month_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Second_Column_Label_vod__c</fullName>
+        <description>The Second Column Label represents the Column Label that corresponds to the second group of Sales Data Buckets in a Sales File.  As an example, the Column Label will correspond to buckets B1 through B24 and the Second Column Label will correspond to Buckets B25 through B48.</description>
+        <externalId>false</externalId>
+        <label>Second Column Label</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Territory_Names_Included_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The Territory Names Included checkbox is used to determine if the Data Map Template being utilized includes a map to the Territory_Name_vod field in Sales_Transaction_vod. Records inserted with the Territory_Name_vod defined indicated aggregated levels of data in the case that a Customer is defining the aggregation of Territory level data.</description>
+        <externalId>false</externalId>
+        <label>Territory Names Included?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Data Map Template</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Active_vod__c</columns>
+        <columns>Buckets_vod__c</columns>
+        <columns>Column_Label_vod__c</columns>
+        <columns>Column_Labels_Included_vod__c</columns>
+        <columns>Payer_Plan_Mapped_vod__c</columns>
+        <columns>Scale_vod__c</columns>
+        <columns>Territory_Names_Included_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Data Map Template Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Data Map Templates</pluralLabel>
+    <recordTypes>
+        <fullName>MyInsights_Account_Sales_Data_vod</fullName>
+        <active>true</active>
+        <description>Record type for MyInsights account level sales data</description>
+        <label>MyInsights_Account_Sales_Data_vod</label>
+        <picklistValues>
+            <picklist>Formulary_For_Rep_Label_vod__c</picklist>
+            <values>
+                <fullName>First_Column_Label_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Second_Column_Label_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Incremental_Load_Type_vod__c</picklist>
+            <values>
+                <fullName>Full_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incremental_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partial_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Scale_vod__c</picklist>
+            <values>
+                <fullName>Month_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Week_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Buckets_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Scale_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Column_Label_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Column_Labels_Included_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Payer_Plan_Mapped_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Active_vod__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Buckets_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Scale_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Column_Label_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Column_Labels_Included_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Payer_Plan_Mapped_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Active_vod__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Buckets_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Scale_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Column_Label_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Column_Labels_Included_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Payer_Plan_Mapped_vod__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Active_vod__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>VALIDATE_FORM_FOR_REP</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(OR( ISPICKVAL( Formulary_For_Rep_Label_vod__c , &quot;First_Column_Label_vod&quot;), ISPICKVAL( Formulary_For_Rep_Label_vod__c , &quot;Second_Column_Label_vod&quot;),
+ISPICKVAL( Formulary_For_Rep_Label_vod__c , &quot;None&quot;), ISPICKVAL(Formulary_For_Rep_Label_vod__c,&quot;&quot; ) ))</errorConditionFormula>
+        <errorDisplayField>Formulary_For_Rep_Label_vod__c</errorDisplayField>
+        <errorMessage>Please select a valid picklist value.  If loading data make sure that you are using the master picklist Value, not the translated label</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VALIDATE_FOR_MARKET_SALES_REPORT</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND (Enable_Market_Sales_Analysis_Report_vod__c = TRUE, NOT(AND(ISPICKVAL(Scale_vod__c,&quot;Month_vod&quot;),  Payer_Plan_Mapped_vod__c  = FALSE)))</errorConditionFormula>
+        <errorDisplayField>Enable_Market_Sales_Analysis_Report_vod__c</errorDisplayField>
+        <errorMessage>The Market Sales Analysis Report is selectable only when scale selected is monthly and Payer/Plan Mapped checkbox is not selected</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VEEVA_EXCEL_CHARACTER_CHECK</fullName>
+        <active>true</active>
+        <description>This rule ensures that the column label fields do not contain characters that cannot be handled by Microsoft Excel.</description>
+        <errorConditionFormula>CONTAINS(Column_Label_vod__c, &quot;:&quot;) || 
+CONTAINS(Column_Label_vod__c, &quot;\\&quot;) || 
+CONTAINS(Column_Label_vod__c, &quot;/&quot;) || 
+CONTAINS(Column_Label_vod__c, &quot;?&quot;) || 
+CONTAINS(Column_Label_vod__c, &quot;*&quot;) || 
+CONTAINS(Column_Label_vod__c, &quot;[&quot;) || 
+CONTAINS(Column_Label_vod__c, &quot;]&quot;) || 
+CONTAINS(Second_Column_Label_vod__c, &quot;:&quot;) || 
+CONTAINS(Second_Column_Label_vod__c , &quot;\\&quot;) || 
+CONTAINS(Second_Column_Label_vod__c, &quot;/&quot;) || 
+CONTAINS(Second_Column_Label_vod__c, &quot;?&quot;) || 
+CONTAINS(Second_Column_Label_vod__c, &quot;*&quot;) || 
+CONTAINS(Second_Column_Label_vod__c, &quot;[&quot;) || 
+CONTAINS(Second_Column_Label_vod__c, &quot;]&quot;)</errorConditionFormula>
+        <errorMessage>Make sure the column label does not contain any of the following characters: : \ / ? * [ ]</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VEEVA_VALIDATE_DECIMAL_PLACES</fullName>
+        <active>true</active>
+        <description>This rule enforces that the value of the Decimal Places field is between 0 and 4 inclusively.</description>
+        <errorConditionFormula>Decimal_Places_vod__c &gt; 4 || Decimal_Places_vod__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>Decimal_Places_vod__c</errorDisplayField>
+        <errorMessage>Number of decimal places must be 0 - 4.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VEEVA_VALIDATE_SCALE</fullName>
+        <active>true</active>
+        <description>Makes sure that scale is correctly populated.</description>
+        <errorConditionFormula>NOT(OR ( ISPICKVAL( Scale_vod__c , &quot;Month_vod&quot;),
+     ISPICKVAL(Scale_vod__c , &quot;Week_vod&quot;)))</errorConditionFormula>
+        <errorMessage>Please select a valid picklist value. If loading data make sure that you are using the master picklist Value, not the translated label</errorMessage>
+    </validationRules>
+</CustomObject>

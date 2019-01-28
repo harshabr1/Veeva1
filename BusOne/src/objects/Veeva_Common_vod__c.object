@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Please do not change any values in the Veeva Common, doing so may cause the org not to work properly.  For Veeva Systems use only.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Content_Server_vod__c</fullName>
+        <description>This is the URL of the content server that is to be used for the org. Should not contain a trailing slash. Example: https://vc1.vod309.com</description>
+        <externalId>false</externalId>
+        <label>Content Server</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID used for Metadata migration.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External ID used for Metadata migration.</inlineHelpText>
+        <label>External ID</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>FTP_Server_vod__c</fullName>
+        <description>This is the URL of the FTP server that is to be used for the org (which is actually an application server). Should not contain a trailing slash. Example: https://vf6.vod309.com</description>
+        <externalId>false</externalId>
+        <label>FTP Server</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Maintenance_Mode_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The value of this checkbox determines whether or not the application is in maintenance mode, which will prevent any users of this org from accessing the application on our servers, except for those users listed in the Maintenance Override Users setting.</description>
+        <externalId>false</externalId>
+        <label>Maintenance Mode</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Maintenance_Override_Users_vod__c</fullName>
+        <description>Comma separated list of usernames that the &quot;Maintenance Mode&quot; lockout will not apply to.</description>
+        <externalId>false</externalId>
+        <label>Maintenance Override Users</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Multichannel_Context_Root_vod__c</fullName>
+        <description>This contains the context root for accessing the Multichannel server.</description>
+        <externalId>false</externalId>
+        <label>Multichannel Context Root</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Multichannel_Server_vod__c</fullName>
+        <description>This is the URL of the Multichannel server that is to be used for the org. Should not contain a trailing slash. Example: https://vf6.vod309.com</description>
+        <externalId>false</externalId>
+        <label>Multichannel Server</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Veeva_Server_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Veeva Server</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Veeva_Version_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Veeva Version</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Veeva Common</label>
+    <visibility>Public</visibility>
+</CustomObject>

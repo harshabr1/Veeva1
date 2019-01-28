@@ -1,0 +1,3 @@
+<apex:page title="Event Configuration Console">
+    <c:VOD_EMBED veevaModule="em" veevaPage="admin" />
+</apex:page>

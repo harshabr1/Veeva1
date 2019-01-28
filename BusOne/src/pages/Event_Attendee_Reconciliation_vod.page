@@ -1,0 +1,3 @@
+<apex:page standardController="Medical_Event_vod__c" sidebar="false">
+    <c:VOD_EMBED veevaModule="em" veevaPage="attendee-reconciliation" queryParams="{!$CurrentPage.parameters.queryParams}"/>
+</apex:page>

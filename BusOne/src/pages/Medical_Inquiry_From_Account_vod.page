@@ -1,0 +1,3 @@
+<apex:page standardController="Account">
+    <c:VOD_EMBED veevaModule="medical_inquiry" veevaPage="medical-inquiry-view" objectType="Medical_Inquiry_vod__c" queryParams="&acctId={!Account.Id}&typ=MedicalInquiry&retUrl={!$CurrentPage.Parameters.retURL}"/>
+</apex:page>

@@ -1,0 +1,6 @@
+<apex:page standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_4000_vod}"/>
+<script type="text/javascript">
+    com.vod309.redirect.redirect("inventoryAllocationManager", "&mode=v");
+</script>
+</apex:page>

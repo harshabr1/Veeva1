@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A set of preferences for users or profiles.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Analytic_Market_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>VInsights Market preference.</description>
+        <externalId>false</externalId>
+        <label>Analytic Market</label>
+        <referenceTo>Analytics_Markets_vod__c</referenceTo>
+        <relationshipLabel>Preferences</relationshipLabel>
+        <relationshipName>Preferences</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Analytics_Call_Status_vod__c</fullName>
+        <description>This field stores the last user selection of Call Status on Analytics. Value is a comma separated list of Call Statuses that are checked on the Average Calls per Day report.</description>
+        <externalId>false</externalId>
+        <label>Analytics Call Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Analytics_Call_Types_vod__c</fullName>
+        <description>VInsights Call Types preference. Value is a comma separated list of Call Types that are checked on the Effort vs. Results report.</description>
+        <externalId>false</externalId>
+        <label>Analytics Call Types</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Analytics_Compare_Territories_vod__c</fullName>
+        <description>VInsights compare territories preference. Value is a JSON formatted string of key value pairs with the territory id being the key and the value always being true or false if the territory should display as checked.</description>
+        <externalId>false</externalId>
+        <label>Analytics Compare Territories</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Analytics_Count_Attendees_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Indicates if group calls should be counted as one call or if each attendee should be counted as a separate call - used for average calls per day and other fields.</description>
+        <externalId>false</externalId>
+        <label>Analytics Count Attendees</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Analytics_Count_Weekend_Calls_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used for the Average Calls Per Day report. When enabled and true, weekend calls are included in the calculation. Weekend days are based on Veeva Setting VINSIGHTS_CALENDAR_CONFIG</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used for the Average Calls Per Day report. When enabled and true, weekend calls are included in the calculation. Weekend days are based on Veeva Setting VINSIGHTS_CALENDAR_CONFIG</inlineHelpText>
+        <label>Count Weekend Calls?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Analytics_Cycle_Plans_vod__c</fullName>
+        <description>VInsights Cycle Plan preference</description>
+        <externalId>false</externalId>
+        <label>Analytics Cycle Plans</label>
+        <length>5000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Analytics_Datatype_vod__c</fullName>
+        <description>VInsights Datatype preference.</description>
+        <externalId>false</externalId>
+        <label>Analytics Datatype</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Analytics_Display_By_vod__c</fullName>
+        <description>VInsights Display By preference for Cycle Plan Analysis page</description>
+        <externalId>false</externalId>
+        <label>Analytics Display By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Analytics_Display_Competitors_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>This setting retains a users selection of the Display Competitions checkbox in VInsights.</description>
+        <externalId>false</externalId>
+        <label>Analytics Display Competitors</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Analytics_Market_Category_vod__c</fullName>
+        <description>VInsights Market Category preference for the user.</description>
+        <externalId>false</externalId>
+        <label>Analytics Market Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>MyMarkets</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>AllMarkets</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Analytics_My_Products_vod__c</fullName>
+        <description>This field stores the sticky product selections that are used on the Reach &amp; Frequency report.</description>
+        <externalId>false</externalId>
+        <label>Analytics My Products</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Analytics_Payer_Top_Products_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This setting retains a users selection of the Top Products checkbox in VInsights.</description>
+        <externalId>false</externalId>
+        <label>Analytics Payer Top Products</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Analytics_Products_vod__c</fullName>
+        <description>VInsights Products preference by market.  Value is a semi-colon separated list of market groups, each market group is a comma separated list with the first value being the market id, and the rest of the values being the selected product groups for that market.</description>
+        <externalId>false</externalId>
+        <label>Analytics Products</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Analytics_Scale_vod__c</fullName>
+        <description>VInsights Scale preference.</description>
+        <externalId>false</externalId>
+        <label>Analytics Scale</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Week_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Month_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Quarter_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Analytics_Segment_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>VInsights Segment preference.</description>
+        <externalId>false</externalId>
+        <label>Analytics Segment</label>
+        <referenceTo>View_vod__c</referenceTo>
+        <relationshipLabel>Preferences (Analytics Segment)</relationshipLabel>
+        <relationshipName>Preferences</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Analytics_Start_End_Dates_vod__c</fullName>
+        <description>This field stores the Start and End dates last selected for each report in a JSON format.</description>
+        <externalId>false</externalId>
+        <label>Analytics Start End Dates</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Analytics_Territories_vod__c</fullName>
+        <description>VInsights territories preference. Value is a JSON formatted string of key value pairs with the territory id being the key and the value always being true or false if the territory should display as checked.</description>
+        <externalId>false</externalId>
+        <label>Analytics Territories</label>
+        <length>2000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Analytics_Timeframe_vod__c</fullName>
+        <description>VInsights Timeframe preference for the user.</description>
+        <externalId>false</externalId>
+        <label>Analytics Timeframe</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>3;Month</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>6;Month</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>12;Month</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>24;Month</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>YTD</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>QUARTERLY</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CALENDAR_SHARE_RECENT_ITEMS_vod__c</fullName>
+        <description>Comma delimited list of the last 10 shared calendars viewed</description>
+        <externalId>false</externalId>
+        <label>Calendar Share Recent Items</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Calls_Per_Day_vod__c</fullName>
+        <description>This field stores the  calls per day  value a user selected on Schedule Calls.</description>
+        <externalId>false</externalId>
+        <label>Calls Per Day</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CollapseSchedule_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field stores the last collapse setting a user selected on the My Schedule page.</description>
+        <externalId>false</externalId>
+        <label>CollapseSchedule</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disable_CLM_Calendar_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When true, for users that have a CLM installed, the CLM features of the day view won&apos;t be shown.</description>
+        <externalId>false</externalId>
+        <label>Disable CLM Calendar</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disable_Call_Cycle_View_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If true the user will not see the call cycle tab on the tablet.</description>
+        <externalId>false</externalId>
+        <label>Disable Call Cycle View</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ENABLE_ORDER_LINE_TOTAL_ROUND_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines when to perform the rounding for the Order Management product. If the field is visible based on field level security then the calculation will be ROUND(QTY * PRICE * DISCOUNT). If the field is not visible based on field level security then the calculation will be ROUND(PRICE * DISCOUNT) * QTY</description>
+        <externalId>false</externalId>
+        <label>ENABLE ORDER LINE TOTAL ROUND</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Enable_Order_Single_entry_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Use field level security of this field to enable/disable mass entry function of order management</description>
+        <externalId>false</externalId>
+        <label>Enable Order Single Entry</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Event_Country_Config_vod__c</fullName>
+        <description>Contains two parameters separated by a semicolon. The first is the default country used when creating an event using Veeva Event Management. The second is a number to indicate if the user should see the country picklist or not when creating an event. A value of 0 indicates the user cannot choose a different country. A value of 1 indicates the user can choose a different country. For example, if the user&apos;s default event country is US, and the user has the ability to create events in other countries, then the value should be US;1.</description>
+        <externalId>false</externalId>
+        <label>Event Country Config</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Management_User_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used to indicate if a user has Veeva Event Management. To turn on Event Management, the user must have read permission to this field. The checkbox does not need to be checked.</description>
+        <externalId>false</externalId>
+        <label>Event Management User</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Five_Day_Week_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If false the user will get a five day week (Monday-Friday) on the tablet.  If true it will be a seven day week.</description>
+        <externalId>false</externalId>
+        <label>Five Day Week</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Formulary_View_vod__c</fullName>
+        <description>This field stores the last Benefit Design and Market that was selected for a Formulary Control on Account in a JSON format.</description>
+        <externalId>false</externalId>
+        <label>Formulary View</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>JDNET_Segment_vod__c</fullName>
+        <description>This field is used to store the last segment that was selected for the JDNET reports in VInsights.</description>
+        <externalId>false</externalId>
+        <label>JDNET Segment</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Account_View_Used_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A lookup to view.  This is the last account view used in My Accounts.</description>
+        <externalId>false</externalId>
+        <label>Last Account View Used</label>
+        <referenceTo>View_vod__c</referenceTo>
+        <relationshipLabel>Preferences (Last Account View Used)</relationshipLabel>
+        <relationshipName>Preferences_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Last_Analytic_vod__c</fullName>
+        <description>The Last Analytic field stores the last Analytic report that a User has run.  When the User navigates to the Analytics Tab, the report stored in the Last Analytic field will be displayed to the User.</description>
+        <externalId>false</externalId>
+        <label>Last Analytic</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_List_Scheduler_Account_List_vod__c</fullName>
+        <description>Name of the Last List Scheduler Account List that was selected, so that it can be sticky</description>
+        <externalId>false</externalId>
+        <label>Last_List_Scheduler_Account_List</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_List_Scheduler_Bookmark_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Stores the last bookmark used in the call list scheduler.</description>
+        <externalId>false</externalId>
+        <label>Last_List_Scheduler_Bookmark</label>
+        <referenceTo>Bookmark_vod__c</referenceTo>
+        <relationshipLabel>Preferences (Last_List_Scheduler_Bookmark)</relationshipLabel>
+        <relationshipName>Preferences</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Last_Map_Scheduler_Account_List_vod__c</fullName>
+        <description>This field is used by the system to read/write the last selected list/view on the Map view of My Schedule.</description>
+        <externalId>false</externalId>
+        <label>Last Map Scheduler Account List</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Map_Scheduler_Bookmark_vod__c</fullName>
+        <description>This field is used by the system to read/write the last selected Bookmark on the Map view of My Schedule.</description>
+        <externalId>false</externalId>
+        <label>Last Map Scheduler Bookmark</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Scheduler_Account_List_vod__c</fullName>
+        <description>Name of the Last Scheduler Account List that was selected, so that it can be sticky</description>
+        <externalId>false</externalId>
+        <label>Last Scheduler Account List</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Scheduler_Bookmark_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Stores the last bookmark used in the call scheduler.</description>
+        <externalId>false</externalId>
+        <label>Last Scheduler Bookmark</label>
+        <referenceTo>Bookmark_vod__c</referenceTo>
+        <relationshipLabel>Preferences (Last Scheduler Bookmark)</relationshipLabel>
+        <relationshipName>Preferences_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Last_Target_vod__c</fullName>
+        <defaultValue>5</defaultValue>
+        <description>This field stores the last target value a user selected on the Average Calls per Day analytic.</description>
+        <externalId>false</externalId>
+        <label>Last Target</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Territory_Used_vod__c</fullName>
+        <description>This is the last territory used in My Accounts.  This is either the territory id or &quot;all&quot;.</description>
+        <externalId>false</externalId>
+        <label>Last Territory Used</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_View_Used_vod__c</fullName>
+        <description>This setting retains a users selection of the last displayed view or account list</description>
+        <externalId>false</externalId>
+        <label>Last View Used</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MCCP_Activity_Type_Switch_vod__c</fullName>
+        <description>Last setting of the My/Team Activity switch</description>
+        <externalId>false</externalId>
+        <label>MCCP Activity Type Switch</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>My_Activity_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Team_Activity_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Profile_vod__c</fullName>
+        <description>The profile id associated with these preferences.</description>
+        <externalId>false</externalId>
+        <label>Profile</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Records_Per_Page_vod__c</fullName>
+        <description>This setting retains a users selection of the number of records to view in each page of the My Accounts page</description>
+        <externalId>false</externalId>
+        <label>Records Per Page</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Scheduler_Cycle_Plan_Display_vod__c</fullName>
+        <description>Stores the user&apos;s display settings in the scheduler for cycle plans. Format of the value is: CONTEXT;ATTRIBUTE;DETAIL_ATTRIBUTE</description>
+        <externalId>false</externalId>
+        <label>Scheduler Cycle Plan Display</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_vod__c</fullName>
+        <description>A picklist set of values to determine the scope of the preferences.  For example, preferences can be assigned at the &quot;User&quot; level or the &quot;Profile&quot; level.  A corresponding field must be created for each scope.</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Profile</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>User_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A lookup to user.  This indicates what user the preferences are made for.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Preferences_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Preferences</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>User_vod__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <columns>NAME</columns>
+        <columns>User_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Preferences Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Preferences</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

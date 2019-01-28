@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores all metrics available for all accounts. Each metric is specific to a product, so the logical key is (account, product).</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <description>Account is the master object for product metrics.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Product Metrics</relationshipLabel>
+        <relationshipName>Product_Metrics_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Awareness__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Awareness</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Unaware</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Developing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Aware</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Prefers</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Advocate</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Product Catalog records of type Detail Group.</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Metrics (Detail Group)</relationshipLabel>
+        <relationshipName>Product_Metrics_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Engagements__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Engagements</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID is used for data loading only.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Formulary_Status__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Formulary Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>On Formulary</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>On/Restricted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>On/Prior Auth</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>On/Exclusive</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 3</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tier 4</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Investigator_Readiness__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Investigator Readiness</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Beginner</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Experienced</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Leader</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Location_Child_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Field that gets stamped with the Child Account of the Child Account record</description>
+        <externalId>false</externalId>
+        <label>Location Child</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Product Metrics (Location Child)</relationshipLabel>
+        <relationshipName>Product_Metrics_Location_Child_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Location_Parent_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Field that gets stamped with the Parent Account of the Child Account record</description>
+        <externalId>false</externalId>
+        <label>Location Parent</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Product Metrics (Location Parent)</relationshipLabel>
+        <relationshipName>Product_Metrics_Location_Parent_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Location_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Relationship where the product metrics are set</description>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <referenceTo>Child_Account_vod__c</referenceTo>
+        <relationshipLabel>Product Metrics</relationshipLabel>
+        <relationshipName>Product_Metrics_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Movement__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Movement</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Products_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The products field is required and shows which product relates to the metric row.</description>
+        <externalId>false</externalId>
+        <label>Products</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Product Metrics</relationshipLabel>
+        <relationshipName>Products_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Segment__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Segment</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Maintain</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Grow</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Guard</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Selling_Stage__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Selling Stage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pre-Launch</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contracting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Post-Launch</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pull Through</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Speaker_Skills__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>Speaker Skills</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Novice</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Intermediate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Expert</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>X12_mo_trx_chg__c</fullName>
+        <description>Sample metric field.</description>
+        <externalId>false</externalId>
+        <label>12 mo TRx Chg</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <label>Product Metrics</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>M-{0000000000}</displayFormat>
+        <label>Product Metrics Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Product Metrics</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Products_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Account_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Awareness__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Movement__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Segment__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Products_vod__c</searchFilterFields>
+        <searchFilterFields>Account_vod__c</searchFilterFields>
+        <searchFilterFields>Awareness__c</searchFilterFields>
+        <searchFilterFields>Movement__c</searchFilterFields>
+        <searchFilterFields>Segment__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

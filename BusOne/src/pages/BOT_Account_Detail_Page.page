@@ -1,0 +1,195 @@
+<!--
+Name            : BOT_Account_Detail_Page
+Created by      : Sreenivasulu Adipudi
+Created date    : 05-15-2018
+Description     : To display related records of selected Account record on Accout detail page
+-->
+<apex:page standardController="Account_Unique__c" extensions="BOT_Account_Detail_Page_extn" >
+    
+    <!-- CSS styles for table alignment and styling -->
+    <style>
+        
+        .dataTable {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+        
+        .dataTable td {
+        border: 1px solid #ddd;
+        padding: 6px;
+        }
+        
+        .dataTable th, .dataTable thead {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        padding: 5px;
+        }
+        
+        .dataTable tr {background-color: #FFFFFF;}
+        
+        .dataTable tr:hover {background-color: #E6F9FA;}
+        
+        .dataTable th {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        text-align: left;
+        background-color: #E5E4E4;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        }
+
+        .align{
+        text-align:right;
+		}
+        
+    </style>
+
+    <!-- /CSS styles for table alignment and styling -->
+    
+    <apex:form id="form1">
+        <apex:actionFunction action="{!getPlansByName}" name="PlanNameJavascriptFunc" reRender="pbs3" status="planStatus" />
+        <apex:actionFunction action="{!getPlansByType}" name="PlanTypeJavascriptFunc" reRender="pbs3" status="planStatus" />
+        <apex:actionFunction action="{!getFormularyByName}" name="FormularyNameJavascriptFunc" reRender="pbs5" status="formulayStatus" />
+        
+        <!-- Displaying Channel filter -->
+        <apex:pageBlock id="pb1">
+            <apex:pageBlockSection id="pbs1" columns="1">
+                <apex:outputPanel >
+                    <apex:outputLabel value="Select channel" />&nbsp;
+                    <apex:selectList size="1" value="{!selectedChannel}">
+                        <apex:selectOptions value="{!dynamicChannels}"/>
+                        <apex:actionSupport action="{!channelFilterRetrieve}" event="onchange" reRender="plansTable, formularyTable" status="planStatus" />
+                    </apex:selectList>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <!-- /Displaying Channel filter -->
+        
+        <!-- Plan demographics section -->
+        <apex:pageBlock title="Plan demograhics ({!plans.size})" id="pb2">
+             
+            <!-- Getting user input -->
+            <apex:pageBlockSection columns="3">
+                <apex:outputLabel value="Search by plan product name ">&nbsp;&nbsp;
+                    <apex:inputText value="{!selectedText}" id="name" onkeyup="PlanNameJavascriptFunc();" />
+                </apex:outputLabel>
+                <apex:outputLabel value="Search by plan product type ">&nbsp;&nbsp;
+                    <apex:inputText value="{!selectedType}" id="type" onkeyup="PlanTypeJavascriptFunc();" />
+                </apex:outputLabel>
+            </apex:pageBlockSection>
+            <!-- /Getting user input -->
+            
+            <!-- Displays processing status of channel filter and pagination buttons -->
+            <apex:actionStatus id="planStatus" startText="Loading...." startStyle="font-color:red;">
+                <apex:facet name="start">
+                    <apex:image value="/img/loading.gif" />
+                </apex:facet>
+            </apex:actionStatus>
+            <!-- /Displays processing status of channel filter and pagination buttons -->
+            
+            <!-- Plan demographics table section -->
+            <div style="overflow: scroll; width: 100%; height: 190px;">
+                <apex:pageBlockSection id="pbs3" columns="1">
+                    <apex:outputPanel >
+                        <table class="dataTable" >
+                            
+                            <!-- Plan demographics table header -->
+                            <thead>
+                                <th>Channel</th>
+                                <th>Plan Product Name</th>
+                                <th>Product Type</th>
+                                <th>Formulary Used</th>
+                                <th style="text-align:right">Product Lives</th>
+                                <th style="text-align:right">Product Lives Rx</th>
+                            </thead>
+                            <!-- /Plan demographics table header -->
+                            
+                            <!-- Plan demographics table body -->
+                            <tbody>
+                                <apex:repeat value="{!plans}" var="plan" id="plansTable">
+                                    <tr>
+                                        <td style="width:100px">{!plan.BOT_Account__r.BOT_Account_Type__c}</td>
+                                        <td style="width:500px"><apex:outputLink value="/{!plan.id}" target="_top" style="fornt-weight"> {!plan.Name}</apex:outputLink></td>
+                                        <td style="width:200px">{!plan.BOT_Product_Type__c}</td>
+                                        <td style="width:200px">{!plan.BOT_Formulary_Used__c}</td>
+                                        <td style="width:150px;text-align:right"><apex:outputField value="{!plan.BOT_Product_Lives__c}" /></td>
+                                        <td style="width:150px;text-align:right"><apex:outputField value="{!plan.BOT_Product_Lives_Rx__c}" /></td>
+                                    </tr>
+                                </apex:repeat>
+                            </tbody>
+                            <!-- /Plan demographics table body -->
+                        </table>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+            </div>
+            <!-- /Plan demographics table section -->
+                        
+        </apex:pageBlock>
+        <!-- /Plan demographics section -->
+        
+        <!-- Formularies section -->
+        <apex:pageBlock id="pb3" title="Plan Formulary ({!formularies.size})">
+                <!--
+                <apex:outputPanel id="formularyButtons"  style="width:100%; text-align:right; padding: 2px 0px;" layout="block" rendered="true">
+                    <apex:commandButton action="{!firstFormulary}" value="<<" disabled="{!if(formularyPage == 1, true, false)}" reRender="formularyTable, formularyButtons" status="formulayStatus" />
+                    <apex:commandButton action="{!previousFormulary}" value="<" disabled="{!if(formularyPage == 1, true, false)}" reRender="formularyTable, formularyButtons" status="formulayStatus" />
+                    <apex:commandButton action="{!nextFormulary}" value=">" disabled="{!if(formularyPage == formularyPages, true, false)}" reRender="formularyTable, formularyButtons" status="formulayStatus" />
+                    <apex:commandButton action="{!lastFormulary}" value=">>" disabled="{!if(formularyPage == formularyPages, true, false)}" reRender="formularyTable, formularyButtons" status="formulayStatus" />
+                </apex:outputPanel>
+				-->
+            <!-- Getting user input -->
+            <apex:pageBlockSection columns="3">
+                <apex:outputLabel value="Search by formulary name ">&nbsp;&nbsp;
+                    <apex:inputText value="{!selectedFormulary}" id="formularyName" onkeyup="FormularyNameJavascriptFunc();" />
+                </apex:outputLabel>
+            </apex:pageBlockSection>
+            <!-- /Getting user input -->
+            
+            <!-- Displays processing status of pagination buttons -->
+            <apex:actionStatus id="formulayStatus" startText="Loading...." startStyle="font-color:red;">
+                <apex:facet name="start">
+                    <apex:image value="/img/loading.gif" />
+                </apex:facet>
+            </apex:actionStatus>
+            <!-- /Displays processing status of pagination buttons -->
+            
+            <!-- Plan demographics table section -->
+            <div style="overflow: scroll; width: 100%; height: 190px;">
+                <apex:pageBlockSection id="pbs5" columns="1">
+                    <apex:outputPanel >
+                        <table class="dataTable" >
+                            
+                            <!-- Plan demographics table header -->
+                            <thead>
+                                <th>Channel</th>
+                                <th>Formulary Name</th>
+                                <th style="text-align:right">Total Formulary Lives</th>
+                                <th style="text-align:right">Formulary Lived Med</th>
+                            </thead>
+                            <!-- /Plan demographics table header -->
+                            
+                            <!-- Plan demographics table body -->
+                            <tbody>
+                                <apex:repeat value="{!formularies}" var="formulary" id="formularyTable">
+                                    <tr>
+                                        <td style="width:100px">{!formulary.BOT_Account__r.BOT_Account_Type__c}</td>
+                                        <td style="width:650px"><apex:outputLink value="/{!formulary.id}" target="_top">{!formulary.BOT_Formulary_Name__c}</apex:outputLink></td>
+                                        <td style="width:150px;text-align:right"><apex:outputField value="{!formulary.BOT_Formulary_Lives__c}" /></td>
+                                        <td style="width:150px;text-align:right"><apex:outputField value="{!formulary.BOT_Formulary_Lives_Med__c}" /></td>
+                                    </tr>
+                                </apex:repeat>
+                            </tbody>
+                            <!-- /Plan demographics table body -->
+                        </table>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+            </div>
+            <!-- /Plan demographics table section -->
+    
+        </apex:pageBlock>
+        <!-- /Formularies section -->
+    </apex:form>   
+</apex:page>

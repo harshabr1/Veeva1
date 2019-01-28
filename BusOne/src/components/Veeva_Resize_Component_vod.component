@@ -1,0 +1,48 @@
+<apex:component controller="VODRedirectController">
+    <script type="text/javascript">
+        var com = com || {};
+        com.vod309 = com.vod309 || {};
+        
+        com.vod309.resize = {};
+        com.vod309.resize.iframe = undefined;
+            
+        com.vod309.resize.init = function(iframe) {
+            com.vod309.resize.iframe = iframe;
+
+            if(!window.addEventListener) {
+                window.attachEvent("onmessage", com.vod309.resize.receiveMessage);
+            } else {
+                window.addEventListener("message", com.vod309.resize.receiveMessage, false);
+            }
+        }
+
+        com.vod309.resize.getDomain = function(url) {
+            var matches = url.match(/^https?\:\/\/([^\/:?#@]+)(?:[\/:?#]|$)/i);
+            var domain = matches && matches[1];  // domain will be null if no match is found
+            return domain;
+        }
+
+
+        com.vod309.resize.receiveMessage = function(event) {
+            var domain = com.vod309.resize.getDomain(event.origin);
+
+            var isValidDomain = false;
+            var validDomains = [".vod309.com", ".veevacrmdev.com", ".veevacrmqa.com", ".veevacrmstage.com", ".veevacrm.com"];
+            for(var i = 0; i < validDomains.length; i++) {
+                if(domain.indexOf(validDomains[i]) >= 0) {
+                    isValidDomain = true;
+                    break;
+                }
+            }
+
+            if(domain && (isValidDomain || domain === "localhost")) {
+                var data = JSON.parse(event.data);
+                if(com.vod309.resize.iframe) {
+                    var h = parseInt(data.height)+30;
+                    h = h < 700 ? 700 : h;
+                    com.vod309.resize.iframe.height = h;
+                }
+            }
+        }
+  </script>
+</apex:component>

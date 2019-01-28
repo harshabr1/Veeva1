@@ -1,0 +1,16 @@
+<apex:page standardController="Inventory_Monitoring_vod__c" recordSetVar="inventories" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_4000_vod}"/>
+<script type="text/javascript">        
+    var queryparams = "&acctid=" + "{!URLENCODE($CurrentPage.parameters.acctid)}";
+    var useRetURL = "{!URLENCODE($CurrentPage.parameters.useRetURL)}";
+    if(useRetURL === "true") {
+        queryparams += "&useRetURL=" + useRetURL;
+    }
+    var retURL = "{!URLENCODE($CurrentPage.parameters.retURL)}";
+    if(retURL) {
+        queryparams += "&retURL=" + retURL;
+    }
+    queryparams += '&mode=n';
+    com.vod309.redirect.redirect("inventory", queryparams);
+</script>
+</apex:page>

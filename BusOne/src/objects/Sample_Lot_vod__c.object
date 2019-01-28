@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Sample Lot contains a list of user specific Samples and Lot #s available for Sample Transactions.  Sample Lots are auto-created for Users based on Transfer Sample Transactions from one user to another user as well as from the Create Sample Lots button on Lot Catalog.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Active checkbox determines if the Sample Lot is available for selection for Sample Transactions and Sample Inventory Line Items.</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Allocated_Quantity_vod__c</fullName>
+        <description>This field has rolled up value of sample order transactions for this lot.</description>
+        <externalId>false</externalId>
+        <label>Allocated Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Calculated_Quantity_vod__c</fullName>
+        <description>Calculated Quantity is the sum of all Inventory Impacts from the Sample Transaction object for this specific Sample Lot.  The Calculated Quantity should be the quantity of Samples on hand for a User at any given moment for the Sample Lot.</description>
+        <externalId>false</externalId>
+        <label>Calculated Quantity</label>
+        <summarizedField>Sample_Transaction_vod__c.Inventory_Impact_Quantity_vod__c</summarizedField>
+        <summaryForeignKey>Sample_Transaction_vod__c.Lot_vod__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Expiration_Date_vod__c</fullName>
+        <description>Expiration Date is the Expiration Date for the Sample Lot.  The Expiration Date field is populated from Expiration Date on Lot Catalog as part of the Transfer Sample Transaction process or Create Sample Lot Button on Lot Catalog.</description>
+        <externalId>false</externalId>
+        <label>Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product for which the sample lot applies;Lookup to Product Catalog</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Sample Lot</relationshipLabel>
+        <relationshipName>Sample_Lot_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sample_Lot_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Sample Lot Id is an external Id used to allow upsert functionality for managing Sample Lots.  The Sample Lot Id can be utilized to support data loading of Sample Lots for users.</description>
+        <externalId>true</externalId>
+        <label>Sample Lot Id</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_vod__c</fullName>
+        <description>Sample is the Sample name for the Sample Lot record.  The Sample field is populated from the Sample picklist on Lot Catalog as part of the Transfer Sample Transaction process or Create Sample Lot Button on Lot Catalog.  If loading through data loader, verify that the Sample text loaded matches the Sample as defined in the Product Catalog.</description>
+        <externalId>false</externalId>
+        <label>Sample</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Suppress_Lot_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to include BRC, Alternative Samples, High Value Promotional, Promotional, Reprint, or Custom product types in Sample Management functionality without the use of Lot Numbers.</description>
+        <externalId>false</externalId>
+        <label>Suppress Lot</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>U_M_vod__c</fullName>
+        <description>U/M is the Unit of Measurement for the Sample Lot record. The U/M field is populated from the U/M picklist on Lot Catalog as part of the Transfer Sample Transaction process or Create Sample Lot Button on Lot Catalog.</description>
+        <externalId>false</externalId>
+        <label>U/M</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Cases</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Box</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Sample Lot</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Sample_vod__c</columns>
+        <columns>Expiration_Date_vod__c</columns>
+        <columns>U_M_vod__c</columns>
+        <columns>Active_vod__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_d_2</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Lot #</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Sample Lots</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Sample_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Expiration_Date_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>U_M_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.ALIAS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Active_vod__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Non_Sample_Lot_Name_vod</fullName>
+        <active>true</active>
+        <description>Ensures that a value of No_Lot_vod is input into the Lot # feld when creating a Sample Lot record for a non-Sample product that has no associated Lot #s.</description>
+        <errorConditionFormula>AND(Suppress_Lot_vod__c = true, Name != &apos;No_Lot_vod&apos;)</errorConditionFormula>
+        <errorMessage>Lot # field must contain the value &apos;No_Lot_vod for a non-Sample product with no Lot #</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Non_Sample_Required_Fields_vod</fullName>
+        <active>true</active>
+        <description>Ensures that a value is selected for the Product Name when creating a Lot Catalog record for a non-Sample product that has no associated Lot #s. This field is required to determine both the Product and Product type the record is being created for.</description>
+        <errorConditionFormula>AND(Suppress_Lot_vod__c = true, Product_vod__c == null)</errorConditionFormula>
+        <errorMessage>Product Name field is required to create a Sample Lot record for non-Sample product with no Lot#.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Non_Sample_Suppress_Lot_vod</fullName>
+        <active>true</active>
+        <description>Ensures that Suppress Lot is checked when a value of &apos;No_Lot_vod&apos; is input into the Lot # field when creating a Sample Lot record for a non-Sample product.</description>
+        <errorConditionFormula>And(Name  = &apos;No_Lot_vod&apos;,  Suppress_Lot_vod__c  = false)</errorConditionFormula>
+        <errorMessage>Suppress Lot must be checked when using the &apos;No_Lot_vod&apos; Lot # name.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sample_Required_Fields_vod</fullName>
+        <active>true</active>
+        <description>Ensures that a value is input for either Sample or Product look up when creating a Lot Catalog record for a traditional Sample product that has associated Lot #s.</description>
+        <errorConditionFormula>AND( Suppress_Lot_vod__c  = false, ISBLANK(Sample_vod__c))</errorConditionFormula>
+        <errorMessage>Either Sample field or Product field is required to create a Sample Lot record for a Sample product with a Lot #</errorMessage>
+    </validationRules>
+</CustomObject>

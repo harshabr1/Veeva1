@@ -1,0 +1,876 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Assessment object contains a standardized approach to managing assessment criteria for Accounts.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <description>The Account is the Account that the Assessment has been created for.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Assessments</relationshipLabel>
+        <relationshipName>Assessments</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>CC_Patient_Profiles__c</fullName>
+        <description>This is an example Assessment question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How likely is the KOL to use Patient Profile documents?</inlineHelpText>
+        <label>CC Patient Profiles</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Very Likely</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Somewhat Likely</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unlikely</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CC_Study_Leverage__c</fullName>
+        <description>This is an example Assessment question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How likely is the KOL to leverage Cholecap Study findings during peer discussions?</inlineHelpText>
+        <label>CC Study Leverage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Very Likely</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Somewhat Likely</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unlikely</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Community_Activity__c</fullName>
+        <description>This is an example Assessment question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How active is this KOL in the local healthcare community?</inlineHelpText>
+        <label>Community Activity</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Very Active</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Somewhat Active</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Slightly Active</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not Active</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LN_Patient_Profiles__c</fullName>
+        <description>This is an example Assessment question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How likely is the KOL to use Patient Profile documents?</inlineHelpText>
+        <label>LN Patient Profiles</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Very Likely</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Somewhat Likely</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unlikely</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>LN_Study_Leverage__c</fullName>
+        <description>This is an example Assessment question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How likely is the KOL to leverage Labrinone study findings in peer discussions?</inlineHelpText>
+        <label>LN Study Leverage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Very Likely</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Somewhat Likely</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unlikely</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Oncology_Board__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is an example Assessment question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Does this physician participate in his local Oncology Board?</inlineHelpText>
+        <label>Oncology Board</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Preferred_Pathologist__c</fullName>
+        <description>This is an example Assessment question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the name of the physician&apos;s preferred pathologist</inlineHelpText>
+        <label>Preferred Pathologist</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RL_Patient_Profiles__c</fullName>
+        <description>This is an example Assessment question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How likely is the KOL to leverage Patient Profile documents?</inlineHelpText>
+        <label>RL Patient Profiles</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Very Likely</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Somewhat Likely</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unlikely</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RL_Study_Leverage__c</fullName>
+        <description>This is an example Assessment question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How likely is the KOL to leverage Restolar study findings in peer discussions?</inlineHelpText>
+        <label>RL Study Leverage</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Very Likely</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Somewhat Likely</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unlikely</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Research_Focus__c</fullName>
+        <description>This is an example Assessment question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How willing is the KOL to leverage research?</inlineHelpText>
+        <label>Research Focus</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Heavily</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Somewhat</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Slightly</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Not at all</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Treatment_Preferences__c</fullName>
+        <description>This is an example Assessment question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the doctor&apos;s top preference for treatment?</inlineHelpText>
+        <label>Treatment Preferences</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Chemo</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Radiation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Chemo &amp; Radiation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Diet/Nutrition/Alternative</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Treatment_Volume__c</fullName>
+        <description>This is an example Assessment question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>How many tumors does this physician treat in a year?</inlineHelpText>
+        <label>Tumors/Year</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0-50</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>50-100</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>100-150</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>150+</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Tumor_Types__c</fullName>
+        <description>This is an example Assessment question</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Which t ypes of tumors does this physician specialize in treating?  Please choose max 3</inlineHelpText>
+        <label>Tumor Types</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Breast</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bone</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Colon</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Kidney</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Liver</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lung</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Stomach</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pancreas</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Prostate</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ovary/Uterus/Cervix</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Assessment</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>A-{000000000}</displayFormat>
+        <label>ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Assessments</pluralLabel>
+    <recordTypes>
+        <fullName>KOL</fullName>
+        <active>true</active>
+        <label>KOL</label>
+        <picklistValues>
+            <picklist>CC_Patient_Profiles__c</picklist>
+            <values>
+                <fullName>Somewhat Likely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlikely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CC_Study_Leverage__c</picklist>
+            <values>
+                <fullName>Somewhat Likely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlikely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Community_Activity__c</picklist>
+            <values>
+                <fullName>Not Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Active</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LN_Patient_Profiles__c</picklist>
+            <values>
+                <fullName>Somewhat Likely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlikely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LN_Study_Leverage__c</picklist>
+            <values>
+                <fullName>Somewhat Likely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlikely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RL_Patient_Profiles__c</picklist>
+            <values>
+                <fullName>Somewhat Likely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlikely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RL_Study_Leverage__c</picklist>
+            <values>
+                <fullName>Somewhat Likely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlikely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Research_Focus__c</picklist>
+            <values>
+                <fullName>Heavily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Treatment_Preferences__c</picklist>
+            <values>
+                <fullName>Chemo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chemo %26 Radiation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Diet%2FNutrition%2FAlternative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radiation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Treatment_Volume__c</picklist>
+            <values>
+                <fullName>0-50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100-150</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>150%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50-100</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Tumor_Types__c</picklist>
+            <values>
+                <fullName>Bone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Breast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kidney</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ovary%2FUterus%2FCervix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pancreas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prostate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stomach</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Oncology</fullName>
+        <active>true</active>
+        <label>Oncology</label>
+        <picklistValues>
+            <picklist>CC_Patient_Profiles__c</picklist>
+            <values>
+                <fullName>Somewhat Likely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlikely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CC_Study_Leverage__c</picklist>
+            <values>
+                <fullName>Somewhat Likely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlikely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Community_Activity__c</picklist>
+            <values>
+                <fullName>Not Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Active</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LN_Patient_Profiles__c</picklist>
+            <values>
+                <fullName>Somewhat Likely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlikely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LN_Study_Leverage__c</picklist>
+            <values>
+                <fullName>Somewhat Likely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlikely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RL_Patient_Profiles__c</picklist>
+            <values>
+                <fullName>Somewhat Likely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlikely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>RL_Study_Leverage__c</picklist>
+            <values>
+                <fullName>Somewhat Likely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unlikely</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Very Likely</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Research_Focus__c</picklist>
+            <values>
+                <fullName>Heavily</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not at all</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slightly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Somewhat</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Treatment_Preferences__c</picklist>
+            <values>
+                <fullName>Chemo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chemo %26 Radiation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Diet%2FNutrition%2FAlternative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Radiation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Treatment_Volume__c</picklist>
+            <values>
+                <fullName>0-50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>100-150</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>150%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50-100</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Tumor_Types__c</picklist>
+            <values>
+                <fullName>Bone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Breast</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Colon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kidney</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liver</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lung</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ovary%2FUterus%2FCervix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pancreas</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prostate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stomach</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

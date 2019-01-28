@@ -1,0 +1,14 @@
+<!--
+Name:BOT_Drug_Access
+Created By:Harsha BR
+Created Date:03/28/2017
+Overview :Used to display the Drug Access by Payer dashboard on the Account Detail Page.
+-->
+<apex:page standardController="Formulary_Products_vod__c" extensions="BOT_Drug_View_Extn">
+    <h3>
+        Therapeutic Class : Overactive Bladder   
+    </h3>
+
+    <analytics:reportChart developerName="Drug_Access_View" hideOnError="true" showRefreshButton="false"  filter="{column:'Product_vod__c.BOT_Account__c', operator:'equals', value:'{!accName}'}">
+    </analytics:reportChart>
+</apex:page>

@@ -1,0 +1,6 @@
+<apex:page standardStylesheets="true" >
+<apex:composition template="{!$Page.VODRedirect_vod}"/>
+<script type="text/javascript">        
+    com.vod309.redirect.redirect("validationRuleAdmin","");
+</script>
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page standardController="Account" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_vod}"/>
+<script type="text/javascript">
+    var acctId = "{!Account.Id}";
+    if(!acctId) {
+        acctId = "{!URLENCODE($CurrentPage.parameters.acctId)}"
+    }        
+    var queryparams = "&event=viewHierarchy&acctid=" + acctId;
+    queryparams += "&acctPlanId=" + "{!URLENCODE($CurrentPage.parameters.acctPlanId)}";  
+    com.vod309.redirect.redirect("childAccount", queryparams);
+</script>
+</apex:page>

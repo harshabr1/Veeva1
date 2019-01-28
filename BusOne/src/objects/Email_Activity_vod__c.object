@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object holds all of the activity history related to an outbound email event (Sent_Email_vod) such as Opens, Clicks, and Unsubscribes and the details corresponding to each activity.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Activity_DateTime_vod__c</fullName>
+        <description>Activity_Datetime_vod captures the datetime of the activity which generated the Email_Activity_vod record.</description>
+        <externalId>false</externalId>
+        <label>Activity Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Approved_Document_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the Approved_Document_vod record from which the Email_Activity_vod record was initiated.</description>
+        <externalId>false</externalId>
+        <label>Approved Document</label>
+        <referenceTo>Approved_Document_vod__c</referenceTo>
+        <relationshipLabel>Email Activity</relationshipLabel>
+        <relationshipName>Email_Activity</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>City_vod__c</fullName>
+        <description>City_vod captures the name of the city the event cam from or &apos;unknown&apos; if it couldn&apos;t be determined. This is reported by the Multichannel Email Engine.</description>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Click_URL_vod__c</fullName>
+        <description>Click_URL_vod captures the URL for the clicked activity as reported by the Multichannel Email Engine. This may contain NULL.</description>
+        <externalId>false</externalId>
+        <label>Clicked URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Client_Name_vod__c</fullName>
+        <description>Client_Name_vod captures the name of the client sofware, e.g. ‘Thunderbird’, ‘Chrome’, ‘Firefox’. This is reported by the Multichannel Email Engine.</description>
+        <externalId>false</externalId>
+        <label>Client Name</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_OS_vod__c</fullName>
+        <description>Client_OS_vod captures the name of the OS family running the client software, i.e. &apos;Linux&apos;, &apos;Windows&apos;, &apos;OSX&apos;. This is reported by the Multichannel Email Engine.</description>
+        <externalId>false</externalId>
+        <label>Client OS</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Type_vod__c</fullName>
+        <description>Client_Type_vod captures the type of software the email was opened in, e.g. ‘browser’, ‘mobile browser’, ‘email client’. This is reported by the Multichannel Email Engine.</description>
+        <externalId>false</externalId>
+        <label>Client Type</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_vod__c</fullName>
+        <description>Country_vod captures the two-letter country code (as specified by ISO3166) the event came from or ‘unknown’ if it couldn’t be determined. This is reported by the Multichannel Email Engine.</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Device_Type_vod__c</fullName>
+        <description>Device_Type_vod captures the device type the email was opened on. Can be ‘desktop’, ‘mobile’, ‘tablet’, ‘other’ or ‘unknown’. This is reported by the Multichannel Email Engine.</description>
+        <externalId>false</externalId>
+        <label>Device</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Msg_vod__c</fullName>
+        <description>Event_Msg_vod captures the activity message as reported by the Multichannel Email Engine.</description>
+        <externalId>false</externalId>
+        <label>Activity Details</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Event_type_vod__c</fullName>
+        <description>Event_Type_vod captures the type of activity which generated the Email_Activity record as reported by the Multichannel Email Engine.</description>
+        <externalId>false</externalId>
+        <label>Activity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Preferences_Modified_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unsubscribed_All_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Delivered_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bounced_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Opened_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Clicked_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unsubscribed_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Marked_Spam_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Viewed_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dropped_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Downloaded_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IP_Address_vod__c</fullName>
+        <description>IP_Address_vod captures the IP address as reported by the Multichannel Email Engine of the device on which the email was viewed.</description>
+        <externalId>false</externalId>
+        <label>IP Address</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Link_Name_vod__c</fullName>
+        <description>Name of the Link</description>
+        <externalId>false</externalId>
+        <label>Link Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Preference_Modification_vod__c</fullName>
+        <description>Used to store the type of preference modification that resulted from the related sent email</description>
+        <externalId>false</externalId>
+        <label>Preference Modification</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Region_vod__c</fullName>
+        <description>Region_vod captures the two-letter or two digit region code the event came from or ‘unknown’ if it couldn’t be determined. This is reported by the Multichannel Email Engine.</description>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sent_Email_vod__c</fullName>
+        <description>Sent_Email_vod represents the Sent_Email_vod record to which this Email_Activity_vod record is associated.</description>
+        <externalId>false</externalId>
+        <label>Sent Email</label>
+        <referenceTo>Sent_Email_vod__c</referenceTo>
+        <relationshipLabel>Email Activity</relationshipLabel>
+        <relationshipName>Email_Activity_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>User_Agent_vod__c</fullName>
+        <description>User_Agent_vod captures the user again string of the client triggered in the event, i.e. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.22</description>
+        <externalId>false</externalId>
+        <label>User Agent</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_Doc_ID_vod__c</fullName>
+        <description>Vault_Doc_ID_vod captures the Vault identifier for the viewed document.</description>
+        <externalId>false</externalId>
+        <label>Document ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_Doc_Name_vod__c</fullName>
+        <description>Vault_Doc_Name_vod captures the name of the viewed document as it exists in Vault.</description>
+        <externalId>false</externalId>
+        <label>Document Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_Document_Major_Version_vod__c</fullName>
+        <description>The major version of the Vault document that was viewed.</description>
+        <externalId>false</externalId>
+        <label>Major Version</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_Document_Minor_Version_vod__c</fullName>
+        <description>The minor version of the Vault document that was viewed.</description>
+        <externalId>false</externalId>
+        <label>Minor Version</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_Document_Number_vod__c</fullName>
+        <description>Vault_Document_Number_vod captures the document number of the viewed document as it exists in Vault.</description>
+        <externalId>false</externalId>
+        <label>Document Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_Document_Title_vod__c</fullName>
+        <description>Vault_Document_Title_vod captures the title of the viewed document as it exists in Vault.</description>
+        <externalId>false</externalId>
+        <label>Document Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_Instance_ID_vod__c</fullName>
+        <description>Vault_Instance_ID_vod captures the domain of the source Vault.</description>
+        <externalId>false</externalId>
+        <label>Vault Domain</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Email Activity</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>EN-{000000000}</displayFormat>
+        <label>Email Activity Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Email Activity</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Email_Activity_vod</fullName>
+        <active>true</active>
+        <description>This segregates all email activity, eg opens, clicks, bounces, unsubs, etc. This activity is all populated via API from the Email Engine. The email engine will persist CRM org_id and sent_email_id values on each activity for correlation.</description>
+        <label>Email_Activity_vod</label>
+        <picklistValues>
+            <picklist>Event_type_vod__c</picklist>
+            <values>
+                <fullName>Bounced_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clicked_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivered_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dropped_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marked_Spam_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opened_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsubscribed_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Vault_Activity_vod</fullName>
+        <active>true</active>
+        <description>This segregates all post-clickthru activity, eg Vault page views. This activity is all populated via API from Vault. Vault will persist CRM org_id and sent_email_id values on each activity for correlation.</description>
+        <label>Vault_Activity_vod</label>
+        <picklistValues>
+            <picklist>Event_type_vod__c</picklist>
+            <values>
+                <fullName>Downloaded_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Viewed_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Vault_Doc_ID_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Vault_Doc_Name_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Activity_DateTime_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Event_type_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

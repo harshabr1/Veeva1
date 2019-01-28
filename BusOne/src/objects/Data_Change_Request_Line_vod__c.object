@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Data change request line.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Data_Change_Request_vod__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>DCR line parent request.</description>
+        <externalId>false</externalId>
+        <label>Data Change Request</label>
+        <referenceTo>Data_Change_Request_vod__c</referenceTo>
+        <relationshipLabel>Data Change Request Lines</relationshipLabel>
+        <relationshipName>Data_Change_Request_Lines_vod</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Error_vod__c</fullName>
+        <description>Details of any errors that occurred during outbound DCR requests to Veeva Network, or inbound DCR updates from Veeva Network. Errors are cleared after DCR is successfully processed.</description>
+        <externalId>false</externalId>
+        <label>Error</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_Field_API_Name_vod__c</fullName>
+        <description>Field API name in Customer Master</description>
+        <externalId>false</externalId>
+        <label>External Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_API_Name_vod__c</fullName>
+        <description>Field API name in CRM</description>
+        <externalId>false</externalId>
+        <label>Field API Name</label>
+        <length>43</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Name_vod__c</fullName>
+        <description>Name of modified field</description>
+        <externalId>false</externalId>
+        <label>Field Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Final_Localized_Value_vod__c</fullName>
+        <description>The final localized/translated value of the field, after the DCR result is returned from the Customer Master</description>
+        <externalId>false</externalId>
+        <label>Final Value (Localized)</label>
+        <length>4000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Final_Value_vod__c</fullName>
+        <description>Field value after Network validation.</description>
+        <externalId>false</externalId>
+        <label>Final Value</label>
+        <length>4000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mobile_Created_Datetime_vod__c</fullName>
+        <description>Time the record was created on mobile device.</description>
+        <externalId>false</externalId>
+        <label>Mobile Created Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Field used by mobile products for synchronization</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_Last_Modified_Datetime_vod__c</fullName>
+        <description>Last time modified on a mobile device</description>
+        <externalId>false</externalId>
+        <label>Mobile Last Modified Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>New_Localized_Value_vod__c</fullName>
+        <description>The localized/translated modified value of the field, as requested by the end user</description>
+        <externalId>false</externalId>
+        <label>New Value (Localized)</label>
+        <length>4000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>New_Value_vod__c</fullName>
+        <description>Field value after user update.</description>
+        <externalId>false</externalId>
+        <label>New Value</label>
+        <length>4000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Old_Localized_Value_vod__c</fullName>
+        <description>The localized/translated value of the field, before the change</description>
+        <externalId>false</externalId>
+        <label>Old Value (Localized)</label>
+        <length>4000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Old_Value_vod__c</fullName>
+        <description>Old field value</description>
+        <externalId>false</externalId>
+        <label>Old Value</label>
+        <length>4000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Resolution_Note_vod__c</fullName>
+        <description>Notes returned from Veeva Network</description>
+        <externalId>false</externalId>
+        <label>Resolution Note</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Result_vod__c</fullName>
+        <description>Line result returned from Customer Master.</description>
+        <externalId>false</externalId>
+        <label>Result</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CHANGE_ACCEPTED</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CHANGE_REJECTED</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CHANGE_MODIFIED</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CHANGE_ALREADYAPPLIED</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Data Change Request Line</label>
+    <nameField>
+        <displayFormat>DCRL{000000000}</displayFormat>
+        <label>DCR Line ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Data Change Request Lines</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

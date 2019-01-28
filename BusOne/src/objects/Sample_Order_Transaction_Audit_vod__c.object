@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Sample Order Transaction Audit is a read-only object maintained by the Sample_Order_Transaction_To_Audit_vod trigger on Sample Order Transaction that stores audit history of updates and deletions of Sample Order Transaction records. A row is created here only if a sample order transaction has been updated or deleted.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ASSMCA_vod__c</fullName>
+        <description>ASSMCA is the audit representation of the ASSMCA field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>ASSMCA</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Id_vod__c</fullName>
+        <description>Account Id is the audit representation of the Account Id field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Account Id</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Name_vod__c</fullName>
+        <description>Account Name  is the audit representation of the Account Name field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Account Name</label>
+        <length>500</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <description>Account is the audit representation of the Account field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Action_vod__c</fullName>
+        <description>Action represents the type of Action performed on the Sample Order Transaction record that triggered the creation of the Sample Order Transaction Audit record. &quot;U&quot; represents Update. &quot;D&quot; represents Delete.</description>
+        <externalId>false</externalId>
+        <label>Action</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Date_vod__c</fullName>
+        <description>Call Date is the audit representation of the Call Date field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Call Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Call_Datetime_vod__c</fullName>
+        <description>Call Datetime is the audit representation of the Call Datetime field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Call Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Call_Id_vod__c</fullName>
+        <description>Contains a text repersentation of the Id of the Call that created the Sample Order row.</description>
+        <externalId>false</externalId>
+        <label>Call Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Name_vod__c</fullName>
+        <description>Call Name is the audit representation of the Call Name field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Call Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Sample_Id_vod__c</fullName>
+        <description>Contains a text repersentation of the Id of the Call Sample that created the Sample Order row.</description>
+        <externalId>false</externalId>
+        <label>Call Sample Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Sample_Name_vod__c</fullName>
+        <description>Contains the Name of the Call Sample that created the Sample Order row.</description>
+        <externalId>false</externalId>
+        <label>Call Sample Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comments_vod__c</fullName>
+        <description>Comments is the audit representation of the Comments field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Confirmed_Quantity_vod__c</fullName>
+        <description>Confirmed Quantity is the audit representation of the Confirmed Quantity field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Confirmed Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Credentials_vod__c</fullName>
+        <description>The credentials of the Account signing for a sample</description>
+        <externalId>false</externalId>
+        <label>Credentials</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Custom_Text_vod__c</fullName>
+        <description>Custom text captured for the corresponding product line item. Only pertains to product that have been flagged to allow capture of custom text via the Product Catalog.</description>
+        <externalId>false</externalId>
+        <label>Custom Text</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DEA_Expiration_Date_vod__c</fullName>
+        <description>DEA Expiration Date is the audit representation of the DEA Expiration Date field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>DEA Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>DEA_vod__c</fullName>
+        <description>DEA # is the audit representation of the DEA # field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>DEA #</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Delivery_Status_vod__c</fullName>
+        <description>Status of the sample.</description>
+        <externalId>false</externalId>
+        <label>Delivery Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Disclaimer_vod__c</fullName>
+        <description>Disclaimer is the audit representation of the Disclaimer field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Disclaimer</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Discrepancy_vod__c</fullName>
+        <description>Discrepancy is the audit representation of the Discrepancy field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Discrepancy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Distributor_vod__c</fullName>
+        <description>Distributor is the audit representation of the Distributor field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Distributor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manufacturer_vod__c</fullName>
+        <description>The name of the manufacturer of the sampled product</description>
+        <externalId>false</externalId>
+        <label>Manufacturer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity_vod__c</fullName>
+        <description>Quantity is the audit representation of the Quantity field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Request_Receipt_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Request Receipt is the audit representation of the Request Receipt field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Request_Receipt</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Salutation_vod__c</fullName>
+        <description>The salutation of the Account signing for a sample</description>
+        <externalId>false</externalId>
+        <label>Salutation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_Card_Reason_vod__c</fullName>
+        <description>Sample Card Reason is the audit representation of the Sample Card Reason field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Sample Card Reason</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Laptop Unavailable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Application Unavailable</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sample_Send_Card_vod__c</fullName>
+        <description>Sample Send Card # is the audit representation of the Sample Send Card # field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Sample Send Card #</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_U_M__c</fullName>
+        <description>Sample U/M is the audit representation of the Sample U/M field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Sample U/M</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_vod__c</fullName>
+        <description>Sample is the audit representation of the Sample field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Sample</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Address_Line_1_vod__c</fullName>
+        <description>Ship Address Line 1 is the audit representation of the Ship Address Line 1 field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Ship Address Line 1</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Address_Line_2_vod__c</fullName>
+        <description>Ship Address Line 2 is the audit representation of the Ship Address Line 2 field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Ship Address Line 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_CDS_Expiration_Date_vod__c</fullName>
+        <description>The expiration date of the CDS registration number for the ship to address.</description>
+        <externalId>false</externalId>
+        <label>Ship CDS Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ship_CDS_vod__c</fullName>
+        <description>The CDS registration number for the corresponding state of the ship to address.</description>
+        <externalId>false</externalId>
+        <label>Ship CDS #</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_City_vod__c</fullName>
+        <description>Ship City is the audit representation of the Ship City field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Ship City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Country_vod__c</fullName>
+        <description>Ship Country is the audit representation of the Ship Country field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Ship_Country</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_License_Expiration_Date_vod__c</fullName>
+        <description>Ship License Expiration Date is the audit representation of the License Expiration Date field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Ship License Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ship_License_Status_vod__c</fullName>
+        <description>Ship License Status is the audit representation of the License Status field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Ship License Status</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_License_vod__c</fullName>
+        <description>Ship License is the audit representation of the License field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Ship License</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Location_vod__c</fullName>
+        <description>Ship Address Line 1 is the audit representation of the Ship Address Line 1 field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Ship Location</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_State_Distributor_Exp_Date_vod__c</fullName>
+        <description>The Expiration Date of the State Distributor license for the corresponding Business Ship To Address.</description>
+        <externalId>false</externalId>
+        <label>Ship State Distributor Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ship_State_Distributor_vod__c</fullName>
+        <description>The State Distributor license number for the corresponding Business Ship To Address.</description>
+        <externalId>false</externalId>
+        <label>Ship State Distributor</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_State_vod__c</fullName>
+        <description>Ship State is the audit representation of the Ship State field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Ship State</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Zip_4_vod__c</fullName>
+        <description>Ship Zip 4 is the audit representation of the Ship Zip 4 field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Ship Zip 4</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_Zip_vod__c</fullName>
+        <description>Ship Zip is the audit representation of the Ship Zip field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Ship Zip</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Shipment_Id_vod__c</fullName>
+        <description>Shipment Id is the audit representation of the Shipment Id field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Shipment Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_Date_vod__c</fullName>
+        <description>Signature Date is the audit representation of the Signature Date field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Signature Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Signature_Page_Display_Name_vod__c</fullName>
+        <description>The value of the Account.Signature_Page_Display_Name_vod at the time of Signature Capture.</description>
+        <externalId>false</externalId>
+        <label>Signature Page Display Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_vod__c</fullName>
+        <description>Signature is the audit representation of the Signature field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Signature</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status is the audit representation of the Status field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Saved_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Territory_vod__c</fullName>
+        <description>Territory is the audit representation of the Territory field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Territory</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Transaction_Id_vod__c</fullName>
+        <description>Transaction Id is the audit representation of the Transaction Id field on the Sample Order Transaction object.</description>
+        <externalId>false</externalId>
+        <label>Transaction Id</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Sample Order Transaction Audit</label>
+    <nameField>
+        <displayFormat>ASI-{000000000}</displayFormat>
+        <label>Audit Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Sample Order Transaction Audit</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

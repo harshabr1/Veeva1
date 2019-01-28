@@ -1,0 +1,17 @@
+<!--
+Name : Pagenation_sample
+Created by : Sreenivasulu Adipudi
+Created date : 16-AUG-2017
+Description : It is created to test pagenation
+-->
+<apex:page standardController="Account" extensions="Pagenation_sample_extn">
+    <apex:form >
+        <apex:pageBlock >
+            <!-- To display channel filter on the screen -->            
+            <apex:outputLabel value="Select a Channel" />
+            <apex:selectList size="1" value="{!selected}" >
+                <apex:selectOptions value="{!dynamicList}" />                    
+            </apex:selectList>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

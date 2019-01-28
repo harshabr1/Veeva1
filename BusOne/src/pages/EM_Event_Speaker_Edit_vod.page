@@ -1,0 +1,4 @@
+<apex:page standardController="EM_Event_Speaker_vod__c" >
+    <c:VOD_EMBED veevaModule="em" veevaPage="event-speaker-edit" objectType="EM_Event_Speaker_vod__c"
+    queryParams="{!$CurrentPage.parameters.queryParams}&objectId={!EM_Event_Speaker_vod__c.Id}"/>
+</apex:page>

@@ -1,0 +1,61 @@
+<apex:component controller="Veeva_Embed_Controller">
+
+    <apex:attribute name="veevaModule" type="string" assignTo="{!veevaModuleName}" required="true"
+                    description="Name of the Veeva Module" />
+    <apex:attribute name="veevaPage" type="string" assignTo="{!veevaPageName}" required="true"
+                    description="Name of the page in the Veeva Module" />
+    <apex:attribute name="objectType" type="string" assignTo="{!veevaObjectType}" required="false"
+                    description="Type of object to be used" />
+    <apex:attribute name="queryParams" type="string" assignTo="{!veevaParams}" required="false"
+                    description="query parameters" />
+    <apex:attribute name="recordType18" type="string" assignTo="{!recordType18Digit}" required="false"
+                        description="query parameters" />
+
+    <!-- CSS -->
+    <apex:stylesheet value="{!VodUrl}/css/{!veevaModuleName}/app.min.css" />
+
+    <!-- Vendor JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+
+    <script type="text/javascript" src="{!VodUrl}/js/{!veevaModuleName}/vendor.js"></script>
+
+    <!-- JS -->
+    <script type="text/javascript" src="{!VodUrl}/js/{!veevaModuleName}/templates.js"></script>
+    <script type="text/javascript" src="{!VodUrl}/js/{!veevaModuleName}/app.js"></script>
+    <script type="text/javascript">
+        angular.module("veeva.session").constant('VeevaHeaders', {"sfSession": "{!SfSession}", "sfEndpoint": "{!SfEndpoint}","auth": "{!SfdcAuth}", "vodUrl": "{!VodUrl}", 
+        "objectType": "{!veevaObjectType}", "queryParams": "{!veevaParams}", "recordType18": "{!recordType18}"});
+    </script>
+    <!-- Veeva div -->
+    <div id="veeva-app" class="veeva-app">
+        <div class="veeva-load">+</div>
+    </div>
+
+    <script>
+        (function() {
+			var target = document.getElementById("veeva-app");
+			try {
+                var spinner = new Spinner().spin();
+                target.appendChild(spinner.el);
+            } catch(e) {
+            }            
+            var initInjector = angular.injector(["ng"]);
+            var $http = initInjector.get("$http");
+
+            $http.defaults.headers.common.sfSession = '{!SfSession}';
+            $http.defaults.headers.common.sfEndpoint = '{!SfEndpoint}';
+
+            $http({method: 'GET', url: '{!VeevaPageUrl}'})
+                .success(function (data) {
+                    target.innerHTML = data;
+                    angular.bootstrap(document, ['{!veevaModuleName}']);
+                })
+                .error(function (data, status) {
+                    target.innerHTML = "<p>Error.</p>" +
+                        "<div>Status: " + status + "</div>" +
+                        "<pre>" + data + "</pre>";
+                });
+        }());
+   </script>
+
+</apex:component>

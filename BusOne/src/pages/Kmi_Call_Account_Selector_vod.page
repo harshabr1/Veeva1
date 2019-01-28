@@ -1,0 +1,5 @@
+<apex:page standardController="Call2_vod__c" tabStyle="Medical_Insight_vod__c">
+    <c:VOD_EMBED veevaModule="kmi" objectType="Medical_Insight_vod__c"
+     veevaPage="{!IF((Call2_vod__c.Account_vod__r.isPersonAccount),'medical-insight-edit','select-account')}"
+     queryParams="callId={!Call2_vod__c.Id}"/>
+</apex:page>

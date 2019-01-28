@@ -1,0 +1,61 @@
+<apex:component controller="VOD_EMBED_CONTROLLER">
+    <apex:attribute name="veevaModule" type="string" assignTo="{!veevaModuleName}" required="true"
+                    description="Name of the Veeva Module" />
+    <apex:attribute name="veevaPage" type="string" assignTo="{!veevaPageName}" required="true"
+                    description="Name of the page in the Veeva Module" />
+    <apex:attribute name="objectType" type="string" assignTo="{!veevaObjectType}" required="false"
+                    description="Type of object to be used" />
+    <apex:attribute name="queryParams" type="string" assignTo="{!veevaParams}" required="false"
+                    description="query parameters" />
+    <apex:attribute name="recordType18" type="string" assignTo="{!recordType18Digit}" required="false"
+                        description="query parameters" />
+    <apex:attribute name="mcEngine" type="string" assignTo="{!veevaMcEngine}" required="false"
+                    description="Page is used in MC Engine" />
+
+    <apex:stylesheet value="{!VodUrl}/{!staticDir}{!veevaModuleName}/css/app.css" />
+
+<!--[if lte IE 9]>
+    <script src="{!VodUrl}/static/xdomain.min.js" slave="{!VodUrl}/static/proxy.html"></script>
+<![endif]-->
+    <script src="{!VodUrl}/static/angular-1.4.9.min.js"></script>
+    <script type="text/javascript" src="{!VodUrl}/{!staticDir}{!veevaModuleName}/js/vendor{!miniString}.js"></script>
+    <script type="text/javascript" src="{!VodUrl}/{!staticDir}{!veevaModuleName}/js/app{!miniString}.js"></script>
+	<div id="veeva-app" class="veeva-app"><div class="veeva-load">+</div></div>
+    <script>
+        (function() {
+            var target = document.getElementById("veeva-app");
+            try {
+                var spinner = new Spinner().spin();
+                target.appendChild(spinner.el);
+            } catch(e) {
+            }            
+            var initInjector = angular.injector(["ng"]);
+            var $http = initInjector.get("$http");
+
+            $http.defaults.headers.common.sfSession = '{!JSENCODE(SfSession)}';
+            $http.defaults.headers.common.sfEndpoint = '{!JSENCODE(SfEndpoint)}';
+            
+            var veevaUrl = '{!JSENCODE(VeevaPageUrl)}';
+            var queryParams = encodeURI('{!JSENCODE(veevaParams)}');
+            if (queryParams) {
+                if (queryParams.indexOf('?') !== 0) {
+                    veevaUrl += '?';
+                }
+                veevaUrl += queryParams;
+            }
+            
+            $http({method: 'GET', url: veevaUrl}).then(
+                function (response) {
+                    var sfdata = {"userId": "{!JSENCODE(UserId)}", "appName": "{!JSENCODE(veevaModuleName)}",
+                                "sfSession": "{!JSENCODE(SfSession)}", "sfEndpoint": "{!JSENCODE(SfEndpoint)}","auth": "{!JSENCODE(SfdcAuth)}", "vodUrl": "{!JSENCODE(VodUrl)}",
+                                "objectType": "{!JSENCODE(veevaObjectType)}", "queryParams": queryParams, "veevaPage" : "{!JSENCODE(veevaPageName)}",
+                                "recordType18": "{!JSENCODE(recordType18)}"};
+                    vodSetupPage(target, response, sfdata, '{!JSENCODE(veevaModuleName)}');
+                },
+                function (response) {
+                    vodErrorPage(target, response);
+                }
+            )
+        }());
+   </script>
+</apex:component>

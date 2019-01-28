@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is a system object that holds the translation of the error messages for rules and drives the message appearance on the Veeva offline platforms.
+
+Do not modify, load or delete data in this object.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Language_vod__c</fullName>
+        <description>Language ISO code to which this translation corresponds.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Language ISO code to which this translation corresponds.</inlineHelpText>
+        <label>Language</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Message_Translation_vod__c</fullName>
+        <description>Error message translation for rule.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Error message translation for rule.</inlineHelpText>
+        <label>Message Translation</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Rule_Definition_vod__c</fullName>
+        <description>Reference to the Rule Definition record for which this is a message translation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference to the Rule Definition record for which this is a message translation.</inlineHelpText>
+        <label>Rule Definition</label>
+        <referenceTo>Rule_Definition_vod__c</referenceTo>
+        <relationshipLabel>Rule Message Translations</relationshipLabel>
+        <relationshipName>Rule_Message_Translation_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <description>External Id for the record. Format is [RULE NAME]::[RecordType.Name]::[Language_vod]</description>
+        <externalId>true</externalId>
+        <inlineHelpText>External Id for the record. Format is [RULE NAME]::[RecordType.Name]::[Language_vod]</inlineHelpText>
+        <label>VExternal Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Rule Message Translation</label>
+    <nameField>
+        <displayFormat>TRNSLN-{00000000}</displayFormat>
+        <label>Rule Message Translation Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Rule Message Translations</pluralLabel>
+    <recordTypes>
+        <fullName>SFDC_Rule_Message_Translation_vod</fullName>
+        <active>true</active>
+        <description>System record type. Do not modify.</description>
+        <label>SFDC_Rule_Message_Translation_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

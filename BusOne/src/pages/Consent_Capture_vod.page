@@ -1,0 +1,3 @@
+<apex:page standardController="Account" title="Consent Capture" standardStylesheets="true" sidebar="false" >
+    <c:VOD_EMBED veevaModule="consent" veevaPage="consent-default-page" queryParams="acctId={!account.Id}" objectType="Consent_Header_vod__c"/>       
+</apex:page>

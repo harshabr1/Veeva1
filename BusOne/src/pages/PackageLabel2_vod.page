@@ -1,0 +1,105 @@
+<!-- 
+- 
+- Confidentiality Information: 
+- 
+- This module is the confidential and proprietary information of 
+- Verticals onDemand, Inc.; it is not to be copied, reproduced, or transmitted 
+- in any form, by any means, in whole or in part, nor is it to be used 
+- for any purpose other than that for which it is expressly provided 
+- without the written permission of Verticals onDemand. 
+- 
+- Copyright (c) 2009 Verticals onDemand, Inc. All Rights Reserved. 
+- 
+--> 
+<apex:page controller="VOD_PackageLabelController2" renderAs="pdf">
+<!-- Include any stylesheets here -->
+<apex:stylesheet value="{!$Resource.vod_common}"/>
+
+<apex:messages />
+<!-- DIV container for package label slip -->
+<div style="border:thin solid black;margin-left:50px;margin-right:50px;margin-top:25px;margin-bottom:25px">
+<p>
+<apex:image style="margin-left:10px" url="{!$Resource.vod_logo}"/>
+</p>
+<!-- Use of html table for a grid layout.  It is floated to the right of the buffer zone. -->
+<table cellspacing="8px" style="float:right;margin-right:50px">
+<tr><td>{!$ObjectType.Sample_Transaction_vod__c.fields.Name.label} :</td><td>{!transaction.Name}</td></tr>
+<tr><td>{!$ObjectType.Rep_Roster_vod__c.fields.Territory_vod__c.label}&nbsp;:</td><td>{!sender.Territory_vod__c}</td></tr>
+</table>
+<!-- Buffer zone between corporate log and sender data -->
+<p style="padding-bottom:35px"/>
+<!-- Sender information -->
+<p>
+<apex:outputText style="font-weight:bold;font-variant:small-caps;margin-left:20px;line-height:2" value="From :"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:40px;line-height:2" value="{!sender.Name}"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:40px;line-height:2" value="{!sender.Address_Line_1_vod__c}"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:40px;line-height:2" value="{!IF(sender.Address_Line_2_vod__c='',sender.City_vod__c & ', ' & sender.State_vod__c & ' ' & sender.Zip_vod__c,sender.Address_Line_2_vod__c)}"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:40px;line-height:2" value="{!IF(sender.Address_Line_2_vod__c='','',sender.City_vod__c & ', ' & sender.State_vod__c & ' ' & sender.Zip_vod__c)}"></apex:outputText><br/>
+</p>
+<p style="padding-bottom:2px" />
+<hr style="color:#DCDCDC"/>
+<p style="padding-bottom:2px" />
+<!-- Recipient information -->
+<p>
+<apex:outputText style="font-weight:bold;font-variant:small-caps;margin-left:20px;line-height:2" value="To :"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:40px;line-height:2" value="{!recipient.Name}"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:40px;line-height:2" value="{!recipient.Address_Line_1_vod__c}"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:40px;line-height:2" value="{!IF(recipient.Address_Line_2_vod__c='',recipient.City_vod__c & ', ' & recipient.State_vod__c & ' ' & recipient.Zip_vod__c,recipient.Address_Line_2_vod__c)}"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:40px;line-height:2" value="{!IF(recipient.Address_Line_2_vod__c='','',recipient.City_vod__c & ', ' & recipient.State_vod__c & ' ' & recipient.Zip_vod__c)}"></apex:outputText><br/>
+</p>
+<p style="padding-bottom:1px" />
+</div>
+<!-- The half-way point is estimated by padding html elements -->
+<center>--------------------------------------------------------&nbsp;&nbsp;&nbsp;<apex:outputText style="font-size:8pt" value="Fold Here"/>&nbsp;&nbsp;&nbsp;--------------------------------------------------------</center>
+<p style="page-break-after:always"/>
+<!-- NEW PAGE -->
+<div style="margin-left:50px;margin-right:50px;margin-top:25px;margin-bottom:25px">
+<p>
+<apex:outputText style="font-weight:bold;font-size:16pt" value="{!transactionRecordTypeLabel} - Packing Slip"></apex:outputText><apex:image style="float:right;" url="{!$Resource.vod_logo}"/>
+</p>
+<p style="padding-bottom:40px" />
+<p>
+<!-- Another table used for grid layout.  This one is floated to the right of the sender data. -->
+<table cellspacing="8px" style="float:right;margin-right:50px;margin-top:6px;">
+<tr><td style="text-align:right;font-weight:bold">{!$ObjectType.Rep_Roster_vod__c.fields.Home_Phone__c.label}&nbsp;:</td><td>{!sender.Home_Phone__c}</td></tr>
+<tr><td style="text-align:right;font-weight:bold">{!$ObjectType.Rep_Roster_vod__c.fields.Territory_vod__c.label}&nbsp;:</td><td>{!sender.Territory_vod__c}</td></tr>
+</table>
+<!-- Sender data -->
+<apex:outputText style="font-weight:bold;margin-left:5px;line-height:2" value="Employee Name :"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:5px;line-height:2" value="{!sender.Name}"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:5px;line-height:2" value="{!sender.Address_Line_1_vod__c}"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:5px;line-height:2" value="{!IF(sender.Address_Line_2_vod__c='',sender.City_vod__c & ', ' & sender.State_vod__c & ' ' & sender.Zip_vod__c,sender.Address_Line_2_vod__c)}"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:5px;line-height:2" value="{!IF(sender.Address_Line_2_vod__c='','',sender.City_vod__c & ', ' & sender.State_vod__c & ' ' & sender.Zip_vod__c)}"></apex:outputText><br/>
+</p>
+<p style="padding-bottom:20px" />
+<!-- Recipient data -->
+<p>
+<apex:outputText style="font-weight:bold;margin-left:5px;line-height:2" value="{!IF(isReturn,'Returned To','Transferred To')} :"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:5px;line-height:2" value="{!recipient.Name}"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:5px;line-height:2" value="{!recipient.Address_Line_1_vod__c}"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:5px;line-height:2" value="{!IF(recipient.Address_Line_2_vod__c='',recipient.City_vod__c & ', ' & recipient.State_vod__c & ' ' & recipient.Zip_vod__c,recipient.Address_Line_2_vod__c)}"></apex:outputText><br/>
+<apex:outputText style="font-variant:small-caps;margin-left:5px;line-height:2" value="{!IF(recipient.Address_Line_2_vod__c='','',recipient.City_vod__c & ', ' & recipient.State_vod__c & ' ' & recipient.Zip_vod__c)}"></apex:outputText><br/>
+</p>
+<p style="padding-bottom:1px" />
+<p>
+<!-- Another table used for layout purposes.  Some sample transaction data is displayed here. -->
+<table cellspacing="8px" style="float:right;margin-right:50px;margin-top:-18px;">
+<tr><td style="text-align:right;font-weight:bold">{!$ObjectType.Sample_Transaction_vod__c.fields.Name.label} :</td><td>{!transaction.Name}</td></tr>
+<tr><td style="text-align:right;font-weight:bold">{!$ObjectType.Sample_Transaction_vod__c.fields.Submitted_Date_vod__c.label} :</td><td><apex:outputField value="{!transaction.Submitted_Date_vod__c}" /></td></tr>
+</table>
+<apex:outputText style="font-weight:bold;margin-left:5px;line-height:2" value="{!$ObjectType.Sample_Transaction_vod__c.fields.Reason_vod__c.label} :"/>{!transaction.Reason_vod__c}<br/>
+<apex:outputText style="font-weight:bold;margin-left:5px;line-height:2" value="Total # of Items: "/>{!totalLineItems}<br/>
+</p>
+<!-- The list of sample transactions -->
+<p>
+<apex:dataTable border="1" cellpadding="3px" style="margin-left:5px;font-size:6pt;" width="100%" value="{!transactions}" var="trxn" id="vod_transactions" headerClass="vodHeaderRow">
+    <apex:column headervalue="{!$ObjectType.Sample_Transaction_vod__c.fields.Sample_vod__c.label}" value="{!trxn.sample.Name}"></apex:column>        
+    <apex:column headervalue="{!$ObjectType.Product_vod__c.fields.Description_vod__c.label}" value="{!trxn.sample.Description_vod__c}"></apex:column>        
+    <apex:column headervalue="{!$ObjectType.Product_vod__c.fields.Manufacturer_vod__c.label}" value="{!trxn.sample.Manufacturer_vod__c}"></apex:column>        
+    <apex:column headervalue="{!$ObjectType.Sample_Transaction_vod__c.fields.Lot_vod__c.label}" value="{!trxn.samTran.Lot_vod__r.Name}"></apex:column>
+    <apex:column headervalue="{!$ObjectType.Sample_Transaction_vod__c.fields.Quantity_vod__c.label}" value="{!trxn.samTran.Quantity_vod__c}"></apex:column>
+    <apex:column headervalue="{!$ObjectType.Sample_Transaction_vod__c.fields.U_M_vod__c.label}" value="{!trxn.samTran.U_M_vod__c}"></apex:column>
+</apex:dataTable>
+</p>
+</div>
+</apex:page>

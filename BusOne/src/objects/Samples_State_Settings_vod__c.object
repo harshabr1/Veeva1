@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Samples State Settings object provides the ability to manage State restrictions based upon the delivery mechanism of Controlled Substance sampling.  States can be restricted to not allow sampling, only allow sample sends, or only allow hand sample disbursements as it relates to Controlled Substances.  If a record does not exist for a State, then all delivery mechanisms will be allowed for the State.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CDS_Required_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Defines whether or not a CDS license is required for controlled substance sampling in a particular state. Used to determine if CDS license validation occurs on a call.</description>
+        <externalId>false</externalId>
+        <label>CDS Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>External_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id field to enforce uniqueness and to assist in the loading of data.  This value is maintained by a Trigger, which sets the value to the Name field (in this case State).</description>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Setting_vod__c</fullName>
+        <description>The setting determines the delivery mechanism restriction for the defined State.</description>
+        <externalId>false</externalId>
+        <label>Setting</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Hand_Sample_Only_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>BRC_Sample_Only_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No_Sample_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>State_Distributor_Required_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Defines whether or not a State Distributor  license (e.g TDDD)  is required for sampling in a particular state. Used to determine if State Distributor license validation occurs on a call.</description>
+        <externalId>false</externalId>
+        <label>State Distributor Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Samples State Settings</label>
+    <nameField>
+        <label>State Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Samples State Settings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>CDSRequired_DeliverySetting_vod</fullName>
+        <active>true</active>
+        <description>CDS Requirements and Delivery Method Settings cannot be defined in the same record.</description>
+        <errorConditionFormula>AND(CDS_Required_vod__c = True, NOT(ISBLANK(TEXT(Setting_vod__c))))</errorConditionFormula>
+        <errorMessage>Cannot define CDS Requirements and Delivery Method in the same record.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>StateDistributorRequired_CDSRequired_vod</fullName>
+        <active>true</active>
+        <description>State Distributor Requirements and CDS Requirements cannot be defined in the same record.</description>
+        <errorConditionFormula>AND(State_Distributor_Required_vod__c = True, CDS_Required_vod__c=True)</errorConditionFormula>
+        <errorMessage>Cannot define State Distributor Requirements and CDS Requirements in the same record.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>StateDistributorRequired_DeliverySetting</fullName>
+        <active>true</active>
+        <description>State Distributor Requirements and Delivery Method Settings cannot be defined in the same record.</description>
+        <errorConditionFormula>AND(State_Distributor_Required_vod__c = True, NOT(ISBLANK(TEXT(Setting_vod__c))))</errorConditionFormula>
+        <errorMessage>Cannot define State Distributor Requirements and Delivery Method in the same record.</errorMessage>
+    </validationRules>
+</CustomObject>

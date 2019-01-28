@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Closed Loop Marketing presentation slides.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Clm_Presentation_vod__c</fullName>
+        <description>Master-detail relationship to CLM presentations.</description>
+        <externalId>false</externalId>
+        <label>Presentation</label>
+        <referenceTo>Clm_Presentation_vod__c</referenceTo>
+        <relationshipName>Clm_Presentation_Slide_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Display_Order_vod__c</fullName>
+        <description>Defines slide order within a presentation.</description>
+        <externalId>false</externalId>
+        <label>Display Order</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id field for Data Loading</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Key_Message_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Reference to Key Message instance.</description>
+        <externalId>false</externalId>
+        <label>Key Message</label>
+        <referenceTo>Key_Message_vod__c</referenceTo>
+        <relationshipName>Clm_Presentation_Slide_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mandatory_Slides_vod__c</fullName>
+        <externalId>false</externalId>
+        <label>Mandatory Slides</label>
+        <length>2500</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Sub_Presentation_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A lookup  to a CLM_Presentation, which is an embedded call flow, or sub presentation.</description>
+        <externalId>false</externalId>
+        <label>Sub Presentation</label>
+        <referenceTo>Clm_Presentation_vod__c</referenceTo>
+        <relationshipName>Clm_Presentation_Slide_2_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id used by Veeva CRM.</description>
+        <externalId>true</externalId>
+        <label>Veeva External ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>CLM Presentation Slide</label>
+    <nameField>
+        <displayFormat>CPS-{000000000}</displayFormat>
+        <label>CLM Presentation Slide Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>CLM Presentation Slides</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>NO_REFER_TO_MAIN_PRESENTATION</fullName>
+        <active>true</active>
+        <description>The sub-presentation of one slide should not be linked back to the main presentation.</description>
+        <errorConditionFormula>Clm_Presentation_vod__r.Id = Sub_Presentation_vod__c</errorConditionFormula>
+        <errorDisplayField>Sub_Presentation_vod__c</errorDisplayField>
+        <errorMessage>You cannot make the parent presentation refer to itself as a sub presentation</errorMessage>
+    </validationRules>
+</CustomObject>

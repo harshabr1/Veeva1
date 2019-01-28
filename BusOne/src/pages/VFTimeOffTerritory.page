@@ -1,0 +1,11 @@
+<apex:page standardController="Time_Off_Territory_vod__c" showHeader="false" sidebar="false" standardStylesheets="false" >
+    <apex:pageBlock >
+        <p> Reason: {!Time_Off_Territory_vod__c.Reason_vod__c}</p>
+        <p> Status: {!Time_Off_Territory_vod__c.Status_vod__c}</p> 
+        <p> Hours: {!Time_Off_Territory_vod__c.Hours_vod__c}</p> 
+        <p> Date: {!Time_Off_Territory_vod__c.Date_vod__c}</p> 
+        <p> Time: {!Time_Off_Territory_vod__c.Time_vod__c}</p> 
+        <p> Territories: {!Time_Off_Territory_vod__c.Territory_vod__c}</p> 
+        <p> Last Modified By: {!Time_Off_Territory_vod__c.LastModifiedBy.Name}, {!Time_Off_Territory_vod__c.LastModifiedDate}</p> 
+    </apex:pageBlock>
+</apex:page>

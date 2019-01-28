@@ -1,0 +1,67 @@
+<apex:page controller="VOD_InventoryWorksheetController" renderAs="pdf">
+    <apex:image style="float:right; padding-top: 10px" url="{!$Resource.vod_logo}"/>
+    <div style="padding: 20px; font-size: .8em; font-family: 'Arial Unicode MS';">
+        <apex:outputText style="font-weight:bold" value="{!$ObjectType.Sample_Transaction_vod__c.fields.Transferred_From_vod__c.label}: "/>{!userDetails.FirstName} {!userDetails.LastName}
+        <br/><br/>
+        <apex:outputText style="font-weight:bold" value="{!$ObjectType.Territory.fields.Name.label}: "/>{!territoryNames}
+        <br/><br/>
+        <!--example of pulling data from User object-->
+        <apex:outputText style="font-weight:bold" value="{!$Label.Employee_Number_Label_vod}: "/>{!userDetails.EmployeeNumber}
+        <br/><br/>
+        <!--example of pulling data from Rep Roster object
+        <apex:outputText style="font-weight:bold" value="{!$Label.Rep_Roster_Zip_Label_vod}: "/>{!repRoster.Zip_vod__c}
+        <br/><br/>
+        -->
+        <table>
+            <tr style="height: 30px">
+                <td><apex:outputText style="font-weight:bold" value="{!$ObjectType.Sample_Transaction_vod__c.fields.Transferred_Date_vod__c.label}: "/></td>
+                <td>________________________</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText style="font-weight:bold" value="{!$ObjectType.Call2_vod__c.fields.Address_vod__c.label}: "/></td>
+                <td>________________________</td>
+            </tr>
+            <tr style="height: 30px">
+                <td><apex:outputText style="font-weight:bold" value="{!$ObjectType.Sample_Transaction_vod__c.fields.Transfer_To_vod__c.label}: "/></td>
+                <td>________________________</td>
+                <td></td>
+                <td>________________________</td>
+            </tr>
+            <tr style="height: 30px">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>____________________,&nbsp;____&nbsp;&nbsp;________</td>
+            </tr>
+        </table>
+        <apex:dataTable value="{!activeSamples}" var="activeSample" cellpadding="5" border="1">
+            <apex:column style="font-family: 'Arial Unicode MS';" width="25%">
+                <apex:facet name="header">{!$ObjectType.Sample_Lot_vod__c.fields.Sample_vod__c.label}</apex:facet>
+                <apex:outputField value="{!activeSample.Sample_vod__c}"/>
+            </apex:column>
+            <apex:column style="font-family: 'Arial Unicode MS';" width="1%">
+                <apex:facet name="header">{!$ObjectType.Sample_Lot_vod__c.fields.Name.label}</apex:facet>
+                <apex:outputField value="{!activeSample.Name}"/>
+            </apex:column>
+            <apex:column style="font-family: 'Arial Unicode MS';" width="1%">
+                <apex:facet name="header">{!$ObjectType.Sample_Lot_vod__c.fields.Expiration_Date_vod__c.label}</apex:facet>
+                <apex:outputField value="{!activeSample.Expiration_Date_vod__c}"/>
+            </apex:column>
+            <apex:column style="font-family: 'Arial Unicode MS';">
+                <apex:facet name="header">{!$ObjectType.Sample_Transaction_vod__c.fields.Quantity_vod__c.label}</apex:facet>
+            </apex:column>
+            <apex:column style="font-family: 'Arial Unicode MS';" width="1%">
+                <apex:facet name="header">{!$ObjectType.Sample_Lot_vod__c.fields.U_M_vod__c.label}</apex:facet>
+                <apex:outputField value="{!activeSample.U_M_vod__c}"/>
+            </apex:column>
+        </apex:dataTable>
+        <!--
+        <apex:dataTable value="{!productCatalog}" var="product" cellpadding="5" border="1">
+            <apex:column width="25%">
+                <apex:outputField value="{!product.Name}"/>
+            </apex:column>
+            <apex:column width="25%">
+                <apex:outputField value="{!product.Company_Product_vod__c}"/>
+            </apex:column>
+        </apex:dataTable>
+        -->
+    </div>
+</apex:page>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>The Multichannel_Content_Asset_vod object stores supporting asset metaData for Multichannel_Content_vod metData.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Description of the slide. Displayed to viewers as captions under thumbnails.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Detail Group associated to the slide</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Content Assets (Detail Group)</relationshipLabel>
+        <relationshipName>Multichannel_Content_Assets1_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Display_Order_vod__c</fullName>
+        <description>Display order of the slide</description>
+        <externalId>false</externalId>
+        <label>Display Order</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HTML_File_Name_vod__c</fullName>
+        <description>File name for HTML content which utilizes the CLM packaging structure</description>
+        <externalId>false</externalId>
+        <label>HTML File Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HTML_Height_vod__c</fullName>
+        <description>Height of fixed sized HTML presentations</description>
+        <externalId>false</externalId>
+        <label>HTML Height</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HTML_Width_vod__c</fullName>
+        <description>Height of fixed sized HTML presentations</description>
+        <externalId>false</externalId>
+        <label>HTML Width</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key_Message_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Key Message associated to the slide</description>
+        <externalId>false</externalId>
+        <label>Key Message</label>
+        <referenceTo>Key_Message_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Content Assets</relationshipLabel>
+        <relationshipName>Multichannel_Content_Assets_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Language_vod__c</fullName>
+        <description>Language attribute of the content. The picklist values can be expanded by the customer as needed. Values should be ISO codes of the associated language.</description>
+        <externalId>false</externalId>
+        <label>Language</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>en_US</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Media_File_Name_vod__c</fullName>
+        <description>Media File Name used for gotoSlide</description>
+        <externalId>false</externalId>
+        <label>Media File Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Media_Type_vod__c</fullName>
+        <description>Media type of the main content</description>
+        <externalId>false</externalId>
+        <label>Media Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PDF_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Image_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Video_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>HTML_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Multichannel_Content_vod__c</fullName>
+        <description>The parent Multichannel Presentation</description>
+        <externalId>false</externalId>
+        <label>Multichannel Content</label>
+        <referenceTo>Multichannel_Content_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Content Assets</relationshipLabel>
+        <relationshipName>Multichannel_Content_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product associated to the slide</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Content Assets (Product)</relationshipLabel>
+        <relationshipName>Multichannel_Content_Assets_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status of the slide on the CDN. A piece of content will either be &apos;Approved&apos;, &apos;Staged&apos;, or &apos;Expired&apos;</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Expired_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Staged_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id used by Veeva CRM</description>
+        <externalId>true</externalId>
+        <label>Veeva External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_DNS_vod__c</fullName>
+        <description>Vault DNS of the document.</description>
+        <externalId>false</externalId>
+        <label>Vault DNS</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_Doc_Id_vod__c</fullName>
+        <description>Vault ID of the document</description>
+        <externalId>false</externalId>
+        <label>Vault Doc Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_External_Id_vod__c</fullName>
+        <description>External ID from Vault</description>
+        <externalId>false</externalId>
+        <label>Vault External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_GUID_vod__c</fullName>
+        <description>Global Unique Identifier for Vault instance where this document resides.</description>
+        <externalId>false</externalId>
+        <label>Vault GUID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Vault_Last_Modified_Date_Time_vod__c</fullName>
+        <description>Last modified date time of the content as reported by Vault.</description>
+        <externalId>false</externalId>
+        <label>Vault Last Modified Date Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Version_vod__c</fullName>
+        <description>Version of the Vault Document.</description>
+        <externalId>false</externalId>
+        <label>Version</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Multichannel Content Asset</label>
+    <nameField>
+        <label>Multichannel Content Asset Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Multichannel Content Assets</pluralLabel>
+    <recordTypes>
+        <fullName>Engage_Slide_vod</fullName>
+        <active>true</active>
+        <description>For Engage Slides</description>
+        <label>Engage_Slide_vod</label>
+        <picklistValues>
+            <picklist>Language_vod__c</picklist>
+            <values>
+                <fullName>en_US</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Media_Type_vod__c</picklist>
+            <values>
+                <fullName>HTML_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Image_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Video_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Approved_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expired_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Staged_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

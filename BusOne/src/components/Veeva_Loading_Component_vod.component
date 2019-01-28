@@ -1,0 +1,23 @@
+<apex:component >
+    <script type="text/javascript">
+        var com = com || {};
+        com.vod309 = com.vod309 || {};
+        
+        com.vod309.loading = {};
+            
+        com.vod309.loading.init = function(iframe, loadingElementId) {
+            if(loadingElementId !== ""){
+                var loadingElement = document.getElementById(loadingElementId);
+    
+                iframe.onload=function(){
+                    loadingElement.style.display="none";
+                };
+            }
+            
+                
+        }
+
+
+
+  </script>
+</apex:component>

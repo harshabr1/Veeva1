@@ -1,0 +1,62 @@
+<aura:component >
+	<aura:attribute name="Plans" type="List" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="c:BOT_Account_RelPlans_Event" action="{!c.selectedPlans}" />
+    	<!-- Creation of layout to display Accout related records like plans, formularies, pharmacy services -->
+    <lightning:layout class="slds-grid_align-space" multipleRows="true">
+      
+        <div class="slds-text-heading_large" Style="font-size:20px">Plan Demographics</div><br />
+        <!-- A table to display plan demographics -->
+        <lightning:layoutItem padding="around-large" flexibility="auto" size="12" >
+            <div class="slds-scrollable_x">
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer" style="border: 1px solid black;vertical-align:middle">
+                    <!-- Header row of plan demographics table -->
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th style="border: 1px solid black;column-width: 100px" scope="col"> 
+                                <div class="slds-truncate" title="Channel">Channel</div>
+                            </th> 
+                            <th style="border: 1px solid black;column-width: 400px" scope="col"> 
+                                <div class="slds-truncate" title="Plan Product Name">Plan Product Name</div>
+                            </th>
+                            <th style="border: 1px solid black;column-width: 150px" scope="col"> 
+                                <div class="slds-truncate" title="Product Type">Product Type</div>
+                            </th>
+                            <th style="border: 1px solid black;column-width: 150px" scope="col"> 
+                                <div class="slds-truncate" title="Formulary Used">Formulary Used</div>
+                            </th>
+                            <th style="border: 1px solid black;column-width: 150px" scope="col"> 
+                                <div class="slds-truncate" title="PBM">PBM</div>
+                            </th>
+                            <th style="border: 1px solid black;column-width: 150px" scope="col"> 
+                                <div class="slds-truncate" title="Product Lives Rx">Product Lives Rx</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <!-- end of header row of plan demographics table -->
+                    
+                    <!-- Plan demographcis records -->
+                    <tbody>
+                        <aura:iteration items="{!v.Plans}" var="plan">
+                            <tr>
+                                <td style="border: 1px solid black;vertical-align:middle;column-width: 100px"><div class="slds-truncate" title="{!plan.BOT_Channel__c}">{!plan.BOT_Channel__c}</div></td>
+                                <td style="border: 1px solid black;vertical-align:middle;column-width: 400px">
+                                    <div class="outputLookupContainer forceOutputLookupWithPreview" data-aura-rendered-by="1909:0" data-aura-class="forceOutputLookupWithPreview" style="height:25px;">
+                                    	<a href="{!'/one/one.app#/sObject/'+plan.Id+'/view'}" target="_self" >
+											{!plan.Name}
+                                    	</a>	
+									</div>
+                                </td>
+                                <td style="border: 1px solid black;vertical-align:middle;column-width: 150px"><div class="slds-truncate" title="{!plan.BOT_Product_Type__c}">{!plan.BOT_Product_Type__c}</div></td>
+                                <td style="border: 1px solid black;vertical-align:middle;column-width: 150px"><div class="slds-truncate" title="{!plan.BOT_Formulary_Used__c}">{!plan.BOT_Formulary_Used__c}</div></td>
+                                <td style="border: 1px solid black;vertical-align:middle;column-width: 150px"><div class="slds-truncate" title="{!plan.BOT_PBM__c}">{!plan.BOT_PBM__c}</div></td>                                
+                                <td style="border: 1px solid black;vertical-align:middle;column-width: 150px"><div class="slds-truncate" title="{!plan.BOT_Product_Lives_Rx__c}">{!plan.BOT_Product_Lives_Rx__c}</div></td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                    <!-- End of the table to display plan demographics -->
+                </table>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

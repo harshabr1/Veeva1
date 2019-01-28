@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>Event_Attendee_Edit_Redirect_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>Event_Attendee_View_Redirect_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is a child object of Medical Event. One row represents a entity (Account, Contact, User) who has been invited to attended to the Medical Event. The Attendee_vod field is updated by a trigger to insure it always matches the name field of the account, contact, or user on create/update.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Account acting as an Attendee.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Event Attendees(Account)</relationshipLabel>
+        <relationshipName>Event_Attendee_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Address_Line_1_vod__c</fullName>
+        <description>Used to store the attendee&apos;s street address.</description>
+        <externalId>false</externalId>
+        <label>Address Line 1</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address_Line_2_vod__c</fullName>
+        <description>Used to store the attendee&apos;s street address.</description>
+        <externalId>false</externalId>
+        <label>Address Line 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attendee_Name_vod__c</fullName>
+        <description>This field is a formula that displays the Attendee Name from the Attendee field and acts as a Link to the Event Attendee record.</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp;  Id,  IF(LEN(Attendee_vod__c) &lt; 1,&quot;Attendee Link&quot;,Attendee_vod__c)  ,&quot;_parent&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Attendee Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attendee_Type_vod__c</fullName>
+        <description>This field defines what type of Attendee has been selected for the Event.  This formula can be modified to meet the naming conventions of a Customer&apos;s organization.</description>
+        <externalId>false</externalId>
+        <formula>IF(LEN( Account_vod__c) &gt; 0, &quot;Account&quot;,  IF(LEN( Contact_vod__c) &gt; 0, &quot;Contact&quot;,  &quot;User&quot;) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Attendee Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attendee_vod__c</fullName>
+        <description>The text of the Person that is selected either in the Account, Contact, or User Lookup.  This is populated by a Trigger on Save.</description>
+        <externalId>false</externalId>
+        <label>Attendee</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City_vod__c</fullName>
+        <description>Used to store the attendee&apos;s city.</description>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cobrowse_MC_Activity_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Stores the reference to the CoBrowse Multichannel Activity header record</description>
+        <externalId>false</externalId>
+        <label>CoBrowse Activity</label>
+        <referenceTo>Multichannel_Activity_vod__c</referenceTo>
+        <relationshipLabel>Event Attendees</relationshipLabel>
+        <relationshipName>Event_Attendees_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cobrowse_URL_Participant_vod__c</fullName>
+        <description>Stores the CoBrowse URL for the participant</description>
+        <externalId>false</externalId>
+        <label>Attendee URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Contact attending the event.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Event Attendees(Contact)</relationshipLabel>
+        <relationshipName>Event_Attendee_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EM_Attendee_Type_vod__c</fullName>
+        <description>Stub of the EM Attendee Type</description>
+        <externalId>false</externalId>
+        <formula>EM_Attendee_vod__r.Attendee_Type_vod__c</formula>
+        <label>EM Attendee Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EM_Attendee_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is used by the system. It must be visible to users of Veeva Event Management.</description>
+        <externalId>false</externalId>
+        <label>Attendee</label>
+        <referenceTo>EM_Attendee_vod__c</referenceTo>
+        <relationshipLabel>Event Attendees</relationshipLabel>
+        <relationshipName>Event_Attendees_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EM_Event_Speaker_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This field is used by the system. It must be visible to users of Veeva Event Management.</description>
+        <externalId>false</externalId>
+        <label>Event Speaker</label>
+        <referenceTo>EM_Event_Speaker_vod__c</referenceTo>
+        <relationshipLabel>Event Attendees(Event Speaker)</relationshipLabel>
+        <relationshipName>Event_Attendees_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Email_vod__c</fullName>
+        <description>Used to store the attendee&apos;s email address.</description>
+        <externalId>false</externalId>
+        <label>Email Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_Id_vod__c</fullName>
+        <description>ID of object associated with the attendee such as an account.</description>
+        <externalId>false</externalId>
+        <label>Entity Reference Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_Attendee_Type_vod__c</fullName>
+        <description>Indicates the type of attendee. The values of this picklist should match the values available in the third-party expense system, such as Concur.</description>
+        <externalId>false</externalId>
+        <label>Expense Attendee Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BUSGUEST</fullName>
+                    <default>true</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Expense_Post_Status_vod__c</fullName>
+        <description>Holds a Success or Fail status based on the attempt to post this attendee into Concur. If the attendee was not yet posted, the status will be null.</description>
+        <externalId>false</externalId>
+        <label>Expense Post Status</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name_vod__c</fullName>
+        <description>Used to store the attendee&apos;s first name</description>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Incurred_Expense_vod__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Attendees with the Incurred Expense checkbox checked will be posted as Attendees to Concur.</description>
+        <externalId>false</externalId>
+        <label>Incurred Expense</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Last_Name_vod__c</fullName>
+        <description>Used to store the attendee&apos;s last name</description>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Meal_Opt_In_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used to indicate if an event attendee accepted a meal.</description>
+        <externalId>false</externalId>
+        <label>Meal Opt-In</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Event_vod__c</fullName>
+        <description>The Medical Event that the Account, Contact, or User is attending.</description>
+        <externalId>false</externalId>
+        <label>Medical Event</label>
+        <referenceTo>Medical_Event_vod__c</referenceTo>
+        <relationshipLabel>Event Attendees</relationshipLabel>
+        <relationshipName>Event_Attendee_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Field used by mobile products for synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Organization_vod__c</fullName>
+        <description>Organization name of the attendee</description>
+        <externalId>false</externalId>
+        <label>Organization</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Helper field for data loads.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Phone_vod__c</fullName>
+        <description>Used to store the attendee&apos;s phone number.</description>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Position_vod__c</fullName>
+        <description>Position event attendee held at the event</description>
+        <externalId>false</externalId>
+        <label>Position</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Award_Winner_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Chair_Person_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Organizer_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Participant_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Speaker_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Prescriber_vod__c</fullName>
+        <description>Indicates if an attendee is a prescriber or not.</description>
+        <externalId>false</externalId>
+        <label>Prescriber</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Signature_Datetime_vod__c</fullName>
+        <description>Stores the Datetime of when the Signature was captured</description>
+        <externalId>false</externalId>
+        <label>Signature Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Signature_vod__c</fullName>
+        <description>Used to store the Signature</description>
+        <externalId>false</externalId>
+        <label>Signature</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Signee_vod__c</fullName>
+        <description>When collecting a signature from a business account event attendee, the Signee free text field will appear on the signature screen if the user has FLS visibility to the field.</description>
+        <externalId>false</externalId>
+        <label>Signee</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date_vod__c</fullName>
+        <description>Start Date for the Medical Event</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status of the person invited to the medical event.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Invited</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Accepted</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Attended</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Signed_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Cleared_Signature_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Talk_Title_vod__c</fullName>
+        <description>Title of the talk given at the event</description>
+        <externalId>false</externalId>
+        <label>Talk Title</label>
+        <length>1024</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>User_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The User attending the event.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Event_Attendee_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Walk_In_Status_vod__c</fullName>
+        <description>Used to track the status of walk-in attendees at an event.</description>
+        <externalId>false</externalId>
+        <label>Walk-In Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Needs_Reconciliation_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reconciled_To_Existing_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reconciled_To_Existing_User_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Reconciled_To_New_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dismissed_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Zip_vod__c</fullName>
+        <description>Used to store the attendee&apos;s zip code.</description>
+        <externalId>false</externalId>
+        <label>Zip</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Event Attendee</label>
+    <nameField>
+        <displayFormat>A{000000000}</displayFormat>
+        <label>Attendee Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Event Attendees</pluralLabel>
+    <recordTypes>
+        <fullName>Event_Attendee_vod</fullName>
+        <active>true</active>
+        <description>Standard record type for Event Attendees</description>
+        <label>Event_Attendee_vod</label>
+        <picklistValues>
+            <picklist>Expense_Attendee_Type_vod__c</picklist>
+            <values>
+                <fullName>BUSGUEST</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status_vod__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Attended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cleared_Signature_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Invited</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Signed_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Attendee_Name_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Attendee_Type_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LAST_UPDATE</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Attendee_Selection_vod</fullName>
+        <active>true</active>
+        <description>This rule validates that either an Account, Contact, or User was selected as an Attendee.</description>
+        <errorConditionFormula>AND(LEN( Account_vod__c ) &lt; 1,LEN( Contact_vod__c ) &lt; 1,LEN( User_vod__c ) &lt; 1,LEN(EM_Attendee_vod__c) &lt; 1,LEN(EM_Event_Speaker_vod__c) &lt; 1, ISBLANK(TEXT(Walk_In_Status_vod__c)))</errorConditionFormula>
+        <errorMessage>An Account, Contact, or User must be selected to save a record.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Multiple_Attendees_vod</fullName>
+        <active>true</active>
+        <description>This validation Rule will confirm that only one Account or Contact or User is selected as the Attendee.</description>
+        <errorConditionFormula>IF( LEN( Account_vod__c ) &gt; 0 , IF( OR(LEN( Contact_vod__c ) &gt; 0 ,LEN( User_vod__c ) &gt; 0),true,false) , IF( LEN( Contact_vod__c ) &gt; 0 , IF( OR(LEN( Account_vod__c ) &gt; 0 ,LEN( User_vod__c ) &gt; 0),true,false) , IF( LEN( User_vod__c ) &gt; 0 , IF( OR(LEN( Account_vod__c ) &gt; 0 ,LEN( Contact_vod__c ) &gt; 0),true,false) , false)))</errorConditionFormula>
+        <errorMessage>Please select only one Account, Contact, or User.</errorMessage>
+    </validationRules>
+</CustomObject>

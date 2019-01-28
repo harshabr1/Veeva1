@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Concur Expense System integration settings</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Account_Attendee_Type_Code_vod__c</fullName>
+        <description>Stores the Default Attendee Type Code when the Attendee is an Account.</description>
+        <externalId>false</externalId>
+        <label>Account Attendee Type Code</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Attendee_Customized_Fields_vod__c</fullName>
+        <description>A configurable field for mapping custom veeva fields to any concur field.</description>
+        <externalId>false</externalId>
+        <label>Attendee Customized Fields</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Attendee_Mapping_vod__c</fullName>
+        <description>A configurable field for mapping a Salesforce field to a Concur field at the Call Attendee level.</description>
+        <externalId>false</externalId>
+        <label>Call Attendee Mapping</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Mapping_vod__c</fullName>
+        <description>A configurable field for mapping a Salesforce field to a Concur field at the Call level.</description>
+        <externalId>false</externalId>
+        <label>Call Mapping</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Primary_Attendee_Mapping_vod__c</fullName>
+        <description>A configurable field for mapping a Salesforce field to a Concur field at the Call Primary Attendee level.</description>
+        <externalId>false</externalId>
+        <label>Call Primary Attendee Mapping</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company_Domain_vod__c</fullName>
+        <description>Concur Expense System integration application company domain</description>
+        <externalId>false</externalId>
+        <label>Company Domain</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concur_Admin_Username_vod__c</fullName>
+        <description>Storage of the Concur Web Services Admin username.</description>
+        <externalId>false</externalId>
+        <label>Concur Admin Username</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concur_Data_Center_Region_vod__c</fullName>
+        <defaultValue>&quot;US&quot;</defaultValue>
+        <description>Stores the data center region of the associated Concur instance. This assures the proper regional APIs are used</description>
+        <externalId>false</externalId>
+        <label>Concur Data Center Region</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Concur_Select_Mode_vod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Determines which Objects to sync to Concur. If value is 0, then syncs both Calls and Medical Events. If value is 1, then syncs only Calls. If value is 2, then syncs only Medical Events. Note: Defaults to option 0 (both Calls and Medical Events) if an incorrect value is entered.</description>
+        <externalId>false</externalId>
+        <label>Concur Select Mode</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Attendee_Type_Code_vod__c</fullName>
+        <description>Stores the Default Attendee Type Code when the Attendee is a Contact</description>
+        <externalId>false</externalId>
+        <label>Contact Attendee Type Code</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_Notification_Recipients_vod__c</fullName>
+        <description>Comma separated list of email addresses that will receive any notification emails related to the Concur integration.</description>
+        <externalId>false</externalId>
+        <label>Email Notification Recipients</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Speaker_Attendee_Type_Code_vod__c</fullName>
+        <description>Stores the Default Attendee Type Code when the Attendee is a Write In Speaker</description>
+        <externalId>false</externalId>
+        <label>Event Speaker Attendee Type Code</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Event_Team_Member_Attendee_Type_Code_vod__c</fullName>
+        <description>Stores the Default Attendee Type Code when the Attendee is a Write In Team Member</description>
+        <externalId>false</externalId>
+        <label>Event Team Member Attendee Type Code</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_Customized_Fields_vod__c</fullName>
+        <description>Map Concur Expense report custom fields to Veeva Call report fields
+Custom15=Total_Expense_Attendees_Count_vod__c,Custom16=Id</description>
+        <externalId>false</externalId>
+        <label>Expense Customized Fields</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_Header_Expense_Type_Code_vod__c</fullName>
+        <description>Stores the default Expense Type Code to be used when creating an expense entry in Concur. Based on Expense Key value.</description>
+        <externalId>false</externalId>
+        <label>Expense Header Expense Type Code</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expense_Key_vod__c</fullName>
+        <description>Concur Expense report entry expense key type. The default value is &quot;BUSML&quot; if this field is blank.</description>
+        <externalId>false</externalId>
+        <label>Expense Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Medical_Event_Attendee_Mapping_vod__c</fullName>
+        <description>A configurable field for mapping a Salesforce field to a Concur field at the Medical Event Attendee level.</description>
+        <externalId>false</externalId>
+        <label>Medical Event Attendee Mapping</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Medical_Event_Mapping_vod__c</fullName>
+        <description>A configurable field for mapping a Salesforce field to a Concur field at the Medical Event level.</description>
+        <externalId>false</externalId>
+        <label>Medical Event Mapping</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OAuth_Key_vod__c</fullName>
+        <description>Concur Expense System integration oauth key</description>
+        <externalId>false</externalId>
+        <label>OAuth Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OAuth_Secret_vod__c</fullName>
+        <description>Concur Expense System integration oauth secret</description>
+        <externalId>false</externalId>
+        <label>OAuth Secret</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OAuth_Token_vod__c</fullName>
+        <description>Storage of the OAuth Token from Concur</description>
+        <externalId>false</externalId>
+        <label>OAuth Token</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Attendees_Type_vod__c</fullName>
+        <description>A value to determine what the type of attendee is on the call report. This type is posted to Concur as the Attendee&apos;s designation.</description>
+        <externalId>false</externalId>
+        <label>Other Attendees Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Type_vod__c</fullName>
+        <description>This is where the payment type is stored for all expenses posted to concur. &quot;Pending Card Charge&quot; is the default Payment Type.</description>
+        <externalId>false</externalId>
+        <label>Payment Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Attendee_Type_Code_vod__c</fullName>
+        <description>Stores the Default Attendee Type Code when the Attendee is a User.</description>
+        <externalId>false</externalId>
+        <label>User Attendee Type Code</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Write_In_Event_Attendee_Type_Code_vod__c</fullName>
+        <description>Stores the Default Attendee Type Code when the Attendee is a Write In Attendee</description>
+        <externalId>false</externalId>
+        <label>Write In Event Attendee Type Code</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Concur Settings</label>
+    <visibility>Protected</visibility>
+</CustomObject>

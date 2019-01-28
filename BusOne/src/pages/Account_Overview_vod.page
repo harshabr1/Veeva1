@@ -1,0 +1,22 @@
+<apex:page standardController="Account"
+	extensions="VODRedirectController">
+	<apex:iframe scrolling="false" height="2000px" width="100%"
+		src="javascript:false" frameborder="false" id="vod_iframe" />
+	<c:Veeva_Resize_Component_vod />
+	<script>
+    var docBody = document.body || document.documentElement,
+    	vodiframe = document.getElementById("vod_iframe"),
+    	url = "{!JSENCODE(VodUrl)}/app/timeline/index";
+    	
+    url += "?sfSession=" + "{!$Api.Session_ID}";
+    url += "&sfEndpoint=" + "{!URLENCODE($Api.Partner_Server_URL_240 )}";
+    url += "&motif=" + encodeURIComponent(docBody.className);
+    url += "&id=" + "{!URLENCODE(CASESAFEID(Account.Id))}";
+    url += "&name=" + "{!URLENCODE(Account.Name)}";
+    url += "&salutation=" + "{!URLENCODE(Account.Salutation)}";
+    
+    vodiframe.src = url;
+   </script>
+
+
+</apex:page>

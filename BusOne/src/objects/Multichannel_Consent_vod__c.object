@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores the consent records associated to an Account. Opt-In and Opt-Out consent records will both be stored in this object. These consent records may correspond to the Approved Email channel or other customer defined channels.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <description>Account_vod represents the Account to which MultiChannel_Consent_vod is related.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Multichannel Consents</relationshipLabel>
+        <relationshipName>Multichannel_Consent_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Capture_Datetime_vod__c</fullName>
+        <description>Capture_Datetime_vod captures the current time of consent capture. This is a server datetime if captured online and a mobile client time if captured offline.</description>
+        <externalId>false</externalId>
+        <label>Capture Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Channel_Value_vod__c</fullName>
+        <description>Channel_Value_vod represents the channel of communication that a consent record was captured for, i.e. a channel in Approved Email will be an email address.</description>
+        <externalId>false</externalId>
+        <label>Channel Value</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Consent_Confirm_Datetime_vod__c</fullName>
+        <description>The datetime when the Account confirmed the opt in</description>
+        <externalId>false</externalId>
+        <label>Consent Confirm Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Consent_Line_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the Consent Line record which defines the</description>
+        <externalId>false</externalId>
+        <label>Consent Line</label>
+        <referenceTo>Consent_Line_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Consents</relationshipLabel>
+        <relationshipName>Multichannel_Consents</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Consent_Type_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the Consent Type record from which the consent record was created.</description>
+        <externalId>false</externalId>
+        <label>Consent Type</label>
+        <referenceTo>Consent_Type_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Consents</relationshipLabel>
+        <relationshipName>Multichannel_Consents</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Content_Type_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Content_Type_vod record for which consent is captured.</description>
+        <externalId>false</externalId>
+        <label>Content Type</label>
+        <referenceTo>Content_Type_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Consents</relationshipLabel>
+        <relationshipName>Multichannel_Consent_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Default_Consent_Text_vod__c</fullName>
+        <description>The text that the Account consented for, from the review panel.</description>
+        <externalId>false</externalId>
+        <label>Consent Text</label>
+        <length>65536</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Detail_Group_vod represents the Detail Group to which this MultiChannel_Consent_vod record is associated. This will correspond to the Detail Group to which the product (Product_vod) is aligned. If the Product_vod entity is not related to a Detail Group, then this will be NULL. This will also be NULL in the case of an Opt-In consent record.</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Consents (Detail Group)</relationshipLabel>
+        <relationshipName>Multichannel_Consent1_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Disclaimer_Text_vod__c</fullName>
+        <description>The disclaimer text that was shown to the Account, when consent was captured.</description>
+        <externalId>false</externalId>
+        <label>Disclaimer Text</label>
+        <length>65536</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id field used for data loading and integrating external systems.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Device_vod__c</fullName>
+        <description>Last_Device_vod captures the last device used to generate the MultiChannel_Consent_vod record. You can use this field to determine what devices are generating MultiChannel_Consent_vod records.</description>
+        <externalId>false</externalId>
+        <label>Last Device</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Data_Load_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>iPhone_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mobile_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Online_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tablet_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Blackberry_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>iPad_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Opt_Expiration_Date_vod__c</fullName>
+        <description>Opt_Expiration_Date_vod is used to identify a current/live Opt record. If the Opt Expiration date is &gt; the current date, then the record is considered live. This applies to both Opt-In and Opt-Out records.</description>
+        <externalId>false</externalId>
+        <label>Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Opt_Type_vod__c</fullName>
+        <description>Opt_Type_vod represents the type of Opt for the MultiChannel_Consent_vod record.</description>
+        <externalId>false</externalId>
+        <label>Opt Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Opt_In_Pending_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Opt_In_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Opt_Out_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Optout_Event_Type_vod__c</fullName>
+        <description>Optout_Event_Type_vod captures the reason for an Opt-Out. The values in this field are determined by the Approved Email email engine.</description>
+        <externalId>false</externalId>
+        <label>Event Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Consent_Capture_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Unsubscribed_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Bounced_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Marked_Spam_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product_vod represents the product to which this MultiChannel_Consent_vod record is associated. In Approved Email V18, this will only be populated for Opt-Out records as Opt-In records are global for all Products.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Consent</relationshipLabel>
+        <relationshipName>Multichannel_Consent_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Receipt_Email_vod__c</fullName>
+        <description>The email address to which the receipt was sent.</description>
+        <externalId>false</externalId>
+        <label>Receipt Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Receipt_Sent_Email_Transaction_Id_vod__c</fullName>
+        <description>Stores the Mobile Id of the Sent_Email record created for sending the receipt email.</description>
+        <externalId>false</externalId>
+        <label>Receipt Sent Email Transaction Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Receipt_Sent_Email_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the Sent Email record that was sent for receipt of the Multichannel_Consent_vod record.</description>
+        <externalId>false</externalId>
+        <label>Receipt Sent Email</label>
+        <referenceTo>Sent_Email_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Consents (Sent Email)</relationshipLabel>
+        <relationshipName>Multichannel_Consents</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_Transaction_Id_vod__c</fullName>
+        <description>Stores the Mobile Id of the Sent_Email record created for sending the confirmation of opt in</description>
+        <externalId>false</externalId>
+        <label>Related Transaction Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_Consent_Template_Data_vod__c</fullName>
+        <description>Stores the relevant data from the Consent Template record used to determine Expiration Date. Concatenation of Expiration Type, Expiration Threshold, Start Date, End Date, Last Modified Datetime</description>
+        <externalId>false</externalId>
+        <label>Sample Consent Template Data</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_Consent_Template_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Provides Lookup to Consent Template record used to determine Expiration Date.</description>
+        <externalId>false</externalId>
+        <label>Sample Consent Template</label>
+        <referenceTo>Consent_Template_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Consents</relationshipLabel>
+        <relationshipName>Multichannel_Consents</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sent_Email_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the Sent Email record that was sent for confirmation of the opt ins.</description>
+        <externalId>false</externalId>
+        <label>Sent Email</label>
+        <referenceTo>Sent_Email_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Consents</relationshipLabel>
+        <relationshipName>Multichannel_Consent_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Signature_Datetime_vod__c</fullName>
+        <description>Signature_Datetime_vod captures the Datetime of the signature capture. Placing this field on the layout associated to the Approved_Email_vod record type will allow for optional signature capture on signature-capable devices during the Opt-In process. If this is marked required on the layout, then a signature or Signature_ID_vod must be captured to save an Opt-In.</description>
+        <externalId>false</externalId>
+        <label>Signature Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Signature_ID_vod__c</fullName>
+        <description>Signature_ID_vod captures the Paper Consent ID should a signature be captured on paper instead of electronically. Placing this field on the layout associated to the Approved_Email_vod record type will render the field during the Opt-In process.</description>
+        <externalId>false</externalId>
+        <label>Paper Consent ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature_vod__c</fullName>
+        <description>Signature_vod contains the base64 encoded string representing the captured signature.</description>
+        <externalId>false</externalId>
+        <label>Signature Data</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Sub_Channel_Key_vod__c</fullName>
+        <description>Non product classification for which consent was captured.</description>
+        <externalId>false</externalId>
+        <label>Sub Channel Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Multichannel Consent</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Account_vod__c</columns>
+        <columns>Channel_Value_vod__c</columns>
+        <columns>Detail_Group_vod__c</columns>
+        <columns>Product_vod__c</columns>
+        <columns>Opt_Type_vod__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>MCC-{000000000}</displayFormat>
+        <label>Opt Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Multichannel Consents</pluralLabel>
+    <recordTypes>
+        <fullName>Approved_Email_vod</fullName>
+        <active>true</active>
+        <description>Record type for consent records originating from the AE channel.</description>
+        <label>Approved_Email_vod</label>
+        <picklistValues>
+            <picklist>Last_Device_vod__c</picklist>
+            <values>
+                <fullName>Blackberry_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data_Load_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPhone_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opt_Type_vod__c</picklist>
+            <values>
+                <fullName>Opt_In_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Opt_Out_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Optout_Event_Type_vod__c</picklist>
+            <values>
+                <fullName>Bounced_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marked_Spam_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsubscribed_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CLM_vod</fullName>
+        <active>true</active>
+        <description>Record type for consent records originating from the CLM channel.</description>
+        <label>CLM_vod</label>
+        <picklistValues>
+            <picklist>Last_Device_vod__c</picklist>
+            <values>
+                <fullName>Blackberry_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data_Load_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPhone_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opt_Type_vod__c</picklist>
+            <values>
+                <fullName>Opt_In_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Opt_Out_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Optout_Event_Type_vod__c</picklist>
+            <values>
+                <fullName>Bounced_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marked_Spam_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsubscribed_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Engage_vod</fullName>
+        <active>true</active>
+        <description>Record type for consent records originating from the Engage channel.</description>
+        <label>Engage_vod</label>
+        <picklistValues>
+            <picklist>Last_Device_vod__c</picklist>
+            <values>
+                <fullName>Blackberry_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data_Load_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPhone_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opt_Type_vod__c</picklist>
+            <values>
+                <fullName>Opt_In_vod</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Opt_Out_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Optout_Event_Type_vod__c</picklist>
+            <values>
+                <fullName>Bounced_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marked_Spam_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsubscribed_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sample_Consent_vod</fullName>
+        <active>true</active>
+        <description>Record type for consent records to receive sample product.</description>
+        <label>Sample_Consent_vod</label>
+        <picklistValues>
+            <picklist>Last_Device_vod__c</picklist>
+            <values>
+                <fullName>Blackberry_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data_Load_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPhone_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Opt_Type_vod__c</picklist>
+            <values>
+                <fullName>Opt_In_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opt_Out_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Optout_Event_Type_vod__c</picklist>
+            <values>
+                <fullName>Bounced_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marked_Spam_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unsubscribed_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

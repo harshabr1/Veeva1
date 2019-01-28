@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>Sample_Inventory_Edit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>Sample_Inventory_New</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>Sample_Inventory_View</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Sample Inventory represents the header record for a physical inventory of all Sample Lots for a specific user.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Audit_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Audit checkbox represents a field to designate of the Sample Inventory being conducted is a yearly Audit.  Access to be controlled by Field Level Security</description>
+        <externalId>false</externalId>
+        <label>Audit</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Inventory_Date_Time_vod__c</fullName>
+        <description>The User entered Date and time that the Inventory count occured.  This is the effective date of the Sample Inventory counts.</description>
+        <externalId>false</externalId>
+        <label>Inventory Date Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Inventory_For_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Inventory For represents the User that the physical inventory is being conducted for.  Selection of the Inventory For fields determines the User that the Sample Inventory Line Items that will be displayed.</description>
+        <externalId>false</externalId>
+        <label>Inventory For</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Sample_Inventory_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Inventory_From_Date_vod__c</fullName>
+        <description>Inventory From Date is the Date of the last Submitted Inventory.  The Inventory From Date is populated from the Submitted Date of the most recently Submitted Sample Inventory.</description>
+        <externalId>false</externalId>
+        <label>Inventory From Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Inventory_Type_vod__c</fullName>
+        <description>Inventory Type represents the type of physical inventory being conducted.</description>
+        <externalId>false</externalId>
+        <label>Inventory Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Quarterly</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Year-end</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Close-Out</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Annual</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Mobile_Created_Datetime_vod__c</fullName>
+        <description>Time when the sample inventory was created on a mobile device.  Will be blank it if was created online.</description>
+        <externalId>false</externalId>
+        <label>Mobile Created Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_Last_Modified_Datetime_vod__c</fullName>
+        <description>Time when the sample inventory was last modified on a mobile device.</description>
+        <externalId>false</externalId>
+        <label>Mobile Last Modified Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>No_Sample_Lots_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, a User is able to Save/Submit a Sample Inventory when there are no Sample Inventory Line Items [Sample Lots] for the User.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If checked, a User is able to Save/Submit a Sample Inventory when there are no Sample Inventory Line Items [Sample Lots] for the User.</inlineHelpText>
+        <label>No Sample Lots</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Previous_Inventory_Date_Time_vod__c</fullName>
+        <description>The Previous Inventory Date Time field is a system generated Datetime that is based upon the last submitted Inventory and the value of the Inventory Date Time field.</description>
+        <externalId>false</externalId>
+        <label>Previous Inventory Date Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Status_vod__c</fullName>
+        <description>Status represents the current status of the Inventory.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Saved_vod</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Submitted_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Submitted_Date_vod__c</fullName>
+        <description>Submitted Date is the date that the Inventory has been Submitted.</description>
+        <externalId>false</externalId>
+        <label>Submitted Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Submitted_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the inventory been submitted.  Default value is false.</description>
+        <externalId>false</externalId>
+        <label>Submitted</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Unlock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Unlock checkbox is used by the VBioPharma application to determine if a user has access to Unlock a Sample Inventory that has been Submitted.  Access is controlled by Field Level security on the Unlock checkbox.</description>
+        <externalId>false</externalId>
+        <label>Unlock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Sample Inventory</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Inventory_Type_vod__c</columns>
+        <columns>Status_vod__c</columns>
+        <columns>Submitted_Date_vod__c</columns>
+        <columns>Inventory_From_Date_vod__c</columns>
+        <columns>Inventory_For_vod__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>INV-{000000000}</displayFormat>
+        <label>Inventory Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Sample Inventories</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Inventory_For_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Inventory_Type_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Submitted_Date_vod__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>Save_vod</fullName>
+        <availability>online</availability>
+        <description>Save button on Sample Inventory page</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Save</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>javascript:return true</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_vod</fullName>
+        <availability>online</availability>
+        <description>Submit button on Sample Inventory page</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>javascript:return true</url>
+    </webLinks>
+</CustomObject>

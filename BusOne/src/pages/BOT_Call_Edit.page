@@ -1,0 +1,11 @@
+<apex:page standardcontroller="Call2_vod__c">
+    <c:BOT_EMBED veevaModule="call" veevaPage="edit-call" objectType="Call2_vod__c"
+    queryParams="{!$CurrentPage.parameters.queryParams}&Status={!Call2_vod__c.Status_vod__c}&Call={!Call2_vod__c.Id}"/>
+	<!--
+    <apex:form>
+    	<apex:pageBlock>
+            <apex:commandButton action="{!URLFOR($Action.Call2_vod__c.Add_Products, callID)}" id="Button" value="Add Products"/>
+		</apex:pageBlock>
+    </apex:form>
+	-->
+</apex:page>

@@ -1,0 +1,3 @@
+<apex:page standardController="Medical_Event_vod__c">
+    <c:VOD_EMBED veevaModule="medical_event" objectType="Medical_Event_vod__c" veevaPage="medical-event-edit" queryParams="{!$CurrentPage.parameters.queryParams}&RecordType={!$CurrentPage.parameters.RecordType}"/>
+</apex:page>

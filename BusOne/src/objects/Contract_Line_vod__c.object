@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>Contract_Line_View_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>Contract_Line_Edit_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>Contract_Line_View_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Child of the Contract_vod object. Holds target information of selected product(s), and is associated to a Contract.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Contract_vod__c</fullName>
+        <description>Lookup to corresponding Contract Header.</description>
+        <externalId>false</externalId>
+        <label>Contract</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>(1 AND 2) OR (3 AND 4) OR ( NOT (2 OR 4))</booleanFilter>
+            <errorMessage>Contract Line record type does not match Contract record type.</errorMessage>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Sales_vod</value>
+            </filterItems>
+            <filterItems>
+                <field>Contract_vod__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Sales_vod</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Listing_vod</value>
+            </filterItems>
+            <filterItems>
+                <field>Contract_vod__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Listing_vod</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contract_vod__c</referenceTo>
+        <relationshipLabel>Contract Lines</relationshipLabel>
+        <relationshipName>Contract_Lines_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Device_Type_vod__c</fullName>
+        <description>Used to capture the device used to generate the record.</description>
+        <externalId>false</externalId>
+        <label>Device Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>iPad_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>WinModern_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Tablet_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Online_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Data_Load_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EM_Rate_Max_vod__c</fullName>
+        <description>Indicates the maximum rate for the service. This field is only used by Veeva Event Management.</description>
+        <externalId>false</externalId>
+        <label>Rate Maximum</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EM_Rate_Min_vod__c</fullName>
+        <description>Indicates the minimum rate for the service. This field is only used by Veeva Event Management.</description>
+        <externalId>false</externalId>
+        <label>Rate Minimum</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EM_Rate_Type_vod__c</fullName>
+        <description>Indicates the rate type for a service. This field is only used by Veeva Event Management.</description>
+        <externalId>false</externalId>
+        <label>Rate Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Hour_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Day_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Event_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EM_Rate_vod__c</fullName>
+        <description>Indicates the rate for the service. This field is only used by Veeva Event Management.</description>
+        <externalId>false</externalId>
+        <label>Rate</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EM_Service_Quantity_Max_vod__c</fullName>
+        <description>Indicates the maximum quantity for the service. This field is only used by Veeva Event Management.</description>
+        <externalId>false</externalId>
+        <label>Service Quantity Maximum</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EM_Service_Quantity_Min_vod__c</fullName>
+        <description>Indicates the minimum quantity for the service. This field is only used by Veeva Event Management.</description>
+        <externalId>false</externalId>
+        <label>Service Quantity Minimum</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EM_Service_Quantity_vod__c</fullName>
+        <description>Indicates the quantity for the service. This field is only used by Veeva Event Management.</description>
+        <externalId>false</externalId>
+        <label>Service Quantity</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EM_Total_Payment_vod__c</fullName>
+        <description>Indicates the final payment value to be applied at the line level according to rate and quantity limits and user overrides. This field is only used by Veeva Event Management.</description>
+        <externalId>false</externalId>
+        <formula>EM_Rate_vod__c  * EM_Service_Quantity_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Payment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>End_Date_vod__c</fullName>
+        <description>End date when the contract line is valid.</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID is used for data loading only.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>IM_Consumer_Price_vod__c</fullName>
+        <description>Contract Line corresponding field to Consumer_Price_vod in IM Lines.</description>
+        <externalId>false</externalId>
+        <label>IM Consumer Price</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>IM_Facings_horizontal_vod__c</fullName>
+        <description>Contract Line corresponding field to Horizontal_vod in IM Lines.</description>
+        <externalId>false</externalId>
+        <label>IM Horizontal</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IM_Facings_simple_vod__c</fullName>
+        <description>Contract Line corresponding field to Facings_vod in Inventory Monitoring Line.</description>
+        <externalId>false</externalId>
+        <label>IM Facings</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IM_Facings_vertical_vod__c</fullName>
+        <description>Contract Line corresponding field to Vertical_vod in IM Lines.</description>
+        <externalId>false</externalId>
+        <label>IM Vertical</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IM_Inventory_vod__c</fullName>
+        <description>Contract Line corresponding field to Inventory_vod in IM Lines.</description>
+        <externalId>false</externalId>
+        <label>IM Inventory</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IM_Layer_vod__c</fullName>
+        <description>Contract Line corresponding field to Layer in IM Lines.</description>
+        <externalId>false</externalId>
+        <label>IM Layer</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Above_eye_level</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Eye_level</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Below_eye_level</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IM_Moved_Goods_vod__c</fullName>
+        <description>Contract Line corresponding field to Moved_Goods_vod in IM Lines.</description>
+        <externalId>false</externalId>
+        <label>IM Moved Goods</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IM_Position_vod__c</fullName>
+        <description>Contract Line corresponding field to Position_vod in IM Lines.</description>
+        <externalId>false</externalId>
+        <label>IM Position</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Front_of_counter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Back_of_counter</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Open_shelf</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, the record cannot be edited.</description>
+        <externalId>false</externalId>
+        <label>Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mandatory_Contract_Line_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to indicate if the Contract Line is required.</description>
+        <externalId>false</externalId>
+        <label>Mandatory Contract Line</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_Created_Datetime_vod__c</fullName>
+        <description>Date and time the Contract Line was created on the mobile device.</description>
+        <externalId>false</externalId>
+        <label>Mobile Created Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_Last_Modified_Datetime_vod__c</fullName>
+        <description>Date and time the Contract Line was last modified on the mobile device.</description>
+        <externalId>false</externalId>
+        <label>Mobile Last Modified Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Notes_vod__c</fullName>
+        <description>Allows to capture comments for the contract line.</description>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>OM_List_Amount_Achieved_vod__c</fullName>
+        <description>Calculated by batch job. Shows progress against the defined target.</description>
+        <externalId>false</externalId>
+        <label>OM List Amount Achieved</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OM_List_Amount_Remaining_vod__c</fullName>
+        <description>Shows remaining list amount to reach the defined target (target minus achieved).</description>
+        <externalId>false</externalId>
+        <formula>OM_List_Amount_Target_vod__c - OM_List_Amount_Achieved_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OM List Amount Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OM_List_Amount_Target_vod__c</fullName>
+        <description>Contract Line corresponding field to List_Amount_vod in OM and OM Lines.</description>
+        <externalId>false</externalId>
+        <label>OM List Amount Target</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OM_Net_Amount_Achieved_vod__c</fullName>
+        <description>Calculated by batch job. Shows progress against the defined target.</description>
+        <externalId>false</externalId>
+        <label>OM Net Amount Achieved</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OM_Net_Amount_Remaining_vod__c</fullName>
+        <description>Shows remaining net amount to reach the defined target (target minus achieved).</description>
+        <externalId>false</externalId>
+        <formula>OM_Net_Amount_Target_vod__c - OM_Net_Amount_Achieved_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OM Net Amount Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OM_Net_Amount_Target_vod__c</fullName>
+        <description>Contract Line corresponding field to Net_Amount_vod in OM and OM Lines.</description>
+        <externalId>false</externalId>
+        <label>OM Net Amount Target</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>OM_Quantity_Achieved_vod__c</fullName>
+        <description>Calculated by batch job. Shows progress against the defined target.</description>
+        <externalId>false</externalId>
+        <label>OM Quantity Achieved</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OM_Quantity_Remaining_vod__c</fullName>
+        <description>Shows remaining quantity to reach the defined target (target minus achieved).</description>
+        <externalId>false</externalId>
+        <formula>OM_Quantity_Target_vod__c - OM_Quantity_Achieved_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OM Quantity Remaining</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OM_Quantity_Target_vod__c</fullName>
+        <description>Contract Line corresponding field to Quantity_vod in OM and OM Lines.</description>
+        <externalId>false</externalId>
+        <label>OM Quantity Target</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This allows a non-Admin User to make changes to a Contract Line records associated with Activated Contracts. This is only intended for integration and/or custom pages/coding and should not be placed on the page layout.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Product_Identifier_vod__c</fullName>
+        <description>This is a pull-in field that allows the display of the Product Identifier field from the Product Catalog object on Contract Lines.</description>
+        <externalId>false</externalId>
+        <label>Product Identifier</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Filtered lookup to products of type Detail, Order, or Product Group.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>(1 AND 2) OR ((3 OR 5) AND 4) OR ( NOT (2 OR 4))</booleanFilter>
+            <filterItems>
+                <field>Product_vod__c.Product_Type_vod__c</field>
+                <operation>equals</operation>
+                <value>Detail, Order, Product Group</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Sales_vod</value>
+            </filterItems>
+            <filterItems>
+                <field>Product_vod__c.Product_Type_vod__c</field>
+                <operation>equals</operation>
+                <value>Inventory Monitoring</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Listing_vod</value>
+            </filterItems>
+            <filterItems>
+                <field>Product_vod__c.Inventory_Monitoring_vod__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Contract Lines</relationshipLabel>
+        <relationshipName>Contract_Lines_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Service_Name_vod__c</fullName>
+        <description>The name of the service included in the speaker contract</description>
+        <externalId>false</externalId>
+        <formula>Service_vod__r.Name_vod__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Service Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The service included in the speaker contract.</description>
+        <externalId>false</externalId>
+        <label>Service</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>EM_Catalog_vod__c.RecordType.DeveloperName</field>
+                <operation>equals</operation>
+                <value>Speaker_Service_vod</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>EM_Catalog_vod__c</referenceTo>
+        <relationshipLabel>Contract Lines</relationshipLabel>
+        <relationshipName>Contract_Lines</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date_vod__c</fullName>
+        <description>Start date when the contract line is valid.</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Contract Line</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CL-{0000000000}</displayFormat>
+        <label>Contract Line ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Contract Lines</pluralLabel>
+    <recordTypes>
+        <fullName>EM_Speaker_Contract_vod</fullName>
+        <active>true</active>
+        <description>Used to define the list of services that are covered by a contract with a speaker.</description>
+        <label>EM_Speaker_Contract_vod</label>
+        <picklistValues>
+            <picklist>Device_Type_vod__c</picklist>
+            <values>
+                <fullName>Data_Load_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WinModern_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EM_Rate_Type_vod__c</picklist>
+            <values>
+                <fullName>Day_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hour_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IM_Layer_vod__c</picklist>
+            <values>
+                <fullName>Above_eye_level</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Below_eye_level</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eye_level</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IM_Position_vod__c</picklist>
+            <values>
+                <fullName>Back_of_counter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Front_of_counter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open_shelf</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Listing_vod</fullName>
+        <active>true</active>
+        <description>Used to record contractual obligations for Inventory Monitoring data, such as product placement and moved inventory.</description>
+        <label>Listing_vod</label>
+        <picklistValues>
+            <picklist>Device_Type_vod__c</picklist>
+            <values>
+                <fullName>Data_Load_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WinModern_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IM_Layer_vod__c</picklist>
+            <values>
+                <fullName>Above_eye_level</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Below_eye_level</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eye_level</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IM_Position_vod__c</picklist>
+            <values>
+                <fullName>Back_of_counter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Front_of_counter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open_shelf</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Sales_vod</fullName>
+        <active>true</active>
+        <description>Used to record contractual obligations for product quantities and values pertaining to Orders.</description>
+        <label>Sales_vod</label>
+        <picklistValues>
+            <picklist>Device_Type_vod__c</picklist>
+            <values>
+                <fullName>Data_Load_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Online_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tablet_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>WinModern_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iPad_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IM_Layer_vod__c</picklist>
+            <values>
+                <fullName>Above_eye_level</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Below_eye_level</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eye_level</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>IM_Position_vod__c</picklist>
+            <values>
+                <fullName>Back_of_counter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Front_of_counter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open_shelf</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>New_Contract_Line_vod</fullName>
+        <availability>online</availability>
+        <description>Clicking this button directs users to the New Contract Line Visualforce page.</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Contract Line</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!URLFOR($Action.Contract_Line_vod__c.New, null, null, true)}</url>
+    </webLinks>
+</CustomObject>

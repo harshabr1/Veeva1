@@ -1,0 +1,8 @@
+<apex:page standardController="EM_Event_vod__c" extensions="EMRedirectController" action="{!redirectNewEventChild}">
+    <apex:form >
+        <apex:inputHidden value="{!EM_Event_vod__c.Start_Time_vod__c}"/>
+        <apex:inputHidden value="{!EM_Event_vod__c.End_Time_vod__c}"/>
+        <apex:inputHidden value="{!EM_Event_vod__c.Country_vod__c}"/>
+        <apex:inputHidden value="{!EM_Event_vod__c.Id}"/>
+    </apex:form>
+</apex:page>

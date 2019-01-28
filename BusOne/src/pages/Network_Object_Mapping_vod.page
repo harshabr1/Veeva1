@@ -1,0 +1,9 @@
+<apex:page standardController="Network_Object_Mapping_vod__c" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_Scroll_1800_vod}"/>
+<script type="text/javascript">
+    var queryParams = "&mode=e"; // Assume "Edit" mode, for the DescribeLayoutTemplate to use.
+    queryParams += "&networkMappingId=" + "{!JSENCODE(Network_Object_Mapping_vod__c.Network_Mapping_vod__c)}";
+    queryParams += "&id={!JSENCODE(Network_Object_Mapping_vod__c.id)}";
+    com.vod309.redirect.redirect("networkObjectMapping", queryParams);
+</script>
+</apex:page>

@@ -1,0 +1,4 @@
+<apex:page standardController="EM_Event_Layout_vod__c" >
+    <c:VOD_EMBED veevaModule="em" veevaPage="event-layout-edit" objectType="EM_Event_Layout_vod__c"
+        queryParams="{!$CurrentPage.parameters.queryParams}"/>
+</apex:page>

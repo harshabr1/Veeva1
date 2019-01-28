@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores response records for each account target to the survey questions.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Answer_Choice_vod__c</fullName>
+        <description>Copied from Survey_Question_vod when a Survey_Target_vod record is saved or submitted. Stores potential answer choices as they appeared to the user when the survey was saved or submitted.</description>
+        <externalId>false</externalId>
+        <label>Answer Choices</label>
+        <length>700</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Date_vod__c</fullName>
+        <description>Stores the answer value for a date question.</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Datetime_vod__c</fullName>
+        <description>Stores the answer value for datetime questions.</description>
+        <externalId>false</externalId>
+        <label>Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Decimal_vod__c</fullName>
+        <description>Stores the answer value for decimal type questions</description>
+        <externalId>false</externalId>
+        <label>Decimal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External ID is used for data loading only.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Max_Score_vod__c</fullName>
+        <description>Maximum possible score for the question</description>
+        <externalId>false</externalId>
+        <label>Max Score</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Number_vod__c</fullName>
+        <description>Stores the answer value for number questions.</description>
+        <externalId>false</externalId>
+        <label>Number</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_vod__c</fullName>
+        <description>Stores the question&apos;s display order, copied from Survey_Question_vod when the Survey_Target_vod record is saved or submitted.</description>
+        <externalId>false</externalId>
+        <label>Question Order</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Question_Text_vod__c</fullName>
+        <description>Copied from Survey_Question_vod when a Survey_Target_vod record is saved or submitted. Stores question text as it appeared to the user when the survey was saved or submitted.</description>
+        <externalId>false</externalId>
+        <label>Question Text</label>
+        <length>1000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Required_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Copied from Survey_Question_vod when the answer choice is recorded.</description>
+        <externalId>false</externalId>
+        <label>Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Response_Hash_vod__c</fullName>
+        <description>A hash generated based on the chosen response(s). For Long Text, Radio, Picklist, or Multiselect type questions, this is guaranteed to be null when the response is empty and non-null when the response is populated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is populated by concatenating base64 encoded MD5 hashes of the responses.</inlineHelpText>
+        <label>Response Hash</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Response_vod__c</fullName>
+        <description>Stores the answer value for multiselect picklist, picklist, and radio questions.</description>
+        <externalId>false</externalId>
+        <label>Response</label>
+        <length>550</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Score_vod__c</fullName>
+        <description>Weight of the response selected by a user.  Applies to multiselect picklist, picklist, radio, and number questions.</description>
+        <externalId>false</externalId>
+        <label>Weight</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Question_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Links a question response to a particular question on a survey.</description>
+        <externalId>false</externalId>
+        <label>Survey Question</label>
+        <referenceTo>Survey_Question_vod__c</referenceTo>
+        <relationshipLabel>Question Responses</relationshipLabel>
+        <relationshipName>Question_Responses</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Survey_Target_vod__c</fullName>
+        <description>Links a question response to an account and survey.</description>
+        <externalId>false</externalId>
+        <label>Survey Target</label>
+        <referenceTo>Survey_Target_vod__c</referenceTo>
+        <relationshipLabel>Question Responses</relationshipLabel>
+        <relationshipName>Question_Responses_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Text_vod__c</fullName>
+        <description>Stores the answer value for both text and long-text questions</description>
+        <externalId>false</externalId>
+        <label>Text</label>
+        <length>2500</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type_vod__c</fullName>
+        <description>Stores the RecordTypeId for the question type as copied from Survey_Question_vod.</description>
+        <externalId>false</externalId>
+        <label>Question Type</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Question Response</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>QR{00000000}</displayFormat>
+        <label>Question Response ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Question Responses</pluralLabel>
+    <recordTypes>
+        <fullName>Approved_Email_vod</fullName>
+        <active>true</active>
+        <description>Record type for responses gathered through surveys sent via Approved Email</description>
+        <label>Approved_Email_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CLM_vod</fullName>
+        <active>true</active>
+        <description>Record type for responses gathered from CLM presentations.</description>
+        <label>CLM_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CRM_Coaching_vod</fullName>
+        <active>true</active>
+        <description>Used for responses generated for the coaching report use case.</description>
+        <label>CRM_Coaching_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CRM_vod</fullName>
+        <active>true</active>
+        <description>Record type for responses gathered from Veeva CRM.</description>
+        <label>CRM_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Suggestions_vod</fullName>
+        <active>true</active>
+        <description>Used to identify answers to questions on a Suggestion Survey.</description>
+        <label>Suggestions_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

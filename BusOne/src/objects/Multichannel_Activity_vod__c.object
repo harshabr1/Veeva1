@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Captures the session information for a multichannel interaction.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_External_ID_Map_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates the Account External ID Mapping record the interaction is recorded for.</description>
+        <externalId>false</externalId>
+        <label>Account External ID Map</label>
+        <referenceTo>Account_External_ID_Map_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activities</relationshipLabel>
+        <relationshipName>Multichannel_Activities_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates which Account the interaction is recorded for.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Multichannel Activities</relationshipLabel>
+        <relationshipName>Multichannel_Activities_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CLM_Location_Latitude_vod__c</fullName>
+        <description>Stores the latitude coordinate of the location where the key message is shown</description>
+        <externalId>false</externalId>
+        <label>CLM Location Latitude</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CLM_Location_Longitude_vod__c</fullName>
+        <description>Stores the longitude coordinate of the location where the key message is shown</description>
+        <externalId>false</externalId>
+        <label>CLM Location Longitude</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>6</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CLM_Location_Services_Status_vod__c</fullName>
+        <description>Indicates the state of location services at the time the key messages is shown
+Enabled_vod - location services are turned on and the system is able to get the user&apos;s location
+Disabled_vod - location services are turned off
+No_connection_vod - no network connection</description>
+        <externalId>false</externalId>
+        <label>CLM Location Services Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Enabled_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Disabled_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>No_connection_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Call_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates which Call record the activity is associated with.</description>
+        <externalId>false</externalId>
+        <label>Call</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activities</relationshipLabel>
+        <relationshipName>Multichannel_Activities_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>City_vod__c</fullName>
+        <description>City which corresponds to the IP address of the viewer.</description>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Name_vod__c</fullName>
+        <description>Name of client software/browser used during the interaction</description>
+        <externalId>false</externalId>
+        <label>Client Name</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_OS_vod__c</fullName>
+        <description>Operating system used during the interaction</description>
+        <externalId>false</externalId>
+        <label>Client OS</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Type_vod__c</fullName>
+        <description>Type of software the viewer used to access the Engage player.</description>
+        <externalId>false</externalId>
+        <label>Client Type</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Color_vod__c</fullName>
+        <description>Color for the Multichannel Activity</description>
+        <externalId>false</externalId>
+        <label>Color</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Clear</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Red</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Orange</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Peach</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yellow</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Green</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Teal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Olive</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Blue</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Purple</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Maroon</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Steel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkSteel</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Gray</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkGray</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Black</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkRed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkOrange</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkPeach</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkYellow</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkGreen</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkTeal</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkOlive</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkBlue</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkPurple</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>DarkMaroon</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Country_vod__c</fullName>
+        <description>Two-letter country code (as specified by ISO3166) which corresponds to the IP address of the viewer.</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Debug_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the debug parameter was set to true</description>
+        <externalId>false</externalId>
+        <label>Debug?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Detail Group associated to the Multichannel Activity</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activities</relationshipLabel>
+        <relationshipName>Multichannel_Activities1_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Device_vod__c</fullName>
+        <description>Type of device used during the interaction</description>
+        <externalId>false</externalId>
+        <label>Device</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EM_Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates which Event Management record the activity is associated with</description>
+        <externalId>false</externalId>
+        <label>EM Event</label>
+        <referenceTo>EM_Event_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activities</relationshipLabel>
+        <relationshipName>Multichannel_Activities_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Event_Attendee_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates which Event Attendee record the activity is associated with.</description>
+        <externalId>false</externalId>
+        <label>Event Attendee</label>
+        <referenceTo>Event_Attendee_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activities</relationshipLabel>
+        <relationshipName>Multichannel_Activities_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>IP_Address_vod__c</fullName>
+        <description>IP Address of the viewer</description>
+        <externalId>false</externalId>
+        <label>IP Address</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Icon_vod__c</fullName>
+        <description>Icon for the Multichannel Activity</description>
+        <externalId>false</externalId>
+        <label>Icon</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Call_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Event_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Inventory_Monitoring_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medical_Event_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Medical_Inquiry_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Multichannel_Activity_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Order_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Sent_Email_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Marketing_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>MCD_Primary_Key_vod__c</fullName>
+        <description>Primary key of the Marketing Cloud Data Extension record</description>
+        <externalId>false</externalId>
+        <label>MCD Primary Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Media_Preview_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Specifies that the content was viewed from Media Preview</description>
+        <externalId>false</externalId>
+        <label>Media Preview</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates which Medical Event record the activity is associated with.</description>
+        <externalId>false</externalId>
+        <label>Medical Event</label>
+        <referenceTo>Medical_Event_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activities</relationshipLabel>
+        <relationshipName>Multichannel_Activities_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Multichannel_Activity_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used for tracking interactions with multiple attendees</description>
+        <externalId>false</externalId>
+        <label>Parent Multichannel Activity</label>
+        <referenceTo>Multichannel_Activity_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activities</relationshipLabel>
+        <relationshipName>Multichannel_Activities_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Organizer_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates the internal user viewing the content</description>
+        <externalId>false</externalId>
+        <label>Organizer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Multichannel_Activities_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Product associated to the Multichannel Activity</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activities</relationshipLabel>
+        <relationshipName>Multichannel_Activities_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Record_Type_Name_vod__c</fullName>
+        <description>Record Type DeveloperName of the record. Field is
+		referenced in trigger.</description>
+        <externalId>false</externalId>
+        <label>Record Type Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Referring_Site_vod__c</fullName>
+        <description>Website which links to the Engage host page.</description>
+        <externalId>false</externalId>
+        <label>Referring Site</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region_vod__c</fullName>
+        <description>Two-letter or two digit region code which corresponds to the IP address of the viewer.</description>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Saved_For_Later_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the record can be associated to an Account to generate a Call Report</description>
+        <externalId>false</externalId>
+        <label>Saved by User</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sent_Email_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates which Sent Email record the activity is associated with.</description>
+        <externalId>false</externalId>
+        <label>Sent Email</label>
+        <referenceTo>Sent_Email_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activities</relationshipLabel>
+        <relationshipName>Multichannel_Activities_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Session_Id_vod__c</fullName>
+        <description>Session Id from the browser</description>
+        <externalId>false</externalId>
+        <label>Session Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Site_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Indicates which Site the interaction came from.</description>
+        <externalId>false</externalId>
+        <label>Site</label>
+        <referenceTo>Site_vod__c</referenceTo>
+        <relationshipLabel>Multichannel Activities</relationshipLabel>
+        <relationshipName>Multichannel_Activities_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Start_DateTime_vod__c</fullName>
+        <description>Indicates the start date and time of the interaction.</description>
+        <externalId>false</externalId>
+        <label>Start DateTime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Territory_vod__c</fullName>
+        <description>The Territory of the User at the time the multichannel activity was created, if applicable. Not all multichannel activity will have a Territory.</description>
+        <externalId>false</externalId>
+        <label>Territory</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Duration_vod__c</fullName>
+        <description>Aggregated duration (in seconds) filled in based on the child Multichannel Activity Lines</description>
+        <externalId>false</externalId>
+        <label>Total Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Training_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Specifies that the content was viewed during training</description>
+        <externalId>false</externalId>
+        <label>Training</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>URL_vod__c</fullName>
+        <description>Full URL which was clicked on by the viewer.</description>
+        <externalId>false</externalId>
+        <label>URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Agent_vod__c</fullName>
+        <description>String provided in the HTTP header which identifies the application type, operating system, software vendor, and software revision.</description>
+        <externalId>false</externalId>
+        <label>User Agent</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VExternal_Id_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>External Id used by Veeva CRM</description>
+        <externalId>true</externalId>
+        <label>Veeva External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Viewport_Height_vod__c</fullName>
+        <description>Height of the viewport when Engage player is launched.</description>
+        <externalId>false</externalId>
+        <label>Viewport Height</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Viewport_Width_vod__c</fullName>
+        <description>Width of the viewport when Engage player is launched</description>
+        <externalId>false</externalId>
+        <label>Viewport Width</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Multichannel Activity</label>
+    <nameField>
+        <displayFormat>MCA-{000000000}</displayFormat>
+        <label>Multichannel Activity Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Multichannel Activities</pluralLabel>
+    <recordTypes>
+        <fullName>CLM_vod</fullName>
+        <active>false</active>
+        <description>Used for records created by CLM</description>
+        <label>CLM_vod</label>
+        <picklistValues>
+            <picklist>CLM_Location_Services_Status_vod__c</picklist>
+            <values>
+                <fullName>Disabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No_connection_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Cobrowse_vod</fullName>
+        <active>true</active>
+        <description>Used for records created by CoBrowse</description>
+        <label>Cobrowse_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Engage_vod</fullName>
+        <active>true</active>
+        <description>Used for records created via Engage</description>
+        <label>Engage_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Event_vod</fullName>
+        <active>true</active>
+        <description>Used for records created by Engage Events</description>
+        <label>Event_vod</label>
+        <picklistValues>
+            <picklist>CLM_Location_Services_Status_vod__c</picklist>
+            <values>
+                <fullName>Disabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enabled_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No_connection_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Color_vod__c</picklist>
+            <values>
+                <fullName>Black</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkBlue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkGreen</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkMaroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOlive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkOrange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPeach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkPurple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkRed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkSteel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkTeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DarkYellow</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gray</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Maroon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Olive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Orange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Peach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Purple</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Steel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Icon_vod__c</picklist>
+            <values>
+                <fullName>Call_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventory_Monitoring_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical_Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medical_Inquiry_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multichannel_Activity_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent_Email_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

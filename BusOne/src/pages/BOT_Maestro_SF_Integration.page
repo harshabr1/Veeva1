@@ -1,0 +1,44 @@
+<!--
+Name            : BOT_Maestro_SF_Integration
+Created By      : SREENIVASULU ADIPUDI
+Created Date    : 09/JUN/2017
+Description     : This VF Page is created to display the data which is retrived from the external system.
+-->
+<apex:page controller="BOT_Maestro_SF_Integration" sidebar="false" >
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock id="pb1">
+            <apex:outputLabel Value="Entity ID  ">
+                <apex:inputText label="Entity ID" value="{!getEntityID}"/>
+                <apex:commandButton value="Get" action="{!accountsData}"/> 
+            </apex:outputLabel>
+        </apex:pageBlock>
+        <apex:pageBlock id="pb2">
+            <apex:pageBlockSection id="pbs1" columns="1" rendered="{!ifListSize}">
+                <apex:pageBlockTable value="{!accountsList}" var="val" cellpadding="2" cellspacing="2">
+                    <apex:column headerValue="Entity Id">
+                        <apex:outputText value="{!val.ENTITY_ID}"/>
+                    </apex:column>
+                    <apex:column headerValue="Entity Name">
+                        <apex:outputText value="{!val.ENTITY_NAME}"/>
+                    </apex:column>
+                    <apex:column headerValue="State">
+                        <apex:outputText value="{!val.ENTITY_STATE}"/>
+                    </apex:column>
+                    <apex:column headerValue="Formulary ID">
+                        <apex:outputText value="{!val.FORMULARY_ID}"/>
+                    </apex:column>
+                    <apex:column headerValue="Formulary Name">
+                        <apex:outputText value="{!val.FORMULARY_NAME}"/>
+                    </apex:column>
+                    <apex:column headerValue="Formulary Lives">
+                        <apex:outputText value="{!val.FORMULARY_LIVES}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="pbs2" columns="1" rendered="{!elseListSize}">
+                <apex:outputLabel value="There are no Accounts exist related to given Entity ID"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

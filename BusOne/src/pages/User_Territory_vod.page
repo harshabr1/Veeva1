@@ -1,0 +1,24 @@
+<!-- 
+- 
+- Confidentiality Information: 
+- 
+- This module is the confidential and proprietary information of 
+- Verticals onDemand, Inc.; it is not to be copied, reproduced, or transmitted 
+- in any form, by any means, in whole or in part, nor is it to be used 
+- for any purpose other than that for which it is expressly provided 
+- without the written permission of Verticals onDemand. 
+- 
+- Copyright (c) 2009 Verticals onDemand, Inc. All Rights Reserved. 
+- 
+--> 
+<apex:page standardController="Account" extensions="VOD_UserTerritoryExtension" showHeader="false" sidebar="false" standardStylesheets="true" title="{!$Label.User_Territory_Title_vod}">
+<body onload="if(document.documentElement&&document.documentElement.scrollHeight){window.resizeBy(0,document.documentElement.scrollHeight-200);}else if(document.body.scrollHeight){window.resizeBy(0,document.body.scrollHeight-200);}">
+    <apex:pageBlock title="{!$Label.User_Territory_Title_vod}">
+        <apex:pageBlockTable value="{!userTerritories}" var="usr">
+            <apex:column headervalue="{!$Label.User_Territory_Territory_Column_Label_vod}" value="{!usr.Territory}"></apex:column>
+            <apex:column headervalue="{!$Label.User_Territory_User_Column_Label_vod}" value="{!usr.Users}"></apex:column>
+            <apex:column headervalue="{!$Label.User_Territory_Territory_Description_Column_Label_vod}" value="{!usr.Description}"></apex:column>            
+        </apex:pageBlockTable>
+    </apex:pageBlock>  
+</body>
+</apex:page>

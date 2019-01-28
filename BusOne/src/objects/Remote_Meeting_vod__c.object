@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Maintains data for Remote Meetings</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Assigned_Host_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the User who will be assigned as the host of the remote meeting</description>
+        <externalId>false</externalId>
+        <label>Assigned Host</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Remote_Meetings</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Attendance_Report_Process_Status_vod__c</fullName>
+        <description>Indicates the status of retrieving the attendance report</description>
+        <externalId>false</externalId>
+        <label>Attendance Report Process Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Retries_Maxed_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Meeting_Not_Started_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Meeting_Occurred_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retry_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Success_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description_vod__c</fullName>
+        <description>Description of the remote meeting</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Latest_Meeting_Start_Datetime_vod__c</fullName>
+        <description>Indicates the latest datetime that the meeting was started</description>
+        <externalId>false</externalId>
+        <label>Latest Meeting Start Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Meeting_Id_vod__c</fullName>
+        <description>Remote Meeting Id</description>
+        <externalId>false</externalId>
+        <label>Meeting Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Meeting_Name_vod__c</fullName>
+        <description>Meeting Name for the Remote Meeting</description>
+        <externalId>false</externalId>
+        <label>Meeting Name</label>
+        <length>300</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Scheduled_DateTime_vod__c</fullName>
+        <description>Date/Time of last API update to the Remote Meeting</description>
+        <externalId>false</externalId>
+        <label>Scheduled DataTime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Scheduled_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is TRUE when Remote Meeting information has been successfully created/updated via the web service</description>
+        <externalId>false</externalId>
+        <label>Successfully Scheduled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Alternative_Host_1_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Alternative Host 1</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Remote_Meetings1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Alternative_Host_2_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Alternative Host 2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Remote_Meetings2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Webinar_Alternative_Host_3_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Alternative Host 3</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Remote_Meetings3</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Remote Meeting</label>
+    <nameField>
+        <label>Remote Meeting Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Remote Meetings</pluralLabel>
+    <recordTypes>
+        <fullName>Call_vod</fullName>
+        <active>false</active>
+        <description>For Remote Meetings on Call</description>
+        <label>Call_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Webinar_vod</fullName>
+        <active>true</active>
+        <description>Record Type for Engage Webinar</description>
+        <label>Webinar_vod</label>
+        <picklistValues>
+            <picklist>Attendance_Report_Process_Status_vod__c</picklist>
+            <values>
+                <fullName>Meeting_Not_Started_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting_Occurred_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retries_Maxed_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retry_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Success_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

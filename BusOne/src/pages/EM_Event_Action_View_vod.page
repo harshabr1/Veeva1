@@ -1,0 +1,4 @@
+<apex:page standardController="EM_Event_Action_vod__c" >
+    <c:VOD_EMBED veevaModule="em" veevaPage="event-action-view" objectType="EM_Event_Action_vod__c"
+        queryParams="PLO={!$CurrentPage.parameters.PLO}"/>
+</apex:page>

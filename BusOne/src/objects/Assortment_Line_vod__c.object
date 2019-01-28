@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Assortment Line contains the product list and the Sections, including the sort code</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Assortment_vod__c</fullName>
+        <description>Link to the Assortment record to which this link is related.</description>
+        <externalId>false</externalId>
+        <label>Assortment</label>
+        <referenceTo>Assortment_vod__c</referenceTo>
+        <relationshipLabel>Assortment Lines</relationshipLabel>
+        <relationshipName>Assortment_Lines_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Collapse_By_Default_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When enabled, the corresponding section will be in a collapsed state by default; users will have to manually expand it</description>
+        <externalId>false</externalId>
+        <label>Collapse By Default?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>External_ID_vod__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Used for data loads.</description>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Section_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Filtered Lookup to define under which Section the products are listed.
+Filter on Assortment Line: Section Label not equal to blank
+
+The list should only show Sections defined in the CURRENT Assortment.</description>
+        <externalId>false</externalId>
+        <label>Parent Section</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 AND 2</booleanFilter>
+            <errorMessage>Parent Assortment Line Section Label should not be blank</errorMessage>
+            <filterItems>
+                <field>Assortment_Line_vod__c.Section_Label_vod__c</field>
+                <operation>notEqual</operation>
+                <value></value>
+            </filterItems>
+            <filterItems>
+                <field>Assortment_Line_vod__c.Assortment_vod__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Assortment_vod__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Assortment_Line_vod__c</referenceTo>
+        <relationshipLabel>Assortment Lines</relationshipLabel>
+        <relationshipName>Assortment_Lines_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Filtered Lookup to link SKUs and Detail products to the Assortment
+Filter on Product: Product Type contains Detail, Order</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR (4 AND (2 OR 6)) OR (5 AND 3)</booleanFilter>
+            <errorMessage>OM Assortment Products can only be Product Type Order or Detail, and IM Assortment Products can only be Product Type Inventory Monitoring or Detail, or have Inventory Monitoring checked</errorMessage>
+            <filterItems>
+                <field>Product_vod__c.Product_Type_vod__c</field>
+                <operation>equals</operation>
+                <value>Detail</value>
+            </filterItems>
+            <filterItems>
+                <field>Product_vod__c.Product_Type_vod__c</field>
+                <operation>equals</operation>
+                <value>Inventory Monitoring</value>
+            </filterItems>
+            <filterItems>
+                <field>Product_vod__c.Product_Type_vod__c</field>
+                <operation>equals</operation>
+                <value>Order</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>IM Assortment Product</value>
+            </filterItems>
+            <filterItems>
+                <field>$Source.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>OM Assortment Product</value>
+            </filterItems>
+            <filterItems>
+                <field>Product_vod__c.Inventory_Monitoring_vod__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Assortment Lines</relationshipLabel>
+        <relationshipName>Assortment_Lines_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Section_Label_vod__c</fullName>
+        <description>Name of the Section to be displayed in the Order UI when the assortment is selected</description>
+        <externalId>false</externalId>
+        <label>Section Label</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sorting_vod__c</fullName>
+        <description>Defines the sort order of both sections and products within</description>
+        <externalId>false</externalId>
+        <label>Sorting</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Assortment Line</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AL{00000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Assortment Lines</pluralLabel>
+    <recordTypes>
+        <fullName>IM_Assortment_Product_vod</fullName>
+        <active>true</active>
+        <description>IM Assortment Product</description>
+        <label>IM Assortment Product</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>IM_Assortment_Section_vod</fullName>
+        <active>true</active>
+        <description>IM Assortment Section</description>
+        <label>IM Assortment Section</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>OM_Assortment_Product_vod</fullName>
+        <active>true</active>
+        <description>Order Assortment Product</description>
+        <label>OM Assortment Product</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>OM_Assortment_Section_vod</fullName>
+        <active>true</active>
+        <description>Order Assortment Section</description>
+        <label>OM Assortment Section</label>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Section_Label_vod__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Assortment_Line_Header_Mismatch_vod</fullName>
+        <active>true</active>
+        <description>OM Assortment Lines can only be associated with OM Assortments, and IM Assortment Lines can only be associated with IM Assortments</description>
+        <errorConditionFormula>((RecordType.DeveloperName = &apos;IM_Assortment_Product_vod&apos; || RecordType.DeveloperName = &apos;IM_Assortment_Section_vod&apos;) &amp;&amp;  Assortment_vod__r.RecordType.DeveloperName != &apos;IM_Assortment_vod&apos;)
+||
+((RecordType.DeveloperName = &apos;OM_Assortment_Product_vod&apos; || RecordType.DeveloperName = &apos;OM_Assortment_Section_vod&apos;) &amp;&amp;  Assortment_vod__r.RecordType.DeveloperName != &apos;OM_Assortment_vod&apos;)</errorConditionFormula>
+        <errorMessage>OM Assortment Lines can only be associated with OM Assortments, and IM Assortment Lines can only be associated with IM Assortments</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Assortment_Section_Collapse_Check_vod</fullName>
+        <active>true</active>
+        <description>Can only be checked for the IM_Assortment_Section_vod Record Type</description>
+        <errorConditionFormula>AND(RecordType.DeveloperName != &apos;IM_Assortment_Section_vod&apos;, RecordType.DeveloperName != &apos;OM_Assortment_Section_vod&apos;, Collapse_By_Default_vod__c)</errorConditionFormula>
+        <errorDisplayField>Collapse_By_Default_vod__c</errorDisplayField>
+        <errorMessage>Can only be checked for the IM_Assortment_Section_vod Record Type or OM_Assortment_Section_vod</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Section_linked_to_Section</fullName>
+        <active>true</active>
+        <description>A Section cannot be linked to a Parent Section</description>
+        <errorConditionFormula>AND(NOT(ISBLANK(Section_Label_vod__c)),NOT(ISBLANK(Parent_Section_vod__c)))</errorConditionFormula>
+        <errorMessage>A Section cannot be linked to a Parent Section</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Section_with_Product</fullName>
+        <active>true</active>
+        <description>A Section and a Product cannot be specified on the same record.</description>
+        <errorConditionFormula>IF(AND( NOT(ISBLANK(Section_Label_vod__c)), NOT(ISBLANK(Product_vod__c))), true, false)</errorConditionFormula>
+        <errorMessage>A Section and a Product cannot be specified on the same record.</errorMessage>
+    </validationRules>
+</CustomObject>

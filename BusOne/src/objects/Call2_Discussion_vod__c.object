@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>BlockedAccess_vod</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Scontrol</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores all product discussions data recorded on any call, as well as allows for creating different product discussions layouts</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Tactic_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Account Tactic that is applied for this call discussion</description>
+        <externalId>false</externalId>
+        <label>Account Tactic</label>
+        <referenceTo>Account_Tactic_vod__c</referenceTo>
+        <relationshipLabel>Call Discussions</relationshipLabel>
+        <relationshipName>Call_Discussions_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the account for which the call discussion was delivered.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Call Discussions(Accounts)</relationshipLabel>
+        <relationshipName>Call2_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Activity__c</fullName>
+        <description>Denotes the type of activity (Dinner, Email, Discussion...).</description>
+        <externalId>false</externalId>
+        <label>Activity</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dinner meeting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Email exchange</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Lunch meeting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Meeting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contracts Discussion</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Presentation</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Attendee_Type_vod__c</fullName>
+        <description>Type of attendee.</description>
+        <externalId>false</externalId>
+        <label>Attendee Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Group_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Contact_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Person_Account_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>User_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Event_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Call2_Mobile_ID_vod__c</fullName>
+        <description>Mobile ID of the parent Call object</description>
+        <externalId>false</externalId>
+        <label>Call Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call2_vod__c</fullName>
+        <description>Master-Detail Lookup to the call_header record for which this discussion was performed.</description>
+        <externalId>false</externalId>
+        <label>Call</label>
+        <referenceTo>Call2_vod__c</referenceTo>
+        <relationshipLabel>Call Discussions</relationshipLabel>
+        <relationshipName>Call2_Discussion_vod</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Call_Date_vod__c</fullName>
+        <description>The date of the call. This is denormalized into the call discussion for usability purposes.</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>Text area to save comments about the discussion.</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Contact_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the contact for which the call discussion was delivered.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Call Discussions(Contacts)</relationshipLabel>
+        <relationshipName>Call2_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Detail_Group_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Product Catalog records of type Detail Group.</description>
+        <externalId>false</externalId>
+        <label>Detail Group</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Call Discussions (Detail Group)</relationshipLabel>
+        <relationshipName>Call_Discussions_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Discussion_Topics__c</fullName>
+        <description>Picklist of discussion topics.</description>
+        <externalId>false</externalId>
+        <label>Discussion Topics</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Payer</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Pipeline</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Clinical Studies</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Site Readiness</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Publication Support</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Scientific Exchange</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Speaker Development</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Ad Board</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Investigator Meeting</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Entity_Reference_Id_vod__c</fullName>
+        <description>For Internal Use</description>
+        <externalId>false</externalId>
+        <label>Entity Reference Id</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Indication__c</fullName>
+        <description>Intended use of the product.</description>
+        <externalId>false</externalId>
+        <label>Indication</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Indication 1</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Indication 2</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Indication 3</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Is_Parent_Call_vod__c</fullName>
+        <description>Formula Field to determine if the Call Discussion record is part of the Parent Call or of an Attendee Call record.  1 indicates that the record is associated with the Parent Call.  0 indicates that it is associated with an Attendee Call.</description>
+        <externalId>false</externalId>
+        <formula>IF(LEN(Call2_vod__r.Parent_Call_vod__c )&gt;0, 0,1)</formula>
+        <label>Is Parent Call?</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Medical_Event_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Medical Event associated to the Call Discussion.</description>
+        <externalId>false</externalId>
+        <label>Medical Event</label>
+        <referenceTo>Medical_Event_vod__c</referenceTo>
+        <relationshipLabel>Call Discussions</relationshipLabel>
+        <relationshipName>Call2_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used for mobile integration.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Override_Lock_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Helper field for data loads.</description>
+        <externalId>false</externalId>
+        <label>Override Lock</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Presentation__c</fullName>
+        <description>Picklist containing the available presentations.</description>
+        <externalId>false</externalId>
+        <label>Presentation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>RLS Presentation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CHS Presentation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CHS Diabetic Presentation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CR Presentation</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>CR Presentation Diabetic Patients</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Strategy_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>A lookup to the product strategy used in this call discussion.</description>
+        <externalId>false</externalId>
+        <label>Product Strategy</label>
+        <referenceTo>Product_Strategy_vod__c</referenceTo>
+        <relationshipLabel>Call Discussions</relationshipLabel>
+        <relationshipName>Call_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Tactic_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the product tactic used in this discussion.</description>
+        <externalId>false</externalId>
+        <label>Product Tactic</label>
+        <referenceTo>Product_Tactic_vod__c</referenceTo>
+        <relationshipLabel>Call Discussions</relationshipLabel>
+        <relationshipName>Call_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the product in the product catalog. This product is the topic of the call discussion.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product_vod__c</referenceTo>
+        <relationshipLabel>Call Discussions</relationshipLabel>
+        <relationshipName>Call_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Restricted_Comments__c</fullName>
+        <description>Text area to save restricted comments about the discussion.</description>
+        <externalId>false</externalId>
+        <label>Restricted Comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Slides__c</fullName>
+        <description>Used to capture the slides presented during the discussion.</description>
+        <externalId>false</externalId>
+        <label>Slides</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to the user for which the call discussion was delivered.</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Call2_Discussion_vod</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zvod_Product_Map_vod__c</fullName>
+        <description>Special field to create dependency relationships on call discussion fields based on product.  The picklist values for this field are the textual names of detailed products.  The values must be an exact match.  This field should not be placed on any of the call discussion layouts.</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DELETE</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Call Discussion</label>
+    <nameField>
+        <displayFormat>CDI{000000000}</displayFormat>
+        <label>Call Discussion</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Call Discussions</pluralLabel>
+    <recordTypes>
+        <fullName>CallReport_vod</fullName>
+        <active>true</active>
+        <label>Call Report_vod</label>
+        <picklistValues>
+            <picklist>Activity__c</picklist>
+            <values>
+                <fullName>Contracts Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinner meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lunch meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presentation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Attendee_Type_vod__c</picklist>
+            <values>
+                <fullName>Contact_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Person_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Discussion_Topics__c</picklist>
+            <values>
+                <fullName>Ad Board</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clinical Studies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investigator Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Publication Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site Readiness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speaker Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Indication__c</picklist>
+            <values>
+                <fullName>Indication 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indication 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indication 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Presentation__c</picklist>
+            <values>
+                <fullName>CHS Diabetic Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHS Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CR Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CR Presentation Diabetic Patients</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RLS Presentation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>zvod_Product_Map_vod__c</picklist>
+            <values>
+                <fullName>DELETE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Event_vod</fullName>
+        <active>true</active>
+        <description>Record Type for Call Discussion Event Layouts</description>
+        <label>Event_vod</label>
+        <picklistValues>
+            <picklist>Activity__c</picklist>
+            <values>
+                <fullName>Contracts Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinner meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lunch meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presentation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Attendee_Type_vod__c</picklist>
+            <values>
+                <fullName>Contact_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Person_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Discussion_Topics__c</picklist>
+            <values>
+                <fullName>Ad Board</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clinical Studies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investigator Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Publication Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site Readiness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speaker Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Indication__c</picklist>
+            <values>
+                <fullName>Indication 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indication 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indication 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Presentation__c</picklist>
+            <values>
+                <fullName>CHS Diabetic Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHS Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CR Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CR Presentation Diabetic Patients</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RLS Presentation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>zvod_Product_Map_vod__c</picklist>
+            <values>
+                <fullName>DELETE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MSLMeetingBrief_vod</fullName>
+        <active>true</active>
+        <label>MSL Meeting Brief_vod</label>
+        <picklistValues>
+            <picklist>Activity__c</picklist>
+            <values>
+                <fullName>Contracts Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinner meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lunch meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presentation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Attendee_Type_vod__c</picklist>
+            <values>
+                <fullName>Contact_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Person_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Discussion_Topics__c</picklist>
+            <values>
+                <fullName>Ad Board</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clinical Studies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investigator Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Publication Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site Readiness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speaker Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Indication__c</picklist>
+            <values>
+                <fullName>Indication 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indication 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indication 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Presentation__c</picklist>
+            <values>
+                <fullName>CHS Diabetic Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHS Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CR Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CR Presentation Diabetic Patients</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RLS Presentation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>zvod_Product_Map_vod__c</picklist>
+            <values>
+                <fullName>DELETE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>MeetingBrief_vod</fullName>
+        <active>true</active>
+        <description>Meeting Brief</description>
+        <label>Meeting Brief_vod</label>
+        <picklistValues>
+            <picklist>Activity__c</picklist>
+            <values>
+                <fullName>Contracts Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dinner meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lunch meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presentation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Attendee_Type_vod__c</picklist>
+            <values>
+                <fullName>Contact_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Group_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Person_Account_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Discussion_Topics__c</picklist>
+            <values>
+                <fullName>Ad Board</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clinical Studies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investigator Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Publication Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scientific Exchange</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Site Readiness</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speaker Development</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Indication__c</picklist>
+            <values>
+                <fullName>Indication 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indication 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indication 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Presentation__c</picklist>
+            <values>
+                <fullName>CHS Diabetic Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CHS Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CR Presentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CR Presentation Diabetic Patients</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RLS Presentation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>zvod_Product_Map_vod__c</picklist>
+            <values>
+                <fullName>DELETE</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Account_vod__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Activity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Call2_vod__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account_vod__c</searchFilterFields>
+        <searchFilterFields>Activity__c</searchFilterFields>
+        <searchFilterFields>Call2_vod__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

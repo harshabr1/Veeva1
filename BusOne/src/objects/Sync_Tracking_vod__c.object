@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object stores information about successful sync processes performed by VMobile</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Canceled_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates the user clicked the Cancel button during the sync.</description>
+        <externalId>false</externalId>
+        <label>Sync Canceled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Download_Processed_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Marked as checked if the download from the server to VMobile completed with no errors.</description>
+        <externalId>false</externalId>
+        <label>Download Processed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Media_Processed_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether the CLM content download completed successfully.</description>
+        <externalId>false</externalId>
+        <label>Media Processed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>System field used by mobile products to aid synchronization.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Retries_vod__c</fullName>
+        <description>Total number of retries during the download process.  This includes the metadata, data, media and VInsights portions of the sync, where applicable.</description>
+        <externalId>false</externalId>
+        <label># Retries</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Upload_Errors_vod__c</fullName>
+        <description>Number of upload errors reported to the user.</description>
+        <externalId>false</externalId>
+        <label># Upload Errors</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Uploads_vod__c</fullName>
+        <description>Number of objects uploaded to the server.  Calls and Orders count as one per top level object, even though they may contain many objects (e.g. an Order with 10 Order Lines, counts as 1 upload, not 11).</description>
+        <externalId>false</externalId>
+        <label># Uploads</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_VTrans_vod__c</fullName>
+        <description>Number of files in the VTrans folder.  For autosends this value is not set.</description>
+        <externalId>false</externalId>
+        <label># Unprocessed Trans Files</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Successful_Sync_vod__c</fullName>
+        <description>Contains 1 if the sync was successful.</description>
+        <externalId>false</externalId>
+        <formula>IF(OR(AND(Upload_Processed_vod__c ,VInsights_Processed_vod__c ,Download_Processed_vod__c,NOT(ISNULL( Sync_Completed_Datetime_vod__c ))),
+AND(Upload_Processed_vod__c, ISPICKVAL(Sync_Type_vod__c, &quot;Autosend_vod&quot;))),1,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Successful Sync</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sync_Completed_Datetime_vod__c</fullName>
+        <description>Time at which the sync completed.</description>
+        <externalId>false</externalId>
+        <label>Sync Completed Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Sync_Duration_vod__c</fullName>
+        <description>Duration of the sync in seconds.</description>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISNULL( Sync_Completed_Datetime_vod__c  )),(Sync_Completed_Datetime_vod__c - Sync_Start_Datetime_vod__c )*60*24*60,NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sync Duration (secs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sync_Start_Datetime_vod__c</fullName>
+        <description>Time when the sync was initiated.</description>
+        <externalId>false</externalId>
+        <label>Sync Start Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Sync_Type_vod__c</fullName>
+        <description>Type of synchronization that occurred, such as Incremental, User-triggered or Forced (a.k.a. triggered by the tablet because of new fields in the describe).</description>
+        <externalId>false</externalId>
+        <label>Sync Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Incremental_Sync_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>User_Full_Sync_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Forced_Full_Sync_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Autosend_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Upload_Processed_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked if the upload from VMobile to the server completed with no errors.</description>
+        <externalId>false</externalId>
+        <label>Upload Processed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>VInsights_Processed_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked if the download of VInsights from the server to VMobile completed with no errors.  This will always be checked for orgs that are not configured for VInsights.</description>
+        <externalId>false</externalId>
+        <label>VInsights Processed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Version_vod__c</fullName>
+        <description>Version of the tablet performing the sync.</description>
+        <externalId>false</externalId>
+        <label>Version</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Synchronization Tracking</label>
+    <nameField>
+        <displayFormat>ST{000000000}</displayFormat>
+        <label>Synchronization Tracking Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Synchronization Trackings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to associate two accounts for Order Management functionality.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_Partner_ID_vod__c</fullName>
+        <description>Identifier for the Account Partner record, used when Account ID is loaded from external sources.</description>
+        <externalId>false</externalId>
+        <label>Account Partner ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_vod__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Lookup to account that is the source of the association.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Account Partners</relationshipLabel>
+        <relationshipName>Account_Partners</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contract_vod__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Links Account Partner object to Contract object and allows to define a Contract for the Account Partner record.</description>
+        <externalId>false</externalId>
+        <label>Contract</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contract_vod__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Sales_vod</value>
+            </filterItems>
+            <filterItems>
+                <field>Contract_vod__c.Status_vod__c</field>
+                <operation>equals</operation>
+                <value>Activated</value>
+            </filterItems>
+            <filterItems>
+                <field>Contract_vod__c.Expired_vod__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contract_vod__c</referenceTo>
+        <relationshipLabel>Account Partners</relationshipLabel>
+        <relationshipName>Account_Partners</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Default_vod__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used to mark an Account Partner as default for the Account. Only one Account Partner per Record Type should be marked as default. Default Account Partner is automatically populated on Orders.</description>
+        <externalId>false</externalId>
+        <label>Default</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_ID_vod__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Unique identifier for records created offline.</description>
+        <externalId>true</externalId>
+        <label>Mobile ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Type_vod__c</fullName>
+        <description>Used to associate a price book to Order Types. If left empty, the price book will be available for all Order Types. It can be populated with the picklist control that will show all the available Order Types (out-of-the-box and custom)</description>
+        <externalId>false</externalId>
+        <label>Order Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Transfer_vod</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Direct_vod</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Priority_vod__c</fullName>
+        <description>If populated, used by the pricing engine to determine which price book to apply in case of conflict. The lowest value (1) represents the highest priority. If left empty, best pricing logic will be applied among conflicting price books. If not all conflicting records are populated with a priority, the highest priority record found will be used.</description>
+        <externalId>false</externalId>
+        <label>Priority</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wholesaler_vod__c</fullName>
+        <description>Used to associate a Price Book to a Wholesaler.</description>
+        <externalId>false</externalId>
+        <label>Wholesaler</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Account Partner</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Account Partner Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Account Partners</pluralLabel>
+    <recordTypes>
+        <fullName>Delivery_Location_vod</fullName>
+        <active>true</active>
+        <description>Used to define one or more Delivery Locations for an Accoun</description>
+        <label>Delivery_Location_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Payer_vod</fullName>
+        <active>true</active>
+        <description>Used to define one or more Payer for an Account</description>
+        <label>Payer_vod</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Price_Book_vod</fullName>
+        <active>false</active>
+        <description>Used to associate a price book to an account</description>
+        <label>Price_Book_vod</label>
+        <picklistValues>
+            <picklist>Order_Type_vod__c</picklist>
+            <values>
+                <fullName>Direct_vod</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer_vod</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Wholesaler_vod</fullName>
+        <active>true</active>
+        <description>Used to define one or more Wholesalers for an Account</description>
+        <label>Wholesaler_vod</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Account_Optional_For_PriceBook_vod</fullName>
+        <active>true</active>
+        <description>If Wholesaler_vod value is not blank, Account_vod field is not required for the Price Book record type, otherwise, Account_vod is always required (for all Record Types, including Price Book).</description>
+        <errorConditionFormula>OR(AND($RecordType.DeveloperName != &apos;Price_Book_vod&apos;, ISBLANK(Account_vod__c)), AND($RecordType.DeveloperName = &apos;Price_Book_vod&apos;, ISBLANK(Wholesaler_vod__c), ISBLANK(Account_vod__c)))</errorConditionFormula>
+        <errorDisplayField>Account_vod__c</errorDisplayField>
+        <errorMessage>Account is required.</errorMessage>
+    </validationRules>
+</CustomObject>

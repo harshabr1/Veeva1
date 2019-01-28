@@ -1,0 +1,9 @@
+<apex:page standardController="Inventory_Monitoring_vod__c" standardStylesheets="true">
+<apex:composition template="{!$Page.VODRedirect_4000_vod}"/>
+<script type="text/javascript">        
+//alert("{!Inventory_Monitoring_vod__c.id}");
+    var queryparams = "&inventoryid=" + "{!Inventory_Monitoring_vod__c.id}";  
+    queryparams += '&mode=e';
+    com.vod309.redirect.redirect("inventory", queryparams);
+</script>
+</apex:page>
