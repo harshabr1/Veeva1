@@ -15,7 +15,7 @@ Public class BOT_Account_Test
                                      BOT_PBM_ID__c='22',
                                      Account_Type__c='MCO');
         lstAccs.add(objAcc);
-        Account objAcc1 = new Account(Name = 'TestAccountName1',
+        Account objAcc1 = new Account(Name = 'TestAccountName1_Remote',
                                      BOT_Entity_Id__c='22',
                                      Account_Type__c='MCO');
         lstAccs.add(objAcc1);
